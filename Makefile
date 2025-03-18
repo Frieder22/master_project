@@ -1,11 +1,13 @@
-GCC = gcc
+GCC = mpic++
 target = test_mpi
+src = src
+build = build
 
 test:
-	$(GCC) $(target).cpp -o $(target).o
+	$(GCC) $(src)/$(target).cpp -o $(build)/$(target).o
 
 run: test 
-	./$(target).o
+	mpirun -np 4 $(build)/$(target).o
 
 clean:
-	rm -f $(target).o
+	rm -f build
