@@ -8,17 +8,6 @@
 
 #pragma once
 
-struct Edge {
-    int start;
-    int end;
-};
-
-struct NodeIdx {
-    int node;
-    int pos;
-    
-};
-
 /**
  * Class to represent an undirected Graph. Vertex major ordering is used.
  * Neighbors of a node can be found fast. 
@@ -65,13 +54,9 @@ class Graph {
     };
 };
 
-void testPrint(void){
-    printf("TEST");
-};
 
 Graph<int> readGraph(int rank, int size, std::string filepath = "graph_data/cit-HepPh_adj.tsv"){
     std::string line;
-    std::vector<Edge> edges_list;
     int startNode, endNode;
     int delimiter_pos, counter;
 
@@ -97,10 +82,6 @@ Graph<int> readGraph(int rank, int size, std::string filepath = "graph_data/cit-
             // create new Edge object
             endNode= std::stoi(node2_s); 
             startNode = std::stoi(node1_s);
-            Edge edge = {startNode, endNode};
-            
-            // add edge to list
-            edges_list.push_back(edge);
 
             // add edge to subgraph
             subgraph.addEdge(startNode, endNode);
