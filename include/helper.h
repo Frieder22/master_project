@@ -16,20 +16,19 @@ struct NodeIdx {
     int node;
     int pos;
     
-}
+};
 
 
 void testPrint(void){
     printf("TEST");
 };
 
-void testRead(){
+void testRead(int rank, int size){
     char filepath[] = "graph_data/cit-HepPh_adj.tsv";
     std::string line;
     std::vector<Edge> edges_list;
-    std::vector<>
     int endNode;
-    int delimiter_pos;
+    int delimiter_pos, counter;
 
     // open file
     std::ifstream file(filepath);
@@ -39,6 +38,7 @@ void testRead(){
     }
 
     // get a line
+    counter = 0;
     while (std::getline(file, line)) {   
         // find first and second entry as string
         delimiter_pos = line.find("\t");
@@ -47,12 +47,17 @@ void testRead(){
         delimiter_pos = line.find("\t");
         std::string node2_s = line.substr(0, delimiter_pos);
         
-        // create new Edge object
-        endNode= std::stoi(node2_s); 
-        Edge edge = {std::stoi(node1_s), endNode};
+        if (counter%size == rank) {
+            // create new Edge object
+            endNode= std::stoi(node2_s); 
+            Edge edge = {std::stoi(node1_s), endNode};
+            
+            // add edge to list
+            edges_list.push_back(edge);
+        }
 
-        // add edge to list
-        edges_list.push_back(edge);
+        //increase counter
+        counter++;
     }
     std::cout << edges_list[100].start << " " << edges_list[100].end << std::endl;
 
