@@ -13,8 +13,11 @@ int main(int argc, char *argv[]) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-
-    testRead(rank, size);
+    if (rank == 0){
+        printf("number of threads: %d\n", size);
+        Graph<int> subgraph = readGraph(rank, size);
+    }
+    
 
 
     // printf("asdads %d \n", rank);

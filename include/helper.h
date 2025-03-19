@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <unordered_map>
 
 #pragma once
 
@@ -18,16 +19,60 @@ struct NodeIdx {
     
 };
 
+/**
+ * Class to represent an undirected Graph. Vertex major ordering is used.
+ * Neighbors of a node can be found fast. 
+ */
+template <typename NodeType>
+class Graph {
+    std::unordered_map<NodeType, std::vector<NodeType>> nodes;
+    NodeType nEdges;
+    NodeType nNodes;
+
+    public:
+    Graph() {
+        this->nEdges = 0;
+        this->nNodes = 0;
+    };
+    
+    ~Graph() = default;
+
+    void addEdge(NodeType start, NodeType end){
+        // check if start node is already in graph
+        bool exists = (nodes.find(start) != nodes.end());
+        if (exists) {
+            // append the end Node to the corresponding edgeList
+            nodes.at(start).push_back(end);            
+        } else {
+            // create new edgeList containing only the end Node
+            std::vector<NodeType> edgeList = {end};
+            nodes.insert(std::pair<NodeType, std::vector<NodeType>>(start, edgeList));
+
+            // increase node counter
+            nNodes++;
+        }
+        // increase edge counter
+        nEdges++;
+    };
+
+    std::vector<NodeType> getOutNeighbors(NodeType node){
+        std::vector<NodeType> edgeList = nodes.at(node);
+        return edgeList;
+    };
+
+    std::vector<NodeType> getInNeighbors(NodeType node){
+        return std::forward(getOutNeighbors(node));
+    };
+};
 
 void testPrint(void){
     printf("TEST");
 };
 
-void testRead(int rank, int size){
-    char filepath[] = "graph_data/cit-HepPh_adj.tsv";
+Graph<int> readGraph(int rank, int size, std::string filepath = "graph_data/cit-HepPh_adj.tsv"){
     std::string line;
     std::vector<Edge> edges_list;
-    int endNode;
+    int startNode, endNode;
     int delimiter_pos, counter;
 
     // open file
@@ -39,6 +84,7 @@ void testRead(int rank, int size){
 
     // get a line
     counter = 0;
+    Graph<int> subgraph; 
     while (std::getline(file, line)) {   
         // find first and second entry as string
         delimiter_pos = line.find("\t");
@@ -50,20 +96,20 @@ void testRead(int rank, int size){
         if (counter%size == rank) {
             // create new Edge object
             endNode= std::stoi(node2_s); 
-            Edge edge = {std::stoi(node1_s), endNode};
+            startNode = std::stoi(node1_s);
+            Edge edge = {startNode, endNode};
             
             // add edge to list
             edges_list.push_back(edge);
+
+            // add edge to subgraph
+            subgraph.addEdge(startNode, endNode);
         }
 
         //increase counter
         counter++;
     }
-    std::cout << edges_list[100].start << " " << edges_list[100].end << std::endl;
-
-    std::cout << edges_list.data()[0].start << std::endl;
-
-
+    return subgraph;
 };
 
 
