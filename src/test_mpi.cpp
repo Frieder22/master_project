@@ -16,6 +16,9 @@ int main(int argc, char *argv[]) {
     if (rank == 0){
         printf("number of threads: %d\n", size);
         Graph<int> subgraph = readGraph(rank, size);
+        for (auto& it: subgraph.getInNeighbors(1)){
+            std::cout << it << " ";
+        }
     }
     
 

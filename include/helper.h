@@ -50,12 +50,19 @@ class Graph {
     };
 
     std::vector<NodeType> getInNeighbors(NodeType node){
-        return std::forward(getOutNeighbors(node));
+        return std::move(this->getOutNeighbors(node));
     };
 };
 
-
-Graph<int> readGraph(int rank, int size, std::string filepath = "graph_data/cit-HepPh_adj.tsv"){
+/**
+ * Function to read the corresponding subgraph from a tab separated (tsv) 
+ * or comma separated (csv) file.
+ * @param rank      rank of the process
+ * @param size      size of communicator 
+ * @param filepath  path to tsv file
+ */
+Graph<int> readGraph(int rank, int size, std::string filepath = "graph_data/cit-HepPh_adj.tsv",
+                    std::string delimiter = "\t"){
     std::string line;
     int startNode, endNode;
     int delimiter_pos, counter;
@@ -72,10 +79,10 @@ Graph<int> readGraph(int rank, int size, std::string filepath = "graph_data/cit-
     Graph<int> subgraph; 
     while (std::getline(file, line)) {   
         // find first and second entry as string
-        delimiter_pos = line.find("\t");
+        delimiter_pos = line.find(delimiter);
         std::string node1_s = line.substr(0, delimiter_pos);
         line.erase(0, delimiter_pos + 1);
-        delimiter_pos = line.find("\t");
+        delimiter_pos = line.find(delimiter);
         std::string node2_s = line.substr(0, delimiter_pos);
         
         if (counter%size == rank) {
