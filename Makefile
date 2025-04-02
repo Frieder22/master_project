@@ -10,4 +10,4 @@ run: test
 	mpirun -np 4 $(build)/$(target).o
 
 clean:
-	rm -f build
+	rm -rf build
