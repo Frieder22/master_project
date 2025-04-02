@@ -5,19 +5,9 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+#include <unordered_map>
 
 #pragma once
-
-struct Edge {
-    int start;
-    int end;
-};
-
-struct NodeIdx {
-    int node;
-    int pos;
-    
-};
 
 /**
  * Class to represent an undirected Graph. Vertex major ordering is used.
@@ -61,17 +51,20 @@ class Graph {
     };
 
     std::vector<NodeType> getInNeighbors(NodeType node){
-        return std::forward(getOutNeighbors(node));
+        return std::move(this->getOutNeighbors(node));
     };
 };
 
-void testPrint(void){
-    printf("TEST");
-};
-
-Graph<int> readGraph(int rank, int size, std::string filepath = "graph_data/cit-HepPh_adj.tsv"){
+/**
+ * Function to read the corresponding subgraph from a tab separated (tsv) 
+ * or comma separated (csv) file.
+ * @param rank      rank of the process
+ * @param size      size of communicator 
+ * @param filepath  path to tsv file
+ */
+Graph<int> readGraph(int rank, int size, std::string filepath = "graph_data/cit-HepPh_adj.tsv",
+                    std::string delimiter = "\t"){
     std::string line;
-    std::vector<Edge> edges_list;
     int startNode, endNode;
     int delimiter_pos, counter;
 
@@ -87,20 +80,16 @@ Graph<int> readGraph(int rank, int size, std::string filepath = "graph_data/cit-
     Graph<int> subgraph; 
     while (std::getline(file, line)) {   
         // find first and second entry as string
-        delimiter_pos = line.find("\t");
+        delimiter_pos = line.find(delimiter);
         std::string node1_s = line.substr(0, delimiter_pos);
         line.erase(0, delimiter_pos + 1);
-        delimiter_pos = line.find("\t");
+        delimiter_pos = line.find(delimiter);
         std::string node2_s = line.substr(0, delimiter_pos);
         
         if (counter%size == rank) {
             // create new Edge object
             endNode= std::stoi(node2_s); 
             startNode = std::stoi(node1_s);
-            Edge edge = {startNode, endNode};
-            
-            // add edge to list
-            edges_list.push_back(edge);
 
             // add edge to subgraph
             subgraph.addEdge(startNode, endNode);
