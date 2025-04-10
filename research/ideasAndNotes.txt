@@ -2,7 +2,8 @@
 ----------------------------------------------
                Algo extensions
 ----------------------------------------------
--Include also an communication variant for very dense vectors. (represent compelement sparsely)
+-Include also an communication variant for very 
+    dense vectors. (represent compelement sparsely)
 
 
 ----------------------------------------------
