@@ -1,14 +1,34 @@
 
-----------------------------------------------
-               Algo extensions
-----------------------------------------------
--Include also an communication variant for very 
-    dense vectors. (represent compelement sparsely)
+-----------------------------------------------------------------
+                            ToDo
+-----------------------------------------------------------------
+----------------------------DONE---------------------------------
+- Loading graph as CSR with edge oriented distribution 
+- BFS with only dense representation
+- Implement own all-reduce for dense representation
+- Implement own all-reduce for sparse representation
+- Implement flexible datatstructure for set of vertices (sparse/dense)
+- Implement transormation sparse <-> dense
 
 
-----------------------------------------------
-                research
-----------------------------------------------
+
+-----------------------------------------------------------------
+                        Algo extensions
+-----------------------------------------------------------------
+-Include also an communication variant for very dense vectors. 
+    (represent compelement sparsely)
+
+-Include algorithm for merging of sorted sparse lists. Can be done
+    more efficient and sorted lists can arise in bottom-up variant
+    described in "Searching for a Parent Instead of Fighting Over
+    Children:  A Fast Breadth-First Search Implementation for 
+    Graph500"
+
+-Implement bottom-up variant.
 
 
+-----------------------------------------------------------------
+                           research
+-----------------------------------------------------------------
+-Fastest datatstructure for representing a graph.
 
