@@ -3,6 +3,8 @@
                             ToDo
 -----------------------------------------------------------------
 ----------------------------DONE---------------------------------
+- IDEA: assert(last entry in scanned vertecCount == 2*nglobaleges)
+		if duplicates are in edge list (eg 2->26 and 26->2) assert would fail
 - Loading graph as CSR with edge oriented distribution 
 - BFS with only dense representation
 - Implement own all-reduce for dense representation
