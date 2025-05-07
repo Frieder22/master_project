@@ -5,13 +5,17 @@
 - IDEA: assert(last entry in scanned vertecCount == 2*nglobaleges)
 		if duplicates are in edge list (eg 2->26 and 26->2) assert would fail
 - correct counting for CSR
-----------------------------DONE---------------------------------
 - Loading graph as CSR with edge oriented distribution 
+----------------------------DONE---------------------------------
+- Implement correct calculations of nglobalVerts in csr_custom.c
+- Implement void Vertexset_Add()
+- Implement bool Vertexset_TransformToDense()
+- Implement bool Vertexset_TransformToSparse()
+- Implement void Vertexset_Free()
 - BFS with only dense representation
 - Implement own all-reduce for dense representation
 - Implement own all-reduce for sparse representation
 - Implement flexible datatstructure for set of vertices (sparse/dense)
-- Implement transormation sparse <-> dense
 
 
 
