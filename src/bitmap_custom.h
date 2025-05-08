@@ -18,7 +18,7 @@ static inline bool Bitmap_Test(unsigned long long *array, uint32_t vertex){
 }
 
 static inline void Bitmap_Clean(unsigned long long *array, size_t size){
-    memset(array, 0, size);
+    memset(array, 0, size * sizeof(unsigned long long));
 }
 
 
