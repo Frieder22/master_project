@@ -6,12 +6,13 @@
 		if duplicates are in edge list (eg 2->26 and 26->2) assert would fail
 - correct counting for CSR
 - Loading graph as CSR with edge oriented distribution 
+- Implement Vertexset_Add()
+- Implement Vertexset_Contains()
+- Implement void Vertexset_Free()
 ----------------------------DONE---------------------------------
 - Implement correct calculations of nglobalVerts in csr_custom.c
-- Implement void Vertexset_Add()
 - Implement bool Vertexset_TransformToDense()
 - Implement bool Vertexset_TransformToSparse()
-- Implement void Vertexset_Free()
 - BFS with only dense representation
 - Implement own all-reduce for dense representation
 - Implement own all-reduce for sparse representation
@@ -22,20 +23,20 @@
 -----------------------------------------------------------------
                         Algo extensions
 -----------------------------------------------------------------
--Include also an communication variant for very dense vectors. 
+- Include also an communication variant for very dense vectors. 
     (represent compelement sparsely)
 
--Include algorithm for merging of sorted sparse lists. Can be done
+- Include algorithm for merging of sorted sparse lists. Can be done
     more efficient and sorted lists can arise in bottom-up variant
     described in "Searching for a Parent Instead of Fighting Over
     Children:  A Fast Breadth-First Search Implementation for 
     Graph500"
 
--Implement bottom-up variant.
+- Implement bottom-up variant.
 
 
 -----------------------------------------------------------------
                            research
 -----------------------------------------------------------------
--Fastest datatstructure for representing a graph.
-
+- Fastest datatstructure for representing a graph.
+- Fastest Bitmap variant.
