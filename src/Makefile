@@ -11,7 +11,7 @@ test: main.c $(SOURCES) $(HEADERS)
 	$(GCC) $(CFLAGS) -o $(build)/$(target).o $(target).c vertexSet.c
 
 run: test 
-	mpirun -np 1 $(build)/$(target).o
+	mpirun -np 4 $(build)/$(target).o
 
 clean:
 	rm -rf build

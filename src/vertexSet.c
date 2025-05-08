@@ -85,18 +85,26 @@ bool Vertexset_TransformToSparse(Vertexset* vs){
                 if (word &1 == 1) { //found a 1
                     // add to sparse list
                     vs->sparseArray[countAdded] = i * ulong_bits + j;
-                    countAdded += 1;
+                    countAdded ++;
                 }
                 word >>= 1; //shift one to right
             }
         }
     }
-    // Check if all 1s are represented in the sparse array
-    assert(countAdded == vs->size);
+    vs->size = countAdded;
     vs->isdense = false;    
 }
 
 void Vertexset_Allreduce(Vertexset* vs, int VERTEXSET_OP);
+
+
+void Vertexset_Allreduce_Pure(Vertexset* vs, int VERTEXSET_OPERATION){
+    if (vs->isdense) {
+        MPI_Allreduce(MPI_IN_PLACE, vs->bitarray, vs->size_bitarray, MPI_UINT64_T, MPI_BOR, MPI_COMM_WORLD);
+    }
+    
+};
+
 
 
 void Vertexset_Deinit(Vertexset* vs){

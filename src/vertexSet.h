@@ -30,6 +30,8 @@ bool Vertexset_TransformToSparse(Vertexset* vs);
 
 void Vertexset_Allreduce(Vertexset* vs, int VERTEXSET_OPERATION);
 
+void Vertexset_Allreduce_Pure(Vertexset* vs, int VERTEXSET_OPERATION);
+
 void Vertexset_Deinit(Vertexset* vs);
 
 

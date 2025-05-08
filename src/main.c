@@ -1,38 +1,37 @@
 #include "vertexSet.h"
 #include <stdio.h>
+#include "mpi.h"
 
-#define ANSI_COLOR_RED     "\x1b[31m"
-#define ANSI_COLOR_GREEN   "\x1b[32m"
-#define ANSI_COLOR_YELLOW  "\x1b[33m"
-#define ANSI_COLOR_BLUE    "\x1b[34m"
-#define ANSI_COLOR_MAGENTA "\x1b[35m"
-#define ANSI_COLOR_CYAN    "\x1b[36m"
-#define ANSI_COLOR_RESET   "\x1b[0m"
-int main(int argc, char const *argv[]) {
+void printBinary(int num) {
+    for (int i = sizeof(int) * 8 - 1; i >= 0; i--) {
+        printf("%d", (num >> i) & 1);
+    }
+    printf("\n");
+}
+
+int main(int argc, char *argv[]) {
+    int rank, size;
+    MPI_Init(&argc, &argv);
+
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
     Vertexset vs;
-
-    Vertexset_Init(&vs, 32);
-
+    
+    Vertexset_Init(&vs, 500);
+    
     Vertexset_TransformToDense(&vs);
-
-    Vertexset_Add(&vs, 31);
-    Vertexset_Add(&vs, 31);
-    Vertexset_Add(&vs, 31);
-    Vertexset_Add(&vs, 29);
-
-    Vertexset_TransformToSparse(&vs);
-
-    if(Vertexset_Contains(&vs, 31)){
-        printf(ANSI_COLOR_GREEN "Correct!" ANSI_COLOR_RESET "\n");
-    } else {
-        printf(ANSI_COLOR_RED "NOT correct!" ANSI_COLOR_RESET "\n");
+    
+    Vertexset_Add(&vs, rank);
+    Vertexset_Add(&vs, 31-rank);
+    Vertexset_Allreduce_Pure(&vs, VERTEXSET_OR);
+    
+    
+    if (Vertexset_Contains(&vs, 31)){
+        printf("Correct\n");
     }
-    if(Vertexset_Contains(&vs, 29)){
-        printf(ANSI_COLOR_GREEN "Correct!" ANSI_COLOR_RESET "\n");
-    } else {
-        printf(ANSI_COLOR_RED "NOT correct!" ANSI_COLOR_RESET "\n");
-    }
+    
 
+    MPI_Finalize();
     return 0;
 }
 
