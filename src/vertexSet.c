@@ -9,7 +9,7 @@
 #include <stdio.h>
 
 
-void Vertexset_Init(Vertexset* vs, uint32_t maxsize){
+void Vertexset_Init(Vertexset* vs, uint32_t maxsize, MPI_Comm MPI_COMM){
     vs->size = 0;
     vs->maxsize = maxsize;
 
@@ -18,10 +18,20 @@ void Vertexset_Init(Vertexset* vs, uint32_t maxsize){
     vs->size_bitarray = size_bitarray;
     vs->bitarray = (unsigned long long*) malloc(size_bitarray * sizeof(unsigned long long));
 
+    // init MPI stuff
+    vs->MPI_COMM = MPI_COMM;
+    MPI_Comm_rank(MPI_COMM, &vs->mpi_rank);
+    MPI_Comm_size(MPI_COMM, &vs->mpi_size);
+
     // init sparse array 
     // allocate to much memory to fill up whole array with all possible
     // vertices (no dublicates)
     vs->sparseArray = (uint32_t*) malloc(maxsize * sizeof(uint32_t));
+    // same for buffer
+    vs->bufferArray = (uint32_t*) malloc(maxsize * sizeof(uint32_t));
+    // buffer for informations of other ranks
+    vs->sizesAll = (size_t*) malloc(vs->mpi_size * sizeof(size_t));
+    vs->displ= (size_t*) malloc((vs->mpi_size + 1) * sizeof(size_t));
 
     // check if systems definition of ULL is compatible with this implementation
     assert(sizeof(unsigned long long) == 8); // 8 byte (=64 bit)
@@ -99,10 +109,24 @@ void Vertexset_Allreduce(Vertexset* vs, int VERTEXSET_OP);
 
 
 void Vertexset_Allreduce_Pure(Vertexset* vs, int VERTEXSET_OPERATION){
+    assert(VERTEXSET_OPERATION == VERTEXSET_OR); //no other version is implemented
     if (vs->isdense) {
         MPI_Allreduce(MPI_IN_PLACE, vs->bitarray, vs->size_bitarray, MPI_UINT64_T, MPI_BOR, MPI_COMM_WORLD);
+    } else {
+        // get size information from other ranks
+        MPI_Allgather(&vs->size, 1, MPI_LONG, vs->sizesAll, 1, MPI_LONG, vs->MPI_COMM);
+
+        // calculate displacements with exxclusive scan
+        vs->displ[0] = 0;
+        for (int i = 1; i < vs->mpi_size + 1; i++){
+            vs->displ[i] = vs->displ[i-1] + vs->sizesAll[i-1];
+        }
+
+        // gather of all subarrays
+        MPI_Allgatherv(vs->bitarray, vs->size, MPI_UINT64_T, vs->bufferArray, vs->sizesAll, vs->displ, MPI_UINT64_T, vs->MPI_COMM);
     }
     
+    // Missing: setting of other variables
 };
 
 

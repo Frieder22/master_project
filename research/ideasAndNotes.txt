@@ -9,12 +9,13 @@
 - Implement Vertexset_Add()
 - Implement Vertexset_Contains()
 - Implement void Vertexset_Free()
-----------------------------DONE---------------------------------
-- Implement correct calculations of nglobalVerts in csr_custom.c
 - Implement bool Vertexset_TransformToDense()
 - Implement bool Vertexset_TransformToSparse()
-- BFS with only dense representation
 - Implement own all-reduce for dense representation
+----------------------------DONE---------------------------------
+- Comment VertexxSet.h
+- Implement correct calculations of nglobalVerts in csr_custom.c
+- BFS with only dense representation
 - Implement own all-reduce for sparse representation
 - Implement flexible datatstructure for set of vertices (sparse/dense)
 
@@ -33,6 +34,9 @@
     Graph500"
 
 - Implement bottom-up variant.
+
+- Other compression method. Count 0s and 1s.
+  Eg.: 100010111 -> 13113
 
 
 -----------------------------------------------------------------

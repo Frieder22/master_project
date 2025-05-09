@@ -5,20 +5,32 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <bitmap_custom.h>
+#include <mpi.h>
 
 typedef struct Vertexset{
+    // General information
     size_t size;
     size_t maxsize;
     size_t sizeCrit;
     bool isdense;
 
+    // Data for Bitarray
     unsigned long long *bitarray;
     uint32_t size_bitarray;
 
+    // Data for sparse array
     uint32_t *sparseArray;
+    uint32_t *bufferArray;
+    size_t *sizesAll;
+    size_t *displ;
+
+    // mpi information
+    MPI_Comm MPI_COMM;
+    int mpi_rank;
+    int mpi_size;
 } Vertexset;
 
-void Vertexset_Init(Vertexset* vs, uint32_t maxsize);
+void Vertexset_Init(Vertexset* vs, uint32_t maxsize, MPI_Comm MPI_COMM);
 
 void Vertexset_Add(Vertexset* vs, uint32_t vertex);
 
