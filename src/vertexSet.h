@@ -21,8 +21,8 @@ typedef struct Vertexset{
     // Data for sparse array
     uint32_t *sparseArray;
     uint32_t *bufferArray;
-    size_t *sizesAll;
-    size_t *displ;
+    int *sizesAll;
+    int *displ;
 
     // mpi information
     MPI_Comm MPI_COMM;

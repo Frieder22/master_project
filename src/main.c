@@ -32,9 +32,9 @@ int main(int argc, char *argv[]) {
     /*
     */
     
-    for (size_t i = 0; i < vs.mpi_size; i++) {
+    for (size_t i = 0; i < vs.size; i++) {
         //printf("%ld ", vs.sizesAll[i]);
-        printf("%ld ", vs.displ[i]);
+        printf("%d ", vs.sparseArray[i]);
     }
     printf("\n");
     

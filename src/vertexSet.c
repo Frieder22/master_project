@@ -30,8 +30,8 @@ void Vertexset_Init(Vertexset* vs, uint32_t maxsize, MPI_Comm MPI_COMM){
     // same for buffer
     vs->bufferArray = (uint32_t*) malloc(maxsize * sizeof(uint32_t));
     // buffer for informations of other ranks
-    vs->sizesAll = (size_t*) malloc(vs->mpi_size * sizeof(size_t));
-    vs->displ= (size_t*) malloc((vs->mpi_size + 1) * sizeof(size_t));
+    vs->sizesAll = (int*) malloc(vs->mpi_size * sizeof(int));
+    vs->displ= (int*) malloc((vs->mpi_size + 1) * sizeof(int));
 
     // check if systems definition of ULL is compatible with this implementation
     assert(sizeof(unsigned long long) == 8); // 8 byte (=64 bit)
@@ -70,51 +70,65 @@ bool Vertexset_Contains(Vertexset* vs, uint32_t vertex){
 };
 
 bool Vertexset_TransformToDense(Vertexset* vs){
-    size_t true_count = 0;
-    Bitmap_Clean(vs->bitarray, vs->size_bitarray);
-    for (size_t i = 0; i < vs->size; i++){
-        uint32_t vertex = vs->sparseArray[i];
-        if (!Bitmap_Test(vs->bitarray, vertex)) {
-            true_count++;
+    // only do, if it's sparse
+    if (!vs->isdense){
+        size_t true_count = 0;
+        Bitmap_Clean(vs->bitarray, vs->size_bitarray);
+        for (size_t i = 0; i < vs->size; i++){
+            uint32_t vertex = vs->sparseArray[i];
+            if (!Bitmap_Test(vs->bitarray, vertex)) {
+                true_count++;
+            }
+            Bitmap_Set(vs->bitarray, vertex);
         }
-        Bitmap_Set(vs->bitarray, vertex);
+        vs->size = true_count;
+        vs->isdense = true;
     }
-    vs->size = true_count;
-    vs->isdense = true;
+    
 };
 
 bool Vertexset_TransformToSparse(Vertexset* vs){
-    unsigned long long word;
-    size_t countAdded = 0;
-    for (size_t i = 0; i < vs->size_bitarray; i++){
-        // find a word thats not 0
-        if (vs->bitarray[i] != 0ULL){
-            word = vs->bitarray[i]; 
-            // find the 1s in the word
-            for (int j = 0; j < ulong_bits; j++) {
-                if (word &1 == 1) { //found a 1
-                    // add to sparse list
-                    vs->sparseArray[countAdded] = i * ulong_bits + j;
-                    countAdded ++;
+    // only do, if it is dense
+    if (vs->isdense){
+        unsigned long long word;
+        size_t countAdded = 0;
+        for (size_t i = 0; i < vs->size_bitarray; i++){
+            // find a word thats not 0
+            if (vs->bitarray[i] != 0ULL){
+                word = vs->bitarray[i]; 
+                // find the 1s in the word
+                for (int j = 0; j < ulong_bits; j++) {
+                    if (word &1 == 1) { //found a 1
+                        // add to sparse list
+                        vs->sparseArray[countAdded] = i * ulong_bits + j;
+                        countAdded ++;
+                    }
+                    word >>= 1; //shift one to right
                 }
-                word >>= 1; //shift one to right
             }
         }
+        vs->size = countAdded;
+        vs->isdense = false;    
     }
-    vs->size = countAdded;
-    vs->isdense = false;    
 }
 
-void Vertexset_Allreduce(Vertexset* vs, int VERTEXSET_OP);
+void Vertexset_Allreduce(Vertexset* vs, int VERTEXSET_OP){
+    // no other variant is implemented yet
+    // use only sparse communication
+    Vertexset_TransformToSparse(vs);
+    Vertexset_Allreduce_Pure(vs, VERTEXSET_OP);
+}
 
 
 void Vertexset_Allreduce_Pure(Vertexset* vs, int VERTEXSET_OPERATION){
     assert(VERTEXSET_OPERATION == VERTEXSET_OR); //no other version is implemented
     if (vs->isdense) {
         MPI_Allreduce(MPI_IN_PLACE, vs->bitarray, vs->size_bitarray, MPI_UINT64_T, MPI_BOR, MPI_COMM_WORLD);
+
     } else {
         // get size information from other ranks
-        MPI_Allgather(&vs->size, 1, MPI_LONG, vs->sizesAll, 1, MPI_LONG, vs->MPI_COMM);
+        int size_int = (int) vs->size;
+        MPI_Allgather(&size_int, 1, MPI_INT, vs->sizesAll, 1, MPI_INT, vs->MPI_COMM);
 
         // calculate displacements with exxclusive scan
         vs->displ[0] = 0;
@@ -123,10 +137,16 @@ void Vertexset_Allreduce_Pure(Vertexset* vs, int VERTEXSET_OPERATION){
         }
 
         // gather of all subarrays
-        MPI_Allgatherv(vs->bitarray, vs->size, MPI_UINT64_T, vs->bufferArray, vs->sizesAll, vs->displ, MPI_UINT64_T, vs->MPI_COMM);
+        MPI_Allgatherv(vs->sparseArray, vs->size, MPI_UINT32_T, vs->bufferArray, vs->sizesAll, (vs->displ), MPI_UINT32_T, vs->MPI_COMM);
+
+        printf("first sparse element: %d \n", vs->displ[0]);
+        // switch pointer
+        vs->sparseArray = vs->bufferArray;
+        vs->bufferArray = NULL;
+
+        // set size
+        vs->size = vs->displ[vs->mpi_size];
     }
-    
-    // Missing: setting of other variables
 };
 
 
