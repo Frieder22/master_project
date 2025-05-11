@@ -141,6 +141,22 @@ void Vertexset_Allreduce_Pure(Vertexset* vs, int VERTEXSET_OPERATION){
 };
 
 
+void Vertexset_PrintSet(Vertexset* vs){
+    if(vs->isdense){
+        Vertexset_TransformToSparse(vs);
+    }
+    int max_elements = 30;
+    printf("Elements in rank %d: ", vs->mpi_rank);
+    for (size_t i = 0; i < vs->sizeSparse; i++) {
+        printf("%d ", vs->sparseArray[i]);
+        if (i > max_elements) {
+            break;
+        }
+        
+    }
+    printf("\n");    
+};
+
 
 void Vertexset_Deinit(Vertexset* vs){
     free(vs->bitarray);
