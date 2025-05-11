@@ -12,11 +12,11 @@
 - Implement bool Vertexset_TransformToDense()
 - Implement bool Vertexset_TransformToSparse()
 - Implement own all-reduce for dense representation
+- Implement own all-reduce for sparse representation
 ----------------------------DONE---------------------------------
 - Comment VertexxSet.h
 - Implement correct calculations of nglobalVerts in csr_custom.c
 - BFS with only dense representation
-- Implement own all-reduce for sparse representation
 - Implement flexible datatstructure for set of vertices (sparse/dense)
 
 
