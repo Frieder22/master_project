@@ -1,4 +1,3 @@
-
 #include "vertexSet.h"
 #include "bitmap_custom.h"
 #include <stddef.h>
@@ -8,20 +7,31 @@
 #include <assert.h>
 #include <stdio.h>
 
+int log2_floor(int x){
+    int i;
+    for (i = 0; i < 32; i++) {
+        x = x >> 1;
+        if (x <= 0){
+            break;
+        }
+    }
+    printf("%d ", i);
+    printf("\n");
+};
 
 void Vertexset_Init(Vertexset* vs, uint32_t maxsize, MPI_Comm MPI_COMM){
     vs->maxsize = maxsize;
-
+    
     // init bitarray
     size_t size_bitarray = (maxsize + 1) / sizeof(unsigned long long);
     vs->size_bitarray = size_bitarray;
     vs->bitarray = (unsigned long long*) malloc(size_bitarray * sizeof(unsigned long long));
-
+    
     // init MPI stuff
     vs->MPI_COMM = MPI_COMM;
     MPI_Comm_rank(MPI_COMM, &vs->mpi_rank);
     MPI_Comm_size(MPI_COMM, &vs->mpi_size);
-
+    
     // init sparse array 
     // allocate to much memory to fill up whole array with all possible
     // vertices (no dublicates)
@@ -141,6 +151,30 @@ void Vertexset_Allreduce_Pure(Vertexset* vs, int VERTEXSET_OPERATION){
 };
 
 
+void Vertexset_Allreduce_Dynamic(Vertexset* vs, int VERTEXSET_OPERATION){
+    // Check if OR operation is used (other is not implemented yet)
+    assert(VERTEXSET_OPERATION == VERTEXSET_OR);
+
+    // Check if size of Communicatior is power of 2
+    assert((vs->mpi_size & (vs->mpi_size - 1)) == 0);
+    
+    // all processes should have a 
+    if (vs->isdense) {
+        Vertexset_TransformToSparse(vs);
+    }
+
+    // calculate numver of communication rounds
+    int iterations = log2_floor(vs->mpi_size);
+    
+    
+    for (int round = 0; round < iterations; round++) {
+        
+    }
+    
+
+};
+
+
 void Vertexset_PrintSet(Vertexset* vs){
     if(vs->isdense){
         Vertexset_TransformToSparse(vs);
@@ -162,4 +196,6 @@ void Vertexset_Deinit(Vertexset* vs){
     free(vs->bitarray);
     free(vs->sparseArray);
 };
+
+
 

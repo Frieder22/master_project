@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "bitmap_custom.h": "c"
+        "bitmap_custom.h": "c",
+        "stdio.h": "c",
+        "vertexset.h": "c"
     }
 }
