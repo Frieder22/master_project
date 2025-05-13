@@ -7,7 +7,7 @@
 #include <assert.h>
 #include <stdio.h>
 
-int log2_floor(int x){
+int Vertexset_Log2_floor(int x){
     int i;
     for (i = 0; i < 32; i++) {
         x = x >> 1;
@@ -15,9 +15,19 @@ int log2_floor(int x){
             break;
         }
     }
-    printf("%d ", i);
-    printf("\n");
+    return i;
 };
+
+void Vertexset_Update_Sizes(int** sizesAll, int** buffer, int rank_diff, int mpi_size) {
+    int *temp;
+    for (int i = 0; i < mpi_size; i++) {
+        (*buffer)[i] = (*sizesAll)[i] + (*sizesAll)[ (i + mpi_size - 1) % mpi_size];
+    }
+    temp = *sizesAll;
+    *sizesAll = *buffer;
+    *buffer = temp;
+};
+
 
 void Vertexset_Init(Vertexset* vs, uint32_t maxsize, MPI_Comm MPI_COMM){
     vs->maxsize = maxsize;
@@ -138,9 +148,8 @@ void Vertexset_Allreduce_Pure(Vertexset* vs, int VERTEXSET_OPERATION){
         }
 
         // gather of all subarrays
-        MPI_Allgatherv(vs->sparseArray, vs->sizeSparse, MPI_UINT32_T, vs->bufferArray, vs->sizesAll, (vs->displ), MPI_UINT32_T, vs->MPI_COMM);
+        MPI_Allgatherv(vs->sparseArray, vs->sizeSparse, MPI_UINT32_T, vs->sparseBuffer, vs->sizesAll, (vs->displ), MPI_UINT32_T, vs->MPI_COMM);
 
-        printf("first sparse element: %d \n", vs->displ[0]);
         // switch pointer
         vs->sparseArray = vs->sparseBuffer;
         vs->sparseBuffer = NULL;
@@ -158,20 +167,65 @@ void Vertexset_Allreduce_Dynamic(Vertexset* vs, int VERTEXSET_OPERATION){
     // Check if size of Communicatior is power of 2
     assert((vs->mpi_size & (vs->mpi_size - 1)) == 0);
     
-    // all processes should have a 
+    // all processes should have a sparse representation
     if (vs->isdense) {
         Vertexset_TransformToSparse(vs);
     }
 
     // calculate numver of communication rounds
-    int iterations = log2_floor(vs->mpi_size);
+    int max_iterations = Vertexset_Log2_floor(vs->mpi_size);
     
+    // find the sizes of all the other ranks
+    int size_int = (int) vs->sizeSparse;
+    MPI_Allgather(&size_int, 1, MPI_INT, vs->sizesAll, 1, MPI_INT, vs->MPI_COMM);
     
-    for (int round = 0; round < iterations; round++) {
+    // find the iteration round, when commucication should switch to dense variant
+    int crit_iteration = max_iterations;
+    
+    // inits for actual communication
+    int rank_diff, recv_rank, send_rank, round;
+    int *buffer;
+    buffer = (int*) malloc(sizeof(int)*vs->mpi_size);
+    rank_diff = 1;
+    
+    // communication rounds sparse
+    for (round = 0; round < crit_iteration; round++) {
+        send_rank = (vs->mpi_rank + rank_diff) % vs->mpi_size;
+        recv_rank = (vs->mpi_rank - rank_diff + vs->mpi_size) % vs->mpi_size;
+        MPI_Sendrecv(vs->sparseArray,                           vs->sizesAll[vs->mpi_rank], MPI_UINT32_T, send_rank, round,
+                     vs->sparseArray + vs->sizesAll[recv_rank], vs->sizesAll[recv_rank],    MPI_UINT32_T, recv_rank, round,
+                    vs->MPI_COMM, MPI_STATUS_IGNORE);
+        Vertexset_Update_Sizes(&vs->sizesAll, &buffer, rank_diff, vs->mpi_size);        
         
+        // double rank shift
+        rank_diff <<= 1;
+    }
+    vs->sizeSparse = vs->sizesAll[vs->mpi_rank];
+
+    // transform to dense
+    if (round < max_iterations) {
+        Vertexset_TransformToDense(vs);
     }
     
 
+    // communication rounds dense
+    for (round = crit_iteration; round < max_iterations; round++) {
+        send_rank = (vs->mpi_rank + rank_diff) % vs->mpi_size;
+        recv_rank = (vs->mpi_rank - rank_diff + vs->mpi_size) % vs->mpi_size;
+        MPI_Sendrecv(vs->bitArray, vs->size_bitarray, MPI_UINT64_T, send_rank, round,
+                     vs->bitBuffer, vs->size_bitarray, MPI_UINT64_T, recv_rank, round,
+                    vs->MPI_COMM, MPI_STATUS_IGNORE);
+
+        // perform logical OR
+        for (size_t i = 0; i < vs->size_bitarray; i++) {
+            vs->bitArray[i] |= vs->bitBuffer[i];
+        }
+        
+        // double the rank difference
+        rank_diff <<= 1;
+    }
+
+    free(buffer);
 };
 
 
@@ -193,7 +247,7 @@ void Vertexset_PrintSet(Vertexset* vs){
 
 
 void Vertexset_Deinit(Vertexset* vs){
-    free(vs->bitarray);
+    free(vs->bitArray);
     free(vs->sparseArray);
 };
 
