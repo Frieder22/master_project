@@ -2,6 +2,7 @@
     "files.associations": {
         "bitmap_custom.h": "c",
         "stdio.h": "c",
-        "vertexset.h": "c"
+        "vertexset.h": "c",
+        "random": "c"
     }
 }

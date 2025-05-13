@@ -20,13 +20,12 @@ typedef struct vertexSetIterator {
 
 void vertexSetIterator_Init(vertexSetIterator* it, Vertexset* vs);
 
-bool vertexSetIterator_next(vertexSetIterator* it);
+bool vertexSetIterator_Has_next(vertexSetIterator* it);
 
-uint32_t vertexSetIterator_get(vertexSetIterator* it);
+uint32_t vertexSetIterator_Next(vertexSetIterator* it);
 
-void vertexSetIterator_reset(vertexSetIterator* it);
+void vertexSetIterator_Reset(vertexSetIterator* it);
 
 void vertexSetIterator_Deinit(vertexSetIterator* it);
-
 
 #endif // VERTEXITERATOR
