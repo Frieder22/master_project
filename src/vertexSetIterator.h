@@ -11,6 +11,7 @@ typedef struct vertexSetIterator {
 
     // for dense representation
     size_t wordIdx;
+    int wordShift;
     uint64_t word;
 
     // for sparse representation
@@ -19,7 +20,9 @@ typedef struct vertexSetIterator {
 
 void vertexSetIterator_Init(vertexSetIterator* it, Vertexset* vs);
 
-uint32_t vertexSetIterator_next(vertexSetIterator* it);
+bool vertexSetIterator_next(vertexSetIterator* it);
+
+uint32_t vertexSetIterator_get(vertexSetIterator* it);
 
 void vertexSetIterator_reset(vertexSetIterator* it);
 
