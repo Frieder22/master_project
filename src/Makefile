@@ -2,8 +2,8 @@ GCC = mpicc
 CFLAGS = -O3
 
 target = main
-SOURCES = vertexSet.c
-HEADERS = vertexSet.h bitmap_custom.h
+SOURCES = vertexSet.c vertexSetIterator.c
+HEADERS = vertexSet.h bitmap_custom.h vertexSetIterator.h
  
 build = ../build
 

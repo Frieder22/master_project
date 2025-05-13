@@ -20,13 +20,13 @@ int main(int argc, char *argv[]) {
     Vertexset vs;
     Vertexset_Init(&vs, 500, MPI_COMM_WORLD);
 
-    Vertexset_Add(&vs, 5);
-    Vertexset_Add(&vs, 7);
-    Vertexset_Add(&vs, 8);
+    Vertexset_Add(&vs, 5 + rank);
+
 
     Vertexset_Allreduce_Dynamic(&vs, VERTEXSET_OR);
-    
-    //Vertexset_PrintSet(&vs);
+
+    //Vertexset_TransformToDense(&vs);
+    Vertexset_PrintSet(&vs);
     
     MPI_Finalize();
     return 0;
