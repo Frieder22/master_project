@@ -14,13 +14,14 @@ typedef struct Vertexset{
     bool isdense;
     
     // Data for Bitarray
-    unsigned long long *bitarray;
+    unsigned long long *bitArray;
+    unsigned long long *bitBuffer;
     uint32_t size_bitarray;
     
     // Data for sparse array
     size_t sizeSparse;
     uint32_t *sparseArray;
-    uint32_t *bufferArray;
+    uint32_t *sparseBuffer;
     int *sizesAll;
     int *displ;
 
