@@ -9,15 +9,17 @@
 - Implement Vertexset_Add()
 - Implement Vertexset_Contains()
 - Implement void Vertexset_Free()
+- Implement flexible datatstructure for set of vertices (sparse/dense)
 - Implement bool Vertexset_TransformToDense()
 - Implement bool Vertexset_TransformToSparse()
 - Implement own all-reduce for dense representation
 - Implement own all-reduce for sparse representation
+- Implement all-reduce with dynamic representations
 ----------------------------DONE---------------------------------
+- Implement Iterator and next()
 - Comment VertexxSet.h
 - Implement correct calculations of nglobalVerts in csr_custom.c
 - BFS with only dense representation
-- Implement flexible datatstructure for set of vertices (sparse/dense)
 
 
 
