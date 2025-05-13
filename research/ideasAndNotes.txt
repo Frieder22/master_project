@@ -16,6 +16,8 @@
 - Implement own all-reduce for sparse representation
 - Implement all-reduce with dynamic representations
 ----------------------------DONE---------------------------------
+- write unit tests for Iterator class
+- write unit tests for vertexSet class
 - Implement Iterator and next()
 - Comment VertexxSet.h
 - Implement correct calculations of nglobalVerts in csr_custom.c
