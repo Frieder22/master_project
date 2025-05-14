@@ -15,10 +15,13 @@
 - Implement own all-reduce for dense representation
 - Implement own all-reduce for sparse representation
 - Implement all-reduce with dynamic representations
-----------------------------DONE---------------------------------
-- write unit tests for Iterator class
-- write unit tests for vertexSet class
 - Implement Iterator and next()
+- write unit tests for Iterator class
+- Function for calculating critical Iteration
+----------------------------DONE---------------------------------
+- TEST and correct Vertexset_Find_critical_iteration()
+- add const-ness for adequate function parameter
+- write unit tests for vertexSet class
 - Comment VertexxSet.h
 - Implement correct calculations of nglobalVerts in csr_custom.c
 - BFS with only dense representation
