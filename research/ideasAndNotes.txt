@@ -18,11 +18,13 @@
 - Implement Iterator and next()
 - write unit tests for Iterator class
 - Function for calculating critical Iteration
+- Comment VertexxSet.h
 ----------------------------DONE---------------------------------
 - TEST and correct Vertexset_Find_critical_iteration()
 - add const-ness for adequate function parameter
 - write unit tests for vertexSet class
-- Comment VertexxSet.h
+- Comment VertexxSetIterator.h
+- check complexitied in VertexxSet.h
 - Implement correct calculations of nglobalVerts in csr_custom.c
 - BFS with only dense representation
 
