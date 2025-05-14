@@ -3,6 +3,7 @@
                             ToDo
 -----------------------------------------------------------------
 - IDEA: assert(last entry in scanned vertecCount == 2*nglobaleges)
+- BFS with only dense representation
 		if duplicates are in edge list (eg 2->26 and 26->2) assert would fail
 - correct counting for CSR
 - Loading graph as CSR with edge oriented distribution 
@@ -19,14 +20,15 @@
 - write unit tests for Iterator class
 - Function for calculating critical Iteration
 - Comment VertexxSet.h
+- Write reduce for pred[] array => simple reduce with MPI_MAX/_MIN
 ----------------------------DONE---------------------------------
+- BFS with vertex set Implementation
 - TEST and correct Vertexset_Find_critical_iteration()
 - add const-ness for adequate function parameter
 - write unit tests for vertexSet class
 - Comment VertexxSetIterator.h
-- check complexitied in VertexxSet.h
+- check complexities in VertexxSet.h
 - Implement correct calculations of nglobalVerts in csr_custom.c
-- BFS with only dense representation
 
 
 

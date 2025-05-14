@@ -210,7 +210,7 @@ void Vertexset_Allreduce_Dynamic(Vertexset* vs, int VERTEXSET_OPERATION){
     MPI_Allgather(&size_int, 1, MPI_INT, vs->sizesAll, 1, MPI_INT, vs->MPI_COMM);
     
     // find the iteration round, when commucication should switch to dense variant
-    int crit_iteration = Vertexset_Find_critical_iteration(vs);
+    int crit_iteration = max_iterations; // = Vertexset_Find_critical_iteration(vs);
     
     // inits for actual communication
     int rank_diff, recv_rank, send_rank, round;

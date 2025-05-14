@@ -33,8 +33,8 @@ typedef struct Vertexset{
 
 /**
  * Initializes Vertex Set object.
- * Runs in O(m)
- * m: maximum number of vertices
+ * Runs in O(n)
+ * n: maximum number of vertices
  * @param vs Vertex Set object, that needs to be initialized
  * @param maxsize Maximum number of vertices, that can be added
  * @param MPI_COMM MPI communicator, where reduce operation are possible
@@ -73,7 +73,7 @@ bool Vertexset_TransformToDense(Vertexset* vs);
 /**
  * Transforms Vertexset to sparse representation.
  * Time complexities:
- * Dense: O(m + k)     ,k is number of elements in vs
+ * Dense: O(n + k)     ,k is number of elements in vs
  * Sparse: O(1)
  * @param vs corresponding Vertexset object 
  */
@@ -95,7 +95,7 @@ void Vertexset_Allreduce(Vertexset* vs, int VERTEXSET_OPERATION);
  * the communciation. All ranks must have vs in the same kind of
  * representation.
  * Time complexities:
- * Dense: O(Allreduce(m))
+ * Dense: O(Allreduce(n))
  * Sparse: O(Allgather(k))
  * @param vs corresponding Vertexset object 
  * @param VERTEXSET_OPERATION which logical operation should be applied
@@ -107,8 +107,8 @@ void Vertexset_Allreduce_Pure(Vertexset* vs, int VERTEXSET_OPERATION);
  * other ranks. At the beginning sparse representation is used and
  * for later communication rounds, switch to dense communication.
  * Time complexities, if vs is already in sparse representation:
- * best case (only sparse): O(log(p)*k*p)
- * wors case (only dense): O(log(p)*m + k)
+ * best case (only sparse): O(log(p)*k*2^(log_2(p+1))-1)
+ * worst case (only dense): O(log(p)*(n + n + k))
  * @param vs corresponding Vertexset object 
  * @param VERTEXSET_OPERATION which logical operation should be applied
  */
