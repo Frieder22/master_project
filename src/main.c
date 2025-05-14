@@ -3,31 +3,67 @@
 #include <stdlib.h>
 #include "mpi.h"
 
+int rank, size;
+
 void printBinary(int num) {
     for (int i = sizeof(int) * 8 - 1; i >= 0; i--) {
         printf("%d", (num >> i) & 1);
     }
     printf("\n");
+};
+
+void printArr(int *arr, int len) {
+    printf("Array from rank %d: ", rank);
+    for (size_t i = 0; i < len; i++){
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+};
+
+void predReduce(int *invec, int *inoutvec, int *len, MPI_Datatype *datatype){
+    *inoutvec=20;
+    /*
+    if (*inoutvec == 0) {
+        *inoutvec = *invec;
+    }
+    */
+
 }
 
 int main(int argc, char *argv[]) {
-    int rank, size;
     MPI_Init(&argc, &argv);
 
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-    Vertexset vs;
-    Vertexset_Init(&vs, 500, MPI_COMM_WORLD);
+    int n = 3; // number of elements each rank should hold
+    int len = n*size;
+    int arr[n*size];
+    int arrOUT[n*size];
 
-    Vertexset_Add(&vs, 5 + rank);
+    memset(arr, 0, sizeof(int)*len);
+    memset(arrOUT, 0, sizeof(int)*len);
 
+    for (int i = rank*n; i < n*(rank+1); i++) {
+        arr[i] = i;
+    }
 
-    Vertexset_Allreduce_Dynamic(&vs, VERTEXSET_OR);
+    arr[1] = rank;
 
-    //Vertexset_TransformToDense(&vs);
-    Vertexset_PrintSet(&vs);
+    printArr(arr, len);
+
+    MPI_Op someOR;
+    MPI_Op_create(predReduce, true, &someOR);
+
+    MPI_Reduce(arr, arrOUT, len, MPI_INT, MPI_MIN, 0, MPI_COMM_WORLD);
+    if (rank == 0) {
+        printf("\n");
+        printArr(arrOUT, len);
+    }
     
+
+
+
     MPI_Finalize();
     return 0;
 }
