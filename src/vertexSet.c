@@ -28,6 +28,36 @@ void Vertexset_Update_Sizes(int** sizesAll, int** buffer, int rank_diff, int mpi
     *buffer = temp;
 };
 
+// from https://www.geeksforgeeks.org/qsort-function-in-c/
+// Changed to sort descending
+int comp_desc(const void *a, const void *b) {
+    return (*(int *)b - *(int *)a);
+};
+int Vertexset_Find_critical_iteration(const Vertexset* vs){
+    const int mpi_size = vs->mpi_size;
+    const int *sizes = vs->sizesAll;
+    
+    // copy sizes array
+    int sizes_copy[mpi_size];
+    memcpy(sizes_copy, sizes, mpi_size);
+
+    // sort sizes_copy in descending order
+    qsort(sizes_copy, mpi_size, sizeof(int), comp_desc);
+
+    // perform inclusive scan until critical size is reached
+    int count;
+    for (count = 0; count < mpi_size - 1; count++) {
+        sizes_copy[count + 1] += sizes_copy[count];
+        if (sizes_copy[count + 1] >  vs->sizeCrit) {
+            break;
+        }
+    }
+    
+    // #count ranks are needed in worst case to overshoot
+    // we need to switch in worst case floor(log_2(count)) iteration rounds
+    return Vertexset_Log2_floor(count);
+}
+
 
 void Vertexset_Init(Vertexset* vs, uint32_t maxsize, MPI_Comm MPI_COMM){
     vs->maxsize = maxsize;
@@ -180,7 +210,7 @@ void Vertexset_Allreduce_Dynamic(Vertexset* vs, int VERTEXSET_OPERATION){
     MPI_Allgather(&size_int, 1, MPI_INT, vs->sizesAll, 1, MPI_INT, vs->MPI_COMM);
     
     // find the iteration round, when commucication should switch to dense variant
-    int crit_iteration = max_iterations;
+    int crit_iteration = Vertexset_Find_critical_iteration(vs);
     
     // inits for actual communication
     int rank_diff, recv_rank, send_rank, round;
