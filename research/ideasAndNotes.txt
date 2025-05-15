@@ -20,7 +20,7 @@
 - write unit tests for Iterator class
 - Function for calculating critical Iteration
 - Comment VertexxSet.h
-- Write reduce for pred[] array => simple reduce with MPI_MAX/_MIN
+- Write reduce for pred[] array => simple reduce with MPI_MAX
 ----------------------------DONE---------------------------------
 - BFS with vertex set Implementation
 - TEST and correct Vertexset_Find_critical_iteration()

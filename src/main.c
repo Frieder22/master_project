@@ -55,7 +55,7 @@ int main(int argc, char *argv[]) {
     MPI_Op someOR;
     MPI_Op_create(predReduce, true, &someOR);
 
-    MPI_Reduce(arr, arrOUT, len, MPI_INT, MPI_MIN, 0, MPI_COMM_WORLD);
+    MPI_Reduce(arr, arrOUT, len, MPI_INT, MPI_MAX, 0, MPI_COMM_WORLD);
     if (rank == 0) {
         printf("\n");
         printArr(arrOUT, len);
