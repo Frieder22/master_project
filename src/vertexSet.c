@@ -75,7 +75,7 @@ void Vertexset_Init(Vertexset* vs, uint32_t maxsize, MPI_Comm MPI_COMM){
     
     // init sparse array 
     // allocate to much memory to fill up whole array with all possible
-    // vertices (no dublicates)
+    // vertices (no duplicates)
     vs->sizeSparse = 0;
     vs->sparseArray = (uint32_t*) malloc(maxsize * sizeof(uint32_t));
     vs->sparseBuffer = (uint32_t*) malloc(maxsize * sizeof(uint32_t));
@@ -92,17 +92,18 @@ void Vertexset_Init(Vertexset* vs, uint32_t maxsize, MPI_Comm MPI_COMM){
     vs->isdense = false;
 };
 
-void Vertexset_Add(Vertexset* vs, uint32_t vertex){
+void Vertexset_Add(Vertexset* vs, uint32_t vertex) {
     assert(vertex < vs->maxsize);
     if (vs->isdense) {
         Bitmap_Set(vs->bitArray, vertex);
     } else {
+        assert(vs->sizeSparse + 1 < vs->maxsize);
         vs->sparseArray[vs->sizeSparse] = vertex;
-        vs->sizeSparse++;
     }
+    vs->sizeSparse++;
 };
 
-bool Vertexset_Contains(Vertexset* vs, uint32_t vertex){
+bool Vertexset_Contains(Vertexset* vs, uint32_t vertex) {
     assert(vertex < vs->maxsize);
     if (vs->isdense) {
         return Bitmap_Test(vs->bitArray, vertex);
@@ -116,7 +117,17 @@ bool Vertexset_Contains(Vertexset* vs, uint32_t vertex){
     }
 };
 
-bool Vertexset_TransformToDense(Vertexset* vs){
+void Vertexset_Clean(Vertexset* vs) {
+    if (vs->isdense) {
+        Bitmap_Clean(vs->bitArray, vs->size_bitarray);
+        vs->sizeSparse = 0;
+    } else {
+        vs->isdense = false;            
+        vs->sizeSparse = 0;
+    }
+};
+
+bool Vertexset_TransformToDense(Vertexset* vs) {
     // only do, if it's sparse
     if (!vs->isdense){
         Bitmap_Clean(vs->bitArray, vs->size_bitarray);
@@ -129,7 +140,7 @@ bool Vertexset_TransformToDense(Vertexset* vs){
     
 };
 
-bool Vertexset_TransformToSparse(Vertexset* vs){
+bool Vertexset_TransformToSparse(Vertexset* vs) {
     // only do, if it is dense
     if (vs->isdense){
         unsigned long long word;
@@ -164,18 +175,28 @@ void Vertexset_Allreduce(Vertexset* vs, int VERTEXSET_OP){
 
 void Vertexset_Allreduce_Pure(Vertexset* vs, int VERTEXSET_OPERATION){
     assert(VERTEXSET_OPERATION == VERTEXSET_OR); //no other version is implemented
+    // get size information from other ranks
+    int size_int = (int) vs->sizeSparse;
+    MPI_Allgather(&size_int, 1, MPI_INT, vs->sizesAll, 1, MPI_INT, vs->MPI_COMM);
+
+    // calculate displacements with exxclusive scan
+    vs->displ[0] = 0;
+    for (int i = 1; i < vs->mpi_size + 1; i++){
+        vs->displ[i] = vs->displ[i-1] + vs->sizesAll[i-1];
+    }
+
     if (vs->isdense) {
         MPI_Allreduce(MPI_IN_PLACE, vs->bitArray, vs->size_bitarray, MPI_UINT64_T, MPI_BOR, MPI_COMM_WORLD);
     } else {
-        // get size information from other ranks
-        int size_int = (int) vs->sizeSparse;
-        MPI_Allgather(&size_int, 1, MPI_INT, vs->sizesAll, 1, MPI_INT, vs->MPI_COMM);
-
-        // calculate displacements with exxclusive scan
-        vs->displ[0] = 0;
-        for (int i = 1; i < vs->mpi_size + 1; i++){
-            vs->displ[i] = vs->displ[i-1] + vs->sizesAll[i-1];
+        // Ceck, if resulting array would be too big
+        if(vs->displ[vs->mpi_size] < vs->maxsize){
+            // Do dense communication
+            Vertexset_TransformToDense(vs);
+            Vertexset_Allreduce_Pure(vs, VERTEXSET_OPERATION);
+            vs->sizeSparse = 1;
+            return;
         }
+
 
         // gather of all subarrays
         MPI_Allgatherv(vs->sparseArray, vs->sizeSparse, MPI_UINT32_T, vs->sparseBuffer, vs->sizesAll, (vs->displ), MPI_UINT32_T, vs->MPI_COMM);
@@ -183,10 +204,10 @@ void Vertexset_Allreduce_Pure(Vertexset* vs, int VERTEXSET_OPERATION){
         // switch pointer
         vs->sparseArray = vs->sparseBuffer;
         vs->sparseBuffer = NULL;
-
-        // set size
-        vs->sizeSparse = vs->displ[vs->mpi_size];
     }
+    // set size
+    vs->sizeSparse = vs->displ[vs->mpi_size];
+    assert(vs->sizeSparse >= 0);
 };
 
 
