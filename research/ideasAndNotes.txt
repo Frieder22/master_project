@@ -21,14 +21,25 @@
 - Function for calculating critical Iteration
 - Comment VertexxSet.h
 - Write reduce for pred[] array => simple reduce with MPI_MAX
-----------------------------DONE---------------------------------
+- Validation:
+    0 split vertices on ranks
+    1 Check for cycles and count level
+    2 Each preds-tree-edge differs by exxactly one
+    3 every graph edge differs by at most one (maybe statisticly)
+    4 All findable vertices are found (Do BFS for "isolated" vertices)
+    5 Edges from tree are also in original graph
 - BFS with vertex set Implementation
+----------------------------DONE---------------------------------
+- rewrite NEIGHSTART() and NEIGHEND() from being makros to static inlines
+----------------------------DONE---------------------------------
 - TEST and correct Vertexset_Find_critical_iteration()
 - add const-ness for adequate function parameter
 - write unit tests for vertexSet class
 - Comment VertexxSetIterator.h
 - check complexities in VertexxSet.h
 - Implement correct calculations of nglobalVerts in csr_custom.c
+- rewrite NEIGHSTART() and NEIGHEND() from being makros to static inlines
+
 
 
 
