@@ -26,12 +26,10 @@
     1 Check for cycles and count level
     2 Each preds-tree-edge differs by exxactly one
     3 every graph edge differs by at most one (maybe statisticly)
-    4 All findable vertices are found (Do BFS for "isolated" vertices)
+    4 All findable vertices are found (ckeck neighbors of nt connected verts)
     5 Edges from tree are also in original graph
 - BFS with vertex set Implementation
 ----------------------------DONE---------------------------------
-- rewrite NEIGHSTART() and NEIGHEND() from being makros to static inlines
-- write test for Allreduce function
 - TEST and correct Vertexset_Find_critical_iteration()
 - add const-ness for adequate function parameter
 - write unit tests for vertexSet class
@@ -39,8 +37,6 @@
 - check complexities in VertexxSet.h
 - Implement correct calculations of nglobalVerts in csr_custom.c
 - rewrite NEIGHSTART() and NEIGHEND() from being makros to static inlines
-- Write reduce for pred[] array. Better than simple reduce with MPI_MAX
-
 
 
 
