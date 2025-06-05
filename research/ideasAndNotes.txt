@@ -15,7 +15,7 @@
 - Implement bool Vertexset_TransformToSparse()
 - Implement own all-reduce for dense representation
 - Implement own all-reduce for sparse representation
-- Implement all-reduce with dynamic representations
+- Implement all-reduce with dynamic representations (mpi_size == 2^k)
 - Implement Iterator and next()
 - write unit tests for Iterator class
 - Function for calculating critical Iteration
@@ -29,7 +29,9 @@
     4 All findable vertices are found (ckeck neighbors of nt connected verts)
     5 Edges from tree are also in original graph
 - BFS with vertex set Implementation
+- Write test for Allreduce
 ----------------------------DONE---------------------------------
+- Implement all-reduce with dynamic representations (mpi_size =/= 2^k)
 - TEST and correct Vertexset_Find_critical_iteration()
 - add const-ness for adequate function parameter
 - write unit tests for vertexSet class
