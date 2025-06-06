@@ -31,11 +31,14 @@
 - BFS with vertex set Implementation
 - Write test for Allreduce
 ----------------------------DONE---------------------------------
+- Approximate_Halfing: set bits directly in shifted order for sparse input
+- Approximate_Halfing: go from blockwise copy to shifted copy
 - Implement all-reduce with dynamic representations (mpi_size =/= 2^k)
 - TEST and correct Vertexset_Find_critical_iteration()
 - add const-ness for adequate function parameter
 - write unit tests for vertexSet class
 - Comment VertexxSetIterator.h
+- Comment bitmap_custom.h
 - check complexities in VertexxSet.h
 - Implement correct calculations of nglobalVerts in csr_custom.c
 - rewrite NEIGHSTART() and NEIGHEND() from being makros to static inlines
