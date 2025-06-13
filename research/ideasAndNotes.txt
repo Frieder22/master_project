@@ -30,15 +30,19 @@
     5 Edges from tree are also in original graph
 - BFS with vertex set Implementation
 - Write test for Allreduce
-----------------------------DONE---------------------------------
-- Approximate_Halfing: set bits directly in shifted order for sparse input
 - Approximate_Halfing: go from blockwise copy to shifted copy
 - Implement all-reduce with dynamic representations (mpi_size =/= 2^k)
-- TEST and correct Vertexset_Find_critical_iteration()
+- perfomance testing: Save the max time of all ranks (not only of rank 0).
+- Approximate_Halfing: Make communication non-blocking to avoid deadlocks
+- Exact_Halfing: calculate recvCount directly without probing in allgather part
+- Comment VertexSetIterator.h
+- Comment bitmap_custom.h
+----------------------------DONE---------------------------------
+- Approximate_Halfing: set bits directly in shifted order for sparse input
+- Exact_Halfing: recieve in bitarray directly without bufffer in allgather part
 - add const-ness for adequate function parameter
 - write unit tests for vertexSet class
-- Comment VertexxSetIterator.h
-- Comment bitmap_custom.h
+- VertexSetIterator: switch computation of next into _Next() function
 - check complexities in VertexxSet.h
 - Implement correct calculations of nglobalVerts in csr_custom.c
 - rewrite NEIGHSTART() and NEIGHEND() from being makros to static inlines
