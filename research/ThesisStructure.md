@@ -13,7 +13,8 @@
     * when few elements are marked, bitmap is wasteful (many 0s).
     * In this case a list with explicit integer is more powerfull.
     * $\Rightarrow$ Create flexible reduce algorithm.
-Algorithm 
+## Algorithms
+### Description of Alforithms
 * Algo 1:
     * Set union is logic OR on bitmap
     * Can be implemented by Reducescatter followed by an Allgather (optimal in α: number of iterations is minimal)
@@ -36,3 +37,54 @@ Algorithm
     * $\Rightarrow$ proof for this statement
     * Similar logic for when decide to switch
     * Pseudo Code and explanation of the code
+* Algorithm 3/4:
+    * Include another representation for very dense sets
+    * Transformation and creation can only happen from dense
+    * Rely on fact, that list of missing values is allways in ascending order. So merging two lists is also quite fast.
+    * Allgather phase can not be skipped. The difference here is, that we switch in logic OR only from sparse to dense, but we can switch from dense to superdense.
+    * In Reducescatter phase: When we switch from dense to super dense, we only have information of the current sent block(s) and not from the whole Sets provided by the subtree of processors.
+    * But: Maybe faster Allgather phase possible
+### Runtime Complexities of Algorithms
+* Model runtime complexities of the algorithms
+## Performance Results
+### Tests to perform:
+* Number of processors
+* Distribution of processors (eg. $(1\times 32)$ vs $(32\times 1)$ )
+* Different Set sizes.
+* Different fillings
+    * all equally filled
+    * only one filled
+    * All sparsly filled
+    * All densly filled
+    * all different filled (cascading up)
+* Different MPI implementations (mostly for reference performance)
+    * openMPI
+    * mpich
+    * intel-mpi
+
+## Application in the BFS
+* come back to original Motivation
+* testing for different graphs.
+    * different sizes
+    * different topologies:
+        * narrow graphs
+        * wide graphs
+    * real world graph examples
+    * $2^k$- and not $2^k$ number of procs
+* Validation of BFS
+    * 5 steps of Validation
+    * argue for completeness of Validation
+    * argue correctness of Allreduce
+
+## Conlusion
+* general performance of algo 1
+* general performance of algo 2
+* at which densities the algos are benificial
+* what is the cost of flexibility for dense sets
+* Which distributions are beneficial
+* performance of the application (BFS)
+
+## Outlook
+* optimization of implementation in C
+* Extension to other Reduce operations like logic AND or logic XOR
+* Propose maybe an algoritm for logic OR starting where super dense and sparse have inverted roles
