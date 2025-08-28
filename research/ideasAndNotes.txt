@@ -37,15 +37,27 @@
 - Exact_Halfing: calculate recvCount directly without probing in allgather part
 - Comment VertexSetIterator.h
 - Comment bitmap_custom.h
-----------------------------DONE---------------------------------
-- Approximate_Halfing: set bits directly in shifted order for sparse input
 - Exact_Halfing: recieve in bitarray directly without bufffer in allgather part
-- add const-ness for adequate function parameter
+- add const-ness for adequate function parameter:
+    vertexSet
+    VertexSetIterator
+    bitmap_custom
+- Approximate_Halfing: set bits directly in shifted order for sparse input
+- Approximate_Halfing: in allgather part: Use MPI_Sendrecv()
+- Implement correct calculations of nglobalVerts in csr_custom.c
+- Prepare structure for very dense variant
 - write unit tests for vertexSet class
+----------------------------DONE---------------------------------
+- organize produced data and find good format
+- Automate running on cluster
+- Implement very dense variant for Exact_Halfing
+- Implement very dense variant for Approximate_Halfing
 - VertexSetIterator: switch computation of next into _Next() function
 - check complexities in VertexxSet.h
-- Implement correct calculations of nglobalVerts in csr_custom.c
 - rewrite NEIGHSTART() and NEIGHEND() from being makros to static inlines
+- Implement Allreduce_Exactly_Halfing with size-communication round 
+- Comment performance.c
+- write small README for slurm folder
 
 
 
@@ -73,3 +85,17 @@
 -----------------------------------------------------------------
 - Fastest datatstructure for representing a graph.
 - Fastest Bitmap variant.
+
+-----------------------------------------------------------------
+                Implementation Notes Decisions
+-----------------------------------------------------------------
+- Integration of very dense format in datastructure doesn't make
+    any sense. The adding of a vertex needs a removal of an 
+    element in (possible the middle of) the list. This arises
+    too much bookkeeping.
+- The efficient counting of the bits in bitarray is done with 
+    __builtin_popcount(). This is compiler specific, but proven
+    to be fast. A compiler independent variant could be taken 
+    from "Hackers Delight" (Chapter 5)
+
+
