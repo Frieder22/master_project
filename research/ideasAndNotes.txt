@@ -47,9 +47,9 @@
 - Implement correct calculations of nglobalVerts in csr_custom.c
 - Prepare structure for very dense variant
 - write unit tests for vertexSet class
+- Automate running on cluster
 ----------------------------DONE---------------------------------
 - organize produced data and find good format
-- Automate running on cluster
 - Implement very dense variant for Exact_Halfing
 - Implement very dense variant for Approximate_Halfing
 - VertexSetIterator: switch computation of next into _Next() function
@@ -58,6 +58,8 @@
 - Implement Allreduce_Exactly_Halfing with size-communication round 
 - Comment performance.c
 - write small README for slurm folder
+- remove all semicolons after funtion definitions (not declarations)
+- watch out for memory leaks
 
 
 
