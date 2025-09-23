@@ -1,3 +1,9 @@
 build/
 research/pdfs/
-tex/build/
+tex/*.aux
+tex/*.log
+tex/*.gz
+tex/*.toc
+tex/*.pdf
+tex/*.bbl
+tex/*.blg
