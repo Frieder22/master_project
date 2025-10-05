@@ -9,3 +9,56 @@ volume = {48},
 journal = {ACM SIGPLAN Notices},
 doi = {10.1145/2442516.2442530}
 }
+
+% Good summary of simple Allreduce Algorithms
+@article{AllreduceSummaryAll,
+	author = {van de Geijn, Robert A.},
+	title = {On global combine operations},
+	year = {1994},
+	issue_date = {Aug. 1994},
+	publisher = {Academic Press, Inc.},
+	address = {USA},
+	volume = {22},
+	number = {2},
+	issn = {0743-7315},
+	url = {https://doi.org/10.1006/jpdc.1994.1091},
+	doi = {10.1006/jpdc.1994.1091},
+	journal = {J. Parallel Distrib. Comput.},
+	month = aug,
+	pages = {324–328},
+	numpages = {5}
+}
+
+% Better Broadcast algos
+@InProceedings{BroadcastAlgos,
+	author="Tr{\"a}ff, Jesper Larsson",
+	editor="Kranzlm{\"u}ller, Dieter
+	and Kacsuk, P{\'e}ter
+	and Dongarra, Jack",
+	title="A Simple Work-Optimal Broadcast Algorithm for Message-Passing Parallel Systems",
+	booktitle="Recent Advances in Parallel Virtual Machine and Message Passing Interface",
+	year="2004",
+	publisher="Springer Berlin Heidelberg",
+	address="Berlin, Heidelberg",
+	pages="173--180",
+	abstract="In this note we give a simple bandwidth- and latency optimal algorithm for the problem of broadcasting m units of data from a distinguished root processor to all p--1 other processors in one-ported (hypercubic) message-passing systems. Assuming linear, uniform communication cost, the time for the broadcast to complete is O(m+log2p), more precisely no processor is involved in more than ⌈log2p⌉ communication operations (send, receive, and send-receive), and for any constant message size thresholdb each processor (except the root) sends at most m--b{\textasciiacutex}+( ⌈log2p⌉--ℓ)b{\textasciiacutex} units of data, where b{\textasciiacutex} is determined by the smallest ℓ≤ ⌈log2p⌉ such that b{\textasciiacutex}=m/2ℓ≤ b (the root sends 2m--b{\textasciiacutex}+( ⌈log2p⌉ --ℓ)b{\textasciiacutex} units of data). Non-root processors receive m units of data.",
+	isbn="978-3-540-30218-6"
+}
+
+% Broadcast with work-optimal runtime
+@InProceedings{BroadcastWorkOpt,
+	author="Thakur, Rajeev
+	and Gropp, William D.",
+	editor="Dongarra, Jack
+	and Laforenza, Domenico
+	and Orlando, Salvatore",
+	title="Improving the Performance of Collective Operations in MPICH",
+	booktitle="Recent Advances in Parallel Virtual Machine and Message Passing Interface",
+	year="2003",
+	publisher="Springer Berlin Heidelberg",
+	address="Berlin, Heidelberg",
+	pages="257--267",
+	abstract="We report on our work on improving the performance of collective operations in MPICH on clusters connected by switched networks. For each collective operation, we use multiple algorithms depending on the message size, with the goal of minimizing latency for short messages and minimizing bandwidth usage for long messages. Although we have implemented new algorithms for all MPI collective operations, because of limited space we describe only the algorithms for allgather, broadcast, reduce-scatter, and reduce. We present performance results using the SKaMPI benchmark on a Myrinet-connected Linux cluster and an IBM SP. In all cases, the new algorithms significantly outperform the old algorithms used in MPICH on the Myrinet cluster, and, in many cases, they outperform the algorithms used in IBM's MPI on the SP.",
+	isbn="978-3-540-39924-7"
+}
+
