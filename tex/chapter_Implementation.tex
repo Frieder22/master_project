@@ -31,7 +31,7 @@ In the next sections we propose some algorithms, that take advantage of the spar
 
 
 \section{An Algorithm for $2^k$-number of processes}
-The core structure for algorithm \ref{algo:ExactHalfingAllreduce} is based on the  Bruck/Desimination algorithm described in section \ref{sec:BrucksAlgo}. When only the dense representation is used (i.e. when it is chosen by the algorithm, that this would be the more efficient way to go) the algorithms are equivalent. As in the Bruck algorithm there are two phases. In the first one we perform a distributed Reduction (that's an \texttt{MPI\_Reduce\_scatter()} in the MPI standard). This phase is followed by an All-Gather (\texttt{MPI\_Allgather()} in MPI). It is easy to verify, that an distributed Reduce combined with an All-Gather results in an All-Reduce and is sketched in section \ref{sec:BrucksAlgo}. 
+The core structure for algorithm \ref{algo:ExactHalfingAllreduce} is based on the  "Rabenseifner" algorithm described in section \ref{sec:RabenseifnerAlgo}. When only the dense representation is used (i.e. when it is chosen by the algorithm, that this would be the more efficient way to go) the algorithms are equivalent. As in the Bruck algorithm there are two phases. In the first one we perform a distributed Reduction (that's an \texttt{MPI\_Reduce\_scatter()} in the MPI standard). This phase is followed by an All-Gather (\texttt{MPI\_Allgather()} in MPI). It is easy to verify, that an distributed Reduce combined with an All-Gather results in an All-Reduce and is sketched in section \ref{sec:RabenseifnerAlgo}. 
 
 \begin{algorithm}
 	\caption{Exact Halfing Allreduce with sparse adaptation.\\
