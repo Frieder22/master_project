@@ -3,15 +3,19 @@
 %!TeX root = thesis.tex
 
 \chapter{Introduction and Related Work}
-Introduction
-\section{BFS}
+Here we want to give you an insight on what this thesis is build on. We want to give an description of what this thesis wants to achieve and what the motivation is for this project. In the later sections we then want to introduce and explain concepts, that are relevant for understanding the basis of this thesis.\\
+The core idea of this thesis is, to optimize the set union operation of distributed subsets. The original motivation behind this is to make a implementation of a distributed \ac{bfs} algorithm faster. So we want to give a quick introduction, how this \ac{bfs} algorithm is build.
+\section{BFS on distributed memory machines}
+Breath First Search is a well-known algorithm, that explores a graph from a starting node (root node) by iteratively finding the neighborhood of the current explored \cite{bibid}
+
+
 \section{Pseudocode}
 \section{Cost Model} \label{costModel}
 \section{Important Allreduce Implementations}
 The Allreduce operation is intuitively a direct choice for our problem of calculation a set union. Abstractly speaking, we can split up our problem of calculating the union of all processes by finding the union between two sets (of two processors) and then use this subresult without ever looking at the two original sets anymore. So we can find the total union in a recursive fashion. Two nice other properties are apparent: It doesn't matter, in which order the subresults are calculated and combined, as the union operation is commutative. Another nice property is, that calculating the union is an idempotent operator. So even if we use a subresult twice in our calculation, we still get a correct result. \\
 In this section we want to introduce a selection of Allreduce algorithms, that either are important to know or are the basis of the algorithms presented in this thesis. In general we look here only at non pipelined implementations. On the one hand we expect, that chunking up the message can destroy the benefit of using a sparse format, as a sparse message would need to 'compete' against smaller blocks. On the other hand a selection needed to be done, as not every variant could be considered as a base algorithm for our idea.
   
-\subsection{Reduce combined with an Broadcast}
+\subsection{Reduce combined with a Broadcast}
 One of the most direct approaches to get a Allreduce, is by performing an Reduce to a chosen root node and after that distribute this result to all processes. As we don't look at pipelined algorithms, we can easily estimate the runtime complexity. A naive approach \cite{AllreduceSummaryAll} is to create a communication pattern matching a binomial tree with the root node on top. This tree is used for the Reduce as well as for the Broadcast. During the Reduce phase all participating ranks send their array to their parents (of the binomial tree), where the reduce operation is executed. After $\log_2(p)$ iterations the reduction is complete and we perform the broadcast in the same fashion, but in reverse. By estimating the complexity of the reduction with $T_\textrm{Red} = \log_2(p)(\alpha + n \beta + n \gamma) $ and for the broadcast $T_\textrm{Broad} = \log_2(p)(\alpha + n \beta) $, we get a total run time estimation of
 \begin{align}
 	T_\mathrm{Naive} = 2 \log(p) (\alpha + n \beta) + \log_2(p) \gamma. \label{eq:BroadcastNaive}
