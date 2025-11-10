@@ -6,10 +6,66 @@
 Here we want to give you an insight on what this thesis is build on. We want to give an description of what this thesis wants to achieve and what the motivation is for this project. In the later sections we then want to introduce and explain concepts, that are relevant for understanding the basis of this thesis.\\
 The core idea of this thesis is, to optimize the set union operation of distributed subsets. The original motivation behind this is to make a implementation of a distributed \ac{bfs} algorithm faster. So we want to give a quick introduction, how this \ac{bfs} algorithm is build.
 \section{BFS on distributed memory machines}
-Breath First Search is a well-known algorithm, that explores a graph from a starting node (root node) by iteratively finding the neighborhood of the current explored \cite{bibid}
+Breath First Search is a well-known algorithm \cite{standardBFS}, that explores a graph from a starting node (root node) by iteratively finding the neighborhood of the current explored region. When having a graph $G(V, E)$ with a set of vertices $V$ and a set of edges $E$ connecting the vertices, the \ac{bfs} algorithm is described in procedure \ref{algo:BFSsequential}.
+\begin{algorithm} \label{algo:BFSsequential}
+	\caption{sequential implementation of BFS\\
+	$n$: number of vertices\\
+	$E$: set of edges\\
+	$r$: root node}
+	\begin{algorithmic}[1]
+		\Procedure{sequentialBFS}{$n, E, r$}
+		\State pred[$n$] $\gets -1$ \Comment{initialize pred array with $-1$ everywhere}
+		\State frontier\_old $\gets$ \{$r$\}
+		\While{frontier\_old $\not = \emptyset$}
+			\State frontier\_new $\gets \emptyset$
+			\ForAll{v $\in$ frontier\_old}
+				\ForAll{neigh $\in$ \Call{getNeighbours}{$E$, $v$}}
+				\If{pred[neigh] $\not=-1$}
+					\State pred[neigh] $\gets$ v
+					\Call{addVert}{frontier\_new, neigh}
+ 				\EndIf
+				\EndFor
+			\EndFor
+			\State frontier\_old $\gets$ frontier\_new
+		\EndWhile
+		\Return pred[n]
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+$r$ is here the root node. We also have to add a little description of $\Call{getNeighbours}{E, v}$. It's job is obviously to return the set of neighbors of the vertex $v$ with respect to the set of edges $E$. But this can differ, on what $G$ represent. If we have a directed graph $G$ and a list of edges $E$, where each edge $e$ consists out of a tuple $(v_i, v_j)$ where $v_i$ is the origin vertex and $v_j$ is the vertex the edge points to, it is easy to find neighbors of this vertex $v$. We simply check for all edges. If the first element of the tuple is the vertex of interest $v$, we add the second entry of this tuple to the output list. As this done lots of time, we can improve this sub-procedure by sorting the edgelist by its first entry in advance and keep track, which indices of this sorted list correspond to which vertices.There also have to be some preparations done, if we want to represent an undirected graph. An easy and fast approach is to add the inverted edges (i.e. if $e=(v_i, v_j)\in E$ , then also add $\hat{e}=(v_j, v_i)$) to the edgelist. To maximize efficiency later in the \ac{bfs} execution one needs to be careful to avoid adding duplicates.\\
+We only look here in the base version of \ac{bfs} and therefore the return value of this algorithm is only the array \texttt{preds[]}. It contains the predecessor (or also called parent) of each vertex in \ac{bfs} tree. This variant is chosen as a challenge in one of the biggest data intensive benchmarks \cite{graph500}, but in real world applications there can be also some computations done after each exploration iteration. 
 
+When adapting this sequential implementation to be parallelized on a distributed memory machine, there are many different approaches. There are different ideas how to partition and distribute on the different processes. For example the edges of the graph can also be written as an adjacency matrix. This adjacency matrix can then be partitioned in to rows (1D-partitioning) or in blocks (2D-partitioning). So basically each process only maintains a subset of vertices for outgoing edges (1D-case) and/or even only a subset of vertices for ingoing edges (2D-case) \cite{graphPartitioning}. Both have their own (dis-)advantages. There are also ideas in adapting the algorithm itself. One attempt is, instead of finding the neighbors of the current frontier, one can also iterate over the vertices, that don't have an predecessor set and look, if they have a neighbor in the frontier. This can be advantageous, when the frontier is quite big and the set of left over vertices relatively small \cite{bottomUp}. 
 
-\section{Pseudocode}
+But we focus here only on one (relatively simple) setting. We partition the graph by dividing the edgelist in equally size chunks and distribute them on the different processes. A good argument for this partitioning compared to the before mentioned 1D- or 2D-partitioning is, that we want to avoid iterations, were some processes don't have any (or way less) work to do. In our edge-centric partitioning we have in and outgoing edges for every vertex and can therefore expect a better load balance in each iteration. The given algorithm doesn't change much and is described in 
+
+\begin{algorithm} \label{algo:BFSparallel}
+	\caption{our parallel implementation of BFS\\
+		$n$: number of vertices\\
+		$E$: set of edges\\
+		$r$: root node}
+	\begin{algorithmic}[1]
+		\Procedure{sequentialBFS}{$n, E, r$}
+		\State pred[$n$] $\gets -1$ \Comment{initialize pred array with $-1$ everywhere}
+		\State frontier\_old $\gets$ \{$r$\}
+		\While{frontier\_old $\not = \emptyset$}
+		\State frontier\_new $\gets \emptyset$
+		\ForAll{v $\in$ frontier\_old}
+		\ForAll{neigh $\in$ \Call{getNeighbours}{$E$, $v$}}
+		\If{pred[neigh] $\not=-1$}
+		\State pred[neigh] $\gets$ v
+		\Call{addVert}{frontier\_new, neigh}
+		\EndIf
+		\EndFor
+		\EndFor
+		\State frontier\_old $\gets$ frontier\_new
+		\EndWhile
+		\Return pred[n]
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+\section{Pseudocode} \label{pseudocode}
 \section{Cost Model} \label{costModel}
 \section{Important Allreduce Implementations}
 The Allreduce operation is intuitively a direct choice for our problem of calculation a set union. Abstractly speaking, we can split up our problem of calculating the union of all processes by finding the union between two sets (of two processors) and then use this subresult without ever looking at the two original sets anymore. So we can find the total union in a recursive fashion. Two nice other properties are apparent: It doesn't matter, in which order the subresults are calculated and combined, as the union operation is commutative. Another nice property is, that calculating the union is an idempotent operator. So even if we use a subresult twice in our calculation, we still get a correct result. \\

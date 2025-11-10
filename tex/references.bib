@@ -1,5 +1,65 @@
+%------------------------------------------------------------------------------------------------------
+%                                             BFS
+%------------------------------------------------------------------------------------------------------
+
+% Standard BFS book
+@Inbook{standardBFS,
+author={Kozen, Dexter C.},
+title={Depth-First and Breadth-First Search},
+bookTitle={The Design and Analysis of Algorithms},
+year={1992},
+publisher={Springer New York},
+address={New York, NY},
+pages={19--24},
+abstract={Depth-first search (DFS) and breadth-first search (BFS) are two of the most useful subroutines in graph algorithms. They allow one to search a graph in linear time and compile information about the graph. They differ in that the former uses a stack (LIFO) discipline and the latter uses a queue (FIFO) discipline to choose the next edge to explore.},
+isbn={978-1-4612-4400-4},
+doi={10.1007/978-1-4612-4400-4_4},
+url={https://doi.org/10.1007/978-1-4612-4400-4_4}
+}
+
+% Graph 500 recource
+@online{graph500,
+	author = {Graph 500 Steering Commitee},
+	title = {graph500.org},
+	url = {https://graph500.org/},
+	urldate = {10.11.2025}
+}
+
+% Here the 1D and 2D partitioning of adjacency matrix is mentioned
+@inproceedings{graphPartitioning,
+	author = {Bulu\c{c}, Aydin and Madduri, Kamesh},
+	title = {Parallel breadth-first search on distributed memory systems},
+	year = {2011},
+	isbn = {9781450307710},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	url = {https://doi.org/10.1145/2063384.2063471},
+	doi = {10.1145/2063384.2063471},
+	abstract = {Data-intensive, graph-based computations are pervasive in several scientific applications, and are known to to be quite challenging to implement on distributed memory systems. In this work, we explore the design space of parallel algorithms for Breadth-First Search (BFS), a key subroutine in several graph algorithms. We present two highly-tuned parallel approaches for BFS on large parallel systems: a level-synchronous strategy that relies on a simple vertex-based partitioning of the graph, and a two-dimensional sparse matrix partitioning-based approach that mitigates parallel communication overhead. For both approaches, we also present hybrid versions with intra-node multithreading. Our novel hybrid two-dimensional algorithm reduces communication times by up to a factor of 3.5, relative to a common vertex based approach. Our experimental study identifies execution regimes in which these approaches will be competitive, and we demonstrate extremely high performance on leading distributed-memory parallel systems. For instance, for a 40,000-core parallel execution on Hopper, an AMD Magny-Cours based system, we achieve a BFS performance rate of 17.8 billion edge visits per second on an undirected graph of 4.3 billion vertices and 68.7 billion edges with skewed degree distribution.},
+	booktitle = {Proceedings of 2011 International Conference for High Performance Computing, Networking, Storage and Analysis},
+	articleno = {65},
+	numpages = {12},
+	location = {Seattle, Washington},
+	series = {SC '11}
+}
+
+
+% Description of top-down vs bottom-up BFS
+@INPROCEEDINGS{bottomUp,
+	author={Beamer, Scott and Asanovic, Krste and Patterson, David},
+	booktitle={SC '12: Proceedings of the International Conference on High Performance Computing, Networking, Storage and Analysis},
+	title={Direction-optimizing Breadth-First Search},
+	year={2012},
+	volume={},
+	number={},
+	pages={1-10},
+	keywords={Social network services;Switches;Tuning;Clustering algorithms;Data structures;Sockets;Runtime},	
+	doi={10.1109/SC.2012.50}
+}
+
+
 % Description of the LIGRA framework
-@inproceedings{Ligra
+@inproceedings{Ligra,
 author = {Shun, Julian and Blelloch, Guy},
 year = {2013},
 month = {02},
@@ -9,6 +69,11 @@ volume = {48},
 journal = {ACM SIGPLAN Notices},
 doi = {10.1145/2442516.2442530}
 }
+
+
+%------------------------------------------------------------------------------------------------------
+%                                      Introduction of ALLREDUCE alos
+%------------------------------------------------------------------------------------------------------
 
 % Good summary of simple Allreduce Algorithms
 @article{AllreduceSummaryAll,
