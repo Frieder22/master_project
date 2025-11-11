@@ -6,15 +6,17 @@
 Here we want to give you an insight on what this thesis is build on. We want to give an description of what this thesis wants to achieve and what the motivation is for this project. In the later sections we then want to introduce and explain concepts, that are relevant for understanding the basis of this thesis.\\
 The core idea of this thesis is, to optimize the set union operation of distributed subsets. The original motivation behind this is to make a implementation of a distributed \ac{bfs} algorithm faster. So we want to give a quick introduction, how this \ac{bfs} algorithm is build.
 \section{BFS on distributed memory machines}
-Breath First Search is a well-known algorithm \cite{standardBFS}, that explores a graph from a starting node (root node) by iteratively finding the neighborhood of the current explored region. When having a graph $G(V, E)$ with a set of vertices $V$ and a set of edges $E$ connecting the vertices, the \ac{bfs} algorithm is described in procedure \ref{algo:BFSsequential}.
-\begin{algorithm} \label{algo:BFSsequential}
-	\caption{sequential implementation of BFS\\
+Breath First Search is a well-known algorithm \cite{standardBFS}, that explores a graph from a starting node (root node) by iteratively finding the neighborhood of the current explored region.
+When having a graph $G(V, E)$ with a set of vertices $V$ and a set of edges $E$ connecting the vertices, the \ac{bfs} algorithm is described in procedure \ref{algo:BFSsequential}. Non-trivial syntax elements are described in section \ref{pseudocode}.
+\begin{algorithm}
+	\caption{Sequential implementation of BFS\\
 	$n$: number of vertices\\
 	$E$: set of edges\\
 	$r$: root node}
+	\label{algo:BFSsequential}
 	\begin{algorithmic}[1]
 		\Procedure{sequentialBFS}{$n, E, r$}
-		\State pred[$n$] $\gets -1$ \Comment{initialize pred array with $-1$ everywhere}
+		\State pred[$n$] $\gets [-1, \dots, -1]$ \Comment{initialize pred array with $-1$ everywhere}
 		\State frontier\_old $\gets$ \{$r$\}
 		\While{frontier\_old $\not = \emptyset$}
 			\State frontier\_new $\gets \emptyset$
@@ -22,48 +24,80 @@ Breath First Search is a well-known algorithm \cite{standardBFS}, that explores 
 				\ForAll{neigh $\in$ \Call{getNeighbours}{$E$, $v$}}
 				\If{pred[neigh] $\not=-1$}
 					\State pred[neigh] $\gets$ v
-					\Call{addVert}{frontier\_new, neigh}
+					\State \Call{addVert}{frontier\_new, neigh}
  				\EndIf
 				\EndFor
 			\EndFor
 			\State frontier\_old $\gets$ frontier\_new
 		\EndWhile
-		\Return pred[n]
+		\State \Return pred
 		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
-$r$ is here the root node. We also have to add a little description of $\Call{getNeighbours}{E, v}$. It's job is obviously to return the set of neighbors of the vertex $v$ with respect to the set of edges $E$. But this can differ, on what $G$ represent. If we have a directed graph $G$ and a list of edges $E$, where each edge $e$ consists out of a tuple $(v_i, v_j)$ where $v_i$ is the origin vertex and $v_j$ is the vertex the edge points to, it is easy to find neighbors of this vertex $v$. We simply check for all edges. If the first element of the tuple is the vertex of interest $v$, we add the second entry of this tuple to the output list. As this done lots of time, we can improve this sub-procedure by sorting the edgelist by its first entry in advance and keep track, which indices of this sorted list correspond to which vertices.There also have to be some preparations done, if we want to represent an undirected graph. An easy and fast approach is to add the inverted edges (i.e. if $e=(v_i, v_j)\in E$ , then also add $\hat{e}=(v_j, v_i)$) to the edgelist. To maximize efficiency later in the \ac{bfs} execution one needs to be careful to avoid adding duplicates.\\
+
+We also have to add a little description of $\Call{getNeighbours}{E, v}$. It's job is obviously to return the set of neighbors of the vertex $v$ with respect to the set of edges $E$. But this can differ, on what $G$ represent. If we have a directed graph $G$ and a list of edges $E$, where each edge $e$ consists out of a tuple $(v_i, v_j)$ where $v_i$ is the origin vertex and $v_j$ is the vertex the edge points to, it is easy to find neighbors of this vertex $v$. We simply check for all edges.
+If the first element of the tuple is the vertex of interest $v$, we add the second entry of this tuple to the output list. As this done lots of time, we can improve this sub-procedure by sorting the edgelist by its first entry in advance and keep track, which indices of this sorted list correspond to which vertices.
+There also have to be some preparations done, if we want to represent an undirected graph. An easy and fast approach is to add the inverted edges (i.e. if $e=(v_i, v_j)\in E$ , then also add $\hat{e}=(v_j, v_i)$) to the edgelist.
+To maximize efficiency later in the \ac{bfs} execution one needs to be careful to avoid adding duplicates.\\
 We only look here in the base version of \ac{bfs} and therefore the return value of this algorithm is only the array \texttt{preds[]}. It contains the predecessor (or also called parent) of each vertex in \ac{bfs} tree. This variant is chosen as a challenge in one of the biggest data intensive benchmarks \cite{graph500}, but in real world applications there can be also some computations done after each exploration iteration. 
 
-When adapting this sequential implementation to be parallelized on a distributed memory machine, there are many different approaches. There are different ideas how to partition and distribute on the different processes. For example the edges of the graph can also be written as an adjacency matrix. This adjacency matrix can then be partitioned in to rows (1D-partitioning) or in blocks (2D-partitioning). So basically each process only maintains a subset of vertices for outgoing edges (1D-case) and/or even only a subset of vertices for ingoing edges (2D-case) \cite{graphPartitioning}. Both have their own (dis-)advantages. There are also ideas in adapting the algorithm itself. One attempt is, instead of finding the neighbors of the current frontier, one can also iterate over the vertices, that don't have an predecessor set and look, if they have a neighbor in the frontier. This can be advantageous, when the frontier is quite big and the set of left over vertices relatively small \cite{bottomUp}. 
+When adapting this sequential implementation to be parallelized on a distributed memory machine, there are many different approaches. There are different ideas how to partition and distribute on the different processes. For example the edges of the graph can also be written as an adjacency matrix. This adjacency matrix can then be partitioned in to rows (1D-partitioning) or in blocks (2D-partitioning).
+So basically each process only maintains a subset of vertices for outgoing edges (1D-case) and/or even only a subset of vertices for ingoing edges (2D-case) \cite{graphPartitioning}. Both have their own (dis-)advantages. There are also ideas in adapting the algorithm itself.
+One attempt is, instead of finding the neighbors of the current frontier, one can also iterate over the vertices, that don't have an predecessor set and look, if they have a neighbor in the frontier.
+This can be advantageous, if the frontier is quite big and the set of left over vertices relatively small \cite{bottomUp}. 
 
-But we focus here only on one (relatively simple) setting. We partition the graph by dividing the edgelist in equally size chunks and distribute them on the different processes. A good argument for this partitioning compared to the before mentioned 1D- or 2D-partitioning is, that we want to avoid iterations, were some processes don't have any (or way less) work to do. In our edge-centric partitioning we have in and outgoing edges for every vertex and can therefore expect a better load balance in each iteration. The given algorithm doesn't change much and is described in 
+But we focus here only on one (relatively simple) setting. We partition the graph by dividing the edgelist in equally size chunks and distribute them on the different processes.
+A good argument for this partitioning compared to the before mentioned 1D- or 2D-partitioning is, that we want to avoid iterations, were some processes don't have any (or way less) work to do.
+In our edge-centric partitioning we have in and outgoing edges for every vertex and can therefore expect a better load balance in each iteration. The given algorithm doesn't change much and is described in algorithm \ref{algo:BFSparallel}.
 
-\begin{algorithm} \label{algo:BFSparallel}
-	\caption{our parallel implementation of BFS\\
-		$n$: number of vertices\\
-		$E$: set of edges\\
-		$r$: root node}
+\begin{algorithm} [h]
+	\caption{Our parallel implementation of BFS\\
+	$n$: number of vertices\\
+	$E$: set of edges\\
+	$r$: root node}	
+	\label{algo:BFSparallel}
 	\begin{algorithmic}[1]
-		\Procedure{sequentialBFS}{$n, E, r$}
-		\State pred[$n$] $\gets -1$ \Comment{initialize pred array with $-1$ everywhere}
+		\Procedure{parallelBFS}{$n, E, r$}
+		\State pred[$n$] $\gets [-1, \dots, -1]$
+		\State E\_local $\gets$ \Call{divideEdges}{$E$} 
+			\Comment{Each process gets an subset of the edges}
+		\State visited $\gets \emptyset$ 
+			\Comment{Added to keep track of already visited vertices}
 		\State frontier\_old $\gets$ \{$r$\}
 		\While{frontier\_old $\not = \emptyset$}
-		\State frontier\_new $\gets \emptyset$
-		\ForAll{v $\in$ frontier\_old}
-		\ForAll{neigh $\in$ \Call{getNeighbours}{$E$, $v$}}
-		\If{pred[neigh] $\not=-1$}
-		\State pred[neigh] $\gets$ v
-		\Call{addVert}{frontier\_new, neigh}
-		\EndIf
-		\EndFor
-		\EndFor
-		\State frontier\_old $\gets$ frontier\_new
+			\State frontier\_new $\gets \emptyset$
+			\State visited $\gets$ visited $\cup$ frontier\_old
+			\Comment{update \texttt{vidited} set with new values}
+			\ForAll{v $\in$ frontier\_old}
+				\ForAll{neigh $\in$ \Call{getNeighbours}{E\_local, $v$}}
+					\If{neigh $\not \in$ visited}
+						\Comment{Check is now done using \texttt{visited} set}
+						\State pred[neigh] $\gets$ v
+						\State \Call{addVert}{frontier\_new, neigh}
+					\EndIf
+				\EndFor
+			\EndFor
+			\State frontier\_old $\gets$ \Call{unionAll}{frontier\_new}
+				\Comment{Here the union of all subsets is calculated.}
 		\EndWhile
-		\Return pred[n]
+		\State pred $\gets$ \Call{allReduce}{pred, MAX}
+			\Comment{Choose a predecessor, if there is at least one proposed.}
+		\State \Return pred
 		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
+
+The main changes here are, that we now divide the edges to the different processes, switch to another set structure \texttt{visited} and use the function \Call{unionAll}{ } to get a set union over all distributed subsets lying on the different processes. There is also another communication round added at the end of the procedure to unify the \texttt{pred} array.
+Before this each process calculated a predecessor for each vertex of the graph (or left the corresponding entry set to $-1$). The call of \Call{allReduce}{pred, MAX} returns the maximum value for each entry of \texttt{pred}. This guarantees, that the same predecessor for each entry is chosen in each process and the entry is left at $-1$, if no process has found a predecessor. \\
+The switch to using extra set \texttt{visited} is done to save the total amount of communication. We need some way to tell the other processes, which vertices are already visited, but the information, which the explicit predecessor for each vertex is chosen is obsolete in the \texttt{while}-loop.
+A general idea here is to represent the frontier sets as bitmaps, where each entry is either set to 1, if a vertex is selected to be in the set, or set to 0 otherwise.
+This safes a lot of space, when comparing it to an integer representation, where every positive number represents a selected vertex and a $-1$ stands for a non-selected one.
+One needs to keep in mind, that in a bitmap, we need only one bit of memory for each vertex and an (large scale usable) integer would need 32 bits.
+But there is still room for optimization possible. In each iteration of the \texttt{while}-loop we communicate the whole bitmap to the other process. But in the first iterations not a lot of the vertices are expected to be in the frontier. So most of the bitmap is set to zero.
+We can use here a sparse format to represent the same set of vertices on a smaller memory footprint. Therefore amount of sent data can also be reduced.
+Of course the function \Call{unionAll}{ } needs to be adapted to take care of dense and sparse representations. How this problem can be most efficiently solved is the key goal of this thesis.
+
+The union set operation using only bitmaps is quite straight forward. A global reduction operation performing a bitwise OR on such bitmaps is exactly equivalent to the union set operation. The MPI standard defines this global reduction in the function \Call{MPI\_Allreduce}{ } using the tag \texttt{MPI\_BOR} \cite{mpi}. We borrow this nomenclature for this thesis and describe collective reductions an \textit{Allreduce}. In the later sections of this chapter are the basics of how these Allreduce algorithms implemented described. They are the foundation of the proposed optimized \Call{unionAll}{ } procedure.
 
 \section{Pseudocode} \label{pseudocode}
 \section{Cost Model} \label{costModel}
@@ -100,8 +134,7 @@ The recursive doubling scheme is an approach to get rid of the factor 2 appearin
 	\end{algorithmic}
 \end{algorithm}
 As one can see, this works only for commutative reduction operators $\oplus$, as after each communication round the communication partner holds the same data, but this can easily be avoided by switching $I$ and $O$ for some processes (in some iterations) \cite{NonComAllred}. Such adaptations are not relevant for this thesis, as the union operator for sets is commutative. This holds true for both the sparse and dense representation of our sets.\\
-There are also adaptations to extend this algorithm to a number of processors $p$, that is not a power of 2. One simple
-
+There are also adaptations to extend this algorithm to a number of processors $p$, that is not a power of 2. One simple 
 
 \subsection{Desimination Algorithm or "Rabenseifners" Algorithm}\label{sec:RabenseifnerAlgo}
 
