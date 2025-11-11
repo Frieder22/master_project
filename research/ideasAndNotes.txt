@@ -52,6 +52,8 @@
 - Find solution for non-idempotent behaviour of concatenating lists
 - extend Vertexset_Red_dense with approximate halfing scheme
 ----------------------------DONE---------------------------------
+- add function that calculates the union of two Vertexsets (usefull for custom BFS)
+- Use memcpy instead of for-loops to increase performance
 - function to set approx_halfing-variable
 - organize produced data and find good format
 - check complexities in VertexxSet.h
