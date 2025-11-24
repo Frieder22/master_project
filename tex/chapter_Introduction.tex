@@ -117,22 +117,28 @@ The round based structure of the considered algorithms further enables us to do 
 \begin{align}
 	T_\mathrm{linear}(m) = \alpha + \beta m. \label{eq:linearCostModel}
 \end{align}
-When considering the LogGP model for only one message, we could identify $\alpha=2o + L - G$ and $\beta = G$. To make the estimation from equation \ref{eq:linearCostModel} work, we need to impose another two assumptions about the machine the algorithms are executed on. The first one is, that the interconnect is one-ported. This means, we can only send at most one message at once. The other condition is, that the network is bidirectional, meaning a two threads can send each other messages at the same time \cite{BroadcastWorkOpt}.
+When considering the LogGP model for only one message, we could identify $\alpha=2o + L - G$ and $\beta = G$. To make the estimation from equation \ref{eq:linearCostModel} work, we need to impose another two assumptions about the machine the algorithms are executed on. The first one is, that the interconnect is one-ported. This means, we can only send at most one message at once. The other condition is, that the network is bidirectional, meaning a two threads can send each other messages at the same time \cite{BroadcastWorkOpt}.\\
+In this thesis reduce algorithms are considered. So there is not only the execution time of communication relevant. A considerable amount of data is also processed (in the sense of applying the reduction operator on received/stored data), which execution time we also want to model in a linear fashion. Typically the reduction operator is applied on each element of a received vector. This also holds in the applications for this thesis. By introducing a new parameter $\gamma$, the linear model
+\begin{align*}
+	T_\mathrm{reduce} = \gamma m
+\end{align*}
+can estimate the execution time to reduce a vector of size $m$ (in bytes) into another one. The parameter $\gamma$ is here dependent on the reduction operator (and of course on the machine it is executed on). With this we can model execution times of the algorithms proposed in the next sections.
 
 \section{Important Allreduce Implementations}
-The Allreduce operation is intuitively a direct choice for our problem of calculation a set union. Abstractly speaking, we can split up our problem of calculating the union of all processes by finding the union between two sets (of two processors) and then use this subresult without ever looking at the two original sets anymore. So we can find the total union in a recursive fashion. Two nice other properties are apparent: It doesn't matter, in which order the subresults are calculated and combined, as the union operation is commutative. Another nice property is, that calculating the union is an idempotent operator. So even if we use a subresult twice in our calculation, we still get a correct result. \\
+The Allreduce operation is intuitively a direct choice for our problem of calculation a set union. Abstractly speaking, we can split up our problem of calculating the union of all processes by finding the union between two sets (of two processors) and then use this subresult without ever looking at the two original sets anymore. So we can find the total union in a recursive fashion. Two nice other properties are apparent: It doesn't matter, in which order the subresults are calculated and combined, as the union operation is commutative. Another nice property is, that calculating the union is an idempotent operator. So even if we would use a subresult twice in our calculation, we still get a correct result. \\
 In this section we want to introduce a selection of Allreduce algorithms, that either are important to know or are the basis of the algorithms presented in this thesis. In general we look here only at non pipelined implementations. On the one hand we expect, that chunking up the message can destroy the benefit of using a sparse format, as a sparse message would need to 'compete' against smaller blocks. On the other hand a selection needed to be done, as not every variant could be considered as a base algorithm for our idea.
   
-\subsection{Reduce combined with a Broadcast}
-One of the most direct approaches to get a Allreduce, is by performing an Reduce to a chosen root node and after that distribute this result to all processes. As we don't look at pipelined algorithms, we can easily estimate the runtime complexity. A naive approach \cite{AllreduceSummaryAll} is to create a communication pattern matching a binomial tree with the root node on top. This tree is used for the Reduce as well as for the Broadcast. During the Reduce phase all participating ranks send their array to their parents (of the binomial tree), where the reduce operation is executed. After $\log_2(p)$ iterations the reduction is complete and we perform the broadcast in the same fashion, but in reverse. By estimating the complexity of the reduction with $T_\textrm{Red} = \log_2(p)(\alpha + n \beta + n \gamma) $ and for the broadcast $T_\textrm{Broad} = \log_2(p)(\alpha + n \beta) $, we get a total run time estimation of
+\subsection{Reduce combined with a Broadcast} \label{ReducePlusBroadcast}
+One of the most direct approaches to get a Allreduce, is by performing an Reduce to a chosen root node and after that distribute this result to all processes. As we don't look at pipelined algorithms, we can easily estimate the runtime complexity. A naive approach \cite{AllreduceSummaryAll} is to create a communication pattern matching a binomial tree with the root node on top. This tree is used for the Reduce as well as for the Broadcast. During the Reduce phase all participating ranks send their array to their parents (of the binomial tree), where the reduce operation is executed. After $\log_2(p)$ iterations the reduction is complete and we perform the Broadcast in the same fashion, but in reverse. By estimating the complexity of the reduction with $T_\textrm{Red} = \log_2(p)(\alpha + m \beta + m \gamma) $ and for the broadcast $T_\textrm{Broad} = \log_2(p)(\alpha + m \beta) $, we get a total run time estimation of
 \begin{align}
-	T_\mathrm{Naive} = 2 \log(p) (\alpha + n \beta) + \log_2(p) \gamma. \label{eq:BroadcastNaive}
+	T_\mathrm{Naive} = 2 \log(p) (\alpha + m \beta) + \log_2(p) \gamma. \label{eq:BroadcastNaive}
 \end{align}
-This can be improved, especially for large message sizes. For the Broadcast there are \textit{work-optimal} implementations, that switch to optimized algorithms for larger messages. These algorithms bring down the $\beta$-term, which usually contain the message size $m$. Such \textit{work-optimal} algorithms bring the $\beta$-term from $\log(p)m$ down to $2 m \frac{p-1}{p}$ \cite{BroadcastWorkOpt, BroadcastAlgos}. This is of course only for a relatively large amount of processors $p$. There are also strategies, like pipelining and 
+This can be improved, especially for large message sizes. For the Broadcast there are \textit{work-optimal} implementations, that switch to optimized algorithms for larger messages. These algorithms bring down the $\beta$-term, which usually scale the effect of the message size $m$. Such \textit{work-optimal} algorithms bring the $\beta$-term from $\log(p)m$ down to $2 m \frac{p-1}{p}$ \cite{BroadcastWorkOpt, BroadcastAlgos}. This is of course only beneficial for a relatively large amount of processors $p$. There are also strategies, like pipelining the Broadcast or using trees with different degrees \cite{pipelinedBroadcast, karyTrees}. The same ideas can be also applied for the Reduction part. These implementations are of course especially useful, if the underlying structure of the computing machine is also build in a tree-like fashion.
 
 
 \subsection{Recursive Doubling Scheme} 
-The recursive doubling scheme is an approach to get rid of the factor 2 appearing in equation \ref{eq:BroadcastNaive} by getting every process in each iteration involved and tackling the problem in a divide-and-conquer fashion. The key observation of this algorithm \cite{AllreduceSummaryAll} is, that when two processes send a copy of their data vector to each other and both perform a local reduce combining their own data with the received vector, they both posses identical data. This is beneficial, as in the next iteration both processes can send the same subresult to new participating processes, that are not the same. By doing this we can recursively build a scheme, such that in each iteration $i$ a set of $2^i$ processes have the same subresult. So this approach works ideally for $2^k$ numbers of participating processors. To get a better understanding a implementation as pseudocode is shown in algorithm \ref{algo:recursiveAlgo}.
+The recursive doubling scheme is an approach to get rid of the factor 2 appearing in equation \ref{eq:BroadcastNaive} by getting every process in each iteration involved and tackling the problem in a divide-and-conquer fashion. The key observation of this algorithm is, that when two processes send a copy of their data vector to each other and both perform a local reduce combining their own data with the received vector, they both posses identical data \cite{AllreduceSummaryAll}. This is beneficial, as in the next iteration both processes can send the same subresult to new participating processes, that are not the same.
+By doing this we can recursively build a scheme, such that in each iteration $i$ a set of $2^i$ processes have the same subresult. So this approach works ideally for $2^k$ numbers of participating processors. To get a better understanding an implementation as pseudocode is shown in algorithm \ref{algo:recursiveAlgo}.\\
 \begin{algorithm}
 	\caption{– Recursive Doubling Scheme\\
 	\textit{r}: rank Id\\
@@ -142,20 +148,90 @@ The recursive doubling scheme is an approach to get rid of the factor 2 appearin
 	\begin{algorithmic}[1]
 	\Ensure $p=2^k$ for some $k$
 	\Procedure{AllReduce}{$r, p, I, O$}
-		\For{(shift $\gets 1$, shift $\leq p$, shift $\gets 2\cdot$shift)}
+		\For{(shift $\gets 1$, shift $< p$, shift $\gets 2\cdot$shift)}
 		\State commNeigh $\gets r $ XOR shift \Comment{Find communication partner}
-		\State \Call{Send}{$I$, commNeigh} $||$ \Call{Recv}{$O$, commNeigh} \Comment{Send input vector, receive in output vector}
+		\State \Call{Send}{$I$, commNeigh} $||$ \Call{Recv}{$O$, commNeigh} \Comment{Send input, receive in output}
 		\State $I \gets I\oplus O$ \Comment{Perform local reduction}
 		\EndFor
 		\State $O \gets I$
 	\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
-As one can see, this works only for commutative reduction operators $\oplus$, as after each communication round the communication partner holds the same data, but this can easily be avoided by switching $I$ and $O$ for some processes (in some iterations) \cite{NonComAllred}. Such adaptations are not relevant for this thesis, as the union operator for sets is commutative. This holds true for both the sparse and dense representation of our sets.\\
-There are also adaptations to extend this algorithm to a number of processors $p$, that is not a power of 2. One simple 
+As one can see, this works only for commutative reduction operators $\oplus$, because after each communication round each processor and its communication partner hold the same data, but in switched locations.  This can easily be avoided by switching $I$ and $O$ for some processes (in some iterations) \cite{NonComAllred}. Such adaptations are not relevant for this thesis, as the union operator for sets is commutative. \\
+We can sketch a proof of correctness by induction. We want to show, that in each iteration $i$ blocks processes of size $2^i$ hold the reduction result of its block. E.g. in iteration $1$ process 0 and 1, 2 and 3, 4 and 5, $\dots$ should hold the same data. We can start the induction with $i=0$ and see, that each block is only the respective processes itself. Therefore each block holds a correct subresult in every process. Next we want to the induction step. We can see, that two blocks should be merged into one. Each processor communicates with a different processor from the neighboring block. The bitflip (XOR operation) of the $i$-th bit guarantees that. Therefore the processes receive all a correct subresult from the other block in the array $O$. Then the reduction operation $\oplus$ is applied between the current correct subresult of the own block and foreign correct subresult of the other block. Therefore the produced new subresult is also correct for all processes in the same block of size $2^{i+1}$.\\
+There are $i=\log_2(p)$ iterations done and therefore all $p$ processors hold the same correct result of the reduction.\\
+When estimating the execution time, we can see, that in each iteration a array of the whole size is send. So in each iteration we need $\alpha + \beta m$ time for communication and $\gamma m$ time for the local reduction. This setup is the same for each of the $\log_2(p)$ iterations so we get a total of
+\begin{align*}
+	T_\mathrm{recDoubling} = \log_2(p) \left( \alpha + \beta m + \gamma m \right).
+\end{align*}
+Comparing this to the estimate of the Broadcast+Gather variant (eq \ref{eq:BroadcastNaive}), we can see, that we lost a factor of 2 for the $\alpha$ term as well as for the $\beta$ term. But is here important to mention, that we assumed a hypercube interconnect setup, such that in each iteration each process has a direct connection to its communication partner. This was not necessarily needed in the algorithms explained in the section before.
 
-\subsection{Desimination Algorithm or "Rabenseifners" Algorithm}\label{sec:RabenseifnerAlgo}
+\subsection{Combining Reduce\_Scatter and Allgather using recursive Doubling}\label{sec:DisseminationAlgo}
+As an next idea we want to propose the combination of an Reduce\_Scatter with an Allgather to create an Allreduce. The goal here is to send less data on cost of introducing extra communication rounds. The communication pattern for both of the phases is here the same as in the algorithm proposed in section \ref{ReducePlusBroadcast}. The idea is to divide the vector into $p$ blocks and send in each iteration only half of the blocks, that were sent in the round before. The result of this is, that each process holds after this procedure a block of the correct reduced vector. In the second phase these blocks needed to get distributed to all the other processor. This is done in a similar fashion but in reverse.
 
-\subsection{Approximate Doubling Algorithm}
+\begin{algorithm}
+	\caption{– Reduce\_Scatter and Allgather\\
+		\textit{r}: rank Id\\
+		\textit{p}: number of processes\\
+		\text{I}: Input array\\
+		\textit{O}: Output array} \label{algo:redScatterAndAllreduce}
+\begin{algorithmic}[1]
+	\Ensure $p=2^k$ for some $k$
+	\Procedure{AllReduce}{$r, p, I, O$}
+	\For{(shift $\gets p/2$, shift $\geq 1$, shift $\gets$ shift/$2$)}
+	\Comment{ReduceScatter phase}
+		\State commNeigh $\gets r $ XOR shift \Comment{Find communication partner}
+		\State start $\gets $ (commNeigh/shift)*shift
+		\Comment{rounding down to next multiple of shift}
+		\State startR $\gets $ ($r$/shift)*shift
+		\State \Call{Send}{$I[start, \dots, start + shift]$, commNeigh} $||$ \Call{Recv}{$O$, commNeigh}
+		\\ \Comment{Send input, receive in output}
+		\State $I[startR, \dots, startR + shift] \gets I[startR, \dots, startR + shift]\oplus O$
+		\\ \Comment{Perform local reduction}
+	\EndFor
+	\For{(shift $\gets 1$, shift $< p$, shift $\gets 2\cdot$shift)}
+	\Comment{Allgather phase}
+		\State commNeigh $\gets r $ XOR shift 
+		\State start $\gets $ ($r$/shift)*shift
+		\State startR $\gets $ (commNeigh/shift)*shift
+		\State \Call{Send}{$I[start, \dots, start + shift]$, commNeigh} $||$
+		\State \Call{Recv}{$I[startR, \dots, startR + shift]$, commNeigh}
+	\EndFor
+	\State $O \gets I$
+	\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+In listing \ref{algo:redScatterAndAllreduce} we see the pseudocode implementation of this algorithm. We also can sketch a proof of correctness of this algorithm. With the same inductively induced argument before, we can assure that the first part performs an reduction, but only for one block. This block is the $r$-th one in the vector with $r$ being the rank ID of the processor. We then can then identify, that the same communication pattern is applied in reverse to distribute the blocks to all processors. Here the same inductive argument can be applied.\\
+For estimating the runtime of this algorithm, we can split it into the two phases. In the Reduce\_Scatter phase we send in each iteration \texttt{shift} blocks of data. Assuming the original vectors can be split equally, each block consists out of $m/p$ amount of data. On the same amount of data is also the reduction operator applied. There are $\log_2(p)$ iteration rounds and we can calculate \texttt{shift} as being $p\cdot 2^{-i}$, where $i$ the current iteration. We can calculate the runtime as being
+\begin{align}
+	T_\mathrm{ReduceScatter}
+	&= \sum_{i=1}^{\log_2(p)} \alpha + \beta p 2^{-i} \frac{m}{p} + \gamma p 2^{-i} \frac{m}{p} \nonumber\\
+	&= \sum_{i=1}^{\log_2(p)} \alpha + (\beta + \gamma) 2^{-i} m\nonumber \\
+	&=\log_2(p)\alpha + (\beta + \gamma) (1-2^{-\log_2(p)}) m\nonumber\\
+	&=\log_2(p)\alpha + (\beta + \gamma) \frac{p-1}{p}m. \label{eq:reduceScatter}
+\end{align}
+For calculating the execution of the Allgather phase nearly the same ansatz can be done. We have a different ordering of the summation terms (which doesn't influence the sum at all) and we can omit the $\gamma$ term. So Allgather time is with 
+\begin{align*}
+	T_\mathrm{Allgather}
+	&=\log_2(p)\alpha + \beta \frac{p-1}{p}m. 
+\end{align*}
+nearly the same as equation \ref{eq:reduceScatter}. So the total runtime can be estimated as being 
+\begin{align*}
+	T_\mathrm{Allreduce}
+	&=2\log_2(p)\alpha + (2\beta + \gamma) \frac{p-1}{p}m. 
+\end{align*}
+
 \subsection{Approximate Halfing Algorithm}
 \subsection{Ring Topology Algorithm}
+
+
+
+
+
+
+
+
+
+
+
