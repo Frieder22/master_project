@@ -165,10 +165,176 @@ When estimating the execution time, we can see, that in each iteration a array o
 \begin{align*}
 	T_\mathrm{recDoubling} = \log_2(p) \left( \alpha + \beta m + \gamma m \right).
 \end{align*}
-Comparing this to the estimate of the Broadcast+Gather variant (eq \ref{eq:BroadcastNaive}), we can see, that we lost a factor of 2 for the $\alpha$ term as well as for the $\beta$ term. But is here important to mention, that we assumed a hypercube interconnect setup, such that in each iteration each process has a direct connection to its communication partner. This was not necessarily needed in the algorithms explained in the section before.
+Comparing this to the estimate of the Broadcast+Gather variant (eq \ref{eq:BroadcastNaive}), we can see, that we lost a factor of 2 for the $\alpha$ term as well as for the $\beta$ term. One needs to keep in mind, that we assumed a hypercube interconnect setup, such that in each iteration each process has a direct connection to a different communication partner. This was not necessarily needed in the algorithms explained in the section before.\\
+
+Moreover it is important to mention, that this is not the only communication scheme, to achieve a data distribution in $\log_2(p)$ communication rounds. The communication scheme we presented here, is called Butterfly scheme \cite{ButterflyVSDoublingHalfing}. This scheme can be identified by the fact, that we receive data from the same process as we send to (i.e. in each iteration we only have one communication partner). This resulted in the recursive property, that a set of $2^i$ processors have in iteration $i$ the same data. Another approach is, that a process $r$ sends in iteration $i$ its data to process $((r+2^i)\mod{p})$. Obviously each process expects therefore to receive data from $((r-2^i)\mod{p})$. To implement this strategy we only have to adapt communication IDs in pseudocode \ref{algo:recursiveAlgo}. The rest of the algorithm keeps unchanged.\\
+In figure \ref{fig:communicationSchemes} we can see a visual comparison between both of these communication schemes. In the shift based approach, we can see, that a more regular tree pattern emerges. In fact, as we find our communication partners here with the same shifts in $\mod{p}$, one can argue, that each processor is the root of a tree with the exact same structure as the reference tree for $r=7$ shown in figure \ref{fig:shiftBased}. E.g. when looking at process $6$, we can put the nodes of process $7$ at the very front (while maintaining the arrow connections) and we would identify this new diagram as the exact same as the old one. The only difference in this new diagram would be, that the nodes of this new diagram are now labeled in order $7,0,1,2,3,4,5,6$. Therefore we can see now the exact same tree structure for process $6$ as we did for process $7$. This property simplifies now our sketch of proof for correctness. \\
+We want to show, that each node received the data from each other node. As we indicated before, it is now sufficient to only show this for node $7$. We again solve this inductively. We want to argue for this case, that each node holds in iteration $i$ the data of the $2^i$ nodes left from it. More precisely we mean the $2^i-1$ nodes left to it and the node itself. It iteration $0$ each process holds its own data so the induction start is trivially true. In each iteration we get data from process $\hat{r}=(r-2^{i-1})$. Using our induction condition process $\hat{r}$ holds the data from rank $\hat{r}-2^{i-1} = r-2^{i-1} - 2^{i-1} = r-2^i$ to $\hat{r}=(r-2^{i-1})$. The process $r$ itself already holds data from $(r-2^{i-1})$ to $r$. We can see that the upper bound from $\hat{r}$ matches the lower bound from $r$ and therefore, we can write, that after the send $r$ holds the data from $r-2^i$ to $r$. This is indeed the data from the $2^i$ processors left from $r$ (with our definition of "left from it"). So after $log_2(p)$ iterations process $7$ has the data from the $2^{\log_2(p)}=p$ processes left from it and therefore all data.\\ 
+As we also want to estimate the runtime using the linear cost model, we can see directly from the adapted pseudocode, that we expect the same run time as the Butterfly implementation. An important side note we want to mention here, is, that generalizations of the Butterfly scheme to a number of processes, that are not a power of two are not easily done. Here the shift/tree based approach is more suitable as we see later in this chapter.
+
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\tikzset{roundnode/.style={circle,draw=black!, thick, minimum size=7mm}}
+		\begin{tikzpicture}[ minimum size=5mm,
+			node distance=0.5cm and 0.1cm,
+			bend angle=45,
+			auto]
+			% Nodes
+			\node[roundnode]  (upper1) {0};
+			\node[roundnode]  (upper2) [right=of upper1] {1};
+			\node[roundnode]  (upper3) [right=of upper2] {2};
+			\node[roundnode]  (upper4) [right=of upper3] {3};
+			\node[roundnode]  (upper5) [right=of upper4] {4};
+			\node[roundnode]  (upper6) [right=of upper5] {5};
+			\node[roundnode]  (upper7) [right=of upper6] {6};
+			\node[roundnode]  (upper8) [right=of upper7] {7};
+			
+			
+			\node[roundnode, fill=blue!50]  (middle1) [below=of upper1]    {0};
+			\node[roundnode, fill=blue!50]  (middle2) [right=of middle1]   {1}; 
+			\node[roundnode, fill=yellow!50]  (middle3) [right=of middle2] {2};   
+			\node[roundnode, fill=yellow!50]  (middle4) [right=of middle3] {3};   
+			\node[roundnode, fill=red!50]  (middle5) [right=of middle4]    {4};
+			\node[roundnode, fill=red!50]  (middle6) [right=of middle5]    {5};
+			\node[roundnode, fill=black!50]  (middle7) [right=of middle6]  {6};  
+			\node[roundnode, fill=black!50]  (middle8) [right=of middle7]  {7};  
+			
+			\node[roundnode, fill=green!50]  (lower1) [below=of middle1]   {0};
+			\node[roundnode, fill=green!50]  (lower2) [right=of lower1]   {1};
+			\node[roundnode, fill=green!50]  (lower3) [right=of lower2]   {2};
+			\node[roundnode, fill=green!50]  (lower4) [right=of lower3]   {3};
+			\node[roundnode, fill=purple!50]  (lower5) [right=of lower4]   {4};
+			\node[roundnode, fill=purple!50]  (lower6) [right=of lower5]   {5};
+			\node[roundnode, fill=purple!50]  (lower7) [right=of lower6]   {6};
+			\node[roundnode, fill=purple!50]  (lower8) [right=of lower7]   {7};
+			
+			\node[roundnode, fill=brown!50]  (bottom1) [below=of lower1]  {0};
+			\node[roundnode, fill=brown!50]  (bottom2) [right=of bottom1] {1}; 
+			\node[roundnode, fill=brown!50]  (bottom3) [right=of bottom2] {2}; 
+			\node[roundnode, fill=brown!50]  (bottom4) [right=of bottom3] {3}; 
+			\node[roundnode, fill=brown!50]  (bottom5) [right=of bottom4] {4}; 
+			\node[roundnode, fill=brown!50]  (bottom6) [right=of bottom5] {5}; 
+			\node[roundnode, fill=brown!50]  (bottom7) [right=of bottom6] {6}; 
+			\node[roundnode, fill=brown!50]  (bottom8) [right=of bottom7] {7}; 
+			
+			% Arrows
+			\draw[-{Stealth[scale=1.5]}] (upper1.south)--(middle2.north);
+			\draw[-{Stealth[scale=1.5]}] (upper2.south)--(middle1.north);
+			\draw[-{Stealth[scale=1.5]}] (upper3.south)--(middle4.north);
+			\draw[-{Stealth[scale=1.5]}] (upper4.south)--(middle3.north);
+			\draw[-{Stealth[scale=1.5]}] (upper5.south)--(middle6.north);
+			\draw[-{Stealth[scale=1.5]}] (upper6.south)--(middle5.north);
+			\draw[-{Stealth[scale=1.5]}] (upper7.south)--(middle8.north);
+			\draw[-{Stealth[scale=1.5]}] (upper8.south)--(middle7.north);
+			
+			\draw[-{Stealth[scale=1.5]}] (middle1.south)--(lower3.north);
+			\draw[-{Stealth[scale=1.5]}] (middle3.south)--(lower1.north);
+			\draw[-{Stealth[scale=1.5]}] (middle2.south)--(lower4.north);
+			\draw[-{Stealth[scale=1.5]}] (middle4.south)--(lower2.north);
+			\draw[-{Stealth[scale=1.5]}] (middle5.south)--(lower7.north);
+			\draw[-{Stealth[scale=1.5]}] (middle7.south)--(lower5.north);
+			\draw[-{Stealth[scale=1.5]}] (middle6.south)--(lower8.north);
+			\draw[-{Stealth[scale=1.5]}] (middle8.south)--(lower6.north);
+			
+			\draw[-{Stealth[scale=1.5]}] (lower1.south)--(bottom5.north);
+			\draw[-{Stealth[scale=1.5]}] (lower2.south)--(bottom6.north);
+			\draw[-{Stealth[scale=1.5]}] (lower3.south)--(bottom7.north);
+			\draw[-{Stealth[scale=1.5]}] (lower4.south)--(bottom8.north);
+			\draw[-{Stealth[scale=1.5]}] (lower5.south)--(bottom1.north);
+			\draw[-{Stealth[scale=1.5]}] (lower6.south)--(bottom2.north);
+			\draw[-{Stealth[scale=1.5]}] (lower7.south)--(bottom3.north);
+			\draw[-{Stealth[scale=1.5]}] (lower8.south)--(bottom4.north);
+			
+		\end{tikzpicture}
+		\label{fig:butterfly}
+		\caption{Butterfly}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\tikzset{roundnode/.style={circle,draw=black!, thick, minimum size=7mm}}
+		\begin{tikzpicture}[ minimum size=5mm,
+			node distance=0.5cm and 0.1cm,
+			bend angle=45,
+			auto]
+			% Nodes
+			\node[roundnode]  (upper1) {0};
+			\node[roundnode]  (upper2) [right=of upper1] {1};
+			\node[roundnode]  (upper3) [right=of upper2] {2};
+			\node[roundnode]  (upper4) [right=of upper3] {3};
+			\node[roundnode]  (upper5) [right=of upper4] {4};
+			\node[roundnode]  (upper6) [right=of upper5] {5};
+			\node[roundnode]  (upper7) [right=of upper6] {6};
+			\node[roundnode]  (upper8) [right=of upper7] {7};
+			
+			
+			\node[roundnode]  (middle1) [below=of upper1] {0};
+			\node[roundnode]  (middle2) [right=of middle1] {1};
+			\node[roundnode]  (middle3) [right=of middle2] {2};
+			\node[roundnode]  (middle4) [right=of middle3] {3};
+			\node[roundnode]  (middle5) [right=of middle4] {4};
+			\node[roundnode]  (middle6) [right=of middle5] {5};
+			\node[roundnode]  (middle7) [right=of middle6] {6};
+			\node[roundnode]  (middle8) [right=of middle7] {7};
+			
+			\node[roundnode]  (lower1) [below=of middle1] {0};
+			\node[roundnode]  (lower2) [right=of lower1] {1};
+			\node[roundnode]  (lower3) [right=of lower2] {2};
+			\node[roundnode]  (lower4) [right=of lower3] {3};
+			\node[roundnode]  (lower5) [right=of lower4] {4};
+			\node[roundnode]  (lower6) [right=of lower5] {5};
+			\node[roundnode]  (lower7) [right=of lower6] {6};
+			\node[roundnode]  (lower8) [right=of lower7] {7};
+			
+			\node[roundnode]  (bottom1) [below=of lower1]  {0};
+			\node[roundnode]  (bottom2) [right=of bottom1] {1}; 
+			\node[roundnode]  (bottom3) [right=of bottom2] {2}; 
+			\node[roundnode]  (bottom4) [right=of bottom3] {3}; 
+			\node[roundnode]  (bottom5) [right=of bottom4] {4}; 
+			\node[roundnode]  (bottom6) [right=of bottom5] {5}; 
+			\node[roundnode]  (bottom7) [right=of bottom6] {6}; 
+			\node[roundnode]  (bottom8) [right=of bottom7] {7}; 
+			
+			% Arrows
+			\draw[-{Stealth[scale=1.5]}, color=red, thick] (upper1.south)--(middle2.north);
+			\draw[-{Stealth[scale=1.5]}] (upper2.south)--(middle3.north);
+			\draw[-{Stealth[scale=1.5]}, color=red, thick] (upper3.south)--(middle4.north);
+			\draw[-{Stealth[scale=1.5]}] (upper4.south)--(middle5.north);
+			\draw[-{Stealth[scale=1.5]}, color=red, thick] (upper5.south)--(middle6.north);
+			\draw[-{Stealth[scale=1.5]}] (upper6.south)--(middle7.north);
+			\draw[-{Stealth[scale=1.5]}, color=red, thick] (upper7.south)--(middle8.north);
+			\draw[-{Stealth[scale=1.5]}] (upper8.south)--(middle1.north);
+			
+			\draw[-{Stealth[scale=1.5]}] (middle1.south)--(lower3.north);
+			\draw[-{Stealth[scale=1.5]}, color=red, thick] (middle2.south)--(lower4.north);
+			\draw[-{Stealth[scale=1.5]}] (middle3.south)--(lower5.north);
+			\draw[-{Stealth[scale=1.5]}] (middle4.south)--(lower6.north);
+			\draw[-{Stealth[scale=1.5]}] (middle5.south)--(lower7.north);
+			\draw[-{Stealth[scale=1.5]}, color=red, thick] (middle6.south)--(lower8.north);
+			\draw[-{Stealth[scale=1.5]}] (middle7.south)--(lower1.north);
+			\draw[-{Stealth[scale=1.5]}] (middle8.south)--(lower2.north);
+			
+			\draw[-{Stealth[scale=1.5]}] (lower1.south)--(bottom5.north);
+			\draw[-{Stealth[scale=1.5]}] (lower2.south)--(bottom6.north);
+			\draw[-{Stealth[scale=1.5]}] (lower3.south)--(bottom7.north);
+			\draw[-{Stealth[scale=1.5]}, color=red, thick] (lower4.south)--(bottom8.north);
+			\draw[-{Stealth[scale=1.5]}] (lower5.south)--(bottom1.north);
+			\draw[-{Stealth[scale=1.5]}] (lower6.south)--(bottom2.north);
+			\draw[-{Stealth[scale=1.5]}] (lower7.south)--(bottom3.north);
+			\draw[-{Stealth[scale=1.5]}] (lower8.south)--(bottom4.north);
+			
+		\end{tikzpicture}
+		\caption{Shift based}
+		\label{fig:shiftBased}
+	\end{subfigure}
+	\caption{Example comparison of communication schemes for $p=8$ processes. Each row represents the iteration $i$, the nodes represent the processors $r$ and the arrows visualize the corresponding communication. The colors for the Butterfly scheme indicate, which processors hold the same data. In the shift based variant the tree structure for process $r=7$ is visualized using red arrows.}
+	\label{fig:communicationSchemes}
+\end{figure}
+
 
 \subsection{Combining Reduce\_Scatter and Allgather using recursive Doubling}\label{sec:DisseminationAlgo}
-As an next idea we want to propose the combination of an Reduce\_Scatter with an Allgather to create an Allreduce. The goal here is to send less data on cost of introducing extra communication rounds. The communication pattern for both of the phases is here the same as in the algorithm proposed in section \ref{ReducePlusBroadcast}. The idea is to divide the vector into $p$ blocks and send in each iteration only half of the blocks, that were sent in the round before. The result of this is, that each process holds after this procedure a block of the correct reduced vector. In the second phase these blocks needed to get distributed to all the other processor. This is done in a similar fashion but in reverse.
+As an next idea we want to propose the combination of an Reduce\_Scatter with an Allgather to create an Allreduce. The goal here is to send less data on cost of introducing extra communication rounds. As an general communication pattern, we also want to use the Butterfly pattern from section \ref{ReducePlusBroadcast}. The new idea here is to divide the vector into $p$ blocks and send in each iteration only half of the blocks, that were sent in the round before. The result of this is, that each process holds after this procedure only a block of the correct reduced vector. In the second phase these blocks needed to get distributed to all the other processor. This is done in a similar fashion but in reverse.
 
 \begin{algorithm}
 	\caption{– Reduce\_Scatter and Allgather\\
@@ -223,8 +389,11 @@ nearly the same as equation \ref{eq:reduceScatter}. So the total runtime can be 
 	&=2\log_2(p)\alpha + (2\beta + \gamma) \frac{p-1}{p}m. 
 \end{align*}
 
+
+
 \subsection{Approximate Halfing Algorithm}
 \subsection{Ring Topology Algorithm}
+
 
 \section{Important Allgather\_v Implementations}
 

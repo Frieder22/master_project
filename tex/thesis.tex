@@ -24,13 +24,6 @@
 	\Subject{Thesis}                                        % The document's subject in the document properties.
 \end{filecontents*}
 
-
-% include preamble
-\input{preamble.tex}
-
-% include defined acronyms
-%\input{acronyms.tex}
-
 % Load packages to allow in- and output of non-ASCII characters.
 \usepackage{lmodern}        % Use an extension of the original Computer Modern font to minimize the use of bitmapped letters.
 \usepackage[T1]{fontenc}    % Determines font encoding of the output. Font packages have to be included before this line.
@@ -52,6 +45,9 @@
 \usepackage{morewrites} % Increases the number of external files that can be used.
 \usepackage[a-2b,mathxmp]{pdfx}      % Enables PDF/A compliance. Loads the package hyperref and has to be included second to last.
 \usepackage[acronym,toc]{glossaries} % Enables the generation of glossaries and lists of acronyms. This package has to be included last.
+
+% include own preamble
+\input{preamble.tex}
 
 % Set PDF document properties
 \hypersetup{
