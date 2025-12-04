@@ -4,7 +4,7 @@
 
 \newacronym{bfs}{BFS}{Breath First Search}
 \chapter{Introduction and Related Work}
-Here we want to give you an insight on what this thesis is build on. We want to give an description of what this thesis wants to achieve and what the motivation is for this project. In the later sections we then want to introduce and explain concepts, that are relevant for understanding the basis of this thesis.\\
+Here we want to give an insight on what this thesis is build on. We want to give an description of what this thesis wants to achieve and what the motivation is for this project. In the later sections we then want to introduce and explain concepts, that are relevant for understanding the basis of this thesis.\\
 The core idea of this thesis is, to optimize the set union operation of distributed subsets. The original motivation behind this is to make a implementation of a distributed \gls{bfs} algorithm faster. So we want to give a quick introduction, how this \gls{bfs} algorithm is build.
 \section{BFS on distributed memory machines}
 Breath First Search is a well-known algorithm \cite{standardBFS}, that explores a graph from a starting node (root node) by iteratively finding the neighborhood of the current explored region.
@@ -334,7 +334,146 @@ As we also want to estimate the runtime using the linear cost model, we can see 
 
 
 \subsection{Combining Reduce\_Scatter and Allgather using recursive Doubling}\label{sec:DisseminationAlgo}
-As an next idea we want to propose the combination of an Reduce\_Scatter with an Allgather to create an Allreduce. The goal here is to send less data on cost of introducing extra communication rounds. As an general communication pattern, we also want to use the Butterfly pattern from section \ref{ReducePlusBroadcast}. The new idea here is to divide the vector into $p$ blocks and send in each iteration only half of the blocks, that were sent in the round before. The result of this is, that each process holds after this procedure only a block of the correct reduced vector. In the second phase these blocks needed to get distributed to all the other processor. This is done in a similar fashion but in reverse.
+As next idea we want to propose the combination of a Reduce\_Scatter with an Allgather to create an Allreduce. The goal here is to send less data on the cost of introducing extra communication rounds. As a general communication pattern, we also want to use the Butterfly pattern from section \ref{ReducePlusBroadcast}. The new idea here is to divide the vector into $p$ blocks and send in each iteration only half of the blocks, that were sent in the round before. The result of this is, that each process holds after this procedure only a block of the correct reduced vector. This procedure is called a Reduce\_Scatter (in the MPI \cite{mpi} standard) and is the first phase of this algorithm. In the second phase these blocks needed to get distributed to all the other processors. This is done using the same communication pattern but in reverse.
+
+\begin{figure}
+	\centering
+	\tikzset{
+		hatch/.style args = {#1}{
+			pattern={Lines[distance=1mm, angle={#1}, line width=0.3mm]},
+			pattern color=black!60
+		}
+	}
+	\begin{tikzpicture}
+	%first diagramm
+	\draw [hatch=45] (0,0) rectangle (0.7,4);
+	\draw [hatch=-45] (1,0) rectangle (1.7,4);
+	\draw [hatch=0] (2,0) rectangle (2.7,4);
+	\draw [hatch=90] (3,0) rectangle (3.7,4);
+	
+	%second diagramm
+	\draw [hatch=45] 	(5,0) rectangle (5.7,4);
+	\draw [hatch=-45] 	(6,0) rectangle (6.7,4);
+	\draw [hatch=0] 	(7,0) rectangle (7.7,4);
+	\draw [hatch=90] 	(8,0) rectangle (8.7,4);
+	
+	\fill [hatch=-45] 	(5,2) rectangle (5.7,4);
+	\fill [hatch=45] 	(6,0) rectangle (6.7,2);
+	\fill [hatch=90] 	(7,2) rectangle (7.7,4);
+	\fill [hatch=0] 	(8,0) rectangle (8.7,2);
+	
+	%third diagramm
+
+	\draw [hatch=45] 	(10,0) rectangle (10.7,4);
+	\draw [hatch=-45] 	(11,0) rectangle (11.7,4);
+	\draw [hatch=0] 	(12,0) rectangle (12.7,4);
+	\draw [hatch=90] 	(13,0) rectangle (13.7,4);
+	
+	\fill [hatch=-45] 	(10,2) rectangle (10.7,4);
+	\fill [hatch=45] 	(11,0) rectangle (11.7,2);
+	\fill [hatch=90] 	(12,2) rectangle (12.7,4);
+	\fill [hatch=0] 	(13,0) rectangle (13.7,2);
+	
+	\fill [hatch=90] 	(10,3) rectangle (10.7,4);
+	\fill [hatch=0] 	(11,1) rectangle (11.7,2);
+	\fill [hatch=-45] 	(12,2) rectangle (12.7,3);
+	\fill [hatch=45] 	(13,0) rectangle (13.7,1);
+	
+	\fill [hatch=0] 	(10,3) rectangle (10.7,4);
+	\fill [hatch=90] 	(11,1) rectangle (11.7,2);
+	\fill [hatch=45] 	(12,2) rectangle (12.7,3);
+	\fill [hatch=-45] 	(13,0) rectangle (13.7,1);
+
+	\draw [color=cyan, very thick]	(10,3) rectangle (10.7,4);
+	\draw [color=cyan, very thick]	(11,1) rectangle (11.7,2);
+	\draw [color=cyan, very thick]	(12,2) rectangle (12.7,3);
+	\draw [color=cyan, very thick]	(13,0) rectangle (13.7,1);
+	
+	%arrows
+	\draw [-{Stealth[scale=1.5]}] (1.35,4.2) to [out=130, in=50] (0.35,4.2);
+	\draw [-{Stealth[scale=1.5]}] (3.35,4.2) to [out=130, in=50] (2.35,4.2);
+	\draw [-{Stealth[scale=1.5]}] (0.35,-0.2) to [out=-50, in=-130] (1.35,-0.2);
+	\draw [-{Stealth[scale=1.5]}] (2.35,-0.2) to [out=-50, in=-130] (3.35,-0.2);
+	
+	\draw [-{Stealth[scale=1.5]}] (7.35,4.2) to [out=130, in=50] (5.35,4.2);
+	\draw [-{Stealth[scale=1.5]}] (8.35,4.2) to [out=130, in=50] (6.35,4.2);
+	\draw [-{Stealth[scale=1.5]}] (5.35,-0.2) to [out=-50, in=-130] (7.35,-0.2);
+	\draw [-{Stealth[scale=1.5]}] (6.35,-0.2) to [out=-50, in=-130] (8.35,-0.2);
+	
+	
+	\end{tikzpicture}
+	\caption{}
+	\label{fig:1}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\tikzset{
+		hatch/.style args = {#1}{
+			pattern={Lines[distance=1mm, angle={#1}, line width=0.3mm]},
+			pattern color=black!60
+		}
+	}
+	\begin{tikzpicture}
+		%first diagramm
+		\draw [hatch=90] (0,0) rectangle (0.7,4);
+		\draw [hatch=-45] (1,0) rectangle (1.7,4);
+		\draw [hatch=0] (2,0) rectangle (2.7,4);
+		\draw [hatch=90] (3,0) rectangle (3.7,4);
+		
+		%second diagramm
+		\draw [hatch=45] 	(5,0) rectangle (5.7,4);
+		\draw [hatch=-45] 	(6,0) rectangle (6.7,4);
+		\draw [hatch=0] 	(7,0) rectangle (7.7,4);
+		\draw [hatch=90] 	(8,0) rectangle (8.7,4);
+		
+		\fill [hatch=0] 	(5,2) rectangle (5.7,4);
+		\fill [hatch=90] 	(6,2) rectangle (6.7,4);
+		\fill [hatch=45] 	(7,0) rectangle (7.7,2);
+		\fill [hatch=-45] 	(8,0) rectangle (8.7,2);
+		
+		%third diagramm
+		
+		\draw [hatch=45] 	(10,0) 	rectangle (10.7,4);
+		\draw [hatch=-45]	(11,0)  rectangle (11.7,4);
+		\draw [hatch=0] 	(12,0)	rectangle (12.7,4);
+		\draw [hatch=90] 	(13,0) 	rectangle (13.7,4);
+		
+		\fill [hatch=0] 	(10,2)	rectangle (10.7,4);
+		\fill [hatch=90] 	(11,2)	rectangle (11.7,4);
+		\fill [hatch=45] 	(12,0)	rectangle (12.7,2);
+		\fill [hatch=-45]	(13,0)	rectangle (13.7,2);
+		
+		\fill [hatch=-45] 	(10,3)	rectangle (10.7,4);
+		\fill [hatch=45] 	(11,2)	rectangle (11.7,3);
+		\fill [hatch=90] 	(12,1)	rectangle (12.7,2);
+		\fill [hatch=0]		(13,0)	rectangle (13.7,1);
+
+		\fill [hatch=90] 	(10,3)	rectangle (10.7,4);
+		\fill [hatch=0] 	(11,2)	rectangle (11.7,3);
+		\fill [hatch=-45] 	(12,1)	rectangle (12.7,2);
+		\fill [hatch=45]	(13,0)	rectangle (13.7,1);
+
+		\draw [color=cyan, very thick]	(10,3)	rectangle (10.7,4);
+		\draw [color=cyan, very thick]	(11,2)	rectangle (11.7,3);
+		\draw [color=cyan, very thick] 	(12,1)	rectangle (12.7,2);
+		\draw [color=cyan, very thick]	(13,0)	rectangle (13.7,1);
+		
+		% arrows
+		\draw [-{Stealth[scale=1.5]}] (2.35,4.2) to [out=130, in=50] (0.35,4.2);
+		\draw [-{Stealth[scale=1.5]}] (3.35,4.2) to [out=130, in=50] (1.35,4.2);
+		\draw [-{Stealth[scale=1.5]}] (0.35,-0.2) to [out=-50, in=-130] (2.35,-0.2);
+		\draw [-{Stealth[scale=1.5]}] (1.35,-0.2) to [out=-50, in=-130] (3.35,-0.2);
+		
+		\draw [-{Stealth[scale=1.5]}] (6.35,4.2) to [out=130, in=50] (5.35,4.2);
+		\draw [-{Stealth[scale=1.5]}] (8.35,4.2) to [out=130, in=50] (7.35,4.2);
+		\draw [-{Stealth[scale=1.5]}] (5.35,-0.2) to [out=-50, in=-130] (6.35,-0.2);
+		\draw [-{Stealth[scale=1.5]}] (7.35,-0.2) to [out=-50, in=-130] (8.35,-0.2);
+		
+	\end{tikzpicture}
+	\caption{}
+	\label{fig:}
+\end{figure}
 
 \begin{algorithm}
 	\caption{– Reduce\_Scatter and Allgather\\
