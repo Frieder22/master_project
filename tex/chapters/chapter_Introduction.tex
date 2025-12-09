@@ -4,11 +4,12 @@
 
 \newacronym{bfs}{BFS}{Breath First Search}
 \chapter{Introduction and Related Work}
-Here we want to give an insight on what this thesis is build on. We want to give an description of what this thesis wants to achieve and what the motivation is for this project. In the later sections we then want to introduce and explain concepts, that are relevant for understanding the basis of this thesis.\\
-The core idea of this thesis is, to optimize the set union operation of distributed subsets. The original motivation behind this is to make a implementation of a distributed \gls{bfs} algorithm faster. So we want to give a quick introduction, how this \gls{bfs} algorithm is build.
+Here we want to give an insight on what this thesis is build on. We want to give a description of what this thesis wants to achieve and what the motivation for it is. In the later sections we then want to introduce and explain concepts that are relevant for understanding the basis of this thesis.\\
+The core idea of this thesis is to optimize the set union operation of distributed subsets. The original motivation behind this is to make an implementation of a distributed \gls{bfs} algorithm probably faster. So we want to give a quick introduction how this \gls{bfs} algorithm is build.
 \section{BFS on distributed memory machines}
-Breath First Search is a well-known algorithm \cite{standardBFS}, that explores a graph from a starting node (root node) by iteratively finding the neighborhood of the current explored region.
-When having a graph $G(V, E)$ with a set of vertices $V$ and a set of edges $E$ connecting the vertices, the \gls{bfs} algorithm is described in procedure \ref{algo:BFSsequential}. Non-trivial syntax elements are described in section \ref{pseudocode}.
+Breath First Search is a well-known algorithm \cite{standardBFS} that explores a graph from a starting node (root node) by iteratively finding the neighborhood of the current explored region.
+Let $G(V, E)$ be a graph. $V$ is a set of vertices and $E$ a set of edges. Each edge $e\in E$ connects two vertices $v_i, v_j \in V$. We can therefor write each edge $e$ as a tuple $e=(v_i, v_j)$. The graph is called \emph{undirected}, if an edge $(v_i, v_j)$ also implies that $v_j$ is also connected to $v_i$, and \emph{directed}, if this is not the case.\\
+A straight forward sequential implementation of \gls{bfs} is presented in Procedure \ref{algo:BFSsequential}. Non-trivial syntax elements are described in section \ref{pseudocode}. In this implementation array \textbf{pred[]} represents the predecessor of 
 \begin{algorithm}
 	\caption{Sequential implementation of BFS\\
 	$n$: number of vertices\\
@@ -22,7 +23,7 @@ When having a graph $G(V, E)$ with a set of vertices $V$ and a set of edges $E$ 
 		\While{frontier\_old $\not = \emptyset$}
 			\State frontier\_new $\gets \emptyset$
 			\ForAll{v $\in$ frontier\_old}
-				\ForAll{neigh $\in$ \Call{getNeighbours}{$E$, $v$}}
+				\ForAll{neigh $\in$ \Call{getNeighbors}{$E$, $v$}}
 				\If{pred[neigh] $\not=-1$}
 					\State pred[neigh] $\gets$ v
 					\State \Call{addVert}{frontier\_new, neigh}
@@ -36,7 +37,7 @@ When having a graph $G(V, E)$ with a set of vertices $V$ and a set of edges $E$ 
 	\end{algorithmic}
 \end{algorithm}
 
-We also have to add a little description of $\Call{getNeighbours}{E, v}$. It's job is obviously to return the set of neighbors of the vertex $v$ with respect to the set of edges $E$. But this can differ, on what $G$ represent. If we have a directed graph $G$ and a list of edges $E$, where each edge $e$ consists out of a tuple $(v_i, v_j)$ where $v_i$ is the origin vertex and $v_j$ is the vertex the edge points to, it is easy to find neighbors of this vertex $v$. We simply check for all edges.
+We also have to add a little description of $\Call{getNeighbors}{E, v}$. It's job is obviously to return the set of neighbors of the vertex $v$ with respect to the set of edges $E$. But this can differ, on what $G$ represent. If we have a directed graph $G$ and a list of edges $E$, where each edge $e$ consists out of a tuple $(v_i, v_j)$ where $v_i$ is the origin vertex and $v_j$ is the vertex the edge points to, it is easy to find neighbors of this vertex $v$. We simply check for all edges.
 If the first element of the tuple is the vertex of interest $v$, we add the second entry of this tuple to the output list. As this done lots of time, we can improve this sub-procedure by sorting the edgelist by its first entry in advance and keep track, which indices of this sorted list correspond to which vertices.
 There also have to be some preparations done, if we want to represent an undirected graph. An easy and fast approach is to add the inverted edges (i.e. if $e=(v_i, v_j)\in E$ , then also add $\hat{e}=(v_j, v_i)$) to the edgelist.
 To maximize efficiency later in the \gls{bfs} execution one needs to be careful to avoid adding duplicates.\\
