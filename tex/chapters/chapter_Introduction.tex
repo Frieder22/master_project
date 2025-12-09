@@ -98,7 +98,7 @@ But there is still room for optimization possible. In each iteration of the \tex
 We can use here a sparse format to represent the same set of vertices on a smaller memory footprint. Therefore amount of sent data can also be reduced.
 Of course the function \Call{unionAll}{ } needs to be adapted to take care of dense and sparse representations. How this problem can be most efficiently solved is the key goal of this thesis.
 
-The union set operation using only bitmaps is quite straight forward. A global reduction operation performing a bitwise OR on such bitmaps is exactly equivalent to the union set operation. The MPI standard defines this global reduction in the function \Call{MPI\_Allreduce}{ } using the tag \texttt{MPI\_BOR} \cite{mpi}. We borrow this nomenclature for this thesis and describe collective reductions an \textit{Allreduce}. In the later sections of this chapter are the basics of how these Allreduce algorithms implemented described. They are the foundation of the proposed optimized \Call{unionAll}{ } procedure.
+The union set operation using only bitmaps is quite straight forward. A global reduction operation performing a bitwise OR on such bitmaps is exactly equivalent to the union set operation. The \gls{mpi} standard defines this global reduction in the function \Call{MPI\_Allreduce}{ } using the tag \texttt{MPI\_BOR} \cite{mpi}. We borrow this nomenclature for this thesis and describe collective reductions an \textit{Allreduce}. In the later sections of this chapter are the basics of how these Allreduce algorithms implemented described. They are the foundation of the proposed optimized \Call{unionAll}{ } procedure.
 
 \section{Pseudocode} \label{pseudocode}
 \todo{ describe pseudo code used in this thesis. Is this really necessary???}
@@ -129,7 +129,7 @@ can estimate the execution time to reduce a vector of size $m$ (in bytes) into a
 The Allreduce operation is intuitively a direct choice for our problem of calculation a set union. Abstractly speaking, we can split up our problem of calculating the union of all processes by finding the union between two sets (of two processors) and then use this subresult without ever looking at the two original sets anymore. So we can find the total union in a recursive fashion. Two nice other properties are apparent: It doesn't matter, in which order the subresults are calculated and combined, as the union operation is commutative. Another nice property is, that calculating the union is an idempotent operator. So even if we would use a subresult twice in our calculation, we still get a correct result. \\
 In this section we want to introduce a selection of Allreduce algorithms, that either are important to know or are the basis of the algorithms presented in this thesis. In general we look here only at non pipelined implementations. On the one hand we expect, that chunking up the message can destroy the benefit of using a sparse format, as a sparse message would need to 'compete' against smaller blocks. On the other hand a selection needed to be done, as not every variant could be considered as a base algorithm for our idea.
   
-\subsection{Reduce combined with a Broadcast} \label{ReducePlusBroadcast}
+\subsection{Reduce combined with a Broadcast} label{ReducePlusBroadcast}
 One of the most direct approaches to get a Allreduce, is by performing an Reduce to a chosen root node and after that distribute this result to all processes. As we don't look at pipelined algorithms, we can easily estimate the runtime complexity. A naive approach \cite{AllreduceSummaryAll} is to create a communication pattern matching a binomial tree with the root node on top. This tree is used for the Reduce as well as for the Broadcast. During the Reduce phase all participating ranks send their array to their parents (of the binomial tree), where the reduce operation is executed. After $\log_2(p)$ iterations the reduction is complete and we perform the Broadcast in the same fashion, but in reverse. By estimating the complexity of the reduction with $T_\textrm{Red} = \log_2(p)(\alpha + m \beta + m \gamma) $ and for the broadcast $T_\textrm{Broad} = \log_2(p)(\alpha + m \beta) $, we get a total run time estimation of
 \begin{align}
 	T_\mathrm{Naive} = 2 \log(p) (\alpha + m \beta) + \log_2(p) \gamma. \label{eq:BroadcastNaive}
@@ -173,7 +173,7 @@ We want to show, that each node received the data from each other node. As we in
 As we also want to estimate the runtime using the linear cost model, we can see directly from the adapted pseudocode, that we expect the same run time as the Butterfly implementation. An important side note we want to mention here, is, that generalizations of the Butterfly scheme to a number of processes, that are not a power of two are not easily done. Here the shift/tree based approach is more suitable as we see later in this chapter.
 
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\tikzset{roundnode/.style={circle,draw=black!, thick, minimum size=7mm}}
@@ -334,7 +334,8 @@ As we also want to estimate the runtime using the linear cost model, we can see 
 
 
 \subsection{Combining Reduce\_Scatter and Allgather using recursive Doubling}\label{sec:DisseminationAlgo}
-As next idea we want to propose the combination of a Reduce\_Scatter with an Allgather to create an Allreduce. The goal here is to send less data on the cost of introducing extra communication rounds. As a general communication pattern, we also want to use the Butterfly pattern from section \ref{ReducePlusBroadcast}. The new idea here is to divide the vector into $p$ blocks and send in each iteration only half of the blocks, that were sent in the round before. The result of this is, that each process holds after this procedure only a block of the correct reduced vector. This procedure is called a Reduce\_Scatter (in the MPI \cite{mpi} standard) and is the first phase of this algorithm. In the second phase these blocks needed to get distributed to all the other processors. This is done using the same communication pattern but in reverse.
+A common idea to achieve an Allreduce is to combine of a Reduce\_Scatter with an Allgather \cite{combinationRedScatAndAllgatherRabenseifner, combinationRedScatAndAllgather2, AllreduceSummaryAll}. Here we also adapt the terminology of \textit{Reduce\_Scatter} and \textit{Allgather} from the \gls{mpi} \cite{mpi} standard. Motivation for this 'workaround' is to get faster implementation of Allreduce for large message sizes and using many processors. We show this theoretically later in this section and there is also good experimental evidence supporting this statement \cite{combinationRedScatAndAllgatherRabenseifner}. \\
+A Reduce\_Scatter (or partitioned Allreduce) is a collective operation where were each process performs a reduction on a block of its proposed vector. To be more precise:  
 
 \begin{figure}
 	\centering
