@@ -1,6 +1,6 @@
 build/
 research/pdfs/
-tex/*.aux
+tex/chapters/*.aux
 tex/*.log
 tex/*.gz
 tex/*.toc
