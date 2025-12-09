@@ -10,6 +10,7 @@ tex/*.blg
 tex/*.fdb_latexmk
 tex/*.fls
 tex/*.xmpi
+tex/*.aux
 tex/*.acn
 tex/*.acr
 tex/*.alg
