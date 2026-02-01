@@ -9,7 +9,8 @@ The core idea of this thesis is to optimize the set union operation of distribut
 \section{BFS on distributed memory machines}
 Breath First Search is a well-known algorithm \cite{standardBFS} that explores a graph from a starting node (root node) by iteratively finding the neighborhood of the current explored region.
 Let $G(V, E)$ be a graph. $V$ is a set of vertices and $E$ a set of edges. Each edge $e\in E$ connects two vertices $v_i, v_j \in V$. We can therefor write each edge $e$ as a tuple $e=(v_i, v_j)$. The graph is called \emph{undirected}, if an edge $(v_i, v_j)$ also implies that $v_j$ is also connected to $v_i$, and \emph{directed}, if this is not the case.\\
-A straight forward sequential implementation of \gls{bfs} is presented in Procedure \ref{algo:BFSsequential}. Non-trivial syntax elements are described in section \ref{pseudocode}. In this implementation array \textbf{pred[]} represents the predecessor of 
+A straight forward sequential implementation of \gls{bfs} is presented in Procedure \ref{algo:BFSsequential}. Non-trivial syntax elements are described in section \ref{pseudocode}. In this implementation we see that array \textbf{pred[]} represents the predecessor of each vertex of the calculated \gls{bfs} tree. It is initialized to $-1$ at every entry. This is done to mark vertices that are not in the tree yet. This is done for two reasons. Firstly it is important for the procedure of the algorithm itself. In each iteration we want to add new unexplored vertices. So a simple check, if \textbf{preds[]} at the position of this vertex is set to $-1$, can assure that only new vertices are added. Secondly when the algorithm finishes not all vertices need to be part of the \gls{bfs} tree and have therefore no predecessor. This happens for disjoint graphs. Disjoint meaning here that there is at least one pair of vertices for which there is no path connecting these two vertices. 
+The roles of \textbf{frontier\_old} and \textbf{frontier\_new} are straight forward. The first one contains the vertices that are added in the last iteration and the later one is getting filled in the current iteration with the newly explored vertices. After each iteration the old frontier is then updated to the currently new frontier.
 \begin{algorithm}
 	\caption{Sequential implementation of BFS\\
 	$n$: number of vertices\\
@@ -37,20 +38,73 @@ A straight forward sequential implementation of \gls{bfs} is presented in Proced
 	\end{algorithmic}
 \end{algorithm}
 
-We also have to add a little description of $\Call{getNeighbors}{E, v}$. It's job is obviously to return the set of neighbors of the vertex $v$ with respect to the set of edges $E$. But this can differ, on what $G$ represent. If we have a directed graph $G$ and a list of edges $E$, where each edge $e$ consists out of a tuple $(v_i, v_j)$ where $v_i$ is the origin vertex and $v_j$ is the vertex the edge points to, it is easy to find neighbors of this vertex $v$. We simply check for all edges.
+We also have to give a little description of $\Call{getNeighbors}{E, v}$. It's job is obviously to return the set of neighbors of the vertex $v$ with respect to the set of edges $E$. But this can differ, on what $G$ represent. If we have a directed graph $G$ and a list of edges $E$, where each edge $e$ is described as tuple $(v_i, v_j)$ where $v_i$ is the origin vertex and $v_j$ is the vertex the edge points to, it is easy to find neighbors of this vertex $v$. We simply check for all edges.
 If the first element of the tuple is the vertex of interest $v$, we add the second entry of this tuple to the output list. As this done lots of time, we can improve this sub-procedure by sorting the edgelist by its first entry in advance and keep track, which indices of this sorted list correspond to which vertices.
-There also have to be some preparations done, if we want to represent an undirected graph. An easy and fast approach is to add the inverted edges (i.e. if $e=(v_i, v_j)\in E$ , then also add $\hat{e}=(v_j, v_i)$) to the edgelist.
+There also have to be some preparations done, if we want to represent an undirected graph. An easy and fast approach is to add the inverted edges (i.e. ,if $e=(v_i, v_j)\in E$ , then also add $\hat{e}=(v_j, v_i)$) to the edgelist.
 To maximize efficiency later in the \gls{bfs} execution one needs to be careful to avoid adding duplicates.\\
-We only look here in the base version of \gls{bfs} and therefore the return value of this algorithm is only the array \texttt{preds[]}. It contains the predecessor (or also called parent) of each vertex in \gls{bfs} tree. This variant is chosen as a challenge in one of the biggest data intensive benchmarks \cite{graph500}, but in real world applications there can be also some computations done after each exploration iteration. 
+We only look here at the base version of \gls{bfs} and therefore the returned value of this algorithm is only the array \textbf{preds[]}. It contains the predecessor (or also called parent) of each vertex in \gls{bfs} tree. Here it is also important to mention that such an \gls{bfs} tree is in general not unique. In each iteration there are usually at least two vertices in the old frontier that have the same vertex as neighbor. So which ever of these two vertices gets processed first is chosen as the predecessor of the new vertex. Of corse when using identical data structures filled in the same fashion the sequential procedure still brings consistent results as the same vertices always get chosen first, but this does not have to be the case.\\
+This basic variant of \gls{bfs} is chosen as a challenge in one of the biggest data intensive benchmarks \cite{graph500}. One still have to keep in mind that in real world applications there can be also some computations done after each exploration iteration. 
 
-When adapting this sequential implementation to be parallelized on a distributed memory machine, there are many different approaches. There are different ideas how to partition and distribute on the different processes. For example the edges of the graph can also be written as an adjacency matrix. This adjacency matrix can then be partitioned in to rows (1D-partitioning) or in blocks (2D-partitioning).
-So basically each process only maintains a subset of vertices for outgoing edges (1D-case) and/or even only a subset of vertices for ingoing edges (2D-case) \cite{graphPartitioning}. Both have their own (dis-)advantages. There are also ideas in adapting the algorithm itself.
-One attempt is, instead of finding the neighbors of the current frontier, one can also iterate over the vertices, that don't have an predecessor set and look, if they have a neighbor in the frontier.
+When adapting this sequential implementation to be parallelized on a distributed memory machine, there are many different approaches. One strategy is called (1D/2D) graph partitioning \cite{graphPartitioning}. For this is firstly the representation of graphs as adjacency matrices important. An adjacency matrix $A$ is a square matrix of dimension $(n\times n)$, where $n$ is the number of vertices of the graph it is representing. The rule to set the entries is rather simple. Entry $a_{ij}$ of $A$ is set to $1$, if vertex $v_i$ is connected to $v_j$ and set to $0$ otherwise. A trivial, but interesting side note is that undirected graphs produce a symmetric adjacency matrix. An example is given in Figure \ref{fig:adjacencyExample}.\\
+\begin{figure}
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+	\centering
+	\tikzset{roundnode/.style={circle,draw=black!, thick, minimum size=7mm}}
+	\begin{tikzpicture}[ minimum size=5mm,
+		node distance=1cm and 1cm,
+		bend angle=45,
+		auto]
+		\node[roundnode]  (1) {1};
+		\node[roundnode]  (2) [right=of 1] {2};
+		\node[roundnode]  (3) [below=of 1] {3};
+		\node[roundnode]  (4) [right=of 3] {4};
+		\node[roundnode]  (5) at (3 , -0.75) {5};
+		
+		\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (1)--(2);		\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (2)--(3);		\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (2)--(4);		\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (3)--(4);		\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (5)--(4);
+	\end{tikzpicture}
+	\caption{Example graph.}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+	\begin{align*}
+	A=
+	\begin{bNiceMatrix}[r, margin=3mm]
+		\Block[draw]{3-3}{}
+		0 & 1 & 0 &
+		\Block[draw]{3-2}{}
+		0 & 0 \\
+		1 & 0 & 1 & 1 & 0 \\
+		0 & 1 & 0 & 1 & 0 \\
+		\Block[draw]{2-3}{}
+		0 & 1 & 1 &
+		\Block[draw]{2-2}{}
+		0 & 1 \\
+		0 & 0 & 0 & 1 & 0 
+	\end{bNiceMatrix}
+	\end{align*}
+	\caption{Example adjacency matrix.}
+	\label{adjacencyMatrix}
+	\end{subfigure}
+	
+	\caption{Example of undirected graph and its corresponding adjacency matrix $A$. For the adjacency matrix is a possible 2D-partitioning for $p=4$ processes drawn in.}
+	\label{fig:adjacencyExample}
+\end{figure}
+For a 1D partitioning the rows of such a adjacency matrix $A$ are distributed to the processors. This means that each process only holds a few rows of $A$ and has during the \gls{bfs} only the responsibility to find neighbors of vertices that correspond to the columns it holds. This submatrix is usually saved in a sparse format, which is equivalent to the setup of an edgelist which is sorted by its first entries. The procedure for the \gls{bfs} is done again iteratively. The challenge is here that the processes have to communicate the newly added vertices i.e. its subset of the new frontier. When the frontier is represented as a bitmap this can be done by an \emph{Reduce\_Scatter} (nomenclature according to MPI\cite{mpi}) using a bitwise OR. This procedure guarantees a union set operation over all frontier subsets from the different processes and distributes this set again back to the processes. The distribution is done in a way such that the total frontier is split up to the processes that actually handle the corresponding vertices. An explanation how such a Reduce\_Scatter works is given in Section \ref{sec:DisseminationAlgo}.
+Another major difference is the handling of \textbf{preds[]}. During the actual calculation of the \gls{bfs} tree the predecessors are saved locally. Actually each process holds only an array of \emph{potential} predecessors. This is, because two processes can find for the same vertex in the same iteration different predecessors. As mentioned before a \gls{bfs} tree is not unique and this is a direct consequence of it. So after the calculation of the tree one needs to decide for each vertex to predecessor. This can be done at random or simply by choosing the maximum value. Taking the maximum value introduces obviously a heavy bias to having high (in the sense of vertex labeling) predecessors, but this is fine if the goal is just a correct \gls{bfs} tree. As an important side note we want to mention here that taking the minimum for each vertex as the chosen predecessor is not possible. We marked unconnected/unexplored vertices with $-1$ in the predecessor which results in errors for all vertices that are not explored by all processes at the same time.\\
+The local handling of \textbf{pred[]} brings another challenge. One can not use it anymore to check, if we already have explored a vertex in older iterations. Either another helping set is introduced or visited vertices are set to $-2$. In both ways there must be an update performed using the reduced frontier of the last iteration to keep track of the already visited vertices. The rest of the algorithm structure is the same as in the sequential version.\\ 
+In the 2D partition a little bit more complexity is introduced. Here the adjacency matrix is not only divided into sets of rows, but also in the vertical direction. This results in each process takes hold of a block of the adjacency matrix similar to the example shown in Figure \ref{adjacencyMatrix}. 
+
+
+\todo{Adapt partitioning description to edge centered partition. Don't eplain the same stuff twice.}
+
+
+There are also ideas in adapting the iteration step itself.
+One attempt is, instead of finding the neighbors of the current frontier, one can also iterate over the vertices that are not already explored yet and look, if they have a neighbor in the frontier.
 This can be advantageous, if the frontier is quite big and the set of left over vertices relatively small \cite{bottomUp}. 
 
-But we focus here only on one (relatively simple) setting. We partition the graph by dividing the edgelist in equally size chunks and distribute them on the different processes.
-A good argument for this partitioning compared to the before mentioned 1D- or 2D-partitioning is, that we want to avoid iterations, were some processes don't have any (or way less) work to do.
-In our edge-centric partitioning we have in and outgoing edges for every vertex and can therefore expect a better load balance in each iteration. The given algorithm doesn't change much and is described in algorithm \ref{algo:BFSparallel}.
+But we focus here only on one (relatively simple) setting. We partition the graph by dividing the edgelist in equally sized chunks and distribute them on the different processes.
+A good argument for this partitioning compared to the before mentioned 1D- or 2D-partitioning is that we want to avoid iterations where some processes do not have any (or way less) work to do.
+In our edge-centric partitioning we have in and outgoing edges for every vertex and can therefore expect a better load balance in each iteration. The given algorithm does not change much and is described in Procedure \ref{algo:BFSparallel}.
 
 \begin{algorithm} [h]
 	\caption{Our parallel implementation of BFS\\
@@ -89,58 +143,56 @@ In our edge-centric partitioning we have in and outgoing edges for every vertex 
 	\end{algorithmic}
 \end{algorithm}
 
-The main changes here are, that we now divide the edges to the different processes, switch to another set structure \texttt{visited} and use the function \Call{unionAll}{ } to get a set union over all distributed subsets lying on the different processes. There is also another communication round added at the end of the procedure to unify the \texttt{pred} array.
-Before this each process calculated a predecessor for each vertex of the graph (or left the corresponding entry set to $-1$). The call of \Call{allReduce}{pred, MAX} returns the maximum value for each entry of \texttt{pred}. This guarantees, that the same predecessor for each entry is chosen in each process and the entry is left at $-1$, if no process has found a predecessor. \\
-The switch to using extra set \texttt{visited} is done to save the total amount of communication. We need some way to tell the other processes, which vertices are already visited, but the information, which the explicit predecessor for each vertex is chosen is obsolete in the \texttt{while}-loop.
-A general idea here is to represent the frontier sets as bitmaps, where each entry is either set to 1, if a vertex is selected to be in the set, or set to 0 otherwise.
-This safes a lot of space, when comparing it to an integer representation, where every positive number represents a selected vertex and a $-1$ stands for a non-selected one.
-One needs to keep in mind, that in a bitmap, we need only one bit of memory for each vertex and an (large scale usable) integer would need 32 bits.
-But there is still room for optimization possible. In each iteration of the \texttt{while}-loop we communicate the whole bitmap to the other process. But in the first iterations not a lot of the vertices are expected to be in the frontier. So most of the bitmap is set to zero.
+The main changes here are that we now divide the edges to the different processes, switch to another set structure \textbf{visited} and use the function \Call{unionAll}{ } to get a set union over all distributed subsets lying on the different processes. There is also another communication round added at the end of the procedure to unify the \textbf{pred} array.
+Before this each process calculated a predecessor for each vertex of the graph (or left the corresponding entry set to $-1$). The call of \Call{allReduce}{pred, MAX} returns the maximum value for each entry of \textbf{pred}. This guarantees that the same predecessor for each entry is chosen in each process and the entry is left at $-1$, if no process has found a predecessor. \\
+The switch to using extra set \textbf{visited} is done to save the total amount of communication. We need some way to tell the other processes, which vertices are already visited, but the information, which the explicit predecessor for each vertex is chosen is obsolete in the \textbf{while}-loop.
+A general idea here is to represent the frontier sets as bitmaps where each entry is either set to 1, if a vertex is selected to be in the set, or set to 0 otherwise.
+This safes a lot of space when comparing it to an integer representation where every positive number represents a selected vertex and a $-1$ stands for a non-selected one.
+One needs to keep in mind that for a bitmap we need only one bit of memory for each vertex and an (large scale usable) integer would need 32 bits.
+But there is still room for optimization possible. In each iteration of the \textbf{while}-loop we communicate the whole bitmap to the other process. But in the first iterations not a lot of the vertices are expected to be in the frontier. So most of the bitmap is set to zero.
 We can use here a sparse format to represent the same set of vertices on a smaller memory footprint. Therefore amount of sent data can also be reduced.
 Of course the function \Call{unionAll}{ } needs to be adapted to take care of dense and sparse representations. How this problem can be most efficiently solved is the key goal of this thesis.
 
-The union set operation using only bitmaps is quite straight forward. A global reduction operation performing a bitwise OR on such bitmaps is exactly equivalent to the union set operation. The MPI standard defines this global reduction in the function \Call{MPI\_Allreduce}{ } using the tag \texttt{MPI\_BOR} \cite{mpi}. We borrow this nomenclature for this thesis and describe collective reductions an \textit{Allreduce}. In the later sections of this chapter are the basics of how these Allreduce algorithms implemented described. They are the foundation of the proposed optimized \Call{unionAll}{ } procedure.
+The union set operation using only bitmaps is quite straight forward. A global reduction operation performing a bitwise OR on such bitmaps is exactly equivalent to the union set operation. The MPI standard defines this global reduction in the function \Call{MPI\_Allreduce}{ } using the tag \textbf{MPI\_BOR} \cite{mpi}. We borrow this nomenclature for this thesis and describe collective reductions as \textit{Allreduce}. In the later sections of this chapter are the basics of how these Allreduce algorithms implemented described. They are the foundation of the proposed optimized \Call{unionAll}{} procedure.
 
 \section{Pseudocode} \label{pseudocode}
 \todo{ describe pseudo code used in this thesis. Is this really necessary???}
 
 \section{Cost Model} \label{costModel}
-In this section we want to give a introduction on how to estimate runtimes for point to point communication and collective operations. As a starting point we motivate the LogP model \cite{LogP}. The idea of this model is to find an upper bound for the time, that is needed to send (rather small) messages from one processor to another. This is done by splitting the time in different components, that one can estimate by it's own. The $L$ stands for the latency, i.e. that's an upper bound of the time a message takes in the interconnect of the network to get from one processor to another. The $o$ represents the overhead a process takes to prepare the messages and is also assumed for the receiving process to make the data accessible. $g$ stands for the gap, the sending processor needs to send the next message. $P$ is here simply the number of processors. As an example when sending $k$ messages from one thread to another one, we can identify the different contributing parts and add the times together. The sending thread starts to send the fist message. Therefore one overhead $o$ is needed. Until the next message can be send the gap $g$ has to pass. So for the last message being send, it takes $(k-1)g$  amount of time. This last message enters the receiving process at least after the latency $L$ and takes another overhead $o$ to be ready for the receiving process. So in total we have an estimated time
+In this section we want to give a introduction on how to estimate runtimes for point to point communication and collective operations. As a starting point we motivate the LogP model \cite{LogP}. The idea of this model is to find an upper bound for the time that is needed to send (rather small) messages from one processor to another. This is done by splitting the time in different components that one can estimate by its own. The $L$ stands for the latency i.e. it is an upper bound of the time a message takes in the interconnect of the network to get from one processor to another. The $o$ represents the overhead a process takes to prepare the messages and is also assumed for the receiving process to make the data accessible. $g$ stands for the gap a sending processor needs to send the next message. $P$ is here simply the number of processors. As an example when sending $k$ messages from one thread to another one we can identify the different contributing parts and add the times together. The sending thread starts to send the fist message. Therefore one overhead $o$ is needed. Until the next message can be send the gap $g$ has to pass. So for the last message being send it takes $(k-1)g$  amount of time. This last message enters the receiving process at least after the latency $L$ and takes another overhead $o$ to be ready for the receiving process. So in total we have an estimated time
 \begin{align*}
 	T_\textrm{LogP}(k) = 2 o + (k-1)g + L.
 \end{align*}
-This model can be extended to the LogGP model \cite{LogGP}. Here we considering also the sending of larger messages. The model is extended by the parameter $G$. It represents the gap that a sending process needs to send the next byte of the same message. So if we take the same example again and want to estimate it using the LogGP model, we have to add a term, that accounts for time each message takes to leave the sending processor. We assume each message has the same length $m$ for this example. So to send the second byte of a message, it takes $G$ amount of time. For $m$ bytes this sums up to $(m-1)G$. This is done for each of the $k$ messages. So the total missing term is $k(m-1)G$ and we can write the estimate of the LogGP model as
+This model can be extended to the LogGP model \cite{LogGP}. Here we considering also the sending of larger messages. The model is extended by the parameter $G$. It represents the gap that a sending process needs to send the next byte of the same message. So if we take the same example again and want to estimate it using the LogGP model, we have to add a term that accounts for time each message takes to leave the sending processor. We assume each message has the same length $m$ for this example. So to send the second byte of a message it takes $G$ units of time. For $m$ bytes this sums up to $(m-1)G$. This is done for each of the $k$ messages. So the total missing term is $k(m-1)G$ and we can write the estimate of the LogGP model as
 \begin{align*}
 	T_\textrm{LogGP}(k,m) = 2 o + (k-1)g  + k(m-1)G + L .
 \end{align*}
-In general  we can't use the same parameter (i.e. $o, g, G, L$) for each pair of processors. In a distributed memory machine, which consists out of nodes, that are connected by some form of network, we can expect, that communication between the processors, that are physically at the same node, is faster than to processors that only can be reached by the interconnect. That means, that for these pairs we expect at least a lower latency $L$ and a higher bandwidth, which reduces the parameter $G$.
-We simplify these models and assume a homogeneous network. This is of course a statement, that mostly never is reality, but it helps finding closed forms for estimated runtimes. Moreover in this thesis we take a look and adapt round based collective communication. Here one can argue, that for each round the execution time is dominated by the slowest pair of processors. Since this connection can be assumed as always the same, the argument of only using one set of parameters is nevertheless acceptable. \\
-The round based structure of the considered algorithms further enables us to do a simplification. The LogP and LogGP model show their strength in estimating communication, that partially overlaps or in the case, that some processes participate more often in communication than others do. A good example would be a Broadcast on an unbalanced binary tree \cite{LogP}. As we expect our algorithms to use all processors in each communication round, we can introduce the linear cost model as an sufficient estimator of execution time. In this model, we reduce all the factors into two new parameter $\alpha$ and $\beta$. So we can estimate each communication round as
+In general we do not have direct access to the used parameter (i.e. $o, g, G, L$). These either have to be measured or the model can be assumed constant and used to compare two communication procedures against each other qualitatively. The strength of these cost models (LogP and LogGP) lies in the modeling of overlapping asymmetric communication procedures. Asymmetric meaning here that there are in general no points in the execution where all processes send or receive same amount of data. A good example would be a Broadcast on an unbalanced binary tree \cite{LogP}. In this thesis on the other hand we mostly consider and adapt round based collective communication. In such round based algorithms all processes take part in each iteration sending and receiving approximately the same amount of data. The round based structure of the considered algorithms enables us to do a simplification of the cost model. We can introduce the linear cost model as an sufficient estimator of execution time. In this model, we reduce all the factors into two new parameter $\alpha$ and $\beta$. So we can estimate each communication round as
 \begin{align}
 	T_\mathrm{linear}(m) = \alpha + \beta m. \label{eq:linearCostModel}
 \end{align}
-When considering the LogGP model for only one message, we could identify $\alpha=2o + L - G$ and $\beta = G$. To make the estimation from equation \ref{eq:linearCostModel} work, we need to impose another two assumptions about the machine the algorithms are executed on. The first one is, that the interconnect is one-ported. This means, we can only send at most one message at once. The other condition is, that the network is bidirectional, meaning a two threads can send each other messages at the same time \cite{BroadcastWorkOpt}.\\
-In this thesis reduce algorithms are considered. So there is not only the execution time of communication relevant. A considerable amount of data is also processed (in the sense of applying the reduction operator on received/stored data), which execution time we also want to model in a linear fashion. Typically the reduction operator is applied on each element of a received vector. This also holds in the applications for this thesis. By introducing a new parameter $\gamma$, the linear model
+When considering the LogGP model for only one message, we could identify $\alpha=2o + L - G$ and $\beta = G$. To make the estimation from Equation \ref{eq:linearCostModel} work we need to impose another two assumptions about the machine the algorithms are executed on. The first one is that the interconnect is one-ported. This means we can only send at most one message at once. The other condition is that the network is bidirectional. In a bidirectional network two processes can send each other messages at the same time \cite{BroadcastWorkOpt}. There are also small adaptations to this linear cost model possible. For instance we can assume that the communication between two processors sitting on the same compute node is faster than communication between two processors that have to use the interconnect to talk to each other. This can affect the latency $\alpha$ as well as the effective bandwidth $\beta$. Therefore $\alpha_n$ and $\beta_n$ can be introduced to model different (possibly faster) latency and effective bandwidth for inter nodal communication.\\
+Another extension of the linear cost model can also consider computation that is done during communication rounds. For example in an reduction algorithm two arrays need to be combined into one using a reduction rule. This is normally done in each iteration and also costs time. Typically the reduction operator is applied on each element of a received vector, so we can estimate this computation time to be linearly proportional to the received message size. By introducing a new parameter $\gamma$, the linear model
 \begin{align*}
 	T_\mathrm{reduce} = \gamma m
 \end{align*}
 can estimate the execution time to reduce a vector of size $m$ (in bytes) into another one. The parameter $\gamma$ is here dependent on the reduction operator (and of course on the machine it is executed on). With this we can model execution times of the algorithms proposed in the next sections.
 
 \section{Important Allreduce Implementations}
-The Allreduce operation is intuitively a direct choice for our problem of calculation a set union. Abstractly speaking, we can split up our problem of calculating the union of all processes by finding the union between two sets (of two processors) and then use this subresult without ever looking at the two original sets anymore. So we can find the total union in a recursive fashion. Two nice other properties are apparent: It doesn't matter, in which order the subresults are calculated and combined, as the union operation is commutative. Another nice property is, that calculating the union is an idempotent operator. So even if we would use a subresult twice in our calculation, we still get a correct result. \\
-In this section we want to introduce a selection of Allreduce algorithms, that either are important to know or are the basis of the algorithms presented in this thesis. In general we look here only at non pipelined implementations. On the one hand we expect, that chunking up the message can destroy the benefit of using a sparse format, as a sparse message would need to 'compete' against smaller blocks. On the other hand a selection needed to be done, as not every variant could be considered as a base algorithm for our idea.
+The Allreduce operation is intuitively a direct choice for our problem of calculation a set union. Abstractly speaking, we can split up our problem of calculating the union of all processes by finding the union between two sets (of two processors) and then use this subresult without ever looking at the two original sets anymore. So we can find the total union in a recursive fashion. Two nice other properties are apparent: It does not matter, in which order the subresults are calculated and combined, as the union operation is commutative. Another nice property is that calculating the union is an idempotent operator. So even if we would use a subresult twice in our calculation, we still get a correct result. \\
+In this section we want to introduce a selection of Allreduce algorithms that either are important to know or are the basis of the algorithms presented in this thesis. In general we look here only at non pipelined implementations. Pipelining is method where data is split into chunks to and sent one after another. The benefit is here that the receiving end can already process a part of the data so an performance increase can ve expected in some situations. The constraint to non pipelined implementations is done, because we expect that chunking up the message can destroy the benefit of using a sparse format as a sparse message would need to 'compete' against smaller blocks. On the other hand a selection needed to be done, as not every variant could be considered as a base algorithm for our idea.
   
 \subsection{Reduce combined with a Broadcast} \label{ReducePlusBroadcast}
-One of the most direct approaches to get a Allreduce, is by performing an Reduce to a chosen root node and after that distribute this result to all processes. As we don't look at pipelined algorithms, we can easily estimate the runtime complexity. A naive approach \cite{AllreduceSummaryAll} is to create a communication pattern matching a binomial tree with the root node on top. This tree is used for the Reduce as well as for the Broadcast. During the Reduce phase all participating ranks send their array to their parents (of the binomial tree), where the reduce operation is executed. After $\log_2(p)$ iterations the reduction is complete and we perform the Broadcast in the same fashion, but in reverse. By estimating the complexity of the reduction with $T_\textrm{Red} = \log_2(p)(\alpha + m \beta + m \gamma) $ and for the broadcast $T_\textrm{Broad} = \log_2(p)(\alpha + m \beta) $, we get a total run time estimation of
+One of the most direct approaches to get a Allreduce, is by performing a Reduce to a chosen root node and after that distribute this result to all processes. As we do not look at pipelined algorithms, we can easily estimate the runtime complexity. A naive approach \cite{AllreduceSummaryAll} is to create a communication pattern matching a binomial tree with the root node on top. This tree is used for the Reduce as well as for the Broadcast. During the Reduce phase all participating ranks send their array to their parents (of the binomial tree), where the reduce operation is executed. After $\log_2(p)$iterations the reduction is complete and we perform the Broadcast in the same fashion, but in reverse. By estimating the complexity of the reduction with $T_\textrm{Red} = \log_2(p)(\alpha + m \beta + m \gamma) $ and for the broadcast $T_\textrm{Broad} = \log_2(p)(\alpha + m \beta) $, we get a total run time estimation of
 \begin{align}
 	T_\mathrm{Naive} = 2 \log(p) (\alpha + m \beta) + \log_2(p) \gamma. \label{eq:BroadcastNaive}
 \end{align}
-This can be improved, especially for large message sizes. For the Broadcast there are \textit{work-optimal} implementations, that switch to optimized algorithms for larger messages. These algorithms bring down the $\beta$-term, which usually scale the effect of the message size $m$. Such \textit{work-optimal} algorithms bring the $\beta$-term from $\log(p)m$ down to $2 m \frac{p-1}{p}$ \cite{BroadcastWorkOpt, BroadcastAlgos}. This is of course only beneficial for a relatively large amount of processors $p$. There are also strategies, like pipelining the Broadcast or using trees with different degrees \cite{pipelinedBroadcast, karyTrees}. The same ideas can be also applied for the Reduction part. These implementations are of course especially useful, if the underlying structure of the computing machine is also build in a tree-like fashion.
+This can be improved, especially for large message sizes. For the Broadcast there are \textit{work-optimal} implementations that switch to optimized algorithms for larger messages. These algorithms bring down the $\beta$-term, which usually scale the effect of the message size $m$. Such \textit{work-optimal} algorithms bring the $\beta$-term from $\log(p)m$ down to $2 m \frac{p-1}{p}$ \cite{BroadcastWorkOpt, BroadcastAlgos}. This is of course only beneficial for a relatively large amount of processors $p$. There are also strategies, like pipelining the Broadcast or using trees with different degrees \cite{pipelinedBroadcast, karyTrees, traeff2025}. The same ideas can be also applied for the Reduction part. These implementations are of course especially useful, if the underlying structure of the computing machine is also build in a tree-like fashion.
 
 
 \subsection{Recursive Doubling Scheme} 
-The recursive doubling scheme is an approach to get rid of the factor 2 appearing in equation \ref{eq:BroadcastNaive} by getting every process in each iteration involved and tackling the problem in a divide-and-conquer fashion. The key observation of this algorithm is, that when two processes send a copy of their data vector to each other and both perform a local reduce combining their own data with the received vector, they both posses identical data \cite{AllreduceSummaryAll}. This is beneficial, as in the next iteration both processes can send the same subresult to new participating processes, that are not the same.
-By doing this we can recursively build a scheme, such that in each iteration $i$ a set of $2^i$ processes have the same subresult. So this approach works ideally for $2^k$ numbers of participating processors. To get a better understanding an implementation as pseudocode is shown in algorithm \ref{algo:recursiveAlgo}.\\
+The recursive doubling scheme is an approach to get rid of the factor 2 appearing in Equation \ref{eq:BroadcastNaive} by getting every process in each iteration involved and tackling the problem in a divide-and-conquer fashion. The key observation of this algorithm is that when two processes send a copy of their data vector to each other and both perform a local reduce combining their own data with the received vector they both posses identical data \cite{AllreduceSummaryAll}. This is beneficial, as in the next iteration both processes can send the same subresult to new participating processes that are not the same.
+By doing this we can recursively build a scheme, such that in each iteration $i$ a set of $2^i$ processes have the same subresult. So this approach works ideally for $2^k$ numbers of participating processors. To get a better understanding an implementation as pseudocode is shown in Algorithm \ref{algo:recursiveAlgo}.\\
 \begin{algorithm}
 	\caption{– Recursive Doubling Scheme\\
 	\textit{r}: rank Id\\
@@ -160,18 +212,17 @@ By doing this we can recursively build a scheme, such that in each iteration $i$
 	\end{algorithmic}
 \end{algorithm}
 As one can see, this works only for commutative reduction operators $\oplus$, because after each communication round each processor and its communication partner hold the same data, but in switched locations.  This can easily be avoided by switching $I$ and $O$ for some processes (in some iterations) \cite{NonComAllred}. Such adaptations are not relevant for this thesis, as the union operator for sets is commutative. \\
-We can sketch a proof of correctness by induction. We want to show, that in each iteration $i$ blocks processes of size $2^i$ hold the reduction result of its block. E.g. in iteration $1$ process 0 and 1, 2 and 3, 4 and 5, $\dots$ should hold the same data. We can start the induction with $i=0$ and see, that each block is only the respective processes itself. Therefore each block holds a correct subresult in every process. Next we want to the induction step. We can see, that two blocks should be merged into one. Each processor communicates with a different processor from the neighboring block. The bitflip (XOR operation) of the $i$-th bit guarantees that. Therefore the processes receive all a correct subresult from the other block in the array $O$. Then the reduction operation $\oplus$ is applied between the current correct subresult of the own block and foreign correct subresult of the other block. Therefore the produced new subresult is also correct for all processes in the same block of size $2^{i+1}$.\\
-There are $i=\log_2(p)$ iterations done and therefore all $p$ processors hold the same correct result of the reduction.\\
-When estimating the execution time, we can see, that in each iteration a array of the whole size is send. So in each iteration we need $\alpha + \beta m$ time for communication and $\gamma m$ time for the local reduction. This setup is the same for each of the $\log_2(p)$ iterations so we get a total of
+We can sketch a proof of correctness by induction. We want to show that in each iteration $i$ blocks processes of size $2^i$ hold the reduction result of its block. E.g. in iteration $1$ process 0 and 1, 2 and 3, 4 and 5, $\dots$ should hold the same data. We can start the induction with $i=0$ and see that each block is only the respective processes itself. Therefore each block holds a correct subresult in every process. Next we want to the induction step. We can see that two blocks should be merged into one. Each processor communicates with a different processor from the neighboring block. The bitflip (bitwise XOR operation) of the $i$-th bit guarantees that. Therefore the processes receive all a correct subresult from the other block in the array $O$. Then the reduction operation $\oplus$ is applied between the current correct subresult of the own block and foreign correct subresult of the other block. Therefore the produced new subresult is also correct for all processes in the same block of size $2^{i+1}$. There are $i=\log_2(p)$iterations done and therefore all $p$ processors hold the same correct result of the reduction.\\
+When estimating the execution time, we can see that in each iteration a array of the whole size is send. So in each iteration we need $\alpha + \beta m$ time for communication and $\gamma m$ time for the local reduction. This setup is the same for each of the $\log_2(p)$ iterations so we get a total of
 \begin{align*}
 	T_\mathrm{recDoubling} = \log_2(p) \left( \alpha + \beta m + \gamma m \right).
 \end{align*}
-Comparing this to the estimate of the Broadcast+Gather variant (eq \ref{eq:BroadcastNaive}), we can see, that we lost a factor of 2 for the $\alpha$ term as well as for the $\beta$ term. One needs to keep in mind, that we assumed a hypercube interconnect setup, such that in each iteration each process has a direct connection to a different communication partner. This was not necessarily needed in the algorithms explained in the section before.\\
-
-Moreover it is important to mention, that this is not the only communication scheme, to achieve a data distribution in $\log_2(p)$ communication rounds. The communication scheme we presented here, is called Butterfly scheme \cite{ButterflyVSDoublingHalfing}. This scheme can be identified by the fact, that we receive data from the same process as we send to (i.e. in each iteration we only have one communication partner). This resulted in the recursive property, that a set of $2^i$ processors have in iteration $i$ the same data. Another approach is, that a process $r$ sends in iteration $i$ its data to process $((r+2^i)\mod{p})$. Obviously each process expects therefore to receive data from $((r-2^i)\mod{p})$. To implement this strategy we only have to adapt communication IDs in pseudocode \ref{algo:recursiveAlgo}. The rest of the algorithm keeps unchanged.\\
-In figure \ref{fig:communicationSchemes} we can see a visual comparison between both of these communication schemes. In the shift based approach, we can see, that a more regular tree pattern emerges. In fact, as we find our communication partners here with the same shifts in $\mod{p}$, one can argue, that each processor is the root of a tree with the exact same structure as the reference tree for $r=7$ shown in figure \ref{fig:shiftBased}. E.g. when looking at process $6$, we can put the nodes of process $7$ at the very front (while maintaining the arrow connections) and we would identify this new diagram as the exact same as the old one. The only difference in this new diagram would be, that the nodes of this new diagram are now labeled in order $7,0,1,2,3,4,5,6$. Therefore we can see now the exact same tree structure for process $6$ as we did for process $7$. This property simplifies now our sketch of proof for correctness. \\
-We want to show, that each node received the data from each other node. As we indicated before, it is now sufficient to only show this for node $7$. We again solve this inductively. We want to argue for this case, that each node holds in iteration $i$ the data of the $2^i$ nodes left from it. More precisely we mean the $2^i-1$ nodes left to it and the node itself. It iteration $0$ each process holds its own data so the induction start is trivially true. In each iteration we get data from process $\hat{r}=(r-2^{i-1})$. Using our induction condition process $\hat{r}$ holds the data from rank $\hat{r}-2^{i-1} = r-2^{i-1} - 2^{i-1} = r-2^i$ to $\hat{r}=(r-2^{i-1})$. The process $r$ itself already holds data from $(r-2^{i-1})$ to $r$. We can see that the upper bound from $\hat{r}$ matches the lower bound from $r$ and therefore, we can write, that after the send $r$ holds the data from $r-2^i$ to $r$. This is indeed the data from the $2^i$ processors left from $r$ (with our definition of "left from it"). So after $log_2(p)$ iterations process $7$ has the data from the $2^{\log_2(p)}=p$ processes left from it and therefore all data.\\ 
-As we also want to estimate the runtime using the linear cost model, we can see directly from the adapted pseudocode, that we expect the same run time as the Butterfly implementation. An important side note we want to mention here, is, that generalizations of the Butterfly scheme to a number of processes, that are not a power of two are not easily done. Here the shift/tree based approach is more suitable as we see later in this chapter.
+Comparing this to the estimate of the Broadcast\&Gather variant (Equation \ref{eq:BroadcastNaive}), we can see that we lost a factor of 2 for the $\alpha$ term as well as for the $\beta$ term. One needs to keep in mind that we assumed a hypercube interconnect setup, such that in each iteration each process has a direct connection to a different communication partner. This was not necessarily needed in the algorithms explained in the section before.\\
+Moreover it is important to mention that this is not the only communication scheme to achieve a data distribution in $\log_2(p)$ communication rounds. The communication scheme we presented here is called Butterfly scheme \cite{ButterflyVSDoublingHalfing}. This scheme can be identified by the fact that we receive data from the same process as we send to (i.e. in each iteration we only have one communication partner). This resulted in the recursive property that a set of $2^i$ processors have in iteration $i$ the same data. In Figure \ref{fig:butterfly} we see a visual representation of the communication pattern. This scheme is also sometimes called Hypercube scheme as we could map the nodes on a $\log_2(p)$-dimensional hypercube where in iteration $i$ communication is done along dimension $i$. The representation as a hypercube allows us to explore a whole family of communication schemes. As a hypercube is symmetrical along each dimension one can not distinguish dimensions from each other. This means for operations that are only applied in one dimension it does not matter in which dimension they are performed. For our communication scheme this has the implication that we can switch the iterations in any arbitrary order as we like and still have correct reduce algorithm. So we can even to the communication pattern backwards. This is an important property we use later to show correctness of a proposed Reduce\_Scatter implementation in Section \ref{sec:DisseminationAlgo}.\\
+A different approach for a communication pattern is that each process $r$ sends in iteration $i$ its data to process $((r+2^i)\mod{p})$. Obviously each process expects therefore to receive data from $((r-2^i)\mod{p})$. To implement this strategy we only have to adapt communication IDs in Pseudocode \ref{algo:recursiveAlgo}. The rest of the algorithm keeps unchanged.\\
+In Figure \ref{fig:communicationSchemes} we can see a visual comparison between both of these communication schemes. In the shift based approach, we can see that a more regular tree pattern emerges. In fact, as we find our communication partners here with the same shifts viewed in $\mod{p}$, one can argue that each processor is the root of a tree with the exact same structure as the reference tree for $r=7$ shown in Figure \ref{fig:shiftBased}. E.g. when looking at process $6$, we can put the nodes of process $7$ at the very front (while maintaining the arrow connections) and we would identify this new diagram as the exact same as the old one. The only difference in this new diagram would be that the nodes of this new diagram are now labeled in order $7,0,1,2,3,4,5,6$. Therefore we can see now the exact same tree structure for process $6$ as we did for process $7$. This property simplifies now our sketch of proof for correctness. \\
+We want to show that each node received the data from each other node. As we indicated before, it is now sufficient to only show this for node $7$. We again solve this inductively. We want to argue for this case that each node holds in iteration $i$ the data of the $2^i$ nodes left from it. More precisely we mean the $2^i-1$ nodes left to it and the node itself. It iteration $0$ each process holds its own data so the induction start is trivially true. In each iteration we get data from process $\hat{r}=(r-2^{i-1})$. Using our induction condition process $\hat{r}$ holds the data from rank $\hat{r}-2^{i-1} = r-2^{i-1} - 2^{i-1} = r-2^i$ to $\hat{r}=(r-2^{i-1})$. The process $r$ itself already holds data from $(r-2^{i-1})$ to $r$. We can see that the upper bound from $\hat{r}$ matches the lower bound from $r$ and therefore, we can write that after the send $r$ holds the data from $r-2^i$ to $r$. This is indeed the data from the $2^i$ processors left from $r$ (with our definition of "left from it"). So after $log_2(p)$ iterations process $7$ has the data from $2^{\log_2(p)}=p$ processes left from it and therefore all data.\\
+As we also want to estimate the runtime using the linear cost model, we can see directly from the adapted pseudocode that we expect the same run time as the Butterfly implementation. An important side note we want to mention here is that generalizations of the Butterfly scheme to a number of processes that are not a power of two are not easily done. Here the shift/tree based approach is more suitable as we see later in this chapter.
 
 
 \begin{figure}
@@ -249,8 +300,8 @@ As we also want to estimate the runtime using the linear cost model, we can see 
 			\draw[-{Stealth[scale=1.5]}] (lower8.south)--(bottom4.north);
 			
 		\end{tikzpicture}
-		\label{fig:butterfly}
 		\caption{Butterfly}
+		\label{fig:butterfly}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
@@ -335,8 +386,161 @@ As we also want to estimate the runtime using the linear cost model, we can see 
 
 
 \subsection{Combining Reduce\_Scatter and Allgather using recursive Doubling}\label{sec:DisseminationAlgo}
-As next idea we want to propose the combination of a Reduce\_Scatter with an Allgather to create an Allreduce. The goal here is to send less data on the cost of introducing extra communication rounds. As a general communication pattern, we also want to use the Butterfly pattern from section \ref{ReducePlusBroadcast}. The new idea here is to divide the vector into $p$ blocks and send in each iteration only half of the blocks, that were sent in the round before. The result of this is, that each process holds after this procedure only a block of the correct reduced vector. This procedure is called a Reduce\_Scatter (in the MPI \cite{mpi} standard) and is the first phase of this algorithm. In the second phase these blocks needed to get distributed to all the other processors. This is done using the same communication pattern but in reverse.
-
+As next idea we want to propose the combination of a Reduce\_Scatter with an Allgather to create an Allreduce. The goal here is to send less data on the cost of introducing extra communication rounds. A Reduce\_scatter is a collective operation where in the beginning every process holds an array of size $m$. This array is split into $p$ blocks of roughly the size $m/p$. $p$ is here again the number of processors. The Reduce\_Scatter guarantees that after its execution process 1 holds the result of the total reduction of block 1, process 2 the total reduction of block 2 and so on. The Allgather is also a collective operation. Here the initial situation is that every process holds a block of data. The Allgather concatenates all data blocks from the different processes and makes them available to all of them. We can easily see that a execution of these procedures after each other (first the Reduce\_Scatter and after that the Allgather) results in an Allreduce. In the first step we get the correct reduced data, but distributed over all processes and in the second step these reduced blocks are concatenated together to build the complete reduced array \cite{optimizationsCollComm}. This looks like an unnecessary workaround, but we see later that this improves the expected execution time for long message sizes.\\
+So we firstly want to introduce here an algorithm implementing the Reduce\_Scatter. It is also based on the butterfly communication scheme proposed in the last Section (see Figure \ref{fig:butterfly} for visualization). Here firstly use the property that we can switch the communication pattern from each iteration with another iteration i.e. we do the reverse the order of communication partners which makes Algorithm \ref{algo:recursiveAlgo} still an valid reduction algorithm. This resulting procedure is then adapted to send in each iteration only some blocks of data. The pseudocode is shown in Procedure \ref{algo:reduceScatter}.
+\begin{algorithm}
+	\caption{– Butterfly Reduce\_Scatter\\
+		\textit{r}: rank Id\\
+		\textit{p}: number of processes\\
+		\text{I}: Input array\\
+		\textit{O}: Output array} \label{algo:reduceScatter}
+	\begin{algorithmic}[1]
+		\Ensure $p=2^k$ for some $k$
+		\Procedure{AllReduceScatter}{$r, p, I, O$}
+		\For{(shift $\gets p/2$, shift $\geq 1$, shift $\gets$ shift/$2$)}
+		\State commNeigh $\gets r $ XOR shift \Comment{Find communication partner}
+		\State start $\gets $ (commNeigh/shift)*shift
+		\Comment{rounding down to next multiple of shift}
+		\State startR $\gets $ ($r$/shift)*shift
+		\State \Call{Send}{$I$[start, $\dots$, start + shift], commNeigh} $||$ \Call{Recv}{$O$, commNeigh}
+		\\ \Comment{Send input, receive in output}
+		\State $I$[startR, $\dots$, startR + shift]$\gets$ I[startR, $\dots$, startR + shift] $\oplus~O$
+		\\ \Comment{Perform local reduction}
+		\EndFor
+		\State $O \gets I$
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+Here we see that in each iteration $i$ only \textbf{shift}=$p/2^{i}$ amount of blocks are sent. In line 4 and 5 the start blocks are calculated. \textbf{start} is calculated using $r$ and \textbf{startR} is calculated using the id of $r$s communication partner. This structure guarantees that blocks that are received from a processes communication partner are reduced on top of the same blocks the process holds in its buffer $I$. A visualization of an example is given in Figure \ref{fig:butterflyBigToSmall}.\\
+With this picture in mind we want to prove the correctness of this algorithm by induction. The setup is here that in iteration $i$ we can split the processes in groups of size $p/2^{i}$ and the data arrays in chunks of size $p/2^{i}$. The groups are assigned to the data chunks in an ordered fashion meaning data chunk 1 is assigned to group 1, data chunk 2 is assigned to  group 2 and so on. We now want to show for each iteration $i$ that when the data chunks from each processor group would be combined we would have a chunk of size $p/2^{i}$ of the reduced array.\\
+\begin{figure}
+	\centering
+	\tikzset{
+		hatch/.style args = {#1}{
+			pattern={Lines[distance=1mm, angle={#1}, line width=0.3mm]},
+			pattern color=black!60
+		}
+	}
+	\begin{tikzpicture}
+		%first diagramm
+		\draw [hatch=90] (0,0) rectangle (0.7,4);
+		\draw [hatch=-45] (1,0) rectangle (1.7,4);
+		\draw [hatch=0] (2,0) rectangle (2.7,4);
+		\draw [hatch=90] (3,0) rectangle (3.7,4);
+		
+		%second diagramm
+		\draw [hatch=45] 	(5,0) rectangle (5.7,4);
+		\draw [hatch=-45] 	(6,0) rectangle (6.7,4);
+		\draw [hatch=0] 	(7,0) rectangle (7.7,4);
+		\draw [hatch=90] 	(8,0) rectangle (8.7,4);
+		
+		\fill [hatch=0] 	(5,2) rectangle (5.7,4);
+		\fill [hatch=90] 	(6,2) rectangle (6.7,4);
+		\fill [hatch=45] 	(7,0) rectangle (7.7,2);
+		\fill [hatch=-45] 	(8,0) rectangle (8.7,2);
+		
+		%third diagramm
+		
+		\draw [hatch=45] 	(10,0) 	rectangle (10.7,4);
+		\draw [hatch=-45]	(11,0)  rectangle (11.7,4);
+		\draw [hatch=0] 	(12,0)	rectangle (12.7,4);
+		\draw [hatch=90] 	(13,0) 	rectangle (13.7,4);
+		
+		\fill [hatch=0] 	(10,2)	rectangle (10.7,4);
+		\fill [hatch=90] 	(11,2)	rectangle (11.7,4);
+		\fill [hatch=45] 	(12,0)	rectangle (12.7,2);
+		\fill [hatch=-45]	(13,0)	rectangle (13.7,2);
+		
+		\fill [hatch=-45] 	(10,3)	rectangle (10.7,4);
+		\fill [hatch=45] 	(11,2)	rectangle (11.7,3);
+		\fill [hatch=90] 	(12,1)	rectangle (12.7,2);
+		\fill [hatch=0]		(13,0)	rectangle (13.7,1);
+		
+		\fill [hatch=90] 	(10,3)	rectangle (10.7,4);
+		\fill [hatch=0] 	(11,2)	rectangle (11.7,3);
+		\fill [hatch=-45] 	(12,1)	rectangle (12.7,2);
+		\fill [hatch=45]	(13,0)	rectangle (13.7,1);
+		
+		\draw [color=red, very thick]	(0,4)	rectangle (3.7,0);
+		
+		\draw [color=red, very thick]	(5,4)	rectangle (6.7,2);
+		\draw [color=red, very thick]	(7,2)	rectangle (8.7,0);
+		
+		\draw [color=red, very thick]	(10,3)	rectangle (10.7,4);
+		\draw [color=red, very thick]	(11,2)	rectangle (11.7,3);
+		\draw [color=red, very thick] 	(12,1)	rectangle (12.7,2);
+		\draw [color=red, very thick]	(13,0)	rectangle (13.7,1);
+		
+		% arrows
+		\draw [-{Stealth[scale=1.5]}] (2.35,4.2) to [out=130, in=50] (0.35,4.2);
+		\draw [-{Stealth[scale=1.5]}] (3.35,4.2) to [out=130, in=50] (1.35,4.2);
+		\draw [-{Stealth[scale=1.5]}] (0.35,-0.2) to [out=-50, in=-130] (2.35,-0.2);
+		\draw [-{Stealth[scale=1.5]}] (1.35,-0.2) to [out=-50, in=-130] (3.35,-0.2);
+		
+		\draw [-{Stealth[scale=1.5]}] (6.35,4.2) to [out=130, in=50] (5.35,4.2);
+		\draw [-{Stealth[scale=1.5]}] (8.35,4.2) to [out=130, in=50] (7.35,4.2);
+		\draw [-{Stealth[scale=1.5]}] (5.35,-0.2) to [out=-50, in=-130] (6.35,-0.2);
+		\draw [-{Stealth[scale=1.5]}] (7.35,-0.2) to [out=-50, in=-130] (8.35,-0.2);
+		
+	\end{tikzpicture}
+	\caption{Visualization of the mode of operation of the Reduce\_Scatter algorithm that produces a regular pattern of reduced blocks (Algorithm \ref{algo:reduceScatter}). The example shows the execution for $p=4$ processors. There are the original state and the state after each of the two iterations depicted (from left to right). Each strip corresponds to an array of data each process holds. Reduction is visualized by overlaying the patterns of the different input data. Arrows indicate which process sends to which other process.\\
+	The red colored boxes indicate which areas need to be overlayed to get the total reduced data array. This is done to visualize the inductive idea in the proof of correctness.}
+	\label{fig:butterflyBigToSmall}
+\end{figure}
+We start the induction at $i=0$ and see that here is only on group involving all processors. The chunk size also includes all data blocks. So the statement trivially holds as the reduction of all complete data arrays is indeed part of the total reduced array. \\
+Suppose our induction hypothesis holds for $i$. Then we have process groups and data chunks of size $p/2^{i}$ that can be reduced to a part of correctly reduced array. W.l.o.g we look at the $k$-th group. Using $\textbf{shift}_i = p/2^{i} :=s_i$ the correctness property holds by assumption for process $(k-1)\cdot s_i$ up to $k\cdot s_i$ for the data blocks $(k-1)\cdot s_i$ up to $k\cdot s_i$. We can split this group in the middle into an left and right part. As $s_{i+1} = s_i/2$  and the communication partner is found using a bitwise OR of \textbf{shift} on $r$ we know that the left half of this group is going to communicate with the right one and vice versa. $\textbf{startR}_{i+1}$ is calculated by rounding down $r$ to the nearest multiple of $s_{i+1}$. As $s_{i+1} = s_i/2$ we can also split the data in the middle into a top and bottom part and we see, that the left part of the $k$-th group receives the top part and the right part receives the bottom part.
+The received data is then combined with the correct blocks in the buffers of each process. This results in two groups for the $k$-th group where the left group contains the top half containing all data for the correct reduced vector and the right group the bottom one. The new group sizes and chunk sizes are indeed half as big as before which matches the proposed size of $p/2^{i}$. As we could chose any $k$ this holds for all blocks. This proves our statement.\\
+When looking at the proven statement for the last iteration $i = \log_2(p)$, we recognize the group and data sizes as $p/2^{i} = p/2^{\log_2(p)} = 1$. This means each process holds only one chunk of data which is correctly reduced.\\
+After the algorithm of the Reduce\_Scatter and its correctness is showed the Allgather part is quite easy. We can simply reverse the algorithm and instead of combining the blocks we save it in the dedicated blocks of the processes buffers. In Procedure \ref{algo:redScatterAndAllreduce} we see the pseudocode of both phases combined.
+\begin{algorithm}
+	\caption{– Reduce\_Scatter and Allgather\\
+		\textit{r}: rank Id\\
+		\textit{p}: number of processes\\
+		\text{I}: Input array\\
+		\textit{O}: Output array} \label{algo:redScatterAndAllreduce}
+	\begin{algorithmic}[1]
+		\Ensure $p=2^k$ for some $k$
+		\Procedure{AllReduce}{$r, p, I, O$}
+		\For{(shift $\gets p/2$, shift $\geq 1$, shift $\gets$ shift/$2$)}
+		\Comment{ReduceScatter phase}
+		\State commNeigh $\gets r $ XOR shift
+		\State start $\gets $ (commNeigh/shift)*shift
+		\State startR $\gets $ ($r$/shift)*shift
+		\State \Call{Send}{$I$[start, $\dots$, start + shift], commNeigh} $||$ \Call{Recv}{$O$, commNeigh}
+		\State $I$[startR, $\dots$, startR + shift] $\gets$ I[startR, $\dots$, startR + shift] $\oplus~O$
+		\EndFor
+		\For{(shift $\gets 1$, shift $< p$, shift $\gets 2\cdot$shift)}
+		\Comment{Allgather phase}
+		\State commNeigh $\gets r $ XOR shift 
+		\State start $\gets $ ($r$/shift)*shift
+		\State startR $\gets $ (commNeigh/shift)*shift
+		\State \Call{Send}{$I$[start, $\dots$, start + shift], commNeigh} $||$
+		\State \Call{Recv}{$I$[startR, $\dots$, startR + shift], commNeigh}
+		\EndFor
+		\State $O \gets I$
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+In the Allgather phase \textbf{shift} starts now at $1$ and is doubled every iteration. Moreover the arithmetic to find the start block for the send is here swapped with the arithmetic of the start block for the receive. We do not need to perform a reduction here anymore so we can directly receive the data at the according blocks in $I$. It is no buffering in $O$ necessary. \\
+We want to propose a small possible optimization. In each iteration \textbf{shift} amount of blocks is send. We see that the communication partner is found by bit-flipping the rank id using \textbf{shift}. This means the absolute difference between the rank ID and the partners ID is exactly \textbf{shift} (as \textbf{shift} is always a power of 2). So in iterations where the largest amount of data is send the distance between the sending and receiving IDs is the biggest. We don't have an guarantee how ranks are actually mapped onto physical processors, but it still can be expected that rank IDs on the same node of a cluster are consecutive. So it would be beneficial, if the largest messages are sent between ranks that have a close rank ID. The algorithm gives an easy degree of freedom we can play with. The ranks labeling is just something MPI and the algorithm uses to distinguish the processes. We can relabel them as we like. The only condition on such a map is that it has to be a one-to-one correspondence (a bijective map). So every rank ID is mapped to an unique placeholder ID. This map $T_a$ should be bit-reversal where $a$ is the count of bits a binary number consists of. We can write 
+\begin{align*}
+	T_a: \tilde{R} &\rightarrow \tilde{R}\\
+	r &\mapsto rev_a(r) = b_0\cdot 2^{a-1} + \dots + b_{a-1} \cdot 2^{0},
+\end{align*}
+where $\tilde{R}$ is the set of rank IDs and $b_0 \dots b_{a-1}$ are the bits of $r$ when written in binary. To guarantee we map from $\tilde{R}$ to $\tilde{R}$ $a$ needs be the lowest number such that the highest rank ID can be represented. For our algorithm the highest thread ID is $p-1$ so $a=\log_2(p)$. Given $T_a$ can be represented as a reflection of the number $r$ in binary and projecting $r$ into its binary representation is bijective, we can identify $T_a$ obviously as a Bijection, too. When this map is applied to the algorithm, we need to switch $r$ with its bit reversed variant. 
+It is also important to map the input of $\Call{Send}$ and $\Call{Recv}$ back to the original rank IDs. For this the inverse $T_a^{-1}$ of our map is needed. We can directly see that in this case $T_a$ is also its own inverse. \\
+We showed that this mapping works fine for correctness, but the goal is to reduce the difference between sending and receiving IDs for the first iterations where the sent messages are large. When looking again at Procedure \ref{algo:redScatterAndAllreduce} and applying the rank permutation the communication partner of each rank is \textbf{commNeigh}. This needs to be transformed back to the original ID using $T_a$. \textbf{commNeigh} itself would be calculated by $T_a(r)\textrm{ XOR } \textbf{shift}$. So the true communication partner of $r$ is $T_a(T_a(r)\textrm{ XOR } \textbf{shift})$. We can calculate the absolute difference between a rank and its communication partner as
+\begin{align*}
+	|r - \textbf{commNeigh}| 
+	&= |r - T_a(T_a(r)\textrm{ XOR } \textbf{shift})|\\
+	&= |r- T_a(T_a(r)) \textrm{ XOR } T_a(\textbf{shift})|\\
+	&= |r - (r \textrm{ XOR } T_a(\textbf{shift}))|\\
+	&= T_a(\textbf{shift})\\
+	&= 2^i,
+\end{align*}
+where $i$ is again the iteration. So in the first iterations where the large messages are sent the communication partners are indeed closer to the ranks (when considering the IDs). \\
+In Figure \ref{fig:butterflySmallToBig} we can see the mode of operation of the Reduce\_Scatter phase in an example for $p=4$ processors visualized. We see that the distance to communication partners double every iteration. The resulting distribution of the reduced vector looks a bit messy, but is exactly for each rank $r$ the block at position $T_a(r)$. This is not a problem as the mapping of the ranks is obviously not only done in the Reduce\_Scatter phase, but also in the Allgather phase. \\
+As we see exactly a doubling of communication distance this could have another benefit for machines build out of nodes which each have a power of 2 number of processors. Suppose the rank IDs are set in a way such that rank ($0, \dots, p_n - 1$) are on node 1, rank ($p_n, \dots, 2p_n- 1$) are on node 2 and so on where $p_n$ is the number of processors per node. In this situation there would be in the first  $\log_2(p_n)$ iterations only communication in the nodes and no communication via the interconnect. So the largest messages are sent on ways where we expect the fastest communication.\\
 \begin{figure}
 	\centering
 	\tikzset{
@@ -385,10 +589,10 @@ As next idea we want to propose the combination of a Reduce\_Scatter with an All
 	\fill [hatch=45] 	(12,2) rectangle (12.7,3);
 	\fill [hatch=-45] 	(13,0) rectangle (13.7,1);
 
-	\draw [color=cyan, very thick]	(10,3) rectangle (10.7,4);
-	\draw [color=cyan, very thick]	(11,1) rectangle (11.7,2);
-	\draw [color=cyan, very thick]	(12,2) rectangle (12.7,3);
-	\draw [color=cyan, very thick]	(13,0) rectangle (13.7,1);
+	\draw [color=red, very thick]	(10,3) rectangle (10.7,4);
+	\draw [color=red, very thick]	(11,1) rectangle (11.7,2);
+	\draw [color=red, very thick]	(12,2) rectangle (12.7,3);
+	\draw [color=red, very thick]	(13,0) rectangle (13.7,1);
 	
 	%arrows
 	\draw [-{Stealth[scale=1.5]}] (1.35,4.2) to [out=130, in=50] (0.35,4.2);
@@ -403,114 +607,10 @@ As next idea we want to propose the combination of a Reduce\_Scatter with an All
 	
 	
 	\end{tikzpicture}
-	\caption{}
-	\label{fig:1}
+	\caption{Example of the Reduce\_Scatter phase of the adapted algorithm that uses communication to bit reversed communication partners for $p=4$ processors. The resulting blocks of the correctly reduced array marked in red are at position 0, 2, 1 and 3. These are the values when the bits of the corresponding ranks 0,1,2 and 4 are reversed.}
+	\label{fig:butterflySmallToBig}
 \end{figure}
-
-\begin{figure}
-	\centering
-	\tikzset{
-		hatch/.style args = {#1}{
-			pattern={Lines[distance=1mm, angle={#1}, line width=0.3mm]},
-			pattern color=black!60
-		}
-	}
-	\begin{tikzpicture}
-		%first diagramm
-		\draw [hatch=90] (0,0) rectangle (0.7,4);
-		\draw [hatch=-45] (1,0) rectangle (1.7,4);
-		\draw [hatch=0] (2,0) rectangle (2.7,4);
-		\draw [hatch=90] (3,0) rectangle (3.7,4);
-		
-		%second diagramm
-		\draw [hatch=45] 	(5,0) rectangle (5.7,4);
-		\draw [hatch=-45] 	(6,0) rectangle (6.7,4);
-		\draw [hatch=0] 	(7,0) rectangle (7.7,4);
-		\draw [hatch=90] 	(8,0) rectangle (8.7,4);
-		
-		\fill [hatch=0] 	(5,2) rectangle (5.7,4);
-		\fill [hatch=90] 	(6,2) rectangle (6.7,4);
-		\fill [hatch=45] 	(7,0) rectangle (7.7,2);
-		\fill [hatch=-45] 	(8,0) rectangle (8.7,2);
-		
-		%third diagramm
-		
-		\draw [hatch=45] 	(10,0) 	rectangle (10.7,4);
-		\draw [hatch=-45]	(11,0)  rectangle (11.7,4);
-		\draw [hatch=0] 	(12,0)	rectangle (12.7,4);
-		\draw [hatch=90] 	(13,0) 	rectangle (13.7,4);
-		
-		\fill [hatch=0] 	(10,2)	rectangle (10.7,4);
-		\fill [hatch=90] 	(11,2)	rectangle (11.7,4);
-		\fill [hatch=45] 	(12,0)	rectangle (12.7,2);
-		\fill [hatch=-45]	(13,0)	rectangle (13.7,2);
-		
-		\fill [hatch=-45] 	(10,3)	rectangle (10.7,4);
-		\fill [hatch=45] 	(11,2)	rectangle (11.7,3);
-		\fill [hatch=90] 	(12,1)	rectangle (12.7,2);
-		\fill [hatch=0]		(13,0)	rectangle (13.7,1);
-
-		\fill [hatch=90] 	(10,3)	rectangle (10.7,4);
-		\fill [hatch=0] 	(11,2)	rectangle (11.7,3);
-		\fill [hatch=-45] 	(12,1)	rectangle (12.7,2);
-		\fill [hatch=45]	(13,0)	rectangle (13.7,1);
-
-		\draw [color=cyan, very thick]	(10,3)	rectangle (10.7,4);
-		\draw [color=cyan, very thick]	(11,2)	rectangle (11.7,3);
-		\draw [color=cyan, very thick] 	(12,1)	rectangle (12.7,2);
-		\draw [color=cyan, very thick]	(13,0)	rectangle (13.7,1);
-		
-		% arrows
-		\draw [-{Stealth[scale=1.5]}] (2.35,4.2) to [out=130, in=50] (0.35,4.2);
-		\draw [-{Stealth[scale=1.5]}] (3.35,4.2) to [out=130, in=50] (1.35,4.2);
-		\draw [-{Stealth[scale=1.5]}] (0.35,-0.2) to [out=-50, in=-130] (2.35,-0.2);
-		\draw [-{Stealth[scale=1.5]}] (1.35,-0.2) to [out=-50, in=-130] (3.35,-0.2);
-		
-		\draw [-{Stealth[scale=1.5]}] (6.35,4.2) to [out=130, in=50] (5.35,4.2);
-		\draw [-{Stealth[scale=1.5]}] (8.35,4.2) to [out=130, in=50] (7.35,4.2);
-		\draw [-{Stealth[scale=1.5]}] (5.35,-0.2) to [out=-50, in=-130] (6.35,-0.2);
-		\draw [-{Stealth[scale=1.5]}] (7.35,-0.2) to [out=-50, in=-130] (8.35,-0.2);
-		
-	\end{tikzpicture}
-	\caption{}
-	\label{fig:}
-\end{figure}
-
-\begin{algorithm}
-	\caption{– Reduce\_Scatter and Allgather\\
-		\textit{r}: rank Id\\
-		\textit{p}: number of processes\\
-		\text{I}: Input array\\
-		\textit{O}: Output array} \label{algo:redScatterAndAllreduce}
-\begin{algorithmic}[1]
-	\Ensure $p=2^k$ for some $k$
-	\Procedure{AllReduce}{$r, p, I, O$}
-	\For{(shift $\gets p/2$, shift $\geq 1$, shift $\gets$ shift/$2$)}
-	\Comment{ReduceScatter phase}
-		\State commNeigh $\gets r $ XOR shift \Comment{Find communication partner}
-		\State start $\gets $ (commNeigh/shift)*shift
-		\Comment{rounding down to next multiple of shift}
-		\State startR $\gets $ ($r$/shift)*shift
-		\State \Call{Send}{$I[start, \dots, start + shift]$, commNeigh} $||$ \Call{Recv}{$O$, commNeigh}
-		\\ \Comment{Send input, receive in output}
-		\State $I[startR, \dots, startR + shift] \gets I[startR, \dots, startR + shift]\oplus O$
-		\\ \Comment{Perform local reduction}
-	\EndFor
-	\For{(shift $\gets 1$, shift $< p$, shift $\gets 2\cdot$shift)}
-	\Comment{Allgather phase}
-		\State commNeigh $\gets r $ XOR shift 
-		\State start $\gets $ ($r$/shift)*shift
-		\State startR $\gets $ (commNeigh/shift)*shift
-		\State \Call{Send}{$I[start, \dots, start + shift]$, commNeigh} $||$
-		\State \Call{Recv}{$I[startR, \dots, startR + shift]$, commNeigh}
-	\EndFor
-	\State $O \gets I$
-	\EndProcedure
-\end{algorithmic}
-\end{algorithm}
-
-In listing \ref{algo:redScatterAndAllreduce} we see the pseudocode implementation of this algorithm. We also can sketch a proof of correctness of this algorithm. With the same inductively induced argument before, we can assure that the first part performs an reduction, but only for one block. This block is the $r$-th one in the vector with $r$ being the rank ID of the processor. We then can then identify, that the same communication pattern is applied in reverse to distribute the blocks to all processors. Here the same inductive argument can be applied.\\
-For estimating the runtime of this algorithm, we can split it into the two phases. In the Reduce\_Scatter phase we send in each iteration \texttt{shift} blocks of data. Assuming the original vectors can be split equally, each block consists out of $m/p$ amount of data. On the same amount of data is also the reduction operator applied. There are $\log_2(p)$ iteration rounds and we can calculate \texttt{shift} as being $p\cdot 2^{-i}$, where $i$ the current iteration. We can calculate the runtime as being
+For estimating the runtime of this algorithm we again inspect the two phases. In the Reduce\_Scatter phase we send in each iteration \textbf{shift} blocks of data. Assuming the original vectors can be split equally, each block consists out of $m/p$ amount of data. On the same amount of data is also the reduction operator applied. There are $\log_2(p)$ iteration rounds and we can calculate \textbf{shift} as being $p\cdot 2^{-i}$, where $i$ the current  iteration. We can calculate the runtime as being
 \begin{align}
 	T_\mathrm{ReduceScatter}
 	&= \sum_{i=1}^{\log_2(p)} \alpha + \beta p 2^{-i} \frac{m}{p} + \gamma p 2^{-i} \frac{m}{p} \nonumber\\
@@ -518,17 +618,31 @@ For estimating the runtime of this algorithm, we can split it into the two phase
 	&=\log_2(p)\alpha + (\beta + \gamma) (1-2^{-\log_2(p)}) m\nonumber\\
 	&=\log_2(p)\alpha + (\beta + \gamma) \frac{p-1}{p}m. \label{eq:reduceScatter}
 \end{align}
-For calculating the execution of the Allgather phase nearly the same ansatz can be done. We have a different ordering of the summation terms (which doesn't influence the sum at all) and we can omit the $\gamma$ term. So Allgather time is with 
+For calculating the execution of the Allgather phase nearly the same ansatz can be done. We have a different ordering of the summation terms (which does not influence the sum at all) and we can omit the $\gamma$ term. So we model the execution time for the Allgather phase with 
 \begin{align*}
 	T_\mathrm{Allgather}
 	&=\log_2(p)\alpha + \beta \frac{p-1}{p}m. 
 \end{align*}
-nearly the same as equation \ref{eq:reduceScatter}. So the total runtime can be estimated as being 
+This is nearly the same as Equation \ref{eq:reduceScatter}. The total runtime can then be evaluated by summing over both contributions to being 
 \begin{align*}
 	T_\mathrm{Allreduce}
 	&=2\log_2(p)\alpha + (2\beta + \gamma) \frac{p-1}{p}m. 
 \end{align*}
-
+We can also do a little bit more fine-grained analysis. If we have the before proposed situation of consecutive rank distribution and there is a power of 2 processors per node $p_n$ setup, we can assume for some iterations a faster communication. When using for the first iterations $\alpha_n$ and $\beta_n$ for inter nodal communication we get a finer estimation of
+\begin{align*}
+	T_\mathrm{ReduceScatter}^\textrm{fine}
+	&= \sum_{i=1}^{\log_2(p_n)} \alpha_n + \beta_n p 2^{-i} \frac{m}{p} + \gamma p 2^{-i} 
+	+\sum_{i=\log_2(p_n)}^{\log_2(p)} \alpha + \beta p 2^{-i} \frac{m}{p} + \gamma p 2^{-i}\\
+	&=\log_2(p_n)\alpha_n + (\beta_n + \gamma) \frac{p_n-1}{p_n}m
+	+ \log_2(p-p_n)\alpha + (\beta + \gamma) \frac{p-p_n-1}{p-p_n}m.
+\end{align*}
+Again the run time of the Allgather can be expected to be the same as for the Reduce\_Scatter only omitting the computation term $\gamma$. So the fine estimation for this Allreduce variant is 
+\begin{align*}
+	T_\mathrm{Allreduce}^\mathrm{fine}
+	&=2\log_2(p_n)\alpha_n + (2\beta_n + \gamma) \frac{p_n-1}{p_n}m
+	 + 2\log_2(p-p_n)\alpha + (2\beta + \gamma) \frac{p-p_n-1}{p-p_n}m
+\end{align*}
+The whole structure is build on the fact that we have a number of processors that is a power of 2. The butterfly/hypercube pattern relies is by construction dependent on this. There are adaptations to extend this kind of algorithm to non powers of 2. One idea for example is that there are two extra communication rounds (one for Reduce\_Scatter phase and one for Allgather phase) used where some ranks exchange their whole data array with their partner. After such a extra round there should only be $2^n$ different data arrays with some of them appearing doubly on some processors. For the doubles only one of the processors participates at the algorithm and sends in the second extra round its data to its first partner \cite{optimizationsCollComm}. Another idea is to decompose the ranks into sets that have each a power of two. Here again overhead is produced each time two such sets need to get merged together \cite{optimizationsCollComm}. For non power of two number of threads the shift-based or also tree-based algorithms can be expected more flexible, natural and eventually perform better. Such an approach is shown in the next section.
 
 
 \subsection{Approximate Halfing Algorithm}

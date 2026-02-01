@@ -11,7 +11,6 @@ year={1992},
 publisher={Springer New York},
 address={New York, NY},
 pages={19--24},
-abstract={Depth-first search (DFS) and breadth-first search (BFS) are two of the most useful subroutines in graph algorithms. They allow one to search a graph in linear time and compile information about the graph. They differ in that the former uses a stack (LIFO) discipline and the latter uses a queue (FIFO) discipline to choose the next edge to explore.},
 isbn={978-1-4612-4400-4},
 doi={10.1007/978-1-4612-4400-4_4},
 url={https://doi.org/10.1007/978-1-4612-4400-4_4}
@@ -35,7 +34,6 @@ url={https://doi.org/10.1007/978-1-4612-4400-4_4}
 	address = {New York, NY, USA},
 	url = {https://doi.org/10.1145/2063384.2063471},
 	doi = {10.1145/2063384.2063471},
-	abstract = {Data-intensive, graph-based computations are pervasive in several scientific applications, and are known to to be quite challenging to implement on distributed memory systems. In this work, we explore the design space of parallel algorithms for Breadth-First Search (BFS), a key subroutine in several graph algorithms. We present two highly-tuned parallel approaches for BFS on large parallel systems: a level-synchronous strategy that relies on a simple vertex-based partitioning of the graph, and a two-dimensional sparse matrix partitioning-based approach that mitigates parallel communication overhead. For both approaches, we also present hybrid versions with intra-node multithreading. Our novel hybrid two-dimensional algorithm reduces communication times by up to a factor of 3.5, relative to a common vertex based approach. Our experimental study identifies execution regimes in which these approaches will be competitive, and we demonstrate extremely high performance on leading distributed-memory parallel systems. For instance, for a 40,000-core parallel execution on Hopper, an AMD Magny-Cours based system, we achieve a BFS performance rate of 17.8 billion edge visits per second on an undirected graph of 4.3 billion vertices and 68.7 billion edges with skewed degree distribution.},
 	booktitle = {Proceedings of 2011 International Conference for High Performance Computing, Networking, Storage and Analysis},
 	articleno = {65},
 	numpages = {12},
@@ -80,8 +78,6 @@ doi = {10.1145/2442516.2442530}
 	address = {New York, NY, USA},
 	url = {https://doi.org/10.1145/155332.155333},
 	doi = {10.1145/155332.155333},
-	abstract = {A vast body of theoretical research has focused either on overly simplistic models of parallel computation, notably the PRAM, or overly specific models that have few representatives in the real world. Both kinds of models encourage exploitation of formal loopholes, rather than rewarding development of techniques that yield performance across a range of current and future parallel machines. This paper offers a new parallel machine model, called LogP, that reflects the critical technology trends underlying parallel computers. it is intended to serve as a basis for developing fast, portable parallel algorithms and to offer guidelines to machine designers. Such a model must strike a balance between detail and simplicity in order to reveal important bottlenecks without making analysis of interesting problems intractable. The model is based on four parameters that specify abstractly the computing bandwidth, the communication bandwidth, the communication delay, and the efficiency of coupling communication and computation. Portable parallel algorithms typically adapt to the machine configuration, in terms of these parameters. The utility of the model is demonstrated through examples that are implemented on the CM-5.},
-	booktitle = {Proceedings of the Fourth ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming},
 	pages = {1–12},
 	numpages = {12},
 	keywords = {PRAM, complexity analysis, massively parallel processors, parallel algorithms, parallel models},
@@ -106,7 +102,6 @@ doi = {10.1145/2442516.2442530}
 	issn = {0362-1340},
 	url = {https://doi.org/10.1145/173284.155333},
 	doi = {10.1145/173284.155333},
-	abstract = {A vast body of theoretical research has focused either on overly simplistic models of parallel computation, notably the PRAM, or overly specific models that have few representatives in the real world. Both kinds of models encourage exploitation of formal loopholes, rather than rewarding development of techniques that yield performance across a range of current and future parallel machines. This paper offers a new parallel machine model, called LogP, that reflects the critical technology trends underlying parallel computers. it is intended to serve as a basis for developing fast, portable parallel algorithms and to offer guidelines to machine designers. Such a model must strike a balance between detail and simplicity in order to reveal important bottlenecks without making analysis of interesting problems intractable. The model is based on four parameters that specify abstractly the computing bandwidth, the communication bandwidth, the communication delay, and the efficiency of coupling communication and computation. Portable parallel algorithms typically adapt to the machine configuration, in terms of these parameters. The utility of the model is demonstrated through examples that are implemented on the CM-5.},
 	journal = {SIGPLAN Not.},
 	month = jul,
 	pages = {1–12},
@@ -126,7 +121,6 @@ doi = {10.1145/2442516.2442530}
 	doi = {https://doi.org/10.1006/jpdc.1997.1346},
 	url = {https://www.sciencedirect.com/science/article/pii/S0743731597913460},
 	author = {Albert Alexandrov and Mihai F. Ionescu and Klaus E. Schauser and Chris Scheiman},
-	abstract = {We present a new model of parallel computation—the LogGP model—and use it to analyze a number of algorithms, most notably, the single node scatter (one-to-all personalized broadcast). The LogGP model is an extension of the LogP model for parallel computation which abstracts the communication of fixed-sized short messages through the use of four parameters: the communication latency (L), overhead (o), bandwidth (g), and the number of processors (P). As evidenced by experimental data, the LogP model can accurately predict communication performance when only short messages are sent (as on the CM-5). However, many existing parallel machines have special support for long messages and achieve a much higher bandwidth for long messages than for short messages (e.g., IBM SP-2, Paragon, Meiko CS-2, Ncube/2). We extend the basic LogP model with a linear model for long messages. This combination, which we call the LogGP model of parallel computation, has one additional parameter,G, which captures the bandwidth obtained for long messages. Experimental data collected on the Meiko CS-2 shows that this simple extension of the LogP model can quite accurately predict communication performance for both short and long messages. This paper discusses algorithm design and analysis under the new model. We also examine, in more detail, the single node scatter problem under LogGP. We derive solutions for this problem which are qualitatively different from those obtained under the simpler LogP model, reflecting the importance of capturing long messages in a model.}
 }
 
 
@@ -165,7 +159,6 @@ doi = {10.1145/2442516.2442530}
 	publisher="Springer Berlin Heidelberg",
 	address="Berlin, Heidelberg",
 	pages="173--180",
-	abstract="In this note we give a simple bandwidth- and latency optimal algorithm for the problem of broadcasting m units of data from a distinguished root processor to all p--1 other processors in one-ported (hypercubic) message-passing systems. Assuming linear, uniform communication cost, the time for the broadcast to complete is O(m+log2p), more precisely no processor is involved in more than ⌈log2p⌉ communication operations (send, receive, and send-receive), and for any constant message size thresholdb each processor (except the root) sends at most m--b{\textasciiacutex}+( ⌈log2p⌉--ℓ)b{\textasciiacutex} units of data, where b{\textasciiacutex} is determined by the smallest ℓ≤ ⌈log2p⌉ such that b{\textasciiacutex}=m/2ℓ≤ b (the root sends 2m--b{\textasciiacutex}+( ⌈log2p⌉ --ℓ)b{\textasciiacutex} units of data). Non-root processors receive m units of data.",
 	isbn="978-3-540-30218-6"
 }
 
@@ -183,7 +176,6 @@ doi = {10.1145/2442516.2442530}
 	publisher="Springer Berlin Heidelberg",
 	address="Berlin, Heidelberg",
 	pages="257--267",
-	abstract="We report on our work on improving the performance of collective operations in MPICH on clusters connected by switched networks. For each collective operation, we use multiple algorithms depending on the message size, with the goal of minimizing latency for short messages and minimizing bandwidth usage for long messages. Although we have implemented new algorithms for all MPI collective operations, because of limited space we describe only the algorithms for allgather, broadcast, reduce-scatter, and reduce. We present performance results using the SKaMPI benchmark on a Myrinet-connected Linux cluster and an IBM SP. In all cases, the new algorithms significantly outperform the old algorithms used in MPICH on the Myrinet cluster, and, in many cases, they outperform the algorithms used in IBM's MPI on the SP.",
 	isbn="978-3-540-39924-7"
 }
 
@@ -234,6 +226,20 @@ doi = {10.1145/2442516.2442530}
 	doi = {10.1038/s41598-021-98794-z}
 }
 
+% description of different allreduce implementations
+@article{optimizationsCollComm,
+	author = {Rajeev Thakur and Rolf Rabenseifner and William Gropp},
+	title ={Optimization of Collective Communication Operations in MPICH},
+	journal = {The International Journal of High Performance Computing Applications},
+	volume = {19},
+	number = {1},
+	pages = {49-66},
+	year = {2005},
+	doi = {10.1177/1094342005051521},
+	URL = {https://doi.org/10.1177/1094342005051521},
+	eprint = {https://doi.org/10.1177/1094342005051521}
+}
+
 % reference of mpi standard
 @manual{mpi,
 	author = "{Message Passing Interface Forum}",
@@ -241,4 +247,15 @@ doi = {10.1145/2442516.2442530}
 	url    = "https://www.mpi-forum.org/docs/mpi-4.1/mpi41-report.pdf",
 	year   = 2023,
 	month  = nov
+}
+
+%Allreduce from Jesper 
+@misc{traeff2025,
+	title={Optimal, Non-pipelined Reduce-scatter and Allreduce Algorithms}, 
+	author={Jesper Larsson Tr{\"a}ff},
+	year={2025},
+	eprint={2410.14234},
+	archivePrefix={arXiv},
+	primaryClass={cs.DC},
+	url={https://arxiv.org/abs/2410.14234}, 
 }
