@@ -9,7 +9,7 @@ The core idea of this thesis is to optimize the set union operation of distribut
 \section{BFS on distributed memory machines}
 Breath First Search is a well-known algorithm \cite{standardBFS} that explores a graph from a starting node (root node) by iteratively finding the neighborhood of the current explored region.
 Let $G(V, E)$ be a graph. $V$ is a set of vertices and $E$ a set of edges. Each edge $e\in E$ connects two vertices $v_i, v_j \in V$. We can therefor write each edge $e$ as a tuple $e=(v_i, v_j)$. The graph is called \emph{undirected}, if an edge $(v_i, v_j)$ also implies that $v_j$ is also connected to $v_i$, and \emph{directed}, if this is not the case.\\
-A straight forward sequential implementation of \gls{bfs} is presented in Procedure \ref{algo:BFSsequential}. Non-trivial syntax elements are described in section \ref{pseudocode}. In this implementation we see that array \textbf{pred[]} represents the predecessor of each vertex of the calculated \gls{bfs} tree. It is initialized to $-1$ at every entry. This is done to mark vertices that are not in the tree yet. This is done for two reasons. Firstly it is important for the procedure of the algorithm itself. In each iteration we want to add new unexplored vertices. So a simple check, if \textbf{preds[]} at the position of this vertex is set to $-1$, can assure that only new vertices are added. Secondly when the algorithm finishes not all vertices need to be part of the \gls{bfs} tree and have therefore no predecessor. This happens for disjoint graphs. Disjoint meaning here that there is at least one pair of vertices for which there is no path connecting these two vertices. 
+A straight forward sequential implementation of \gls{bfs} is presented in Procedure \ref{algo:BFSsequential}. Non-trivial syntax elements are described in section \ref{pseudocode}. In this implementation we see that array \textbf{pred[]} represents the predecessor of each vertex of the calculated \gls{bfs} tree. It is initialized to $-1$ at every entry. This is done to mark vertices that are not in the tree yet. This is done for two reasons. Firstly it is important for the procedure of the algorithm itself. In each iteration we want to add new unexplored vertices. So a simple check, if \textbf{pred[]} at the position of this vertex is set to $-1$, can assure that only new vertices are added. Secondly when the algorithm finishes not all vertices need to be part of the \gls{bfs} tree and have therefore no predecessor. This happens for disjoint graphs. Disjoint meaning here that there is at least one pair of vertices for which there is no path connecting these two vertices. 
 The roles of \textbf{frontier\_old} and \textbf{frontier\_new} are straight forward. The first one contains the vertices that are added in the last iteration and the later one is getting filled in the current iteration with the newly explored vertices. After each iteration the old frontier is then updated to the currently new frontier.
 \begin{algorithm}
 	\caption{Sequential implementation of BFS\\
@@ -179,7 +179,14 @@ Another extension of the linear cost model can also consider computation that is
 can estimate the execution time to reduce a vector of size $m$ (in bytes) into another one. The parameter $\gamma$ is here dependent on the reduction operator (and of course on the machine it is executed on). With this we can model execution times of the algorithms proposed in the next sections.
 
 \section{Important Allreduce Implementations}
-The Allreduce operation is intuitively a direct choice for our problem of calculation a set union. Abstractly speaking, we can split up our problem of calculating the union of all processes by finding the union between two sets (of two processors) and then use this subresult without ever looking at the two original sets anymore. So we can find the total union in a recursive fashion. Two nice other properties are apparent: It does not matter, in which order the subresults are calculated and combined, as the union operation is commutative. Another nice property is that calculating the union is an idempotent operator. So even if we would use a subresult twice in our calculation, we still get a correct result. \\
+The Allreduce is an collective operation that calculates the total sum under a binary  operator $\oplus$. Each process $r$ holds as input a value or an array $I_r$. The output $O$ of such an Allreduce is then
+\begin{align*}
+	O = \bigoplus_{i=0}^{p-1} I_i.
+\end{align*}
+This output $O$ is available to all processors $\{0,\dots, p-1\}$. The binary operator $\oplus$ needs to be associative and common examples are the standard addition ($+$), the standard multiplication ($\cdot$), the minimum/maximum ($\min(\cdot, \cdot)$, $\max(\cdot, \cdot)$) or bitwise operation like bitwise OR/AND/XOR. We keep the notation to the \gls{mpi} standard, but we want to mention that there is other terminology for this like \emph{global combine} \cite{AllreduceSummaryAll} or \emph{census function} \cite{shiftComm} that describe the same collective operation. We also want to mention here that in this thesis we use \emph{rank}, \emph{process} and \emph{processor} as nearly equivalent terms. One needs to keep in mind that in a strict sense the rank describes the ID of a process and a processor is the physically entity a process is executed. Moreover it is not necessarily given that a process keeps assigned to the same processor over its execution. So when speaking of a communication between processors $r$ and $\hat{r}$ we mean a communication between a process with ID $r$ with another process with ID $\hat{r}$. We also want to define the terminology for the expression \emph{to reduce} something. This should be interpreted as the application of operator $\oplus$ on two elements or two equally sized blocks of data. Usually the result is saved in one of the inputs. Sometimes we refer to this operation also as adding two data elements together and speak of the result as the sum. This of course should not only represent the case where $\oplus ~\widehat{=}~ +$, but should represent every possible associative operator $\oplus$. \\
+The Allreduce operation is intuitively a direct choice for our problem of calculation a set union. Abstractly speaking, we can split up our problem of calculating the union of all processes by finding the union between two sets (of two processors) and then use this subresult without ever looking at the two original sets anymore. So we can find the total union by performing the set union recursively over all sets.\\
+Concretely speaking one can represent subsets of finite sets as bitmaps. We label elements of the original sets from $1$ to $n$ and set the corresponding bits to $1$, if an element is in the subset or to $0$, if an element is not in the subset. If we perform a bitwise OR between two such bitmaps this correspond exactly to the set union operation. An Allreduce is therefore very important for our goal as it can perform such an bitwise OR over all bitmaps that are distributed over all processes.\\
+Moreover two nice other properties of the set union are apparent: It does not matter, in which order the subresults are calculated and combined, as the union operation is commutative. Another nice property is that calculating the union is an idempotent operator. So even if we would use a subresult twice in our calculation, we still get a correct result. To be precise the later property does depend on the representation of the set. If one uses an array which represent the elements of the set as integers the set union would be the concatenation of two such lists. This is obviously not an idempotent operation. But such a global concatenation of arrays is done by an \emph{Allgather} which is discussed in \ref{Allgather_v}. So here we do leave out adaptations of  algorithms that respect non-commutativity and do not focus so much on non-idempotence.\\
 In this section we want to introduce a selection of Allreduce algorithms that either are important to know or are the basis of the algorithms presented in this thesis. In general we look here only at non pipelined implementations. Pipelining is method where data is split into chunks to and sent one after another. The benefit is here that the receiving end can already process a part of the data so an performance increase can ve expected in some situations. The constraint to non pipelined implementations is done, because we expect that chunking up the message can destroy the benefit of using a sparse format as a sparse message would need to 'compete' against smaller blocks. On the other hand a selection needed to be done, as not every variant could be considered as a base algorithm for our idea.
   
 
@@ -195,7 +202,7 @@ This can be improved, especially for large message sizes. For the Broadcast ther
 The recursive doubling scheme is an approach to get rid of the factor 2 appearing in Equation \ref{eq:BroadcastNaive} by getting every process in each iteration involved and tackling the problem in a divide-and-conquer fashion. The key observation of this algorithm is that when two processes send a copy of their data vector to each other and both perform a local reduce combining their own data with the received vector they both posses identical data \cite{AllreduceSummaryAll}. This is beneficial, as in the next iteration both processes can send the same subresult to new participating processes that are not the same.
 By doing this we can recursively build a scheme, such that in each iteration $i$ a set of $2^i$ processes have the same subresult. So this approach works ideally for $2^k$ numbers of participating processors. To get a better understanding an implementation as pseudocode is shown in Algorithm \ref{algo:recursiveAlgo}.\\
 \begin{algorithm}
-	\caption{– Recursive Doubling Scheme\\
+	\caption{– Recursive Doubling Scheme (Butterfly pattern)\\
 	\textit{r}: rank Id\\
 	\textit{p}: number of processes\\
 	\text{I}: Input array\\
@@ -205,7 +212,8 @@ By doing this we can recursively build a scheme, such that in each iteration $i$
 	\Procedure{AllReduce}{$r, p, I, O$}
 		\For{(shift $\gets 1$, shift $< p$, shift $\gets 2\cdot$shift)}
 		\State commNeigh $\gets r $ XOR shift \Comment{Find communication partner}
-		\State \Call{Send}{$I$, commNeigh} $||$ \Call{Recv}{$O$, commNeigh} \Comment{Send input, receive in output}
+		\State \Call{Send}{$I$, commNeigh} $||$ \Call{Recv}{$O$, commNeigh}  
+		\Comment{Send input, receive in output}
 		\State $I \gets I\oplus O$ \Comment{Perform local reduction}
 		\EndFor
 		\State $O \gets I$
@@ -220,12 +228,7 @@ When estimating the execution time, we can see that in each iteration a array of
 \end{align*}
 Comparing this to the estimate of the Broadcast\&Gather variant (Equation \ref{eq:BroadcastNaive}), we can see that we lost a factor of 2 for the $\alpha$ term as well as for the $\beta$ term. One needs to keep in mind that we assumed a hypercube interconnect setup, such that in each iteration each process has a direct connection to a different communication partner. This was not necessarily needed in the algorithms explained in the section before.\\
 Moreover it is important to mention that this is not the only communication scheme to achieve a data distribution in $\log_2(p)$ communication rounds. The communication scheme we presented here is called Butterfly scheme \cite{ButterflyVSDoublingHalfing}. This scheme can be identified by the fact that we receive data from the same process as we send to (i.e. in each iteration we only have one communication partner). This resulted in the recursive property that a set of $2^i$ processors have in iteration $i$ the same data. In Figure \ref{fig:butterfly} we see a visual representation of the communication pattern. This scheme is also sometimes called Hypercube scheme as we could map the nodes on a $\log_2(p)$-dimensional hypercube where in iteration $i$ communication is done along dimension $i$. The representation as a hypercube allows us to explore a whole family of communication schemes. As a hypercube is symmetrical along each dimension one can not distinguish dimensions from each other. This means for operations that are only applied in one dimension it does not matter in which dimension they are performed. For our communication scheme this has the implication that we can switch the iterations in any arbitrary order as we like and still have correct reduce algorithm. So we can even to the communication pattern backwards. This is an important property we use later to show correctness of a proposed Reduce\_Scatter implementation in Section \ref{sec:DisseminationAlgo}.\\
-A different approach for a communication pattern is that each process $r$ sends in iteration $i$ its data to process $((r+2^i)\mod{p})$. Obviously each process expects therefore to receive data from $((r-2^i)\mod{p})$. To implement this strategy we only have to adapt communication IDs in Pseudocode \ref{algo:recursiveAlgo}. The rest of the algorithm keeps unchanged.\\
-In Figure \ref{fig:communicationSchemes} we can see a visual comparison between both of these communication schemes. In the shift based approach, we can see that a more regular tree pattern emerges. In fact, as we find our communication partners here with the same shifts viewed in $\mod{p}$, one can argue that each processor is the root of a tree with the exact same structure as the reference tree for $r=7$ shown in Figure \ref{fig:shiftBased}. E.g. when looking at process $6$, we can put the nodes of process $7$ at the very front (while maintaining the arrow connections) and we would identify this new diagram as the exact same as the old one. The only difference in this new diagram would be that the nodes of this new diagram are now labeled in order $7,0,1,2,3,4,5,6$. Therefore we can see now the exact same tree structure for process $6$ as we did for process $7$. This property simplifies now our sketch of proof for correctness. \\
-We want to show that each node received the data from each other node. As we indicated before, it is now sufficient to only show this for node $7$. We again solve this inductively. We want to argue for this case that each node holds in iteration $i$ the data of the $2^i$ nodes left from it. More precisely we mean the $2^i-1$ nodes left to it and the node itself. It iteration $0$ each process holds its own data so the induction start is trivially true. In each iteration we get data from process $\hat{r}=(r-2^{i-1})$. Using our induction condition process $\hat{r}$ holds the data from rank $\hat{r}-2^{i-1} = r-2^{i-1} - 2^{i-1} = r-2^i$ to $\hat{r}=(r-2^{i-1})$. The process $r$ itself already holds data from $(r-2^{i-1})$ to $r$. We can see that the upper bound from $\hat{r}$ matches the lower bound from $r$ and therefore, we can write that after the send $r$ holds the data from $r-2^i$ to $r$. This is indeed the data from the $2^i$ processors left from $r$ (with our definition of "left from it"). So after $log_2(p)$ iterations process $7$ has the data from $2^{\log_2(p)}=p$ processes left from it and therefore all data.\\
-As we also want to estimate the runtime using the linear cost model, we can see directly from the adapted pseudocode that we expect the same run time as the Butterfly implementation. An important side note we want to mention here is that generalizations of the Butterfly scheme to a number of processes that are not a power of two are not easily done. Here the shift/tree based approach is more suitable as we see later in this chapter.
-
-
+A different known approach for a communication pattern is that each process $r$ sends in iteration $i$ its data to process $((r+2^i)\mod{p})$ \cite{shiftComm}. Obviously each process expects therefore to receive data from $((r-2^i)\mod{p})$. To implement this strategy we only have to adapt communication IDs in Pseudocode \ref{algo:recursiveAlgo}. The rest of the algorithm keeps unchanged.\\
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
@@ -321,7 +324,6 @@ As we also want to estimate the runtime using the linear cost model, we can see 
 			\node[roundnode]  (upper7) [right=of upper6] {6};
 			\node[roundnode]  (upper8) [right=of upper7] {7};
 			
-			
 			\node[roundnode]  (middle1) [below=of upper1] {0};
 			\node[roundnode]  (middle2) [right=of middle1] {1};
 			\node[roundnode]  (middle3) [right=of middle2] {2};
@@ -376,7 +378,6 @@ As we also want to estimate the runtime using the linear cost model, we can see 
 			\draw[-{Stealth[scale=1.5]}] (lower6.south)--(bottom2.north);
 			\draw[-{Stealth[scale=1.5]}] (lower7.south)--(bottom3.north);
 			\draw[-{Stealth[scale=1.5]}] (lower8.south)--(bottom4.north);
-			
 		\end{tikzpicture}
 		\caption{Shift based}
 		\label{fig:shiftBased}
@@ -384,6 +385,245 @@ As we also want to estimate the runtime using the linear cost model, we can see 
 	\caption{Example comparison of communication schemes for $p=8$ processes. Each row represents the iteration $i$, the nodes represent the processors $r$ and the arrows visualize the corresponding communication. The colors for the Butterfly scheme indicate, which processors hold the same data. In the shift based variant the tree structure for process $r=7$ is visualized using red arrows.}
 	\label{fig:communicationSchemes}
 \end{figure}
+In Figure \ref{fig:communicationSchemes} we can see a visual comparison between both of these communication schemes. In the shift based approach, we can see that a more regular tree pattern emerges. In fact, as we find our communication partners here with the same shifts viewed in $\mod{p}$, one can argue that each processor is the root of a tree with the exact same structure as the reference tree for $r=7$ shown in Figure \ref{fig:shiftBased}. E.g. when looking at process $6$, we can put the nodes of process $7$ at the very front (while maintaining the arrow connections) and we would identify this new diagram as the exact same as the old one. The only difference in this new diagram would be that the nodes of this new diagram are now labeled in order $7,0,1,2,3,4,5,6$. Therefore we can see now the exact same tree structure for process $6$ as we did for process $7$. This property simplifies now our sketch of proof for correctness. \\
+We want to show that each node received the data from each other node. As we indicated before, it is now sufficient to only show this for node $7$. We again solve this inductively. We want to argue for this case that each node holds in iteration $i$ the data of the $2^i$ nodes left from it. More precisely we mean the $2^i-1$ nodes left to it and the node itself. It iteration $0$ each process holds its own data so the induction start is trivially true. In each iteration we get data from process $\hat{r}=(r-2^{i-1})$. Using our induction condition process $\hat{r}$ holds the data from rank $\hat{r}-2^{i-1} = r-2^{i-1} - 2^{i-1} = r-2^i$ to $\hat{r}=(r-2^{i-1})$. The process $r$ itself already holds data from $(r-2^{i-1})$ to $r$. We can see that the upper bound from $\hat{r}$ matches the lower bound from $r$ and therefore, we can write that after the send $r$ holds the data from $r-2^i$ to $r$. This is indeed the data from the $2^i$ processors left from $r$ (with our definition of "left from it"). So after $\log_2(p)$ iterations process $7$ has the data from $2^{\log_2(p)}=p$ processes left from it and therefore all data.\\
+As we also want to estimate the runtime using the linear cost model, we can see directly from the shift communication pattern does not change the neither the amount of iterations nor the total data that is sent/received. So here is the same run time expected that also the Butterfly implementation has.
+
+\subsection{Approximate Halfing scheme} \label{approximateHalfingScheme}
+For now we considered only machines that have $2^k$ number of processors. There are extensions for the Butterfly scheme to non power of 2 number of processors \cite{RabenseifTraeff, BruckJehoshua}. But these extensions do not arise naturally and expected to perform worse than adaptations of the shift based approach \cite{traeff2025, circularGraph, shiftComm}. \\
+To extend the shift based approach, one firstly needs to introduce the \emph{approximate halfing sequence} $\{s_k\}_{k\in\{0,\dots, q-1\}}$. It should play an analogous role as the variable \textbf{shift} from the power-of-two variant and defines the shift in IDs to communication partners for each iteration.
+We set $s_q = p$ with $q=\ceil{\log_2{p}}$ being the total number of iterations. The approximate halfing sequence is then defined by the recursive formula
+\begin{align*}
+	s_k = \ceil{s_{k+1}/2}.
+\end{align*}
+The idea is here to generate a sequence that resembles approximately  the doubling scheme of \textbf{shift} and also enforce the condition $s_q = p$ for the last element of the sequence. Using this sequence directly as a replacement for \textbf{shift} does not work. The problem is here that the input of some processes will be added to the solution twice. When calculating the set union using a bitmap this would not be a problem as the bitwise OR operator is idempotent. None the less the concatenation of lists is not idempotent so we still want to explain here the strategy for non-idempotent operators.To make this implementation operational a workaround in form of a combination of adapting the shift size in some iterations and keeping a buffer array which contains the subsolution of a node without its own value is proposed \cite{circularGraph, traeff2025}. The respective pseudocode is shown in Procedure \ref{algo:ApproxHalfingWholeArray}. 
+\begin{algorithm}
+	\caption{– Shift Based Approach Using Approximate Halfing Sequence\\
+		\textit{r}: rank Id\\
+		\textit{p}: number of processes\\
+		\textit{s}: array of skips\\
+		\text{I}: Input array\\
+		\textit{O}: Output array} \label{algo:ApproxHalfingWholeArray}
+	\begin{algorithmic}[1]
+		\Procedure{AllReduce}{$r, p, s, I, O$}
+		\State to, from $\gets$ $(r + s_0)\mod{p}$, $(r-s_0)\mod{p}$
+		\State \Call{Send}{$I$, to} $||$ \Call{Recv}{$O$, from}
+		\For{$k=1,\dots, q-1$}
+		\State $\epsilon \gets s_{k+1} \land (1)_2$
+		\Comment{$\epsilon=1$, if $s_{k+1}$ is odd, $\epsilon=0$, if $s_{k+1}$ is even}
+		\State to, from $\gets$ $(r + s_k - \epsilon)\mod{p}$, $(r-s_k + \epsilon + p)\mod{p}$
+		\If{$\epsilon$=1}
+		\State \Call{Send}{$O$, to} $||$ \Call{Recv}{$B$, from}
+		\Comment{Send subsolution without own input}
+		\Else			
+		\State $O' \gets O \oplus I $
+		\State \Call{Send}{$O'$, to} $||$ \Call{Recv}{$B$, from}
+		\Comment{Send subsolution including own input}
+		\EndIf
+		\State $O\gets O \oplus B$
+		\Comment{Add received data to own subsolution}
+		\EndFor
+		\State $O\gets O \oplus I$
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+Here we can identify that messages are now send to a neighbor $(r + s_k - \epsilon) \mod{p}$. $\epsilon$ is chosen by the parity of the next skip sequence element $s_{k+1}$. It is set to $1$, if $s_{k+1}$ is odd, and set to $0$, if $s_{k+1}$ is even. This adjustment of the communication pattern is done to avoid 'overflowing' of the summation to one node. Consider we would use the skip sequence directly to find neighbors. Then the furthest rank $\hat{r}$ some rank $r$ gets information of would could be calculated by the total sum of the skip sequence. We can estimate the difference between $r$ and $\hat{r}$ (not considering the modulo operation) and identify 
+\begin{align*}
+	r - \hat{r} =\sum_{k=0}^{q-1} s_k \geq \sum_{k=0}^{q-1} \frac{p}{2^{k+1}} 
+	= \frac{p}{2} \frac{1-\frac{1}{2}^q}{1-\frac{1}{2}}
+	\geq p (1-1/p) \geq p - 1.
+\end{align*}
+This means the furthest rank adding its value to the solution of $r$ is over $p-1$ positions away. As we do all calculations of neighbors in modulus $p$ this means at least one process is so far 'behind' that it actually overtakes $r$. Therefore the same value could be added twice. The communication pattern is therefore adjusted using $\epsilon$. We can identify $(s_k - 1)$ as being the same as $(s_{k+1} -s_k)$ by simply looking at a general cases where $s_k$ is even or odd. So using this adjusted pattern the furthest away processor $\hat{r}$ is now
+\begin{align*}
+	r - \hat{r} = \sum_{k=0}^{q-1} (s_k - \epsilon_k)
+	= \sum_{k=0}^{q-1} (s_{k+1} - s_k) = p-1
+\end{align*}
+positions away. This guarantees that now 'overtaking' can not happen, but still all ranks can be covered. An example of this communication pattern can be seen in Figure \ref{fig:shiftBasedIrregular}. 
+\begin{figure}
+	\tikzset{roundnode/.style={circle,draw=black!, thick, minimum size=7mm}}
+	\begin{tikzpicture}[ minimum size=5mm,
+		node distance=0.5cm and 0.1cm,
+		bend angle=45,
+		auto]
+		% Nodes
+		\node[roundnode]  (top1) {0};
+		\node[roundnode]  (top2) [right=of top1] {1};
+		\node[roundnode]  (top3) [right=of top2] {2};
+		\node[roundnode]  (top4) [right=of top3] {3};
+		\node[roundnode]  (top5) [right=of top4] {4};
+		\node[roundnode]  (top6) [right=of top5] {5};
+		\node[roundnode]  (top7) [right=of top6] {6};
+		\node[roundnode]  (top8) [right=of top7] {7};
+		\node[roundnode]  (top9) [right=of top8] {8};
+		\node[roundnode]  (top10) [right=of top9] {9};
+		\node[roundnode]  (top11) [right=of top10] {10};
+		
+		
+		\node[roundnode]  (upper1) [below=of top1] {0};
+		\node[roundnode]  (upper2) [right=of upper1] {1};
+		\node[roundnode]  (upper3) [right=of upper2] {2};
+		\node[roundnode]  (upper4) [right=of upper3] {3};
+		\node[roundnode]  (upper5) [right=of upper4] {4};
+		\node[roundnode]  (upper6) [right=of upper5] {5};
+		\node[roundnode]  (upper7) [right=of upper6] {6};
+		\node[roundnode]  (upper8) [right=of upper7] {7};
+		\node[roundnode]  (upper9) [right=of upper8] {8};
+		\node[roundnode]  (upper10) [right=of upper9] {9};
+		\node[roundnode]  (upper11) [right=of upper10] {10};
+		
+		\node[roundnode]  (middle1) [below=of upper1] {0};
+		\node[roundnode]  (middle2) [right=of middle1] {1};
+		\node[roundnode]  (middle3) [right=of middle2] {2};
+		\node[roundnode]  (middle4) [right=of middle3] {3};
+		\node[roundnode]  (middle5) [right=of middle4] {4};
+		\node[roundnode]  (middle6) [right=of middle5] {5};
+		\node[roundnode]  (middle7) [right=of middle6] {6};
+		\node[roundnode]  (middle8) [right=of middle7] {7};
+		\node[roundnode]  (middle9) [right=of middle8] {8};
+		\node[roundnode]  (middle10) [right=of middle9] {9};
+		\node[roundnode]  (middle11) [right=of middle10] {10};
+		
+		\node[roundnode]  (lower1) [below=of middle1] {0};
+		\node[roundnode]  (lower2) [right=of lower1] {1};
+		\node[roundnode]  (lower3) [right=of lower2] {2};
+		\node[roundnode]  (lower4) [right=of lower3] {3};
+		\node[roundnode]  (lower5) [right=of lower4] {4};
+		\node[roundnode]  (lower6) [right=of lower5] {5};
+		\node[roundnode]  (lower7) [right=of lower6] {6};
+		\node[roundnode]  (lower8) [right=of lower7] {7};
+		\node[roundnode]  (lower9) [right=of lower8] {8};
+		\node[roundnode]  (lower10) [right=of lower9] {9};
+		\node[roundnode]  (lower11) [right=of lower10] {10};
+		
+		\node[roundnode]  (bottom1) [below=of lower1] {0};
+		\node[roundnode]  (bottom2) [right=of bottom1] {1};
+		\node[roundnode]  (bottom3) [right=of bottom2] {2};
+		\node[roundnode]  (bottom4) [right=of bottom3] {3};
+		\node[roundnode]  (bottom5) [right=of bottom4] {4};
+		\node[roundnode]  (bottom6) [right=of bottom5] {5};
+		\node[roundnode]  (bottom7) [right=of bottom6] {6};
+		\node[roundnode]  (bottom8) [right=of bottom7] {7};
+		\node[roundnode]  (bottom9) [right=of bottom8] {8};
+		\node[roundnode]  (bottom10) [right=of bottom9] {9};
+		\node[roundnode]  (bottom11) [right=of bottom10] {10};
+		
+		% Arrows
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (top1.south)--(upper2.north);
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (top2.south)--(upper3.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (top3.south)--(upper4.north);
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (top4.south)--(upper5.north);
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (top5.south)--(upper6.north);
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (top6.south)--(upper7.north);
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (top7.south)--(upper8.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (top8.south)--(upper9.north);
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (top9.south)--(upper10.north);
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (top10.south)--(upper11.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (top11.south)--(upper1.north);
+		
+		\draw[-{Stealth[scale=1.5]}, color=gray] (upper1.south)--(middle2.north);
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (upper2.south)--(middle3.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (upper3.south)--(middle4.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (upper4.south)--(middle5.north);
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (upper5.south)--(middle6.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (upper6.south)--(middle7.north);
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (upper7.south)--(middle8.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (upper8.south)--(middle9.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (upper9.south)--(middle10.north);
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (upper10.south)--(middle11.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (upper11.south)--(middle1.north);
+		
+		
+		\draw[-{Stealth[scale=1.5]}, color=gray] (middle1.south)--(lower4.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (middle2.south)--(lower5.north);
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (middle3.south)--(lower6.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (middle4.south)--(lower7.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (middle5.south)--(lower8.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (middle6.south)--(lower9.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (middle7.south)--(lower10.north);
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (middle8.south)--(lower11.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (middle9.south)--(lower1.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (middle10.south)--(lower2.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (middle11.south)--(lower3.north);
+		
+
+		\draw[-{Stealth[scale=1.5]}, color=gray] (lower1.south)--(bottom6.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (lower2.south)--(bottom7.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (lower3.south)--(bottom8.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (lower4.south)--(bottom9.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (lower5.south)--(bottom10.north);
+		\draw[-{Stealth[scale=1.5]}, color=red, thick] (lower6.south)--(bottom11.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (lower7.south)--(bottom1.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (lower8.south)--(bottom2.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (lower9.south)--(bottom3.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (lower10.south)--(bottom4.north);
+		\draw[-{Stealth[scale=1.5]}, color=gray] (lower11.south)--(bottom5.north);
+		
+		% MArking for subtree with "problems"
+		\draw [color=BlueGreen, thick] 	(-0.5+0.0625,0.5) rectangle (2.0625,-3);
+		
+		
+		%iteration labeling
+		\node[color=black, left=of top1] (iteration1) {$s_0=1$, $\epsilon = 0$~~~};
+		\node[color=black, left=of upper1] (iteration1) {$s_1=2$, $\epsilon = 1$~~~};
+		\node[color=black, left=of middle1] (iteration1) {$s_2=3$, $\epsilon = 0$~~~};
+		\node[color=black, left=of lower1] (iteration1) {$s_3=6$, $\epsilon = 1$~~~};
+		%\node[color=black, left=of bottom1] (iteration1) {$s_0=1$, $\epsilon = 0$};
+	\end{tikzpicture}
+	\caption{Example of the adapted communication pattern for $p=11$ processors using the adjusted approximate halfing sequence. Red arrows indicate which messages are part of the total reduction to process $10$. The cyan rectangle marks an region where two trees get concatenated that have one node in common. In a naive approach rank $1$ holds the subresult $I_0 \oplus I_1$, rank $2$ holds the subresult $I_1 \oplus I_2$ and therefore the new subresult becomes $I_0 \oplus I_1 \oplus I_1 \oplus I_2$. $I_1$ would be added here twice.}
+	\label{fig:shiftBasedIrregular}
+\end{figure}
+Here we can identify another problem that violates correctness for non-idempotent operators. When $s_{k+1}$ is odd and each process would stores/sends the complete subresult some values would be added twice. Such a case is also highlighted in Figure \ref{fig:shiftBasedIrregular}. This is circumvented by storing only the subresult not containing a ranks own input and sending this buffer, if $s_{k+1}$ is odd (i.e. $\epsilon=1$). This strategy of course would be problematic, if $s_k$ is even as one input would be missing in the next subresult. So in this case a ranks own input is added to the sent buffer. The original storing buffer is herby unchanged.\\
+With this ideas in mind we can formalize a proof of correctness. We want to proof by induction. Suppose rank $r$ holds after iteration $k$ the subsolution 
+\begin{align}
+	O_r^k = \bigoplus_{i= r - s_{k+1} + 1}^{r-1} I_{i + p \mod{p}}, \label{inductionShift}
+\end{align}
+where $I_i$ is the input of rank $i$. This condition holds for the first iteration. The first iteration ($i=0$) is handled separately (line 3) where each rank $r$ receives the input of $(r-1+p) \mod{p}$ therefore each rank holds $O_r^0 = I_{r-1\mod{p}}$ which respects Equation \ref{inductionShift} as we know that $s_1=2$ holds for every approximately halfing sequence.\\
+To perform the induction step we have to look at two cases.
+\begin{itemize}
+	\item  $s_{k+1}$ is even:\\
+	This means that $s_k + s_k = s_{k+1}$. When looking at the Algorithm \ref{algo:ApproxHalfingWholeArray} we see that $\epsilon=0$ and line 10 and 11 are executed.
+	We can calculate $O_r^k$ under the assumption Equation \ref{inductionShift} holds for $k-1$. For this we simplify notation and define $\mathbf{x}:=((x+p) \mod{p})$. \todo{find better visual representation than mathbf for mod(p)}
+	\begin{align*}
+		O_r^k 
+		&= O_r^{k-1} \oplus  B 
+		= O_r^{k-1} \oplus (O_\mathbf{r-s_k}^{k-1} \oplus I_\mathbf{r-s_k}) \\
+		&= \left(\bigoplus_{i= r - s_{k} + 1}^{r-1} I_\mathbf{i} \right)
+		\oplus \left(\bigoplus_{i= \mathbf{r-s_k} - s_{k} + 1}^{\mathbf{r-s_k}-1} I_\mathbf{i}\right)
+		\oplus \left(I_\mathbf{r-s_k}\right) \\
+		&= \left(\bigoplus_{i= r - s_k + 1}^{r-1} I_\mathbf{i} \right)
+		\oplus \left(\bigoplus_{i= r-s_k - s_k + 1}^{r-s_k} I_\mathbf{i}\right) \\
+		&= \bigoplus_{i= r - s_{k+1} + 1}^{r-1} I_{i+p \mod{p}}
+	\end{align*}
+	
+	\item $s_{k+1}$ is odd:\\
+	This means that $s_k + s_k = s_{k+1} + 1$. When looking at the Algorithm \ref{algo:ApproxHalfingWholeArray} we see that $\epsilon=1$ and line 8 is executed.We can calculate $O_r^k$ under the assumption Equation \ref{inductionShift} holds for $k-1$.
+		\begin{align*}
+		O_r^k 
+		&= O_r^{k-1} \oplus  B 
+		= O_r^{k-1} \oplus O_\mathbf{r-s_k+1}^{k-1} \\
+		&= \left(\bigoplus_{i= r - s_{k} + 1}^{r-1} I_\mathbf{i} \right)
+		\oplus \left(\bigoplus_{i= \mathbf{r-s_k+1} - s_{k} + 1}^{\mathbf{r-s_k+1}-1} I_\mathbf{i}\right)\\
+		&= \left(\bigoplus_{i= r - s_k + 1}^{r} I_\mathbf{i} \right)
+		\oplus \left(\bigoplus_{i= r-s_{k+1}+ 1}^{r-s_k} I_\mathbf{i}\right) \\
+		&= \bigoplus_{i= r - s_{k+1} + 1}^{r-1} I_{i+p \mod{p}}
+	\end{align*}
+\end{itemize}
+We see that in both cases Equation \ref{inductionShift} holds for $k$, if it is valid for $k-1$. So this Equation holds for any $k$.\\
+So after $q$ iterations we can set $k=q-1$, use $s_{q} = p$ and need to add a process own input to the output $O$. This gives us a total result of
+\begin{align*}
+	O_r &= O_r^{q-1} \oplus I_r 
+	= \left(\bigoplus_{i= r - s_{k+1} + 1}^{r-1} I_{i + p \mod{p}}\right) \oplus I_r \\
+	&=\left(\bigoplus_{i= r - p + 1}^{r-1} I_{i + p \mod{p}}\right) \oplus I_r
+	= \bigoplus_{i= r + 1}^{r} I_{i + p \mod{p}}
+	= \bigoplus_{i= 0}^{p-1} I_{i},
+\end{align*}
+which is indeed the total reduction sum.\\
+So this algorithm implements an Allreduce correctly. To also guarantee correctness, if Procedure \ref{algo:ApproxHalfingWholeArray} is executed using only one processes one can add a check, if $p=1$. In this case the Algorithm simply sets $O\gets I$ and returns. This avoids getting into trouble of calling $\Call{Send}$ or $\Call{Recv}$ without any communication partner apparent \cite{traeff2025}.\\
+For the runtime estimation using the linear cost model we achieve quite a similar result as for the power-of-two variants for the communication time. We only need to keep in mind that an extra reduction is performed, if $s_{k+1}$ is even which can happen in each iteration but the first one. We perform $q=\ceil{\log_2{p}}$ number of communication rounds where in each iteration an array of size $m$ is sent. In the first iteration no reduction is performed. In the following $q-1$ iterations there are at least 1 and at most 2 reductions of size $m$ performed. After the last iteration another extra reduction is performed. So in total there are $q$ reductions done in the best case and $2q-1$ reductions done in the worst case. With that we can define an upper bound for the estimated runtime as
+\begin{align*}
+	T_\textrm{ApproxHalf} \leq \ceil{\log_2{p}}(\alpha + \beta m) + (2\ceil{\log_2{p}}-1)\gamma m.
+\end{align*}
+
 
 
 \subsection{Combining Reduce\_Scatter and Allgather using recursive Doubling}\label{sec:DisseminationAlgo}
@@ -646,12 +886,235 @@ Again the run time of the Allgather can be expected to be the same as for the Re
 The whole structure is build on the fact that we have a number of processors that is a power of 2. The butterfly/hypercube pattern relies is by construction dependent on this. There are adaptations to extend this kind of algorithm to non powers of 2. One idea for example is that there are two extra communication rounds (one for Reduce\_Scatter phase and one for Allgather phase) used where some ranks exchange their whole data array with their partner. After such a extra round there should only be $2^n$ different data arrays with some of them appearing doubly on some processors. For the doubles only one of the processors participates at the algorithm and sends in the second extra round its data to its first partner \cite{optimizationsCollComm}. Another idea is to decompose the ranks into sets that have each a power of two. Here again overhead is produced each time two such sets need to get merged together \cite{optimizationsCollComm}. For non power of two number of threads the shift-based or also tree-based algorithms can be expected more flexible, natural and eventually perform better. Such an approach is shown in the next section.
 
 
-\subsection{Approximate Halfing Algorithm}
-\subsection{Ring Topology Algorithm}
+\subsection{Approximate Halfing Algorithm for Reduce\_Scatter and Allgather}
+In the section before we saw the idea of combining a Reduce\_Scatter and Allgather to perform an Allreduce. There a Butterfly/Hypercube communication pattern was used. Again this arises the problem that such a pattern is not easily extendable to a non-power-of-two number of processors $p$. So here we want to propose an algorithm that is again based on the approximate halfing sequence $(s_k)_{k\in\{0,\dots, q-1\}}$ from Section \ref{approximateHalfingScheme}. Here again $q$ is set to $\ceil{\log_2{p}}$. With this we want to show an implementation for a Reduce\_Scatter as the corresponding pattern for the Allgather follows the same scheme.\\
+The algorithm \cite{traeff2025} is presented in Procedure \ref{algo:redScatterShift}. 
+\begin{algorithm}
+	\caption{– Reduce\_Scatter for $p$ not being a power of 2\\
+		\textit{r}: rank Id\\
+		\textit{p}: number of processes\\
+		\text{I}: Input array\\
+		\textit{O}: Output array} \label{algo:redScatterShift}
+	\begin{algorithmic}[1]
+		\Procedure{ReduceScatter}{$r, p, I, O$}
+		\State $O \gets I[r]$
+		\ForAll{$i \in \{1,\dots, p-1\}$}
+		$R[i]\gets I[(r+i)\mod{p}]$
+		\EndFor
+		\State $s\gets p$
+		\While{$s>1$}
+			\State $s', s\gets s, \ceil{s/2}$
+			\State to, from $\gets (r+s)\mod{p}, (r-s+p)\mod{p}$
+			\State \Call{Send}{$R$[$s, \dots,s'-1$], to} $||$ \Call{Recv}{$B$[$0, \dots, s' - s -1$], from}
+			\State $O \gets O \oplus B[0]$
+			\ForAll{$i \in \{1,\dots, s'-s-1\}$}
+			$R[i]\gets R[i] \oplus B[i]$
+			\EndFor
+		\EndWhile
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+As we can see the approximate halfing sequence is here calculated on the fly. An important difference when this algorithm compared to the before mentioned Allreduce that also uses the approximate halfing pattern (Procedure \ref{algo:ApproxHalfingWholeArray}) is that here is no adjustment term $\epsilon$ needed. The reason for this becomes apparent in the proof of correctness. Moreover the approximate halfing sequence is here iterated from the back i.e. we start here with $s_{q-1}=\ceil{p/2}$ and the last iteration uses $s_0=1$. With this we can identify $s'=s_{k+1}$ and $s=s_k$.\\
+The input array obviously needs to be divided into $p$ blocks as after this procedure each rank should only hold one of these blocks. In the shown implementation we need two extra buffers $R$ and $B$. $B$ only serves as a buffer for receiving messages. $R$ holds the subresults of the different reduced blocks. If large enough memory is allocated for $O$ one could simply append $R$ to it. In this case the lines 2 and 10 would not be necessary as they could be included in the loops following each line by letting there parameter $i$ start at $0$ instead of $1$. To make explanation and proof easier we keep this interpretation in mind and refer to $O$ simply as $R[0]$. An important detail from this algorithm is that the original blocks from the input $I$ are saved in a rotated manner in $R$. This done in such a way that each rank $r$ holds the $r$-th block at its first entry $R[0]$. We see that in each iteration blocks $R[s,\dots, s'-1]$ are sent to a process $\hat{r}=(r+s)\mod{p}$. These blocks are there added using the operator $\oplus$ to blocks $R[0,\dots,s'-s-1]$ (while using $T$ as an intermediate buffer). So the blocks send by $r$ are added at $\hat{r}$ to blocks which are  shifted by $s$ to the start of array $R$ compared to their original position at $r$. This works fine because in the beginning we saved $R$ in a rotated manner such that $R[0] = I[r]$.
+This becomes most apparent when one just considers block $s$ at rank $r$. This block corresponds to the input block $I[(r+s)\mod{p}]$. When it is received block $s$ is then added to block $0$ from rank $\hat{r}=(r+s)\mod{p}$ . Block $0$ at rank $\hat{r}$ corresponds to input block $I[\hat{r}]=I[(r+s)\mod{p}]$ which is the same block as rank $r$ sent.\\
+For this algorithm we also propose a proof of correctness. For this we firstly want to consider a simpler setup. Suppose line 9 of Procedure \ref{algo:redScatterShift} does not send the blocks from array $R$ to a buffer $B$ lying on some other process, but instead the blocks are saved in its own local buffer $B$. The indexing of from where the blocks are taken and where they are stored should remain the same pattern. The block sizes on the other hand are now required to be the same. Moreover we want to give a more relaxed description of the skip sequence $(s_k)_{\{0,\dots,q-1\}}$. The only conditions this sequence has to satisfy is that $s_{k+1} - s_k \leq s_k$, that it is strictly increasing, and that $s_0 = 1$ and $s_{q} = p$. These conditions are  bviously fullfilled by the original approximate halfing sequence. $s'$ is here always $s$ of the iteration before. One needs to keep in mind that we iterating this list from the back. So in iteration $i$ element $s_{q-1-i}$ of this skip sequence is used for $s$.\\
+In the adapted pseudocode one can then see that blocks from the end of array $R$ are summed up to blocks of the start of the same array $R$. As we want to find the sum for each iteration at each block we somehow need to maintain an overview of the subresults. A good approach for this is by representing a subresult by a tree $T$. When a subresult $j$ is added to another subresult $i$ then tree $T_j$ is connected to $T_i$, denoted as $T_i \gets T_j$.\\
+Suppose we have a sequence for which it holds $s_{k+1} - s_k \leq s_k$. We now want to prove by induction that in this adaptation of Algorithm \ref{algo:redScatterShift} in iteration $i$ the trees $[T_0, \dots, T_{s_k-1}]$ are disjoint and moreover span all possible vertices. This is our invariant condition and can be interpreted as follows: In blocks $\{0, \dots, s_k-1\}$ is no summand added to two different blocks at the same time and every summand is in at least one of these blocks added. We start the induction before the first iteration. Here we have $s_k=p$ and every block holds its own input. When represented as trees each of the $p$ blocks holds a singleton consisting out of a different possible vertex. So the trees are obviously disjoint and also span all possible vertices.\\
+Assume the invariant holds for iteration $i$. Then in iteration $i+1$ we append the trees $[T_{s_k}, \dots, T_{s_{k+1}-1}]$ to the trees $[T_0, \dots, T_{s_{k+1}-s_k-1}]$. As the invariant was true in iteration $i$ all trees used are disjoint and span all vertices before they are appended (i.e. invariant holds for $[T_0, \dots, T_{s_{k+1}-1}]$). When the trees are now appended the resulting trees are also disjoint. This is true, because the index set $\{s_k, \dots, s_{k+1}-1\}$ of the appended trees is disjoint to the index set $\{0, \dots, s_{k+1}-s_k-1\}$ of the receiving trees as we have the condition $s_{k+1}-s_k \leq s_k$ on our skip sequence. We now that all trees $[T_{s_k}, \dots, T_{s_{k+1}-1}]$ get joint to a tree with an index lower or equal than $s_k$ (also because $s_{k+1}-s_k \leq s_k$), therefore the trees up to index $s_k$ span all vertices. So the invariant holds also for iteration $i+1$.\\
+\begin{figure}[h]
+	\centering
+	\tikzset{squarenode/.style={rectangle,draw=black!, thick, minimum size=5mm}}
+	\begin{tikzpicture}	
+		[node distance = {0.1cm and 1cm}, baseline=(current bounding box.north)]
+		% original array
+		\node[squarenode] (left0) {0};
+		\node[squarenode] (left1) [below=of left0]{1};
+		\node[squarenode] (left2) [below=of left1]{2};
+		\node[squarenode] (left3) [below=of left2]{3};
+		\node[squarenode] (left4) [below=of left3]{4};
+		\node[squarenode] (left5) [below=of left4]{5};
+		\node[squarenode] (left6) [below=of left5]{6};
+		
+		\draw [-{Stealth[scale=1.5]}] (left4.west) to [out=135, in=225] (left0.west);
+		\draw [-{Stealth[scale=1.5]}] (left5.west) to [out=135, in=225] (left1.west);
+		\draw [-{Stealth[scale=1.5]}] (left6.west) to [out=135, in=225] (left2.west);
+	\end{tikzpicture}
+	\hfill
+	\begin{tikzpicture}
+		[node distance = {0.1cm and 0.7cm},baseline=(current bounding box.north)]
+		% original array
+		\node[squarenode] (left0) {0};
+		\node[squarenode] (left1) [below=of left0]{1};
+		\node[squarenode] (left2) [below=of left1]{2};
+		\node[squarenode] (left3) [below=of left2]{3};
+		\node[squarenode] (left4) [right=of left0]{4};
+		\node[squarenode] (left5) [right=of left1]{5};
+		\node[squarenode] (left6) [right=of left2]{6};
+		
+		\node[squarenode, color=lightgray] (extra4) [below=of left3]{4};
+		\node[squarenode, color=lightgray] (extra5) [below=of extra4]{5};
+		\node[squarenode, color=lightgray] (extra6) [below=of extra5]{6};
+		
+		\draw [-{Square[scale=1.5]}] (left4.west) to (left0.east);
+		\draw [-{Square[scale=1.5]}] (left5.west) to (left1.east);
+		\draw [-{Square[scale=1.5]}] (left6.west) to (left2.east);
+		
+		\draw [-{Stealth[scale=1.5]}] (left2.west) to [out=135, in=225] (left0.west);
+		\draw [-{Stealth[scale=1.5]}] (left3.west) to [out=135, in=225] (left1.west);
+	\end{tikzpicture}
+	\hfill
+	\begin{tikzpicture}
+		[node distance = {0.1cm and 0.7cm},baseline=(current bounding box.north)]
+		% original array
+		\node[squarenode] (left0) {0};
+		\node[squarenode] (left1) [below=1cm of left0]{1};
+		\node[squarenode] (left2) [below right=of left0]{2};
+		\node[squarenode] (left3) [below right=of left1]{3};
+		\node[squarenode] (left4) [right=of left0]{4};
+		\node[squarenode] (left5) [right=of left1]{5};
+		\node[squarenode] (left6) [right=of left2]{6};;
+		
+		\node[squarenode, color=lightgray] (extra2) [below=of left1]{2};
+		\node[squarenode, color=lightgray] (extra3) [below=of extra2]{3};		\node[squarenode, color=lightgray] (extra4) [below=of extra3]{4};
+		\node[squarenode, color=lightgray] (extra5) [below=of extra4]{5};
+		\node[squarenode, color=lightgray] (extra6) [below=of extra5]{6};
+		
+		\draw [-{Square[scale=1.5]}] (left4.west) to [out=180, in=0] (left0.east);
+		\draw [-{Square[scale=1.5]}] (left5.west) to [out=180, in=0] (left1.east);
+		\draw [-{Square[scale=1.5]}] (left6.west) to [out=180, in=0] (left2.east);
+		\draw [-{Square[scale=1.5]}] (left2.west) to [out=180, in=0] (left0.east);
+		\draw [-{Square[scale=1.5]}] (left3.west) to [out=180, in=0] (left1.east);
+		
+		\draw [-{Stealth[scale=1.5]}] (left1.west) to [out=135, in=225] (left0.west);
+	\end{tikzpicture}
+	\hfill
+	\begin{tikzpicture}
+		[node distance = {0.1cm and 0.7cm},baseline=(current bounding box.north)]
+		% original array
+		\node[squarenode] (left0) {0};
+		\node[squarenode] (left1) [below=of left2]{1};
+		\node[squarenode] (left2) [below right=of left0]{2};
+		\node[squarenode] (left3) [below right=of left1]{3};
+		\node[squarenode] (left4) [right=of left0]{4};
+		\node[squarenode] (left5) [right=of left1]{5};
+		\node[squarenode] (left6) [right=of left2]{6};;
+		
+		\node[squarenode, color=lightgray] (extra1) [below=of left0]{1};
+		\node[squarenode, color=lightgray] (extra2) [below=of extra1]{2};
+		\node[squarenode, color=lightgray] (extra3) [below=of extra2]{3};		\node[squarenode, color=lightgray] (extra4) [below=of extra3]{4};
+		\node[squarenode, color=lightgray] (extra5) [below=of extra4]{5};
+		\node[squarenode, color=lightgray] (extra6) [below=of extra5]{6};
+		
+		\draw [-{Square[scale=1.5]}] (left4.west) to [out=180, in=0] (left0.east);
+		\draw [-{Square[scale=1.5]}] (left5.west) to [out=180, in=0] (left1.east);
+		\draw [-{Square[scale=1.5]}] (left6.west) to [out=180, in=0] (left2.east);
+		\draw [-{Square[scale=1.5]}] (left2.west) to [out=180, in=0] (left0.east);
+		\draw [-{Square[scale=1.5]}] (left3.west) to [out=180, in=0] (left1.east);
+		\draw [-{Square[scale=1.5]}] (left1.west) to [out=180, in=0] (left0.east);
+		
+	\end{tikzpicture}
+	\caption{A visual example for a simplification of Algorithm \ref{algo:redScatterShift} with $p=7$ processors. The skips $s_3=7, s_2 = 4, s_1=2$ and $s_0=1$ are from an approximate halfing sequence and fulfill $s_{k+1} -s_k \leq s_k$. Each iteration shows the state of the original array. Arrows with a pointy tip indicate which blocks are reduced to which other blocks of the vector. Arrows with square tips indicate the arising tree structure. Elements that are in dark black correspond to trees that have a root $i\leq s_k$. Grey do elements do not need to be considered anymore. In the last iteration we see a single tree at block $0$ which spans all elements.}
+	\label{fig:arrayCopy}
+\end{figure}
+To get a better understanding we provide a visual example shown in Figure \ref{fig:arrayCopy}. There we can see better how these trees are formed and why the condition $s_{k+1}-s_k \leq s_k$ is sufficient to guarantee disjointedness and complete spanning of the trees.\\
+In the proof we used before we only showed that the adapted variant of Algorithm \ref{algo:redScatterShift} can reduce a sum of a total locally saved vector to its first block. There we changed line $9$ from a sending and receiving procedure to a copying one. We also have to proof correctness for the original pseudocode. We mentioned before that due to the shifted buffering of $I$ in $R$ and the reducing to blocks that are shifted by $s$ compared to the rank that send the blocks only matching blocks are summed together. This is actually all we need. We can label the blocks in our simplified variant from $0$ to $p-1$. The shifted buffering and sending in the original variant then guarantees that block $i$ comes from rank $i$ and also matches the correct input block. \\
+The estimation of the run time using the linear cost model is quite forward. In each iteration there are $s_{k+1} - s_k$ blocks send and reduced. The total amount of blocks processed is therefore $\sum_{s_0}^{s_{q-1}} (s_{k+1} - s_k) = s_q - s_0 = p - 1$. Using the approximate halfing sequence are $q=\ceil{\log_2{p}}$ iteration rounds. We assume that every block has size $m/p$ and then the total run time can be estimated as
+\begin{align*}
+	T_\mathrm{RedScatt} = \ceil{\log_2{p}} \alpha + \frac{p-1}{p}m(\beta + \gamma).
+\end{align*}
+With such an Reduce\_Scatter we can easily build an Allreduce by performing an Allgather afterwards using the same pattern in reverse. The idea is mentioned before and we therefore only present an implementation in Algorithm \ref{algo:redScatterAndAllgatherShift}.
+\begin{algorithm}
+	\caption{– Reduce\_Scatter and Allgather for $p$ not being a power of 2\\
+		\textit{r}: rank Id\\
+		\textit{p}: number of processes\\
+		\text{I}: Input array\\
+		\textit{O}: Output array} \label{algo:redScatterAndAllgatherShift}
+	\begin{algorithmic}[1]
+		\Procedure{Allreduce}{$r, p, I, O$}
+		\ForAll{$i \in \{0,\dots, p-1\}$}
+		$R[i]\gets I[(r+i)\mod{p}]$
+		\EndFor
+		\State $s, S\gets p, \emptyset$
+		\Comment{Also initialize empty stack $S$}
+		\While{$s>1$}
+			\State \Call{Push}{s,S}
+			\Comment{Save skip sequence in stack}
+			\State $s', s\gets s, \ceil{s/2}$
+			\State to, from $\gets (r+s)\mod{p}, (r-s+p)\mod{p}$
+			\State \Call{Send}{$R$[$s, \dots,s'-1$], to} $||$ \Call{Recv}{$B$[$0, \dots, s' - s -1$], from}
+			\ForAll{$i \in \{0,\dots, s'-s-1\}$}
+			$R[i]\gets R[i] \oplus B[i]$
+		\EndFor
+		\EndWhile
+		\While{$S\not = \emptyset$}
+			\State $s'\gets \Call{Pop}{S}$
+			\State from, to $\gets (r+s)\mod{p}, (r-s+p)\mod{p}$
+			\Comment{to and from are here switched}
+			\State \Call{Send}{$R$[$0, \dots, s' - s -1$], to} $||$ \Call{Recv}{$R$[$s, \dots,s'-1$], from}\\
+			\Comment{Indices of blocks are switched and blocks are directly received in $R$}
+			\State $s\gets s'$
+		\EndWhile
+		\ForAll{$i \in \{0,\dots, p-1\}$}
+		$ O[(r+i)\mod{p}]\gets R[i]$
+		\Comment{Rotate array back}
+		\EndFor
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+Here we can see that a stack $S$ is used to save the approximate halfing sequence which is calculated on the fly in the Reduce\_Scatter phase. In the Allgather phase this sequence is used in reverse order by popping the last element of the stack in each iteration. The calculation of $to$ and $from$ are obviously switched. Also the blocks that were send before are now received from. Here we can save these blocks directly in $R$ as we do not need to buffer them to perform an reduction. This algorithm maintains the property that rank $r$ holds its first block from the input ar $R[r]$. We therefore have to unwind this array when copying to the output array $O$.\\
+We see that the Allgather phase consists out of the same amount of rounds as the Reduce\_Scatter phase. Moreover the same amount of data is send. The only difference for this phase is that no reduction is performed. So the using the linear cost model we can simply add the $\alpha$ and $\beta$ term again and estimate the runtime as being
+\begin{align*}
+	T_\mathrm{Allreduce} = 2\ceil{\log_2{p}} \alpha + \frac{p-1}{p}m(2\beta + \gamma).
+\end{align*}
+
+\subsection{Ring Algorithm}
+The last algorithm structure we want to propose here is based on only communicating in a ring topology\cite{ringAllred, combinationRedScatAndAllgatherRabenseifner}. This means each process $r$ only sends messages to its direct neighbors $(r+1)\mod{p}$. The ring algorithm can be again identified as consisting out of an Reduce\_Scatter phase and an Allgather phase. We also assume again that the data of the input is divided into $p$ blocks. In Procedure \ref{algo:redRing} we see an implementation of the ring algorithm.
+\begin{algorithm}
+	\caption{– Reduce\_Scatter and Allgather using ring topology\\
+		\textit{r}: rank Id\\
+		\textit{p}: number of processes\\
+		\text{I}: Input array\\
+		\textit{O}: Output array} \label{algo:redRing}
+	\begin{algorithmic}[1]
+		\Procedure{Allreduce}{$r, p, I, O$}
+		\State to, from $\gets (r+1)\mod{p}, (r-1+p)\mod{p}$
+		\State $O\gets I$
+		\For{$i = 1,\dots, p-1$}
+		\Comment{Reduce\_Scatter phase}
+		\State $sBlock, rBlock \gets (r - i + p)\mod{p}, (r - i - 1 +p)\mod{p}$
+		\State \Call{Send}{$O$[$sBlock$], to} $||$ \Call{Recv}{$B$, from}
+		\State $O[rBlock]\gets O[rBlock] \oplus B$
+		\EndFor
+		\For{$i = 0,\dots, p-2$}
+		\Comment{Allgather phase}
+		\State $sBlock, rBlock \gets (r - i + p)\mod{p}, (r - i - 1 +p)\mod{p}$
+		\State \Call{Send}{$O$[$sBlock$], to} $||$ \Call{Recv}{$R$[$rBlock$], from}
+		\EndFor
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+We see that in the Reduce\_Scatter phase there are $p-1$ iterations and in each iteration each process sends one block to their right neighbor. One to the right means here that the receiving rank is $\hat{r}=()r+1)\mod{p}$. To get an understanding how this algorithm work we consider block $p-1$ from rank $0$. In the first iteration it is sent to rank $1$ where it is added to block $p-1$. This subresult is then sent in the next iteration to rank $2$ where it is added to the same block. This is done $p-1$ times so after the last iteration rank $p-1$ holds the total sum of block $p-1$.\\
+We can formalize this idea into a proof of correctness. This again done by induction. As invariant we state that after iteration $i$ block $b=(r-i-1+p)\mod{p}$ of rank $r$ holds the total sum 
+\begin{align*}
+	O_r^i[b] = \bigoplus_{n=0}^{i} I_{(r-n+p)\mod{p}}[b]
+\end{align*}
+in array $O$. The notation $I_{\tilde{r}}[\tilde{b}]$ refers here to the $\tilde{b}$-th input block of rank $\tilde{r}$. The invariant obviously holds before the first iteration as $O_r^i[b]=I_r[b]$ and each rank has at every block just the input block saved. Assume the invariant holds in iteration $i$. In iteration $i+1$ every rank receives $O_\hat{r}^i [b]$ from rank $\hat{r} = (r-1+p)\mod{p}$ and adds to its own input $I[b]$. We can guarantee that the input is still saved in $O[b]$ before this iteration as each block $O[b]$ is only touched (written to) once in the Reduce\_Scatter phase. We therefore have after iteration $i+1$ (for $i+1\leq p-1$)
+\begin{align*}
+	O_r^{i+1}[b] &= \bigoplus_{n=0}^{i} I_{(\hat{r}-n+p)\mod{p}}[b] \oplus I_r[b]\\
+	&= \bigoplus_{n=0}^{i} I_{(r-1 + p-n+p)\mod{p}}[b] \oplus I_r[b] \\
+	&= \bigoplus_{n=1}^{i} I_{(r-1 + p-n+p)\mod{p}}[b] \\
+	&= \bigoplus_{n=0}^{i+1} I_{(r -n +p)\mod{p}}[b] 
+\end{align*}
+which proves the correctness of the invariant. Moreover we see directly that $O_r^{p-1}[b]$ is indeed the sum over all inputs of block $b$. This proves the correctness of the Reduce\_Scatter phase.\\
+The correctness for the Allgather phase can be proven in quite a similar way. An important note is here that we did not invert the communication scheme and still let the ranks only communicate to their right neighbor. One has here the freedom of choice due to the circular structure of the scheme and we chose for this example implementation to maintain the direction of communication for both phases.\\
+We also want to give an execution time estimation for this algorithm using our linear cost model. There calculation is quite straight forward. There are $p-1$ iterations in the Reduce\_Scatter phase as well is in the Allgather phase. In both phases there is one block sent. We assume again an equally sized partitioning of the input array and identify the size of a block as $m/p$. In the Reduce\_Scatter phase there is moreover one block reduced per iteration. Summing all terms together we get an estimation of
+\begin{align*}
+	T_\mathrm{Allreduce} = 2 (p-1) \alpha + \frac{p-1}{p}m(2\beta + \gamma).
+\end{align*}
+To this algorithm are also adaptations for networks that have some cyclic structures but are not a complete cycle \cite{ring2D}. There are also extensions to this ring algorithm to a 2D or more dimensional tori. These can help to bring the $\alpha$ latency term down\cite{ring2D}. 
 
 
-\section{Important Allgather\_v Implementations}
-
+\section{Important Allgather\_v Implementations} \label{Allgather_v}
 \section{Data Compression in Distributed Memory Algorithms}
 
 

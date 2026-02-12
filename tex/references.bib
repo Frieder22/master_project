@@ -227,6 +227,64 @@ doi = {10.1145/2442516.2442530}
 	doi = {10.1038/s41598-021-98794-z}
 }
 
+% shift communication scheme
+@article{shiftComm,
+	author = {BAR-NOY, AMOTZ and KIPNIS, SHLOMO and SCHIEBER, BARUCH},
+	title = {AN OPTIMAL ALGORITHM FOR COMPUTING CENSUS FUNCTIONS IN MESSAGE-PASSING SYSTEMS},
+	journal = {Parallel Processing Letters},
+	volume = {03},
+	number = {01},
+	pages = {19-23},
+	year = {1993},
+	doi = {10.1142/S0129626493000046},
+	URL = {https://doi.org/10.1142/S0129626493000046},
+	eprint = {https://doi.org/10.1142/S0129626493000046}
+}
+
+
+% Approach to extend Butterfly scheme
+@InProceedings{RabenseifTraeff,
+	author="Rabenseifner, Rolf
+	and Tr{\"a}ff, Jesper Larsson",
+	editor="Kranzlm{\"u}ller, Dieter
+	and Kacsuk, P{\'e}ter
+	and Dongarra, Jack",
+	title="More Efficient Reduction Algorithms for Non-Power-of-Two Number of Processors in Message-Passing Parallel Systems",
+	booktitle="Recent Advances in Parallel Virtual Machine and Message Passing Interface",
+	year="2004",
+	publisher="Springer Berlin Heidelberg",
+	address="Berlin, Heidelberg",
+	pages="36--46",
+	isbn="978-3-540-30218-6"
+}
+
+
+% Approach to not powert of 2 
+@article{BruckJehoshua,
+	author = {BRUCK, JEHOSHUA and HO, CHING-TIEN},
+	title = {EFFICIENT GLOBAL COMBINE OPERATIONS IN MULTI-PORT MESSAGE-PASSING SYSTEMS},
+	journal = {Parallel Processing Letters},
+	volume = {03},
+	number = {04},
+	pages = {335-346},
+	year = {1993},
+	doi = {10.1142/S012962649300037X},
+	URL = {https://doi.org/10.1142/S012962649300037X},
+	eprint = {https://doi.org/10.1142/S012962649300037X}
+}
+
+% non 2^k extension using circular Graphs
+@INPROCEEDINGS{circularGraph,
+	author={Träff, Jesper Larsson and Hunold, Sascha and Vardas, Ioannis and Funk, Nikolaus Manes},
+	booktitle={2023 IEEE International Conference on Cluster Computing (CLUSTER)}, 
+	title={Uniform Algorithms for Reduce-scatter and (most) other Collectives for MPI}, 
+	year={2023},
+	volume={},
+	number={},
+	pages={284-294},
+	keywords={Production systems;Costs;Communication systems;Clustering algorithms;Cluster computing;Libraries;Standards;MPI;HPC;Collective Communication},
+	doi={10.1109/CLUSTER52292.2023.00031}}
+
 
 % description of different allreduce implementations
 @article{optimizationsCollComm,
@@ -255,7 +313,6 @@ doi = {10.1145/2442516.2442530}
 	publisher="Springer Berlin Heidelberg",
 	address="Berlin, Heidelberg",
 	pages="1--9",
-	abstract="A 5-year-profiling in production mode at the University of Stuttgart has shown that more than 40{\%} of the execution time of Message Passing Interface (MPI) routines is spent in the collective communication routines MPI{\_}Allreduce and MPI{\_}Reduce. Although MPI implementations are now available for about 10 years and all vendors are committed to this Message Passing Interface standard, the vendors' and publicly available reduction algorithms could be accelerated with new algorithms by a factor between 3 (IBM, sum) and 100 (Cray T3E, maxloc) for long vectors. This paper presents five algorithms optimized for different choices of vector size and number of processes. The focus is on bandwidth dominated protocols for power-of-two and non-power-of-two number of processes, optimizing the load balance in communication and computation.",
 	isbn="978-3-540-24685-5"
 }
 
@@ -271,9 +328,7 @@ doi = {10.1145/2442516.2442530}
 	issn = {0743-7315},
 	doi = {https://doi.org/10.1016/j.jpdc.2008.09.002},
 	url = {https://www.sciencedirect.com/science/article/pii/S0743731508001767},
-	author = {Pitch Patarasuk and Xin Yuan},
-	keywords = {All-reduce, Collective communication, Tree topology, Cluster of workstations},
-	abstract = {We consider an efficient realization of the all-reduce operation with large data sizes in cluster environments, under the assumption that the reduce operator is associative and commutative. We derive a tight lower bound of the amount of data that must be communicated in order to complete this operation and propose a ring-based algorithm that only requires tree connectivity to achieve bandwidth optimality. Unlike the widely used butterfly-like all-reduce algorithm that incurs network contention in SMP/multi-core clusters, the proposed algorithm can achieve contention-free communication in almost all contemporary clusters, including SMP/multi-core clusters and Ethernet switched clusters with multiple switches. We demonstrate that the proposed algorithm is more efficient than other algorithms on clusters with different nodal architectures and networking technologies when the data size is sufficiently large.}
+	author = {Pitch Patarasuk and Xin Yuan}
 }
 
 % reference of mpi standard
@@ -295,3 +350,27 @@ doi = {10.1145/2442516.2442530}
 	primaryClass={cs.DC},
 	url={https://arxiv.org/abs/2410.14234}, 
 }
+
+%Allreduce Ring Algorithm
+@article{ring2D,
+	author = {Wang, Guozheng and Lei, Yongmei and Zhang, Zeyu and Peng, Cunlu},
+	year = {2023},
+	month = {01},
+	pages = {},
+	title = {A Communication Efficient ADMM-based Distributed Algorithm Using Two-Dimensional Torus Grouping AllReduce},
+	volume = {8},
+	journal = {Data Science and Engineering},
+	doi = {10.1007/s41019-022-00202-7}
+}
+
+%Allreduce Ring
+@INPROCEEDINGS{ringAllred,
+	author={Vadhiyar, S.S. and Fagg, G.E. and Dongarra, J.},
+	booktitle={SC '00: Proceedings of the 2000 ACM/IEEE Conference on Supercomputing}, 
+	title={Automatically Tuned Collective Communications}, 
+	year={2000},
+	volume={},
+	number={},
+	pages={3-3},
+	keywords={Network topology;Shape;Mathematical model;Lifting equipment;Computer science;Application software;Fault tolerance;Clustering algorithms;US Department of Energy;Contracts},
+	doi={10.1109/SC.2000.10024}}
