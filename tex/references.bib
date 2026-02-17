@@ -124,6 +124,26 @@ doi = {10.1145/2442516.2442530}
 	author = {Albert Alexandrov and Mihai F. Ionescu and Klaus E. Schauser and Chris Scheiman},
 }
 
+% comparison cost models
+@article{costModels,
+	author = {Rico-Gallego, Juan A. and D\'{\i}az-Mart\'{\i}n, Juan C. and Manumachu, Ravi Reddy and Lastovetsky, Alexey L.},
+	title = {A Survey of Communication Performance Models for High-Performance Computing},
+	year = {2019},
+	issue_date = {November 2019},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	volume = {51},
+	number = {6},
+	issn = {0360-0300},
+	url = {https://doi.org/10.1145/3284358},
+	doi = {10.1145/3284358},,
+	journal = {ACM Comput. Surv.},
+	month = jan,
+	articleno = {126},
+	numpages = {36},
+	keywords = {high-performance computing, communication performance, analytic modeling, Communication performance models}
+}
+
 
 %------------------------------------------------------------------------------------------------------
 %                                      Introduction of ALLREDUCE algos
@@ -374,3 +394,60 @@ doi = {10.1145/2442516.2442530}
 	pages={3-3},
 	keywords={Network topology;Shape;Mathematical model;Lifting equipment;Computer science;Application software;Fault tolerance;Clustering algorithms;US Department of Energy;Contracts},
 	doi={10.1109/SC.2000.10024}}
+
+
+%------------------------------------------------------------------------------------------------------
+%                                          Allgather
+%------------------------------------------------------------------------------------------------------
+% Allgather overview
+@INPROCEEDINGS{allgather,
+	author={Jing Chen and Linbo Zhang and Yunquan Zhang and Wei Yuan},
+	booktitle={Eighth International Conference on High-Performance Computing in Asia-Pacific Region (HPCASIA'05)}, 
+	title={Performance evaluation of Allgather algorithms on terascale Linux cluster with fast Ethernet}, 
+	year={2005},
+	volume={},
+	number={},
+	pages={6 pp.-442},
+	keywords={Clustering algorithms;Linux;Ethernet networks;Testing;TCPIP;High performance computing;Computer science;Content addressable storage;Parallel machines;Costs},
+	doi={10.1109/HPCASIA.2005.75}}
+
+%Allgather old version Träff
+@misc{allgatherTraeffOld,
+	title={(Poly)Logarithmic Time Construction of Round-optimal $n$-Block Broadcast Schedules for Broadcast and irregular Allgather in MPI}, 
+	author={Jesper Larsson Träff},
+	year={2023},
+	eprint={2205.10072},
+	archivePrefix={arXiv},
+	primaryClass={cs.DC},
+	url={https://arxiv.org/abs/2205.10072}, 
+}
+
+% Bruck algorithm
+@ARTICLE{bruckAlgo,
+	author={Bruck, J. and Ching-Tien Ho and Kipnis, S. and Upfal, E. and Weathersby, D.},
+	journal={IEEE Transactions on Parallel and Distributed Systems}, 
+	title={Efficient algorithms for all-to-all communications in multiport message-passing systems}, 
+	year={1997},
+	volume={8},
+	number={11},
+	pages={1143-1156},
+	keywords={Broadcasting;Application software;Time measurement;Algorithm design and analysis;Concurrent computing;Particle measurements;Topology;Bandwidth;Scattering;Parallel programming},
+	doi={10.1109/71.642949}}
+
+% Paper that calls  Algo 'Bruck Algo'
+@inproceedings{bruckReference,
+	author = {Fan, Ke and Gilray, Thomas and Pascucci, Valerio and Huang, Xuan and Micinski, Kristopher and Kumar, Sidharth},
+	title = {Optimizing the Bruck Algorithm for Non-uniform All-to-all Communication},
+	year = {2022},
+	isbn = {9781450391993},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	url = {https://doi.org/10.1145/3502181.3531468},
+	doi = {10.1145/3502181.3531468},
+	booktitle = {Proceedings of the 31st International Symposium on High-Performance Parallel and Distributed Computing},
+	pages = {172–184},
+	numpages = {13},
+	keywords = {alltoallv, bruck algorithm, collective communication, mpi},
+	location = {Minneapolis, MN, USA},
+	series = {HPDC '22}
+}

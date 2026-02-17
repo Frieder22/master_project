@@ -123,7 +123,7 @@ In our edge-centric partitioning we have in and outgoing edges for every vertex 
 		\While{frontier\_old $\not = \emptyset$}
 			\State frontier\_new $\gets \emptyset$
 			\State visited $\gets$ visited $\cup$ frontier\_old
-			\Comment{update \texttt{vidited} set with new values}
+			\Comment{update \texttt{visited} set with new values}
 			\ForAll{v $\in$ frontier\_old}
 				\ForAll{neigh $\in$ \Call{getNeighbours}{E\_local, $v$}}
 					\If{neigh $\not \in$ visited}
@@ -155,10 +155,47 @@ Of course the function \Call{unionAll}{ } needs to be adapted to take care of de
 
 The union set operation using only bitmaps is quite straight forward. A global reduction operation performing a bitwise OR on such bitmaps is exactly equivalent to the union set operation. The \gls{mpi} standard defines this global reduction in the function \Call{MPI\_Allreduce}{ } using the tag \textbf{MPI\_BOR} \cite{mpi}. We borrow this nomenclature for this thesis and describe collective reductions as \textit{Allreduce}. In the later sections of this chapter are the basics of how these Allreduce algorithms implemented described. They are the foundation of the proposed optimized \Call{unionAll}{} procedure.
 
-\section{Pseudocode} \label{pseudocode}
-\todo{ describe pseudo code used in this thesis. Is this really necessary???}
+\section{Pseudocode and Special Notations} \label{pseudocode}
+Here we want to give an overview and explanations of some special notation used in this thesis. So we want to explain elements used in the pseudocode example as well as mathematical expressions. We expect notations like assignment ($\gets$), function declaration (\textbf{procedure}), function calls (\Call{MyFunc}{}) and while loops (\textbf{while}) as trivial and therefore no explanation is needed for them. For other pseudo code elements we give the following listing:
+ 
+\begin{tabularx}{\textwidth}{p{3.1cm} | X}
+	$\textbf{for} (\cdot, \cdot, \cdot)$ & 
+	For loop using standard C notation. First parameter is called before first iteration, second parameter states condition when loop should be broken and third parameter is called after each iteration. \\ \hline
+	$\textbf{for} ~ i = a, \dots, b $ & 
+	For loop where each iteration variable $i$ is set to $a$ in first iteration and is increased by one in each iteration until it reaches $b$ \\ \hline
+	$\textbf{for all}~ i\in\{\}$ & 
+	For loop where iteration variable $i$ needs to take each element of the set. Here there order which elements are used is irrelevant.\\ \hline
+	$arr[i]$ & 
+	Variable $arr$ is an array. This can mean two different things dependent on context. Either we select the $i$-th element or, if the array is explicitly divided into blocks, the $i$-th block. \\ \hline
+	$\cdot$  XOR $\cdot$ & 
+	Bitwise exclusive OR operator. \\ \hline
+	$\cdot \oplus \cdot$ & 
+	Some associative commutative binary operator. Is a placeholder for operator like $+$, $\cdot$ (multiplication), max($\cdot, \cdot$), min($\cdot, \cdot$) or bitwise operators. In our implementations it is always commutative, too. \\ \hline
+	$\Call{Send}{data, recv}$ &
+	Point-to-point communication. Send data $data$ to process with rank ID. \gls{mpi} implements this in function \texttt{MPI\_Send()} and variants of it. $recv$ \\ \hline
+	$\Call{Recv}{data, send}$ &
+	Point-to-point communication. Receive data $data$ from process with rank ID $rsend$. To receive a message obviously rank $send$ needs to send data to the receiving process. \gls{mpi} implements this in function \texttt{MPI\_Recv()} and variants of it.\\ \hline
+	$\Call{Send}{data_1, recv}$||\newline $\Call{Recv}{data_2, send}$ &
+	Point-to-point communication. Sending and receiving at the 'same time'. The symbol $||$ stands here for performing both functions in one call and does not represent a logic OR. This call is important as it avoids deadlocks. \gls{mpi} implements this in function \texttt{MPI\_Sendrecv()}.\\ \hline
+	$\ceil{a}$ &
+	$a$ is a number and $\ceil{a}$ is the value of the next highest integer of $a$. \\ \hline
+	$(val)\mod{div}$ & 
+	Division of $val$ by $div$ with remainder. The function returns the remainder $r$. To avoid negative input we often use $(val + div)\mod{div}$, if $val$ can be $-p < val < 0$. \\ \hline
+	$a // b$&
+	Integer division. $a$ is divided by $b$ and then rounded to the next lowest number. $a$ and $b$ are here always positive numbers.
+\end{tabularx}
+We also want to mention some variables that are exclusively used for one purpose.
+
+\begin{tabularx}{\textwidth}{p{3.1cm} | X }
+	$p$ & Number of processors. \\ \hline
+	$r$ & Rank ID of the process. \\ \hline
+	$\alpha$ & Latency constant of linear cost model. See next section. \\ \hline
+	$\beta$ & Bandwidth constant of linear cost model. See next section. \\ \hline
+	$\gamma$ & Computation constant of extended linear cost model. See next section.
+\end{tabularx}
 
 \section{Cost Model} \label{costModel}
+\todo{rewrite and use review paper from Rico-Gallego}
 In this section we want to give a introduction on how to estimate runtimes for point to point communication and collective operations. As a starting point we motivate the LogP model \cite{LogP}. The idea of this model is to find an upper bound for the time that is needed to send (rather small) messages from one processor to another. This is done by splitting the time in different components that one can estimate by its own. The $L$ stands for the latency i.e. it is an upper bound of the time a message takes in the interconnect of the network to get from one processor to another. The $o$ represents the overhead a process takes to prepare the messages and is also assumed for the receiving process to make the data accessible. $g$ stands for the gap a sending processor needs to send the next message. $P$ is here simply the number of processors. As an example when sending $k$ messages from one thread to another one we can identify the different contributing parts and add the times together. The sending thread starts to send the fist message. Therefore one overhead $o$ is needed. Until the next message can be send the gap $g$ has to pass. So for the last message being send it takes $(k-1)g$  amount of time. This last message enters the receiving process at least after the latency $L$ and takes another overhead $o$ to be ready for the receiving process. So in total we have an estimated time
 \begin{align*}
 	T_\textrm{LogP}(k) = 2 o + (k-1)g + L.
@@ -178,10 +215,10 @@ Another extension of the linear cost model can also consider computation that is
 \end{align*}
 can estimate the execution time to reduce a vector of size $m$ (in bytes) into another one. The parameter $\gamma$ is here dependent on the reduction operator (and of course on the machine it is executed on). With this we can model execution times of the algorithms proposed in the next sections.
 
-\section{Important Allreduce Implementations}
-The Allreduce is an collective operation that calculates the total sum under a binary  operator $\oplus$. Each process $r$ holds as input a value or an array $I_r$. The output $O$ of such an Allreduce is then
+\section{Important Allreduce Implementations} \label{sec:Allreduce}
+The Allreduce is a collective operation that calculates the total sum under a binary  operator $\oplus$. Each process $r$ holds as input a value or an array $I_r$. The output $O$ of such an Allreduce is then
 \begin{align*}
-	O = \bigoplus_{i=0}^{p-1} I_i.
+	O = \bigoplus_{r=0}^{p-1} I_r.
 \end{align*}
 This output $O$ is available to all processors $\{0,\dots, p-1\}$. The binary operator $\oplus$ needs to be associative and common examples are the standard addition ($+$), the standard multiplication ($\cdot$), the minimum/maximum ($\min(\cdot, \cdot)$, $\max(\cdot, \cdot)$) or bitwise operation like bitwise OR/AND/XOR. We keep the notation to the \gls{mpi} standard, but we want to mention that there is other terminology for this like \emph{global combine} \cite{AllreduceSummaryAll} or \emph{census function} \cite{shiftComm} that describe the same collective operation. We also want to mention here that in this thesis we use \emph{rank}, \emph{process} and \emph{processor} as nearly equivalent terms. One needs to keep in mind that in a strict sense the rank describes the ID of a process and a processor is the physically entity a process is executed. Moreover it is not necessarily given that a process keeps assigned to the same processor over its execution. So when speaking of a communication between processors $r$ and $\hat{r}$ we mean a communication between a process with ID $r$ with another process with ID $\hat{r}$. We also want to define the terminology for the expression \emph{to reduce} something. This should be interpreted as the application of operator $\oplus$ on two elements or two equally sized blocks of data. Usually the result is saved in one of the inputs. Sometimes we refer to this operation also as adding two data elements together and speak of the result as the sum. This of course should not only represent the case where $\oplus ~\widehat{=}~ +$, but should represent every possible associative operator $\oplus$. \\
 The Allreduce operation is intuitively a direct choice for our problem of calculation a set union. Abstractly speaking, we can split up our problem of calculating the union of all processes by finding the union between two sets (of two processors) and then use this subresult without ever looking at the two original sets anymore. So we can find the total union by performing the set union recursively over all sets.\\
@@ -198,11 +235,11 @@ One of the most direct approaches to get a Allreduce, is by performing a Reduce 
 This can be improved, especially for large message sizes. For the Broadcast there are \textit{work-optimal} implementations that switch to optimized algorithms for larger messages. These algorithms bring down the $\beta$-term, which usually scale the effect of the message size $m$. Such \textit{work-optimal} algorithms bring the $\beta$-term from $\log(p)m$ down to $2 m \frac{p-1}{p}$ \cite{BroadcastWorkOpt, BroadcastAlgos}. This is of course only beneficial for a relatively large amount of processors $p$. There are also strategies, like pipelining the Broadcast or using trees with different degrees \cite{pipelinedBroadcast, karyTrees, traeff2025}. The same ideas can be also applied for the Reduction part. These implementations are of course especially useful, if the underlying structure of the computing machine is also build in a tree-like fashion.
 
 
-\subsection{Recursive Doubling Scheme} 
+\subsection{Recursive Doubling Scheme} \label{sec:recursiveDoublingAllreduce}
 The recursive doubling scheme is an approach to get rid of the factor 2 appearing in Equation \ref{eq:BroadcastNaive} by getting every process in each iteration involved and tackling the problem in a divide-and-conquer fashion. The key observation of this algorithm is that when two processes send a copy of their data vector to each other and both perform a local reduce combining their own data with the received vector they both posses identical data \cite{AllreduceSummaryAll}. This is beneficial, as in the next iteration both processes can send the same subresult to new participating processes that are not the same.
 By doing this we can recursively build a scheme, such that in each iteration $i$ a set of $2^i$ processes have the same subresult. So this approach works ideally for $2^k$ numbers of participating processors. To get a better understanding an implementation as pseudocode is shown in Algorithm \ref{algo:recursiveAlgo}.\\
 \begin{algorithm}
-	\caption{– Recursive Doubling Scheme (Butterfly pattern)\\
+	\caption{– Allreduce Recursive Doubling Scheme (Butterfly pattern)\\
 	\textit{r}: rank Id\\
 	\textit{p}: number of processes\\
 	\text{I}: Input array\\
@@ -213,7 +250,7 @@ By doing this we can recursively build a scheme, such that in each iteration $i$
 		\For{(shift $\gets 1$, shift $< p$, shift $\gets 2\cdot$shift)}
 		\State commNeigh $\gets r $ XOR shift \Comment{Find communication partner}
 		\State \Call{Send}{$I$, commNeigh} $||$ \Call{Recv}{$O$, commNeigh}  
-		\Comment{Send input, receive in output}
+		\Statex \Comment{Send input, receive in output}
 		\State $I \gets I\oplus O$ \Comment{Perform local reduction}
 		\EndFor
 		\State $O \gets I$
@@ -407,17 +444,17 @@ The idea is here to generate a sequence that resembles approximately  the doubli
 	\begin{algorithmic}[1]
 		\Procedure{AllReduce}{$r, p, s, I, O$}
 		\State to, from $\gets$ $(r + s_0)\mod{p}$, $(r-s_0)\mod{p}$
-		\State \Call{Send}{$I$, to} $||$ \Call{Recv}{$O$, from}
+		\State \Call{Send}{$I$, to} $||$ \Call{Recv}{$O$, from} \label{ApproxHalfingWholeArray:firstIt}
 		\For{$k=1,\dots, q-1$}
 		\State $\epsilon \gets s_{k+1} \land (1)_2$
 		\Comment{$\epsilon=1$, if $s_{k+1}$ is odd, $\epsilon=0$, if $s_{k+1}$ is even}
 		\State to, from $\gets$ $(r + s_k - \epsilon)\mod{p}$, $(r-s_k + \epsilon + p)\mod{p}$
 		\If{$\epsilon$=1}
-		\State \Call{Send}{$O$, to} $||$ \Call{Recv}{$B$, from}
+		\State \Call{Send}{$O$, to} $||$ \Call{Recv}{$B$, from} \label{ApproxHalfingWholeArray:eps1}
 		\Comment{Send subsolution without own input}
 		\Else			
-		\State $O' \gets O \oplus I $
-		\State \Call{Send}{$O'$, to} $||$ \Call{Recv}{$B$, from}
+		\State $O' \gets O \oplus I $ \label{ApproxHalfingWholeArray:eps0a}
+		\State \Call{Send}{$O'$, to} $||$ \Call{Recv}{$B$, from} \label{ApproxHalfingWholeArray:eps0b}
 		\Comment{Send subsolution including own input}
 		\EndIf
 		\State $O\gets O \oplus B$
@@ -577,11 +614,11 @@ With this ideas in mind we can formalize a proof of correctness. We want to proo
 \begin{align}
 	O_r^k = \bigoplus_{i= r - s_{k+1} + 1}^{r-1} I_{i + p \mod{p}}, \label{inductionShift}
 \end{align}
-where $I_i$ is the input of rank $i$. This condition holds for the first iteration. The first iteration ($i=0$) is handled separately (line 3) where each rank $r$ receives the input of $(r-1+p) \mod{p}$ therefore each rank holds $O_r^0 = I_{r-1\mod{p}}$ which respects Equation \ref{inductionShift} as we know that $s_1=2$ holds for every approximately halfing sequence.\\
+where $I_i$ is the input of rank $i$. This condition holds for the first iteration. The first iteration ($i=0$) is handled separately (line \ref{ApproxHalfingWholeArray:firstIt}) where each rank $r$ receives the input of $(r-1+p) \mod{p}$ therefore each rank holds $O_r^0 = I_{r-1\mod{p}}$ which respects Equation \ref{inductionShift} as we know that $s_1=2$ holds for every approximately halfing sequence.\\
 To perform the induction step we have to look at two cases.
 \begin{itemize}
 	\item  $s_{k+1}$ is even:\\
-	This means that $s_k + s_k = s_{k+1}$. When looking at the Algorithm \ref{algo:ApproxHalfingWholeArray} we see that $\epsilon=0$ and line 10 and 11 are executed.
+	This means that $s_k + s_k = s_{k+1}$. When looking at the Algorithm \ref{algo:ApproxHalfingWholeArray} we see that $\epsilon=0$ and line \ref{ApproxHalfingWholeArray:eps0a} and \ref{ApproxHalfingWholeArray:eps0b} are executed.
 	We can calculate $O_r^k$ under the assumption Equation \ref{inductionShift} holds for $k-1$. For this we simplify notation and define $\mathbf{x}:=((x+p) \mod{p})$. \todo{find better visual representation than mathbf for mod(p)}
 	\begin{align*}
 		O_r^k 
@@ -596,7 +633,7 @@ To perform the induction step we have to look at two cases.
 	\end{align*}
 	
 	\item $s_{k+1}$ is odd:\\
-	This means that $s_k + s_k = s_{k+1} + 1$. When looking at the Algorithm \ref{algo:ApproxHalfingWholeArray} we see that $\epsilon=1$ and line 8 is executed.We can calculate $O_r^k$ under the assumption Equation \ref{inductionShift} holds for $k-1$.
+	This means that $s_k + s_k = s_{k+1} + 1$. When looking at the Algorithm \ref{algo:ApproxHalfingWholeArray} we see that $\epsilon=1$ and line \ref{ApproxHalfingWholeArray:eps1} is executed.We can calculate $O_r^k$ under the assumption Equation \ref{inductionShift} holds for $k-1$.
 		\begin{align*}
 		O_r^k 
 		&= O_r^{k-1} \oplus  B 
@@ -640,19 +677,21 @@ So we firstly want to introduce here an algorithm implementing the Reduce\_Scatt
 		\Procedure{AllReduceScatter}{$r, p, I, O$}
 		\For{(shift $\gets p/2$, shift $\geq 1$, shift $\gets$ shift/$2$)}
 		\State commNeigh $\gets r $ XOR shift \Comment{Find communication partner}
-		\State start $\gets $ (commNeigh/shift)*shift
+		\State start $\gets $ (commNeigh//shift)$\cdot$shift
+		\label{reduceScatter:startBlock}
 		\Comment{rounding down to next multiple of shift}
-		\State startR $\gets $ ($r$/shift)*shift
-		\State \Call{Send}{$I$[start, $\dots$, start + shift], commNeigh} $||$ \Call{Recv}{$O$, commNeigh}
+		\State startR $\gets $ ($r$//shift)$\cdot$shift
+		\label{reduceScatter:startBlockR}
+		\State \Call{Send}{$I$[start, $\dots$, start + shift$-$1], commNeigh} $||$ \Call{Recv}{$O$, commNeigh}
 		\\ \Comment{Send input, receive in output}
-		\State $I$[startR, $\dots$, startR + shift]$\gets$ I[startR, $\dots$, startR + shift] $\oplus~O$
+		\State $I$[startR, $\dots$, startR + shift$-$1]$\gets$ I[startR, $\dots$, startR + shift$-$1] $\oplus~O$
 		\\ \Comment{Perform local reduction}
 		\EndFor
 		\State $O \gets I$
 		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
-Here we see that in each iteration $i$ only \textbf{shift}=$p/2^{i}$ amount of blocks are sent. In line 4 and 5 the start blocks are calculated. \textbf{start} is calculated using $r$ and \textbf{startR} is calculated using the id of $r$s communication partner. This structure guarantees that blocks that are received from a processes communication partner are reduced on top of the same blocks the process holds in its buffer $I$. A visualization of an example is given in Figure \ref{fig:butterflyBigToSmall}.\\
+Here we see that in each iteration $i$ only \textbf{shift}=$p/2^{i}$ amount of blocks are sent. In line \ref{reduceScatter:startBlock} and \ref{reduceScatter:startBlockR} the start blocks are calculated. \textbf{start} is calculated using $r$ and \textbf{startR} is calculated using the id of $r$s communication partner. This structure guarantees that blocks that are received from a processes communication partner are reduced on top of the same blocks the process holds in its buffer $I$. A visualization of an example is given in Figure \ref{fig:butterflyBigToSmall}.\\
 With this picture in mind we want to prove the correctness of this algorithm by induction. The setup is here that in iteration $i$ we can split the processes in groups of size $p/2^{i}$ and the data arrays in chunks of size $p/2^{i}$. The groups are assigned to the data chunks in an ordered fashion meaning data chunk 1 is assigned to group 1, data chunk 2 is assigned to  group 2 and so on. We now want to show for each iteration $i$ that when the data chunks from each processor group would be combined we would have a chunk of size $p/2^{i}$ of the reduced array.\\
 \begin{figure}
 	\centering
@@ -745,18 +784,18 @@ After the algorithm of the Reduce\_Scatter and its correctness is showed the All
 		\For{(shift $\gets p/2$, shift $\geq 1$, shift $\gets$ shift/$2$)}
 		\Comment{ReduceScatter phase}
 		\State commNeigh $\gets r $ XOR shift
-		\State start $\gets $ (commNeigh/shift)*shift
-		\State startR $\gets $ ($r$/shift)*shift
-		\State \Call{Send}{$I$[start, $\dots$, start + shift], commNeigh} $||$ \Call{Recv}{$O$, commNeigh}
-		\State $I$[startR, $\dots$, startR + shift] $\gets$ I[startR, $\dots$, startR + shift] $\oplus~O$
+		\State start $\gets $ (commNeigh//shift)$\cdot$ shift
+		\State startR $\gets $ ($r$//shift)$\cdot$shift
+		\State \Call{Send}{$I$[start, $\dots$, start + shift$-$1], commNeigh} $||$ \Call{Recv}{$O$, commNeigh}
+		\State $I$[startR, $\dots$, startR + shift$-$1] $\gets$ I[startR, $\dots$, startR + shift$-$1] $\oplus~O$
 		\EndFor
 		\For{(shift $\gets 1$, shift $< p$, shift $\gets 2\cdot$shift)}
 		\Comment{Allgather phase}
 		\State commNeigh $\gets r $ XOR shift 
-		\State start $\gets $ ($r$/shift)*shift
-		\State startR $\gets $ (commNeigh/shift)*shift
-		\State \Call{Send}{$I$[start, $\dots$, start + shift], commNeigh} $||$
-		\State \Call{Recv}{$I$[startR, $\dots$, startR + shift], commNeigh}
+		\State start $\gets $ ($r$//shift)$\cdot$shift
+		\State startR $\gets $ (commNeigh//shift)$\cdot$shift
+		\State \Call{Send}{$I$[start, $\dots$, start + shift$-$1], commNeigh} $||$
+		\Statex \hspace{1cm} \Call{Recv}{$I$[startR, $\dots$, startR + shift$-$1], commNeigh}
 		\EndFor
 		\State $O \gets I$
 		\EndProcedure
@@ -898,6 +937,7 @@ The algorithm \cite{traeff2025} is presented in Procedure \ref{algo:redScatterSh
 	\begin{algorithmic}[1]
 		\Procedure{ReduceScatter}{$r, p, I, O$}
 		\State $O \gets I[r]$
+		\label{redScatterShift:OInit}
 		\ForAll{$i \in \{1,\dots, p-1\}$}
 		$R[i]\gets I[(r+i)\mod{p}]$
 		\EndFor
@@ -906,7 +946,9 @@ The algorithm \cite{traeff2025} is presented in Procedure \ref{algo:redScatterSh
 			\State $s', s\gets s, \ceil{s/2}$
 			\State to, from $\gets (r+s)\mod{p}, (r-s+p)\mod{p}$
 			\State \Call{Send}{$R$[$s, \dots,s'-1$], to} $||$ \Call{Recv}{$B$[$0, \dots, s' - s -1$], from}
+			\label{redScatterShift:SendRecv}
 			\State $O \gets O \oplus B[0]$
+			\label{redScatterShift:ORed}
 			\ForAll{$i \in \{1,\dots, s'-s-1\}$}
 			$R[i]\gets R[i] \oplus B[i]$
 			\EndFor
@@ -915,9 +957,9 @@ The algorithm \cite{traeff2025} is presented in Procedure \ref{algo:redScatterSh
 	\end{algorithmic}
 \end{algorithm}
 As we can see the approximate halfing sequence is here calculated on the fly. An important difference when this algorithm compared to the before mentioned Allreduce that also uses the approximate halfing pattern (Procedure \ref{algo:ApproxHalfingWholeArray}) is that here is no adjustment term $\epsilon$ needed. The reason for this becomes apparent in the proof of correctness. Moreover the approximate halfing sequence is here iterated from the back i.e. we start here with $s_{q-1}=\ceil{p/2}$ and the last iteration uses $s_0=1$. With this we can identify $s'=s_{k+1}$ and $s=s_k$.\\
-The input array obviously needs to be divided into $p$ blocks as after this procedure each rank should only hold one of these blocks. In the shown implementation we need two extra buffers $R$ and $B$. $B$ only serves as a buffer for receiving messages. $R$ holds the subresults of the different reduced blocks. If large enough memory is allocated for $O$ one could simply append $R$ to it. In this case the lines 2 and 10 would not be necessary as they could be included in the loops following each line by letting there parameter $i$ start at $0$ instead of $1$. To make explanation and proof easier we keep this interpretation in mind and refer to $O$ simply as $R[0]$. An important detail from this algorithm is that the original blocks from the input $I$ are saved in a rotated manner in $R$. This done in such a way that each rank $r$ holds the $r$-th block at its first entry $R[0]$. We see that in each iteration blocks $R[s,\dots, s'-1]$ are sent to a process $\hat{r}=(r+s)\mod{p}$. These blocks are there added using the operator $\oplus$ to blocks $R[0,\dots,s'-s-1]$ (while using $T$ as an intermediate buffer). So the blocks send by $r$ are added at $\hat{r}$ to blocks which are  shifted by $s$ to the start of array $R$ compared to their original position at $r$. This works fine because in the beginning we saved $R$ in a rotated manner such that $R[0] = I[r]$.
+The input array obviously needs to be divided into $p$ blocks as after this procedure each rank should only hold one of these blocks. In the shown implementation we need two extra buffers $R$ and $B$. $B$ only serves as a buffer for receiving messages. $R$ holds the subresults of the different reduced blocks. If large enough memory is allocated for $O$ one could simply append $R$ to it. In this case the lines \ref{redScatterShift:OInit} and \ref{redScatterShift:ORed} would not be necessary as they could be included in the loops following each line by letting there parameter $i$ start at $0$ instead of $1$. To make explanation and proof easier we keep this interpretation in mind and refer to $O$ simply as $R[0]$. An important detail from this algorithm is that the original blocks from the input $I$ are saved in a rotated manner in $R$. This done in such a way that each rank $r$ holds the $r$-th block at its first entry $R[0]$. We see that in each iteration blocks $R[s,\dots, s'-1]$ are sent to a process $\hat{r}=(r+s)\mod{p}$. These blocks are there added using the operator $\oplus$ to blocks $R[0,\dots,s'-s-1]$ (while using $T$ as an intermediate buffer). So the blocks send by $r$ are added at $\hat{r}$ to blocks which are  shifted by $s$ to the start of array $R$ compared to their original position at $r$. This works fine because in the beginning we saved $R$ in a rotated manner such that $R[0] = I[r]$.
 This becomes most apparent when one just considers block $s$ at rank $r$. This block corresponds to the input block $I[(r+s)\mod{p}]$. When it is received block $s$ is then added to block $0$ from rank $\hat{r}=(r+s)\mod{p}$ . Block $0$ at rank $\hat{r}$ corresponds to input block $I[\hat{r}]=I[(r+s)\mod{p}]$ which is the same block as rank $r$ sent.\\
-For this algorithm we also propose a proof of correctness. For this we firstly want to consider a simpler setup. Suppose line 9 of Procedure \ref{algo:redScatterShift} does not send the blocks from array $R$ to a buffer $B$ lying on some other process, but instead the blocks are saved in its own local buffer $B$. The indexing of from where the blocks are taken and where they are stored should remain the same pattern. The block sizes on the other hand are now required to be the same. Moreover we want to give a more relaxed description of the skip sequence $(s_k)_{\{0,\dots,q-1\}}$. The only conditions this sequence has to satisfy is that $s_{k+1} - s_k \leq s_k$, that it is strictly increasing, and that $s_0 = 1$ and $s_{q} = p$. These conditions are  bviously fullfilled by the original approximate halfing sequence. $s'$ is here always $s$ of the iteration before. One needs to keep in mind that we iterating this list from the back. So in iteration $i$ element $s_{q-1-i}$ of this skip sequence is used for $s$.\\
+For this algorithm we also propose a proof of correctness. For this we firstly want to consider a simpler setup. Suppose line \ref{redScatterShift:SendRecv} of Procedure \ref{algo:redScatterShift} does not send the blocks from array $R$ to a buffer $B$ lying on some other process, but instead the blocks are saved in its own local buffer $B$. The indexing of from where the blocks are taken and where they are stored should remain the same pattern. The block sizes on the other hand are now required to be the same. Moreover we want to give a more relaxed description of the skip sequence $(s_k)_{\{0,\dots,q-1\}}$. The only conditions this sequence has to satisfy is that $s_{k+1} - s_k \leq s_k$, that it is strictly increasing, and that $s_0 = 1$ and $s_{q} = p$. These conditions are  bviously fullfilled by the original approximate halfing sequence. $s'$ is here always $s$ of the iteration before. One needs to keep in mind that we iterating this list from the back. So in iteration $i$ element $s_{q-1-i}$ of this skip sequence is used for $s$.\\
 In the adapted pseudocode one can then see that blocks from the end of array $R$ are summed up to blocks of the start of the same array $R$. As we want to find the sum for each iteration at each block we somehow need to maintain an overview of the subresults. A good approach for this is by representing a subresult by a tree $T$. When a subresult $j$ is added to another subresult $i$ then tree $T_j$ is connected to $T_i$, denoted as $T_i \gets T_j$.\\
 Suppose we have a sequence for which it holds $s_{k+1} - s_k \leq s_k$. We now want to prove by induction that in this adaptation of Algorithm \ref{algo:redScatterShift} in iteration $i$ the trees $[T_0, \dots, T_{s_k-1}]$ are disjoint and moreover span all possible vertices. This is our invariant condition and can be interpreted as follows: In blocks $\{0, \dots, s_k-1\}$ is no summand added to two different blocks at the same time and every summand is in at least one of these blocks added. We start the induction before the first iteration. Here we have $s_k=p$ and every block holds its own input. When represented as trees each of the $p$ blocks holds a singleton consisting out of a different possible vertex. So the trees are obviously disjoint and also span all possible vertices.\\
 Assume the invariant holds for iteration $i$. Then in iteration $i+1$ we append the trees $[T_{s_k}, \dots, T_{s_{k+1}-1}]$ to the trees $[T_0, \dots, T_{s_{k+1}-s_k-1}]$. As the invariant was true in iteration $i$ all trees used are disjoint and span all vertices before they are appended (i.e. invariant holds for $[T_0, \dots, T_{s_{k+1}-1}]$). When the trees are now appended the resulting trees are also disjoint. This is true, because the index set $\{s_k, \dots, s_{k+1}-1\}$ of the appended trees is disjoint to the index set $\{0, \dots, s_{k+1}-s_k-1\}$ of the receiving trees as we have the condition $s_{k+1}-s_k \leq s_k$ on our skip sequence. We now that all trees $[T_{s_k}, \dots, T_{s_{k+1}-1}]$ get joint to a tree with an index lower or equal than $s_k$ (also because $s_{k+1}-s_k \leq s_k$), therefore the trees up to index $s_k$ span all vertices. So the invariant holds also for iteration $i+1$.\\
@@ -1017,7 +1059,7 @@ Assume the invariant holds for iteration $i$. Then in iteration $i+1$ we append 
 	\label{fig:arrayCopy}
 \end{figure}
 To get a better understanding we provide a visual example shown in Figure \ref{fig:arrayCopy}. There we can see better how these trees are formed and why the condition $s_{k+1}-s_k \leq s_k$ is sufficient to guarantee disjointedness and complete spanning of the trees.\\
-In the proof we used before we only showed that the adapted variant of Algorithm \ref{algo:redScatterShift} can reduce a sum of a total locally saved vector to its first block. There we changed line $9$ from a sending and receiving procedure to a copying one. We also have to proof correctness for the original pseudocode. We mentioned before that due to the shifted buffering of $I$ in $R$ and the reducing to blocks that are shifted by $s$ compared to the rank that send the blocks only matching blocks are summed together. This is actually all we need. We can label the blocks in our simplified variant from $0$ to $p-1$. The shifted buffering and sending in the original variant then guarantees that block $i$ comes from rank $i$ and also matches the correct input block. \\
+In the proof we used before we only showed that the adapted variant of Algorithm \ref{algo:redScatterShift} can reduce a sum of a total locally saved vector to its first block. There we changed line \ref{redScatterShift:SendRecv} from a sending and receiving procedure to a copying one. We also have to proof correctness for the original pseudocode. We mentioned before that due to the shifted buffering of $I$ in $R$ and the reducing to blocks that are shifted by $s$ compared to the rank that send the blocks only matching blocks are summed together. This is actually all we need. We can label the blocks in our simplified variant from $0$ to $p-1$. The shifted buffering and sending in the original variant then guarantees that block $i$ comes from rank $i$ and also matches the correct input block. \\
 The estimation of the run time using the linear cost model is quite forward. In each iteration there are $s_{k+1} - s_k$ blocks send and reduced. The total amount of blocks processed is therefore $\sum_{s_0}^{s_{q-1}} (s_{k+1} - s_k) = s_q - s_0 = p - 1$. Using the approximate halfing sequence are $q=\ceil{\log_2{p}}$ iteration rounds. We assume that every block has size $m/p$ and then the total run time can be estimated as
 \begin{align*}
 	T_\mathrm{RedScatt} = \ceil{\log_2{p}} \alpha + \frac{p-1}{p}m(\beta + \gamma).
@@ -1050,8 +1092,8 @@ With such an Reduce\_Scatter we can easily build an Allreduce by performing an A
 			\State $s'\gets \Call{Pop}{S}$
 			\State from, to $\gets (r+s)\mod{p}, (r-s+p)\mod{p}$
 			\Comment{to and from are here switched}
-			\State \Call{Send}{$R$[$0, \dots, s' - s -1$], to} $||$ \Call{Recv}{$R$[$s, \dots,s'-1$], from}\\
-			\Comment{Indices of blocks are switched and blocks are directly received in $R$}
+			\State \Call{Send}{$R$[$0, \dots, s' - s -1$], to} $||$ \Call{Recv}{$R$[$s, \dots,s'-1$], from}
+			\Statex \Comment{Indices of blocks are switched and blocks are directly received in $R$}
 			\State $s\gets s'$
 		\EndWhile
 		\ForAll{$i \in \{0,\dots, p-1\}$}
@@ -1113,8 +1155,140 @@ We also want to give an execution time estimation for this algorithm using our l
 \end{align*}
 To this algorithm are also adaptations for networks that have some cyclic structures but are not a complete cycle \cite{ring2D}. There are also extensions to this ring algorithm to a 2D or more dimensional tori. These can help to bring the $\alpha$ latency term down\cite{ring2D}. 
 
+\section{Important Allgather Implementations} \label{Allgather_v}
+We define an Allgather here as collective operation where every process $r$ proposes a block of data $I_r$ as input and all these blocks of data are concatenated in output $O$. The blocks of data are concatenated in rank order. This means the blocks of lower rank ID are build in $O$ before inputs of ranks with high IDs. Formally the output $O$ of an Allgather needs to fulfill
+\begin{align}
+	O[b] = I_b & &\forall b \in \{0,\dots p-1\}. \label{eq:allgather}
+\end{align}
+This output needs to be available to all processors. We again hold a similar notation to \gls{mpi} standard, but allow for a more relaxed variant. Technically the function \texttt{MPI\_Allgather} requires the size of all proposed input blocks to be the same. To allow for different block sizes \gls{mpi} defines the function \texttt{MPI\_Allgatherv} \cite{mpi}. We refer to both of those variants as simply as \textit{Allgather}. This procedure is also known under the name \emph{concatenation algorithm} or \emph{all-to-all broadcast} \cite{bruckAlgo}.\\
+The goal of this thesis is to find a fast way to calculate a set union over subsets proposed by all processes. A way of representing such subsets $S_r$ is to label all possible elements of the total set $\hat{S}$ with integers from $0$ to $|S|$. Obviously this total set $\hat{S}$ needs to be finite which is given for our \gls{bfs} problem on finite graphs. Moreover we require that this labeling is done implicitly the same way for all processes. We can then represent a subset $S_i\subset \hat{S}$ as an array $A$ of integers where each element of the array corresponds to an element in the subset $S_r$. The set union of two such subsets $S_1$ and $S_2$ can be then be represented as the concatenation of array $A_2$ to array $A_1$. Here one needs to be careful as we do not check here for duplicates. Array $A_1$ can contain some elements that are also in $A_2$  so the concatenated list maybe contains some elements twice. This can be fine in some cases but we need to keep this irregularity in mind.\\
+When we want to perform a union set over all processes that use a integer array representation of $S_r$ one can see that an Allgather is exactly the procedure needed. So we want to present here some algorithms that solve this problem in different kinds of ways. We also keep in mind that we can drop another constraint for our algorithms. Standard Allgather implementations respect the property that the $b$-th output block contains the input of rank $b$. This is not necessarily needed for our problem as we do not care about the order of elements in the set arrays.\\
+We already covered some Allgather algorithms slightly in Section \ref{sec:Allreduce}. Most of the basic communication schemes are equivalent or flipped variants of some of the Allreduce and Reduce\_Scatter algorithms \cite{allgather}. Abstractly speaking one can interpret the concatenation as a non commutative binary operator $\odot$ but we still have access to the original inputs. When we concatenate two arrays and the order and length of the original inputs is known we can still access in the result directly all elements of the original two arrays. This allows us to use the same basic communication structures as in the Allreduce but we can use extra tricks as to avoid concatenating arrays twice as we have direct access to all possible subsresults.
 
-\section{Important Allgather\_v Implementations} \label{Allgather_v}
+\subsection{Recursive Doubling}
+This algorithm is one algorithm that uses a similar scheme as a Allreduce counterpart. I.e. it uses the Butterfly scheme shown in Figure \ref{fig:butterfly}. We only look here at the base version where the number of processors $p$ is some power of two. There are extensions to this version, but these can introduce more than one extra communication rounds \cite{allgather}. A pseudocode implementation is seen in Algorithm \ref{algo:recursiveDoublingAllgather}.
+\begin{algorithm}
+	\caption{– Allgather Recursive Doubling Scheme (Butterfly pattern)\\
+		\textit{r}: rank Id\\
+		\textit{p}: number of processes\\
+		\textit{I}: Input array\\
+		\textit{O}: Output array} \label{algo:recursiveDoublingAllgather}
+	\begin{algorithmic}[1]
+		\Ensure $p=2^k$ for some $k$ 
+		\Procedure{AllGather}{$r, p, I, O$}
+		\State $O[r] \gets I$
+		\For{(shift $\gets 1$, shift $< p$, shift $\gets 2\cdot$shift)}
+		\State commNeigh $\gets r $ XOR shift \Comment{Find communication partner}
+		\State start $\gets (r//shift)\cdot shift$
+		\State startR $\gets (commNeigh//shift)\cdot shift$
+		\State \Call{Send}{$O[start,\dots, start+shift-1]$, commNeigh} $||$
+		\Statex \hspace{1cm} \Call{Recv}{$O[start,\dots, start+shift-1]$, commNeigh}  
+		\Comment{Send input, receive in output}
+		\EndFor
+		\EndProcedure´
+	\end{algorithmic}
+\end{algorithm}
+Here we see that it is nearly equivalent to the recursive doubling algorithm from Section \ref{sec:recursiveDoublingAllreduce}. The only difference is here that here is no reduction operator needed and instead the correct blocks put behind each other. Of course some calculation need to be added to find the block indices which should be sent and received. This exact procedure is also used as Allgather phase for Algorithm \ref{algo:redScatterAndAllreduce}. \\
+We now want to prove correctness. This done by induction. As invariant we state that in iteration $i$ for a group size $b_i = 2^i$ the following statement is true: For all $n$, $0\leq n < p/b_i$, all ranks $[n\cdot b_i,\dots, (n+1)\cdot b_i-1]$ hold the correct blocks $[n\cdot b_i,\dots, (n+1)\cdot s_b-1]$ in the output array $O$. This is obviously true before the first iteration (i.e. for $i=0$) as $b_0=1$ and every rank $r$ holds their correct block at $O[r]$.\\
+Let us now consider iteration $i+1$ under the assumption that the invariant holds in iteration $i$.
+We can identify $\textbf{shift}_{i+1}$ as $b_{i+1}/2=b_i$. Let $0\leq n_{i+1} < p/b_{i+1}$ and consider ranks $r_1$ with $n_{i+1}\cdot b_{i+1} \leq r_1 \leq(n_{i+1}+\frac{1}{2})\cdot b_{i+1}-1 = (n_{i+1}+1)\cdot b_{i+1} + \frac{b_{i+1}}{2}-1$. We can see that for these ranks $r_1$ it holds $r_1 \mod{b_i}=0$. While remembering $\textbf{shift}_{i+1}=b_i$, one can therefore say for these ranks $r_1$ that their communication partner is $r_2 = r_1 + b_i$ and they are sending blocks [$n_{i}b_i, \dots, (n_{i} + 1) b_i-1$] which are put in $O[n_{i}b_i, \dots, (n_{i} +1) b_i-1]$ of rank $r_2$. We now want to look at ranks $r_2$. As $r_2= r_1 + b_i$ we can see that $n_{i+1}\cdot b_{i+1} + b_i \leq r_2 \leq (n_{i+1}+2)\cdot b_{i+1}-1$. For these processor IDs it holds $r_2 \mod{b_i}=1$. Therefore these the processors $r_2$ are sending blocks [$(n_{i}+1)b_i, \dots, (n_{i} + 2)b_i-1$] which are build in accordingly in array $O$ of ranks $r_1$. Ranks $r_1$ and $r_2$ now holding the correct blocks $[n_{i+1}b_i, \dots, (n_{i+1} + 2)b_i-1]=[n_{i+1}b_{i+1}, \dots, (n_{i+1} + 1) b_{i+1}-1]$. The set of IDs  $r_1$ and $r_2$ together is indeed [$n_{i+1}b_{i+1}, \dots, (n_{i+1} + 1) b_{i+1}-1$]. Therefore the invariant holds also in iteration $i+1$. \\
+The \textbf{for} loop of the  algorithm breaks for (\textbf{shift}< $p$). So the last iteration has $\textbf{shift}=p/2$, $b_i=p$ and $0\leq n<1$. Ranks [$n_{i}b_i, \dots, (n_{i} + 1) b_{i}-1$]=[$0, \dots, p-1$] have the correct blocks in $O[0, \dots, p-1$] which indeed fulfills Equation \ref{eq:allgather} which proves correctness.\\
+The estimated execution time using the linear cost model was already derived in Section \ref{sec:DisseminationAlgo} as being
+\begin{align*}
+	T_\mathrm{Allgather}
+	&=\log_2(p)\alpha + \beta \frac{p-1}{p}m.
+\end{align*}
+
+\subsection{Shift Based Allgather - Bruck algorithm}
+The algorithm showed in this section is based on the communication pattern shown in Figure \ref{fig:shiftBased}. We see that in iteration $i$ data is send from ranks $r$ to rank $\hat{r}=(r+2^i)\mod{p}$. In contrast to the Allreduce, the Allgather is easily extendable to non regular number of processes (I.e. $p$ does not need to be a power of two) using this communication scheme. The adaptation which makes the algorithm also work for non-power-of-two $p$ work is usually referred as Bruck algorithm \cite{allgather, bruckReference}. A pseudocode implementation directly from Bruck et al \cite{bruckAlgo} is shown in Procedure \ref{algo:bruckAllgather}.
+\begin{algorithm}
+	\caption{– Bruck Allgather\\
+		\textit{r}: rank Id\\
+		\textit{p}: number of processes\\
+		\textit{I}: Input array\\
+		\textit{O}: Output array} \label{algo:bruckAllgather}
+	\begin{algorithmic}[1]
+		\Procedure{AllGather}{$r, p, I, O$}
+		\State $B[0] \gets I$ \label{bruckAllgather:BInit}
+		\State $shift \gets 1$
+		\For{$i=0,\dots, \ceil{\log_2{p}}-2$}
+		\Comment{First $\ceil{\log_2{p}}-1$ iterations.}
+		\State to, from $\gets (r-shift +p)\mod{p}, (r+shift)\mod{p}$
+		\State \Call{Send}{$B[0,\dots, shift-1]$, to} $||$ \Call{Recv}{$B[shift,\dots, 2\cdot shift-1]$, from} 
+		\State $shift \gets 2\cdot shift$
+		\EndFor
+		\State $lastBlocks \gets p - shift$
+		\Comment{Prepare partial send for last iteration.}
+		\State to, from $\gets (r-shift +p)\mod{p}, (r+shift)\mod{p}$
+		\State \Call{Send}{$B[0,\dots, lastBlocks-1]$, to} $||$ 
+		\Statex \hspace{1cm}\Call{Recv}{$B[shift,\dots, shift + lastBlocks-1]$, from} 
+		\ForAll{$i \in \{0,\dots, p-1\}$} 
+		$O[(r+i)\mod{p}]\gets B[i]$
+		\label{bruckAllgather:reorder1}
+		\Comment{Reorder correctly}
+		\EndFor
+		\label{bruckAllgather:reorder2}
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+We see that in the first $\ceil{\log_2{p}}-1$ iterations each rank $r$ sends blocks to process $\hat{r}=(r-2^i+p)\mod{p}$. $i\in \{0, \dots, \ceil{\log_2{p}}-2\}$ is here the iteration. In each iteration $i$ blocks $B[0,\dots, 2^i-1]$ are send and the received blocks are put in position $B[2^i, \dots, 2\cdot2^i-1]$. The last iteration $i=\ceil{\log_2{p}}-1$ is handled differently. The communication partners follow the same pattern but now only blocks $B[0,\dots, p-2^i-1]$ are sent. These blocks are put in on the receiving process at position $B[2^i,\dots, 2^i + p-2^i-1]=B[2^i,\dots, p-1]$. In this last round the property that we have access to subresuluts of the concatenation is used. Applying the same scheme as in the first iterations would lead to receiving some blocks that are already part of the temporary result array $B$. By only sending blocks $B[0,\dots, p-2^i-1]$ this is circumvented. After the last iteration is done there is some reordering of the blocks needed which is done by copying the blocks from the buffer array $B$ to output array $O$ in a rotated way.\\
+We want to formalize these ideas in a proof of correctness. Firstly we want to calculate the state of $B$ after the first $\ceil{\log_2{p}}-1$ iterations. For this we state the invariant that process $r$ holds the blocks 
+\begin{align*}
+	B[b] = I_{(r + b) \mod{p}} && \forall b \in \{0,\dots, 2^{i+1}-1\}
+\end{align*}
+with $i$ being the iteration counted from $0$ to $\ceil{\log_2{p}}-2$. $I_{\hat{r}}$ refers to the input block of some rank $\hat{r}$. This invariant obviously holds before the first iteration as $h$ can only be zero and therefore $B[0]=I_r$. This is due to the initialization of $B$ in line \ref{bruckAllgather:BInit}. Now assume the invariant holds for iteration $i$ and we now consider iteration $i+1$. Rank $r$ receives here blocks $B[0,\dots, p-2^{i+1}-1]_{\hat{r}}$ from rank $\hat{r}=(r+2^{i+1})$. As the invariant holds for $i$ these blocks are the inputs of rank $[\hat{r}, \dots, (\hat{r}+\hat{b})\mod{p}]$ with $0\leq \hat{b} \leq 2^{i+1}$. These blocks are now set in $B_r$ but shifted by $2^i$. We can state that rank $r$ after iteration $i+1$ gained the blocks
+\begin{align*}
+	B[\hat{b}+2^{i+1}] &= I_{(\hat{r} + \hat{b})\mod{p}}
+	&&\forall \hat{b}\in \{0,\dots, 2^{i+1}-1\}\\
+	\Leftrightarrow B[b] &= I_{(\hat{r} + b - 2^{i+1})\mod{p}}
+	&&\forall b\in \{2^{i+1},\dots, 2^{i+2}-1\}\\
+	\Leftrightarrow B[b] &= I_{(r + b)\mod{p}} 
+	&&\forall b\in \{2^{i+1},\dots, 2^{i+2}-1\}.
+\end{align*}
+As the invariant holds for blocks $b$ with $b<2^{i+1}$ we can see that rank $r$ has after iteration $i+1$ all correct blocks $b$ for $b<2^{i+2}$. This proves the original assumption.\\
+So after iteration $i=\ceil{\log_2{p}}-2$ rank $r$ holds blocks $B[b] = I_{(r + b) \mod{p}}$ with $0\leq b < \tilde{q}$ with $\tilde{q}$ being the next highest power of two which is greater than $p/2$. Basically now are just the blocks missing that correspond to a $b$ with $\tilde{q} \leq b \leq p-1$. So in this iteration rank $\hat{r}=(r+\tilde{q})$ sends blocks $O[0, \dots, p - \tilde{q} - 1]$. It is important to keep in mind that $\hat{r}$ holds in this range already valid blocks as $p - \tilde{q} \leq \tilde{q}$. So only valid blocks are sent. The blocks are then put into spots $B[q, \dots, p-1]$. The blocks are therefore put into positions that are shifted by $\tilde{q}$ compared to their original position at rank $\hat{r}$. So after the bonus iteration rank $r$ gained blocks
+\begin{align*}
+	B[b + \tilde{q}] &=  I_{(\hat{r} + \hat{b})\mod{p}}
+	&&\forall \hat{b}\in \{0,\dots, p-q-1\}\\
+	\Leftrightarrow B[b] &= I_{(r + b)\mod{p}} 
+	&&\forall b\in \{\tilde{q},\dots, p-1\}.
+\end{align*}
+As blocks $b$ with $0\leq b < \tilde{q}$ are already correctly placed, the buffer has now $B[b] = I_{(r + b) \mod{p}}$ for all $0\leq b < p$. So all input blocks are now already in the buffer array $B$ but in a rotated manner. Copying blocks from $B$ into $O$ using a shift of size $r \mod {p}$ solves this problem. So the algorithm works indeed correctly.\\
+The run time estimation is quite straight forward. There are in total $\ceil{\log_2{p}}$ communication rounds. In each iteration we expect a start up latency of $\alpha$. So the latency term is $\alpha \cdot \ceil{\log_2{p}}$. In each iteration $i\in\{0,\dots, \ceil{\log_2{p}}-2\}$ there are $2^i$ blocks send until $i=\log_2{q}-1$. In these iterations there are therfore $\sum_i=0^{\log_2{\tilde{q}}-1} 2^i = \tilde{q}-1$ blocks send. In the last iteration there are $p-\tilde{q}$ blocks send. So there are in total $p-1$ blocks send. Assuming the blocks are of equal size and the total resulting output array $O$ has $m$ bytes we can give an estimate of the execution time as
+\begin{align*}
+	T_\textrm{Allgather} = \ceil{\log_2{p}}\alpha  + \frac{p-1}{p}m\beta.
+\end{align*}
+Important here is that the message size $m$ refers here to the \emph{output} array. The inputs are therefore assumed to have size $m/p$.\\
+As an optimization in using this algorithm as a set union operation we can keep in mind that the reordering in line \ref{bruckAllgather:reorder1} and \ref{bruckAllgather:reorder2} is not necessary. We do not care in which order the elements are in the output array as long as all elements are present.
+
+\subsection{(Neighbor Exchange Algorithm)}
+\subsection{Ring Algorithm}
+Like in the Allreduce operation there is also an Allgather that is based on a ring topology communication scheme \cite{allgather}. I.e. in each communication round each rank $r$ sends data to process $(r-1+p)\mod{p}$ and receives data from rank $(r+1)\mod{p}$. This again allows for an arbitrary number of processors $p$ without any restrictions of them being a power of two. This strategy results in a rather simple algorithm. This algorithm is shown in Procedure \ref{algo:ringAllgather}.
+\begin{algorithm}
+	\caption{– Ring Allgather\\
+		\textit{r}: rank Id\\
+		\textit{p}: number of processes\\
+		\textit{I}: Input array\\
+		\textit{O}: Output array} \label{algo:ringAllgather}
+	\begin{algorithmic}[1]
+		\Procedure{AllGather}{$r, p, I, O$}
+		\State $O[r] \gets I$ \label{ringAllgather:init}
+		\For{$i=1,\dots, p-1$}
+		\State to, from $\gets (r + 1)\mod{p}, (r-1+p)\mod{p}$
+		\State \Call{Send}{$O[(r+i)\mod{p}]$, to} $||$ \Call{Recv}{$(r+i+1)\mod{p}$, from} 
+		\EndFor
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+Here we see that in each iteration there is only one (input) block send. On the receiving side $\hat{r}=(r-1+p)\mod{p}$ this block $O[(r+i)\mod{p}]$ is always put at the same index as it has in rank $r$. This becomes apparent as $(\hat{r} + i + 1)\mod{p}=(r+p+i)\mod{p}$ (index at receiving rank) is the same as $(r+i)\mod{p}]$ (index at sending rank). This means index $k$ in array $O$ can only hold either input $I_k$ or no valid data. \\
+We also want  to give a proof of correctness. We state as invariant that rank $r$ holds after iteration $i$ (counting from 1) the inputs $I_{(r+b)\mod{p}}$ with $b \in \{0, \dots, i\}$. The invariant holds before iteration $1$ as $b=0$ and line \ref{ringAllgather:init} guarantees $O[r]=I_r$. Assuming the invariant holds for $i$ we see that in iteration $i+1$ rank $r$ receives block $O[(\hat{r}+i)\mod{p}]$ from rank $\hat{r}$ and puts it in $O[(r+i+1)\mod{p}]$. As the invariant holds for $i$ the block $O[(\hat{r}+i)\mod{p}]$ already contains some valid input $I_b$. We mentioned before that indices of $O$ can only correspond to one specific input and as the received input block is valid rank $r$ has now at block $O[(r+i+1)\mod{p}]$ also a valid input block. This means $r$ holds now in $O$ the inputs $I_{(r+b)\mod{p}}$ with $b \in \{0, \dots, i+1\}$. This proves the validity of the invariant.\\
+After $p-1$ iterations we have $O[(r+b)\mod{p}] = I_{(r+b)\mod{p}}$ with $b \in \{0, \dots, p-1\}$. This means all input blocks are correctly placed in which proves correctness of Algorithm \ref{algo:ringAllgather}.\\
+Estimating the execution time using the linear cost model is also straight forward. We again assume equal sized input blocks of size $p/m$ and see that in $p-1$ communication rounds there is one block send in each round. This calculates to an estimated execution time of
+\begin{align*}
+	T_\mathrm{Allgather} = (p-1)\alpha + \frac{p-1}{p}m \beta.
+\end{align*}
+Again the message size $m$ refers to the total length of the output array.
+
 \section{Data Compression in Distributed Memory Algorithms}
 
 
