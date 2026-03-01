@@ -3,107 +3,106 @@
 %!TeX root = ../thesis.tex
 
 \chapter{Implementation} \label{Implementation}
-\todo{Adapt this text as most of it is now in introduciton}
-Here we want to describe the developed algorithms. The idea is to create the union $U$, 
-where every processor $r$ has calculated a subset $S_r\subset C$ from a known set $C$ of fixed size. The union
-\begin{align}
+Here we want to describe the developed algorithms. As already mentioned in the introduction the goal is to efficiently calculate the union $U$
+where every processor $r$  provides a subset $S_r\subset \tilde{S}$ from a known set $\tilde{S}$ of fixed size. The union
+\begin{align*}
 	U = \bigcup_{r=0}^{p-1} S_r
-\end{align}
+\end{align*}
 should be available for every processor. $p$ is here the number of processes. \\
-A straight forward approach to tackle this problem is to create a bitmap for each process, give the elements of $C$ an explicit ordering
+A straight forward approach to tackle this problem is to create a bitmap for each process, give the elements of $\tilde{S}$ an explicit ordering
 and map each element to a bit of the bitmap. An element $e$ is then defined as being in the subset $S_r$, if the the corresponding 
 bit is set to 1 and set to 0 otherwise. The union can then easily be calculated by performing a bitwise OR-operation over all 
-bitmaps from all processes, as the union over all subset $S_r$ is defined as
-\begin{align}
+bitmaps from all processes as the union over all subset $S_r$ is defined as
+\begin{align*}
 	U = \{x \in C | x \in S_0 \lor x \in S_1 \lor \cdots \lor x \in S_{p-1} \}.
-\end{align}
-This can be done with MPI using the provided Allreduce function. To store $N$ vertices we need $N$ bits in the bitmap.
-As a word size of 64-bit integer is quite common on many architectures, we need $\ceil{\frac{N}{64}}$ 64-bit integer
-to represent a subset $S_r$. This can be wasteful, if the cardinality of these subsets $S_r$ is quite small and most bits of the bitmap are set to 0. We can introduce here a simple sparse format to save memory and therefore communication bandwidth. By using unsigned 32-bit integer, we can represent subsets of $C$ as an explicit list of the selected integer. Here we only can represent $2^{32}$ distinct elements so the cardinality of $C$ is bounded by $2^{32} \approx 4.2\cdot10^9$. The benefit is now, that the size of the sparse representation only depends on the cardinality of the subset $S_r$. We can calculate the memory footprint $M_\mathrm{Sparse}$ of this representation as being 
-\begin{align}
-	M_\mathrm{Sparse} = m \cdot \qty{32}{\bit},
-\end{align}
-where $m = |S_r|$ is the cardinality of $S_r$. With the approximate memory footprint of the dense representation $M_\mathrm{Dense} = N \cdot \qty{1}{bit}$, we can estimate, that the sparse variant is more memory efficient, if
-\begin{align}
-	\frac{m}{N} \leq \frac{1}{32} = 3.125 \%.
-\end{align}
-In the next sections we propose some algorithms, that take advantage of the sparse format to perform such an union operation of subsets $S_r$ of a fixed set $C$.
+\end{align*}
+This can be done using an Allreduce function. This bitmap needs to cover all elements of the original set $\tilde{S}$. Therefore it needs to take at least $N=|\tilde{S}|$ amount of data. As a word size of 64-bit integer is quite common on many architectures, we need $\ceil{\frac{N}{64}}$ 64-bit integer to represent a subset $S_r$. This can be wasteful, if the cardinality of these subsets $S_r$ is quite small and most bits of the bitmap are set to 0. We introduce here a simple sparse format to save memory and therefore the amount of data for communication. By using unsigned 32-bit integer, we can represent subsets of $\tilde{S}$ as an explicit list of the selected integer. Here we only can represent $2^{32}$ distinct elements so the cardinality of $\tilde{S}$ is bounded by $2^{32} \approx 4.2\cdot10^9$. The benefit is now that the size of the sparse representation only depends on the cardinality of the subset $S_r$. We can calculate the memory footprint $m_\mathrm{Sparse}$ of this representation as being 
+\begin{align*}
+	m_\mathrm{Sparse} = \varphi \cdot \qty{32}{\bit},
+\end{align*}
+where $\varphi = |S_r|$ is the cardinality of $S_r$. To calculate the set union $U$ one needs to concatenate all these distributed lists $S_r$ ($S_r$ is here represented as a list). This can be done by an Allgather. One needs to keep in mind that the result $U$ may contain elements twice. One can either decide that this not a problem or change representation and convert the list into a bitmap. A bitmap can not contain elements twice and therefore duplicates are removed. \\
+We chose algorithms that scale well for a large number of processors $p$ and large number of elements of the base set $N$. For the Allreduce these properties are best fulfilled by any of the Reduce\_Scatter-Allgather algorithms. We moreover can identify that the communication pattern of the Reduce\_Scatter phase always resembles that of an Allgather. This can easily be seen for the Butterfly algorithm and the Ring algorithm. For the approximate halfing pattern there is also an Allgather known \cite{allgatherTraeffOld}.\todo{Add section for this Allgather implementation in Introduction chapter.} The problem here is that the skip sequence is used in reversed order compared to the one used in the Reduce\_Scatter phase from Section \ref{sec:approxHalfRedScat}. For this pattern is a new adaptation found which is shown in Section \ref{sec:irregularImpl}. \\
+The general idea is therefore to overlay an Allgather using the sparse representation over the Reduce\_Scatter phase of the corresponding Allreduce algorithm. When it is more efficient to use the bitmap variant one switches to this representation and finishes the Allreduce algorithm. This is possible as the subsolutions of the Allgather span the same processes as the subsolutions of the Reduce\_Scatter do. As the sparse representation holds the complete information of a ranks input and the dense representation uses only blocks of it, one does not lose any information, if we switch from sparse to dense. This implies of course that a switch from the bitmap variant back to the sparse one is not permitted. How and why these ideas work is proved and explained in the upcoming respective sections.\\
+If the sparse variant is still used for the last iteration of the Reduce\_Scatter phase the algorithm performed de facto an Allgather and therefore the second phase (Allgather phase of the Allreduce) is not necessary. Moreover the sparse variant may be shorter in message size than the blocks send in Reduce\_Scatter phase of the dense representation. So here it is also possible that the total amount of sent data can be reduced.\\
+This is also relevant in choosing the foundation Allreduce algorithms for the newly developed ones. The Ring algorithm sends in each iteration only one block of data. The algorithms that are based on recursive (approximately) halfing send in iteration $i$ (roughly) $p/2^i$ blocks. Sending a sparse representation is therefore more efficient in the later algorithms compared to the Ring algorithm. We here replace the message size of multiple blocks instead of only one. This is the reason we chose recursive (approximately) halfing algorithms as base Allreduce algorithms over the Ring algorithm.\\
+We
 
 
 \section{An Algorithm for $2^k$-Number of Processes}
 %The core structure for algorithm \ref{algo:ExactHalfingAllreduce} is based on the algorithm described in section \ref{sec:DisseminationAlgo}. When only the dense representation is used (i.e. when it is chosen by the algorithm, that this would be the more efficient way to go) the algorithms are equivalent. As in the Bruck algorithm there are two phases. In the first one we perform a distributed Reduction (that's an \texttt{MPI\_Reduce\_scatter()} in the MPI standard). This phase is followed by an All-Gather (\texttt{MPI\_Allgather()} in MPI). It is easy to verify, that an distributed Reduce combined with an All-Gather results in an All-Reduce and is sketched in section \ref{sec:DisseminationAlgo}. 
 
-%
-%\begin{algorithm}
-%	\caption{Exact Halfing Allreduce with sparse adaptation.\\
-%		$r$: rank Id of the process\\
-%		$p$: number of processes\\
-%		$I_s$: input array with sparse representation of $S_r$\\
-%		$sparseSize$: length of sparse list\\
-%		$I_d$: input array with dense representation of $S_r$\\
-%		$bitarraySize$: count of words for bitarray\\
-%		$isDense$: bool to indicate, which representation holds} \label{algo:ExactHalfingAllreduce}
-%	\begin{algorithmic}[1]
-%		\Ensure $p = 2^k$ for some $k$ \Comment{Only works for power of 2 number of ranks}
-%		\Procedure{VS\_ExactHalfing}{$r, p, I_s, sparseSize, I_d, bitarraySize, isDense$}
-%		\State critSize $\gets$ \Call{getCritSize}{$bitarraySize$}
-%		\Comment{Calculate Critical size}
-%		\\
-%		
-%		\For{(shift $\gets p/2$, shift $\geq1$, shift $\gets$ shift/2)} \Comment{Reducescatter phase}
-%			\State commNeigh $\gets r$ XOR shift \Comment{XOR is bitwise XOR}
-%			\If{isDense}
-%				\State startBlock $\gets$ (commNeigh/shift) $\cdot$ shift
-%				\State endBlock $\gets$ startBlock + shift
-%				\State Send($I_d$[startBlock, $\dots$, endBlock - 1], "dense") \Comment{Send block. Mark message as "dense"}
-%			\Else
-%				\State Send($I_s$[0, $\dots$, $sizeSparse$-1], "sparse") \Comment{Send whole sparse array. Mark message as sparse}
-%			\EndIf
-%			\\
-%			\State status $\gets$ \Call{probe}{commNeigh} \Comment{Get message type and size information}
-%			\If{(status.tag = "dense")} \Comment{Dense block is received}
-%				\State startBlock $\gets$ ($r$/shift) $\cdot$ shift
-%				\State endBlock $\gets$ startBlock + shift
-%				\If{$isDense$} \Comment{Own structure is also "dense"}
-%					\State Recv($\tilde{I}_d$[0, $\dots$, status.count - 1], "dense")\Comment{Receive in buffer}
-%					\State Wait($I_d$) \Comment{Wait until it is safe to use original array}
-%					\ForAll{i = startBlock, $\dots$, endBlock - 1}
-%						\State $I_d$[i] $\gets$ $I_d$[i] $\lor$  $\tilde{I}_d$[i - startBlock] \Comment{$\lor$ is here bitwise OR}
-%					\EndFor
-%				\Else \Comment{Own structure is "sparse"}
-%					\State Recv($I_d$[startBlock, $\dots$, startBlock + status.count - 1], "dense")
-%					\ForAll{element $\in I_s$} \Comment{Add all old sparse elements in new dense array}
-%					\State \Call{Bitmap\_Set}{$I_d$, element}		
-%					\EndFor					
-%					\State isDense $\gets$ true
-%				\EndIf
-%			\\
-%			\ElsIf{(status.tag = "sparse")} \Comment{Sparse array is received}
-%				\If{($isDense$)}
-%					\State Recv($\tilde{I}_s$ [0, $\dots$, ], "sparse")
-%					\ForAll{element $\in \tilde{I}_s$} \Comment{Add all new sparse elements in old dense array}
-%					\State \Call{Bitmap\_Set}{$I_d$, element}		
-%					\EndFor
-%				\Else
-%					\State Recv($I_s$[$sizeSparse$, $\dots$, $sizeSparse$+status.count-1], "sparse") \\ \Comment{Receive directly in sparse array behind the old elements}
-%					\State $sizeSparse \gets sizeSparse$ + status.count
-%					\If{($sizeSparse > critSize$)} \Comment{Transform into dense, if too big}
-%					\ForAll{element $\in I_s$} 
-%					\State \Call{Bitmap\_Set}{$I_d$, element}		
-%					\EndFor
-%					\EndIf					
-%				\EndIf
-%			\EndIf			
-%		\EndFor
-%		\\
-%		\If{($isDense$ = false)} \Comment{Return early, if variant is still sparse}
-%			\State \Return
-%		\EndIf
-%		\\
-%		\Call{Allgather}{$I_d$}
-%		\EndProcedure
-%	\end{algorithmic}
-%\end{algorithm}
+
+\begin{algorithm}
+	\caption{Exact Halfing Allreduce with sparse adaptation.\\
+		$r$: rank Id of the process\\
+		$p$: number of processes\\
+		$I_s$: input array with sparse representation of $S_r$\\
+		$sparseSize$: length of sparse list\\
+		$I_d$: input array with dense representation of $S_r$\\
+		$bitarraySize$: count of words for bitarray\\
+		$isDense$: bool to indicate, which representation holds} \label{algo:ExactHalfingAllreduce}
+	\begin{algorithmic}[1]
+		\Ensure $p = 2^k$ for some $k$ \Comment{Only works for power of 2 number of ranks}
+		\Procedure{VS\_ExactHalfing}{$r, p, I_s, sparseSize, I_d, bitarraySize, isDense$}
+		\State critSize $\gets$ \Call{getCritSize}{$bitarraySize$}
+		\Comment{Calculate Critical size}
+		\\
+		
+		\For{(shift $\gets p/2$, shift $\geq1$, shift $\gets$ shift/2)} \Comment{Reducescatter phase}
+			\State commNeigh $\gets r$ XOR shift \Comment{XOR is bitwise XOR}
+			\If{isDense}
+				\State startBlock $\gets$ (commNeigh/shift) $\cdot$ shift
+				\State endBlock $\gets$ startBlock + shift
+				\State Send($I_d$[startBlock, $\dots$, endBlock - 1], "dense") \Comment{Send block. Mark message as "dense"}
+			\Else
+				\State Send($I_s$[0, $\dots$, $sizeSparse$-1], "sparse") \Comment{Send whole sparse array. Mark message as sparse}
+			\EndIf
+			\\
+			\State status $\gets$ \Call{probe}{commNeigh} \Comment{Get message type and size information}
+			\If{(status.tag = "dense")} \Comment{Dense block is received}
+				\State startBlock $\gets$ ($r$/shift) $\cdot$ shift
+				\State endBlock $\gets$ startBlock + shift
+				\If{$isDense$} \Comment{Own structure is also "dense"}
+					\State Recv($\tilde{I}_d$[0, $\dots$, status.count - 1], "dense")\Comment{Receive in buffer}
+					\State Wait($I_d$) \Comment{Wait until it is safe to use original array}
+					\ForAll{i = startBlock, $\dots$, endBlock - 1}
+						\State $I_d$[i] $\gets$ $I_d$[i] $\lor$  $\tilde{I}_d$[i - startBlock] \Comment{$\lor$ is here bitwise OR}
+					\EndFor
+				\Else \Comment{Own structure is "sparse"}
+					\State Recv($I_d$[startBlock, $\dots$, startBlock + status.count - 1], "dense")
+					\ForAll{element $\in I_s$} \Comment{Add all old sparse elements in new dense array}
+					\State \Call{Bitmap\_Set}{$I_d$, element}		
+					\EndFor					
+					\State isDense $\gets$ true
+				\EndIf
+			\\
+			\ElsIf{(status.tag = "sparse")} \Comment{Sparse array is received}
+				\If{($isDense$)}
+					\State Recv($\tilde{I}_s$ [0, $\dots$, ], "sparse")
+					\ForAll{element $\in \tilde{I}_s$} \Comment{Add all new sparse elements in old dense array}
+					\State \Call{Bitmap\_Set}{$I_d$, element}		
+					\EndFor
+				\Else
+					\State Recv($I_s$[$sizeSparse$, $\dots$, $sizeSparse$+status.count-1], "sparse") \\ \Comment{Receive directly in sparse array behind the old elements}
+					\State $sizeSparse \gets sizeSparse$ + status.count
+					\If{($sizeSparse > critSize$)} \Comment{Transform into dense, if too big}
+					\ForAll{element $\in I_s$} 
+					\State \Call{Bitmap\_Set}{$I_d$, element}		
+					\EndFor
+					\EndIf					
+				\EndIf
+			\EndIf			
+		\EndFor
+		\\
+		\If{($isDense$ = false)} \Comment{Return early, if variant is still sparse}
+			\State \Return
+		\EndIf
+		\\
+		\Call{Allgather}{$I_d$}
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
 
 
 \subsection{Concept and Explicit Implementation}
@@ -111,7 +110,7 @@ In the next sections we propose some algorithms, that take advantage of the spar
 \subsection{Runtime Estimation}
 
 
-\section{An Algorithm for Arbitrary Number of Processes}
+\section{An Algorithm for Arbitrary Number of Processes} \label{sec:irregularImpl}
 \subsection{Concept and Explicit Implementation}
 \subsection{Proof of Correctness}
 \subsection{Runtime Estimation}
