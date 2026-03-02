@@ -906,7 +906,7 @@ This is nearly the same as Equation \ref{eq:reduceScatter}. The total runtime ca
 	T_\mathrm{Allreduce}
 	&=2\log_2(p)\alpha + (2\beta + \gamma) \frac{p-1}{p}m. 
 \end{align*}
-We can also do a little bit more fine-grained analysis. If we have the before proposed situation of consecutive rank distribution and there is a power of 2 processors per node $p_n$ setup, we can assume for some iterations a faster communication. When using for the first iterations $\alpha_n$ and $\beta_n$ for inter nodal communication we get a finer estimation of
+We can also do a little bit more fine-grained analysis. If we have the before proposed situation of consecutive rank distribution and there is a power of 2 processors per node $p_n$ setup, we can assume for some iterations a faster communication. When using for the first iterations $\alpha_n$ and $\beta_n$ for intra nodal communication (only communication between processors that are physically on the same node) we get a finer estimation of
 \begin{align*}
 	T_\mathrm{ReduceScatter}^\textrm{fine}
 	&= \sum_{i=1}^{\log_2(p_n)} \alpha_n + \beta_n p 2^{-i} \frac{m}{p} + \gamma p 2^{-i} 
@@ -918,7 +918,7 @@ Again the run time of the Allgather can be expected to be the same as for the Re
 \begin{align*}
 	T_\mathrm{Allreduce}^\mathrm{fine}
 	&=2\log_2(p_n)\alpha_n + (2\beta_n + \gamma) \frac{p_n-1}{p_n}m
-	 + 2\log_2(p-p_n)\alpha + (2\beta + \gamma) \frac{p-p_n-1}{p-p_n}m
+	 + 2\log_2(p-p_n)\alpha + (2\beta + \gamma) \frac{p-p_n-1}{p-p_n}m.
 \end{align*}
 The whole structure is build on the fact that we have a number of processors that is a power of 2. The butterfly/hypercube pattern relies is by construction dependent on this. There are adaptations to extend this kind of algorithm to non powers of 2. One idea for example is that there are two extra communication rounds (one for Reduce\_Scatter phase and one for Allgather phase) used where some ranks exchange their whole data array with their partner. After such a extra round there should only be $2^n$ different data arrays with some of them appearing doubly on some processors. For the doubles only one of the processors participates at the algorithm and sends in the second extra round its data to its first partner \cite{optimizationsCollComm}. Another idea is to decompose the ranks into sets that have each a power of two. Here again overhead is produced each time two such sets need to get merged together \cite{optimizationsCollComm}. For non power of two number of threads the shift-based or also tree-based algorithms can be expected more flexible, natural and eventually perform better. Such an approach is shown in the next section.
 

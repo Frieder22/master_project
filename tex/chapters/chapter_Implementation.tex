@@ -25,15 +25,13 @@ We chose algorithms that scale well for a large number of processors $p$ and lar
 The general idea is therefore to overlay an Allgather using the sparse representation over the Reduce\_Scatter phase of the corresponding Allreduce algorithm. When it is more efficient to use the bitmap variant one switches to this representation and finishes the Allreduce algorithm. This is possible as the subsolutions of the Allgather span the same processes as the subsolutions of the Reduce\_Scatter do. As the sparse representation holds the complete information of a ranks input and the dense representation uses only blocks of it, one does not lose any information, if we switch from sparse to dense. This implies of course that a switch from the bitmap variant back to the sparse one is not permitted. How and why these ideas work is proved and explained in the upcoming respective sections.\\
 If the sparse variant is still used for the last iteration of the Reduce\_Scatter phase the algorithm performed de facto an Allgather and therefore the second phase (Allgather phase of the Allreduce) is not necessary. Moreover the sparse variant may be shorter in message size than the blocks send in Reduce\_Scatter phase of the dense representation. So here it is also possible that the total amount of sent data can be reduced.\\
 This is also relevant in choosing the foundation Allreduce algorithms for the newly developed ones. The Ring algorithm sends in each iteration only one block of data. The algorithms that are based on recursive (approximately) halfing send in iteration $i$ (roughly) $p/2^i$ blocks. Sending a sparse representation is therefore more efficient in the later algorithms compared to the Ring algorithm. We here replace the message size of multiple blocks instead of only one. This is the reason we chose recursive (approximately) halfing algorithms as base Allreduce algorithms over the Ring algorithm.\\
-We
-
+Moreover we chose two different approaches in communication schemes. One is chosen to be the Butterfly scheme as we may expect better performance of this scheme as it can be arranged in a way that possibly faster intra nodal communication can be exploited in some situations (see run time estimation in Section \ref{sec:DisseminationAlgo}). A big drawback of this scheme is of course that it is limited to only work correctly on a setup where $p$ is a power of two. So on the other hand we want to propose an adaption of the approximate halfing scheme to create an algorithm for arbitrary number of processes. These two adaptations are shown in the next sections.
 
 \section{An Algorithm for $2^k$-Number of Processes}
-%The core structure for algorithm \ref{algo:ExactHalfingAllreduce} is based on the algorithm described in section \ref{sec:DisseminationAlgo}. When only the dense representation is used (i.e. when it is chosen by the algorithm, that this would be the more efficient way to go) the algorithms are equivalent. As in the Bruck algorithm there are two phases. In the first one we perform a distributed Reduction (that's an \texttt{MPI\_Reduce\_scatter()} in the MPI standard). This phase is followed by an All-Gather (\texttt{MPI\_Allgather()} in MPI). It is easy to verify, that an distributed Reduce combined with an All-Gather results in an All-Reduce and is sketched in section \ref{sec:DisseminationAlgo}. 
-
+As mentioned before the base communication scheme is the Butterfly scheme. In each iteration there is communication between pairs of processors, meaning, if rank $r$ sends a message to its partner $\hat{r}$, then $\hat{r}$ sends in this iteration also a message to $r$. The communication partner is found by flipping the $i$-th bit where $i$ is the iteration. The difference between communicating rank IDs is from now on called 'shift'. This is also used as variable name in the  
 
 \begin{algorithm}
-	\caption{Exact Halfing Allreduce with sparse adaptation.\\
+	\caption{Distributed set union using recursive exact halfing Allreduce with sparse adaptation.\\
 		$r$: rank Id of the process\\
 		$p$: number of processes\\
 		$I_s$: input array with sparse representation of $S_r$\\
@@ -43,10 +41,9 @@ We
 		$isDense$: bool to indicate, which representation holds} \label{algo:ExactHalfingAllreduce}
 	\begin{algorithmic}[1]
 		\Ensure $p = 2^k$ for some $k$ \Comment{Only works for power of 2 number of ranks}
-		\Procedure{VS\_ExactHalfing}{$r, p, I_s, sparseSize, I_d, bitarraySize, isDense$}
+		\Procedure{SetUnion}{$r, p, I_s, sparseSize, I_d, bitarraySize, isDense$}
 		\State critSize $\gets$ \Call{getCritSize}{$bitarraySize$}
 		\Comment{Calculate Critical size}
-		\\
 		
 		\For{(shift $\gets p/2$, shift $\geq1$, shift $\gets$ shift/2)} \Comment{Reducescatter phase}
 			\State commNeigh $\gets r$ XOR shift \Comment{XOR is bitwise XOR}
