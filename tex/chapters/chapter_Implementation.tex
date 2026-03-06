@@ -28,8 +28,9 @@ This is also relevant in choosing the foundation Allreduce algorithms for the ne
 Moreover we chose two different approaches in communication schemes. One is chosen to be the Butterfly scheme as we may expect better performance of this scheme as it can be arranged in a way that possibly faster intra nodal communication can be exploited in some situations (see run time estimation in Section \ref{sec:DisseminationAlgo}). A big drawback of this scheme is of course that it is limited to only work correctly on a setup where $p$ is a power of two. So on the other hand we want to propose an adaption of the approximate halfing scheme to create an algorithm for arbitrary number of processes. These two adaptations are shown in the next sections.
 
 \section{An Algorithm for $2^k$-Number of Processes}
-As mentioned before the base communication scheme is the Butterfly scheme. In each iteration there is communication between pairs of processors, meaning, if rank $r$ sends a message to its partner $\hat{r}$, then $\hat{r}$ sends in this iteration also a message to $r$. The communication partner is found by flipping the $i$-th bit where $i$ is the iteration. The difference between IDs of communicating ranks is from now on called 'shift'. 'shift' also used as variable name in the according pseudocode \ref{algo:ExactHalfingSetUnion}. As this variable is set to $p/2$ in the first iteration ($i=0$) and is halved every iteration, we can identify its value as being $p/2^i$. Moreover we see in the implementation that the algorithm consist out of an adapted Reduce\_Scatter phase and an Allgather with the exact same communication scheme like Algorithm \ref{algo:redScatterAndAllreduce}. To be precise it is identical, if the own representation as well as the received representation is always dense. The receiving part for this situation is hidden behind the function $\Call{combineDenseDense}{ }$. This is done for all possible combinations to get a better overview of the control flow. The functionality of all cases is explained a little bit later in this section. Firstly we want to describe the control flow to get a better understanding of the general ideas.\\
-We see that in the adapted Reduce\_Scatter phase there are two different possibilities which kind of data is send. If  variable '$isDense$' is true, process $r$ holds currently data in dense representation and therefore sends dense data blocks accordingly to the recursive halfing scheme. An add-on is here that the message is also marked with an label "dense". If  variable '$isDense$' is false, process $r$ holds currently data in sparse representation and sends its whole array of sparse elements. In this case the message gets obviously tagged with "sparse". After rank $r$ has posted a send it is ready to receive some data. This is done in one of the "combine" functions depending on the state of $S_r$ and the representation of the received message. 
+\subsection{Concept and Explicit Implementation}
+As mentioned before the base communication scheme is the Butterfly scheme. In each iteration there is communication between pairs of processors, meaning, if rank $r$ sends a message to its partner $\hat{r}$, then $\hat{r}$ sends in this iteration also a message to $r$. The communication partner is found by flipping the $i$-th bit where $i$ is the iteration. The difference between IDs of communicating ranks is from now on called 'shift'. 'shift' also used as variable name in the according pseudocode \ref{algo:SetUnionExactHalfing}. As this variable is set to $p/2$ in the first iteration ($i=0$) and is halved every iteration, we can identify its value as being $p/2^i$. Moreover we see in the implementation that the algorithm consist out of an adapted Reduce\_Scatter phase and an Allgather with the exact same communication scheme like Algorithm \ref{algo:redScatterAndAllreduce}. To be precise it is identical, if the own representation as well as the received representation is always dense. The receiving part for this situation is hidden behind the function $\Call{combineDenseDense}{ }$. This is done for all possible combinations to get a better overview of the control flow. The functionality of all cases is explained a little bit later in this section. Firstly we want to describe the control flow to get a better understanding of the general ideas.\\
+We see that in the adapted Reduce\_Scatter phase there are two different possibilities which kind of data is send. If  variable $isDense$ is true, process $r$ holds currently data in dense representation and therefore sends dense data blocks accordingly to the recursive halfing scheme. An add-on is here that the message is also marked with an label "dense". If  variable $isDense$ is false, process $r$ holds currently data in sparse representation and sends its whole array of sparse elements. In this case the message gets obviously tagged with "sparse". After rank $r$ has posted a send it is ready to receive some data. This is done in one of the "combine" functions depending on the state of $S_r$ and the representation of the received message. 
 \begin{algorithm}
 	\caption{Distributed set union using recursive exact halfing Allreduce with sparse adaptation.\\
 		$r$: rank Id of the process\\
@@ -38,7 +39,7 @@ We see that in the adapted Reduce\_Scatter phase there are two different possibi
 		$sparseSize$: length of sparse list\\
 		$I_d$: input array with dense representation of $S_r$\\
 		$bitarraySize$: count of words for bitarray\\
-		$isDense$: bool to indicate, which representation holds} \label{algo:ExactHalfingSetUnion}
+		$isDense$: bool to indicate, which representation holds} \label{algo:SetUnionExactHalfing}
 	\begin{algorithmic}[1]
 		\Ensure $p = 2^k$ for some $k$ \Comment{Only works for power of 2 number of ranks}
 		\Procedure{SetUnion}{$r, p, I_s, sparseSize, I_d, bitarraySize, isDense$}
@@ -48,10 +49,10 @@ We see that in the adapted Reduce\_Scatter phase there are two different possibi
 		\For{(shift $\gets p/2$, shift $\geq1$, shift $\gets$ shift/2)} \Comment{Reducescatter phase}
 			\State commNeigh $\gets r$ XOR shift \Comment{XOR is bitwise XOR}
 			\If{$isDense$} \Comment{Send Data}
-				\State startBlock $\gets$ (commNeigh/shift) $\cdot$ shift
+				\State startBlock $\gets$ (commNeigh//shift) $\cdot$ shift
 				\State endBlock $\gets$ startBlock + shift
 				\State Send($I_d$[startBlock, $\dots$, endBlock - 1], "dense") 
-				\Statex\Comment{Send block. Mark message as "dense"}
+				\Statex\Comment{Send blocks. Mark message as "dense"}
 			\Else
 				\State Send($I_s$[0, $\dots$, $sizeSparse$-1], "sparse") 
 				\Statex\Comment{Send whole sparse array. Mark message as sparse}
@@ -61,15 +62,15 @@ We see that in the adapted Reduce\_Scatter phase there are two different possibi
 			\If{(status.tag = "dense")} 
 			\Statex\Comment{Combine incomming message with own representation}
 				\If{$isDense$}
-				\State\Call{combineDenseDense}{}
+				\State\Call{combineDenseDense}{ }
 				\Else 
-				\State\Call{combineDenseSparse}{}
+				\State\Call{combineDenseSparse}{ }
 				\EndIf
 			\ElsIf{(status.tag = "sparse")} 
 				\If{($isDense$)}
-				\State\Call{combineSparseDense}{}
+				\State\Call{combineSparseDense}{ }
 				\Else
-				\State\Call{combineSparseSparse}{}
+				\State\Call{combineSparseSparse}{ }
 				\EndIf
 			\EndIf			
 		\EndFor
@@ -82,17 +83,17 @@ We see that in the adapted Reduce\_Scatter phase there are two different possibi
 \end{algorithm}
 \\We also want to mention here that these sends differ from the $\Call{Send}{ }||\Call{Recv}{ }$ procedure used in all algorithms before. The sending and receiving is now not done by the same function where everything is handled by an already implemented library. When called separately the send obviously needs to be called before the receive and usually is 
 \emph{blocking}. Blocking means here the function only returns after the message is completely send. To complete a send another process needs to expect some data from the sending rank. This can lead to a deadlock situation. If process $r$ sends a message to process $\hat{r}$ and process $\hat{r}$ wants to do the same the other way around, both of them can not return from the $\Call{Send}{ }$ function as none of them is already ready to expect a message. So in this implementation we use non-blocking sends. For this some extra handling is needed. As the send function returns immediately one does not want to change the buffer array that needs to be send until the message is completely sent. To guarantee safe usage of the send array the function $\Call{Wait}{ }$ is used. It blocks further execution of the program until the corresponding buffer is safe to use again. In \gls{mpi} this actually handled by an extra request object, but we want to keep notation simple and define the input parameter of $\Call{Wait}{ }$ as the corresponding input array. \\
-Looking at the input arrays $I_s$ and $I_d$ we want to give some requirements about them. $I_s$ is used to hold information of the subset $S_r$ rank $r$ has in the sparse format. It needs to be filled, if $isDense$ is set to false. It consists out of 32-bit integer and holds $sparseSize$ elements that correspond to the elements of $S_r$. The array needs have enough memory allocated to hold two times 'critSize' elements. When indexing this array we refer to single elements of this array. The same conditions holds for the extra buffer array $\Tilde{I}_s$. $I_d$ holds the bitarray representation of $S_r$ and needs to be filled, if $isDense$ is true. It is assumed to be empty (filled with only zeros), if the sparse variant is used as input. Its size is given by $bitarraySize$. The corresponding extra buffer $\Tilde{I}_d$ needs to be able to hold half of the biggest blocks of $I_d$. Both $I_d$ and $\Tilde{I}_d$ are assumed to be divided into $p$ blocks. These blocks are assumed to be roughly equally sized and hold approximately $bitarraySize/p$ amount of data. Indexing these arrays therefore refers to blocks of data. To assure these conditions the initialization of the arrays, calculation of the blocks and adding of elements to $S_r$ is hidden from the user in the original implementation.\\
+Looking at the input arrays $I_s$ and $I_d$ we want to give some requirements about them. Firstly one of them is (needs to be) valid. $I_s$ is used to hold information of subset $S_r$ in the sparse format. It is valid and needs to be filled, if $isDense$ is set to false. It consists out of 32-bit integer and holds $sparseSize$ elements that correspond to the elements of $S_r$. The array needs have enough memory allocated to hold two times 'critSize' elements. When indexing this array we refer to single elements of this array. The same conditions holds for the extra buffer array $\Tilde{I}_s$. $I_d$ holds the bitarray representation of $S_r$ and needs to be filled, if $isDense$ is true. It is assumed to be empty (filled with only zeros), if the sparse variant is used as input. Its size is given by $bitarraySize$. The corresponding extra buffer $\Tilde{I}_d$ needs to be able to hold half of the biggest blocks of $I_d$. Both $I_d$ and $\Tilde{I}_d$ are assumed to be divided into $p$ blocks. These blocks are assumed to be roughly equally sized and hold approximately $bitarraySize/p$ amount of data. Indexing these arrays therefore refers to blocks of data. To assure these conditions the initialization of the arrays, calculation of the blocks and adding of elements to $S_r$ is hidden from the user in the original implementation.\\
 Another function that needs to be explained is $\Call{Probe}{ }$. This function returns a status object for messages that rank $r$ receives from rank $\hat{r}$. This status object holds information about the tag that was added by the sending rank and how long the message is. The tag is needed to identify, if data received in a dense or a sparse variant. The size information is only needed, if a sparse array is received. In this case a processor does not know how many elements are added to the subset $S_{\hat{r}}$ it is receiving and therefore the message size is unknown. This problem does not arise in the dense variant as here are always a known amount of blocks of the array sent by $\hat{r}$ which can also be calculated by $r$ using $\hat{r}$ rank ID.\\
 The next important feature we want to mention is the variable 'critSize'. It defines the boundary which decides, if $r$ should use the dense or sparse representation for its subset $S_r$. 'critSize' is compared against the size of $S_r$ $\varphi$. If $\varphi$ is bigger than 'critSize' process $r$ uses the dense variant and if it is smaller the sparse format is used. There can be different strategies on how to chose 'critSize' which is for now hidden behind $\Call{getCritSize}{ }$ and explained later.\\
 We already explained which data is send in each iteration $i$. Now we want to focus how the received messages are processed in the different cases. As we see there are four different possibilities depending on the representation of the received message (identified by 'status.tag') and on the representation rank $r$ currently uses (identified by $isDense$). In all cases we somehow want to combine the (possible) different representation into a definitive one. We start with the case where the receiving message as well rank $r$s representation is dense. In Algorithm \ref{helper:combineDenseDense} we see the procedure for this case and can identify that it is nearly the same as the receive handling of the Reducescatter phase in the Butterfly recursive halfing Allreduce algorithm (compare to Algorithm \ref{algo:redScatterAndAllreduce}).
 \begin{algorithm}
 	\caption{– combine a received dense blocks into own dense array.\\
-	Variable nomenclature is the same as in Algorithm \ref{algo:ExactHalfingSetUnion}.}
+	Variable nomenclature is the same as in Algorithm \ref{algo:SetUnionExactHalfing}. Changes of variables apply to the original ones.}
 	\label{helper:combineDenseDense}
 	\begin{algorithmic}[1]
-		\Procedure{combineDenseDense}{$r$, shift, status}
-			\State startBlockR $\gets$ ($r$/shift) $\cdot$ shift
+		\Procedure{combineDenseDense}{ }
+			\State startBlockR $\gets$ ($r$//shift) $\cdot$ shift
 			\State endBlockR $\gets$ startBlock + shift
 			\State Recv($\tilde{I}_d$[0, $\dots$, endBlockR - startBlockR-1], "dense")\Comment{Receive in buffer}
 			\State Wait($I_d$) \Comment{Wait until it is safe to use original array}
@@ -104,99 +105,210 @@ We already explained which data is send in each iteration $i$. Now we want to fo
 \end{algorithm}
 One small difference is here that the send and receive is not handled in the same function. The sending rank $\hat{r}$ used a non-blocking send and maybe also rank $r$ did and used $I_d$ in the same iteration for sending a message. Therefore we need to check, if buffer $I_d$ is already safe to use and wait, if this is not the case. The other difference is the reduce operation. It is now not a general associative operator $\oplus$ anymore, but instead the explicitly defined bitwise OR ($\lor$). This is of corse done as the bitwise OR performs a logically the set union of two bitmaps. Calculations of the block indices for the receiving block range are still exactly the same as in Algorithm \ref{algo:redScatterAndAllreduce}. Also the received blocks are "added" to the same range of blocks of $I_d$. We can summarize that after an iteration where $\Call{combineDenseDense}{ }$ is used a standard step of the Butterfly Reducescatter phase is performed.\\
 In the next scenario rank $r$ receives again dense data blocks, but holds itself data in sparse representation. "status.tag" is therefore "dense", $isDense$ is false and $\Call{combineDenseSparse}{ }$ is executed. The corresponding procedure is shown in Algorithm \ref{helper:combineDenseSparse}. We see that the dense blocks are put at the dense array $I_d$ at positions [startBlockR, $dots$, endblockR-1]. The block indices are calculated the same way as they where for the purely dense case. Actually this part can be seen as equivalent to the procedure of putting the receiving blocks in a buffer and performing an logic OR to an empty dense array $I_d$. After the blocks are build into $I_d$ the elements of rank $r$s sparse 
-need to be build in. This is done by iterating over all elements of the sparse array and set the corresponding bits of $I_d$ to 1 using $\Call{Bitmap_Set}{ }$.
-\begin{algorithm}
-	\caption{– combine a received sparse list into own dense array.\\
-		Variable nomenclature is the same as in Algorithm \ref{algo:ExactHalfingSetUnion}.}
+need to be build in. This is done by iterating over all elements of the sparse array and set the corresponding bits of $I_d$ to 1 using $\Call{Bitmap\_Set}{ }$.
+\begin{algorithm}[h]
+	\caption{– combine received dense blocks with own sparse representation.\\
+	Variable nomenclature is the same as in Algorithm \ref{algo:SetUnionExactHalfing}. Changes of variables apply to the original ones.}
 	\label{helper:combineDenseSparse}
 	\begin{algorithmic}[1]
-		\Procedure{Procedure}{$r$, shift, status, $isDense$}
-			\State startBlockR $\gets$ ($r$/shift) $\cdot$ shift
+		\Procedure{combineDenseSparse}{ }
+			\State startBlockR $\gets$ ($r$//shift) $\cdot$ shift
 			\State endBlockR $\gets$ startBlock + shift
 			\State Recv($I_d$[startBlockR, $\dots$, endBlockR - 1], "dense")
 			\ForAll{element $\in I_s$} \Comment{Add all old sparse elements in new dense array}
 			\State \Call{Bitmap\_Set}{$I_d$, element}
 			\EndFor	
-			\State isDense $\gets$ true
+			\State $isDense \gets$ true
 		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
-
-
-
+After this the marker $isDense$ is set to true. As we only want allow a switch from sparse to dense it only makes sense that after the combination of a sparse and dense representation the resulting format needs to be dense. What this procedure effectively does is creating the correct subresult for blocks $I_d[\text{startBlockR}, \dots, \text{endBlockR}-1]$ of ranks that contributed to a subresult to $\hat{r}$ or to a subresult to $r$. That the subresult of $\hat{r}$ for these blocks are now correctly in place is obvious as they where directly copied into $I_d$. The integration of the correct blocks of the subresult of $r$ is also straight forward. In the sparse representation array $I_s$ holds information of all blocks and not just of a subset. So it contains also the correct elements for this subset of blocks. All its elements are added to $I_d$ so these blocks are also covered.\\
+The next case we present here also needs to combine a dense representation with a sparse one. The difference here is that received array is now sparse and $r$ holds data  in dense format. The respective code is shown in Algorithm \ref{helper:combineSparseDense}. The general idea is here nearly the same as in the case before. There are two different representations of subsets and they need to be combined into a dense one. We see that all is needed for that is putting the received sparse array elements into the dense bitmap $I_d$. This is simply done by putting the received message into an buffer $\Tilde{I}_s$, iterating over this array and use $\Call{Bitmap\_Set}{ }$ to set the corresponding bits of $I_d$ to 1. If $I_d$ at process $r$ held the correct subresults for some blocks then now it will hold in these blocks the correct subresult from $r$ and its communication partner $\hat{r}$. As $isDense$ is already set to true this variable is unaltered.
 \begin{algorithm}
-	\caption{Distributed set union using recursive exact halfing Allreduce with sparse adaptation.\\
-		$r$: rank Id of the process\\
-		$p$: number of processes\\
-		$I_s$: input array with sparse representation of $S_r$\\
-		$sparseSize$: length of sparse list\\
-		$I_d$: input array with dense representation of $S_r$\\
-		$bitarraySize$: count of words for bitarray\\
-		$isDense$: bool to indicate, which representation holds} \label{algo:ExactHalfingAllreduce123}
+	\caption{– combine a received sparse list into own dense array.\\
+		Variable nomenclature is the same as in Algorithm \ref{algo:SetUnionExactHalfing}. Changes of variables apply to the original ones.}
+	\label{helper:combineSparseDense}
 	\begin{algorithmic}[1]
-		\Ensure $p = 2^k$ for some $k$ \Comment{Only works for power of 2 number of ranks}
-		\Procedure{SetUnion}{$r, p, I_s, sparseSize, I_d, bitarraySize, isDense$}
-		\State critSize $\gets$ \Call{getCritSize}{$bitarraySize$}
-		\Comment{Calculate Critical size}
-		
-		\For{(shift $\gets p/2$, shift $\geq1$, shift $\gets$ shift/2)} \Comment{Reducescatter phase}
-		\State commNeigh $\gets r$ XOR shift \Comment{XOR is bitwise XOR}
-		\If{isDense}
-		\State startBlock $\gets$ (commNeigh/shift) $\cdot$ shift
-		\State endBlock $\gets$ startBlock + shift
-		\State Send($I_d$[startBlock, $\dots$, endBlock - 1], "dense") \Comment{Send block. Mark message as "dense"}
-		\Else
-		\State Send($I_s$[0, $\dots$, $sizeSparse$-1], "sparse") \Comment{Send whole sparse array. Mark message as sparse}
-		\EndIf
-		\\
-		\State status $\gets$ \Call{probe}{commNeigh} \Comment{Get message type and size information}
-		\If{(status.tag = "dense")} \Comment{Dense block is received}
-		\State startBlock $\gets$ ($r$/shift) $\cdot$ shift
-		\State endBlock $\gets$ startBlock + shift
-		\If{$isDense$} \Comment{Own structure is also "dense"}
-		\State Recv($\tilde{I}_d$[0, $\dots$, status.count - 1], "dense")\Comment{Receive in buffer}
-		\State Wait($I_d$) \Comment{Wait until it is safe to use original array}
-		\ForAll{i = startBlock, $\dots$, endBlock - 1}
-		\State $I_d$[i] $\gets$ $I_d$[i] $\lor$  $\tilde{I}_d$[i - startBlock] \Comment{$\lor$ is here bitwise OR}
-		\EndFor
-		\Else \Comment{Own structure is "sparse"}
-		\State Recv($I_d$[startBlock, $\dots$, startBlock + status.count - 1], "dense")
-		\ForAll{element $\in I_s$} \Comment{Add all old sparse elements in new dense array}
-		\State \Call{Bitmap\_Set}{$I_d$, element}		
-		\EndFor					
-		\State isDense $\gets$ true
-		\EndIf
-		\\
-		\ElsIf{(status.tag = "sparse")} \Comment{Sparse array is received}
-		\If{($isDense$)}
-		\State Recv($\tilde{I}_s$ [0, $\dots$, ], "sparse")
-		\ForAll{element $\in \tilde{I}_s$} \Comment{Add all new sparse elements in old dense array}
-		\State \Call{Bitmap\_Set}{$I_d$, element}		
-		\EndFor
-		\Else
-		\State Recv($I_s$[$sizeSparse$, $\dots$, $sizeSparse$+status.count-1], "sparse") \\ \Comment{Receive directly in sparse array behind the old elements}
-		\State $sizeSparse \gets sizeSparse$ + status.count
-		\If{($sizeSparse > critSize$)} \Comment{Transform into dense, if too big}
-		\ForAll{element $\in I_s$} 
-		\State \Call{Bitmap\_Set}{$I_d$, element}		
-		\EndFor
-		\EndIf					
-		\EndIf
-		\EndIf			
-		\EndFor
-		\\
-		\If{($isDense$ = false)} \Comment{Return early, if variant is still sparse}
-		\State \Return
-		\EndIf
-		\\
-		\Call{Allgather}{$I_d$}
+		\Procedure{combineSparseDense}{ }
+			\State Recv($\tilde{I}_s$ [0, $\dots$, status.count-1], "sparse")
+			\ForAll{element $\in \tilde{I}_s$} \Comment{Add all new sparse elements in old dense array}
+			\State \Call{Bitmap\_Set}{$I_d$, element}		
+			\EndFor
 		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
+\\The last case is maybe the most tricky one. Here receives rank $r$ a sparse array and also holds data in a sparse variant. The received sparse array is simply appended directly behind the data rank $r$ holds already in $I_s$ and the new size of the sparse array is updated. After this step $I_s$ of rank $r$ holds the complete subresults from $\hat{r}$ and $r$ joined together. Until here this could be seen as a pure Allgather step. But we require that the sparse format can not be used, if the subresult $S_r$ holds more elements than the critical size 'critSize'. Therefore we must convert the sparse array into a dense bitmap, if the updated $sparseSize$ is too big. If this is the case and all elements have been added to the bitmap array $I_d$ all blocks of $I_d$ contain the new correct subresult. Of corse the $isDense$ flag is then needed to be set to true.
+\begin{algorithm}
+	\caption{– combine two sparse arrays. If the result is to large, switch representation to dense format.\\
+		Variable nomenclature is the same as in Algorithm \ref{algo:SetUnionExactHalfing}. Changes of variables apply to the original ones.}
+	\label{helper:combineSparseSparse}
+	\begin{algorithmic}[1]
+		\Procedure{combineSparseSparse}{ }
+			\State Recv($I_s$[$sizeSparse$, $\dots$, $sizeSparse~+$ status.count $- 1$], "sparse") \\ \Comment{Receive directly in sparse array behind the old elements}
+			\State $sizeSparse \gets sizeSparse$ + status.count
+			\If{($sizeSparse > critSize$)} \Comment{Transform into dense, if too big}
+				\ForAll{element $\in I_s$} 
+				\State \Call{Bitmap\_Set}{$I_d$, element}		
+				\EndFor
+			\EndIf
+			$isDense \gets $ true
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+\\As a summary there are two different cases which data is sent and four different cases for handling the receipt. But the algorithm is build in a way that there are communication partners for each iteration, meaning, if $r$ sends a message to $\hat{r}$, it will also receive a message from $\hat{r}$. This implies that when considering such a pairwise communication round, there only 3 cases to be considered. Either both are using the dense representation, both use the sparse one or they use different ones. To get a better understanding what happens in each iteration, we provide a visual example for these cases in Figure \ref{fig:3cases}. The first case (Figure \ref{3cases:densedense}) shows the behavior when both ranks hold the dense representation. We see that half of the current correct subresult is send to the other process. This done in a way that $r$ and $\hat{r}$ send a different half. The received blocks are combined using the bitwise OR to the respective array $I_d$ which is indicated by overlaying the patterns. One can see that after the iteration each rank holds a smaller section of the new correct subresult.
+\begin{figure}
+	\centering
+	\tikzset{
+		hatch/.style args = {#1}{
+			pattern={Lines[distance=1mm, angle={#1}, line width=0.3mm]},
+			pattern color=black!60
+		}
+	}
+	\begin{subfigure}{0.3\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\draw [] (0,0) rectangle (0.7,4);
+			\draw [] (1.5,0) rectangle (2.2,4);
+			\draw [] (0,1) rectangle (0.7,2);
+			\draw [] (1.5,1) rectangle (2.2,2);
+			\fill [hatch=45] (0,0) rectangle (0.7,2);
+			\fill [hatch=-45] (1.5,0) rectangle (2.2,2);
+			
+			\draw [] (0,-5) rectangle (0.7,-1);
+			\draw [] (1.5,-5) rectangle (2.2,-1);
+			\fill [hatch=45] (0,-5) rectangle (0.7,-3);
+			\fill [hatch=-45] (1.5,-5) rectangle (2.2,-3);
+			\fill [hatch=-45] (0,-4) rectangle (0.7,-3);
+			\fill [hatch=45] (1.5,-5) rectangle (2.2,-4);
+			
+			\draw [-{Stealth[scale=1.5]}] (1.5,1.5) to (0.7,1.5);
+			\draw [-{Stealth[scale=1.5]}] (0.7,0.5) to (1.5,0.5);
+			
+			\draw [double distance=3pt, -Implies] (1.1,0) to (1.1,-1);
+			
+			\node[] at (0.35,4.3) {$r$};
+			\node[] at (1.85,4.3) {$\hat{r}$};
+			
+		\end{tikzpicture}
+		\caption{Both representations are dense.}
+		\label{3cases:densedense}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.3\textwidth}
+		\centering
+		\begin{tikzpicture}
+			% set sparse color
+			\colorlet{mycolor}{Green}
+			
+			% define sparse positions
+			\def\pos{0.1/0, 0.3/1, 0.5/2, 1.1/3, 1.7/4, 1.8/5, 2.2/6, 2.5/7, 3.7/8, 3.8/9, 3.9/10}
+			
+			% sparse sending arrows. must be drawn first to be in background
+			\foreach \off/\y in \pos {
+				\draw[-{Stealth[scale=1.5]}, color=Gray] (3, 1.5 + 0.1*\y) to (0.7, \off);
+				\draw[-{Stealth[scale=1.5]}, color=Gray] (3, 1.5 + 0.1*\y) to (2.2, \off);
+			}
+			
+			%dense arrays before
+			\fill [color=White] (1.5,0) rectangle (2.2,4);
+			\draw [] (1.5,0) rectangle (2.2,4);
+			
+			
+			\draw [] (0,0) rectangle (0.7,4);
+			\draw [] (0,1) rectangle (0.7,2);
+			\fill [hatch=45] (0,0) rectangle (0.7,2);
+			
+			%sparse array before
+			\fill [color=mycolor] (3,1.5) rectangle (3.5,2.5);
+			\draw [] (3,1.5) rectangle (3.5,2.5);
+			
+			
+			% dense arrays after
+			\draw [] (0,-5) rectangle (0.7,-1);
+			\draw [] (1.5,-5) rectangle (2.2,-1);
+			\fill [hatch=45] (0,-5) rectangle (0.7,-3);
+			\fill [hatch=45] (1.5,-5) rectangle (2.2,-4);
+			\fill [hatch=-45] (0,-5) rectangle (0.7,-1);
+			\fill [hatch=-45] (1.5,-5) rectangle (2.2,-1);
+			
+			% sparse filling
+			\foreach \off/\y in \pos {
+				\draw[color=mycolor, line width=1pt] (0, \off-5) to (0.7, \off-5);
+				\draw[color=mycolor, line width=1pt] (1.5, \off-5) to (2.2, \off-5);
+			}
+			
+			%arrows
+			\draw [-{Stealth[scale=1.5]}] (0.7,0.5) to (1.5,0.5);
+			\draw [double distance=3pt, -Implies] (1.1,0) to (1.1,-1);
+			
+			% rank IDs
+			\node[] at (0.35,4.3) {$r$};
+			\node[] at (2.5,4.3) {$\hat{r}$};
+		\end{tikzpicture}
+		\caption{One representation is dense, one is sparse.}
+		\label{3cases:densesparse}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.3\textwidth}
+		\centering
+		\begin{tikzpicture}
+			% set sparse color
+			\colorlet{mycolor}{Green}
+			\colorlet{mycolor1}{Red}
+			
+			%dense placeholder array
+			\draw [color=White] (1.5,0) rectangle (2.2,4);
+			\draw [color=White] (0,-5) rectangle (0.7,-1);
+			
+			%sparse array before
+			\draw [fill=mycolor] (0,2.5) rectangle (0.5,3.5);
+			
+			\draw [fill=mycolor1] (1.5,3) rectangle (2,3.5);
+			
+			%sparse array after
+			\def\offoff{0.3}
+			\def\off{2.5}
+			\draw [fill=mycolor] (0,2-\off+\offoff) rectangle (0.5,3-\off+\offoff);
+			\draw [fill=mycolor1] (1.5,2.5-\off+\offoff) rectangle (2,3-\off+\offoff);
+			
+			\def\off{3.5}
+			\draw [fill=mycolor1] (0,2.5-\off+\offoff) rectangle (0.5,3-\off+\offoff);
+			\def\off{3}
+			\draw [fill=mycolor] (1.5,2-\off+\offoff) rectangle (2,3-\off+\offoff);
+			
+			% Crit size
+			\draw[dash dot, thick, color=purple] (-0.2, -0.7+\offoff) to (2.2, -0.7+\offoff);
+			
+			% possible dense array
+			\draw [hatch=45] (-0.1,-5) rectangle (0.6,-2);
+			\draw [hatch=45] (1.4,-5) rectangle (2.1,-2);
+			\fill [hatch=-45] (-0.1,-5) rectangle (0.6,-2);
+			\fill [hatch=-45] (1.4,-5) rectangle (2.1,-2);
+			
+			%arrows
+			\draw [double distance=3pt, -Implies] (1.1,2) to (1.1,1);
+			\draw [double distance=3pt, -Implies] (1.1,-0.7) to (1.1,-1.7);
+			\draw [-{Stealth[scale=1.5]}] (1.75,3.5) to [out=90, in=-90, looseness=2] (0.25,2.5);
+			\draw [-{Stealth[scale=1.5]}] (0.25,3.5) to [out=90, in=-90, looseness=2] (1.75,3);
+			
+			\node [tape, draw, tape bend bottom=none, color=white, fill=white] at (0.25,-4.8) {~~~~~};
+			\node [tape, draw, tape bend bottom=none, color=white, fill=white] at (1.75,-4.8) {~~~~~};
+			%rank UDs
+			\node[] at (0.35,4.3) {$r$};
+			\node[] at (1.85,4.3) {$\hat{r}$};
+		\end{tikzpicture}
+		\caption{Both representations are sparse.}
+		\label{3cases:sparsesparse}
+	\end{subfigure}
+	\caption{Example iteration to visualize different cases that can occur from a global perspective during the adapted Reducescatter phase. Uncolored rectangles represent dense arrays $I_d$, colored ones represent sparse arrays $I_s$. Hatched surfaces of $I_d$ indicate which blocks contain correct subresults. Colored horizontal lines represent bits that are set by sparse elements. Single lined arrows indicate where data is send. Moreover the grey arrows  indicate where sparse elements setting bits in dense arrays. The state of $r$ and $\hat{r}$ is always shown during the iteration (above double lined arrow ($\Rightarrow$)) and after iteration completion (below double lined arrow ($\Rightarrow$)). For the last case (Figure \ref{3cases:sparsesparse}) there is also an extra step indicated, if the sparse arrays are bigger than the critical size. The critical size threshold is marked by the purple dashed line. For all cases there is only one communicating pair of ranks depicted.}
+	\label{fig:3cases}
+\end{figure}
+\\The second case (Figure \ref{3cases:densesparse}) shows the scenario when the processes hold different representations. Without loss of generality rank $\hat{r}$ is chosen to hold the sparse representation. Its sparse array is depicted by the green box. We also show its empty bit array. The sparse array is send to process $r$ where all the elements are build into $r$s bit array $I_d$. As the sparse variant holds information of all blocks we see that the build in subresult spans the whole array $I_d$. This guarantees that (at least) the same blocks as in the previous case hold a correct subresult. Process $\hat{r}$ on the other hand only receives a section of the dense array. This section is build into the empty bit array. But when it is combined with its own sparse elements, we see that again a block is visible that holds the new correct subresult. It is again the same section as in the case before. The data that stems from $\hat{r}$ sparse array is here visualized in two ways. Once the green lines indicate where (possible) elements have set bits to 1. Secondly we used the same hatching to indicate that information for all blocks is added and it is easier to find the section where the new correct subresult lies. \\
+The last case (Figure \ref{3cases:sparsesparse}) shows the procedure, if both ranks hold data in the sparse format. Rank $r$ holds the green rectangle and $\hat{r}$ the red one. They simply exchange their arrays $I_s$ and append the received data. It is obvious that both ranks now hold the same sparse array $I_s$ (although the order differ). Therefore the size of both arrays is also the same. There are now two different outcomes possible. Either the sparse array size is below the critical size and the iteration is complete or the limit is exceeded and the sparse arrays are transformed to the dense representation. If the transformation happens, all blocks of $I_d$ should hold a correct subresult. This is indicated by the complete hatching pattern.\\
+This completes the illustration of the adapted Reducescatter phase. We only miss two details that happen after it. When looking back at Algorithm \ref{algo:SetUnionExactHalfing} one can see that after the adapted Reducescatter phase is a check for the representation of the set. If it is sparse, the set union function simply returns. In this situation a complete Allgather of the sparse arrays was performed and therefore every process has all information of all provided input subsets. In the other case each rank holds only a block of the correct union set $U$. Therefore the Allgather phase is needed which is then performed as the last step. Here we did not provide the explicit implementation of $\Call{Allgather}{ }$ as this can be handled by an library.\\
+Until here a detail was left out. The calculation of the critical size 'critSize'. It is hidden behind the function $\Call{getCritSize}{ }$. In the end it is just a parameter that can be tuned to the current setup. Theoretically it can be also set separately for each iteration of the adapted Reducescatter phase. The trade-off is here that a larger critical size makes it more probable that after the Reducescatter phase the representations are still sparse and therefore the algorithm can terminate earlier. On the other hand the communication cost per round could increase, if the sparse array is exceeds the message size that would be used for the dense blocks. So altering the critical size from iteration to iteration may be not a good idea. If we decrease the critical size we may be loose the benefit of finishing early. When increasing the critical size in each iteration it could be that in an early iteration a process needs to switch to the dense representation and therefore all ranks are therefore transformed to dense. This also inhibits the early return. Moreover the sparse variant has to compete against smaller and smaller message sizes of the fewer dense blocks (for later iterations). So an increase of the critical size becomes even more inefficient. So we decided it to be keep it constant. We chose to keep at the order of bytes as also the whole dense array $I_d$ has. As we will see in the analysis this works quite fine. Finding an optimal range for this parameter is also a aim of this thesis.
 
 
-
-\subsection{Concept and Explicit Implementation}
 \subsection{Proof of Correctness}
 \subsection{Runtime Estimation}
 
