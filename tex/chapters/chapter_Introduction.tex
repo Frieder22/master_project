@@ -924,6 +924,7 @@ The whole structure is build on the fact that we have a number of processors tha
 
 
 \subsection{Approximate Halfing Algorithm for Reduce\_Scatter and Allgather} \label{sec:approxHalfRedScat}
+\todo{Adapt to and from ranks (+/- $s_k$) to be consistent to figures. Use to: - and from: +}
 In the section before we saw the idea of combining a Reduce\_Scatter and Allgather to perform an Allreduce. There a Butterfly/Hypercube communication pattern was used. Again this arises the problem that such a pattern is not easily extendable to a non-power-of-two number of processors $p$. So here we want to propose an algorithm that is again based on the approximate halfing sequence $(s_k)_{k\in\{0,\dots, q-1\}}$ from Section \ref{approximateHalfingScheme}. Here again $q$ is set to $\ceil{\log_2{p}}$. With this we want to show an implementation for a Reduce\_Scatter as the corresponding pattern for the Allgather follows the same scheme.\\
 The algorithm \cite{traeff2025} is presented in Procedure \ref{algo:redScatterShift}. 
 \begin{algorithm}
@@ -1054,7 +1055,7 @@ Assume the invariant holds for iteration $i$. Then in iteration $i+1$ we append 
 		\draw [-{Square[scale=1.5]}] (left1.west) to [out=180, in=0] (left0.east);
 		
 	\end{tikzpicture}
-	\caption{A visual example for a simplification of Algorithm \ref{algo:redScatterShift} with $p=7$ processors. The skips $s_3=7, s_2 = 4, s_1=2$ and $s_0=1$ are from an approximate halfing sequence and fulfill $s_{k+1} -s_k \leq s_k$. Each iteration shows the state of the original array. Arrows with a pointy tip indicate which blocks are reduced to which other blocks of the vector. Arrows with square tips indicate the arising tree structure. Elements that are in dark black correspond to trees that have a root $i\leq s_k$. Grey do elements do not need to be considered anymore. In the last iteration we see a single tree at block $0$ which spans all elements.}
+	\caption{A visual example for a simplification of Algorithm \ref{algo:redScatterShift} with $p=7$ processors. The skips $s_3=7, s_2 = 4, s_1=2$ and $s_0=1$ are from an approximate halfing sequence and fulfill $s_{k+1} -s_k \leq s_k$. Each iteration shows the state of the original array. Arrows with a pointy tip indicate which blocks are reduced to which other blocks of the vector. Arrows with square tips indicate the arising tree structure. Elements that are in dark black correspond to trees that have a root $i\leq s_k$. Grey do elements do not need to be considered anymore. The last diagram shows the result after the last iteration and we see a single tree at block $0$ which spans all elements.}
 	\label{fig:arrayCopy}
 \end{figure}
 To get a better understanding we provide a visual example shown in Figure \ref{fig:arrayCopy}. There we can see better how these trees are formed and why the condition $s_{k+1}-s_k \leq s_k$ is sufficient to guarantee disjointedness and complete spanning of the trees.\\
@@ -1260,7 +1261,8 @@ The run time estimation is quite straight forward. There are in total $\ceil{\lo
 Important here is that the message size $m$ refers here to the \emph{output} array. The inputs are therefore assumed to have size $m/p$.\\
 As an optimization in using this algorithm as a set union operation we can keep in mind that the reordering in line \ref{bruckAllgather:reorder1} and \ref{bruckAllgather:reorder2} is not necessary. We do not care in which order the elements are in the output array as long as all elements are present.
 
-\subsection{(Neighbor Exchange Algorithm)}
+\subsection{Approximate Halfing Allgather} \label{sec:approxHalfAllgather} \todo{write section for this type of allgather}
+
 \subsection{Ring Algorithm}
 Like in the Allreduce operation there is also an Allgather that is based on a ring topology communication scheme \cite{allgather}. I.e. in each communication round each rank $r$ sends data to process $(r-1+p)\mod{p}$ and receives data from rank $(r+1)\mod{p}$. This again allows for an arbitrary number of processors $p$ without any restrictions of them being a power of two. This strategy results in a rather simple algorithm. This algorithm is shown in Procedure \ref{algo:ringAllgather}.
 \begin{algorithm}

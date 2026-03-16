@@ -184,7 +184,7 @@ The next case we present here also needs to combine a dense representation with 
 			\draw [-{Stealth[scale=1.5]}] (1.5,1.5) to (0.7,1.5);
 			\draw [-{Stealth[scale=1.5]}] (0.7,0.5) to (1.5,0.5);
 			
-			\draw [double distance=3pt, -Implies] (1.1,0) to (1.1,-1);
+			\draw [double distance=3pt, -Implies, thick] (1.1,0) to (1.1,-1);
 			
 			\node[] at (0.35,4.3) {$r$};
 			\node[] at (1.85,4.3) {$\hat{r}$};
@@ -239,7 +239,7 @@ The next case we present here also needs to combine a dense representation with 
 			
 			%arrows
 			\draw [-{Stealth[scale=1.5]}] (0.7,0.5) to (1.5,0.5);
-			\draw [double distance=3pt, -Implies] (1.1,0) to (1.1,-1);
+			\draw [double distance=3pt, -Implies, thick] (1.1,0) to (1.1,-1);
 			
 			% rank IDs
 			\node[] at (0.35,4.3) {$r$};
@@ -286,8 +286,8 @@ The next case we present here also needs to combine a dense representation with 
 			\fill [hatch=-45] (1.4,-5) rectangle (2.1,-2);
 			
 			%arrows
-			\draw [double distance=3pt, -Implies] (1.1,2) to (1.1,1);
-			\draw [double distance=3pt, -Implies] (1.1,-0.7) to (1.1,-1.7);
+			\draw [double distance=3pt, -Implies, thick] (1.1,2) to (1.1,1);
+			\draw [double distance=3pt, -Implies, thick] (1.1,-0.7) to (1.1,-1.7);
 			\draw [-{Stealth[scale=1.5]}] (1.75,3.5) to [out=90, in=-90, looseness=2] (0.25,2.5);
 			\draw [-{Stealth[scale=1.5]}] (0.25,3.5) to [out=90, in=-90, looseness=2] (1.75,3);
 			
@@ -333,6 +333,7 @@ So after $\log_2{p}$ iterations there are exactly $p$ group halves each containi
 	U_d[j] = I_d[r] 
 \end{align*}
 where $j$ can be identified as $r$. So each rank holds a block of the correct dense union set array. As we showed before either all ranks are in dense representation after the last iteration or none of the processes is. Therefore all ranks start the procedure $\Call{Allgather}{ }$ where the blocks are collected, concatenated and distributed over all processes. After this every rank has a complete dense representation of the set union $U$. As we covered all cases this proves correctness for the whole algorithm.
+\newpage
 \subsection{Runtime Estimation}
 We also want to estimate the execution time of this algorithm using the linear cost model. Compared to the algorithms presented in the introductory chapter we do not expect to estimate the run time for a general case. The message size and even the structure of the algorithm depend now on the sizes $\varphi_r = |S_r|$ of the submitted subsets. So we want to give an estimation for different setups.\\
 The first configuration we want to discuss is the case where the sum of all subset sizes $\Phi = \sum_r \varphi_r$ is smaller than the critical size. We also assume that each rank submitted its data in the sparse format. To keep things simple for run time estimation we assume that each ran submitted an array of same size $\varphi$. With this the condition arises that the critical size must be greater than $p\cdot \varphi$. So we expect that the algorithm terminates after the adapted Reducescatter phase and effectively an Allgather over all sparse arrays is performed. We also want to mention that the uniform distribution of the input elements is actually the best case for this scenario. In each iteration the each rank sends its whole sparse array and a foreign sparse added to its own $I_s$. So in each iteration the size of the sparse array is effectively doubled. So in iteration $i$ (counting from 0) we expect that each process sends $\varphi\cdot 2^i$ amount of elements. This makes it also clear why this is a best case scenario. If the input arrays had different sizes of data, each iteration needs the time to send the longest message. \\
@@ -341,7 +342,7 @@ We expect therefore that each iteration takes $\alpha + \beta \cdot \varphi \cdo
 	T_\mathrm{scen1} = \sum_{i=0}^{\log_2{p}-1}\alpha + \beta \cdot 2^i \cdot \varphi \cdot 32 \mathrm{bit}
 	= \log_2(p) \alpha + (p-1)\varphi \beta \cdot 32 \mathrm{bit}.
 \end{align*}  
-This is the exact same run time estimation for any optimal Allgather algorithm. One needs to keep in mind that the $\varphi$ describes the input of one output. In the algorithms from the introduction the message size refers to the output message. \\
+This is the exact same run time estimation for any optimal Allgather algorithm. One needs to keep in mind that the $\varphi$ describes the size of one input. In the algorithms from the introduction the message size refers to the output message. \\
 The next scenario we want to propose here is also kind of a best case. We require that all processes propose an array in dense format. Therefore a pure Reducescatter is performed. In iteration $i$ (counting from 1) are $p/2^i$ blocks of roughly the size $|\tilde{S}|/p$ are sent. $\tilde{S}$ is here the total possible finite set from which the subsets $S_r$ are selected ($S_r \subseteq \tilde{S}$). Moreover there are also  $p/2^i$ blocks of data combined using the bitwise OR operator.  We estimate the duration of each iteration $i$ as $\alpha + |\tilde{S}| 2^{-i} \cdot \beta + |\tilde{S}| 2^{-i} \cdot \gamma_d$. $\gamma_d$ is here the time per bit to apply the bitwise OR operator. So the Reducescatter phase needs therefore $\sum_{i=1}^{\log_2{p}} \alpha + |\tilde{S}| 2^{-i} \cdot (\beta +\gamma_d) = \log_2(p) \alpha + \frac{p-1}{p}|\tilde{S}| (\beta +\gamma_d)$ amount of time. We assume that standard library implemented $\Call{Allgather}{ }$ call uses also a Butterfly algorithm and therefore takes $\log_2(p) \alpha + \frac{p-1}{p}|\tilde{S}|\beta $ amount of time. In total we can estimate the runtime as being 
 \begin{align*}
 	T_\mathrm{scen2} = 2\log_2(p) \alpha + \frac{p-1}{p}|\tilde{S}| (2\beta +\gamma_d)
@@ -357,10 +358,581 @@ When analyzing this run time, one can see that we have with the $\beta$-term par
 We looked here at very specific scenarios. It is apparent that the estimation of more complex configurations is not that easy anymore. It definitively possible that different ranks change representations in different iterations. Without specific information of the setup it is not possible to make accurate estimations using the linear cost model. 
 
 \section{An Algorithm for Arbitrary Number of Processes} \label{sec:irregularImpl}
+In this subsection we present an algorithm that works in a similar way, but is not confined to work only for a number of processes $p$ that is a power of two. Again we want to overlay an Allgather that uses a sparse representation of a subset $S_r$ over the Reducescatter phase of an Allreduce. The Allreduce basis is here given by the algorithm presented in Section \ref{sec:approxHalfRedScat}. Also in this section the approximate halfing sequence $(s_k)_{k\in \{0,\dots, q-1\}}$ is introduced and used. It is defined by the recursive property $s_k = \ceil{s_{k+1}/2}$ and the boundary conditions $s_q=p$ and $s_0=1$. This sequence has obviously $q=\ceil{\log_2{p}}$ terms. This sequence defines our communication scheme. In iteration $i$ (counting from 0) rank $r$ sends data to $\hat{r}_t=(r-\bar{s}_i + p)\mod{p}$ and receives data from rank $\hat{r}_f=(r+\bar{s}_i)\mod(p)$. The skips $\bar{s}_i$ correspond to elements of the approximate halfing sequence. It is important to keep in mind that in the Reducescatter phase (like it is shown in Algorithm \ref{algo:redScatterShift}) the skips are taken from the approximate halfing sequence in reverse order, meaning we have $\bar{s}_i = s_{q-1-i}$. Another important detail here is that this algorithm is not limited to the approximate halfing sequence. The only conditions such a sequence has to meet is $s_{k+1} - s_k \leq s_k$, $s_q=p$ and $s_0=1$. To adapt the Reducescatter phase to also be able to handle the sparse representation a Allgather is needed that uses the same communication pattern. It seems like the algorithm presented in Section \ref{sec:approxHalfAllgather} provides such an Allgather. The problem is here that the skips $\bar{s}_i$ are here used in the same order as they are listed in the sequence $(s_k)_{k\in \{0,\dots, q-1\}}$ (i.e. $\bar{s}_i = s_i$). In our research we did not find any Allgather algorithm that iterates such a sequence in reverse order to use the terms as skips. This is why we present in the next section an Allgather that uses this communication pattern.
+
+\subsection{An Allgather using the reverse order of $(s_k)_{k\in \{0,\dots, q-1\}}$ as skips}
+As the problem statement to find an Allgather algorithm that uses skips $\bar{s}_i$ that are the reverse order terms of a sequence $(s_k)_{k\in \{0,\dots, q-1\}}$ with $s_{k+1} - s_k \leq s_k$, $s_q=p$ and $s_0=1$ is quite lengthy and complex, we firstly simplify this statement. We can define $\bar{s}_i$ directly by stating the properties $\bar{s}_{i+1} - \bar{s}_i \geq \bar{s}_i$, $\bar{s}_0=p$ and $\bar{s}_q=1$. Therefore these skips $\bar{s}_i$ indicate the distance to communication partners in iteration $i$ (counting from 1). \\
+We also impose some conditions that regard performance and also usability as adaptation in an Reducescatter phase. Firstly the should be at most $\ceil{\log_2(p)}$ communication rounds. Secondly there should be always contiguous data sent in each iteration. If memory is not ordered in a contiguous way there are two sends per iteration needed which degrades performance. Thirdly the total communication cost (total data send over all iterations) should not exceed $(p-1)m$ where $m$ describes the message size of a ranks input. For this all input arrays are assumed to be of same size. Fourthly and lastly in iteration $i$ the subresults a process has access to should span the same processors as the subresults of the Reducescatter from Section $\ref{sec:approxHalfRedScat}$.\\
+The last condition gives a direct hint how such an Allgather could look like. For this we briefly recall the core idea of the Reducescatter from Section $\ref{sec:approxHalfRedScat}$. We showed in this section that the problem is equivalent to summing up blocks of data of a single vector. To show a correct sum after the execution of this algorithm we represented summation of blocks as plugging a root node of a tree to the root of another tree. For example, if a block holds 1 holds already the sum of block 1 and 5 and block 3 gets added to it, then node 3 is plugged into the root (node 1) of the tree $1\leftarrow 5$. To get a better understanding we show here the same example visualization from the Reducescatter from Section $\ref{sec:approxHalfRedScat}$ which is shown in Figure \ref{fig:arrayAddition}. The tree combination of the example of adding block $3$ to block $1$ which holds already the sum of block $1$ and 5 can be seen in the transition from iteration two to the third one.
+\begin{figure}[h]
+	\centering
+	\tikzset{squarenode/.style={rectangle,draw=black!, thick, minimum size=5mm}}
+	\begin{tikzpicture}	
+		[node distance = {0.1cm and 1cm}, baseline=(current bounding box.north)]
+		% original array
+		\node[squarenode] (left0) {0};
+		\node[squarenode] (left1) [below=of left0]{1};
+		\node[squarenode] (left2) [below=of left1]{2};
+		\node[squarenode] (left3) [below=of left2]{3};
+		\node[squarenode] (left4) [below=of left3]{4};
+		\node[squarenode] (left5) [below=of left4]{5};
+		\node[squarenode] (left6) [below=of left5]{6};
+		
+		\draw [-{Stealth[scale=1.5]}] (left4.west) to [out=135, in=225] (left0.west);
+		\draw [-{Stealth[scale=1.5]}] (left5.west) to [out=135, in=225] (left1.west);
+		\draw [-{Stealth[scale=1.5]}] (left6.west) to [out=135, in=225] (left2.west);
+	\end{tikzpicture}
+	\hfill
+	\begin{tikzpicture}
+		[node distance = {0.1cm and 0.7cm},baseline=(current bounding box.north)]
+		% original array
+		\node[squarenode] (left0) {0};
+		\node[squarenode] (left1) [below=of left0]{1};
+		\node[squarenode] (left2) [below=of left1]{2};
+		\node[squarenode] (left3) [below=of left2]{3};
+		\node[squarenode] (left4) [right=of left0]{4};
+		\node[squarenode] (left5) [right=of left1]{5};
+		\node[squarenode] (left6) [right=of left2]{6};
+		
+		\node[squarenode, color=lightgray] (extra4) [below=of left3]{4};
+		\node[squarenode, color=lightgray] (extra5) [below=of extra4]{5};
+		\node[squarenode, color=lightgray] (extra6) [below=of extra5]{6};
+		
+		\draw [-{Square[scale=1.5]}] (left4.west) to (left0.east);
+		\draw [-{Square[scale=1.5]}] (left5.west) to (left1.east);
+		\draw [-{Square[scale=1.5]}] (left6.west) to (left2.east);
+		
+		\draw [-{Stealth[scale=1.5]}] (left2.west) to [out=135, in=225] (left0.west);
+		\draw [-{Stealth[scale=1.5]}] (left3.west) to [out=135, in=225] (left1.west);
+	\end{tikzpicture}
+	\hfill
+	\begin{tikzpicture}
+		[node distance = {0.1cm and 0.7cm},baseline=(current bounding box.north)]
+		% original array
+		\node[squarenode] (left0) {0};
+		\node[squarenode] (left1) [below=1cm of left0]{1};
+		\node[squarenode] (left2) [below right=of left0]{2};
+		\node[squarenode] (left3) [below right=of left1]{3};
+		\node[squarenode] (left4) [right=of left0]{4};
+		\node[squarenode] (left5) [right=of left1]{5};
+		\node[squarenode] (left6) [right=of left2]{6};;
+		
+		\node[squarenode, color=lightgray] (extra2) [below=of left1]{2};
+		\node[squarenode, color=lightgray] (extra3) [below=of extra2]{3};		\node[squarenode, color=lightgray] (extra4) [below=of extra3]{4};
+		\node[squarenode, color=lightgray] (extra5) [below=of extra4]{5};
+		\node[squarenode, color=lightgray] (extra6) [below=of extra5]{6};
+		
+		\draw [-{Square[scale=1.5]}] (left4.west) to [out=180, in=0] (left0.east);
+		\draw [-{Square[scale=1.5]}] (left5.west) to [out=180, in=0] (left1.east);
+		\draw [-{Square[scale=1.5]}] (left6.west) to [out=180, in=0] (left2.east);
+		\draw [-{Square[scale=1.5]}] (left2.west) to [out=180, in=0] (left0.east);
+		\draw [-{Square[scale=1.5]}] (left3.west) to [out=180, in=0] (left1.east);
+		
+		\draw [-{Stealth[scale=1.5]}] (left1.west) to [out=135, in=225] (left0.west);
+	\end{tikzpicture}
+	\hfill
+	\begin{tikzpicture}
+		[node distance = {0.1cm and 0.7cm},baseline=(current bounding box.north)]
+		% original array
+		\node[squarenode] (left0) {0};
+		\node[squarenode] (left1) [below=of left2]{1};
+		\node[squarenode] (left2) [below right=of left0]{2};
+		\node[squarenode] (left3) [below right=of left1]{3};
+		\node[squarenode] (left4) [right=of left0]{4};
+		\node[squarenode] (left5) [right=of left1]{5};
+		\node[squarenode] (left6) [right=of left2]{6};;
+		
+		\node[squarenode, color=lightgray] (extra1) [below=of left0]{1};
+		\node[squarenode, color=lightgray] (extra2) [below=of extra1]{2};
+		\node[squarenode, color=lightgray] (extra3) [below=of extra2]{3};		
+		\node[squarenode, color=lightgray] (extra4) [below=of extra3]{4};
+		\node[squarenode, color=lightgray] (extra5) [below=of extra4]{5};
+		\node[squarenode, color=lightgray] (extra6) [below=of extra5]{6};
+		
+		\draw [-{Square[scale=1.5]}] (left4.west) to [out=180, in=0] (left0.east);
+		\draw [-{Square[scale=1.5]}] (left5.west) to [out=180, in=0] (left1.east);
+		\draw [-{Square[scale=1.5]}] (left6.west) to [out=180, in=0] (left2.east);
+		\draw [-{Square[scale=1.5]}] (left2.west) to [out=180, in=0] (left0.east);
+		\draw [-{Square[scale=1.5]}] (left3.west) to [out=180, in=0] (left1.east);
+		\draw [-{Square[scale=1.5]}] (left1.west) to [out=180, in=0] (left0.east);
+		
+	\end{tikzpicture}
+	\caption{A visual example for using trees as representation for summation to visual an Reducescatter with $p=7$ processors. The skips $s_3=7, s_2 = 4, s_1=2$ and $s_0=1$ are from an approximate halfing sequence and fulfill $s_{k+1} -s_k \leq s_k$. Each iteration shows the state of the original array. Arrows with a pointy tip indicate which blocks are reduced to which other blocks of the vector. Arrows with square tips indicate the arising tree structure. Elements that are in dark black correspond to trees that have a root $i\leq s_k$. Grey do elements do not need to be considered anymore. The last diagram shows the result after the last iteration and we see a single tree at block $0$ which spans all elements.}
+	\label{fig:arrayAddition}
+\end{figure}
+We already argued in Section $\ref{sec:approxHalfRedScat}$ that the block indices correspond to the rank IDs that provided this block. We also argued that proving this behavior for one rank (in this example for rank 0) is sufficient to prove correctness for all ranks. This stems from the cyclical symmetry of the setup. By adding the rank ID $r$ (modulo $p$) to all indices one gets a description of what happens at rank $r$.\\
+Therefore we only use the perspective of rank 0 in this recap of the Reducescatter. Also we only use the representation of trees which correspond to subresults and plugging them together corresponds to summation of subresults. The goal is to have one tree with root 0 that spans all other nodes, but each node only once (i.e. no circles are formed). This is done by plugging the roots with high labels to roots with low labels. Precisely the roots $s_k, \dots, s_{k+1}-1$ get plugged into roots $0, \dots, s_{k+1}-s_k-1$. In the example from Figure $\ref{fig:arrayAddition}$ is a approximate halfing sequence used to find these $s_k$. But we will see that the condition $s_{k+1}-s_k \leq s_k$ is sufficient. Moreover one needs to keep in mind that the sequence is used in reverse order. One can see quite easily that after each iteration trees with roots $0,\dots, s_k-1$ span in total all nodes as all trees with a higher node than $s_k-1$ get plugged onto roots that are lower or equal to $s_k-1$. This is because of the maximum index a root gets plugged into is $s_{k+1}-s_k-1$ which can be estimated using the condition $s_{k+1}-s_k \leq s_k$ to  $s_{k+1}-s_k-1\leq s_k-1$. This is also the reason why no node appears twice for roots up to index $s_k-1$. If the trees with roots up to $s_{k+1}$ hold distinct nodes after the iteration before, then trees with nodes up to $s_k$ will hold distinct nodes after the current iteration. This again due to the condition $s_{k+1}-s_k \leq s_k$ true as there is no overlap between the range of roots that are plugged and roots which trees are extended. \\
+The goal here is to achieve a similar behavior but now without adding subresults, but by concatenating them. For this we think about these blocks as physical blocks that can be stacked upon each other. We can send data according the skips $\bar{s}_i$ and processes append the data the their data array. Such an action corresponds to an copying of a row, rotating it by $\bar{s_i}$ and putting it on top of the pile. This can be done in one iteration also for multiple rows. One needs to keep in mind that this can be done only for rows that are directly stacked up on each other as we only allow for sends of contiguous data. To get a better understanding of this representation we provide an example in Figure \ref{fig:blockConcat} where actually an Allgather is performed in three iterations for $p=7$ processors.
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[c]{0.4\textwidth}
+	\centering
+	\tikzset{squarenode/.style={rectangle,draw=black!, thick, minimum size=5mm}}
+	\begin{tikzpicture}	
+		[node distance = {0.1cm and 0.1cm}, baseline=(current bounding box.north)]
+		% define number of processes
+		\def\p{7}
+		
+		\pgfmathparse{\p-1}
+		\def\nodeslist{0,...,\pgfmathresult}
+		
+		% iteration label
+		\node[] at (-1cm, 0) {$i=0:$};
+		
+		% function to draw one line of boxes
+		% Arguments: nblack, shift, rowIndex
+		\def\drawArray#1#2#3{
+			\foreach \n in  \nodeslist {
+				\pgfmathparse{\n < #1 ? "black" : "gray!40"}
+				\edef\col{\pgfmathresult}
+				\pgfmathsetmacro{\label}{int(Mod(\n+#2, \p))}
+				\node[squarenode, color=\col]  at (\n*0.6cm,#3*0.6cm) {\label};
+				
+
+			}
+		}
+		% draw blocks
+		\drawArray{7}{0}{0}
+		
+		% draw markers
+		\draw[color=red] (4*0.6cm-0.3cm, -0.3) -- (6*0.6cm+0.3cm, -0.3)--
+						(6*0.6cm+0.3cm, 0.3) -- (4*0.6cm-0.3cm, 0.3)--cycle;
+						
+		% draw arrows
+		\draw [-{Stealth[scale=1.5]}, color=red] (4*0.6cm, 0.3) to [out=135, in=45] (0cm, 0.3cm);
+		
+		% draw helper array H
+		\node[color=black]  at (-1cm,-0.6cm) {$H:$};
+		\node[color=black]  at (0*0.6cm,-0.6cm) {1};
+		\node[color=black]  at (1*0.6cm,-0.6cm) {1};
+		\node[color=black]  at (2*0.6cm,-0.6cm) {1};
+		\node[color=black]  at (3*0.6cm,-0.6cm) {1};
+		\node[color=black]  at (4*0.6cm,-0.6cm) {1};
+		\node[color=black]  at (5*0.6cm,-0.6cm) {1};
+		\node[color=black]  at (6*0.6cm,-0.6cm) {1};
+	\end{tikzpicture}
+	\par\vspace{0.5cm}
+	\begin{tikzpicture}	
+		[node distance = {0.1cm and 0.1cm}, baseline=(current bounding box.north)]
+		% define number of processes
+		\def\p{7}
+		
+		\pgfmathparse{\p-1}
+		\def\nodeslist{0,...,\pgfmathresult}
+		
+		% iteration label
+		\node[] at (-1cm, 0) {$i=1:$};
+		
+		% function to draw one line of boxes
+		% Arguments: nblack, shift, rowIndex
+		\def\drawArray#1#2#3{
+			\foreach \n in  \nodeslist {
+				\pgfmathparse{\n < #1 ? "black" : "gray!40"}
+				\edef\col{\pgfmathresult}
+				\pgfmathsetmacro{\label}{int(Mod(\n+#2, \p))}
+				\node[squarenode, color=\col]  at (\n*0.6cm,#3*0.6cm) {\label};
+			}
+		}
+		\drawArray{4}{0}{0}
+		\drawArray{3}{4}{1}	
+		
+		% draw markers
+		\draw[color=red] (2*0.6cm-0.3cm, -0.3) -- (3*0.6cm+0.3cm, -0.3)--
+		(3*0.6cm+0.3cm, 0.3) -- 
+		(2*0.6cm+0.3cm, 0.3) -- 
+		(2*0.6+0.3, 0.6 + 0.3) --
+		(2*0.6-0.3, 0.6 + 0.3) -- cycle;
+		
+		
+		\draw [-{Stealth[scale=1.5]}, color=red] (2*0.6, 0.6+0.3) to [out=135, in=45] (0cm, 0.6+0.3);
+		
+		% draw helper array H
+		\node[color=black]  at (-1cm,-0.6cm) {$H:$};
+		\node[color=black]  at (0*0.6cm,-0.6cm) {2};
+		\node[color=black]  at (1*0.6cm,-0.6cm) {2};
+		\node[color=black]  at (2*0.6cm,-0.6cm) {2};
+		\node[color=black]  at (3*0.6cm,-0.6cm) {1};
+		\node[color=black]  at (4*0.6cm,-0.6cm) {0};
+		\node[color=black]  at (5*0.6cm,-0.6cm) {0};
+		\node[color=black]  at (6*0.6cm,-0.6cm) {0};
+	\end{tikzpicture}
+	\par\vspace{0.5cm}
+	\begin{tikzpicture}	
+		[node distance = {0.1cm and 0.1cm}, baseline=(current bounding box.north)]
+		% define number of processes
+		\def\p{7}
+		
+		\pgfmathparse{\p-1}
+		\def\nodeslist{0,...,\pgfmathresult}
+		
+		% iteration label
+		\node[] at (-1cm, 0) {$i=2:$};
+		
+		% function to draw one line of boxes
+		% Arguments: nblack, shift, rowIndex
+		\def\drawArray#1#2#3{
+			\foreach \n in  \nodeslist {
+				\pgfmathparse{\n < #1 ? "black" : "gray!40"}
+				\edef\col{\pgfmathresult}
+				\pgfmathsetmacro{\label}{int(Mod(\n+#2, \p))}
+				\node[squarenode, color=\col]  at (\n*0.6cm,#3*0.6cm) {\label};
+			}
+		}
+		\drawArray{2}{0}{0}
+		\drawArray{2}{4}{1}	
+		\drawArray{2}{2}{2}
+		\drawArray{1}{6}{3}
+		
+		% draw markers
+		\draw[color=red] (1*0.6cm-0.3cm, -0.3) -- (1*0.6cm+0.3cm, -0.3)--
+		(1*0.6cm+0.3cm, 2*0.6+0.3)--(1*0.6cm-0.3cm,  2*0.6+0.3) --  cycle;
+		
+		\draw [-{Stealth[scale=1.5]}, color=red] (0.6, 2*0.6+0.3) to [out=90, in=45, looseness=2] (0cm, 3*0.6+0.3);
+		
+		% draw helper array H
+		\node[color=black]  at (-1cm,-0.6cm) {$H:$};
+		\node[color=black]  at (0*0.6cm,-0.6cm) {4};
+		\node[color=black]  at (1*0.6cm,-0.6cm) {3};
+		\node[color=black]  at (2*0.6cm,-0.6cm) {0};
+		\node[color=black]  at (3*0.6cm,-0.6cm) {0};
+		\node[color=black]  at (4*0.6cm,-0.6cm) {0};
+		\node[color=black]  at (5*0.6cm,-0.6cm) {0};
+		\node[color=black]  at (6*0.6cm,-0.6cm) {0};
+	\end{tikzpicture}
+	\end{subfigure}
+	\hspace{1cm}
+	\begin{subfigure}[c]{0.4\textwidth}
+		\centering
+		\tikzset{squarenode/.style={rectangle,draw=black!, thick, minimum size=5mm}}
+		\begin{tikzpicture}	
+		[node distance = {0.1cm and 0.1cm}, baseline=(current bounding box.north)]
+		% define number of processes
+		\def\p{7}
+		
+		\pgfmathparse{\p-1}
+		\def\nodeslist{0,...,\pgfmathresult}
+		
+		% iteration label
+		\node[] at (-1cm, 0) {$i=3:$};
+		
+		% function to draw one line of boxes
+		% Arguments: nblack, shift, rowIndex
+		\def\drawArray#1#2#3{
+			\foreach \n in  \nodeslist {
+				\pgfmathparse{\n < #1 ? "black" : "gray!40"}
+				\edef\col{\pgfmathresult}
+				\pgfmathsetmacro{\label}{int(Mod(\n+#2, \p))}
+				\node[squarenode, color=\col]  at (\n*0.6cm,#3*0.6cm) {\label};
+			}
+		}
+		\drawArray{1}{0}{0}
+		\drawArray{1}{4}{1}	
+		\drawArray{1}{2}{2}
+		\drawArray{1}{6}{3}
+		\drawArray{1}{1}{4}
+		\drawArray{1}{5}{5}	
+		\drawArray{1}{3}{6}
+		
+		% Draw helper array H
+		\node[color=black]  at (-1cm,-0.6cm) {$H:$};
+		\node[color=black]  at (0*0.6cm,-0.6cm) {7};
+		\node[color=black]  at (1*0.6cm,-0.6cm) {0};
+		\node[color=black]  at (2*0.6cm,-0.6cm) {0};
+		\node[color=black]  at (3*0.6cm,-0.6cm) {0};
+		\node[color=black]  at (4*0.6cm,-0.6cm) {0};
+		\node[color=black]  at (5*0.6cm,-0.6cm) {0};
+		\node[color=black]  at (6*0.6cm,-0.6cm) {0};
+		\end{tikzpicture}
+	\end{subfigure}
+	\caption{A visual example using stacking of blocks to represent concatenation of blocks to perform an Allgather with $p=7$ processors. The skips $s_3=7, s_2 = 4, s_1=2$ and $s_0=1$ are from an approximate halfing sequence. Iterations $i\leq2$  depict what which blocks are stacked in this iteration. The graphic labeled with $i=3$ shows the result of the Allgather. Blocks that are boxed in red polygons are the relevant blocks that are stacked on top of the block pile. Each column corresponds to a process $r$ and each row represents a block that each process holds.}
+	\label{fig:blockConcat}
+\end{figure}
+In this example the Allgather works just fine using a rather simple strategy. A helper array $H$ is added which counts how many blocks are correctly stacked on each rank. Therefore it is initialized with 1 at every entry. It is updated in each iteration by adding the values of $H[\bar{s}_i, \dots, \bar{s}_{i-1}-1]$ to $H[0,\dots, \bar{s}_{i-1}-\bar{s}_i-1]$ and after that setting values $H[\bar{s}_i, \dots, \bar{s}_{i-1}-1]$ to 0. Then it is possible to find the number of blocks that need to be sent in each iteration by simply looking at entry $H[\bar{s}_i]$. It is obvious that $H[0]-1$ counts for each iteration the total number of sent blocks. So the condition of the total amount data that is sent is met as in the last iteration $H[0]-1=p-1$. One can also see that this algorithm produces in each iteration subresults that span the same processors as the Reducescatter showed before. It is most apparent when the visual examples from Figure \ref{fig:arrayCopy} and Figure \ref{fig:blockConcat} are compared. One can also identify the property that in the Reducescatter trees with root $\bar{s}_i, \dots \bar{s}_{i-1}-1$ are plugged into roots $0, \dots, \bar{s}_{i-1} - \bar{s}_i-1$. In the Allgather proposal blocks from rank $\bar{s}_i, \dots \bar{s}_{i-1}-1$ gets stacked upon blocks $0, \dots, \bar{s}_{i-1} - \bar{s}_i-1$. Therefore both algorithms hold in iteration $i$ subresults from the same processors.\\
+But this simple scheme can not be applied for any number of processors and needs adaptations. The problem is that for the case we looked at ($p=7$) the arrays from rank $0, \dots, \bar{s}_{i-1} - \bar{s}_i-1$ are all filled with needed blocks to the same height. This is not always the case. The smallest counter example can be found for 25 processors. It is sufficient to look at the helper array $H$ which is shown for the different iterations in Table \ref{table:helperArr25} for this case. One can see in iteration 3 we have $\bar{s}_{3-1}=4$ and $\bar{s}_{3}=2$ and we need to consider therefore the first two entries that will receive new correct blocks. $H_3[0]$ is 8 and $H_3[1]$ is 7.
+\begin{table}[]
+	\centering
+	\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} \hline
+		rank $r$ &0&1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&$\dots$\\ \hline \hline
+		$H_0$&\textbf{1}&\textbf{1}&\textbf{1}&\textbf{1}&\textbf{1}&\textbf{1}&\textbf{1}&\textbf{1}&\textbf{1}&\textbf{1}&\textbf{1}&\textbf{1}&1&1&1&1&$\dots$\\
+		$H_1$&\textbf{2}&\textbf{2}&\textbf{2}&\textbf{2}&\textbf{2}&\textbf{2}&2&2&2&2&2&2&1&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&$\dots$\\
+		$H_2$& \textbf{4}&\textbf{4}&\textbf{4}&4&4&3&2&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&$\dots$\\
+		$H_3$& \textbf{\textcolor{red}{8}}&\textbf{\textcolor{red}{7}}&6&4&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&$\dots$\\
+		$H_4$& \textbf{14}&11&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&$\dots$\\
+		$H_5$& 25&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&\textcolor{gray}{0}&$\dots$\\\hline
+	\end{tabular}
+	\caption{Content of helper array $H$ for different iterations. The number of processors is $p=25$. The skips $\bar{s}_i$ come from an approximate halfing sequence and are $\bar{s}_0=13$, $\bar{s}_1=7$, $\bar{s}_2=4$, $\bar{s}_3=2$ and $\bar{s}_4=1$. The first $\bar{s}_{i-1}-\bar{s}_i$ elements are highlighted using bold font and correspond to the blocks that will receive new correct blocks in this iteration. In iteration $3$ these first elements are additionally colored red to highlight that they are not the same.}
+	\label{table:helperArr25}
+\end{table}
+The first 6 correct blocks of rank 2 will be correctly appended to the first 8 correct blocks of rank 0 and will form a continuous array of correct blocks. The problem is here what happens for rank 1. It will receive also the first 6 blocks from rank 3 which the first 4 are the ones needed. These blocks will also be appended to the 8th block at rank 1. As rank 1 held only 7 correct blocks this produces a hole of correct blocks at position 7 (or 8 depending how one counts). This is indeed fixable on the cost of swapping rows. Swapping hole rows in the pile representation is possible as every process does the same action. Swapping only two blocks for one rank is not possible as this would destroy the circular symmetry of the pile. In Figure \ref{fig:swapHole} it is shown how such a swap can eliminate a hole the block pile.
+\begin{figure}
+	\centering
+	\tikzset{squarenode/.style={rectangle,draw=black!, fill=black, thin, minimum size=5mm}}
+	\begin{tikzpicture}	
+		[node distance = {0.1cm and 0.1cm}, baseline=(current bounding box.north)]
+		% define number of processes
+		\def\p{4}
+		
+		\pgfmathparse{\p-1}
+		\def\nodeslist{0,...,\pgfmathresult}
+		
+		
+		% function to draw one line of boxes
+		% Arguments: nblack, shift, rowIndex
+		\def\drawArray#1#2{
+			\foreach \n in  \nodeslist {
+				\pgfmathparse{\n < #1 ? "black" : "gray!40"}
+				\edef\col{\pgfmathresult}
+				\node[squarenode, color=\col]  at (\n*0.5cm,#2*0.5cm) {};
+			}
+		}
+		%draw pile
+		\drawArray{4}{2}
+		\drawArray{4}{3}
+		\drawArray{3}{4}
+		\drawArray{3}{5}
+		\drawArray{2}{6}
+		\drawArray{1}{7}
+		
+		%redbox
+		\draw[color=red] (0.75, 0.75) -- (1.75, 0.75) -- (1.75, 2.75)-- (0.75, 2.75) -- cycle;
+		\draw [-{Stealth[scale=1.5]}, color=red] (1, 2.75) to [out=90, in=45, looseness=2] (0, 3.75);
+		
+		% cutoff 
+		\node [tape, draw, tape bend bottom=none, color=white, fill=white, minimum width=10mm, very thick] at (1.25, 0.7) {};
+		\node [tape, draw, tape bend bottom=none, color=white, fill=white, minimum width=10mm, very thick] at (0.25, 0.7) {};
+		
+		\begin{scope}[shift={(4cm, 0cm)}]
+			\def\p{2}
+			
+			\pgfmathparse{\p-1}
+			\def\nodeslist{0,...,\pgfmathresult}
+			\def\drawArray#1#2{
+				\foreach \n in  \nodeslist {
+					\pgfmathparse{\n < #1 ? "black" : "gray!40"}
+					\edef\col{\pgfmathresult}
+					\node[squarenode, color=\col]  at (\n*0.5cm,#2*0.5cm) {};
+				}
+			}
+			%pile
+			\drawArray{2}{0}
+			\drawArray{2}{1}
+			\drawArray{1}{2}
+			\drawArray{2}{3}
+			\drawArray{2}{4}
+			\drawArray{2}{5}
+			\drawArray{2}{6}
+			\drawArray{1}{7}
+			\drawArray{1}{8}
+			
+			% cutoff
+			\node [tape, draw, tape bend bottom=none, color=white, fill=white, minimum width=10mm, very thick] at (0.25, -0.1) {};
+			
+			% swapping arrows
+			\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (0.75, 1) to [out=45, in=-45] (0.75, 3);
+		\end{scope}
+		
+				\begin{scope}[shift={(7.5cm, 0cm)}]
+			\def\p{2}
+			
+			\pgfmathparse{\p-1}
+			\def\nodeslist{0,...,\pgfmathresult}
+			\def\drawArray#1#2{
+				\foreach \n in  \nodeslist {
+					\pgfmathparse{\n < #1 ? "black" : "gray!40"}
+					\edef\col{\pgfmathresult}
+					\node[squarenode, color=\col]  at (\n*0.5cm,#2*0.5cm) {};
+				}
+			}
+			%pile
+			\drawArray{2}{0}
+			\drawArray{2}{1}
+			\drawArray{2}{2}
+			\drawArray{2}{3}
+			\drawArray{2}{4}
+			\drawArray{2}{5}
+			\drawArray{1}{6}
+			\drawArray{1}{7}
+			\drawArray{1}{8}
+			
+			% cutoff
+			\node [tape, draw, tape bend bottom=none, color=white, fill=white, minimum width=10mm, very thick] at (0.25, -0.1) {};
+		\end{scope}
+		
+		% "Implication" arrows
+		
+		\draw [double distance=3pt, -Implies, thick] (2.2,2) to (3.2,2);
+		\draw [double distance=3pt, -Implies, thick] (5.7,2) to (6.7,2);
+	\end{tikzpicture}
+	\caption{Schematic example of block pile to show how holes can be fixed by swapping rows. Black boxes represent needed blocks. Grey boxes are unknown blocks. The red arrow indicates where shifted blocks are appended. The double sided arrows indicate a swapping of rows.}
+	\label{fig:swapHole}
+\end{figure}
+In this figure the correct (needed) blocks are only colored black as the actual label is not important for this problem. We only want to see if a pile contains contiguous data of needed blocks. One can see that a simple switch with the highest row that is completely filled can fix the structure of the pile. In this shown example only two rows needed to be switched, but one can imagine that this is not always the case. Following the described scheme we cut the pile in (roughly) half and put the right half onto the left half. If holes appear, rows are switched such that contiguous data is created. One can see such a complete iteration this as "shoveling" blocks from the left half to the right half, as the black blocks "drop" onto the pile and fit onto already created pile. Therefore a pile of a roughly triangular shape is expected to form which has its highest point on the very left. When such a pile is cut in half and the right half is put upon the left half there are many holes to fix and therefore many rows to switch. A row switch costs the algorithm compute time as this operation corresponds to a switch of two blocks in the arrays of each rank. To switch two blocks there are three copy operations needed. So it is necessary to minimize the number of switches. How this is done is explained in the next section.
+
+\subsection{An Allgather using the reverse order of a mostly halfing sequence as skips}
+The communication pattern of the algorithm we will provide here is based on a sequence we want to call a \emph{mostly halfing sequence} $(s_k)_{k\in \{0,\dots, q\}}$. We define this sequence by $s_q=p$, $s_{q-1}=2^{\floor{\log_2(p-1)}}$, $s_0=1$ and the recursive property $s_k = s_{k+1}/2$ for all $k=q-2, \dots, 0$. Moreover the number of processors $p$ must be greater than 1. One can see that $s_{q-1}$ is always next lowest power of two of the number processors $p$. If $p$ itself is already a power of two, it therefore holds $s_{q-1}=p/2$. After this first special step the next lowest sequence term can be found by exactly halfing until $s_0=1$. One can therefore see that $q=\ceil{\log_2(p)}$ which will correspond to the number of iterations that the proposed Allgather will take. Moreover it is apparent that this sequence fulfills the property $s_{k+1} - s_k \leq s_k$ for all $k=q-1, \dots, 0$ so this pattern works also for the Reducescatter algorithm mentioned before. Moreover we expect this sequence to minimize the number of row reordering of the pile representation from the subsection before. \\
+To be more precise a strategy is found where in each iteration there is at most one block hold back or one block copied back on top of the pile. So in each iteration there is at most one copy operation of the size of one block. This strategy results in the algorithm shown in Procedure \ref{algo:mostlyHalfingAllgather}. 
+\begin{algorithm}
+	\caption{– Mostly Halfing Allgather\\
+		\textit{r}: rank Id\\
+		\textit{p}: number of processes\\
+		\textit{I}: Input array\\
+		\textit{O}: Output array} \label{algo:mostlyHalfingAllgather}
+	\begin{algorithmic}[1]
+		\Ensure{$p>1$}
+		\Procedure{Allgather}{$r, p, I, O$}
+		\State shift $\gets 2^{\floor{\log_2(p-1)}}$
+		\State tail $\gets p$
+		\State inBuff, size $\gets$ \textbf{false}, 1
+		\State $O[0] \gets I$
+		\While{shift $\geq 1$}
+		\State to, from $\gets$ ($r - $shift$+p)\mod{p}$, $(r+$shift$)\mod{p}$ 
+		\If{tail > shift \textbf{or} tail=0}
+			\If{inBuff} \Comment{Put tail on top of pile}
+				\State $O$[size] $\gets$ B
+				\State inBuff, size $\gets$ \textbf{false}, size + 1
+			\EndIf
+			\State \Call{Send}{$O[0, \dots, $ size-1]} || \Call{Recv}{$O$[size, $\dots$, $2\cdot$size-1]}
+			\State size $\gets 2\cdot$size
+			\State tail $\gets$ tail$ - $size
+		\Else
+			\If{\textbf{not} inBuff} \Comment{Put tail in buffer}
+				\State B $\gets$ $O$[size]
+				\State inBuff, size $\gets$ \textbf{true}, size - 1
+			\EndIf
+			\State \Call{Send}{$O[0, \dots, $ size-1]} || \Call{Recv}{$O$[size, $\dots$, $2\cdot$size-1]}
+			\State size $\gets 2\cdot$size
+		\EndIf
+		\State shift $\gets$ shift/2
+		\EndWhile
+		\If{inBuff} \Comment{Put tail on top, if it is still in buffer}
+			\State $O$[size] $\gets$ B
+			\State inBuff, size $\gets$ \textbf{false}, size + 1
+		\EndIf
+		\State \Call{Reorder}{$O$} \Comment{Reorder blocks s.t. block $i$ corresponds to rank $i$}
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+This algorithm shows here for simplicity a variant where all input blocks $I_r$ from the different ranks have the same size. Indexing of the array $O$ refers to these blocks. Array $O$ is also the array that will hold the stacked blocks. The shift to communication partners is defined by variable 'shift' which we from now on call $\bar{s}_i$ for each iteration $i$ of the \textbf{while}-loop. It is initializes as $\bar{s}_0$ with $=2^{\floor{\log_2(p-1)}}$ and is in each iteration after that divided by 2. It therefore corresponds to the terms of the mostly halfing sequence in reverse order. Rank $r$ receives data from rank $\hat{r}=(r+\bar{s}_i)\mod{p}$ which establishes the required communication pattern. There are three helper variables that hold information about the current state of the block pile. 'tail' holds information how many blocks are in the incomplete row of the pile. 'inBuff' tells, if the blocks of this tail are currently saved in the buffer array $B$ or stacked on top of the pile (saved as last block of $O$). Lastly there is 'size' which represents the current hight of the pile. The term height refers here the number of correctly stacked blocks of the right half of the pile. When considering the helper array $H$ discussed in the previous section it corresponds to the element $H[\bar{s}_i]$. There are three different main cases to be considered. \\
+Firstly the current tail length exceeds $\bar{s}_i$ and is therefore affected from the pile cutting. It therefore needs to be on top of the pile and therefore saved as last block in $O$. If this is not the case it is copied on top of $O$ and the height variable is adjusted to fit $H[\bar{s}_i]$. The first $\bar{s}_i$ blocks are now part of the solid part of the pile and the rest is now forming the new tail on top. Therefore the variable 'tail' is updated by subtracting $\bar{s}_i$ in this case. After the stacking the 'size' variable is doubled as the pile height also did.\\
+The second case describes the behavior, if the tail size is smaller or equal to the shift $\bar{s}_i$. In this case the tail is not cut and the right half of the pile has uniform height. The size is adjusted accordingly by subtracting 1, if the block is not already in the buffer to fit again $H[\bar{s}_i]$.
+This avoids unnecessary swapping of rows which costs three copy operations. Instead there is only one copy needed (by putting the top blocks in the buffer) and new blocks are fitted directly on the correct positions in $O$. Moreover there may be another swapping avoided in the next iteration(s). If the tail is still smaller than $\bar{s}_i$ the tail blocks can keep in the buffer.\\
+The third case arises when the shift $\bar{s}_i$ matched the tail size in the iteration before. In this case the tail vanished completely and therefore an simple stacking of the pile needs to be done. The tail size can only decrease in the first case and therefore there is no relevant data in the buffer ('inBuff' has to be \textbf{false}). As the simple stacking is also done by the first case the needed procedure is equivalent to the first case. So the first case is extended by the the condition 'tail=0'. \\
+For a simple understanding how these cases relate to the stacking of the block pile representation we again include a visual example for these three cases. In Figure \ref{fig:pileCases} one can see by the dashed arrows where data needs to be moved.
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{0.3\textwidth}
+	\tikzset{squarenode/.style={rectangle,draw=black!, fill=black, thin, minimum size=5mm}}
+	\begin{tikzpicture}	
+		[node distance = {0.1cm and 0.1cm}, baseline=(current bounding box.north)]
+		% function to draw one line of boxes
+		% Arguments: nblack, rowIndex, processors
+		\def\drawArray#1#2#3{			
+			\pgfmathparse{#3-1}
+			\def\nodeslist{0,...,\pgfmathresult}
+			\foreach \n in  \nodeslist {
+				\pgfmathparse{\n < #1 ? "black" : "gray!40"}
+				\edef\col{\pgfmathresult}
+				\node[squarenode, color=\col]  at (\n*0.5cm,#2*0.5cm) {};
+			}
+		}
+		%draw pile
+		\drawArray{7}{0}{7}
+		\drawArray{0}{1}{7}
+		
+		%redbox
+		\draw[color=red] (1.5, -0.25) -- (3.25, -0.25) -- (3.25, 0.25)-- (1.5, 0.25) -- cycle;
+		\draw [-{Stealth[scale=1.5]}, color=red] (1.75, 0.25) to [out=135, in=45, looseness=1] (0, 0.25);
+		
+		%draw buffer
+		\drawArray{3}{-1.5}{3}
+		
+		\draw[dashed] (-0.25, 0.25) -- (1.25, 0.25) -- (1.25, 0.75) -- (-0.25, 0.75) -- cycle;
+		\draw [-{Stealth[scale=1.5]}, dashed] (-0.25, 0.5) to [out=180, in=180, looseness=2] (-0.25, -0.75);
+	\end{tikzpicture}
+	\caption{Case 1: tail is shorter than current shift $\bar{s}_i$.}
+	\label{pileCases:case1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.3\textwidth}
+	\tikzset{squarenode/.style={rectangle,draw=black!, fill=black, thin, minimum size=5mm}}
+	\begin{tikzpicture}	
+		[node distance = {0.1cm and 0.1cm}, baseline=(current bounding box.north)]
+		% function to draw one line of boxes
+		% Arguments: nblack, rowIndex, processors
+		\def\drawArray#1#2#3{			
+			\pgfmathparse{#3-1}
+			\def\nodeslist{0,...,\pgfmathresult}
+			\foreach \n in  \nodeslist {
+				\pgfmathparse{\n < #1 ? "black" : "gray!40"}
+				\edef\col{\pgfmathresult}
+				\node[squarenode, color=\col]  at (\n*0.5cm,#2*0.5cm) {};
+			}
+		}
+		%draw pile
+		\drawArray{7}{0}{7}
+		\drawArray{5}{1}{7}
+		
+		%redbox
+		\draw[color=red] (1.5, -0.25) -- (3.25, -0.25) -- (3.25, 0.75)-- (1.5, 0.75) -- cycle;
+		\draw [-{Stealth[scale=1.5]}, color=red] (1.75, 0.75) to [out=135, in=45, looseness=1] (0, 0.75);
+		
+		%draw buffer
+		\draw[dashed] (-0.25, -1) -- (2.25, -1) -- (2.25, -0.5) -- (-0.25, -0.5) -- cycle;
+		\draw [-{Stealth[scale=1.5]}, dashed] (-0.25, -0.75) to [out=180, in=180, looseness=2] (-0.25, 0.5);
+	\end{tikzpicture}
+	\caption{Case 2: tail is longer than current shift $\bar{s}_i$.}
+	\label{pileCases:case2}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.3\textwidth}
+	\centering
+	\tikzset{squarenode/.style={rectangle,draw=black!, fill=black, thin, minimum size=5mm}}
+	\begin{tikzpicture}	
+		[node distance = {0.1cm and 0.1cm}, baseline=(current bounding box.north)]
+		% function to draw one line of boxes
+		% Arguments: nblack, rowIndex, processors
+		\def\drawArray#1#2#3{			
+			\pgfmathparse{#3-1}
+			\def\nodeslist{0,...,\pgfmathresult}
+			\foreach \n in  \nodeslist {
+				\pgfmathparse{\n < #1 ? "black" : "gray!40"}
+				\edef\col{\pgfmathresult}
+				\node[squarenode, color=\col]  at (\n*0.5cm,#2*0.5cm) {};
+			}
+		}
+		%draw pile
+		\drawArray{7}{0}{7}
+		\drawArray{7}{1}{7}
+		
+		%redbox
+		\draw[color=red] (1.5, -0.25) -- (3.25, -0.25) -- (3.25, 0.75)-- (1.5, 0.75) -- cycle;
+		\draw [-{Stealth[scale=1.5]}, color=red] (1.75, 0.75) to [out=135, in=45, looseness=1] (0, 0.75);
+		
+		%draw buffer
+		
+		\draw[dashed] (-0.25, -1) -- (3.25, -1) -- (3.25, -0.5) -- (-0.25, -0.5) -- cycle;
+
+	\end{tikzpicture}
+	\caption{Case 3: tail matched $\bar{s}_i$ before and is now gone.}
+	\label{pileCases:case3}
+	\end{subfigure}
+
+	\caption{Visual representation of block pile for different lengths of 'tail'. The size of tail is represented by the buffer size and the amount of blocks in the top row of the pile. The buffer sits separated below the pile. The dotted areas represent where data needs to be moved away before the send. They are moved to an corresponding black set of blocks (of same size). The red box indicates which correct boxes are sent in the different cases. The red arrow indicates where this received data is put.}
+	\label{fig:pileCases}
+\end{figure}
+In the first case the tail is shorter than shift $\bar{s}_i$. It therefore needs to be moved out of the way if it is not already in the buffer. When the right half is then put on top of the left one, it is apparent that then for each column of the left half there is a contiguous stack of correct blocks. The same is apparent for the second case. Here one can see why the tail blocks need to be on top of the pile. If this would not the case the correct blocks would stay in the buffer and would not reach the left half of the pile. The third case is maybe the easiest one as here the situation is quite regular and the pile can be simply split in half and stacked on top of each other.\\
+These three cases produce therefore a pile that stacks all correct blocks to the first column which corresponds to rank 0. As we discussed early, the circular symmetry of the operations guarantee the same behavior for all ranks. After the \textbf{while}-loop of Algorithm \ref{algo:mostlyHalfingAllgather} there are just to steps left to do. Firstly it is possible that the last block is still in the buffer array. If this is the case, it needs to be appended. Secondly for a formally correct execution of an Allgather there must be the condition $O[r]=I_r$ fulfilled, meaning the block rank $r$ provided must be at the $r$-th position in the output array $O$. This is hidden behind the function $\Call{Reorder}{ }$. As the execution of the algorithm is deterministic this can definitively be done, but as this Allgather is only used for an union set operation this reordering is not necessary. It will be omitted in the further usage and is therefore not explored.
+\newpage
 \subsection{Concept and Explicit Implementation}
 \subsection{Proof of Correctness}
 \subsection{Runtime Estimation}
 
 \section{A Naive Approach}
+
+
+
+
+
+
 
 
