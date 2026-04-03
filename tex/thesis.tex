@@ -152,8 +152,48 @@
 	\section{Using \gls{bfs} as Empirical Validation}
 	
 	\chapter{Performance of the Proposed Algorithms}
-	\section{Methodology}
-	\section[Comparison of Base Algorithms Against Different MPI Libraries]{Comparison of Base Algorithms Against Different \gls{mpi} Libraries}
+	In this section the performance of the algorithms is tested. To get a reference point the new algorithms are tested against two pure setups that only use a sparse or a dense representation. The purely sparse variant uses an Allgather and the purely dense variant uses a Allreduce to perform a global union set operation. Allgather and Allreduce are defined in the MPI standard and are implemented in different libraries. The new algorithms are based on specific Allreduce/Allgather variants. To get an estimate how these base algorithms compare against their library pendants they are compared in Section \ref{sec:baseAllreduce} and \ref{sec:baseAllgather}. After that the performance of the new union set operation algorithms is tested for different scenarios. In the last section the performance is then evaluated in a use case of performing an \gls{bfs}. 	
+	\section{Setup}
+	All implementations are tested on the same machine. They are run on the \emph{Hydra} cluster of the Parallel Computing Department of TU Wien. The cluster consists of 36 compute nodes and each node is equipped with two Intel\textsuperscript{\textregistered} Xeon\textsuperscript{\textregistered} Gold 6130F 16-Core CPUs. Each compute node has therefore 32 cores available. The nodes are connected via dual Intel\textsuperscript{\textregistered} Omni-Path interconnect with an upper boundary of 100 Gbytes/s bandwidth \cite{traeff2025}. The code for all experiments is written in C using \gls{mpi} as message passing framework. The code is always compiled using the \texttt{-O3} flag. Three different MPI-libraries are considered for benchmarking the algorithms (OpenMPI, MPICH and IntelMPI). The available version of the OpenMPI library as well as the MPICH library use GCC 12.1.0 as compiler. The available IntelMPI framework uses GCC 10.2.1.\\
+	Different setups of the number of used processes and their distribution on the nodes are tested. As the new algorithms are designed to be optimal for a large amount of processors, the configurations will cover the most available number of processors $p$. One needs to keep in mind that some algorithms will only work for $p$ being a power of 2. So for the power of two case there are $32\times 32 = 1024$ and for the general case also $36\times32=1152$ number of processors used. We also test the algorithms with only one process on each node to allow only communication via the interconnect. In this setup the linear communication cost model may apply best.
+	\section{Measurement of the different algorithms}
+	Benchmarking algorithms on distributed systems is not a trivial task and is there are many caveats that need to be considered. To get a fair, reliable and reproducible results the methodology is closely oriented at the work of Hunold and Carpen-Amerie \cite{HunoldBench}. A major problem in timing executions is that clocks of the different processes are not necessarily synchronized. Moreover the clocks can drift out of sync over a period of time. A simple but sufficient strategy is to synchronize all processors using \Call{MPI\_Barrier}{ } . This function guarantees that no process proceeds its execution until every process called it. This of corse does not directly imply that all processes continue execution at the same time, but it is shown to be sufficient, if larger execution times are measured \cite{HunoldBarrier}. This condition is in our setup fulfilled as the newly proposed algorithms are build to optimize the union set operation for large sets which result in large execution times.\\
+	\begin{algorithm}
+		\caption{– Benchmark measurement of a function\\
+			\textit{params}: Experiment parameter\\
+			\textit{func}: Tested function\\
+			\textit{nrep}: Number of executions}
+		\label{algo:timingProcedure}
+		\begin{algorithmic}[1]
+			\Procedure{experimentRun}{$params, func, nrep$}
+			\State initialize arrays $t_\mathrm{loc}$ and $t$ with $nrep$ entries
+			\State\Call{SetExperiment}{$params$}
+			\For{$obs \in [0, \dots, nrep-1]$}
+			\Comment{Do measurements}
+				\State \Call{MPI\_Barrier}{ }
+				\State  $t_\mathrm{start\_loc} \gets \Call{MPI\_Wtime}{~}$
+				\State execute $func$
+				\State  $t_\mathrm{end\_loc} \gets \Call{MPI\_Wtime}{~}$
+				\State $t_\mathrm{loc}[obs] \gets t_\mathrm{end\_loc} - \mathrm{start\_loc}$
+			\EndFor
+			\State \Call{Reduce}{$t_\mathrm{loc}[obs]$, $t$, $nrep$, \texttt{Max}}
+			\Comment{Find execution time of slowest process}
+			\State $t\gets \Call{RemoveOtliers}{t, nrep}$
+			\State $mean \gets \Call{Mean}{t}$ 
+			safe $mean$ in file
+			\EndProcedure
+		\end{algorithmic}
+	\end{algorithm}
+	Algorithm \ref{algo:timingProcedure} shows the procedure how the execution times of the functions are measured for one experiment run. One experiment run consists out of '$nrep$' measurements of the to evaluate function, finding the slowest process, removing statistical outliers and calculating the mean of the pruned data. We now explain all of the steps and their justification.\\
+	The iterative measurement of the execution time is to produce statistical relevant data. Under the assumption of normally distributed data one only needs to collect a number of data points in the order of around 30 to get a good approximation of the underlying distribution. Hunold and Carpen-Amerie \cite{HunoldBarrier} showed that this distribution is generally not normally distributed so the number of iterations need to be way higher (and therefore $nrep$ needs to be bigger) to get a good representation of the underlying distribution. We orient us here on their proposed value of 300 iterations.\\
+	The next step is to only select for each iteration only the slowest process. This is justified as an estimation of the total execution time is needed. Precisely this time starts when the first process calls the tested function and end when the last thread returns from it. As all threads are assumed to enter the test function at the same time (due to the Barrier-synchronization) the execution time of the slowest process is needed. In the pseudocode from Procedure \ref{algo:timingProcedure} this is done by the \Call{Reduce}{ } call using the \texttt{Max} flag. This puts for each entry of '$t_\mathrm{loc}$' the maximum value of all processes (i.e. the slowest execution time over all processes) into the array '$t$' of the master process.\\
+	So after that there is an array $t$ with $nrep$ data points of the slowest processes. This data is usually sprinkled with statistical outliers. These outliers can have different reasons of existence. One reason is the scheduling of the operating system that can introduce noise. Another processes that introduces unwanted statistical invariance is that big parallel machines need some iterations to warm up. This means  that after a few iterations the execution time will be faster and will reach then a steady state. It is hard to estimate when a setup is warmed up so this will also handled by the pruning of the data. The removal is done according to Turkeys filter \cite[p.126]{TurkyRule}.
+	
+	
+	 
+	\section{Testing foundation Allreduce against MPI-libraries} \label{sec:baseAllreduce}
+	\section{Testing foundation Allgather against MPI-libraries} \label{sec:baseAllgather}
+	
 	\section{Comparison of Proposed Algorithms Against Their Base Variant}
 	\subsection{$2^k$ Variant}
 	\subsection{Arbitrary Number of Processes Variant}
