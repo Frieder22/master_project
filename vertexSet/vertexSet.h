@@ -12,14 +12,15 @@ typedef struct Vertexset{
     size_t maxsize;
     size_t sizeCrit;
     bool isdense;
+    bool approx_halfing;
     
     // Data for Bitarray
     unsigned long long *bitArray;
     unsigned long long *bitBuffer;
-    uint32_t size_bitarray;
+    int size_bitarray;
     
     // Data for sparse array
-    size_t sizeSparse;
+    int sizeSparse;
     uint32_t *sparseArray;
     uint32_t *sparseBuffer;
     int *sizesAll;
@@ -29,6 +30,13 @@ typedef struct Vertexset{
     MPI_Comm MPI_COMM;
     int mpi_rank;
     int mpi_size;
+
+    // block informations
+    int *block_Indices;
+    int *block_nElements;
+
+    // index shift for approx_halfing
+    int indexShift;
 } Vertexset;
 
 /**
@@ -39,7 +47,7 @@ typedef struct Vertexset{
  * @param maxsize Maximum number of vertices, that can be added
  * @param MPI_COMM MPI communicator, where reduce operation are possible
  */
-void Vertexset_Init(Vertexset* vs, uint32_t maxsize, MPI_Comm MPI_COMM);
+void Vertexset_Init(Vertexset* const vs, const uint32_t maxsize, const MPI_Comm MPI_COMM);
 
 /**
  * Adds a vertex to vertexset.
@@ -59,7 +67,7 @@ void Vertexset_Add(Vertexset* vs, uint32_t vertex);
  * @param vs corresponding Vertexset object 
  * @param vertex checked vertex
  */
-bool Vertexset_Contains(Vertexset* vs, uint32_t vertex);
+bool Vertexset_Contains(const Vertexset* vs, uint32_t vertex);
 
 /**
  * Resets the memory of vertexset. After reset the VertexSet is
@@ -111,15 +119,33 @@ void Vertexset_Allreduce_Pure(Vertexset* vs, int VERTEXSET_OPERATION);
 
 /**
  * Performs an Allreduce operation with vertex sets from
- * other ranks. At the beginning sparse representation is used and
- * for later communication rounds, switch to dense communication.
- * Time complexities, if vs is already in sparse representation:
- * best case (only sparse): O(log(p)*k*2^(log_2(p+1))-1)
- * worst case (only dense): O(log(p)*(n + n + k))
+ * other ranks. Each rank can have a different representation of 
+ * VertexSet. The size of the communicator musst be some 2^k.
+ * Time complexities:
+ * Dense: O(Allreduce(n))
+ * Sparse: O(Allgather(k))
  * @param vs corresponding Vertexset object 
  * @param VERTEXSET_OPERATION which logical operation should be applied
  */
-void Vertexset_Allreduce_Dynamic(Vertexset* vs, int VERTEXXSET_OPERATION);
+void Vertexset_Allreduce_Exact_Halfing(Vertexset* vs, int VERTEXSET_OPERATION);
+
+/**
+ * Performs an Allreduce operation with vertex sets from
+ * other ranks. Each rank can have a different representation of 
+ * VertexSet.
+ * Time complexities:
+ * Dense: O(Allreduce(n))
+ * Sparse: O(Allgather(k))
+ * @param vs corresponding Vertexset object 
+ * @param VERTEXSET_OPERATION which logical operation should be applied
+ */
+void Vertexset_Allreduce_Approximate_Halfing(Vertexset* vs, int VERTEXSET_OPERATION);
+
+void Vertexset_Allreduce_Naive(Vertexset* vs, int VERTEXSET_OPERATION);
+
+void Vertexset_Allreduce_Dense(Vertexset* vs, int VERTEXSET_OPERATION);
+
+void Vertexset_Allgather(Vertexset* vs, int  VERTEXSET_OPERATION);
 
 /**
  * Prints the elements saved in Vertex set. At most 30 elements
