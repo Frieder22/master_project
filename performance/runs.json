@@ -1,0 +1,84 @@
+{
+    "runs": [
+        {
+            "experiment": "E1",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 1000000,
+            "filling": 200,
+            "nRepetitions": 300
+        },
+        {
+            "experiment": "E1",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 1000000,
+            "filling": 10,
+            "nRepetitions": 300
+        },
+        {
+            "experiment": "E1",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 1000000,
+            "filling": 5,
+            "nRepetitions": 300
+        },
+        {
+            "experiment": "E1",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 1000000,
+            "filling": 500,
+            "nRepetitions": 300
+        },
+        {
+            "experiment": "E1",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 1000000,
+            "filling": 50,
+            "nRepetitions": 300
+        },
+        {
+            "experiment": "E1",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 1000000,
+            "filling": 100,
+            "nRepetitions": 300
+        },
+        {
+            "experiment": "E1",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 1000000,
+            "filling": 1000,
+            "nRepetitions": 300
+        },
+        {
+            "experiment": "E1",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 1000000,
+            "filling": 20,
+            "nRepetitions": 300
+        },
+        {
+            "experiment": "E1",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 1000000,
+            "filling": 1,
+            "nRepetitions": 300
+        },
+        {
+            "experiment": "E1",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 1000000,
+            "filling": 2,
+            "nRepetitions": 300
+        }
+    ]
+}
