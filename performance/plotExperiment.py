@@ -69,7 +69,7 @@ if setup["plotGraphs"] == "mpilib":
             if xAxistype == "setsize":
                 xval = int (chunks[3].split(":")[1])            
             if xAxistype == "filling":
-                xval = float (chunks[4].split(":")[1])
+                xval = int (chunks[4].split(":")[1])
             data[g][xval].append(mean)
             line = f.readline()
         f.close()
@@ -90,6 +90,8 @@ ax.set_xscale("log")
 ax.set_yscale("log")
 ax.grid(True, which='major', linewidth=1.5)
 ax.grid(True, which='minor', linewidth=0.5, linestyle='--')
+plt.xlabel(xAxistype)
+plt.ylabel("Execution time [s]")
 plt.legend()
 plt.tight_layout()
 plt.show()

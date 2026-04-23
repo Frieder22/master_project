@@ -25,6 +25,7 @@ copy_to_cluster:
 	scp -r ../vertexSet/ hydra:~/.
 	scp run.job hydra:~/performance/
 	scp runs.json hydra:~/performance/
+	scp executeExperimentRuns.c hydra:~/performance/
 
 run: 
 	python setupExperiment.py

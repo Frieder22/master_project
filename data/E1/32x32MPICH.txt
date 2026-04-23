@@ -1,240 +1,600 @@
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.154836e-05, nAccepted: 277
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.305296e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.117242e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.234454e-05, nAccepted: 266
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.186940e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.156630e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.281455e-05, nAccepted: 289
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.228669e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.273345e-05, nAccepted: 278
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.240291e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.161709e-05, nAccepted: 280
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.291538e-05, nAccepted: 270
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.261887e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.148935e-05, nAccepted: 276
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.305432e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.254412e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.316299e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.408839e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.261535e-05, nAccepted: 279
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.389025e-05, nAccepted: 264
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.393897e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.271380e-05, nAccepted: 282
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.447830e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.381571e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.165211e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.342837e-05, nAccepted: 289
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.239044e-05, nAccepted: 278
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.297634e-05, nAccepted: 267
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.347491e-05, nAccepted: 291
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.246009e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.308459e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.342811e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.191450e-05, nAccepted: 280
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.237303e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.144556e-05, nAccepted: 280
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.240979e-05, nAccepted: 268
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.271364e-05, nAccepted: 291
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.120397e-05, nAccepted: 281
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.288917e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.217000e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.179680e-05, nAccepted: 277
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.264285e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.165809e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.297238e-05, nAccepted: 270
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.271258e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.175392e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.241071e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.265899e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.150129e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.336309e-05, nAccepted: 289
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.114916e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.167140e-05, nAccepted: 267
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.176157e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.134382e-05, nAccepted: 273
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.208286e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.202568e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.288160e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.335065e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.316367e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.344890e-05, nAccepted: 260
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.343922e-05, nAccepted: 280
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.255927e-05, nAccepted: 275
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.290006e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.293015e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.177902e-05, nAccepted: 275
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.230729e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.168342e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.182117e-05, nAccepted: 273
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.186070e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.143716e-05, nAccepted: 275
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.270257e-05, nAccepted: 292
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.320456e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.252000e-05, nAccepted: 280
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.296873e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.237011e-05, nAccepted: 282
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.343479e-05, nAccepted: 266
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.334222e-05, nAccepted: 294
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.193435e-05, nAccepted: 282
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.310927e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.407473e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.066916e-05, nAccepted: 281
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.298800e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.131984e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.248769e-05, nAccepted: 267
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.265270e-05, nAccepted: 290
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.098671e-05, nAccepted: 291
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.251043e-05, nAccepted: 289
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.332110e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.204627e-05, nAccepted: 281
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.308940e-05, nAccepted: 282
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.177210e-05, nAccepted: 280
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.230896e-05, nAccepted: 267
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.188478e-05, nAccepted: 281
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.173983e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.275740e-05, nAccepted: 293
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.230500e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.308456e-05, nAccepted: 277
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.342862e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.326145e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.405046e-05, nAccepted: 265
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.318106e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.303614e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.432755e-05, nAccepted: 290
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.276284e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.066054e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.314052e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.170393e-05, nAccepted: 289
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.248673e-05, nAccepted: 267
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.199736e-05, nAccepted: 280
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.114895e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.220824e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.329014e-05, nAccepted: 290
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.209859e-05, nAccepted: 282
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.354801e-05, nAccepted: 289
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.232994e-05, nAccepted: 271
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.333697e-05, nAccepted: 269
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.358241e-05, nAccepted: 291
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.310751e-05, nAccepted: 289
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.325969e-05, nAccepted: 289
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.384089e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.139516e-05, nAccepted: 282
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.269128e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.203528e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.169180e-05, nAccepted: 264
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.203344e-05, nAccepted: 291
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.135940e-05, nAccepted: 281
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.302486e-05, nAccepted: 291
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.225744e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.221354e-05, nAccepted: 275
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.286741e-05, nAccepted: 281
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.236798e-05, nAccepted: 291
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.328834e-05, nAccepted: 268
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.286825e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.268930e-05, nAccepted: 278
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.281632e-05, nAccepted: 276
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.314930e-05, nAccepted: 289
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.403145e-05, nAccepted: 282
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.528565e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.390455e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.402739e-05, nAccepted: 264
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.375570e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.336281e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.361425e-05, nAccepted: 282
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.341433e-05, nAccepted: 278
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.149551e-05, nAccepted: 281
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.317590e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.248215e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.296231e-05, nAccepted: 268
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.289531e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.206013e-05, nAccepted: 277
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.317042e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.220903e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.216049e-05, nAccepted: 276
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.321376e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.181418e-05, nAccepted: 281
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.223069e-05, nAccepted: 269
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.346899e-05, nAccepted: 289
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.200565e-05, nAccepted: 289
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.367071e-05, nAccepted: 292
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.303935e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.164844e-05, nAccepted: 281
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.274252e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.131633e-05, nAccepted: 282
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.207740e-05, nAccepted: 259
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.155780e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.124193e-05, nAccepted: 280
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.176369e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.265944e-05, nAccepted: 281
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.254971e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.379644e-05, nAccepted: 289
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.248002e-05, nAccepted: 282
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.320662e-05, nAccepted: 264
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.381773e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.319170e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.388061e-05, nAccepted: 290
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.287790e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.175222e-05, nAccepted: 277
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.368284e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.284519e-05, nAccepted: 280
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.349587e-05, nAccepted: 271
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.302886e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.284710e-05, nAccepted: 282
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.294558e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.243086e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.059106e-05, nAccepted: 279
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.309755e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.150017e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.244885e-05, nAccepted: 265
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.217656e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.129062e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.273928e-05, nAccepted: 290
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.250101e-05, nAccepted: 290
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.196541e-05, nAccepted: 276
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.386776e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.202058e-05, nAccepted: 290
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.333604e-05, nAccepted: 266
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.377667e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.239574e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.301716e-05, nAccepted: 279
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.318353e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.136568e-05, nAccepted: 275
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.309370e-05, nAccepted: 289
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.226744e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.312020e-05, nAccepted: 268
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.297215e-05, nAccepted: 291
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.264066e-05, nAccepted: 280
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.303291e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.279606e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.350419e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.335753e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.256114e-05, nAccepted: 278
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.358248e-05, nAccepted: 258
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.108306e-05, nAccepted: 276
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.116598e-05, nAccepted: 275
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.237552e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.236588e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.291489e-05, nAccepted: 280
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.337175e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.237082e-05, nAccepted: 285
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.341234e-05, nAccepted: 263
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.342024e-05, nAccepted: 293
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.292304e-05, nAccepted: 283
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.328397e-05, nAccepted: 279
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.256758e-05, nAccepted: 276
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.141281e-05, nAccepted: 278
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.360436e-05, nAccepted: 290
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.115249e-05, nAccepted: 282
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.230386e-05, nAccepted: 268
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.234153e-05, nAccepted: 291
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.139089e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.265135e-05, nAccepted: 286
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.283045e-05, nAccepted: 284
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-02, nRep: 300, mean: 4.248609e-05, nAccepted: 279
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-02, nRep: 300, mean: 3.461831e-05, nAccepted: 287
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-01, nRep: 300, mean: 3.244591e-05, nAccepted: 278
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-01, nRep: 300, mean: 3.281391e-05, nAccepted: 265
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-03, nRep: 300, mean: 3.342050e-05, nAccepted: 288
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5.000000e-02, nRep: 300, mean: 3.284542e-05, nAccepted: 281
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1.000000e-03, nRep: 300, mean: 3.261954e-05, nAccepted: 280
-name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2.000000e-03, nRep: 300, mean: 3.267016e-05, nAccepted: 284
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.585059e-05, nAccepted: 292
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.984009e-05, nAccepted: 277
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.620150e-05, nAccepted: 277
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.772787e-05, nAccepted: 290
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.550416e-05, nAccepted: 282
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.753842e-05, nAccepted: 277
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.344129e-05, nAccepted: 289
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.229929e-05, nAccepted: 289
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.992238e-05, nAccepted: 277
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.182875e-05, nAccepted: 285
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.543378e-05, nAccepted: 290
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.020297e-05, nAccepted: 272
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.879834e-05, nAccepted: 279
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.859619e-05, nAccepted: 284
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.620296e-05, nAccepted: 284
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.475260e-05, nAccepted: 285
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.421400e-05, nAccepted: 292
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.375059e-05, nAccepted: 291
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.343268e-05, nAccepted: 290
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.394755e-05, nAccepted: 288
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.493175e-05, nAccepted: 289
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.004591e-05, nAccepted: 288
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.658390e-05, nAccepted: 267
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.837447e-05, nAccepted: 292
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.701176e-05, nAccepted: 286
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.286380e-05, nAccepted: 286
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.297894e-05, nAccepted: 287
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.416124e-05, nAccepted: 291
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.227252e-05, nAccepted: 286
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.145444e-05, nAccepted: 289
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.544012e-05, nAccepted: 286
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.947133e-05, nAccepted: 287
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.809128e-05, nAccepted: 278
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.997353e-05, nAccepted: 296
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.882556e-05, nAccepted: 289
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.221668e-05, nAccepted: 284
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.385367e-05, nAccepted: 292
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.414292e-05, nAccepted: 286
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.381346e-05, nAccepted: 290
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.187838e-05, nAccepted: 281
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.485403e-05, nAccepted: 287
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.995120e-05, nAccepted: 289
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.803074e-05, nAccepted: 276
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.906719e-05, nAccepted: 291
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.634729e-05, nAccepted: 289
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.618362e-05, nAccepted: 281
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.329804e-05, nAccepted: 289
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.297627e-05, nAccepted: 289
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.355051e-05, nAccepted: 283
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.458488e-05, nAccepted: 286
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.438178e-05, nAccepted: 287
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.968690e-05, nAccepted: 279
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.665025e-05, nAccepted: 281
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.846741e-05, nAccepted: 294
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.664196e-05, nAccepted: 288
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.365624e-05, nAccepted: 284
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.278946e-05, nAccepted: 290
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.345120e-05, nAccepted: 287
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.280892e-05, nAccepted: 289
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.152437e-05, nAccepted: 289
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.449786e-05, nAccepted: 288
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.015663e-05, nAccepted: 282
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.840455e-05, nAccepted: 243
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.868979e-05, nAccepted: 279
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.502137e-05, nAccepted: 280
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.416265e-05, nAccepted: 281
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.290095e-05, nAccepted: 282
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.271005e-05, nAccepted: 288
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.089521e-05, nAccepted: 282
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.287115e-05, nAccepted: 296
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.434251e-05, nAccepted: 290
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.086487e-05, nAccepted: 283
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.772224e-05, nAccepted: 278
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.647994e-05, nAccepted: 289
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.741068e-05, nAccepted: 295
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.261194e-05, nAccepted: 288
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.239921e-05, nAccepted: 287
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.308636e-05, nAccepted: 281
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.140236e-05, nAccepted: 287
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.101121e-05, nAccepted: 281
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.627760e-05, nAccepted: 288
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.111184e-05, nAccepted: 271
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.909949e-05, nAccepted: 289
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.874054e-05, nAccepted: 291
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.814699e-05, nAccepted: 288
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.430149e-05, nAccepted: 283
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.426044e-05, nAccepted: 285
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.541343e-05, nAccepted: 289
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.311562e-05, nAccepted: 284
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.167701e-05, nAccepted: 274
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.460855e-05, nAccepted: 296
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.003679e-05, nAccepted: 284
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.938864e-05, nAccepted: 276
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.890434e-05, nAccepted: 289
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.623839e-05, nAccepted: 280
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.343635e-05, nAccepted: 281
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.353689e-05, nAccepted: 289
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.324664e-05, nAccepted: 281
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.311093e-05, nAccepted: 283
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.538910e-05, nAccepted: 285
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.522691e-05, nAccepted: 283
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.973711e-05, nAccepted: 278
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.673625e-05, nAccepted: 284
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.743956e-05, nAccepted: 292
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.584979e-05, nAccepted: 287
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.286224e-05, nAccepted: 283
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.287228e-05, nAccepted: 289
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.267587e-05, nAccepted: 287
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.273745e-05, nAccepted: 285
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.285734e-05, nAccepted: 292
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.597172e-05, nAccepted: 291
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.060624e-05, nAccepted: 283
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 4.035961e-05, nAccepted: 275
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 4.030664e-05, nAccepted: 255
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.563937e-05, nAccepted: 280
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.564615e-05, nAccepted: 273
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.438562e-05, nAccepted: 286
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.307842e-05, nAccepted: 291
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.487876e-05, nAccepted: 283
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.315362e-05, nAccepted: 281
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.444596e-05, nAccepted: 283
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.786770e-05, nAccepted: 269
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.943521e-05, nAccepted: 287
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.700901e-05, nAccepted: 289
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.557492e-05, nAccepted: 281
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.401035e-05, nAccepted: 284
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.387700e-05, nAccepted: 290
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.171575e-05, nAccepted: 284
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.372288e-05, nAccepted: 289
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.382406e-05, nAccepted: 290
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.504662e-05, nAccepted: 294
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.996655e-05, nAccepted: 280
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.898623e-05, nAccepted: 292
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.852274e-05, nAccepted: 283
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.362712e-05, nAccepted: 288
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.505522e-05, nAccepted: 283
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.265314e-05, nAccepted: 292
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.237925e-05, nAccepted: 287
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.301978e-05, nAccepted: 277
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.234117e-05, nAccepted: 286
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.494086e-05, nAccepted: 294
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.971076e-05, nAccepted: 287
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.904026e-05, nAccepted: 275
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.871694e-05, nAccepted: 294
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.738772e-05, nAccepted: 289
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.455370e-05, nAccepted: 289
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.304282e-05, nAccepted: 286
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.312026e-05, nAccepted: 283
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.412989e-05, nAccepted: 284
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.400280e-05, nAccepted: 285
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.576361e-05, nAccepted: 292
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.944383e-05, nAccepted: 279
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.840344e-05, nAccepted: 271
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.783752e-05, nAccepted: 287
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.441840e-05, nAccepted: 281
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.529934e-05, nAccepted: 292
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.279051e-05, nAccepted: 289
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.231758e-05, nAccepted: 282
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.235634e-05, nAccepted: 287
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.301769e-05, nAccepted: 288
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.426239e-05, nAccepted: 287
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.019565e-05, nAccepted: 286
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 4.135875e-05, nAccepted: 236
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.973396e-05, nAccepted: 283
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.392229e-05, nAccepted: 275
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.317785e-05, nAccepted: 282
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.345139e-05, nAccepted: 285
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.450386e-05, nAccepted: 287
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.386911e-05, nAccepted: 283
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.381450e-05, nAccepted: 282
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.679450e-05, nAccepted: 292
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.094862e-05, nAccepted: 278
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.899051e-05, nAccepted: 279
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.886846e-05, nAccepted: 289
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.645196e-05, nAccepted: 287
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.569512e-05, nAccepted: 281
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.400333e-05, nAccepted: 283
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.349514e-05, nAccepted: 288
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.270202e-05, nAccepted: 279
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.418596e-05, nAccepted: 285
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.549184e-05, nAccepted: 292
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.879638e-05, nAccepted: 287
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.786271e-05, nAccepted: 276
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 4.155830e-05, nAccepted: 295
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.613442e-05, nAccepted: 288
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.236102e-05, nAccepted: 288
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.130983e-05, nAccepted: 282
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.189913e-05, nAccepted: 281
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.165791e-05, nAccepted: 283
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.126104e-05, nAccepted: 280
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.679392e-05, nAccepted: 288
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.144631e-05, nAccepted: 277
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.879245e-05, nAccepted: 284
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.819679e-05, nAccepted: 295
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.664121e-05, nAccepted: 294
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.593284e-05, nAccepted: 286
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.412831e-05, nAccepted: 281
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.427509e-05, nAccepted: 285
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.400359e-05, nAccepted: 287
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.312150e-05, nAccepted: 276
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.519892e-05, nAccepted: 283
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.197878e-05, nAccepted: 282
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 4.039634e-05, nAccepted: 278
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.978317e-05, nAccepted: 288
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.807798e-05, nAccepted: 286
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.672749e-05, nAccepted: 247
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.596066e-05, nAccepted: 275
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.496635e-05, nAccepted: 274
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.338238e-05, nAccepted: 286
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.492128e-05, nAccepted: 291
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.526938e-05, nAccepted: 293
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.982673e-05, nAccepted: 278
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.712815e-05, nAccepted: 280
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.718681e-05, nAccepted: 278
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.727210e-05, nAccepted: 285
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.316320e-05, nAccepted: 284
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.297573e-05, nAccepted: 288
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.290093e-05, nAccepted: 282
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.277824e-05, nAccepted: 280
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.194345e-05, nAccepted: 284
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.376654e-05, nAccepted: 289
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.089053e-05, nAccepted: 275
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.806340e-05, nAccepted: 281
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.824584e-05, nAccepted: 285
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.470201e-05, nAccepted: 287
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.499222e-05, nAccepted: 282
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.224351e-05, nAccepted: 288
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.298012e-05, nAccepted: 293
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.244128e-05, nAccepted: 287
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.137671e-05, nAccepted: 288
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.418198e-05, nAccepted: 287
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.975174e-05, nAccepted: 295
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.810285e-05, nAccepted: 277
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.828385e-05, nAccepted: 286
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.533378e-05, nAccepted: 290
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.442237e-05, nAccepted: 296
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.206824e-05, nAccepted: 293
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.282788e-05, nAccepted: 288
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.206053e-05, nAccepted: 286
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.251574e-05, nAccepted: 288
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.407737e-05, nAccepted: 291
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.922353e-05, nAccepted: 283
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.770337e-05, nAccepted: 278
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.897652e-05, nAccepted: 287
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.486543e-05, nAccepted: 291
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.456675e-05, nAccepted: 290
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.364466e-05, nAccepted: 290
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.214696e-05, nAccepted: 289
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.296911e-05, nAccepted: 285
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.255223e-05, nAccepted: 275
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.463329e-05, nAccepted: 290
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.095222e-05, nAccepted: 281
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.975837e-05, nAccepted: 279
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.850307e-05, nAccepted: 294
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.735414e-05, nAccepted: 287
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.567122e-05, nAccepted: 287
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.330414e-05, nAccepted: 280
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.411970e-05, nAccepted: 281
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.632209e-05, nAccepted: 246
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.374998e-05, nAccepted: 284
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.502897e-05, nAccepted: 286
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.027675e-05, nAccepted: 292
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.902899e-05, nAccepted: 276
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.971793e-05, nAccepted: 295
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.829658e-05, nAccepted: 284
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.386041e-05, nAccepted: 279
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.333610e-05, nAccepted: 278
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.274666e-05, nAccepted: 288
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.280184e-05, nAccepted: 285
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.209898e-05, nAccepted: 281
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.491417e-05, nAccepted: 288
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.831354e-05, nAccepted: 288
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.748120e-05, nAccepted: 275
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.909605e-05, nAccepted: 285
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.767735e-05, nAccepted: 288
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.260906e-05, nAccepted: 287
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.384356e-05, nAccepted: 289
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.073663e-05, nAccepted: 286
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.293778e-05, nAccepted: 282
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.186792e-05, nAccepted: 291
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.825121e-05, nAccepted: 242
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 3.902721e-05, nAccepted: 274
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.697784e-05, nAccepted: 281
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.712516e-05, nAccepted: 282
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.391690e-05, nAccepted: 287
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.395600e-05, nAccepted: 284
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.227970e-05, nAccepted: 292
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.327968e-05, nAccepted: 287
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.298058e-05, nAccepted: 285
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.283063e-05, nAccepted: 286
+NelementsTotal: 200
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 200, nRep: 300, mean: 4.483788e-05, nAccepted: 285
+NelementsTotal: 10
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 10, nRep: 300, mean: 4.133521e-05, nAccepted: 292
+NelementsTotal: 5
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 5, nRep: 300, mean: 3.855027e-05, nAccepted: 276
+NelementsTotal: 500
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 500, nRep: 300, mean: 3.864167e-05, nAccepted: 293
+NelementsTotal: 50
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 50, nRep: 300, mean: 3.746556e-05, nAccepted: 288
+NelementsTotal: 100
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 100, nRep: 300, mean: 3.406751e-05, nAccepted: 287
+NelementsTotal: 1000
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1000, nRep: 300, mean: 3.371320e-05, nAccepted: 287
+NelementsTotal: 20
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 20, nRep: 300, mean: 3.278787e-05, nAccepted: 286
+NelementsTotal: 1
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 3.446792e-05, nAccepted: 291
+NelementsTotal: 2
+name: E1, functype: 0, vsFunc: 0, setsize: 1000000, filling: 2, nRep: 300, mean: 3.214202e-05, nAccepted: 283

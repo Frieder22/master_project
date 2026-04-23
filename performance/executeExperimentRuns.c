@@ -23,7 +23,7 @@ struct experimentRun{
     int funcType;
     int vsFunc;
     int setSize;
-    float filling;
+    int filling;
     int nRepetitions;
 } experimentRun;
 
@@ -35,7 +35,7 @@ struct measuredData{
 
 void saveData(){
     if (mpi_rank==0) {
-        printf("name: %s, functype: %d, vsFunc: %d, setsize: %d, filling: %e, nRep: %d, mean: %e, nAccepted: %d\n",
+        printf("name: %s, functype: %d, vsFunc: %d, setsize: %d, filling: %d, nRep: %d, mean: %e, nAccepted: %d\n",
                experimentRun.name,
                experimentRun.funcType,
                experimentRun.vsFunc,
@@ -100,7 +100,11 @@ void vertexsetRun(double* execTimes, vsFunc func){
     Vertexset vs;
     Vertexset_Init(&vs, experimentRun.setSize, MPI_COMM_WORLD);
     
-    size_t nElementsTotal = experimentRun.filling * experimentRun.setSize;
+    size_t nElementsTotal = experimentRun.filling;
+
+    // if VS allgather is tested, critical size can not be exceeded
+    if (experimentRun.vsFunc == ALLGATHER)
+    assert(nElementsTotal < vs.sizeCrit);
     
     //benchmark
     double start, end;
@@ -127,7 +131,7 @@ void allgatherRun(double* execTimes){
     int sparseSizes[mpi_size], displ[mpi_size];
     
     //init sparse
-    nElementsTotal = experimentRun.filling * experimentRun.setSize;
+    nElementsTotal = experimentRun.filling;
     sparseSizes[mpi_rank] = sizeSparse;
     arraySparseOut = (uint32_t*) malloc(nElementsTotal * sizeof(uint32_t));
     arraySparseIn = (uint32_t*) malloc(sizeSparse * sizeof(uint32_t));
@@ -227,7 +231,7 @@ void setExperimentRunSetup(size_t i){
         assert(false && "funcType not defined.");
     }
     experimentRun.setSize = cJSON_GetObjectItem(run, "setSize")->valueint;
-    experimentRun.filling = cJSON_GetObjectItem(run, "filling")->valuedouble;  
+    experimentRun.filling = cJSON_GetObjectItem(run, "filling")->valueint;  
     experimentRun.nRepetitions = cJSON_GetObjectItem(run, "nRepetitions")->valueint;
     if (experimentRun.funcType==VERTEXSET_TYPE) {
         experimentRun.vsFunc = cJSON_GetObjectItem(run, "vsFunc")->valueint; // enum from testStructure.h needs to be used
