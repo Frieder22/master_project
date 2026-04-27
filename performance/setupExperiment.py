@@ -6,6 +6,7 @@ import random
 PATH = ""
 
 NEXPERIMENTRUNS = 30
+BIGSETSIZE = 10_000_000
 
 MPI_LOAD = {"openMPI": "spack load openmpi@4.1.6",
            "intelMPI": "module load mpi/intelmpi",
@@ -50,7 +51,7 @@ def createRunsJSON(data, tn):
             "vsFunc": tn[vsFunc],
             "setSize": setSize,
             "filling": filling,
-            "nRepetitions": data["nRepetitions"]}
+            "nRepetitions": data["nRepetitions"] if setSize <= BIGSETSIZE else data["nRepetitionsSmall"]}
             for funcType, vsFunc, setSize, filling in runList
         ]
     }
@@ -60,6 +61,7 @@ def createRunsJSON(data, tn):
 
 def createSlurmJob(data):
     # prepare and get setup values
+    experimentName = data["experiment"]
     nNodes = data["nNodes"]
     perNode = data["perNode"]
     if type(data["mpilib"]) != list:
@@ -72,7 +74,7 @@ def createSlurmJob(data):
     f.write("#SBATCH -N {}\n".format(nNodes))
     f.write("#SBATCH --ntasks-per-node={}\n".format(perNode))
     f.write("#SBATCH --cpu-freq=High\n")
-    f.write("#SBATCH --job-name=performanceRun\n")
+    f.write("#SBATCH --job-name={}\n".format(experimentName))
     f.write("#SBATCH --time=1:00:00\n\n")
 
     #create folder for saved data
@@ -120,7 +122,11 @@ def findTestNumber():
 
 
 # load setup data
-f = open(PATH + "experiments/test.json")
+f = open(PATH + "experiments/sheduledExperiment.txt")
+pathExperiment = f.readline()
+f.close()
+
+f = open(PATH + "experiments/" + pathExperiment)
 toExecuteData = json.load(f)
 f.close()
 

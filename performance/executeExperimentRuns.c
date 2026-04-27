@@ -132,23 +132,25 @@ void allgatherRun(double* execTimes){
     
     //init sparse
     nElementsTotal = experimentRun.filling;
-    sparseSizes[mpi_rank] = sizeSparse;
+    arraySparseIn = (uint32_t*) malloc(nElementsTotal * sizeof(uint32_t));
     arraySparseOut = (uint32_t*) malloc(nElementsTotal * sizeof(uint32_t));
-    arraySparseIn = (uint32_t*) malloc(sizeSparse * sizeof(uint32_t));
 
     //benchmark
     double start, end;
     for (size_t it = 0; it < experimentRun.nRepetitions; it++) {
         sizeSparse = 0;
         for (size_t i = 0; i < nElementsTotal; i++) {
-            if (i%mpi_size == mpi_rank)
-            sizeSparse++;
+            if (i%mpi_size == mpi_rank){
+                //arraySparseIn[sizeSparse] = i;
+                sizeSparse++;
+            }
         }
         
         MPI_Barrier(MPI_COMM_WORLD);
         start = MPI_Wtime();
 
         //find sparse sizes of other ranks
+        sparseSizes[mpi_rank] = sizeSparse;
         MPI_Allgather(MPI_IN_PLACE, 0, MPI_DATATYPE_NULL, sparseSizes, 1, MPI_INT, MPI_COMM_WORLD);
         displ[0] = 0;
         for (size_t j = 1; j < mpi_size; j++) {

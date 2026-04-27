@@ -147,94 +147,11 @@
 
 	\include{chapters/chapter_Implementation}
 	
+	\include{chapters/chapter_Performance}
+	
 	\chapter{Test of Correctness}
 	\section{Individual Test}
 	\section{Using \gls{bfs} as Empirical Validation}
-	
-	\chapter{Performance of the Proposed Algorithms}
-	In this section the performance of the algorithms is tested. To get a reference point the new algorithms are tested against two pure setups that only use a sparse or a dense representation. The purely sparse variant uses an Allgather and the purely dense variant uses a Allreduce to perform a global union set operation. Allgather and Allreduce are defined in the MPI standard and are implemented in different libraries. The new algorithms are based on specific Allreduce/Allgather variants. To get an estimate how these base algorithms compare against their library pendants they are compared in Section \ref{sec:baseAllreduce} and \ref{sec:baseAllgather}. After that the performance of the new union set operation algorithms is tested for different scenarios. In the last section the performance is then evaluated in a use case of performing an \gls{bfs}. 	
-	\section{Setup}
-	All implementations are tested on the same machine. They are run on the \emph{Hydra} cluster of the Parallel Computing Department of TU Wien. The cluster consists of 36 compute nodes and each node is equipped with two Intel\textsuperscript{\textregistered} Xeon\textsuperscript{\textregistered} Gold 6130F 16-Core CPUs. Each compute node has therefore 32 cores available. The nodes are connected via dual Intel\textsuperscript{\textregistered} Omni-Path interconnect with an upper boundary of 100 Gbytes/s bandwidth \cite{traeff2025}. The code for all experiments is written in C using \gls{mpi} as message passing framework. The code is always compiled using the \texttt{-O3} flag. Three different MPI-libraries are considered for benchmarking the algorithms (OpenMPI, MPICH and IntelMPI). The available version of the OpenMPI library as well as the MPICH library use GCC 12.1.0 as compiler. The available IntelMPI framework uses GCC 10.2.1.\\
-	Different setups of the number of used processes and their distribution on the nodes are tested. As the new algorithms are designed to be optimal for a large amount of processors, the configurations will cover the most available number of processors $p$. One needs to keep in mind that some algorithms will only work for $p$ being a power of 2. So for the power of two case there are $32\times 32 = 1024$ and for the general case also $36\times32=1152$ number of processors used. We also test the algorithms with only one process on each node to allow only communication via the interconnect. In this setup the linear communication cost model may apply best.
-	\section{Measurement of the different algorithms}
-	Benchmarking algorithms on distributed systems is not a trivial task and is there are many caveats that need to be considered. To get a fair, reliable and reproducible results the methodology is closely oriented at the work of Hunold and Carpen-Amerie \cite{HunoldBench}. A major problem in timing executions is that clocks of the different processes are not necessarily synchronized. Moreover the clocks can drift out of sync over a period of time. A simple but sufficient strategy is to synchronize all processors using \Call{MPI\_Barrier}{ } . This function guarantees that no process proceeds its execution until every process called it. This of corse does not directly imply that all processes continue execution at the same time, but it is shown to be sufficient, if larger execution times are measured \cite{HunoldBarrier}. This condition is in our setup fulfilled as the newly proposed algorithms are build to optimize the union set operation for large sets which result in large execution times.\\
-	\begin{algorithm}
-		\caption{– Measurement run of a function\\
-			\textit{params}: Experiment parameter\\
-			\textit{func}: Tested function\\
-			\textit{nrep}: Number of executions}
-		\label{algo:timingProcedure}
-		\begin{algorithmic}[1]
-			\Procedure{experimentRun}{$params, func, nrep$}
-			\State initialize arrays $t_\mathrm{loc}$ and $t$ with $nrep$ entries
-			\State\Call{SetExperiment}{$params$}
-			\For{$obs \in [0, \dots, nrep-1]$}
-			\Comment{Do measurements}
-				\State \Call{MPI\_Barrier}{ }
-				\State  $t_\mathrm{start\_loc} \gets \Call{MPI\_Wtime}{~}$
-				\State execute $func$
-				\State  $t_\mathrm{end\_loc} \gets \Call{MPI\_Wtime}{~}$
-				\State $t_\mathrm{loc}[obs] \gets t_\mathrm{end\_loc} - \mathrm{start\_loc}$
-			\EndFor
-			\State \Call{Reduce}{$t_\mathrm{loc}[obs]$, $t$, $nrep$, \texttt{Max}}
-			\Comment{Find execution time of slowest process}
-			\State $t\gets \Call{RemoveOutliers}{t, nrep}$
-			\State $mean \gets \Call{Mean}{t}$ 
-			safe $mean$ in file
-			\EndProcedure
-		\end{algorithmic}
-	\end{algorithm}
-	Algorithm \ref{algo:timingProcedure} shows the procedure how the execution times of the functions are measured for one experiment run. One experiment run consists out of '$nrep$' measurements of the to evaluate function, finding the slowest process, removing statistical outliers and calculating the mean of the pruned data. We now explain all of the steps and their justification.\\
-	The iterative measurement of the execution time is to produce statistical relevant data. Under the assumption of normally distributed data one only needs to collect a number of data points in the order of around 30 to get a good approximation of the underlying distribution. Hunold and Carpen-Amerie \cite{HunoldBarrier} showed that this distribution is generally not normally distributed so the number of iterations need to be way higher (and therefore $nrep$ needs to be bigger) to get a good representation of the underlying distribution. We orient us here on their proposed value of 300 iterations. For execution times of setups that have a relatively long execution time (in the order of tens of milliseconds) we only iterate 30 times as the relative statistical spread is expected to be quite low. This makes the total process of benchmarking more time efficient.\\
-	The next step is to only select for each iteration only the slowest process. This is justified as an estimation of the total execution time is needed. Precisely this time starts when the first process calls the tested function and end when the last thread returns from it. As all threads are assumed to enter the test function at the same time (due to the Barrier-synchronization) the execution time of the slowest process is needed. In the pseudocode from Procedure \ref{algo:timingProcedure} this is done by the \Call{Reduce}{ } call using the \texttt{Max} flag. This puts for each entry of '$t_\mathrm{loc}$' the maximum value of all processes (i.e. the slowest execution time over all processes) into the array '$t$' of the master process.\\
-	So after that there is an array $t$ with $nrep$ data points of the slowest processes. This data is usually sprinkled with statistical outliers. These outliers can have different reasons of existence. One reason is the scheduling of the operating system that can introduce noise. Another processes that introduces unwanted statistical invariance is that big parallel machines need some iterations to warm up. This means  that after a few iterations the execution time will be faster and will reach then a steady state. It is hard to estimate when a setup is warmed up so this will also handled by the pruning of the data. The removal is done according to Turkeys filter \cite[p.126]{TurkyRule}. For this the first quartile $Q_1$ and third quartile $Q_3$ of the measured execution times of one experiment run are relevant. With these the interquartile range $IQR = Q_3 - Q_1$ is calculated. Then only values $t_i$ are accepted which fulfill
-	\begin{align*}
-		Q_1 - 1.5\cdot IQR < t_i < Q_3 + 1.5 \cdot IQR.
-	\end{align*} 
-	The remaining data points (which can be expected to be the majority for an fairly bell shaped distribution) are used to calculated the arithmetic mean $\bar{t} = \frac{1}{n} \sum_{i=0}^n t_i $. Another good estimator for comparing the execution times of two experiment runs would be the median. The restriction to only calculating the mean is mostly to keep evaluation as simple as possible. As this calculation is done consistently for all experiment runs we can guarantee fairness in comparisons. 
-	
-	One experiment usually consists out of multiple experiment runs. If the execution time  is examined in dependency of some parameter, then multiple data points are needed (i.e. a data point for each variation of the parameter). To avoid any bias that could arise due to the order of execution the experiment runs are shuffled randomly.\\
-	The typical entry points to a MPI-program running on a distributed memory machine are usually \texttt{mpirun}/\texttt{srun}. Hunold and Carpen-Amerie \cite{HunoldBench} showed that the benchmark of an function is not necessarily  independent of its execution by \texttt{mpirun}/\texttt{srun}. In their data it is apparent that the standard deviations of  multiple executed experiments can be significantly smaller than the standard deviation of the means of these experiments. This is the reason why we do not rely on calculating the standard deviations in each experiment run. Instead the experiment run is executed multiple times using different calls of  \texttt{mpirun}/\texttt{srun}. This results in a list of means $\bar{t}_e$ outputted by each experiment run. From these values is then a final mean and a standard deviation calculated to estimate the execution time and its spread. This is done only 30 times. A sketch on how the experimentation runs are executed is shown in Algorithm \ref{algo:benchmark}.
-	\begin{algorithm}
-		\caption{– Benchmark of a experiment\\
-			\textit{l\_setup}: List of setup parameter}
-		\label{algo:benchmark}
-		\begin{algorithmic}[1]
-			\Procedure{benchmarkExperiment}{$l\_setup$}
-				\State \Call{setupProcessors}{$l\_setup$} \Comment{Set number and distribution of processors}
-				\For{$i \in \{1,\dots, 30\}$}
-					\State mpirun/srun \Call{executeExperiment}{$l\_setup$}
-				\EndFor
-			\EndProcedure			
-			\Procedure{executeExperiment}{$l\_setup$}
-				\State $l\_setup \gets \Call{shuffle}{l\_setup}$
-				\ForAll{$setup \in \{l\_setup\}$}
-					\State $params, func, nrep \Call{getSetup}{setup}$
-					\State \Call{experimentRun}{$params, func, nrep$}
-				\EndFor
-			\EndProcedure
-		\end{algorithmic}
-	\end{algorithm}
-	
-	\section{Methodology of benchmarking}
-	How a measurement of run times of some setup is executed and processed is explained in the section before. We now give an insight in the reasoning why specific experiments and setups are chosen. One needs to keep in mind that there quite a lot of free parameter that can be explored. There are three different MPI libraries, at least 4 different processor layouts ($32\times 32,~ 36\times 32,~ 32\times 1 \text{ and } 36\times 1$), different set sizes and different set fillings that need to be explored. Moreover there are different variants of the same functions and the parameter '\textit{critSize}' that need to be considered.\\
-	So the strategy is the following: Firstly we want to get an insight into which MPI library performs the best. This is only done for the MPI native Allreduce and Allgather and the foundation algorithms that build the basis of our newly proposed algorithms. In doing so we also evaluate which of the foundation algorithms will perform best. Here we only show results of one processor layout if they can be representative for all. The remaining plots are only shown in the appendix. As the sparse variant only depends on the set filling and a set union is achieved by an Allgather only the set filling is varied for benchmarking Allgather implementation. The same is true for Allreduce implementations but with using the set size. Performance of these algorithms is normally plotted against message size. \\
-	The second step is then to compare the newly proposed algorithms against the native sparse and dense implementations. As reference are the MPI library variants as well as the explicit foundation algorithm used. Again there will be plots put into the appendix if necessary.\\
-	As last step the 
-	In this thesis we always plot against number of elements. This allows for consistent comparisons between the different set representations. 
-	
-	plots are in log log plots
-	error bars allways correspond to standard deviation of the mean (SD/sqrt(n))
-	
-	\section{Testing foundation Allreduce against MPI-libraries} \label{sec:baseAllreduce}
-	
-	\section{Testing foundation Allgather against MPI-libraries} \label{sec:baseAllgather}
-	
-	\section{Comparison of Proposed Algorithms Against Their Base Variant}
-	\subsection{$2^k$ Variant}
-	\subsection{Arbitrary Number of Processes Variant}
-	\subsection{Naive Variant}
-	\section{Performance Testing Using \gls{bfs} as Benchmark}
 	
 	
 	\chapter{Summary of Results}
