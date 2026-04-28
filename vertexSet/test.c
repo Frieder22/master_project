@@ -43,7 +43,7 @@ void printTestInfo(int testnumber){
         case NAIVE:
             printf("Testing functionality of Naive Reduce.\n");
             break;
-        case DENSE:
+        case ALLREDUCE_BUTTERFLY:
             printf("Testing functionality of Dense Reduce.\n");
             break;
         case VERTEXSET_TEST:
@@ -68,8 +68,9 @@ void printTestInfo(int testnumber){
 
 void test_Iterator_sparse(){
     printf("Testing Iterator sparse...\n");
+    bool shiftPattern =  (size & (size - 1)) != 0;
     Vertexset vs;
-    Vertexset_Init(&vs, 500, MPI_COMM_WORLD);
+    Vertexset_Init(&vs, 500, MPI_COMM_WORLD, shiftPattern);
 
     uint32_t addedVerts[] = {10, 65, 6,0, 9, 7, 499};
     int n = sizeof(addedVerts) / sizeof(addedVerts[0]);
@@ -112,8 +113,10 @@ void test_Iterator_sparse(){
 void test_Iterator_dense(){
     printf("Testing Iterator dense...\n");
     Vertexset vs, control;
-    Vertexset_Init(&vs, 500, MPI_COMM_WORLD);
-    Vertexset_Init(&control, 500, MPI_COMM_WORLD);
+    bool shiftPattern =  (size & (size - 1)) != 0;
+
+    Vertexset_Init(&vs, 500, MPI_COMM_WORLD, shiftPattern);
+    Vertexset_Init(&control, 500, MPI_COMM_WORLD, shiftPattern);
 
     uint32_t addedVerts[] = {10, 7, 12, 32, 0, 333, 499};
     int n = sizeof(addedVerts) / sizeof(addedVerts[0]);
@@ -162,8 +165,10 @@ bool test_Allreduce_single(void (*reduceFunc) (Vertexset*, int), int setSize, fl
     int insertions = (int) setSize * filling;
 
     Vertexset vs, control;
-    Vertexset_Init(&vs, setSize, MPI_COMM_WORLD);
-    Vertexset_Init(&control, setSize, MPI_COMM_WORLD);
+    bool shiftPattern =  (size & (size - 1)) != 0;
+
+    Vertexset_Init(&vs, setSize, MPI_COMM_WORLD, shiftPattern);
+    Vertexset_Init(&control, setSize, MPI_COMM_WORLD, shiftPattern);
     
     Vertexset_TransformToDense(&control);
     
@@ -179,7 +184,7 @@ bool test_Allreduce_single(void (*reduceFunc) (Vertexset*, int), int setSize, fl
     }
     
     //Allreduce_Dense only works with dense arrays
-    if(reduceFunc == Vertexset_Allreduce_Dense){
+    if(reduceFunc == Vertexset_Allreduce_Butterfly){
         Vertexset_TransformToDense(&vs);
     }
 
@@ -287,7 +292,8 @@ bool test_Vertexset_sparse(){
 
     // Init of VS
     Vertexset vs;
-    Vertexset_Init(&vs, maxsize, MPI_COMM_WORLD);
+    bool shiftPattern =  (size & (size - 1)) != 0;
+    Vertexset_Init(&vs, maxsize, MPI_COMM_WORLD, shiftPattern);
     
     // reference buffer
     uint32_t added[n1 + n2];
@@ -372,7 +378,8 @@ bool test_Vertexset_dense(){
 
     // Init of VS
     Vertexset vs;
-    Vertexset_Init(&vs, maxsize, MPI_COMM_WORLD);
+    bool shiftPattern =  (size & (size - 1)) != 0;
+    Vertexset_Init(&vs, maxsize, MPI_COMM_WORLD, shiftPattern);
 
     // set to dense
     vs.isdense = 1;
@@ -468,7 +475,8 @@ bool test_Allgather_single(void (*allgatherFunc) (Vertexset*), int setSize, int 
     int insertionsTotal = filling;
 
     Vertexset vs;
-    Vertexset_Init(&vs, setSize, MPI_COMM_WORLD);
+    bool shiftPattern =  (size & (size - 1)) != 0;
+    Vertexset_Init(&vs, setSize, MPI_COMM_WORLD, shiftPattern);
     uint32_t* control;
     control = (uint32_t*) malloc(insertionsTotal*sizeof(uint32_t));
 
@@ -588,19 +596,19 @@ int main(int argc, char *argv[]){
         
         case EXACT_HALFING: // Test Exact halfing
             assert((size & (size - 1)) == 0); // only works for ranks = 2^k
-            test_Allreduce_batch(Vertexset_Allreduce_Exact_Halfing);
+            test_Allreduce_batch(Vertexset_Union_Butterfly);
             break;
 
         case APROXIMATE_HALFING: // Test Approximate halfing
-            test_Allreduce_batch(Vertexset_Allreduce_Approximate_Halfing);
+            test_Allreduce_batch(Vertexset_Union_Shift);
             break;
 
         case NAIVE: // Test allreduce using ring topology
             test_Allreduce_batch(Vertexset_Allreduce_Naive);
             break;
 
-        case DENSE: // Test dense allreduce
-            test_Allreduce_batch(Vertexset_Allreduce_Dense);
+        case ALLREDUCE_BUTTERFLY: // Test dense allreduce
+            test_Allreduce_batch(Vertexset_Allreduce_Butterfly);
             break;
 
         case VERTEXSET_TEST: //Test functionality of vertexset

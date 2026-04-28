@@ -12,7 +12,7 @@ typedef struct Vertexset{
     size_t maxsize;
     size_t sizeCrit;
     bool isdense;
-    bool approx_halfing;
+    bool shiftPattern;
     
     // Data for Bitarray
     unsigned long long *bitArray;
@@ -47,7 +47,7 @@ typedef struct Vertexset{
  * @param maxsize Maximum number of vertices, that can be added
  * @param MPI_COMM MPI communicator, where reduce operation are possible
  */
-void Vertexset_Init(Vertexset* const vs, const uint32_t maxsize, const MPI_Comm MPI_COMM);
+void Vertexset_Init(Vertexset* const vs, const uint32_t maxsize, const MPI_Comm MPI_COMM, bool shiftPattern);
 
 /**
  * Adds a vertex to vertexset.
@@ -94,28 +94,6 @@ bool Vertexset_TransformToDense(Vertexset* vs);
  */
 bool Vertexset_TransformToSparse(Vertexset* vs);
 
-/**
- * Performs an Allreduce operation with vertex sets from
- * other ranks.
- * Time complexities:
- * no guarantee
- * @param vs corresponding Vertexset object 
- * @param VERTEXSET_OPERATION which logical operation should be applied
- */
-void Vertexset_Allreduce(Vertexset* vs, int VERTEXSET_OPERATION);
-
-/**
- * Performs an Allreduce operation with vertex sets from
- * other ranks. Only sparse or dense representation are used during
- * the communciation. All ranks must have vs in the same kind of
- * representation.
- * Time complexities:
- * Dense: O(Allreduce(n))
- * Sparse: O(Allgather(k))
- * @param vs corresponding Vertexset object 
- * @param VERTEXSET_OPERATION which logical operation should be applied
- */
-void Vertexset_Allreduce_Pure(Vertexset* vs, int VERTEXSET_OPERATION);
 
 /**
  * Performs an Allreduce operation with vertex sets from
@@ -127,7 +105,7 @@ void Vertexset_Allreduce_Pure(Vertexset* vs, int VERTEXSET_OPERATION);
  * @param vs corresponding Vertexset object 
  * @param VERTEXSET_OPERATION which logical operation should be applied
  */
-void Vertexset_Allreduce_Exact_Halfing(Vertexset* vs, int VERTEXSET_OPERATION);
+void Vertexset_Union_Butterfly(Vertexset* vs, int VERTEXSET_OPERATION);
 
 /**
  * Performs an Allreduce operation with vertex sets from
@@ -139,11 +117,15 @@ void Vertexset_Allreduce_Exact_Halfing(Vertexset* vs, int VERTEXSET_OPERATION);
  * @param vs corresponding Vertexset object 
  * @param VERTEXSET_OPERATION which logical operation should be applied
  */
-void Vertexset_Allreduce_Approximate_Halfing(Vertexset* vs, int VERTEXSET_OPERATION);
+void Vertexset_Union_Shift(Vertexset* vs, int VERTEXSET_OPERATION);
 
 void Vertexset_Allreduce_Naive(Vertexset* vs, int VERTEXSET_OPERATION);
 
-void Vertexset_Allreduce_Dense(Vertexset* vs, int VERTEXSET_OPERATION);
+void Vertexset_Allreduce_Butterfly(Vertexset* vs, int VERTEXSET_OPERATION);
+
+void Vertexset_Allreduce_Butterfly_ReverseBits(Vertexset* const vs, const int VERTEXSET_OPERATION);
+
+void Vertexset_Allreduce_Shift(Vertexset* const vs, const int VERTEXSETOPERATION);
 
 void Vertexset_Allgather(Vertexset* vs, int  VERTEXSET_OPERATION);
 

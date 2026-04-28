@@ -96,9 +96,10 @@ void processData(double* execTimes){
 }
 
 void vertexsetRun(double* execTimes, vsFunc func){
+    bool shiftPattern = getCommPattern(experimentRun.vsFunc);
     //init stuff
     Vertexset vs;
-    Vertexset_Init(&vs, experimentRun.setSize, MPI_COMM_WORLD);
+    Vertexset_Init(&vs, experimentRun.setSize, MPI_COMM_WORLD, shiftPattern);
     
     size_t nElementsTotal = experimentRun.filling;
 
