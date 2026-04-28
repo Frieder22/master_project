@@ -13,7 +13,8 @@ ALLGATHER_TYPE = 0
 ALLREDUCE_TYPE = 1
 VERTEXSET_TYPE = 2
 
-plotsizes = {"small": (4,4)}
+plotsizes = {"small": (4,4),
+            "medium": (6,4)}
 
 parser = argparse.ArgumentParser(prog="plotExperiment.py",
                                  description="Creates a slurm file that can be submitted on the hydra cluster",

@@ -46,7 +46,7 @@ void Vertexset_Init(Vertexset* const vs, const uint32_t maxsize, const MPI_Comm 
     vs->isdense = false;
 
     // set usage of approximate halfing
-    vs->shiftPattern = (vs->mpi_size & (vs->mpi_size - 1)) != 0;
+    vs->shiftPattern = shiftPattern;
 
     if (vs->shiftPattern) {
         // calculate start and end of each block
@@ -58,7 +58,7 @@ void Vertexset_Init(Vertexset* const vs, const uint32_t maxsize, const MPI_Comm 
         blockIndices_buffer = (int*) malloc(sizeof(int)*(vs->mpi_size + 1));
         block_nElements_buffer = (int*) malloc(sizeof(int)* (vs->mpi_size));
 
-        // calculate indices for input (same for every thread)
+        // calculate indices for input (same for every process)
         blockIndices_input[0] = 0;
         for (size_t i = 1; i < vs->mpi_size + 1; i++) {
             blockIndices_input[i] = vs->size_bitarray * i / vs->mpi_size;
@@ -614,7 +614,7 @@ void Vertexset_Allreduce_Butterfly(Vertexset* const vs, const int VERTEXSET_OPER
     // find block indices
     int blockIdx[vs->mpi_size + 1];
     blockIdx[0] = 0;
-    for (int i = 1; i < vs->mpi_size + 1; i++) {
+    for (size_t i = 1; i < vs->mpi_size + 1; i++) {
         blockIdx[i] = vs->size_bitarray * i / vs->mpi_size;
     }
     
@@ -631,7 +631,6 @@ void Vertexset_Allreduce_Butterfly(Vertexset* const vs, const int VERTEXSET_OPER
     for (int shift = vs->mpi_size / 2 ; shift >= 1; shift/=2) {
         // do bitflip with LOR to find neighbor
         commNeighbor = vs->mpi_rank ^ shift;
-
 
         // find start indices of send message
         startBlock = (commNeighbor/shift) * shift;
@@ -681,7 +680,7 @@ void Vertexset_Allreduce_Butterfly_ReverseBits(Vertexset* const vs, const int VE
     // find block indices
     int blockIdx[vs->mpi_size + 1];
     blockIdx[0] = 0;
-    for (int i = 1; i < vs->mpi_size + 1; i++) {
+    for (size_t i = 1; i < vs->mpi_size + 1; i++) {
         blockIdx[i] = vs->size_bitarray * i / vs->mpi_size;
     }
     

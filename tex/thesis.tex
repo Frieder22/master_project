@@ -12,7 +12,7 @@
 \setcounter{tocdepth}{3}
 % Define convenience functions to use the author name and the thesis title in the PDF document properties.
 \newcommand{\authorname}{Frieder Wolpert-Veit} % The author name without titles.
-\newcommand{\thesistitle}{Title of the Thesis} % The title of the thesis. The English version should be used, if it exists.
+\newcommand{\thesistitle}{An efficient set union operation on distributed memory machines} % The title of the thesis. The English version should be used, if it exists.
 
 % Create the XMP metadata file for the creation of PDF/A compatible documents.
 \begin{filecontents*}[overwrite]{\jobname.xmpdata}
@@ -191,5 +191,8 @@
 	% Add a bibliography.
 	\bibliographystyle{alpha}
 	\bibliography{references}
+
+	\include{chapters/chapter_Appendix}
+
 	
 \end{document}
