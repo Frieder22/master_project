@@ -20,7 +20,7 @@ typedef struct Vertexset{
     int size_bitarray;
     
     // Data for sparse array
-    int sizeSparse;
+    size_t sizeSparse;
     uint32_t *sparseArray;
     uint32_t *sparseBuffer;
     int *sizesAll;
@@ -127,7 +127,11 @@ void Vertexset_Allreduce_Butterfly_ReverseBits(Vertexset* const vs, const int VE
 
 void Vertexset_Allreduce_Shift(Vertexset* const vs, const int VERTEXSETOPERATION);
 
-void Vertexset_Allgather(Vertexset* vs, int  VERTEXSET_OPERATION);
+void Vertexset_Allgather_Butterfly(Vertexset* vs, int VERTEXSET_OPERATION);
+
+void Vertexset_Allgather_Butterfly_ReverseBits(Vertexset* vs, int VERTEXSET_OPERATION);
+
+void Vertexset_Allgather_Shift(Vertexset* vs, int  VERTEXSET_OPERATION);
 
 /**
  * Prints the elements saved in Vertex set. At most 30 elements

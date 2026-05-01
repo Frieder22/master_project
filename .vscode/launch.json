@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": "-f experiments/AllreduceLibs/32x32.json"
+            "args": "-f experiments/AllgatherCompareUniform/32x32.json"
         }
     ]
 }

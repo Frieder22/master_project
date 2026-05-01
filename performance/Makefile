@@ -13,6 +13,7 @@ perf: executeExperimentRuns.c $(SOURCES) $(HEADERS)
 	$(GCC) $(CFLAGS) -o $(build)/executeExperimentRuns.o executeExperimentRuns.c $(SOURCES) 
 
 run_local: perf
+	python setupExperiment.py
 	mpirun -np 4 $(build)/executeExperimentRuns.o runs.json
 
 init_cluster:

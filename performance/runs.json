@@ -1,156 +1,346 @@
 {
     "runs": [
         {
-            "experiment": "AllreduceLibsShift",
+            "experiment": "AllgatherCompareConcentrated",
             "funcType": "Vertexset",
-            "vsFunc": 6,
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 5000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 50000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Vertexset",
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 2000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 20000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 100000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 2000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Vertexset",
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 10000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Vertexset",
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 50,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 100,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 5000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 500,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Vertexset",
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 20,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Vertexset",
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 1000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
             "setSize": 50000000,
             "filling": 1,
-            "nRepetitions": 10
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
+            "experiment": "AllgatherCompareConcentrated",
             "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 20000000,
-            "filling": 1,
-            "nRepetitions": 10
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 10,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
-            "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 20000,
-            "filling": 1,
-            "nRepetitions": 300
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 50,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
-            "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 1000000,
-            "filling": 1,
-            "nRepetitions": 300
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 2,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
-            "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 50000,
-            "filling": 1,
-            "nRepetitions": 300
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 10,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
+            "experiment": "AllgatherCompareConcentrated",
             "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 100000000,
-            "filling": 1,
-            "nRepetitions": 10
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 200000,
+            "nRepetitions": 10,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
-            "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 500000000,
-            "filling": 1,
-            "nRepetitions": 10
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 1000000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
-            "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 100000,
-            "filling": 1,
-            "nRepetitions": 300
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 10000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
-            "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 10000000,
-            "filling": 1,
-            "nRepetitions": 300
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 200,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
+            "experiment": "AllgatherCompareConcentrated",
             "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 200000000,
+            "vsFunc": 10,
+            "setSize": 50000000,
             "filling": 1,
-            "nRepetitions": 10
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
-            "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 2000000,
-            "filling": 1,
-            "nRepetitions": 300
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 500000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
+            "experiment": "AllgatherCompareConcentrated",
             "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 2000,
-            "filling": 1,
-            "nRepetitions": 300
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 20000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
+            "experiment": "AllgatherCompareConcentrated",
             "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 5000000,
-            "filling": 1,
-            "nRepetitions": 300
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 1000000,
+            "nRepetitions": 10,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
+            "experiment": "AllgatherCompareConcentrated",
             "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 5000,
-            "filling": 1,
-            "nRepetitions": 300
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 5,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
-            "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 1000000000,
-            "filling": 1,
-            "nRepetitions": 10
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 200000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
-            "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 200000,
-            "filling": 1,
-            "nRepetitions": 300
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 1000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
-            "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 500000,
-            "filling": 1,
-            "nRepetitions": 300
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 20,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
-            "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 1000,
-            "filling": 1,
-            "nRepetitions": 300
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Allgather",
+            "vsFunc": 0,
+            "setSize": 50000000,
+            "filling": 5,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         },
         {
-            "experiment": "AllreduceLibsShift",
+            "experiment": "AllgatherCompareConcentrated",
             "funcType": "Vertexset",
-            "vsFunc": 6,
-            "setSize": 10000,
-            "filling": 1,
-            "nRepetitions": 300
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 100,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Vertexset",
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 500,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Vertexset",
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 50000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Vertexset",
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 100000,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Vertexset",
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 500000,
+            "nRepetitions": 10,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Vertexset",
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 2,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
+        },
+        {
+            "experiment": "AllgatherCompareConcentrated",
+            "funcType": "Vertexset",
+            "vsFunc": 10,
+            "setSize": 50000000,
+            "filling": 200,
+            "nRepetitions": 300,
+            "distribution": "concentrated"
         }
     ]
 }

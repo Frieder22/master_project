@@ -49,9 +49,15 @@ void printTestInfo(int testnumber){
         case VERTEXSET_TEST:
             printf("Testing functionality of Vertexset functions.\n");
             break;
-        case ALLGATHER:
-            printf("Testing functionality of Allgather.\n");
-            break;     
+        case ALLGATHER_SHIFT:
+            printf("Testing functionality of Allgather_Shift.\n");
+            break;
+        case ALLGATHER_BUTTERFLY:
+            printf("Testing functionality of Allgather_Butterfly.\n");
+            break;
+        case ALLGATHER_BUTTERFLY_REVERSE:
+            printf("Testing functionality of Allgather_Butterfly_Reverse.\n");
+            break;
 
         default:
             printf(ANSI_RED "Print function doesn't know this testcase!\n" ANSI_RESET);
@@ -465,7 +471,7 @@ bool test_Vertexset_dense(){
     }
 }
 
-bool test_Allgather_single(void (*allgatherFunc) (Vertexset*), int setSize, int filling){
+bool test_Allgather_single(void (*allgatherFunc) (Vertexset*, int), int setSize, int filling){
     bool isCorrect = true;
     bool verbose = false;
     bool debug = false;
@@ -506,7 +512,7 @@ bool test_Allgather_single(void (*allgatherFunc) (Vertexset*), int setSize, int 
     
 
     // perform Allgather
-    (*allgatherFunc) (&vs);
+    (*allgatherFunc) (&vs, VERTEXSET_OR);
 
     // sort array and controll 
     qsort(vs.sparseArray, insertionsTotal, sizeof(uint32_t), comp);
@@ -519,6 +525,7 @@ bool test_Allgather_single(void (*allgatherFunc) (Vertexset*), int setSize, int 
         }
         
         if (vs.sparseArray[i]!= control[i]) {
+            //printf("rank: %d, tested: %d, control: %d", rank, vs.sparseArray[i], control[i]);
             isCorrect=false;
         }
     }
@@ -551,12 +558,13 @@ bool test_Allgather_single(void (*allgatherFunc) (Vertexset*), int setSize, int 
 }
 
 
-bool test_Allgather_batch(void (*allgatherFunc) (Vertexset*)){
+bool test_Allgather_batch(void (*allgatherFunc) (Vertexset*, int)){
     bool isCorrect = true;
     isCorrect &= test_Allgather_single(allgatherFunc, 500000, size*2+4);
     isCorrect &= test_Allgather_single(allgatherFunc, 500000, size + 7);
     isCorrect &= test_Allgather_single(allgatherFunc, 500000, size + 1);
     isCorrect &= test_Allgather_single(allgatherFunc, 1000000, 10*size + 3);
+    isCorrect &= test_Allgather_single(allgatherFunc, 50000000, 1000000);
 
     if (rank==0) {
         if (isCorrect) {
@@ -616,8 +624,18 @@ int main(int argc, char *argv[]){
             test_Vertexset_dense();
             break;
 
-        case ALLGATHER:
-            test_Allgather_batch(Vertexset_Allgather);
+        case ALLGATHER_SHIFT:
+            test_Allgather_batch(Vertexset_Allgather_Shift);
+            break;
+
+        case ALLGATHER_BUTTERFLY:
+            test_Allgather_batch(Vertexset_Allgather_Butterfly);
+            break;
+
+        case ALLGATHER_BUTTERFLY_REVERSE:
+            test_Allgather_batch(Vertexset_Allgather_Butterfly_ReverseBits);
+            break;
+
         default:
             break;
     }

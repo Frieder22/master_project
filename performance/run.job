@@ -1,39 +1,19 @@
 #! /bin/bash
 #SBATCH -p q_thesis
 #SBATCH -N 36
-#SBATCH --ntasks-per-node=32
+#SBATCH --ntasks-per-node=1
 #SBATCH --cpu-freq=High
-#SBATCH --job-name=AllreduceLibsShift
+#SBATCH --job-name=AllgatherCompareConcentrated
 #SBATCH --time=1:00:00
 
-mkdir ../data/AllreduceLibsShift
+mkdir ../data/AllgatherCompareConcentrated
 
-rm ../data/AllreduceLibsShift/36x32openMPI.txt
-echo MPIlib: openMPI
-spack load openmpi@4.1.6
-make perf
-for i in {1..30}; do
-    srun ../build/executeExperimentRuns.o runs.json >> ../data/AllreduceLibsShift/36x32openMPI.txt
-echo iteration $i
-done
-spack unload openmpi@4.1.6 
-
-rm ../data/AllreduceLibsShift/36x32intelMPI.txt
-echo MPIlib: intelMPI
-module load mpi/intelmpi
-make perf
-for i in {1..30}; do
-    srun ../build/executeExperimentRuns.o runs.json >> ../data/AllreduceLibsShift/36x32intelMPI.txt
-echo iteration $i
-done
-module unload mpi/intelmpi
-
-rm ../data/AllreduceLibsShift/36x32MPICH.txt
+rm ../data/AllgatherCompareConcentrated/36x1MPICH.txt
 echo MPIlib: MPICH
 module unload mpi/intelmpi
 make perf
 for i in {1..30}; do
-    mpirun ../build/executeExperimentRuns.o runs.json >> ../data/AllreduceLibsShift/36x32MPICH.txt
+    mpirun ../build/executeExperimentRuns.o runs.json >> ../data/AllgatherCompareConcentrated/36x1MPICH.txt
 echo iteration $i
 done
 module unload mpi/intelmpi

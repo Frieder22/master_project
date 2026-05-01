@@ -1,0 +1,49 @@
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.461973e-05, nAccepted: 263
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.343982e-04, nAccepted: 267
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 2.903175e-05, nAccepted: 288
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.680666e-04, nAccepted: 252
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 1.758719e-03, nAccepted: 267
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 3.034407e-05, nAccepted: 294
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 8.230254e-05, nAccepted: 267
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 1.574555e-05, nAccepted: 280
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 2.160541e-05, nAccepted: 253
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 5.576522e-05, nAccepted: 294
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 2.391920e-05, nAccepted: 250
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 1.560909e-05, nAccepted: 284
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 2.227801e-05, nAccepted: 283
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 2.158461e-05, nAccepted: 282
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 1.538816e-05, nAccepted: 269
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 2.415843e-05, nAccepted: 255
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 1.996802e-05, nAccepted: 270
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 2.105414e-05, nAccepted: 267
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 6.162380e-04, nAccepted: 8
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 300, mean: 1.429984e-02, nAccepted: 257
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.000222e-04, nAccepted: 272
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 2.244563e-05, nAccepted: 243
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 1.280819e-05, nAccepted: 274
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 300, mean: 6.801222e-03, nAccepted: 261
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.375272e-04, nAccepted: 264
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 2.671036e-03, nAccepted: 8
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 1.542836e-05, nAccepted: 277
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 300, mean: 3.033388e-03, nAccepted: 282
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 2.491408e-05, nAccepted: 284
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 2.152993e-05, nAccepted: 260
+name: AllgatherCompareUniform, functype: 0, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 2.112937e-05, nAccepted: 259
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 1.623282e-05, nAccepted: 274
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 1.894633e-05, nAccepted: 286
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.252473e-04, nAccepted: 246
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.003050e-04, nAccepted: 281
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 1.665659e-03, nAccepted: 9
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 1.447314e-05, nAccepted: 277
+name: AllgatherCompareUniform, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 1.673929e-05, nAccepted: 275
+35 total processes killed (some possibly by mpirun during cleanup)
+35 total processes killed (some possibly by mpirun during cleanup)
+35 total processes killed (some possibly by mpirun during cleanup)
+35 total processes killed (some possibly by mpirun during cleanup)
+35 total processes killed (some possibly by mpirun during cleanup)
+35 total processes killed (some possibly by mpirun during cleanup)
+35 total processes killed (some possibly by mpirun during cleanup)
+35 total processes killed (some possibly by mpirun during cleanup)
+35 total processes killed (some possibly by mpirun during cleanup)
+35 total processes killed (some possibly by mpirun during cleanup)
+35 total processes killed (some possibly by mpirun during cleanup)

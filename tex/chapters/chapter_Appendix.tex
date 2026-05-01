@@ -9,3 +9,94 @@ Here are additional plots from the benchmark evaluation shown. To get an easier 
 \section{Testing foundation Allreduce against MPI libraries}
 \setcounter{subsection}{1}
 \subsection{Foundation Allreduce algorithms}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[htpb]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/AllreduceLibsButterfly/32x32AllreduceLibsButterfly.png}
+		\caption{\texttt{Allreduce\_Butterfly} on $p=(32\times32)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[htpb]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/AllreduceLibsButterflyReverse/32x1AllreduceLibsButterflyReverse.png}
+		\caption{\texttt{Allreduce\_Butterfly \_Reversed} on $p=(32\times1)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[htpb]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/AllreduceLibsButterflyReverse/32x32AllreduceLibsButterflyReverse.png}
+		\caption{\texttt{Allreduce\_Butterfly \_Reversed} on $p=(32\times32)$}
+	\end{subfigure}
+	
+	\vspace{3mm}
+	\hspace*{\fill}
+	\begin{subfigure}[htpb]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/AllreduceLibsShift/36x1AllreduceLibsShift.png}
+		\caption{\texttt{Allreduce\_Shift} on $p=(36\times1)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[htpb]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/AllreduceLibsShift/36x32AllreduceLibsShift.png}
+		\caption{\texttt{Allreduce\_Shift} on $p=(36\times32)$}
+	\end{subfigure}
+	\hspace*{\fill}
+
+	\caption{Benchmark of the three foundation Allreduce implementations (\texttt{Allreduce\_Butterfly}, \texttt{Allreduce\_Butterfly\_Reversed} and \texttt{Allreduce\_Shift}). The influence of using different MPI libraries is tested. Execution time $t$ is plotted against set size $|\Tilde{S}|$. The different processor layouts are indicated by $p$.}
+	\label{fig:AllreduceFoundationLibsAppendix}
+\end{figure}
+
+\section{Testing foundation Allreduce against MPI libraries}
+\setcounter{subsection}{1}
+\subsection{Foundation Allreduce algorithms}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[htpb]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/AllgatherLibsButterfly/32x1AllgatherLibsButterfly.png}
+		\caption{\texttt{Allgather\_Butterfly} on $p=(32\times1)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[htpb]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/AllgatherLibsButterfly/32x32AllgatherLibsButterfly.png}
+		\caption{\texttt{Allgather\_Butterfly} on $p=(32\times32)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[htpb]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/AllgatherLibsButterflyReverse/32x1AllgatherLibsButterflyReverse.png}
+		\caption{\texttt{Allgather\_Butterfly \_Reversed} on $p=(32\times1)$}
+	\end{subfigure}
+	
+	\vspace{3mm}
+	\hspace*{\fill}
+	\begin{subfigure}[htpb]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/AllgatherLibsButterflyReverse/32x32AllgatherLibsButterflyReverse.png}
+		\caption{\texttt{Allgather\_Butterfly \_Reversed} on $p=(32\times32)$}
+	\end{subfigure}
+	\begin{subfigure}[htpb]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/AllgatherLibsShift/36x1AllgatherLibsShift.png}
+		\caption{\\ \texttt{Allgather\_Shift} on $p=(36\times1)$}
+	\end{subfigure}
+	\hspace*{\fill}
+	
+	\caption{Benchmark of the three foundation Allgather implementations (\texttt{Allgather\_Butterfly}, \texttt{Allgather\_Butterfly\_Reversed} and \texttt{Allgather\_Shift}). The influence of using different MPI libraries is tested. Execution time $t$ is plotted against set filling $\Phi$. The different processor layouts are indicated by $p$.}
+	\label{fig:AllgatherFoundationLibsAppendix}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+

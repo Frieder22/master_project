@@ -820,7 +820,70 @@ void Vertexset_Allreduce_Shift(Vertexset* const vs, const int VERTEXSETOPERATION
     vs->isdense = true; 
 }
 
-void Vertexset_Allgather(Vertexset* vs, int  VERTEXSET_OPERATION){
+void Vertexset_Allgather_Butterfly(Vertexset* vs, int VERTEXSET_OPERATION){
+    assert(VERTEXSET_OPERATION == VERTEXSET_OR); // no other operator implemented
+    assert((vs->mpi_size & (vs->mpi_size - 1)) == 0); // communicator must be size of 2^k
+
+    
+    // do Allgather
+    int commNeighbor;
+    MPI_Status status;
+    MPI_Request req;
+    int recvCount;
+    for (int shift = vs->mpi_size / 2 ; shift >= 1; shift/=2) {
+        // do bitflip with LOR to find neighbor
+        commNeighbor = vs->mpi_rank ^ shift;
+       
+        // send sparse array
+        MPI_Isend(vs->sparseArray, vs->sizeSparse, MPI_UINT32_T, commNeighbor, 100, vs->MPI_COMM, &req);
+        
+        // get info, if recieved message is in dense or sparse format
+        MPI_Probe(commNeighbor, 100, vs->MPI_COMM, &status);
+        // get length of message
+        MPI_Get_count(&status, MPI_UINT32_T, &recvCount);
+
+        // recieve sparse format
+        MPI_Recv(vs->sparseArray + vs->sizeSparse, recvCount, MPI_UINT32_T, commNeighbor, 100, vs->MPI_COMM, MPI_STATUS_IGNORE);
+        MPI_Wait(&req, MPI_STATUS_IGNORE);
+
+        vs->sizeSparse += recvCount;
+    }
+}
+
+void Vertexset_Allgather_Butterfly_ReverseBits(Vertexset* vs, int VERTEXSET_OPERATION){
+    assert(VERTEXSET_OPERATION == VERTEXSET_OR); // no other operator implemented
+    assert((vs->mpi_size & (vs->mpi_size - 1)) == 0); // communicator must be size of 2^k
+    
+    int nIterations = Vertexset_Log2_floor(vs->mpi_size);
+    int reverseRank = Vertexset_reverseBits(vs->mpi_rank, nIterations);
+
+    // do Allgather
+    int commNeighbor, commNeighborRev;
+    MPI_Status status;
+    MPI_Request req;
+    int recvCount;
+    for (int shift = vs->mpi_size / 2 ; shift >= 1; shift/=2) {
+        // do bitflip with LOR to find neighbor
+        commNeighbor = reverseRank ^ shift;
+        commNeighborRev = Vertexset_reverseBits(commNeighbor, nIterations);
+
+       
+        // send sparse array
+        MPI_Isend(vs->sparseArray, vs->sizeSparse, MPI_INT32_T, commNeighborRev, 100, vs->MPI_COMM, &req);
+        
+        // get info, if recieved message is in dense or sparse format
+        MPI_Probe(commNeighborRev, MPI_ANY_TAG, vs->MPI_COMM, &status);
+        // get length of message
+        MPI_Get_count(&status, MPI_INT32_T, &recvCount);
+        // recieve sparse format
+        MPI_Recv(vs->sparseArray + vs->sizeSparse, recvCount, MPI_INT32_T, commNeighborRev, 100, vs->MPI_COMM, MPI_STATUS_IGNORE);
+        vs->sizeSparse += recvCount;
+        MPI_Wait(&req, MPI_STATUS_IGNORE);
+
+    }
+}
+
+void Vertexset_Allgather_Shift(Vertexset* vs, int  VERTEXSET_OPERATION){
     // safety measure
     if (vs->mpi_size < 2) {
         return;

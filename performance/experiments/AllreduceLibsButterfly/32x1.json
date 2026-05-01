@@ -13,5 +13,5 @@
     "yAxis" : "runtime",
     "plotGraphs" : "mpilib",
     "plotFolder" : "AllreduceLibsButterfly",
-    "plotSize" : "small"
+    "plotSize" : "medium"
 }

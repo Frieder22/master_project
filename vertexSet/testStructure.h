@@ -2,6 +2,7 @@
 #define TESTSTRUCTURE
 
 #include "vertexSet.h"
+#include <stdlib.h>
 
 typedef void (*vsFunc) (Vertexset*, int);
 
@@ -14,7 +15,9 @@ enum Testcase{
     ALLREDUCE_BUTTERFLY_REVERSE,
     ALLREDUCE_SHIFT,
     VERTEXSET_TEST,
-    ALLGATHER
+    ALLGATHER_BUTTERFLY,
+    ALLGATHER_BUTTERFLY_REVERSE,
+    ALLGATHER_SHIFT
 };
 
 vsFunc getVertexsetFunc(int funcname){
@@ -31,26 +34,37 @@ vsFunc getVertexsetFunc(int funcname){
         return Vertexset_Allreduce_Butterfly_ReverseBits;
     case ALLREDUCE_SHIFT:
         return Vertexset_Allreduce_Shift;
-    case ALLGATHER:
-        return Vertexset_Allgather;
+    case ALLGATHER_BUTTERFLY:
+        return Vertexset_Allgather_Butterfly;
+    case ALLGATHER_BUTTERFLY_REVERSE:
+        return Vertexset_Allgather_Butterfly_ReverseBits;
+    case ALLGATHER_SHIFT:
+        return Vertexset_Allgather_Shift;
     default:
         exit(1);
     }
 }
 
+/**
+ * returns true, if works for any number of processors 
+ */
 bool getCommPattern(int funcname){
     switch (funcname) {
     case EXACT_HALFING:
         return false;
     case APROXIMATE_HALFING:
         return true;
-    case ALLGATHER:
-        return true;
     case ALLREDUCE_BUTTERFLY:
         return false;
     case ALLREDUCE_BUTTERFLY_REVERSE:
         return false;
     case ALLREDUCE_SHIFT:
+        return true;
+    case ALLGATHER_BUTTERFLY:
+        return false;
+    case ALLGATHER_BUTTERFLY_REVERSE:
+        return false;
+    case ALLGATHER_SHIFT:
         return true;
     default:
         exit(1);

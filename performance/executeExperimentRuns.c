@@ -10,6 +10,11 @@
 #define ALLREDUCE_TYPE 1
 #define VERTEXSET_TYPE 2
 
+enum fillingDistributions{
+    UNIFORM,
+    CONCENTRATED
+};
+
 int mpi_rank, mpi_size;
 cJSON *root, *runs;
 
@@ -25,6 +30,7 @@ struct experimentRun{
     int setSize;
     int filling;
     int nRepetitions;
+    int distribution;
 } experimentRun;
 
 struct measuredData{
@@ -95,6 +101,34 @@ void processData(double* execTimes){
     free(execTimesRoot);
 }
 
+void fillVertexset(Vertexset* vs, int nElementsTotal){
+    // fill uniformly
+    if (experimentRun.distribution == UNIFORM){
+        //add elements
+        for (size_t element = 0; element < nElementsTotal; element++) {
+            if (element%mpi_size ==  mpi_rank)
+            Vertexset_Add(vs, element);
+        }
+        return;
+    }
+
+    // fill concentrated
+    if (experimentRun.distribution == CONCENTRATED){
+        if (mpi_rank == 0) {
+            for (size_t element = 0; element < nElementsTotal; element++) {
+                Vertexset_Add(vs, element);
+            }
+        }
+        return;
+    }
+
+    // throw if some option is not defined
+    if (mpi_rank==0)
+    printf("Wrong option:     %d\n", experimentRun.distribution);
+    fflush(stdout);
+    assert(false && "Distribution type not implemented for Vertexset.");
+}
+
 void vertexsetRun(double* execTimes, vsFunc func){
     bool shiftPattern = getCommPattern(experimentRun.vsFunc);
     //init stuff
@@ -104,26 +138,56 @@ void vertexsetRun(double* execTimes, vsFunc func){
     size_t nElementsTotal = experimentRun.filling;
 
     // if VS allgather is tested, critical size can not be exceeded
-    if (experimentRun.vsFunc == ALLGATHER)
+    if (experimentRun.vsFunc == ALLGATHER_SHIFT 
+        || experimentRun.vsFunc == ALLGATHER_BUTTERFLY 
+        || experimentRun.vsFunc == ALLGATHER_BUTTERFLY_REVERSE)
     assert(nElementsTotal < vs.sizeCrit);
     
     //benchmark
     double start, end;
     for (size_t it = 0; it < experimentRun.nRepetitions; it++) {
-        //add elements
-        for (size_t element = 0; element < nElementsTotal; element++) {
-            if (element%mpi_size ==  mpi_rank)
-            Vertexset_Add(&vs, element);
-        }
+        fillVertexset(&vs, nElementsTotal);
         MPI_Barrier(MPI_COMM_WORLD);
         start = MPI_Wtime();
         func(&vs, VERTEXSET_OR);
         end = MPI_Wtime();
         execTimes[it] = end - start;
+
+        // remove elements
+        Vertexset_Clean(&vs);
     } 
 
     //deinit
     Vertexset_Deinit(&vs);
+}
+
+int fillAllgather(int nElementsTotal){
+    // fill uniformly
+    if (experimentRun.distribution == UNIFORM){
+        int sizeSparse = 0;
+        for (size_t i = 0; i < nElementsTotal; i++) {
+            if (i%mpi_size == mpi_rank){
+                //arraySparseIn[sizeSparse] = i;
+                sizeSparse++;
+            }
+        }
+        return sizeSparse;
+    }
+    
+    // fill concentrated
+    if (experimentRun.distribution == CONCENTRATED){
+        if (mpi_rank == 0) {
+            return nElementsTotal;
+        } else {
+            return 0;
+        }  
+    }
+
+    // throw if some option is not defined
+    if (mpi_rank==0)
+    printf("Wrong option:     %d\n", experimentRun.distribution);
+    fflush(stdout);
+    assert(false && "Distribution type not implemented for Allgather.");
 }
 
 void allgatherRun(double* execTimes){
@@ -139,13 +203,7 @@ void allgatherRun(double* execTimes){
     //benchmark
     double start, end;
     for (size_t it = 0; it < experimentRun.nRepetitions; it++) {
-        sizeSparse = 0;
-        for (size_t i = 0; i < nElementsTotal; i++) {
-            if (i%mpi_size == mpi_rank){
-                //arraySparseIn[sizeSparse] = i;
-                sizeSparse++;
-            }
-        }
+        sizeSparse = fillAllgather(nElementsTotal);
         
         MPI_Barrier(MPI_COMM_WORLD);
         start = MPI_Wtime();
@@ -219,8 +277,11 @@ void executeExperimentRun(){
 
 void setExperimentRunSetup(size_t i){
     char funcTypeStr[1024];
+    char distrStr[1024];
     cJSON* run = cJSON_GetArrayItem(runs, i);
     strcpy(experimentRun.name, cJSON_GetObjectItem(run, "experiment")->valuestring);
+
+    // parse functype
     strcpy(funcTypeStr, cJSON_GetObjectItem(run, "funcType")->valuestring);
     if (strcmp(funcTypeStr, "Allgather") == 0) {
         experimentRun.funcType = ALLGATHER_TYPE;
@@ -232,6 +293,19 @@ void setExperimentRunSetup(size_t i){
         if (mpi_rank==0)
         printf("Wrong type:     %s\n", funcTypeStr);
         assert(false && "funcType not defined.");
+    }
+
+    // parse distribution
+    strcpy(distrStr, cJSON_GetObjectItem(run, "distribution")->valuestring);
+    if (strcmp(distrStr, "uniform") == 0) {
+        experimentRun.distribution = UNIFORM;
+    } else if (strcmp(distrStr, "concentrated") == 0) {
+        experimentRun.distribution = CONCENTRATED;
+    } else {
+        if (mpi_rank==0)
+        printf("Wrong type:     %s\n", distrStr);
+        fflush(stdout);
+        assert(false && "Distribution type not defined.");
     }
     experimentRun.setSize = cJSON_GetObjectItem(run, "setSize")->valueint;
     experimentRun.filling = cJSON_GetObjectItem(run, "filling")->valueint;  

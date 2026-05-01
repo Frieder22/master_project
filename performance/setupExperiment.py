@@ -7,6 +7,7 @@ PATH = ""
 
 NEXPERIMENTRUNS = 30
 BIGSETSIZE = 10_000_000
+BIGFILLING = 100_000
 
 MPI_LOAD = {"openMPI": "spack load openmpi@4.1.6",
            "intelMPI": "module load mpi/intelmpi",
@@ -24,6 +25,13 @@ MPI_LAUNCHER = {"openMPI": "srun",
            }
 
 def createRunsJSON(data, tn):
+    def useNormalRepetitions(setSize, filling, vsFunc):
+        if vsFunc in ["ALLREDUCE_BUTTERFLY", "ALLREDUCE_BUTTERFLY_REVERSE", "ALLREDUCE_SHIFT"]:
+            return setSize <= BIGSETSIZE
+        if vsFunc in ["ALLGATHER_BUTTERFLY", "ALLGATHER_BUTTERFLY_REVERSE", "ALLGATHER_SHIFT"]:
+            return filling <= BIGFILLING
+        return True
+    
     # change all listable keys into lists
     for key in ["funcType", "vsFunc", "setSize", "filling"]:
         if type(data[key]) != list:
@@ -40,9 +48,15 @@ def createRunsJSON(data, tn):
                 else:
                     runList.append((funcType, "ITERATOR", setSize, filling)) # using ITERATOR as dummy
 
+    # define set filling distribution
+    distr = "uniform"
+    if "elementDistribution" in data:
+        distr = data["elementDistribution"]
+
     # shuffle runs
     random.seed(42)
     random.shuffle(runList)
+
     # create run.json file
     outJSON = {
         "runs": [
@@ -51,7 +65,8 @@ def createRunsJSON(data, tn):
             "vsFunc": tn[vsFunc],
             "setSize": setSize,
             "filling": filling,
-            "nRepetitions": data["nRepetitions"] if setSize <= BIGSETSIZE else data["nRepetitionsSmall"]}
+            "nRepetitions": data["nRepetitions"] if useNormalRepetitions(setSize, filling, vsFunc) else data["nRepetitionsSmall"],
+            "distribution": distr}
             for funcType, vsFunc, setSize, filling in runList
         ]
     }

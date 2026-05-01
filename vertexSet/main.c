@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
 
     Vertexset_Add(&vs, rank);
 
-    Vertexset_Allgather(&vs, VERTEXSET_OR);
+    Vertexset_Allgather_Shift(&vs, VERTEXSET_OR);
 
     Vertexset_PrintSet(&vs);
 
