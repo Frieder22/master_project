@@ -13,6 +13,20 @@ ALLGATHER_TYPE = 0
 ALLREDUCE_TYPE = 1
 VERTEXSET_TYPE = 2
 
+CRITSIZE_STRAT_REV = {0: "max",
+                  1: "min",
+                  2: "mean"
+}
+
+FOUNDATION_ALLREDUCE = {"UNION_BUTTERFLY": "ALLREDUCE_BUTTERFLY_REVERSE",
+                        "UNION_MOSTLY_HALFING": "ALLREDUCE_SHIFT" 
+}
+
+FOUNDATION_ALLREDUCE = {"UNION_BUTTERFLY": "ALLGATHER_BUTTERFLY_REVERSE",
+                        "UNION_MOSTLY_HALFING": "ALLGATHER_SHIFT" 
+}
+
+
 plotColors = {
     "ALLREDUCE_BUTTERFLY":          '#66CCEE',  # Cyan
     "ALLREDUCE_BUTTERFLY_REVERSE":  '#AA3377',  # Purple
@@ -45,16 +59,69 @@ def loadTestNumber():
             line = f.readline()
 
 
+def plotRefAllgather(setup, ax):    
+    f = open(PATH + "../data/{0}/{1}x{2}{3}.txt".format(setup["refAllgathData"],
+                                                        setup["nNodes"],
+                                                        setup["perNode"],
+                                                        setup["mpilib"]))
+    line = f.readline()
+
+    dataAllgather = {}
+    while line != "":
+        chunks = line.split(",")
+        mean = float (chunks[6].split(":")[1])                
+        filling = int (chunks[4].split(":")[1]) 
+        if filling in dataAllgather:
+            dataAllgather[filling].append(mean)
+        else:
+            dataAllgather[filling] = [mean]
+        line = f.readline()
+    f.close()
+
+    x_Allgather = []
+    for x in dataAllgather:
+        x_Allgather.append(x)
+
+    x_Allgather.sort()
+    y=[]
+    yerr=[]
+    for x in x_Allgather:
+        vals = np.array(dataAllgather[x])
+        std = np.std(vals)
+        nVals = np.shape(vals)[0]
+        y.append(np.mean(vals))
+        yerr.append(2*std/np.sqrt(nVals))
+    ax.errorbar(x_Allgather, y, yerr=yerr, ls="--", label="Reference Allgather", color="black", capsize=5)
+
+def plotRefAllreduce(setup, ax, xAxis):
+    refAllredVals = []
+    f = open(PATH + "../data/{0}/{1}x{2}{3}.txt".format(setup["refAllredData"],
+                                                        setup["nNodes"],
+                                                        setup["perNode"],
+                                                        setup["mpilib"]))
+    line = f.readline()
+    while line != "":
+        chunks = line.split(",")
+        mean = float (chunks[6].split(":")[1])
+        setSize = int (chunks[3].split(":")[1])            
+        if setSize == setup["setSize"]:
+            refAllredVals.append(mean)
+        line = f.readline()
+    f.close()
+    refAllred = np.mean(np.array(refAllredVals))
+    ax.hlines(refAllred, xmin=0.5*xAxis[0], xmax=2*xAxis[-1], colors="black", label="Reference Allreduce")
+
+
 def plotJSON(filepath):
     f = open(filepath)
     setup = json.load(f)
     f.close()
 
-    experimentName = setup["experiment"]
+    experimentName = filepath.split("/")[1]
     nNodes = setup["nNodes"]
     perNode = setup["perNode"]
     mpilibs = setup["mpilib"]
-    plotFolder = setup["plotFolder"]
+    plotFolder = filepath.split("/")[1]
     procSetup = str(nNodes) + "x" + str(perNode)
 
     if type(mpilibs) != list:
@@ -80,7 +147,7 @@ def plotJSON(filepath):
 
         if not isLocal:
             # retrieve data
-            print("Processing experiment " + experimentName)
+            print("Processing experiment " + setup["experiment"])
             print("Fetching data from cluster...")
             result = subprocess.run(
                 "scp -r hydra:~/data/{0} {1}../data".format(experimentName, PATH),
@@ -117,9 +184,37 @@ def plotJSON(filepath):
                     data[g][xval].append(mean)
                     line = f.readline()
                 f.close()
+                
+        # data from different MPI libs are saved in different files 
+        if setup["plotGraphs"] == "critsizeStrategies":
+            mpilib = setup["mpilib"]
+            f = open(PATH + "../data/{0}/{1}x{2}{3}.txt".format(experimentName,
+                                                                            nNodes,
+                                                                            perNode,
+                                                                            mpilib))
+            line = f.readline()
+            while line != "":
+                chunks = line.split(",")
+                mean = float (chunks[6].split(":")[1])
+                if xAxistype == "setSize":
+                    xval = int (chunks[3].split(":")[1])            
+                if xAxistype == "filling":
+                    xval = int (chunks[4].split(":")[1])
+                strat = int (chunks[8].split(":")[1])
+                data[CRITSIZE_STRAT_REV[strat]][xval].append(mean)
+                line = f.readline()
+            f.close()
 
         # process and plot data
         fig, ax = plt.subplots()
+
+        # plot reference Allreduce
+        if setup["plotGraphs"] == "critsizeStrategies" and "refAllredData" in setup and setup["refAllredData"] != "":
+            plotRefAllreduce(setup, ax, xAxis)
+        # plot reference Allgather data 
+        if setup["plotGraphs"] == "critsizeStrategies" and "refAllgathData" in setup and setup["refAllgathData"] != "":
+            plotRefAllgather(setup, ax)
+
         for g in graphs:
             # calculate error and mean for every x entry
             y = []
@@ -132,12 +227,14 @@ def plotJSON(filepath):
                 yerr.append(2*std/np.sqrt(nVals))
             ax.errorbar(xAxis, y, yerr=yerr, ls="--", label=g, capsize=5)
 
+
         if not setup["plotSize"]=="":
             width, height = plotsizes[setup["plotSize"]]
             fig.set_figwidth(width)
-            fig.set_figheight(height)    
+            fig.set_figheight(height)   
         ax.set_xscale("log")
         ax.set_yscale("log")
+        ax.set_xlim(0.5*xAxis[0], 2*xAxis[-1])
         ax.grid(True, which='major', linewidth=1.5)
         ax.grid(True, which='minor', linewidth=0.5, linestyle='--')
         plt.xlabel(xAxistype)
@@ -155,9 +252,7 @@ def plotJSON(filepath):
             return reference
         vsFunc = int(chunks[2].split(":")[1])
         return testnumberInv[vsFunc]
-        
-
-
+  
     def plotDataCompareNative():
         # parse data
         graphs = setup["vsFunc"]

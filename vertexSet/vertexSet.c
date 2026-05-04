@@ -77,9 +77,28 @@ void Vertexset_Init(Vertexset* const vs, const uint32_t maxsize, const MPI_Comm 
         vs->block_nElements = block_nElements_buffer;
         vs->indexShift = indexShift;
     }
-    
-
 };
+
+void Vertexset_SetCritsize(Vertexset* const vs, int citSizeStrategy){
+    //calculate critical Size depending on the stategies
+    size_t bitsInDenseArray = vs->size_bitarray * sizeof(unsigned long long);
+    switch (citSizeStrategy){
+    case CRITSIZE_MAX:
+        vs->sizeCrit = bitsInDenseArray / sizeof(uint32_t);
+        break;
+    case CRITSIZE_MIN:
+        vs->sizeCrit = bitsInDenseArray / (sizeof(uint32_t) * vs->mpi_size);
+        break;
+    case CRITSIZE_MEAN:
+        vs->sizeCrit = (bitsInDenseArray * (vs->mpi_size - 1)) / (sizeof(uint32_t) * vs->mpi_size * Vertexset_Log2_floor(vs->mpi_size));
+    default:
+        break;
+    }
+
+    // adapt allocated memory for sparse buffer
+    vs->sparseArray = (uint32_t*) realloc(vs->sparseArray, (vs->sizeCrit * 2 + 2) * sizeof(uint32_t));
+    vs->sparseBuffer = (uint32_t*) realloc(vs->sparseBuffer, vs->sizeCrit * 2 * sizeof(uint32_t));
+}
 
 void Vertexset_Add(Vertexset* const vs, const uint32_t vertex) {
     assert(vertex < vs->maxsize);
@@ -203,7 +222,7 @@ void Vertexset_Union_Butterfly(Vertexset* const vs, const int VERTEXSET_OPERATIO
     }
     
     // do reduce_scatter
-    int commNeighbor;
+    int commNeighbor, commNeighborRev;
     int startBlock;
     int startIndex, startIndexRecv;
     int nElements;
@@ -211,14 +230,17 @@ void Vertexset_Union_Butterfly(Vertexset* const vs, const int VERTEXSET_OPERATIO
     MPI_Status status;
     MPI_Request req;
     int recvCount;
+    int nIterations = Vertexset_Log2_floor(vs->mpi_size);
+    int reverseRank = Vertexset_reverseBits(vs->mpi_rank, nIterations);
     for (int shift = vs->mpi_size / 2 ; shift >= 1; shift/=2) {
         // do bitflip with LOR to find neighbor
-        commNeighbor = vs->mpi_rank ^ shift;
+        commNeighbor = reverseRank ^ shift;
+        commNeighborRev = Vertexset_reverseBits(commNeighbor, nIterations);
 
         // decide, which strategy to choose from
         if (!vs->isdense) {
             // send sparse array
-            MPI_Isend(vs->sparseArray, vs->sizeSparse, MPI_INT32_T, commNeighbor, 100, vs->MPI_COMM, &req);
+            MPI_Isend(vs->sparseArray, vs->sizeSparse, MPI_INT32_T, commNeighborRev, 100, vs->MPI_COMM, &req);
         } else {
             // find start indices of send
             startBlock = (commNeighbor/shift) * shift;
@@ -226,12 +248,12 @@ void Vertexset_Union_Butterfly(Vertexset* const vs, const int VERTEXSET_OPERATIO
             nElements = blockIdx[startBlock + shift] - startIndex;
 
             // send dense array
-            MPI_Isend(vs->bitArray + startIndex, nElements, MPI_UNSIGNED_LONG_LONG, commNeighbor, 200, vs->MPI_COMM, &req);
+            MPI_Isend(vs->bitArray + startIndex, nElements, MPI_UNSIGNED_LONG_LONG, commNeighborRev, 200, vs->MPI_COMM, &req);
         }
         
         
         // get info, if recieved message is in dense or sparse format
-        MPI_Probe(commNeighbor, MPI_ANY_TAG, vs->MPI_COMM, &status);
+        MPI_Probe(commNeighborRev, MPI_ANY_TAG, vs->MPI_COMM, &status);
         tag = status.MPI_TAG;
         
         if (tag==100) {
@@ -241,7 +263,7 @@ void Vertexset_Union_Butterfly(Vertexset* const vs, const int VERTEXSET_OPERATIO
             // check if transformation to dense is needed
             if (!vs->isdense) {
                 // recieve sparse format
-                MPI_Recv(vs->sparseArray + vs->sizeSparse, recvCount, MPI_INT32_T, commNeighbor, 100, vs->MPI_COMM, MPI_STATUS_IGNORE);
+                MPI_Recv(vs->sparseArray + vs->sizeSparse, recvCount, MPI_INT32_T, commNeighborRev, 100, vs->MPI_COMM, MPI_STATUS_IGNORE);
                 vs->sizeSparse += recvCount;
 
                 // transform to dense, if too big
@@ -257,7 +279,7 @@ void Vertexset_Union_Butterfly(Vertexset* const vs, const int VERTEXSET_OPERATIO
                 
             } else {
                 // fill into dense format
-                MPI_Recv(vs->sparseBuffer, recvCount, MPI_INT32_T, commNeighbor, 100, vs->MPI_COMM, MPI_STATUS_IGNORE);
+                MPI_Recv(vs->sparseBuffer, recvCount, MPI_INT32_T, commNeighborRev, 100, vs->MPI_COMM, MPI_STATUS_IGNORE);
                 MPI_Wait(&req, MPI_STATUS_IGNORE);
                 uint32_t vert;
                 for (size_t i = 0; i < recvCount; i++) {
@@ -272,13 +294,13 @@ void Vertexset_Union_Butterfly(Vertexset* const vs, const int VERTEXSET_OPERATIO
             // get length of message
             MPI_Get_count(&status, MPI_UNSIGNED_LONG_LONG, &recvCount);
             
-            startBlock = (vs->mpi_rank/shift) * shift;
+            startBlock = (reverseRank/shift) * shift;
             startIndex = blockIdx[startBlock];
             
             // choose reduction style depenmding on set state (dense/sparse)            
             if (vs->isdense) {
                 // Recieve into buffer
-                MPI_Recv(vs->bitBuffer, recvCount, MPI_UNSIGNED_LONG_LONG, commNeighbor, 200, vs->MPI_COMM, MPI_STATUS_IGNORE);
+                MPI_Recv(vs->bitBuffer, recvCount, MPI_UNSIGNED_LONG_LONG, commNeighborRev, 200, vs->MPI_COMM, MPI_STATUS_IGNORE);
                 // own set is dense, so just logic OR is performed
                 MPI_Wait(&req, MPI_STATUS_IGNORE);
 
@@ -292,7 +314,7 @@ void Vertexset_Union_Butterfly(Vertexset* const vs, const int VERTEXSET_OPERATIO
                 // own set is sparse
                 // recieve directly into main bitarray (no buffering is needed)
                 // also we can assume the memory of the bitarrays is 0 everywhere.
-                MPI_Recv(vs->bitArray + startIndex, recvCount, MPI_UNSIGNED_LONG_LONG, commNeighbor, 200, vs->MPI_COMM, MPI_STATUS_IGNORE);
+                MPI_Recv(vs->bitArray + startIndex, recvCount, MPI_UNSIGNED_LONG_LONG, commNeighborRev, 200, vs->MPI_COMM, MPI_STATUS_IGNORE);
 
                 // no wait is needed, as we used sparse array in the send and now only dense arrays are needed
                 
@@ -320,10 +342,11 @@ void Vertexset_Union_Butterfly(Vertexset* const vs, const int VERTEXSET_OPERATIO
     // do allGather
     for (int shift = 1; shift < vs->mpi_size; shift*=2)  {
         // do bitflip with LOR to find neighbor
-        commNeighbor = vs->mpi_rank ^ shift;
+        commNeighbor = reverseRank ^ shift;
+        commNeighborRev = Vertexset_reverseBits(commNeighbor, nIterations);
 
         // find start indices of send
-        startBlock = (vs->mpi_rank/shift) * shift;
+        startBlock = (reverseRank/shift) * shift;
         startIndex = blockIdx[startBlock];
         nElements = blockIdx[startBlock + shift] - startIndex;
         
@@ -333,8 +356,8 @@ void Vertexset_Union_Butterfly(Vertexset* const vs, const int VERTEXSET_OPERATIO
         recvCount = blockIdx[startBlock + shift]-startIndexRecv;
         
         // Sending and recieval of blocks
-        MPI_Sendrecv(vs->bitArray + startIndex, nElements, MPI_UNSIGNED_LONG_LONG, commNeighbor, 101,
-                     vs->bitArray + startIndexRecv, recvCount, MPI_UNSIGNED_LONG_LONG, commNeighbor, 101,
+        MPI_Sendrecv(vs->bitArray + startIndex, nElements, MPI_UNSIGNED_LONG_LONG, commNeighborRev, 101,
+                     vs->bitArray + startIndexRecv, recvCount, MPI_UNSIGNED_LONG_LONG, commNeighborRev, 101,
                     vs->MPI_COMM, MPI_STATUS_IGNORE);
     }
 
@@ -984,7 +1007,6 @@ void Vertexset_PrintSet(Vertexset* const vs){
     printf("\n");    
 };
 
-
 void Vertexset_Deinit(Vertexset* const vs){
     free(vs->bitArray);
     free(vs->sparseArray);
@@ -993,6 +1015,3 @@ void Vertexset_Deinit(Vertexset* const vs){
     free(vs->displ);
     free(vs->sizesAll);
 };
-
-
-

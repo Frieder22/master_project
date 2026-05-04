@@ -1,1 +1,1 @@
-AllgatherCompareConcentrated/36x1.json
+UnionCritSize/32x1.json

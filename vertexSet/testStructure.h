@@ -8,8 +8,8 @@ typedef void (*vsFunc) (Vertexset*, int);
 
 enum Testcase{
     ITERATOR,
-    EXACT_HALFING,
-    APROXIMATE_HALFING,
+    UNION_BUTTERFLY,
+    UNION_MOSTLY_HALFING,
     NAIVE,
     ALLREDUCE_BUTTERFLY,
     ALLREDUCE_BUTTERFLY_REVERSE,
@@ -22,9 +22,9 @@ enum Testcase{
 
 vsFunc getVertexsetFunc(int funcname){
     switch (funcname) {
-    case EXACT_HALFING:
+    case UNION_BUTTERFLY:
         return Vertexset_Union_Butterfly;
-    case APROXIMATE_HALFING:
+    case UNION_MOSTLY_HALFING:
         return Vertexset_Union_Shift;
     case NAIVE:
         return Vertexset_Allreduce_Naive;
@@ -50,9 +50,9 @@ vsFunc getVertexsetFunc(int funcname){
  */
 bool getCommPattern(int funcname){
     switch (funcname) {
-    case EXACT_HALFING:
+    case UNION_BUTTERFLY:
         return false;
-    case APROXIMATE_HALFING:
+    case UNION_MOSTLY_HALFING:
         return true;
     case ALLREDUCE_BUTTERFLY:
         return false;

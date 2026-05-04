@@ -1,19 +1,19 @@
 #! /bin/bash
 #SBATCH -p q_thesis
-#SBATCH -N 36
+#SBATCH -N 32
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpu-freq=High
-#SBATCH --job-name=AllgatherCompareConcentrated
+#SBATCH --job-name=UnionCritSize
 #SBATCH --time=1:00:00
 
-mkdir ../data/AllgatherCompareConcentrated
+mkdir ../data/UnionCritSize
 
-rm ../data/AllgatherCompareConcentrated/36x1MPICH.txt
+rm ../data/UnionCritSize/32x1MPICH.txt
 echo MPIlib: MPICH
 module unload mpi/intelmpi
 make perf
 for i in {1..30}; do
-    mpirun ../build/executeExperimentRuns.o runs.json >> ../data/AllgatherCompareConcentrated/36x1MPICH.txt
+    mpirun ../build/executeExperimentRuns.o runs.json >> ../data/UnionCritSize/32x1MPICH.txt
 echo iteration $i
 done
 module unload mpi/intelmpi

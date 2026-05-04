@@ -39,6 +39,12 @@ typedef struct Vertexset{
     int indexShift;
 } Vertexset;
 
+enum critSizeStrategies {
+    CRITSIZE_MAX,
+    CRITSIZE_MIN,
+    CRITSIZE_MEAN
+};
+
 /**
  * Initializes Vertex Set object.
  * Runs in O(n)
@@ -48,6 +54,8 @@ typedef struct Vertexset{
  * @param MPI_COMM MPI communicator, where reduce operation are possible
  */
 void Vertexset_Init(Vertexset* const vs, const uint32_t maxsize, const MPI_Comm MPI_COMM, bool shiftPattern);
+
+void Vertexset_SetCritsize(Vertexset* const vs, int citsizeStrategy);
 
 /**
  * Adds a vertex to vertexset.

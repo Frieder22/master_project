@@ -31,6 +31,7 @@ struct experimentRun{
     int filling;
     int nRepetitions;
     int distribution;
+    int critSizeStrategy;
 } experimentRun;
 
 struct measuredData{
@@ -41,7 +42,7 @@ struct measuredData{
 
 void saveData(){
     if (mpi_rank==0) {
-        printf("name: %s, functype: %d, vsFunc: %d, setsize: %d, filling: %d, nRep: %d, mean: %e, nAccepted: %d\n",
+        printf("name: %s, functype: %d, vsFunc: %d, setsize: %d, filling: %d, nRep: %d, mean: %e, nAccepted: %d, critSizeStrat: %d\n",
                experimentRun.name,
                experimentRun.funcType,
                experimentRun.vsFunc,
@@ -49,7 +50,8 @@ void saveData(){
                experimentRun.filling,
                experimentRun.nRepetitions,
                measuredData.mean,
-               measuredData.nAccepted);
+               measuredData.nAccepted,
+               experimentRun.critSizeStrategy);
     }
 }
 
@@ -136,6 +138,9 @@ void vertexsetRun(double* execTimes, vsFunc func){
     Vertexset_Init(&vs, experimentRun.setSize, MPI_COMM_WORLD, shiftPattern);
     
     size_t nElementsTotal = experimentRun.filling;
+
+    // set critsize strategy
+    Vertexset_SetCritsize(&vs, experimentRun.critSizeStrategy);
 
     // if VS allgather is tested, critical size can not be exceeded
     if (experimentRun.vsFunc == ALLGATHER_SHIFT 
@@ -313,8 +318,14 @@ void setExperimentRunSetup(size_t i){
     if (experimentRun.funcType==VERTEXSET_TYPE) {
         experimentRun.vsFunc = cJSON_GetObjectItem(run, "vsFunc")->valueint; // enum from testStructure.h needs to be used
     }
-    
-}
+    // set critical size strategy, if defined
+    cJSON* critSize_item = cJSON_GetObjectItem(run, "critSizeStrat");
+    if (critSize_item != NULL) {
+        experimentRun.critSizeStrategy = critSize_item->valueint;
+    } else {
+        experimentRun.critSizeStrategy = 0; //Default is CRITSIZE_MAX strategy
+    }    
+}   
 
 static char *read_file(const char *path) {
     // simply safe whole file in buffer

@@ -24,6 +24,11 @@ MPI_LAUNCHER = {"openMPI": "srun",
            "MPICH": "mpirun"
            }
 
+CRITSIZE_STRAT = {"max": 0,
+                  "min": 1,
+                  "mean": 2
+}
+
 def createRunsJSON(data, tn):
     def useNormalRepetitions(setSize, filling, vsFunc):
         if vsFunc in ["ALLREDUCE_BUTTERFLY", "ALLREDUCE_BUTTERFLY_REVERSE", "ALLREDUCE_SHIFT"]:
@@ -31,22 +36,31 @@ def createRunsJSON(data, tn):
         if vsFunc in ["ALLGATHER_BUTTERFLY", "ALLGATHER_BUTTERFLY_REVERSE", "ALLGATHER_SHIFT"]:
             return filling <= BIGFILLING
         return True
-    
+
     # change all listable keys into lists
     for key in ["funcType", "vsFunc", "setSize", "filling"]:
         if type(data[key]) != list:
             data[key] = [data[key]]
 
+    # add default if neccesary
+    if "critsizeStrategies" in data:
+        if type(data["critsizeStrategies"]) != list:
+            print("ASDASFASDF!!")
+            data["critsizeStrategies"] = [data["critsizeStrategies"]]
+    else:
+        data["critsizeStrategies"] = [CRITSIZE_STRAT["max"]]
+
     # find all run setups
     runList = []
-    for funcType in data["funcType"]:
-        for setSize in data["setSize"]:
-            for filling in data["filling"]:
-                if funcType == "Vertexset":
-                    for vsFunc in data["vsFunc"]:
-                        runList.append((funcType, vsFunc, setSize, filling))
-                else:
-                    runList.append((funcType, "ITERATOR", setSize, filling)) # using ITERATOR as dummy
+    for critStrat in data["critsizeStrategies"]:
+        for funcType in data["funcType"]:
+            for setSize in data["setSize"]:
+                for filling in data["filling"]:
+                    if funcType == "Vertexset":
+                        for vsFunc in data["vsFunc"]:
+                            runList.append((funcType, vsFunc, setSize, filling, critStrat))
+                    else:
+                        runList.append((funcType, "ITERATOR", setSize, filling, critStrat)) # using ITERATOR as dummy
 
     # define set filling distribution
     distr = "uniform"
@@ -66,17 +80,17 @@ def createRunsJSON(data, tn):
             "setSize": setSize,
             "filling": filling,
             "nRepetitions": data["nRepetitions"] if useNormalRepetitions(setSize, filling, vsFunc) else data["nRepetitionsSmall"],
-            "distribution": distr}
-            for funcType, vsFunc, setSize, filling in runList
+            "distribution": distr,
+            "critSizeStrat": CRITSIZE_STRAT[critStrat]}
+            for funcType, vsFunc, setSize, filling, critStrat in runList
         ]
     }
     f = open(PATH + "runs.json", "w")
     json.dump(outJSON, f, indent=4)
     f.close()
 
-def createSlurmJob(data):
+def createSlurmJob(data, experimentName):
     # prepare and get setup values
-    experimentName = data["experiment"]
     nNodes = data["nNodes"]
     perNode = data["perNode"]
     if type(data["mpilib"]) != list:
@@ -93,13 +107,13 @@ def createSlurmJob(data):
     f.write("#SBATCH --time=1:00:00\n\n")
 
     #create folder for saved data
-    f.write("mkdir ../data/{0}\n\n".format(data["experiment"]))
+    f.write("mkdir ../data/{0}\n\n".format(experimentName))
     # procedure for different MPI libs
     for mpilib in data["mpilib"]:
         # delete old measurement data, if there is some present
-        f.write("rm ../data/{0}/{1}x{2}{3}.txt\n".format(data["experiment"],
-                                                data["nNodes"],
-                                                data["perNode"],
+        f.write("rm ../data/{0}/{1}x{2}{3}.txt\n".format(experimentName,
+                                                nNodes,
+                                                perNode,
                                                 mpilib))
         
         f.write("echo MPIlib: {0}\n".format(mpilib))
@@ -107,9 +121,9 @@ def createSlurmJob(data):
         f.write("make perf\n")
         f.write("for i in {{1..{0}}}; do\n".format(NEXPERIMENTRUNS))
         f.write("    {0} ../build/executeExperimentRuns.o runs.json >> ../data/{1}/{2}x{3}{4}.txt\n".format(MPI_LAUNCHER[mpilib],
-                                                                                                     data["experiment"],
-                                                                                                     data["nNodes"],
-                                                                                                     data["perNode"],
+                                                                                                     experimentName,
+                                                                                                     nNodes,
+                                                                                                     perNode,
                                                                                                      mpilib))
         f.write("echo iteration $i\n")
         f.write("done\n")
@@ -141,6 +155,8 @@ f = open(PATH + "experiments/sheduledExperiment.txt")
 pathExperiment = f.readline()
 f.close()
 
+experiment = pathExperiment.split("/")[0]
+
 f = open(PATH + "experiments/" + pathExperiment)
 toExecuteData = json.load(f)
 f.close()
@@ -149,4 +165,4 @@ f.close()
 tn = findTestNumber()
 
 createRunsJSON(toExecuteData, tn)
-createSlurmJob(toExecuteData)
+createSlurmJob(toExecuteData, experiment)

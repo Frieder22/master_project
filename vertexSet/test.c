@@ -34,10 +34,10 @@ void printTestInfo(int testnumber){
         case ITERATOR:
             printf("Testing functionality of Iterator functions.\n");
             break;
-        case EXACT_HALFING:
+        case UNION_BUTTERFLY:
             printf("Testing functionality of Exact Halfing Reduce.\n");
             break;
-        case APROXIMATE_HALFING:
+        case UNION_MOSTLY_HALFING:
             printf("Testing functionality of Aproximate Halfing Reduce.\n");
             break;
         case NAIVE:
@@ -602,12 +602,12 @@ int main(int argc, char *argv[]){
             test_Iterator_sparse();
             break;
         
-        case EXACT_HALFING: // Test Exact halfing
+        case UNION_BUTTERFLY: // Test Exact halfing
             assert((size & (size - 1)) == 0); // only works for ranks = 2^k
             test_Allreduce_batch(Vertexset_Union_Butterfly);
             break;
 
-        case APROXIMATE_HALFING: // Test Approximate halfing
+        case UNION_MOSTLY_HALFING: // Test Approximate halfing
             test_Allreduce_batch(Vertexset_Union_Shift);
             break;
 

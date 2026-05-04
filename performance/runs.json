@@ -1,346 +1,94 @@
 {
     "runs": [
         {
-            "experiment": "AllgatherCompareConcentrated",
+            "experiment": "UnionCritsize",
             "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 5000,
+            "vsFunc": 1,
+            "setSize": 10000000,
+            "filling": 312510,
             "nRepetitions": 300,
-            "distribution": "concentrated"
+            "distribution": "uniform",
+            "critSizeStrat": 1
         },
         {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 50000,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
+            "experiment": "UnionCritsize",
             "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 2000,
+            "vsFunc": 1,
+            "setSize": 10000000,
+            "filling": 312510,
             "nRepetitions": 300,
-            "distribution": "concentrated"
+            "distribution": "uniform",
+            "critSizeStrat": 2
         },
         {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 20000,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 100000,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 2000,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
+            "experiment": "UnionCritsize",
             "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 10000,
+            "vsFunc": 1,
+            "setSize": 10000000,
+            "filling": 9775,
             "nRepetitions": 300,
-            "distribution": "concentrated"
+            "distribution": "uniform",
+            "critSizeStrat": 2
         },
         {
-            "experiment": "AllgatherCompareConcentrated",
+            "experiment": "UnionCritsize",
             "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 50,
+            "vsFunc": 1,
+            "setSize": 10000000,
+            "filling": 9775,
             "nRepetitions": 300,
-            "distribution": "concentrated"
+            "distribution": "uniform",
+            "critSizeStrat": 1
         },
         {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 100,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 5000,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 500,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
+            "experiment": "UnionCritsize",
             "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 20,
+            "vsFunc": 1,
+            "setSize": 10000000,
+            "filling": 60556,
             "nRepetitions": 300,
-            "distribution": "concentrated"
+            "distribution": "uniform",
+            "critSizeStrat": 2
         },
         {
-            "experiment": "AllgatherCompareConcentrated",
+            "experiment": "UnionCritsize",
             "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 1000,
+            "vsFunc": 1,
+            "setSize": 10000000,
+            "filling": 60556,
             "nRepetitions": 300,
-            "distribution": "concentrated"
+            "distribution": "uniform",
+            "critSizeStrat": 0
         },
         {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 1,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
+            "experiment": "UnionCritsize",
             "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 10,
+            "vsFunc": 1,
+            "setSize": 10000000,
+            "filling": 60556,
             "nRepetitions": 300,
-            "distribution": "concentrated"
+            "distribution": "uniform",
+            "critSizeStrat": 1
         },
         {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 50,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 2,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 10,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
+            "experiment": "UnionCritsize",
             "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 200000,
-            "nRepetitions": 10,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 1000000,
+            "vsFunc": 1,
+            "setSize": 10000000,
+            "filling": 312510,
             "nRepetitions": 300,
-            "distribution": "concentrated"
+            "distribution": "uniform",
+            "critSizeStrat": 0
         },
         {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 10000,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 200,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
+            "experiment": "UnionCritsize",
             "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 1,
+            "vsFunc": 1,
+            "setSize": 10000000,
+            "filling": 9775,
             "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 500000,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 20000,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 1000000,
-            "nRepetitions": 10,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 5,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 200000,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 1000,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 20,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 50000000,
-            "filling": 5,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 100,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 500,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 50000,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 100000,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 500000,
-            "nRepetitions": 10,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 2,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
-        },
-        {
-            "experiment": "AllgatherCompareConcentrated",
-            "funcType": "Vertexset",
-            "vsFunc": 10,
-            "setSize": 50000000,
-            "filling": 200,
-            "nRepetitions": 300,
-            "distribution": "concentrated"
+            "distribution": "uniform",
+            "critSizeStrat": 0
         }
     ]
 }

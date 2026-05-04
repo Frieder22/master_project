@@ -10,7 +10,8 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": "-f experiments/AllgatherCompareUniform/32x32.json"
+            "cwd": "${workspaceFolder}/performance",
+            "args": "-f experiments/UnionCritSize"
         }
     ]
 }

@@ -394,7 +394,7 @@ int main(int argc, char *argv[]){
 
     switch (testNumber) {
     // perf_red_exactHalfing: measure performance of allreduce 
-    case EXACT_HALFING:
+    case UNION_BUTTERFLY:
         if (rank==0) {
             printf("-------------------------------------------------------------\n");
             printf("Testing performance of Vertexset_Allreduce_Union_Butterfly...\n");
@@ -405,7 +405,7 @@ int main(int argc, char *argv[]){
         break;
 
     // perf_red_approxHalfing: measure performance of allreduce 
-    case APROXIMATE_HALFING:
+    case UNION_MOSTLY_HALFING:
         if (rank==0) {
             printf("-------------------------------------------------------------\n");
             printf("Testing performance of Vertexset_Union_Shift...\n");
