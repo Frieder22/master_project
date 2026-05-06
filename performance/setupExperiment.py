@@ -11,17 +11,17 @@ BIGFILLING = 100_000
 
 MPI_LOAD = {"openMPI": "spack load openmpi@4.1.6",
            "intelMPI": "module load mpi/intelmpi",
-           "MPICH": "module unload mpi/intelmpi"
+           "MPICH": "spack load mpich@4.1.2"
            }
 
 MPI_UNLOAD = {"openMPI": "spack unload openmpi@4.1.6 ",
            "intelMPI": "module unload mpi/intelmpi",
-           "MPICH": "module unload mpi/intelmpi"
+           "MPICH": "spack unload mpich@4.1.2 "
            }
 
 MPI_LAUNCHER = {"openMPI": "srun",
            "intelMPI": "srun",
-           "MPICH": "mpirun"
+           "MPICH": "srun"
            }
 
 CRITSIZE_STRAT = {"max": 0,
@@ -30,12 +30,18 @@ CRITSIZE_STRAT = {"max": 0,
 }
 
 def createRunsJSON(data, tn):
-    def useNormalRepetitions(setSize, filling, vsFunc):
-        if vsFunc in ["ALLREDUCE_BUTTERFLY", "ALLREDUCE_BUTTERFLY_REVERSE", "ALLREDUCE_SHIFT"]:
+    def useNormalRepetitions(setSize, filling, vsFunc, funcType):
+        if funcType == "Vertexset":
+            if vsFunc in ["ALLREDUCE_BUTTERFLY", "ALLREDUCE_BUTTERFLY_REVERSE", "ALLREDUCE_SHIFT"]:
+                return setSize <= BIGSETSIZE
+            if vsFunc in ["ALLGATHER_BUTTERFLY", "ALLGATHER_BUTTERFLY_REVERSE", "ALLGATHER_SHIFT"]:
+                return filling <= BIGFILLING
+            return setSize <= BIGSETSIZE or filling <= BIGFILLING
+        if funcType == "Allreduce":
             return setSize <= BIGSETSIZE
-        if vsFunc in ["ALLGATHER_BUTTERFLY", "ALLGATHER_BUTTERFLY_REVERSE", "ALLGATHER_SHIFT"]:
+        if funcType == "Allgather":
             return filling <= BIGFILLING
-        return True
+
 
     # change all listable keys into lists
     for key in ["funcType", "vsFunc", "setSize", "filling"]:
@@ -45,10 +51,9 @@ def createRunsJSON(data, tn):
     # add default if neccesary
     if "critsizeStrategies" in data:
         if type(data["critsizeStrategies"]) != list:
-            print("ASDASFASDF!!")
             data["critsizeStrategies"] = [data["critsizeStrategies"]]
     else:
-        data["critsizeStrategies"] = [CRITSIZE_STRAT["max"]]
+        data["critsizeStrategies"] = ["max"]
 
     # find all run setups
     runList = []
@@ -79,7 +84,7 @@ def createRunsJSON(data, tn):
             "vsFunc": tn[vsFunc],
             "setSize": setSize,
             "filling": filling,
-            "nRepetitions": data["nRepetitions"] if useNormalRepetitions(setSize, filling, vsFunc) else data["nRepetitionsSmall"],
+            "nRepetitions": data["nRepetitions"] if useNormalRepetitions(setSize, filling, vsFunc, funcType) else data["nRepetitionsSmall"],
             "distribution": distr,
             "critSizeStrat": CRITSIZE_STRAT[critStrat]}
             for funcType, vsFunc, setSize, filling, critStrat in runList

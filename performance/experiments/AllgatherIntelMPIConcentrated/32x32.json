@@ -1,0 +1,18 @@
+{
+    "experiment": "AllgatherIntelMPIConcentrated",
+    "funcType": "Allgather",
+    "vsFunc": 0,
+    "setSize": 50000000,
+    "filling": [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000],
+    "nRepetitions": 300,
+    "nRepetitionsSmall" : 10,
+    "elementDistribution": "concentrated",
+    "mpilib": ["intelMPI"],
+    "nNodes": 32,
+    "perNode": 32,
+    "xAxis": "filling",
+    "yAxis" : "runtime",
+    "plotGraphs" : "mpilib",
+    "plotFolder" : "AllgatherIntelMPIConcentrated",
+    "plotSize" : "small"
+}

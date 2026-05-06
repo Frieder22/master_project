@@ -5,6 +5,7 @@ import sys
 import matplotlib.pylab as plt
 import numpy as np
 import argparse
+from matplotlib.ticker import LogLocator, LogFormatter, LogFormatterMathtext
 
 PATH = ""
 DPI = 300
@@ -12,6 +13,13 @@ DPI = 300
 ALLGATHER_TYPE = 0
 ALLREDUCE_TYPE = 1
 VERTEXSET_TYPE = 2
+
+funcTypesToNumbers = {"Vertexset": VERTEXSET_TYPE,
+                      "vertexset": VERTEXSET_TYPE,
+                      "Allreduce": ALLREDUCE_TYPE,
+                      "allreduce": ALLREDUCE_TYPE,
+                      "Allgather": ALLGATHER_TYPE,
+                      "allgather": ALLGATHER_TYPE}
 
 CRITSIZE_STRAT_REV = {0: "max",
                   1: "min",
@@ -34,7 +42,8 @@ plotColors = {
     "ALLGATHER_BUTTERFLY":          '#4477AA',  # Blue
     "ALLGATHER_BUTTERFLY_REVERSE":  '#EE6677',  # Red
     "ALLGATHER_SHIFT":              '#228833',  # Green
-
+    "reference":                    "#D51414",
+    "Reference":                    "#D51414"   
 }
 
 yellow=  '#CCBB44',  # Yellow
@@ -111,17 +120,146 @@ def plotRefAllreduce(setup, ax, xAxis):
     refAllred = np.mean(np.array(refAllredVals))
     ax.hlines(refAllred, xmin=0.5*xAxis[0], xmax=2*xAxis[-1], colors="black", label="Reference Allreduce")
 
+def getData(setup, funcSetup):
+    f = open(PATH + "../data/{0}/{1}x{2}{3}.txt".format(funcSetup["folder"],
+                                                        setup["nNodes"],
+                                                        setup["perNode"],
+                                                        funcSetup["mpilib"]))
+    line = f.readline()
+    xAxistype = setup["xAxis"]
+    xVals = setup[xAxistype]
+    xVals.sort()
+
+    funcTypeNeeded = funcTypesToNumbers[funcSetup["funcType"]]
+    vsFuncNeeded = 0
+    if funcTypeNeeded == VERTEXSET_TYPE:
+        vsFuncNeeded = testnumber[funcSetup["vsFunc"]]
+
+    # parse data
+    data = {x:[] for x in xVals}
+    while line != "":
+        chunks = line.split(",")
+        funcType = int(chunks[1].split(":")[1])
+        vsFunc = int(chunks[2].split(":")[1])
+        mean = float (chunks[6].split(":")[1])
+        if xAxistype == "setSize":
+            xval = int (chunks[3].split(":")[1])            
+        if xAxistype == "filling":
+            xval = int (chunks[4].split(":")[1])
+        if funcType == funcTypeNeeded and vsFunc == vsFuncNeeded:
+            data[xval].append(mean)
+        line = f.readline()
+    f.close()
+
+    # calculate mean and stderr
+    y = []
+    yerr = []
+    for x in xVals:
+        vals = np.array(data[x])
+        std = np.std(vals)
+        nVals = np.shape(vals)[0]
+        y.append(np.mean(vals))
+        yerr.append(2*std/np.sqrt(nVals))
+
+    return xAxistype, np.array(xVals), np.array(y), np.array(yerr)
+
+def finishPlot(ax, fig, xVals, xAxistype, plotFolder, setup):
+    procSetup = str(setup["nNodes"]) + "x" + str(setup["perNode"])
+
+    if "ylim" in setup:
+        ax.set_ylim(*setup["ylim"])
+
+    if not setup["plotSize"]=="":
+        width, height = plotsizes[setup["plotSize"]]
+        fig.set_figwidth(width)
+        fig.set_figheight(height)
+    ax.set_xlim(0.5*xVals[0], xVals[-1]*2)
+    ax.set_xscale("log")
+    ax.grid(True, which='major', linewidth=1.5)
+    ax.grid(True, which='minor', linewidth=0.5, linestyle='--')
+    plt.xlabel(xAxistype)
+    plt.legend()
+    plt.tight_layout()
+    if not os.path.exists(PATH + "../plots/" + plotFolder):
+        os.makedirs(PATH + "../plots/" + plotFolder)
+
+    plt.savefig(PATH + "../plots/" + plotFolder + "/" + procSetup + plotFolder + ".png", dpi=DPI)
+
+
+def plotJSONcompareUnscaled(setup, plotFolder):
+    referenceSetup = setup["refFunc"]
+    name = referenceSetup["name"]
+    # begin plotting
+    fig, ax = plt.subplots()
+
+    xAxistype, xVals, means_ref, errs_ref = getData(setup, referenceSetup)
+    ax.errorbar(xVals, means_ref, yerr=errs_ref, ls="--", label=name, capsize=5, color=plotColors[name])
+
+
+    funcSetups = setup["funcs"]
+    for funcSetup in funcSetups:
+        name = funcSetup["name"]
+        xAxistype, xVals, means_ref, errs_ref = getData(setup, funcSetup)
+        ax.errorbar(xVals, means_ref, yerr=errs_ref, ls="--", label=name, capsize=5, color=plotColors[name])
+    
+    ax.set_yscale("log")
+    plt.ylabel("Execution time [s]")
+
+    # end plotting
+    finishPlot(ax, fig, xVals, xAxistype, plotFolder, setup)
+
+def plotJSONcompareScaled(setup, plotFolder):
+    referenceSetup = setup["refFunc"]
+    name = referenceSetup["name"]
+    # begin plotting
+    fig, ax = plt.subplots()
+
+    xAxistype, xVals, means_ref, errs_ref = getData(setup, referenceSetup)
+
+    funcSetups = setup["funcs"]
+    for funcSetup in funcSetups:
+        name = funcSetup["name"]
+        xAxistype, xVals, means, errs = getData(setup, funcSetup)
+
+        relMeans = means/means_ref
+        relMeans_err = relMeans * np.sqrt((errs_ref/means_ref)**2 + (errs/means)**2)
+
+        ax.errorbar(xVals, relMeans, relMeans_err, ls="--", label=name, capsize=5, color=plotColors[name])
+
+    ax.set_yscale("log")
+    plt.ylabel("Relative execution time") 
+    ax.hlines(1, 0.5*xVals[0], xVals[-1]*2, colors=plotColors["reference"])
+
+    # end plotting
+    finishPlot(ax, fig, xVals, xAxistype, plotFolder, setup)
+
+
+def plotJSONcompare(setup, plotFolder):
+    scaled = True
+    if "scaled" in setup and setup["scaled"] in ["False", "false"]:
+        scaled = False
+    if scaled:
+        plotJSONcompareScaled(setup, plotFolder)
+    else:
+        plotJSONcompareUnscaled(setup, plotFolder)
+
+
+
 
 def plotJSON(filepath):
     f = open(filepath)
     setup = json.load(f)
     f.close()
 
+    plotFolder = filepath.split("/")[1]
+    if "experimentType" in setup and setup["experimentType"] == "compare":
+        plotJSONcompare(setup, plotFolder)
+        return
+
     experimentName = filepath.split("/")[1]
     nNodes = setup["nNodes"]
     perNode = setup["perNode"]
     mpilibs = setup["mpilib"]
-    plotFolder = filepath.split("/")[1]
     procSetup = str(nNodes) + "x" + str(perNode)
 
     if type(mpilibs) != list:
@@ -154,6 +292,7 @@ def plotJSON(filepath):
                 shell=True, capture_output=True, text=True
             )
             print("...done")
+            print(result)
 
 
     def plotDataClassic():
@@ -161,6 +300,7 @@ def plotJSON(filepath):
         graphs = setup[setup["plotGraphs"]]
         xAxistype = setup["xAxis"]
         xAxis = setup[xAxistype]
+        xAxis.sort()
 
 
         # sorting by graph
@@ -343,6 +483,9 @@ def plotJSON(filepath):
 
 
     fetchDataFromCluster()
+    if "noPlot" in setup and setup["noPlot"] in ["True", "true"]:
+        return
+
     if setup["plotGraphs"] == "compareAgainstNative":
         plotDataCompareNative()
     else:

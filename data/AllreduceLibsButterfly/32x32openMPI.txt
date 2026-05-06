@@ -1,570 +1,570 @@
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.025637e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.856205e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.922015e-05, nAccepted: 288
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.915058e-04, nAccepted: 260
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.906187e-05, nAccepted: 288
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.088653e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.140159e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.648425e-05, nAccepted: 248
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.910873e-03, nAccepted: 245
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.252571e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.821932e-04, nAccepted: 260
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.975764e-05, nAccepted: 288
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.023981e-03, nAccepted: 268
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.220407e-05, nAccepted: 288
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.226193e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.528931e-04, nAccepted: 252
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.918064e-04, nAccepted: 244
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.349710e-05, nAccepted: 295
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 4.974288e-05, nAccepted: 283
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.015786e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.935131e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.916918e-05, nAccepted: 286
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.941646e-04, nAccepted: 254
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.609771e-05, nAccepted: 287
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.094457e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.134878e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.995689e-05, nAccepted: 269
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.915259e-03, nAccepted: 250
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.264494e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.844506e-04, nAccepted: 257
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.200406e-05, nAccepted: 286
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.015828e-03, nAccepted: 261
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.632996e-05, nAccepted: 266
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.203168e-01, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.550017e-04, nAccepted: 272
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.899104e-04, nAccepted: 239
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.378395e-05, nAccepted: 295
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 4.940198e-05, nAccepted: 275
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.022449e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.947552e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.778178e-05, nAccepted: 286
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.966209e-04, nAccepted: 261
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.869751e-05, nAccepted: 292
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.094903e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.136853e-01, nAccepted: 7
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.503112e-05, nAccepted: 267
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.919570e-03, nAccepted: 250
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.262342e-02, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.873729e-04, nAccepted: 249
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.205370e-05, nAccepted: 282
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.012944e-03, nAccepted: 255
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.654706e-05, nAccepted: 275
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.210484e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.531824e-04, nAccepted: 267
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.951422e-04, nAccepted: 235
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.903925e-05, nAccepted: 292
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.944894e-05, nAccepted: 288
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.021096e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.860975e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.754484e-05, nAccepted: 288
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.946356e-04, nAccepted: 257
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.964873e-05, nAccepted: 291
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.302904e-02, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.128887e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.681942e-05, nAccepted: 270
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.926412e-03, nAccepted: 254
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.270293e-02, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.873268e-04, nAccepted: 258
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.723175e-05, nAccepted: 277
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.017773e-03, nAccepted: 265
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.129336e-05, nAccepted: 288
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.217580e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.586265e-04, nAccepted: 235
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.916886e-04, nAccepted: 262
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.415495e-05, nAccepted: 298
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.132755e-05, nAccepted: 283
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.008872e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.834707e-03, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.938821e-05, nAccepted: 291
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.940372e-04, nAccepted: 253
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.968600e-05, nAccepted: 294
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.170352e-02, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.137158e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.602204e-05, nAccepted: 267
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.912493e-03, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.238787e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.872756e-04, nAccepted: 247
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.898552e-05, nAccepted: 277
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.013271e-03, nAccepted: 256
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.812626e-05, nAccepted: 282
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.213364e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.561723e-04, nAccepted: 261
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.900831e-04, nAccepted: 244
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.351164e-05, nAccepted: 295
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.209599e-05, nAccepted: 282
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.010114e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.865613e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.781424e-05, nAccepted: 285
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.975744e-04, nAccepted: 246
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.856843e-05, nAccepted: 294
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.093423e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.125994e-01, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.377879e-05, nAccepted: 265
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.920645e-03, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.299178e-02, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.952576e-04, nAccepted: 257
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.136021e-05, nAccepted: 282
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.013656e-03, nAccepted: 263
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.737232e-05, nAccepted: 269
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.193416e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.553769e-04, nAccepted: 271
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.914381e-04, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.881652e-05, nAccepted: 290
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.427114e-05, nAccepted: 293
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.006295e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.982639e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.976941e-05, nAccepted: 277
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.937112e-04, nAccepted: 256
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.868421e-05, nAccepted: 295
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.086231e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.126402e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.679299e-05, nAccepted: 269
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.936933e-03, nAccepted: 254
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.283875e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.849988e-04, nAccepted: 252
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.371579e-05, nAccepted: 290
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.014943e-03, nAccepted: 255
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.018804e-05, nAccepted: 292
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.203120e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.550029e-04, nAccepted: 278
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.914662e-04, nAccepted: 234
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.294018e-05, nAccepted: 289
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 4.862033e-05, nAccepted: 269
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.011180e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.804889e-03, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.826486e-05, nAccepted: 286
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.962246e-04, nAccepted: 259
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.728659e-05, nAccepted: 283
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.154666e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.137024e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.005485e-04, nAccepted: 272
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.928209e-03, nAccepted: 247
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.263243e-02, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.845618e-04, nAccepted: 257
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.370991e-05, nAccepted: 292
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.018081e-03, nAccepted: 264
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.771217e-05, nAccepted: 281
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.193815e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.555362e-04, nAccepted: 285
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.912079e-04, nAccepted: 237
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.857905e-05, nAccepted: 289
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.376728e-05, nAccepted: 293
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.013444e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.840982e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.884483e-05, nAccepted: 290
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.966540e-04, nAccepted: 257
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.835897e-05, nAccepted: 295
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.091559e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.128323e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.493428e-05, nAccepted: 264
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.916371e-03, nAccepted: 250
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.228774e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.871766e-04, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.045025e-05, nAccepted: 288
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.021384e-03, nAccepted: 260
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.077350e-05, nAccepted: 286
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.220092e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.542212e-04, nAccepted: 271
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.920498e-04, nAccepted: 249
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.787005e-05, nAccepted: 275
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.911104e-05, nAccepted: 250
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.011124e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.827466e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.884356e-05, nAccepted: 290
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.957225e-04, nAccepted: 258
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.272063e-05, nAccepted: 287
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.134095e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.127939e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.643849e-05, nAccepted: 262
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.927550e-03, nAccepted: 252
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.246027e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.817739e-04, nAccepted: 247
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.928378e-05, nAccepted: 285
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.015634e-03, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.737116e-05, nAccepted: 275
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.214392e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.559409e-04, nAccepted: 262
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.913914e-04, nAccepted: 255
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.362927e-05, nAccepted: 298
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.005116e-05, nAccepted: 284
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.028826e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.849688e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.767109e-05, nAccepted: 287
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.974723e-04, nAccepted: 245
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.775147e-05, nAccepted: 285
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.087668e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.125919e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.375365e-05, nAccepted: 270
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.912421e-03, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.261344e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.836003e-04, nAccepted: 240
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.233380e-05, nAccepted: 295
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.011926e-03, nAccepted: 257
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.059973e-05, nAccepted: 288
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.201921e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.555178e-04, nAccepted: 287
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.930859e-04, nAccepted: 246
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.754028e-05, nAccepted: 282
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.494912e-05, nAccepted: 293
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.019827e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.090100e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.926730e-05, nAccepted: 271
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.963478e-04, nAccepted: 260
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.648626e-05, nAccepted: 293
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.081357e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.139099e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.818220e-05, nAccepted: 272
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.936876e-03, nAccepted: 258
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.264656e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.847730e-04, nAccepted: 256
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.659067e-05, nAccepted: 274
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.020138e-03, nAccepted: 254
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.109914e-05, nAccepted: 295
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.200765e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.547208e-04, nAccepted: 282
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.903127e-04, nAccepted: 232
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.874385e-05, nAccepted: 287
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.451491e-05, nAccepted: 297
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.020101e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.815807e-03, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.893186e-05, nAccepted: 286
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.949867e-04, nAccepted: 257
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.639956e-05, nAccepted: 291
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.092918e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.127111e-01, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.553862e-05, nAccepted: 258
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.937422e-03, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.323231e-02, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.838548e-04, nAccepted: 252
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.678923e-05, nAccepted: 272
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.016436e-03, nAccepted: 266
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.196211e-05, nAccepted: 295
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.209909e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.552824e-04, nAccepted: 287
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.902074e-04, nAccepted: 239
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.738498e-05, nAccepted: 279
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.336641e-05, nAccepted: 293
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.013155e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.099951e-03, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.210099e-05, nAccepted: 286
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.938738e-04, nAccepted: 258
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.304761e-05, nAccepted: 291
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.091159e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.131784e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.511908e-05, nAccepted: 261
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.914175e-03, nAccepted: 245
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.262327e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.820219e-04, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.652606e-05, nAccepted: 277
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.012791e-03, nAccepted: 252
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.866790e-05, nAccepted: 282
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.214975e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.537158e-04, nAccepted: 271
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.909500e-04, nAccepted: 261
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.040640e-05, nAccepted: 269
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.366664e-05, nAccepted: 268
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.059994e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.976496e-03, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.857293e-05, nAccepted: 283
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.909578e-04, nAccepted: 243
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.493391e-05, nAccepted: 290
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.076172e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.126361e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.548769e-05, nAccepted: 266
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.915893e-03, nAccepted: 253
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.279099e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.940115e-04, nAccepted: 257
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.370867e-05, nAccepted: 281
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.017270e-03, nAccepted: 269
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.183393e-05, nAccepted: 285
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.204483e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.536900e-04, nAccepted: 273
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.291482e-04, nAccepted: 259
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.968075e-05, nAccepted: 289
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.225375e-05, nAccepted: 288
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.017999e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.906537e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.725454e-05, nAccepted: 283
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.898230e-04, nAccepted: 249
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 8.200440e-05, nAccepted: 259
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.112237e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.130245e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.436535e-05, nAccepted: 261
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.918738e-03, nAccepted: 254
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.279792e-02, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.838228e-04, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.633540e-05, nAccepted: 281
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.010223e-03, nAccepted: 256
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.737082e-05, nAccepted: 264
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.213390e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.529918e-04, nAccepted: 275
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.908888e-04, nAccepted: 247
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.538851e-05, nAccepted: 262
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.449023e-05, nAccepted: 294
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.022214e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.878807e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.031302e-05, nAccepted: 292
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 5.067845e-04, nAccepted: 255
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.414720e-05, nAccepted: 287
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.099507e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.127683e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.236626e-05, nAccepted: 263
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.930650e-03, nAccepted: 253
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.274837e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.883024e-04, nAccepted: 252
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.019617e-05, nAccepted: 292
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.014625e-03, nAccepted: 264
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.224779e-05, nAccepted: 284
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.192149e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.549404e-04, nAccepted: 274
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.912738e-04, nAccepted: 240
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.236343e-05, nAccepted: 295
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.214506e-05, nAccepted: 296
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.012663e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 9.198764e-03, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.075479e-05, nAccepted: 279
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.930476e-04, nAccepted: 258
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.562826e-05, nAccepted: 286
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.110284e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.133187e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.388257e-05, nAccepted: 266
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.924077e-03, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.363035e-02, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.839963e-04, nAccepted: 252
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.203009e-05, nAccepted: 284
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.013182e-03, nAccepted: 263
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.277997e-05, nAccepted: 292
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.204874e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.530024e-04, nAccepted: 273
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.903256e-04, nAccepted: 260
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.201414e-05, nAccepted: 295
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.043077e-05, nAccepted: 281
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.016286e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.850955e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.972545e-05, nAccepted: 289
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.933433e-04, nAccepted: 259
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.476866e-05, nAccepted: 289
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.111832e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.121201e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.437653e-05, nAccepted: 266
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.915465e-03, nAccepted: 250
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.239849e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.865400e-04, nAccepted: 262
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.129231e-05, nAccepted: 287
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.012070e-03, nAccepted: 257
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.751044e-05, nAccepted: 271
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.197151e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.511108e-04, nAccepted: 267
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.921695e-04, nAccepted: 259
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.277840e-05, nAccepted: 296
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.127007e-05, nAccepted: 290
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.011934e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.848686e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.882688e-05, nAccepted: 290
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.935368e-04, nAccepted: 257
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.484823e-05, nAccepted: 292
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.133070e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.125460e-01, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.600793e-05, nAccepted: 265
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.905983e-03, nAccepted: 250
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.257484e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.853872e-04, nAccepted: 260
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.225765e-05, nAccepted: 283
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.014586e-03, nAccepted: 257
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.660870e-05, nAccepted: 274
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.222549e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.511349e-04, nAccepted: 270
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.922098e-04, nAccepted: 257
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.173758e-05, nAccepted: 288
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 4.979948e-05, nAccepted: 280
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.004729e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.995636e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.834182e-05, nAccepted: 291
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.932663e-04, nAccepted: 256
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.327381e-05, nAccepted: 296
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.070416e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.123964e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.700166e-05, nAccepted: 267
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.912639e-03, nAccepted: 250
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.287539e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.811396e-04, nAccepted: 252
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 6.082976e-05, nAccepted: 254
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.012748e-03, nAccepted: 258
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.926863e-05, nAccepted: 283
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.188337e-01, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.572794e-04, nAccepted: 269
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.918975e-04, nAccepted: 236
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.195954e-05, nAccepted: 287
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 4.812695e-05, nAccepted: 268
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.002426e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.957831e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.726324e-05, nAccepted: 283
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.965864e-04, nAccepted: 262
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.897603e-05, nAccepted: 254
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.081847e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.123369e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.547503e-05, nAccepted: 265
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.919690e-03, nAccepted: 249
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.268871e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.932015e-04, nAccepted: 249
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.022694e-05, nAccepted: 285
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.013301e-03, nAccepted: 269
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.806395e-05, nAccepted: 270
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.207067e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.538329e-04, nAccepted: 266
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.907017e-04, nAccepted: 242
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.643763e-05, nAccepted: 275
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.672523e-05, nAccepted: 290
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.020196e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.831298e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.941698e-05, nAccepted: 290
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.996924e-04, nAccepted: 248
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.680641e-05, nAccepted: 294
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.210359e-02, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.128036e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.385906e-05, nAccepted: 262
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.922624e-03, nAccepted: 249
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.306866e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.868490e-04, nAccepted: 260
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.984082e-05, nAccepted: 289
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.011635e-03, nAccepted: 259
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.953066e-05, nAccepted: 288
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.179240e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.558923e-04, nAccepted: 272
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.924626e-04, nAccepted: 245
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.220930e-05, nAccepted: 288
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.060789e-05, nAccepted: 291
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.022000e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.071426e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.050579e-05, nAccepted: 285
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.958813e-04, nAccepted: 257
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.640873e-05, nAccepted: 294
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.126887e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.129950e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.010592e-04, nAccepted: 261
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.914694e-03, nAccepted: 246
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.303238e-02, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.861863e-04, nAccepted: 255
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.268974e-05, nAccepted: 289
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.013850e-03, nAccepted: 262
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.872853e-05, nAccepted: 286
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.213523e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.544067e-04, nAccepted: 274
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.912634e-04, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.100876e-05, nAccepted: 290
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.027942e-05, nAccepted: 280
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.034825e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.873472e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.016865e-05, nAccepted: 293
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.964497e-04, nAccepted: 258
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.326201e-05, nAccepted: 291
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.082961e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.121336e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.581848e-05, nAccepted: 272
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.906418e-03, nAccepted: 250
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.271386e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.834448e-04, nAccepted: 261
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.727673e-05, nAccepted: 280
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.016293e-03, nAccepted: 258
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.881645e-05, nAccepted: 279
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.209964e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.531051e-04, nAccepted: 264
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.917978e-04, nAccepted: 264
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.571738e-05, nAccepted: 268
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.360720e-05, nAccepted: 289
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.072687e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.845388e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.849144e-05, nAccepted: 290
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.923921e-04, nAccepted: 252
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.949831e-05, nAccepted: 297
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.110729e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.130919e-01, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.747560e-05, nAccepted: 267
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.919270e-03, nAccepted: 252
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.279256e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.804684e-04, nAccepted: 256
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.167245e-05, nAccepted: 295
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.015079e-03, nAccepted: 260
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.320301e-05, nAccepted: 284
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.209830e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.546435e-04, nAccepted: 268
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.578831e-04, nAccepted: 268
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.906472e-05, nAccepted: 287
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.341260e-05, nAccepted: 291
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.021819e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.820178e-03, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.776964e-05, nAccepted: 281
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.938923e-04, nAccepted: 253
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.949534e-05, nAccepted: 294
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.090034e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.127055e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.623642e-05, nAccepted: 269
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.915060e-03, nAccepted: 249
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.287266e-02, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.846263e-04, nAccepted: 256
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.932274e-05, nAccepted: 286
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.018897e-03, nAccepted: 252
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.165290e-05, nAccepted: 285
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.207222e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.575723e-04, nAccepted: 273
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.917488e-04, nAccepted: 248
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.867571e-05, nAccepted: 291
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.372872e-05, nAccepted: 293
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.019213e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.840684e-03, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.859940e-05, nAccepted: 290
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.946332e-04, nAccepted: 258
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.842409e-05, nAccepted: 295
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.098014e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.125775e-01, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.911434e-05, nAccepted: 278
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.918573e-03, nAccepted: 247
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.237968e-02, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.894915e-04, nAccepted: 248
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.052047e-05, nAccepted: 285
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.012782e-03, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.205799e-05, nAccepted: 286
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.203842e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.543866e-04, nAccepted: 277
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.918939e-04, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.977199e-05, nAccepted: 291
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.474984e-05, nAccepted: 294
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.030030e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.979093e-03, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.287667e-05, nAccepted: 289
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 5.036772e-04, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.505947e-05, nAccepted: 296
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.184636e-02, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.134470e-01, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.519957e-05, nAccepted: 265
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.941451e-03, nAccepted: 251
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.298441e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.934280e-04, nAccepted: 257
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.305406e-05, nAccepted: 287
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.011063e-03, nAccepted: 266
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.857660e-05, nAccepted: 286
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.212358e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.557125e-04, nAccepted: 280
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.933356e-04, nAccepted: 240
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.947211e-05, nAccepted: 283
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.108917e-05, nAccepted: 290
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.266256e-02, nAccepted: 10
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 7.926528e-03, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.191626e-05, nAccepted: 294
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.941092e-04, nAccepted: 254
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.323078e-05, nAccepted: 292
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.089016e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.123584e-01, nAccepted: 8
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.058958e-04, nAccepted: 254
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.919883e-03, nAccepted: 246
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.285816e-02, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.886135e-04, nAccepted: 259
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.566781e-05, nAccepted: 267
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 2.019340e-03, nAccepted: 268
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.190355e-05, nAccepted: 290
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.199310e-01, nAccepted: 9
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.556180e-04, nAccepted: 283
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.914550e-04, nAccepted: 242
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.082369e-05, nAccepted: 288
-name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.218727e-05, nAccepted: 288
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.041947e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.116464e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.265659e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.958078e-04, nAccepted: 250, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.355190e-05, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.129077e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.094549e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.783597e-05, nAccepted: 265, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.889260e-03, nAccepted: 248, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.318966e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.775474e-04, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.269532e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.994291e-03, nAccepted: 273, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.834429e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.153259e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.534319e-04, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.139772e-04, nAccepted: 263, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.184595e-05, nAccepted: 294, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.807013e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.035561e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.245893e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.201483e-05, nAccepted: 277, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.920534e-04, nAccepted: 252, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.686710e-05, nAccepted: 266, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.109305e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.082141e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.056613e-04, nAccepted: 262, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.890669e-03, nAccepted: 241, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.263862e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.785296e-04, nAccepted: 259, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.521878e-05, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.982891e-03, nAccepted: 262, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.492151e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.156677e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.521129e-04, nAccepted: 263, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.043448e-04, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.054147e-05, nAccepted: 285, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.710515e-05, nAccepted: 295, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.038814e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.075600e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.257557e-05, nAccepted: 286, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.943743e-04, nAccepted: 249, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.614042e-05, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.105795e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.092163e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.018905e-04, nAccepted: 270, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.903450e-03, nAccepted: 247, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.291307e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.791621e-04, nAccepted: 245, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.172080e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.982718e-03, nAccepted: 264, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.063098e-05, nAccepted: 286, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.168098e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.532017e-04, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.932178e-04, nAccepted: 236, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.638532e-05, nAccepted: 273, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.334374e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.042004e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.100393e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.333727e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.920972e-04, nAccepted: 258, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.386447e-05, nAccepted: 290, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.141413e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.096446e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.600425e-05, nAccepted: 257, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.894053e-03, nAccepted: 240, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.288714e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.783227e-04, nAccepted: 255, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.832558e-05, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.987631e-03, nAccepted: 261, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.831434e-05, nAccepted: 286, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.159090e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.520947e-04, nAccepted: 261, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.933831e-04, nAccepted: 262, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.762098e-05, nAccepted: 271, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.539830e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.067253e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.073716e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.446079e-05, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.912217e-04, nAccepted: 243, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.730255e-05, nAccepted: 290, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.189663e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.081351e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.022329e-04, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.909578e-03, nAccepted: 247, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.294160e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.767652e-04, nAccepted: 256, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.702183e-05, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.989208e-03, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.609724e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.173376e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.528628e-04, nAccepted: 263, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.077733e-04, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.986698e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.610564e-05, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.038814e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.095660e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.328765e-05, nAccepted: 272, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.985258e-04, nAccepted: 255, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.651441e-05, nAccepted: 287, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.114251e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.088890e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.007638e-04, nAccepted: 260, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.898805e-03, nAccepted: 247, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.299606e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.790509e-04, nAccepted: 257, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.741481e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.990338e-03, nAccepted: 263, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.328541e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.155636e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.532527e-04, nAccepted: 262, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.155185e-04, nAccepted: 265, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.164873e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.539925e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.043486e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.071492e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.045238e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.893394e-04, nAccepted: 252, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.835352e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.137764e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.096525e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.015628e-04, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.900418e-03, nAccepted: 252, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.325152e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.821735e-04, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.005994e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.983929e-03, nAccepted: 261, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.985062e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.149554e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.531727e-04, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.034754e-04, nAccepted: 255, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.735669e-05, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.381406e-05, nAccepted: 293, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.117104e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.102406e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.285880e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.912898e-04, nAccepted: 261, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.535707e-05, nAccepted: 293, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.149956e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.082402e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.658507e-05, nAccepted: 266, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.898103e-03, nAccepted: 250, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.267414e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.768432e-04, nAccepted: 247, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.926778e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.991963e-03, nAccepted: 268, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.248839e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.171415e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.535158e-04, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.995927e-04, nAccepted: 246, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.247264e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.487890e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.229914e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.310953e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.561015e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.908931e-04, nAccepted: 254, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.540135e-05, nAccepted: 295, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.149036e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.084175e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.007525e-04, nAccepted: 277, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.901107e-03, nAccepted: 247, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.281509e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.758331e-04, nAccepted: 256, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.775317e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.989857e-03, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.819423e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.167994e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.529152e-04, nAccepted: 255, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.984779e-04, nAccepted: 244, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.127214e-05, nAccepted: 270, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.569930e-05, nAccepted: 277, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.056099e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.059963e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.121044e-05, nAccepted: 290, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.942207e-04, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.413658e-05, nAccepted: 290, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.178080e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.088746e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.815244e-05, nAccepted: 263, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.894458e-03, nAccepted: 248, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.255219e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.766057e-04, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.320819e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.984752e-03, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.298644e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.161542e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.535770e-04, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.992981e-04, nAccepted: 245, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.522549e-05, nAccepted: 264, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.355784e-05, nAccepted: 268, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.043804e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.069186e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.103992e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.901367e-04, nAccepted: 256, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.340854e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.120442e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.090213e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.646672e-05, nAccepted: 260, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.894052e-03, nAccepted: 245, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.309806e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.778944e-04, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.163176e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.981125e-03, nAccepted: 259, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.436595e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.153798e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.533218e-04, nAccepted: 263, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.027683e-04, nAccepted: 259, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.524172e-05, nAccepted: 262, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.497420e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.114244e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.081218e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.137452e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.875088e-04, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.484788e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.131192e-02, nAccepted: 7, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.085907e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.961525e-05, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.896989e-03, nAccepted: 243, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.282278e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.813523e-04, nAccepted: 250, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.776250e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.985006e-03, nAccepted: 261, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.719765e-05, nAccepted: 271, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.162482e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.551992e-04, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.978138e-04, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.294716e-05, nAccepted: 293, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.404280e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.097443e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.082132e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.331106e-05, nAccepted: 285, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.888928e-04, nAccepted: 255, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.655029e-05, nAccepted: 290, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.177116e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.085464e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.000602e-04, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.890204e-03, nAccepted: 247, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.316826e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.775210e-04, nAccepted: 249, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.632202e-05, nAccepted: 264, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.988191e-03, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.936967e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.167962e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.521287e-04, nAccepted: 261, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.988310e-04, nAccepted: 246, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.297862e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.575792e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.070962e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.064567e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.318736e-05, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.972009e-04, nAccepted: 255, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.683257e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.142432e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.091629e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.015371e-04, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.898659e-03, nAccepted: 246, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.400564e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.772785e-04, nAccepted: 258, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.373243e-05, nAccepted: 293, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.989788e-03, nAccepted: 265, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.172802e-05, nAccepted: 287, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.171260e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.539997e-04, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.239828e-04, nAccepted: 256, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.339202e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.711426e-05, nAccepted: 296, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.046904e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.061302e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.551794e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.997186e-04, nAccepted: 264, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.499146e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.143994e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.087495e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.987077e-05, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.899541e-03, nAccepted: 242, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.296336e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.780584e-04, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.574675e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.980134e-03, nAccepted: 254, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.198851e-05, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.172814e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.518809e-04, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.167467e-04, nAccepted: 250, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.072258e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.650375e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.217930e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.077471e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.137101e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.904134e-04, nAccepted: 260, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.487807e-05, nAccepted: 290, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.128900e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.094876e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.664752e-05, nAccepted: 266, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.901797e-03, nAccepted: 245, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.308782e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.800543e-04, nAccepted: 248, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.061440e-05, nAccepted: 287, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.986924e-03, nAccepted: 264, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.071445e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.149340e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.541055e-04, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.925376e-04, nAccepted: 240, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.318930e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.357109e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.214782e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.108379e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.871956e-05, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.901674e-04, nAccepted: 255, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.566679e-05, nAccepted: 277, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.240387e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.086801e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.781074e-05, nAccepted: 254, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.909206e-03, nAccepted: 254, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.291465e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.822290e-04, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.412859e-05, nAccepted: 285, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.981602e-03, nAccepted: 263, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.293749e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.176884e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.518168e-04, nAccepted: 264, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.058116e-04, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.268200e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.445898e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.046711e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.127165e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.297039e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.900657e-04, nAccepted: 264, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.524603e-05, nAccepted: 294, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.193841e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.091880e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.949356e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.890776e-03, nAccepted: 246, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.269149e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.785884e-04, nAccepted: 252, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.363277e-05, nAccepted: 290, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.986171e-03, nAccepted: 259, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.262114e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.162169e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.533974e-04, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.007181e-04, nAccepted: 252, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.561379e-05, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.410979e-05, nAccepted: 286, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.061360e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.061921e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.549227e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.950347e-04, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.512135e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.106634e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.092303e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.008676e-04, nAccepted: 261, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.895356e-03, nAccepted: 244, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.288251e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.780115e-04, nAccepted: 258, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.276642e-05, nAccepted: 287, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.987480e-03, nAccepted: 260, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.043068e-05, nAccepted: 286, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.168130e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.531780e-04, nAccepted: 258, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.188969e-04, nAccepted: 266, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.062312e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.553711e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.138144e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 9.090674e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.346797e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.955056e-04, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.565668e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.127772e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.085746e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.010688e-04, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.906065e-03, nAccepted: 248, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.302995e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.790574e-04, nAccepted: 259, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.583731e-05, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.983315e-03, nAccepted: 260, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.985119e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.146606e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.534144e-04, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.993131e-04, nAccepted: 248, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.581083e-05, nAccepted: 265, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.390918e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.054707e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 9.223887e-03, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.087608e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.892194e-04, nAccepted: 262, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.643584e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.158613e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.085675e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.864217e-05, nAccepted: 256, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.901772e-03, nAccepted: 246, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.305483e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.822170e-04, nAccepted: 249, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.450656e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.976989e-03, nAccepted: 252, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.144413e-05, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.164962e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.529048e-04, nAccepted: 260, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.057923e-04, nAccepted: 254, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.204154e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.332198e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.041578e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.082595e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.237973e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.893996e-04, nAccepted: 254, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.448778e-05, nAccepted: 286, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.157323e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.094732e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.897732e-05, nAccepted: 256, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.883815e-03, nAccepted: 245, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.300306e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.783840e-04, nAccepted: 254, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.547745e-05, nAccepted: 270, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.983968e-03, nAccepted: 261, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.870536e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.163466e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.522510e-04, nAccepted: 265, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.023546e-04, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.659251e-05, nAccepted: 273, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.461469e-05, nAccepted: 287, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.036204e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.090562e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.661648e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.946295e-04, nAccepted: 257, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.534922e-05, nAccepted: 290, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.124318e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.091770e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.015103e-04, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.895458e-03, nAccepted: 248, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.374491e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.788519e-04, nAccepted: 259, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.268869e-05, nAccepted: 293, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.992413e-03, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.843627e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.152726e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.525632e-04, nAccepted: 261, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.109181e-04, nAccepted: 259, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.859745e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.498693e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.066328e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 9.245178e-03, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.416506e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.967752e-04, nAccepted: 256, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.501456e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.235311e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.084532e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.012169e-04, nAccepted: 272, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.899073e-03, nAccepted: 250, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.283074e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.769637e-04, nAccepted: 258, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.247495e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.986643e-03, nAccepted: 262, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.392212e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.178314e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.530483e-04, nAccepted: 255, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.299321e-04, nAccepted: 255, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.293289e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.283837e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.089309e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 9.061603e-03, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.337980e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.911050e-04, nAccepted: 249, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.518406e-05, nAccepted: 285, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.119525e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.087433e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.675754e-05, nAccepted: 263, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.896308e-03, nAccepted: 245, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.257647e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.788891e-04, nAccepted: 248, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.369102e-05, nAccepted: 295, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.986690e-03, nAccepted: 266, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.173570e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.182426e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.530917e-04, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.135391e-04, nAccepted: 254, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.197435e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.687723e-05, nAccepted: 286, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.039157e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 1.009752e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 5.968936e-05, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.920827e-04, nAccepted: 249, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.703134e-05, nAccepted: 293, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.112107e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.088342e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.889388e-05, nAccepted: 259, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.920190e-03, nAccepted: 247, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.365573e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.778146e-04, nAccepted: 257, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.401398e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.990221e-03, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.687662e-05, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.175279e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.520270e-04, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.915058e-04, nAccepted: 234, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.255439e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.687557e-05, nAccepted: 293, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.047164e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.086945e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.484462e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.919488e-04, nAccepted: 246, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.553934e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.119046e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.090104e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.019716e-04, nAccepted: 255, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.905590e-03, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.303587e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.762323e-04, nAccepted: 257, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.569237e-05, nAccepted: 270, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.991155e-03, nAccepted: 265, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.221235e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.146711e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.525334e-04, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.047895e-04, nAccepted: 252, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.667557e-05, nAccepted: 272, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.746816e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.037603e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 9.160027e-03, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.414111e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.906088e-04, nAccepted: 255, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.584023e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.211639e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.089436e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 9.867394e-05, nAccepted: 272, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.897916e-03, nAccepted: 245, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.301853e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.827932e-04, nAccepted: 252, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 5.098236e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.980742e-03, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.133747e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.165643e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.527987e-04, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.935915e-04, nAccepted: 248, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.793371e-05, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.104536e-05, nAccepted: 272, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.044218e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.095656e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.462359e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.922564e-04, nAccepted: 254, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.606499e-05, nAccepted: 290, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.169716e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.084932e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.003746e-04, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.896805e-03, nAccepted: 243, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.294729e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.785883e-04, nAccepted: 248, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.768546e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.988464e-03, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 5.265259e-05, nAccepted: 290, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.154002e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.514249e-04, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 2.939245e-04, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 4.663855e-05, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.601924e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000000, filling: 1, nRep: 10, mean: 2.036253e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000000, filling: 1, nRep: 10, mean: 8.130718e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 20000, filling: 1, nRep: 300, mean: 6.456242e-05, nAccepted: 277, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000, filling: 1, nRep: 300, mean: 4.921700e-04, nAccepted: 246, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 50000, filling: 1, nRep: 300, mean: 7.658802e-05, nAccepted: 285, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000000, filling: 1, nRep: 10, mean: 4.153576e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000000, filling: 1, nRep: 10, mean: 2.093266e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 100000, filling: 1, nRep: 300, mean: 1.049003e-04, nAccepted: 270, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000000, filling: 1, nRep: 300, mean: 3.893687e-03, nAccepted: 250, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000000, filling: 1, nRep: 10, mean: 8.333228e-02, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000000, filling: 1, nRep: 300, mean: 8.767502e-04, nAccepted: 266, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 2000, filling: 1, nRep: 300, mean: 4.637981e-05, nAccepted: 271, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000000, filling: 1, nRep: 300, mean: 1.987389e-03, nAccepted: 264, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 5000, filling: 1, nRep: 300, mean: 4.675978e-05, nAccepted: 272, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.159558e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 200000, filling: 1, nRep: 300, mean: 1.531328e-04, nAccepted: 265, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 500000, filling: 1, nRep: 300, mean: 3.199113e-04, nAccepted: 257, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 1000, filling: 1, nRep: 300, mean: 5.373909e-05, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibsButterfly, functype: 2, vsFunc: 4, setsize: 10000, filling: 1, nRep: 300, mean: 5.546990e-05, nAccepted: 286, critSizeStrat: 0

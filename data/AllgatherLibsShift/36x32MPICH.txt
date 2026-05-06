@@ -1,570 +1,570 @@
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.659724e-04, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.298446e-04, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.642562e-05, nAccepted: 250
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.161507e-05, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.444962e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.826758e-04, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.370931e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.459403e-05, nAccepted: 278
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.804234e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.842762e-04, nAccepted: 10
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.416734e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.835550e-05, nAccepted: 276
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.890853e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.288327e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.703151e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.254939e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.147617e-05, nAccepted: 252
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.237861e-05, nAccepted: 253
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.562994e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.685384e-04, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.327400e-04, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.563175e-05, nAccepted: 274
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.327637e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.662793e-05, nAccepted: 254
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.820191e-04, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.312135e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.506249e-05, nAccepted: 283
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.057845e-04, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.131536e-04, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.547718e-05, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.740334e-05, nAccepted: 282
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.790934e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.168122e-05, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.596536e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.281002e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.091713e-05, nAccepted: 252
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.448604e-05, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.568034e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.654222e-04, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.380288e-04, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.635554e-05, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.287612e-05, nAccepted: 251
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.593463e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.841185e-04, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.301391e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.334274e-05, nAccepted: 274
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.012199e-04, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.097714e-04, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.677451e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.660468e-05, nAccepted: 276
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.934223e-05, nAccepted: 255
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.071748e-05, nAccepted: 255
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.529060e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.566464e-05, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.877254e-05, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.809250e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.964811e-05, nAccepted: 274
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.687190e-04, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.306409e-04, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.750656e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.370063e-05, nAccepted: 249
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.252276e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.860822e-04, nAccepted: 255
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.307610e-03, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.536174e-05, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.031690e-05, nAccepted: 254
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.156691e-04, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.401754e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.741493e-05, nAccepted: 278
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.619100e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.467365e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.573367e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.151137e-05, nAccepted: 254
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.525337e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.419859e-05, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.735547e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.665069e-04, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.379428e-04, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.564043e-05, nAccepted: 275
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.774547e-05, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.297294e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.837779e-04, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.308601e-03, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.515368e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.030809e-04, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.131993e-04, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.484055e-05, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.779702e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.851516e-05, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.322415e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.513439e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.376435e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.606353e-05, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.737328e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.826926e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.729974e-04, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.345442e-04, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.603949e-05, nAccepted: 275
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.249691e-05, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.503786e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.831948e-04, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.323563e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.372741e-05, nAccepted: 279
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.062641e-04, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.320386e-04, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.491120e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.781049e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.796969e-05, nAccepted: 255
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.775011e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.599362e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.233611e-05, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.281629e-05, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.609200e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.503876e-05, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.652610e-04, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.435902e-04, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.703260e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.152513e-05, nAccepted: 253
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.426535e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.854004e-04, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.330107e-03, nAccepted: 7
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.386350e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.013238e-04, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.835813e-04, nAccepted: 10
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.567953e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.545915e-05, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.007834e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.752615e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.557708e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.338332e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 5.314273e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.352997e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.854215e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.657660e-04, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.325422e-04, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.529285e-05, nAccepted: 279
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.193410e-05, nAccepted: 251
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.432689e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.824451e-04, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.290935e-03, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.512427e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.691488e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.040829e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.713000e-05, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.625019e-05, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.780986e-05, nAccepted: 273
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.899220e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.594321e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 3.995618e-05, nAccepted: 254
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.485662e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.440712e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.763835e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.645644e-04, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.328162e-04, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.424538e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.425067e-05, nAccepted: 249
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.448092e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.833860e-04, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.291124e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.518222e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.002127e-04, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.218630e-04, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.356456e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.742654e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.897221e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.319637e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.506036e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.120097e-05, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.644901e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.293876e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.574329e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.634166e-04, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.424363e-04, nAccepted: 274
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.653850e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.190664e-05, nAccepted: 253
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.380236e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.840019e-04, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.278844e-03, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.574681e-05, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.382989e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.560455e-04, nAccepted: 10
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.640324e-05, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.605051e-05, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.854002e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.355964e-05, nAccepted: 255
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.545785e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.364182e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 5.308944e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.408145e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.856002e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.689930e-04, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.350086e-04, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.701141e-05, nAccepted: 275
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.152291e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.161679e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.832117e-04, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.324544e-03, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.375764e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.257488e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.698293e-04, nAccepted: 10
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.539020e-05, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.809024e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.711605e-05, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.445263e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.528691e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.129323e-05, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.799886e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.539664e-05, nAccepted: 254
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.757371e-05, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.649098e-04, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.350952e-04, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.517554e-05, nAccepted: 278
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.209933e-05, nAccepted: 252
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.596371e-05, nAccepted: 254
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.822494e-04, nAccepted: 255
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.313874e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.487897e-05, nAccepted: 279
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.021238e-04, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.132806e-04, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.545344e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.773494e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.769157e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.302259e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.554509e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.498819e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.313714e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.743180e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.628097e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.631674e-04, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.313235e-04, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.575521e-05, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.027674e-05, nAccepted: 255
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.418908e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.840503e-04, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.322320e-03, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.443755e-05, nAccepted: 280
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.615528e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.184384e-04, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.304186e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.874245e-05, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.797819e-05, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.076547e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.596520e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.905651e-05, nAccepted: 282
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.505341e-05, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.865092e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.669144e-05, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.730403e-04, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.395390e-04, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.831873e-05, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.169390e-05, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.624024e-05, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.841161e-04, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.328710e-03, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.462393e-05, nAccepted: 275
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.024339e-04, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.147203e-04, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.401672e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.665008e-05, nAccepted: 276
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.002977e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.123800e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.597014e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.600370e-05, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.413035e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.361071e-05, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.552383e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.719517e-04, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.288239e-04, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.610786e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.355073e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.745855e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.837518e-04, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.304555e-03, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.518024e-05, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.147146e-05, nAccepted: 254
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.906423e-04, nAccepted: 10
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.657877e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.655245e-05, nAccepted: 273
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.789049e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.349695e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.544437e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.235136e-05, nAccepted: 273
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.658876e-05, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.718965e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.831060e-05, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.697944e-04, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.363609e-04, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.557382e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.394650e-05, nAccepted: 251
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.491091e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.819854e-04, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.353993e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.495649e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.244536e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.220140e-04, nAccepted: 7
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.460041e-05, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.719191e-05, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.935020e-05, nAccepted: 274
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.545503e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.552050e-03, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.232004e-05, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.569472e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.550751e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.962407e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.716354e-04, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.441424e-04, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.608308e-05, nAccepted: 274
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.409732e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.328632e-05, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.833220e-04, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.392089e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.493700e-05, nAccepted: 273
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.020435e-04, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.064962e-03, nAccepted: 10
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.548461e-05, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.680884e-05, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.635196e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.188345e-05, nAccepted: 254
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.530429e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.312292e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.683556e-05, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.857764e-05, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.964898e-05, nAccepted: 275
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.706156e-04, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.322062e-04, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.560206e-05, nAccepted: 279
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.268851e-05, nAccepted: 245
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.515210e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.827915e-04, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.314340e-03, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.545260e-05, nAccepted: 277
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.714324e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.612183e-04, nAccepted: 10
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.510699e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.705373e-05, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.876711e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.679935e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.621426e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.531494e-05, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.605312e-05, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.785183e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.769026e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.659802e-04, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.461491e-04, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.626180e-05, nAccepted: 279
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.372875e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.441128e-05, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.834151e-04, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.291942e-03, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.253910e-05, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.950143e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.300030e-04, nAccepted: 7
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.634962e-05, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.757219e-05, nAccepted: 279
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.840294e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.269202e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.547853e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.227258e-05, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.624490e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.241074e-05, nAccepted: 254
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.657961e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.670942e-04, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.287862e-04, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.715638e-05, nAccepted: 274
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.378914e-05, nAccepted: 254
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.615866e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.821990e-04, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.272453e-03, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.451130e-05, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.213531e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.696921e-04, nAccepted: 10
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.740197e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.766106e-05, nAccepted: 277
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.709563e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.950869e-05, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.536276e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.189316e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.608722e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.686777e-05, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 4.023235e-05, nAccepted: 273
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.684337e-04, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.379006e-04, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.474000e-05, nAccepted: 276
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.417698e-05, nAccepted: 245
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.347532e-05, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.834479e-04, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.376579e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.613142e-05, nAccepted: 274
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.225991e-05, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.128616e-04, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.543578e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.886368e-05, nAccepted: 273
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.799949e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.135677e-05, nAccepted: 251
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.518155e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.427976e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.742807e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.804103e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.715186e-05, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.642515e-04, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.322541e-04, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.530249e-05, nAccepted: 277
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.698152e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.467667e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.842526e-04, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.357922e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.602334e-05, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.030874e-04, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.234770e-04, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.480866e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.762708e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.803695e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.831713e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.569747e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.710422e-05, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.210989e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.782057e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.786143e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.696984e-04, nAccepted: 273
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.343782e-04, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.682525e-05, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.475563e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.381170e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.825306e-04, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.323966e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.449617e-05, nAccepted: 280
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.888075e-05, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.168148e-04, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.625456e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.801429e-05, nAccepted: 273
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.858265e-05, nAccepted: 254
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.112413e-05, nAccepted: 255
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.559555e-03, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.519623e-05, nAccepted: 275
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.652154e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.711471e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.901607e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.658651e-04, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.353701e-04, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.502582e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.137453e-05, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.206597e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.846449e-04, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.266649e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.588723e-05, nAccepted: 274
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.596021e-05, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.209391e-04, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.393980e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.893109e-05, nAccepted: 277
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.929999e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.248459e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.558900e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.011781e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.135566e-05, nAccepted: 250
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.301838e-05, nAccepted: 252
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.644834e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.701421e-04, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.333087e-04, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.646071e-05, nAccepted: 273
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.417767e-05, nAccepted: 253
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.369344e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.838667e-04, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.253959e-03, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.697977e-05, nAccepted: 278
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.002352e-04, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.203726e-04, nAccepted: 8
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.480210e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.812575e-05, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.675310e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 5.044988e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.561713e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.113558e-05, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.453088e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.440152e-05, nAccepted: 252
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.664775e-05, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.661161e-04, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.387945e-04, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.585707e-05, nAccepted: 277
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.346051e-05, nAccepted: 251
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.556312e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.847104e-04, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.306553e-03, nAccepted: 6
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.309928e-05, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.581930e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.253016e-04, nAccepted: 7
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.501469e-05, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.884587e-05, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.629612e-05, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.153356e-05, nAccepted: 255
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.511491e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.443302e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.438028e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.655622e-05, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.753324e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.685318e-04, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.359860e-04, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.616969e-05, nAccepted: 275
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.403092e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.509519e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.838983e-04, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.284134e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.409380e-05, nAccepted: 277
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.037995e-04, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.007799e-03, nAccepted: 10
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.496095e-05, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.868175e-05, nAccepted: 283
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.766013e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.407336e-05, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.597946e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.301845e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.531974e-05, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.576891e-05, nAccepted: 254
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.611423e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.692596e-04, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.345294e-04, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.734141e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.255380e-05, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.737727e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.849161e-04, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.324729e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.742853e-05, nAccepted: 275
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.866149e-05, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.940335e-04, nAccepted: 10
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.548072e-05, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.598101e-05, nAccepted: 278
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.938813e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.997563e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.531190e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.134211e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.447145e-05, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.346891e-05, nAccepted: 253
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.768421e-05, nAccepted: 261
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.695791e-04, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.385509e-04, nAccepted: 268
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.541454e-05, nAccepted: 281
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.189244e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.353819e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.826238e-04, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.288619e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.366268e-05, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.412253e-05, nAccepted: 257
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.028749e-03, nAccepted: 10
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.465872e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.796279e-05, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.799153e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.122397e-05, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.574265e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.597103e-05, nAccepted: 271
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.810759e-05, nAccepted: 269
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.556883e-05, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.847461e-05, nAccepted: 260
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.636554e-04, nAccepted: 259
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.461877e-04, nAccepted: 266
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.553120e-05, nAccepted: 281
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.386138e-05, nAccepted: 250
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.346600e-05, nAccepted: 265
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.857994e-04, nAccepted: 263
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.372988e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.392665e-05, nAccepted: 272
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.048341e-04, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.929571e-04, nAccepted: 10
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.651573e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.742293e-05, nAccepted: 270
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.948998e-05, nAccepted: 264
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.582771e-05, nAccepted: 262
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.554581e-03, nAccepted: 9
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.498464e-05, nAccepted: 267
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.361302e-05, nAccepted: 258
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.574625e-05, nAccepted: 256
-name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.633178e-05, nAccepted: 262
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.656790e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.363359e-04, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.689493e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.378146e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.384543e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.828519e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.364135e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.421108e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.539561e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.357716e-04, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.726223e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.693513e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.899083e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.132867e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.473043e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.690484e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.939047e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.934537e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.886080e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.671373e-04, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.332615e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.686319e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.083466e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.579795e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.841726e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.287415e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.540252e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.448015e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.150943e-04, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.659298e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.709457e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.840261e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.359974e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.578833e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.068336e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.305885e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.177826e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.712218e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.709442e-04, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.282510e-04, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.671895e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.164949e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.414087e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.831013e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.309075e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.488725e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.591568e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.774243e-04, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.510508e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.647343e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.805835e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.415966e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.530830e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.095100e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.260272e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.362879e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.560933e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.693344e-04, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.369149e-04, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.617972e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.520497e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.361751e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.824924e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.315743e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.352356e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.877310e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.189715e-04, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.344502e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.920638e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.581525e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.282442e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.521828e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.210078e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.233923e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.390903e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.575260e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.612091e-04, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.309550e-04, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.608419e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 6.132354e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.454765e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.826411e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.379082e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.561192e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 8.959040e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.074710e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.590142e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.642003e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.895223e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.259853e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.531036e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 3.941403e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.312068e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.194561e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.665339e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.695590e-04, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.533182e-04, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.563599e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.150250e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.369667e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.837982e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.284399e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.599284e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.250082e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.611956e-04, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.673103e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.836070e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.702044e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.133156e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.557466e-03, nAccepted: 7, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.062327e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.261343e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.275513e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.610092e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.705089e-04, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.375652e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.431636e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.111473e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.508328e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.841695e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.337074e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.459601e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.934351e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.165540e-04, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.506156e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.637723e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.767225e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 5.055907e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.552551e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.235536e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.344915e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.216841e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.644057e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.692747e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.349314e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.511884e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.214354e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.681021e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.835398e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.360287e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.386934e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.104167e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.589600e-04, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.706642e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.845544e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.864217e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.290952e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.518692e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.154355e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.188796e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.169549e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.496589e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.740999e-04, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.307382e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.576888e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.506947e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.266742e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.839043e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.278354e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.716288e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.200910e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.137216e-04, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.626460e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.821526e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.911718e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.814434e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.508159e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 3.938203e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.377796e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.133275e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.654075e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.656132e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.325766e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.606873e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 6.185571e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.299210e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.824793e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.315359e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.515687e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.855229e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.219658e-04, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.346044e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.841883e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.664143e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.614121e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.565719e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.190099e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.196382e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.523543e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.611838e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.677597e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.392449e-04, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.526736e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.757655e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.360587e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.838907e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.296623e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.449822e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.584706e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.044557e-04, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.681728e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.679736e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.040783e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.193777e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.570508e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.091359e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.009594e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.283061e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.614098e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.664914e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.350534e-04, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.673111e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.746143e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.466939e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.844406e-04, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.286165e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.660429e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.135921e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.096144e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.654053e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.741839e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.870544e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.716114e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.555075e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.108567e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.465635e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.184759e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.606734e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.692788e-04, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.420651e-04, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.615581e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.720016e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.415508e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.832139e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.413131e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.331641e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.946328e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.171367e-04, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.445911e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.682183e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.865480e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.344635e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.597766e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.095343e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.121366e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.482992e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.543351e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.614080e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.287129e-04, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.595750e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.304820e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.393962e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.829499e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.291023e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.306291e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.444343e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.250008e-04, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.547312e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.654374e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.763918e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.446700e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.495651e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.150507e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.059123e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.424090e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.597021e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.672244e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.300148e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.541428e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.116925e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.402585e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.823602e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.347739e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.420176e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.451457e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.081978e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.491615e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.614705e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.625824e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.978890e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.566857e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.177847e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.730332e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.273031e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.706496e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.671580e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.372841e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.514284e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.323009e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.363582e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.827051e-04, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.309379e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.442926e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.743928e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.209906e-04, nAccepted: 7, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.462866e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.788588e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.909121e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.536095e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.494979e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 3.961155e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.487431e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.392423e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.563477e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.683177e-04, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.373355e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.724838e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.362499e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.518146e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.842779e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.287348e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.207448e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.710557e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.243338e-04, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.413348e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.727808e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.923783e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.313575e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.545100e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.182393e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.405058e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.359640e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.652004e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.680045e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.529823e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.505677e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.270748e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.305440e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.839231e-04, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.339945e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.481037e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.531575e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.105372e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.577702e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.703050e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.026217e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.716463e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.559112e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 3.963569e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.183412e-05, nAccepted: 244, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.124617e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.613282e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.687504e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.439829e-04, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.553912e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.369172e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.307643e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.857151e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.338991e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.386158e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.059944e-04, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.232312e-04, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.647887e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.918800e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.806254e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 5.100751e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.592373e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.198883e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.302933e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.515365e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.584647e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.700519e-04, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.390591e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.422127e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.429483e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.382860e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.832826e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.289281e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.405362e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.025169e-04, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.325009e-04, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.565933e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.721040e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.865023e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.542653e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.594507e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.188337e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.222298e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.279813e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.610144e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.692621e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.347955e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.666744e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.055113e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.267826e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.847148e-04, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.362896e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.610480e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.043587e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.236059e-04, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.436029e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.905399e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.905520e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.426672e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.551351e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 3.908435e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.239181e-05, nAccepted: 244, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.125488e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.541869e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.678384e-04, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.346531e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.509108e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.250398e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.605546e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.838377e-04, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.331471e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.313689e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.592077e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.364986e-04, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.496262e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.649277e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.779273e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.312383e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.554029e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.236194e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.200809e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.446679e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.595537e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.737244e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.402307e-04, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.677054e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.526090e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.559281e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.837475e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.347292e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.442304e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.174633e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.346933e-04, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.666119e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.739266e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.862464e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.178977e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.554161e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 3.955282e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.147361e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.240553e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.664574e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.619799e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.359700e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.516609e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.336817e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.389653e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.835670e-04, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.300666e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.430395e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.756026e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.012240e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.510817e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.687429e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.785893e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.400205e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.523323e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 3.992568e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.342226e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.418046e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.691122e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.708064e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.456918e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.467618e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.270532e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.499490e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.818431e-04, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.314030e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.590079e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.625492e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.043290e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.426021e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.862354e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.848436e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.179543e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.548165e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.027494e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.360733e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.115409e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.554576e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.674587e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.387825e-04, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.795208e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.406946e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.388252e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.842345e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.304369e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.412276e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.940082e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.087051e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.528817e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.681603e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.875097e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.897941e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.596835e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 3.912268e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.173617e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.138029e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.676368e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.670858e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.437715e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.492353e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.091828e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.343337e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.847369e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.283849e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.452298e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.071527e-04, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.098162e-04, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.443629e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.877582e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.761627e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.578001e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.606269e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.087888e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.615260e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.258441e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.584331e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.641303e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.384652e-04, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.718923e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.212512e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.484245e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.828253e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.285976e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.294044e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.801746e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.112649e-04, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.440334e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.664707e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.805787e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.406035e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.638095e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.054860e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.292552e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.194133e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.602713e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.659346e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.328305e-04, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.573360e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.715619e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.246308e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.826604e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.290811e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.427904e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 9.582223e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 9.967394e-04, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.262023e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.633113e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.627652e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.602989e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.585672e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 3.929759e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.589331e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.122564e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.671200e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50000, nRep: 300, mean: 2.669373e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.375763e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 20, nRep: 300, mean: 4.552721e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000, nRep: 300, mean: 6.217315e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 50, nRep: 300, mean: 4.305248e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100000, nRep: 300, mean: 4.827937e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.345406e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 100, nRep: 300, mean: 4.363784e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.023686e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.051429e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.567000e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 2, nRep: 300, mean: 3.703763e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5000, nRep: 300, mean: 6.756887e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 5, nRep: 300, mean: 4.828638e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1000000, nRep: 10, mean: 4.562980e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 200, nRep: 300, mean: 4.410262e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 500, nRep: 300, mean: 4.697618e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 1, nRep: 300, mean: 3.446786e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsShift, functype: 2, vsFunc: 10, setsize: 50000000, filling: 10, nRep: 300, mean: 3.768688e-05, nAccepted: 263, critSizeStrat: 0

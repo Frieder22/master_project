@@ -1,18 +1,43 @@
 {
     "experiment": "AllreduceCompare",
-    "funcType": ["Vertexset", "Allreduce"],
-    "vsFunc": ["ALLREDUCE_BUTTERFLY", "ALLREDUCE_BUTTERFLY_REVERSE", "ALLREDUCE_SHIFT"],
+    "experimentType": "compare",
     "setSize": [1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000, 2000000, 5000000, 10000000, 20000000, 50000000, 100000000, 200000000, 500000000, 1000000000],
-    "filling": 1,
-    "nRepetitions": 300,
-    "nRepetitionsSmall" : 10,
-    "mpilib": "MPICH",
+    "refFunc": {
+        "folder": "AllreduceLibs",
+        "funcType": "Allreduce",
+        "mpilib": "intelMPI",
+        "name": "Reference"
+    },
+    "funcs":[
+        {
+        "folder": "AllreduceLibsButterfly",
+        "funcType": "Vertexset",
+        "vsFunc": "ALLREDUCE_BUTTERFLY",
+        "mpilib": "MPICH",
+        "name": "ALLREDUCE_BUTTERFLY"
+        },
+        {
+        "folder": "AllreduceLibsButterflyReverse",
+        "funcType": "Vertexset",
+        "vsFunc": "ALLREDUCE_BUTTERFLY_REVERSE",
+        "mpilib": "MPICH",
+        "name": "ALLREDUCE_BUTTERFLY_REVERSE"
+        },
+        {
+        "folder": "AllreduceLibsShift",
+        "funcType": "Vertexset",
+        "vsFunc": "ALLREDUCE_SHIFT",
+        "mpilib": "MPICH",
+        "name": "ALLREDUCE_SHIFT"
+        }
+    ],
     "nNodes": 32,
     "perNode": 32,
+    "ylim": [0.7, 8],
     "xAxis": "setSize",
+    "fineGrid": "true",
     "yAxis" : "runtime",
     "plotGraphs" : "compareAgainstNative",
     "plotFolder" : "AllreduceCompare",
-    "plotSize" : "small",
-    "ylim": [0.2, 4]
+    "plotSize" : "small"
 }

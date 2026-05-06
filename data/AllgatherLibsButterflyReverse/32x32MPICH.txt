@@ -1,570 +1,570 @@
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.760652e-04, nAccepted: 248
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.832440e-04, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.252277e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 4.047013e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.412263e-05, nAccepted: 270
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.580440e-04, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.911921e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.374117e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.202311e-04, nAccepted: 251
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.226205e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.629571e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.652560e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.823367e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.987444e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.694718e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.330863e-05, nAccepted: 267
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.880861e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.701909e-05, nAccepted: 269
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 3.013032e-05, nAccepted: 269
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.772537e-04, nAccepted: 250
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.849059e-04, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.078264e-05, nAccepted: 269
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.973883e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.347806e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.579265e-04, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.913668e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 2.938936e-05, nAccepted: 267
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.213545e-04, nAccepted: 243
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.319424e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.608122e-05, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.718376e-05, nAccepted: 270
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.667813e-05, nAccepted: 249
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.962210e-05, nAccepted: 250
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.699478e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.338407e-05, nAccepted: 267
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.612834e-05, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.757339e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.837155e-05, nAccepted: 273
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.756779e-04, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.842788e-04, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 2.888391e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.861577e-05, nAccepted: 249
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.574360e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.588902e-04, nAccepted: 247
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.912821e-03, nAccepted: 7
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.055071e-05, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.205742e-04, nAccepted: 245
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.227644e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.613890e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.603298e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.707773e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.970775e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.698016e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.219646e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.651699e-05, nAccepted: 246
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.705958e-05, nAccepted: 267
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.846822e-05, nAccepted: 262
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.744110e-04, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.847817e-04, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.176278e-05, nAccepted: 277
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 4.048741e-05, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 4.026019e-05, nAccepted: 271
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.578915e-04, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.918322e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.054765e-05, nAccepted: 260
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.224650e-04, nAccepted: 246
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.393517e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.700957e-05, nAccepted: 260
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.693616e-05, nAccepted: 262
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.720328e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.939655e-05, nAccepted: 251
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.704841e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.238334e-05, nAccepted: 270
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.963707e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 3.071362e-05, nAccepted: 273
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.919868e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.758756e-04, nAccepted: 249
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.841613e-04, nAccepted: 249
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.080761e-05, nAccepted: 271
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 4.111397e-05, nAccepted: 247
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.066905e-05, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.576351e-04, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.907726e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 2.922253e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.215490e-04, nAccepted: 246
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.248315e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.605723e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.567112e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.739152e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.870334e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.713074e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.215466e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.790756e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.769522e-05, nAccepted: 271
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.753302e-05, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.789013e-04, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.831807e-04, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.039877e-05, nAccepted: 269
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.919598e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.162219e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.577879e-04, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.917990e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.080776e-05, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.207897e-04, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.341887e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.678222e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.607738e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.782175e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.979880e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.696019e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.218579e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.929842e-05, nAccepted: 260
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.578876e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.881003e-05, nAccepted: 274
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.738707e-04, nAccepted: 250
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.833425e-04, nAccepted: 249
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 2.931146e-05, nAccepted: 269
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.835189e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.148587e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.579277e-04, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.909081e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.170439e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.209939e-04, nAccepted: 244
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.232788e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.751569e-05, nAccepted: 267
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.622729e-05, nAccepted: 260
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.821454e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 3.021019e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.698093e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.518912e-05, nAccepted: 269
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.923345e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.581441e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.892199e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.774187e-04, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.845292e-04, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 2.888099e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.954598e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.096022e-05, nAccepted: 260
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.571353e-04, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.910615e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.159068e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.221611e-04, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.335153e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.685712e-05, nAccepted: 267
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.822885e-05, nAccepted: 275
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.829427e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 3.023416e-05, nAccepted: 249
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.697811e-03, nAccepted: 7
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.161681e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.924740e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.694250e-05, nAccepted: 262
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.916107e-05, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.760515e-04, nAccepted: 262
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.856565e-04, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.170322e-05, nAccepted: 276
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 4.094521e-05, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.399173e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.587148e-04, nAccepted: 245
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.909467e-03, nAccepted: 7
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.096070e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.232050e-04, nAccepted: 247
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.225017e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.595370e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.651350e-05, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.813209e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.977428e-05, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.703961e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.211545e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.748843e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.638336e-05, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.769568e-05, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.768895e-04, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.842567e-04, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.065859e-05, nAccepted: 272
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.907347e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.550686e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.579251e-04, nAccepted: 245
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.910653e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 2.992970e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.212431e-04, nAccepted: 245
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.265150e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.554483e-05, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.710391e-05, nAccepted: 272
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.724074e-05, nAccepted: 260
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.989592e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.713059e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.241658e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 4.035502e-05, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.641224e-05, nAccepted: 262
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.902813e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.743475e-04, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.836951e-04, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.085101e-05, nAccepted: 278
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 4.012442e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.518881e-05, nAccepted: 272
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.578450e-04, nAccepted: 251
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.909287e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.084942e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.209689e-04, nAccepted: 241
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.226783e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.644503e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.683994e-05, nAccepted: 267
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.699352e-05, nAccepted: 260
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 3.047673e-05, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.703859e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.299304e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.834234e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.628074e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.807750e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.746759e-04, nAccepted: 248
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.837823e-04, nAccepted: 249
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.284807e-05, nAccepted: 274
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.886777e-05, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.115017e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.577646e-04, nAccepted: 246
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.914000e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.010185e-05, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.214326e-04, nAccepted: 243
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.263299e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.811169e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.655904e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.663942e-05, nAccepted: 251
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 3.114294e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.714804e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.370434e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.963183e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.637382e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.909706e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.764094e-04, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.829039e-04, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.095976e-05, nAccepted: 268
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 4.081394e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.259451e-05, nAccepted: 262
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.577291e-04, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.918766e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 2.941955e-05, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.214717e-04, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.297556e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.812115e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.725846e-05, nAccepted: 269
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.719687e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.952291e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.713893e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.313289e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 4.029659e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.838091e-05, nAccepted: 270
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 3.022590e-05, nAccepted: 269
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.760621e-04, nAccepted: 247
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.846966e-04, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 2.945777e-05, nAccepted: 273
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 4.044301e-05, nAccepted: 247
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.051735e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.577142e-04, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.909960e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.047432e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.219911e-04, nAccepted: 243
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.402866e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.593802e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.647661e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.688611e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 3.072356e-05, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.695689e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.361714e-05, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 4.000296e-05, nAccepted: 268
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.796687e-05, nAccepted: 269
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.995738e-05, nAccepted: 273
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.745165e-04, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.843554e-04, nAccepted: 262
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.010841e-05, nAccepted: 271
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.845978e-05, nAccepted: 250
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.104881e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.575520e-04, nAccepted: 245
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.913853e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 2.969255e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.202407e-04, nAccepted: 245
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.260534e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.797976e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.583996e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.762561e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 3.000391e-05, nAccepted: 260
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.701914e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.091940e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.804177e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.670303e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.907148e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.745299e-04, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.845136e-04, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 2.948752e-05, nAccepted: 271
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 4.231963e-05, nAccepted: 246
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.043362e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.575485e-04, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.913682e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.022710e-05, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.221341e-04, nAccepted: 245
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.224725e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.700668e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.724869e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.683838e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.936980e-05, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.696741e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.343536e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.650844e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.732366e-05, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.875728e-05, nAccepted: 273
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.753088e-04, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.835684e-04, nAccepted: 248
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.084355e-05, nAccepted: 273
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 4.076467e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 4.075218e-05, nAccepted: 279
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.577767e-04, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.914526e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 2.995180e-05, nAccepted: 276
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.216062e-04, nAccepted: 243
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.230847e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.519809e-05, nAccepted: 249
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.654971e-05, nAccepted: 269
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.703853e-05, nAccepted: 251
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 3.108510e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.750202e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.254737e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.972997e-05, nAccepted: 270
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.751201e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.951793e-05, nAccepted: 268
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.753240e-04, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.847850e-04, nAccepted: 251
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 2.788071e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.822724e-05, nAccepted: 250
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.331457e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.580472e-04, nAccepted: 246
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.913334e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.207654e-05, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.225538e-04, nAccepted: 248
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.224442e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.713386e-05, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.576680e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.932548e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.881929e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.708316e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.590552e-05, nAccepted: 273
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.616379e-05, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.634899e-05, nAccepted: 262
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.797056e-05, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.739219e-04, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.840100e-04, nAccepted: 260
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.147306e-05, nAccepted: 270
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.938779e-05, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.397759e-05, nAccepted: 268
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.571230e-04, nAccepted: 246
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.914902e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.255123e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.221474e-04, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.223901e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.745395e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.636946e-05, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.711223e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 3.099805e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.703624e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.377194e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.881832e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.709247e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 3.051833e-05, nAccepted: 270
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.748179e-04, nAccepted: 247
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.843432e-04, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 2.977528e-05, nAccepted: 272
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.995604e-05, nAccepted: 248
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.416689e-05, nAccepted: 270
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.587340e-04, nAccepted: 250
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.948122e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.207143e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.227615e-04, nAccepted: 248
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.234077e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.710589e-05, nAccepted: 267
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.849700e-05, nAccepted: 272
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.721850e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 3.248223e-05, nAccepted: 260
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.696682e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.574939e-05, nAccepted: 274
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.925308e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.830917e-05, nAccepted: 268
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.895415e-05, nAccepted: 271
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.738627e-04, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.860974e-04, nAccepted: 251
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.314641e-05, nAccepted: 274
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 4.161445e-05, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.032893e-05, nAccepted: 262
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.575572e-04, nAccepted: 248
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.915881e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 2.937715e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.225598e-04, nAccepted: 247
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.369860e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.604196e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.757513e-05, nAccepted: 270
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.786872e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.904007e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.700421e-03, nAccepted: 7
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.181973e-05, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.747648e-05, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.619824e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.947826e-05, nAccepted: 267
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.759220e-04, nAccepted: 247
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.845973e-04, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.159437e-05, nAccepted: 275
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.931039e-05, nAccepted: 248
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.314174e-05, nAccepted: 268
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.572579e-04, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.906792e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.023843e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.213167e-04, nAccepted: 246
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.224791e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.608189e-05, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.663175e-05, nAccepted: 271
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.756019e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 3.101494e-05, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.697693e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.363145e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 4.174194e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.704488e-05, nAccepted: 267
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.920110e-05, nAccepted: 273
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.746064e-04, nAccepted: 250
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.855529e-04, nAccepted: 249
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 2.929972e-05, nAccepted: 276
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.959691e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.108440e-05, nAccepted: 267
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.579115e-04, nAccepted: 248
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.915049e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 2.973881e-05, nAccepted: 270
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.216467e-04, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.360754e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.597609e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.587089e-05, nAccepted: 268
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.732245e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.966436e-05, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.698716e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.206358e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.643179e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.641717e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.694594e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.754135e-04, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.837924e-04, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.521403e-05, nAccepted: 278
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 4.155575e-05, nAccepted: 250
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.038251e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.575227e-04, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.910502e-03, nAccepted: 7
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.047324e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.218391e-04, nAccepted: 249
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.225029e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 5.046204e-05, nAccepted: 269
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.794440e-05, nAccepted: 276
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.822247e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 3.490058e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.701915e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.415993e-05, nAccepted: 269
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 4.006772e-05, nAccepted: 262
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.828910e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.962714e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.760130e-04, nAccepted: 243
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.854740e-04, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.501655e-05, nAccepted: 279
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 4.117707e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.519225e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.576400e-04, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.963898e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.008378e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.245212e-04, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 2.030547e-03, nAccepted: 10
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.830320e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.740075e-05, nAccepted: 269
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.814565e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.803716e-05, nAccepted: 250
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.698484e-03, nAccepted: 7
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.260616e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.963471e-05, nAccepted: 261
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.659068e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.805402e-05, nAccepted: 270
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.762212e-04, nAccepted: 251
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.837011e-04, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.403504e-05, nAccepted: 278
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.124146e-05, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 4.098953e-05, nAccepted: 277
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.579428e-04, nAccepted: 244
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.912896e-03, nAccepted: 7
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.009149e-05, nAccepted: 250
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.213124e-04, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.238645e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.654936e-05, nAccepted: 262
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.669309e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.779800e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 3.114317e-05, nAccepted: 260
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.709362e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.149088e-05, nAccepted: 260
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.893546e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.639735e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.963140e-05, nAccepted: 267
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.747836e-04, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.833954e-04, nAccepted: 251
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.452943e-05, nAccepted: 282
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.959676e-05, nAccepted: 247
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.130450e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.578990e-04, nAccepted: 245
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.917347e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.044950e-05, nAccepted: 250
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.213373e-04, nAccepted: 249
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.232060e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.561340e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.775489e-05, nAccepted: 268
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.708007e-05, nAccepted: 260
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.986096e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.694317e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.302432e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.511827e-05, nAccepted: 248
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.664990e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.873833e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.746849e-04, nAccepted: 247
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.845008e-04, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 2.973322e-05, nAccepted: 272
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.940699e-05, nAccepted: 251
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.186276e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.584939e-04, nAccepted: 246
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.911968e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 2.983619e-05, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.202922e-04, nAccepted: 249
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.248221e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.639979e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.597574e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.814463e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.977670e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.695274e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.196109e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.896544e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.557497e-05, nAccepted: 262
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 3.097119e-05, nAccepted: 269
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.759427e-04, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.842466e-04, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 2.876356e-05, nAccepted: 263
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.927616e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.172636e-05, nAccepted: 255
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.576744e-04, nAccepted: 245
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.908926e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.021155e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.219555e-04, nAccepted: 251
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.235354e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.779539e-05, nAccepted: 265
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.777128e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.748745e-05, nAccepted: 249
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 3.166789e-05, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.712840e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.431192e-05, nAccepted: 266
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 3.773156e-05, nAccepted: 252
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.905432e-05, nAccepted: 273
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.795489e-05, nAccepted: 267
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.752796e-04, nAccepted: 256
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.842425e-04, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 3.104386e-05, nAccepted: 271
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 3.704073e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 3.250852e-05, nAccepted: 259
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.583228e-04, nAccepted: 250
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.917170e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 3.178459e-05, nAccepted: 254
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.202089e-04, nAccepted: 249
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.267405e-03, nAccepted: 8
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 4.724739e-05, nAccepted: 260
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 2.559456e-05, nAccepted: 262
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 7.700302e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 2.927598e-05, nAccepted: 253
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.733424e-03, nAccepted: 9
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 3.417719e-05, nAccepted: 264
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 4.006322e-05, nAccepted: 258
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 2.567347e-05, nAccepted: 257
-name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 2.958499e-05, nAccepted: 273
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.836575e-04, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.943480e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.227940e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.680513e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.271631e-05, nAccepted: 243, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.686172e-04, nAccepted: 238, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.905158e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.800773e-05, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.324654e-04, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.230187e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.650233e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.991525e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.333253e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 6.335149e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.695149e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.539988e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.835326e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.152549e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.510074e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.918804e-04, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.939767e-04, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.238439e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.571497e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.338293e-05, nAccepted: 245, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.813512e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.918398e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.406177e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.322586e-04, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.226987e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.635287e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.990897e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.484950e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.446556e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.706704e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.523672e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.965404e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.243639e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.650140e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.880561e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.930411e-04, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.597142e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.627403e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.323439e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.799021e-04, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.908209e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.712035e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.320959e-04, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.225418e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.688097e-05, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.961295e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.358964e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.346663e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.696348e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.678825e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.916691e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.331077e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.452254e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.915652e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.954624e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 4.979092e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.703141e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.055804e-05, nAccepted: 242, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.760601e-04, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.909055e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.458677e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.329467e-04, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.227556e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.803353e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.920042e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.996740e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.445882e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.724157e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.697073e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.927829e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.296206e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.563712e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.957975e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.940318e-04, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.031630e-05, nAccepted: 245, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.649105e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.950958e-05, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.791098e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.903009e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.372185e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.319228e-04, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.227602e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.710865e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.834107e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.558150e-05, nAccepted: 243, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.359465e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.857273e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.694109e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.739492e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.304910e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.556718e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.891231e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.940494e-04, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.381173e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.702481e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.712857e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.775686e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.907005e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.436406e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.342096e-04, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.226369e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.750527e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.871290e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.536356e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.308004e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.717264e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.561860e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.836799e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.148711e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.469744e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.926419e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.944362e-04, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.300598e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.730643e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.063401e-05, nAccepted: 245, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.812211e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.906224e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.641541e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.350461e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.226664e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.901081e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.945505e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.942095e-05, nAccepted: 240, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.513446e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.700307e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.745638e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.908549e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.296947e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.639889e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.912621e-04, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.959913e-04, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.092504e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.738185e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.370065e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.781261e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.900838e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.238573e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.353589e-04, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.228493e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.667889e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.841381e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.291420e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.607356e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.691695e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.785737e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.902082e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.277530e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.489898e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.836119e-04, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.956885e-04, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.056380e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.724226e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.098508e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.782879e-04, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.915786e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.483654e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.339359e-04, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.227969e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.568140e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.926525e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.375714e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.616826e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.695501e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.966313e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.977389e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.278664e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.618769e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.898279e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.948894e-04, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.240614e-05, nAccepted: 245, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.837320e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.156116e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.810751e-04, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.902684e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.501376e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.320830e-04, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.224899e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.651151e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.803772e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.344549e-05, nAccepted: 236, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.247140e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.699064e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.445926e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.579126e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.203979e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.463577e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.852731e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.939183e-04, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.405822e-05, nAccepted: 245, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.914098e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.143356e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.783320e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.904390e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.527869e-05, nAccepted: 245, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.345656e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.240070e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.535794e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.913508e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 1.099652e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.428164e-05, nAccepted: 245, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.693732e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.844976e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.998203e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.134695e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.449142e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.920731e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.942825e-04, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.232215e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.589624e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.176965e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.819485e-04, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.906169e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.400101e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.330324e-04, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.245570e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.527200e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 5.079550e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.574413e-05, nAccepted: 245, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.586675e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.696784e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.556241e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.979714e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.341952e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.576949e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.832640e-04, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.949059e-04, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.164240e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.702329e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.204072e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.804416e-04, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.912093e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.429943e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.321912e-04, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.225865e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.557851e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.942429e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.590715e-05, nAccepted: 243, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.472274e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.700171e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.681107e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.779952e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.160444e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.455647e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.844255e-04, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.938021e-04, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.251272e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 6.020000e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.479317e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.750814e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.903658e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.285080e-05, nAccepted: 242, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.326134e-04, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.227867e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.418439e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.970624e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 1.114285e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.237098e-05, nAccepted: 241, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.696846e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.949242e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.727402e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.119486e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.606655e-05, nAccepted: 286, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.880764e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.949349e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.648029e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.737608e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.326161e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.754479e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.902122e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.425296e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.333149e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.226654e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.643945e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 5.037577e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.449016e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.467470e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.705321e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.836605e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.908133e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.156296e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.594582e-05, nAccepted: 280, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.926561e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.934200e-04, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.225346e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.692212e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.343739e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.784570e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.906171e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.420923e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.356356e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.229363e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.514822e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.856210e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.238101e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.471683e-05, nAccepted: 241, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.694121e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.613852e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.913834e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.254738e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.406272e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.782350e-04, nAccepted: 241, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.933330e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.167315e-05, nAccepted: 243, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.732990e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.110980e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.675533e-04, nAccepted: 243, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 3.309771e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.797655e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.336869e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.229957e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.594529e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.925115e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.139318e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 9.016035e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.695876e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.564088e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.821641e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.127485e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.591904e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 4.013222e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.941024e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.108443e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.620549e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.166071e-05, nAccepted: 240, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.780964e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.905141e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.672770e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.319287e-04, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.225878e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.619278e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.963445e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.641438e-05, nAccepted: 240, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.329062e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.700261e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.587323e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.963519e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.298708e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.431623e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.839382e-04, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.929359e-04, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.175385e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.690238e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.128487e-05, nAccepted: 239, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.802543e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.903294e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.675548e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.326973e-04, nAccepted: 245, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.228174e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.867142e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.915150e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.558479e-05, nAccepted: 243, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.564002e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.705275e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.883446e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 6.010135e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.477962e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.473415e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.983226e-04, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.936185e-04, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.266294e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.661029e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.307930e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.845930e-04, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 3.978493e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.756998e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.337893e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.226233e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.533690e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.905754e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.513076e-05, nAccepted: 245, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.377422e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.710596e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.657090e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.760904e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.188826e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.481630e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.889464e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.955124e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.225077e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.717950e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.132279e-05, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.754643e-04, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 4.153651e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.502075e-05, nAccepted: 243, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.323208e-04, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.224974e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.764764e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.884651e-05, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.483471e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.203464e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.697244e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.768448e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.725374e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.388331e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.521906e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.840979e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.936867e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.145706e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.678335e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.185605e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.779688e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.901724e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.396679e-05, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.313965e-04, nAccepted: 244, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.228204e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.553961e-05, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.850962e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.271250e-05, nAccepted: 241, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.438129e-05, nAccepted: 242, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.721352e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.589239e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 6.004148e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.323838e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.631282e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.886422e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.957232e-04, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.157500e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.734026e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.187910e-05, nAccepted: 242, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.769964e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.905043e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.338823e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.322725e-04, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.227412e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.918722e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.756112e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.454164e-05, nAccepted: 240, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.546420e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.751811e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.834336e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.938771e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.400474e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.498183e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.832020e-04, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.953803e-04, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.175963e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.796065e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.253775e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.765588e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.901980e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.456541e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.311556e-04, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.228345e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.558272e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.851667e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.409726e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.093332e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.715149e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.501427e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.821014e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.109332e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.567960e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.935379e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.944326e-04, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.069308e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.838225e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.168395e-05, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.801724e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.905018e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.390488e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.349856e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.228730e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.714110e-05, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.886118e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.429074e-05, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.214055e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.695223e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.549436e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.856810e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.176081e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.595546e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.789187e-04, nAccepted: 241, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.949104e-04, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.072802e-05, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.721460e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.009098e-05, nAccepted: 244, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.773413e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.903329e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.380987e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.325829e-04, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.228848e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.469301e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.868304e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.416138e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.535708e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.695911e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.578725e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.822390e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.323206e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.497493e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.973007e-04, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.935930e-04, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.226852e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.784309e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.132195e-05, nAccepted: 243, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.811373e-04, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.928708e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.184157e-05, nAccepted: 242, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.341626e-04, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.228525e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.527164e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.970358e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.414431e-05, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.253790e-05, nAccepted: 240, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.692942e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.588665e-05, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.782963e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.203086e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.326429e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.913044e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.942333e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.055583e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.746016e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.081032e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.780976e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 3.040034e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.428080e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.341434e-04, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.229574e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.503063e-05, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.876161e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.320548e-05, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.496184e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.694129e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.546577e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.813485e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.207915e-05, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.322041e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.817887e-04, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.931029e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.219378e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.822501e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.327523e-05, nAccepted: 247, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.745078e-04, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.905328e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.244742e-05, nAccepted: 240, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.333667e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.226444e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.473045e-05, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.978602e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.469938e-05, nAccepted: 245, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.392177e-05, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 6.009578e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.477486e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.858334e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.274297e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.318551e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50000, nRep: 300, mean: 3.835920e-04, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20000, nRep: 300, mean: 1.946795e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 20, nRep: 300, mean: 5.066644e-05, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000, nRep: 300, mean: 5.627872e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 50, nRep: 300, mean: 5.073030e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100000, nRep: 300, mean: 6.783686e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500000, nRep: 10, mean: 2.905590e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 100, nRep: 300, mean: 5.486179e-05, nAccepted: 244, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10000, nRep: 300, mean: 1.331890e-04, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200000, nRep: 10, mean: 1.229400e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2000, nRep: 300, mean: 6.701621e-05, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 2, nRep: 300, mean: 4.910264e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5000, nRep: 300, mean: 9.401467e-05, nAccepted: 244, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 5, nRep: 300, mean: 5.516911e-05, nAccepted: 246, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1000000, nRep: 10, mean: 5.697512e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 200, nRep: 300, mean: 5.666490e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 500, nRep: 300, mean: 5.696650e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 1, nRep: 300, mean: 5.299846e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibsButterflyReverse, functype: 2, vsFunc: 9, setsize: 50000000, filling: 10, nRep: 300, mean: 5.468751e-05, nAccepted: 278, critSizeStrat: 0

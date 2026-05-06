@@ -541,7 +541,7 @@ void Vertexset_Union_Shift(Vertexset* const vs, const int VERTEXSET_OPERATION) {
                     vert = vs->sparseArray[i];
                     Bitmap_Set_Shifted(vs->bitArray, vert, vs->indexShift, vs->size_bitarray);
                 }
-                // add vertices from buffer
+                // add vertices from bufferReverse
                 if (inBuff) {
                     for (size_t i = 0; i < sizeBuff; i++) {
                         vert = vs->sparseBuffer[i];

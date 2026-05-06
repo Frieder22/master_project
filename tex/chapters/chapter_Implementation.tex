@@ -793,7 +793,7 @@ To be more precise a strategy is found where in each iteration there is at most 
 			\EndIf
 			\State \Call{Send}{$O[0, \dots, $ size-1]} || \Call{Recv}{$O$[size, $\dots$, $2\cdot$size-1]}
 			\State size $\gets 2\cdot$size
-			\State tail $\gets$ tail$ - $size
+			\State tail $\gets$ tail$ - $shift
 		\Else
 			\If{\textbf{not} inBuff} \Comment{Put tail in buffer}
 				\State B $\gets$ $O$[size]
@@ -922,7 +922,17 @@ For a simple understanding how these cases relate to the stacking of the block p
 \end{figure}
 In the first case the tail is shorter than shift $\bar{s}_i$. It therefore needs to be moved out of the way if it is not already in the buffer. When the right half is then put on top of the left one, it is apparent that then for each column of the left half there is a contiguous stack of correct blocks. The same is apparent for the second case. Here one can see why the tail blocks need to be on top of the pile. If this would not the case the correct blocks would stay in the buffer and would not reach the left half of the pile. The third case is maybe the easiest one as here the situation is quite regular and the pile can be simply split in half and stacked on top of each other.\\
 These three cases produce therefore a pile that stacks all correct blocks to the first column which corresponds to rank 0. As we discussed early, the circular symmetry of the operations guarantee the same behavior for all ranks. After the \textbf{while}-loop of Algorithm \ref{algo:mostlyHalfingAllgather} there are just to steps left to do. Firstly it is possible that the last block is still in the buffer array. If this is the case, it needs to be appended. Secondly for a formally correct execution of an Allgather there must be the condition $O[r]=I_r$ fulfilled, meaning the block rank $r$ provided must be at the $r$-th position in the output array $O$. This is hidden behind the function $\Call{Reorder}{ }$. As the execution of the algorithm is deterministic this can definitively be done, but as this Allgather is only used for an union set operation this reordering is not necessary. It will be omitted in the further usage and is therefore not explored.
-\newpage
+
+\subsection{Expected performance of this reversely ordered Mostly Halfing Allgather} \label{sec:AllgatherShift performance}
+To estimate the execution time costs a uniformly filling of the input arrays is assumed. This guarantees that in each iteration each process sends and receives the same amount of data. If the total filling after the Allgather is $\Phi$, each processor is then filled with approximately $\varphi = \frac{\Phi}{p}$ elements. As this (Algorithm \ref{algo:mostlyHalfingAllgather}) round based algorithm takes $\ceil{\log_2(p)}$ iteration and in each iteration one send is performed the constant part from the linear cost model sums up to $\alpha\ceil{\log_2(p)}$. The total amount of data that is sent can also be easily calculated. When considering the pile representation rank 0 receives in each iteration only blocks that it needs (i.e. that it does not have already stacked in its array or buffer). As it does not have receive any duplicates, holds already one correct block in the beginning and holds all blocks at the end it received $p-1$ blocks. This gives a total communication cost for the $\beta$-term of $\beta\frac{p-1}{p}\Phi\cdot32\text{bit}$. There is nothing computed in a strict sense in this implementation in a strict sense, but there is memory copied which also takes time. For this the constant $\gamma_c$ is defined. It represents the time that it takes to copy one bit of memory from one buffer to another one. This is of corse again a big simplification to model this behavior linearly, but this allows for a reasonable run time estimation. In each iteration there is at most one block copied to the "pile" buffer $O$ or to the side buffer $B$. Therefore there is at most $\ceil{\log_2(p)} \frac{\Phi}{p}\cdot32 \text{bit}$ amount of data copied over the total execution time. This allows for an estimation of an upper boundary of the execution time
+\begin{align*}
+	T_\mathrm{MostHalfAllgather} < \ceil{\log_2(p)}\alpha
+	+ \frac{p-1}{p}\Phi\cdot32\text{bit}\cdot \beta
+	+ \ceil{\log_2(p)} \frac{\Phi}{p}\cdot32 \text{bit} \cdot \gamma_c
+\end{align*}
+for the optimal uniformly distributed case.\\
+Moreover one can see that it is possible to calculate the amount of blocks that need to be copied. The amount of copies depend actually on the number of processors $p$. When looking at Procedure \ref{algo:mostlyHalfingAllgather} one can see that the logic of handling the memory is only depending on the size of the tail. If the tail is bigger than 'shift' the last block needs to live on top of the pile and otherwise it needs to be in the spare buffer. Moreover the tail gets sliced by 'shift', if it is large enough. 'shift' takes all powers of 2 up $p/2$ in reverse order. The tail is initialized to $p$. 
+
 \subsection{Concept and Explicit Implementation}
 \subsection{Proof of Correctness}
 \subsection{Runtime Estimation}

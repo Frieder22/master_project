@@ -1,570 +1,570 @@
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.417600e-04, nAccepted: 256
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.262730e-04, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.916462e-05, nAccepted: 287
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.547300e-05, nAccepted: 279
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.553211e-05, nAccepted: 292
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.413544e-04, nAccepted: 256
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.490567e-03, nAccepted: 258
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.271078e-05, nAccepted: 284
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.529841e-04, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.362043e-03, nAccepted: 254
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.826790e-05, nAccepted: 279
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.695701e-05, nAccepted: 285
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.199580e-04, nAccepted: 254
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.039028e-05, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.845633e-03, nAccepted: 262
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.850026e-05, nAccepted: 258
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 8.589701e-05, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.842641e-05, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.929320e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.365734e-04, nAccepted: 276
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.240920e-04, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.507763e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.577208e-05, nAccepted: 285
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.116468e-05, nAccepted: 292
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.427538e-04, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.478482e-03, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.159030e-05, nAccepted: 260
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.537557e-04, nAccepted: 259
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.372145e-03, nAccepted: 241
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.767579e-05, nAccepted: 289
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.856984e-05, nAccepted: 287
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.139507e-04, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.687032e-05, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.856887e-03, nAccepted: 267
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 8.263015e-05, nAccepted: 270
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.757067e-05, nAccepted: 270
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.906375e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.790291e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.346839e-04, nAccepted: 274
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.232164e-04, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.414940e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.328269e-05, nAccepted: 290
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.202072e-05, nAccepted: 298
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.404650e-04, nAccepted: 255
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.480490e-03, nAccepted: 251
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.303947e-05, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.506266e-04, nAccepted: 251
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.368656e-03, nAccepted: 238
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.730624e-05, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.987002e-05, nAccepted: 267
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.182286e-04, nAccepted: 255
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.125641e-05, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.842978e-03, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.378864e-05, nAccepted: 280
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.661426e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 7.053094e-05, nAccepted: 290
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.918664e-05, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.367957e-04, nAccepted: 262
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.223246e-04, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.638034e-05, nAccepted: 296
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.196482e-05, nAccepted: 288
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.143745e-05, nAccepted: 296
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.439550e-04, nAccepted: 254
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.483711e-03, nAccepted: 264
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.194714e-05, nAccepted: 281
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.534728e-04, nAccepted: 259
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.369900e-03, nAccepted: 237
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.834275e-05, nAccepted: 274
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.828562e-05, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.127729e-04, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.039976e-05, nAccepted: 259
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.858832e-03, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.255264e-05, nAccepted: 282
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.778152e-05, nAccepted: 293
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.735787e-05, nAccepted: 283
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.626729e-05, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.346575e-04, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.267172e-04, nAccepted: 252
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.427164e-05, nAccepted: 291
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.188996e-05, nAccepted: 288
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.156910e-05, nAccepted: 290
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.398778e-04, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.477211e-03, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.085752e-05, nAccepted: 290
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.519169e-04, nAccepted: 270
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.369615e-03, nAccepted: 242
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.752083e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.712203e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.234741e-04, nAccepted: 263
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.871555e-05, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.848295e-03, nAccepted: 267
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.531971e-05, nAccepted: 282
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.647817e-05, nAccepted: 273
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.993005e-05, nAccepted: 289
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.832469e-05, nAccepted: 280
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.353718e-04, nAccepted: 274
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.232643e-04, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.320060e-05, nAccepted: 290
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.784666e-05, nAccepted: 246
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.345393e-05, nAccepted: 274
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.405593e-04, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.482158e-03, nAccepted: 256
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.406782e-05, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.564220e-04, nAccepted: 250
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.367962e-03, nAccepted: 249
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.693878e-05, nAccepted: 283
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.788928e-05, nAccepted: 288
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.149833e-04, nAccepted: 290
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.173119e-05, nAccepted: 249
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.846435e-03, nAccepted: 274
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.670512e-05, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.883680e-05, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.822055e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.085304e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.365468e-04, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.232091e-04, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.563193e-05, nAccepted: 290
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.378954e-05, nAccepted: 284
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.308310e-05, nAccepted: 273
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.397728e-04, nAccepted: 260
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.485944e-03, nAccepted: 255
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.251080e-05, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.520798e-04, nAccepted: 262
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.367806e-03, nAccepted: 246
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.779641e-05, nAccepted: 285
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 7.033396e-05, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.136558e-04, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.081695e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.847536e-03, nAccepted: 279
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.306918e-05, nAccepted: 279
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.800313e-05, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.872716e-05, nAccepted: 293
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.226608e-05, nAccepted: 290
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.359315e-04, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.239080e-04, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.570632e-05, nAccepted: 291
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.206813e-05, nAccepted: 294
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.307593e-05, nAccepted: 291
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.438871e-04, nAccepted: 253
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.478960e-03, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.607675e-05, nAccepted: 249
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.542350e-04, nAccepted: 258
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.369877e-03, nAccepted: 244
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.817080e-05, nAccepted: 288
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.797711e-05, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.135403e-04, nAccepted: 257
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.859293e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.859267e-03, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.358066e-05, nAccepted: 280
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.736615e-05, nAccepted: 293
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 7.054704e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.944008e-05, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.357833e-04, nAccepted: 259
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.235706e-04, nAccepted: 276
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.823273e-05, nAccepted: 290
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.297145e-05, nAccepted: 288
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.526989e-05, nAccepted: 294
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.416955e-04, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.476965e-03, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.305906e-05, nAccepted: 262
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.532603e-04, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.368579e-03, nAccepted: 246
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.723748e-05, nAccepted: 280
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.792172e-05, nAccepted: 287
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.161670e-04, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.825768e-05, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.850362e-03, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.970741e-05, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 8.218365e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 7.223024e-05, nAccepted: 289
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.007600e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.342077e-04, nAccepted: 273
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.221565e-04, nAccepted: 274
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.538381e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 9.151588e-05, nAccepted: 260
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.457414e-05, nAccepted: 281
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.418654e-04, nAccepted: 264
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.481622e-03, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.255560e-05, nAccepted: 273
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.518796e-04, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.367414e-03, nAccepted: 241
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.623468e-05, nAccepted: 279
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.936063e-05, nAccepted: 273
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.127714e-04, nAccepted: 263
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.451652e-05, nAccepted: 245
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.850327e-03, nAccepted: 276
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.131317e-05, nAccepted: 283
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.617748e-05, nAccepted: 288
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.795132e-05, nAccepted: 282
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.192474e-05, nAccepted: 280
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.354622e-04, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.214615e-04, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.279115e-05, nAccepted: 292
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.358361e-05, nAccepted: 273
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.099932e-05, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.419644e-04, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.481579e-03, nAccepted: 255
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.079686e-05, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.563185e-04, nAccepted: 244
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.368457e-03, nAccepted: 248
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.537788e-05, nAccepted: 283
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.736228e-05, nAccepted: 285
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.129851e-04, nAccepted: 252
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.392680e-05, nAccepted: 250
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.870485e-03, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.407322e-05, nAccepted: 281
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.700908e-05, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.747633e-05, nAccepted: 257
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.731068e-05, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.328818e-04, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.238410e-04, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.715258e-05, nAccepted: 283
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.219686e-05, nAccepted: 292
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.194397e-05, nAccepted: 290
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.405536e-04, nAccepted: 247
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.480279e-03, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.183246e-05, nAccepted: 280
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.520660e-04, nAccepted: 259
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.368105e-03, nAccepted: 247
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.680930e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.988294e-05, nAccepted: 276
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.114074e-04, nAccepted: 252
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.923847e-05, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.856004e-03, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.410326e-05, nAccepted: 285
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.570036e-05, nAccepted: 289
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 7.095442e-05, nAccepted: 287
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.997277e-05, nAccepted: 273
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.332218e-04, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.238933e-04, nAccepted: 264
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.583868e-05, nAccepted: 295
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.219478e-05, nAccepted: 287
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.233460e-05, nAccepted: 288
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.393248e-04, nAccepted: 263
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.480063e-03, nAccepted: 267
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.596881e-05, nAccepted: 255
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.528935e-04, nAccepted: 258
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.369272e-03, nAccepted: 247
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.753767e-05, nAccepted: 282
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.966305e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.145768e-04, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.683084e-05, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.847155e-03, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.645856e-05, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.687636e-05, nAccepted: 276
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 7.150829e-05, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.883664e-05, nAccepted: 290
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.351750e-04, nAccepted: 270
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.247261e-04, nAccepted: 270
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.416619e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.337546e-05, nAccepted: 281
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.395628e-05, nAccepted: 289
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.393953e-04, nAccepted: 260
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.485751e-03, nAccepted: 248
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.309187e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.534579e-04, nAccepted: 267
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.365433e-03, nAccepted: 242
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.863059e-05, nAccepted: 281
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 7.084219e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.128016e-04, nAccepted: 250
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.043388e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.854382e-03, nAccepted: 260
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.477000e-05, nAccepted: 264
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.941475e-05, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.935557e-05, nAccepted: 280
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.151055e-05, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.329703e-04, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.248139e-04, nAccepted: 255
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.681159e-05, nAccepted: 281
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.325891e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.266956e-05, nAccepted: 292
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.412562e-04, nAccepted: 267
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.486706e-03, nAccepted: 249
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.206246e-05, nAccepted: 285
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.531586e-04, nAccepted: 260
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.369804e-03, nAccepted: 241
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.788425e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.902321e-05, nAccepted: 273
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.152206e-04, nAccepted: 240
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.263084e-05, nAccepted: 255
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.858667e-03, nAccepted: 274
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.304461e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.860990e-05, nAccepted: 282
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.800311e-05, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.969652e-05, nAccepted: 274
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.343268e-04, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.219476e-04, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.320920e-05, nAccepted: 290
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.804097e-05, nAccepted: 264
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.525059e-05, nAccepted: 264
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.406554e-04, nAccepted: 259
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.476316e-03, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.341779e-05, nAccepted: 262
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.594590e-04, nAccepted: 254
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.367861e-03, nAccepted: 249
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.759202e-05, nAccepted: 292
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.889251e-05, nAccepted: 287
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.161891e-04, nAccepted: 241
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.301622e-05, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.868616e-03, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.291354e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.872811e-05, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 7.574868e-05, nAccepted: 258
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.942287e-05, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.347563e-04, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.221371e-04, nAccepted: 262
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.525540e-05, nAccepted: 274
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.348633e-05, nAccepted: 292
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.163195e-05, nAccepted: 293
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.421215e-04, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.478182e-03, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.130725e-05, nAccepted: 280
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.518543e-04, nAccepted: 256
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.370429e-03, nAccepted: 248
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.653125e-05, nAccepted: 285
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.880187e-05, nAccepted: 288
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.134802e-04, nAccepted: 260
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.864005e-05, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.850947e-03, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.522581e-05, nAccepted: 287
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.676466e-05, nAccepted: 274
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.973122e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.883908e-05, nAccepted: 293
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.371695e-04, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.215380e-04, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.517409e-05, nAccepted: 294
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.355788e-05, nAccepted: 290
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.134235e-05, nAccepted: 288
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.440824e-04, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.477521e-03, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.926390e-05, nAccepted: 246
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.525279e-04, nAccepted: 253
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.366579e-03, nAccepted: 238
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.691520e-05, nAccepted: 289
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.880379e-05, nAccepted: 291
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.123034e-04, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.708042e-05, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.851234e-03, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.367667e-05, nAccepted: 281
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.892595e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.772259e-05, nAccepted: 284
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.088910e-05, nAccepted: 283
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.369528e-04, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.230400e-04, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.577791e-05, nAccepted: 289
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.162703e-05, nAccepted: 291
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.256111e-05, nAccepted: 291
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.414186e-04, nAccepted: 259
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.483105e-03, nAccepted: 250
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.343660e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.533651e-04, nAccepted: 259
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.371562e-03, nAccepted: 241
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 9.424008e-05, nAccepted: 273
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.968821e-05, nAccepted: 257
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.153402e-04, nAccepted: 256
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.116094e-05, nAccepted: 283
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.864602e-03, nAccepted: 267
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.421369e-05, nAccepted: 273
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 8.002656e-05, nAccepted: 291
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.940370e-05, nAccepted: 287
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.321345e-05, nAccepted: 258
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.355385e-04, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.246917e-04, nAccepted: 254
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.293272e-05, nAccepted: 293
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.465751e-05, nAccepted: 291
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.029457e-05, nAccepted: 288
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.402161e-04, nAccepted: 259
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.482892e-03, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.244443e-05, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.568638e-04, nAccepted: 245
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.364156e-03, nAccepted: 246
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 9.271614e-05, nAccepted: 248
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.812147e-05, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.145245e-04, nAccepted: 248
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.838258e-05, nAccepted: 285
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.844714e-03, nAccepted: 270
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 8.538423e-05, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 9.454997e-05, nAccepted: 262
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 7.375629e-05, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.172834e-05, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.371847e-04, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.254486e-04, nAccepted: 258
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.578519e-05, nAccepted: 281
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.133730e-05, nAccepted: 283
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.199775e-05, nAccepted: 285
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.391355e-04, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.478720e-03, nAccepted: 267
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.148607e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.533990e-04, nAccepted: 248
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.368017e-03, nAccepted: 243
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.777575e-05, nAccepted: 279
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.769868e-05, nAccepted: 294
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.148159e-04, nAccepted: 256
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.196054e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.846706e-03, nAccepted: 259
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.379449e-05, nAccepted: 270
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.877068e-05, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.720324e-05, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.909140e-05, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.353038e-04, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.219278e-04, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.524832e-05, nAccepted: 292
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.092799e-05, nAccepted: 289
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.253684e-05, nAccepted: 281
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.406520e-04, nAccepted: 258
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.476368e-03, nAccepted: 256
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.119409e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.529028e-04, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.370498e-03, nAccepted: 241
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.623035e-05, nAccepted: 282
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.776697e-05, nAccepted: 282
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.149135e-04, nAccepted: 262
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.688450e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.861495e-03, nAccepted: 276
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.103000e-05, nAccepted: 282
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.654857e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.797206e-05, nAccepted: 287
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.029955e-05, nAccepted: 285
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.326796e-04, nAccepted: 276
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.223887e-04, nAccepted: 263
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.392912e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.120051e-05, nAccepted: 295
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.261677e-05, nAccepted: 290
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.437911e-04, nAccepted: 249
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.489841e-03, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.339726e-05, nAccepted: 283
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.575607e-04, nAccepted: 258
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.365585e-03, nAccepted: 240
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.693150e-05, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.656974e-05, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.156321e-04, nAccepted: 257
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.964737e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.853028e-03, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.280855e-05, nAccepted: 283
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.823098e-05, nAccepted: 281
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.604504e-05, nAccepted: 260
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.926881e-05, nAccepted: 264
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.377008e-04, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.235780e-04, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.051513e-05, nAccepted: 287
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.340574e-05, nAccepted: 296
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.243220e-05, nAccepted: 296
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.426745e-04, nAccepted: 255
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.486884e-03, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.298682e-05, nAccepted: 283
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.567514e-04, nAccepted: 243
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.369907e-03, nAccepted: 244
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.849991e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.967030e-05, nAccepted: 276
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.116436e-04, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.205143e-05, nAccepted: 250
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.863745e-03, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.376244e-05, nAccepted: 289
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.779200e-05, nAccepted: 280
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 7.717556e-05, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.305775e-05, nAccepted: 253
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.361864e-04, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.237570e-04, nAccepted: 267
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.114648e-05, nAccepted: 285
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.377918e-05, nAccepted: 288
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.131300e-05, nAccepted: 294
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.393859e-04, nAccepted: 257
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.474636e-03, nAccepted: 255
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.161815e-05, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.517338e-04, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.367441e-03, nAccepted: 238
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 9.272004e-05, nAccepted: 253
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.902949e-05, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.121573e-04, nAccepted: 270
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.731652e-05, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.839758e-03, nAccepted: 264
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.363635e-05, nAccepted: 280
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.834344e-05, nAccepted: 281
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 7.910990e-05, nAccepted: 251
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.952123e-05, nAccepted: 282
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.351828e-04, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.230657e-04, nAccepted: 254
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.661316e-05, nAccepted: 289
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.087448e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.494608e-05, nAccepted: 288
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.395663e-04, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.476905e-03, nAccepted: 263
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.363483e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.563255e-04, nAccepted: 242
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.366893e-03, nAccepted: 247
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.743120e-05, nAccepted: 258
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.943466e-05, nAccepted: 272
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.169117e-04, nAccepted: 257
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.880468e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.842045e-03, nAccepted: 273
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.178335e-05, nAccepted: 281
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.831894e-05, nAccepted: 285
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.887293e-05, nAccepted: 283
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 8.344065e-05, nAccepted: 254
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.337076e-04, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.237591e-04, nAccepted: 262
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.313561e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.273826e-05, nAccepted: 284
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.252351e-05, nAccepted: 289
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.414776e-04, nAccepted: 252
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.481128e-03, nAccepted: 258
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.320595e-05, nAccepted: 280
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.558284e-04, nAccepted: 246
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.366818e-03, nAccepted: 254
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.686830e-05, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.978535e-05, nAccepted: 286
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.142783e-04, nAccepted: 248
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.584066e-05, nAccepted: 245
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.860188e-03, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.526215e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 8.125687e-05, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 9.329817e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.221197e-05, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.364779e-04, nAccepted: 274
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.231005e-04, nAccepted: 263
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.558363e-05, nAccepted: 292
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.352979e-05, nAccepted: 284
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.295682e-05, nAccepted: 283
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.424471e-04, nAccepted: 256
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.477720e-03, nAccepted: 266
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.274519e-05, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.534417e-04, nAccepted: 254
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.369070e-03, nAccepted: 244
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.800493e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.983412e-05, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.131312e-04, nAccepted: 259
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.619303e-05, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.835678e-03, nAccepted: 271
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.492082e-05, nAccepted: 287
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.749588e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 7.136011e-05, nAccepted: 270
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.871270e-05, nAccepted: 264
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.340718e-04, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.225777e-04, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.602539e-05, nAccepted: 292
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.067116e-05, nAccepted: 292
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.195084e-05, nAccepted: 289
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.399976e-04, nAccepted: 262
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.478928e-03, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.249780e-05, nAccepted: 260
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.533338e-04, nAccepted: 254
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.370040e-03, nAccepted: 240
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.792315e-05, nAccepted: 283
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.969778e-05, nAccepted: 292
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.129623e-04, nAccepted: 284
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.825115e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.845860e-03, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.385636e-05, nAccepted: 273
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.796729e-05, nAccepted: 279
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.876663e-05, nAccepted: 275
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.858780e-05, nAccepted: 281
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.368619e-04, nAccepted: 260
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.231215e-04, nAccepted: 269
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.521110e-05, nAccepted: 292
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.311473e-05, nAccepted: 285
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.393964e-05, nAccepted: 294
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.380376e-04, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 300, mean: 3.477165e-03, nAccepted: 261
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.447565e-05, nAccepted: 277
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.535609e-04, nAccepted: 262
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 300, mean: 1.371392e-03, nAccepted: 246
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.728507e-05, nAccepted: 278
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.826737e-05, nAccepted: 268
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.136025e-04, nAccepted: 259
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 7.183723e-05, nAccepted: 265
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 300, mean: 7.849521e-03, nAccepted: 274
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.749890e-05, nAccepted: 270
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.905452e-05, nAccepted: 279
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.937297e-05, nAccepted: 276
-name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.080750e-05, nAccepted: 262
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.353303e-04, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.222047e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.241365e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.335892e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.351623e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.406439e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.509886e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.001404e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.526802e-04, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.389269e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.995058e-05, nAccepted: 286, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.613717e-05, nAccepted: 287, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.119152e-04, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.583005e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.804303e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.147800e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.411505e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.687238e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.015805e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.335208e-04, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.227203e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.074099e-05, nAccepted: 288, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.442600e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.511557e-05, nAccepted: 280, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.382203e-04, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.601552e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.419225e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.524972e-04, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.391154e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.980191e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.777839e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.132868e-04, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.828687e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.878994e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.186634e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.603995e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.846086e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.781078e-05, nAccepted: 286, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.360935e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.219114e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.970379e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.739351e-05, nAccepted: 286, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.132415e-05, nAccepted: 287, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.390974e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.592881e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.225349e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.522691e-04, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.395463e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.697619e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.815140e-05, nAccepted: 293, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.117292e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.727970e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.865102e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.109984e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.469065e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.613332e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.730819e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.336613e-04, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.224524e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.093915e-05, nAccepted: 291, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.429237e-05, nAccepted: 286, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.413149e-05, nAccepted: 293, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.426204e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.503615e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.239700e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.523000e-04, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.443338e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.784045e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.661033e-05, nAccepted: 280, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.122308e-04, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.769060e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.893197e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.188785e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.726260e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.729877e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.890604e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.344497e-04, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.237242e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.112697e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.255183e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.405534e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.385273e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.739701e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.283081e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.545563e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.426624e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.924935e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.655497e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.123088e-04, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.736621e-05, nAccepted: 286, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.847458e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.110372e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.315092e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.657552e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.614172e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.365009e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.226139e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.952795e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.410864e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.415546e-05, nAccepted: 290, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.383260e-04, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.501451e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.105991e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.517928e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.432430e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.687439e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.662871e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.123686e-04, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.723088e-05, nAccepted: 286, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.846749e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 6.862794e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.590328e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.620343e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.779870e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.335374e-04, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.220566e-04, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.999002e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.280216e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.159165e-05, nAccepted: 288, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.383850e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.497670e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.200957e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.544128e-04, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.423031e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.774563e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.945349e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.129324e-04, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.549162e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.860373e-03, nAccepted: 7, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.672290e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.550430e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.779110e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.631303e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.341734e-04, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.222626e-04, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.467909e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.248774e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.115140e-05, nAccepted: 290, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.369925e-04, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.506457e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.080749e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.522108e-04, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.390783e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.663474e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.702377e-05, nAccepted: 286, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.105989e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.480947e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.815807e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.161507e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.519611e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.542041e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.799375e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.346693e-04, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.233797e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.883625e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.393225e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.502486e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.380469e-04, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.487703e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.459562e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.526576e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.391124e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.774559e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.537107e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.121049e-04, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.799790e-05, nAccepted: 286, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.882772e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.261481e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.622652e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.763285e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.750294e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.360528e-04, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.220935e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.859196e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.271487e-05, nAccepted: 280, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.244207e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.399958e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.496607e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.156989e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.543019e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.439542e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.881695e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.756418e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.135155e-04, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.785563e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.914074e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.151445e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.513430e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.739714e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.656309e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.360530e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.213880e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.078197e-05, nAccepted: 290, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.409500e-05, nAccepted: 289, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.304352e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.389258e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.465847e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.267758e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.543634e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.391865e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.660257e-05, nAccepted: 287, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.755643e-05, nAccepted: 289, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.120156e-04, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.592365e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.863796e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.142115e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.483600e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.685982e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.598133e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.335113e-04, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.243563e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.983404e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.784712e-05, nAccepted: 287, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.636033e-05, nAccepted: 289, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.398987e-04, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.507344e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.355478e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.523477e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.428061e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.892268e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.987722e-05, nAccepted: 287, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.130709e-04, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.698959e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.881631e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.079015e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.564875e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 7.023337e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.889019e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.335757e-04, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.242385e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.865905e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.375518e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.365439e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.424580e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.482980e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.483352e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.533036e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.436025e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.910171e-05, nAccepted: 280, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.632111e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.119425e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.728713e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.793775e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.005118e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.445030e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.584815e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.808514e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.362819e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.199423e-04, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.965971e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.593153e-05, nAccepted: 287, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.223298e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.389667e-04, nAccepted: 254, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.564591e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.100160e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.523366e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.391375e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.627124e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.609067e-05, nAccepted: 289, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.114301e-04, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.784494e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.811601e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 6.982729e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.450443e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.708157e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.753804e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.340817e-04, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.210327e-04, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.010603e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.424570e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.494647e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.411073e-04, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.473174e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.107449e-05, nAccepted: 286, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.544317e-04, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.398051e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.656605e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.771380e-05, nAccepted: 290, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.120141e-04, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.682529e-05, nAccepted: 280, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.832824e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 6.999409e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.445809e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.723176e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.875046e-05, nAccepted: 286, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.359312e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.235754e-04, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.929378e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.452114e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.352702e-05, nAccepted: 291, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.389089e-04, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.508500e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.267192e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.542146e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.382822e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.741312e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.660081e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.121077e-04, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.711657e-05, nAccepted: 288, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.893269e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 6.947307e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.530184e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.726344e-05, nAccepted: 280, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.666867e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.331800e-04, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.215455e-04, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.239549e-05, nAccepted: 287, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.071818e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.134460e-05, nAccepted: 287, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.387869e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.479781e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.187530e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.520835e-04, nAccepted: 245, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.388268e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.709387e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.793728e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.126221e-04, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.656757e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.824141e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.005801e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 8.007294e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.621406e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.049941e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.359117e-04, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.235283e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.156103e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.667234e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.078621e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.376469e-04, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.541863e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.323816e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.527882e-04, nAccepted: 251, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.414996e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.979494e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.712848e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.137997e-04, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.757029e-05, nAccepted: 280, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.916337e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.020279e-05, nAccepted: 280, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.647951e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.867470e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.880969e-05, nAccepted: 258, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.365915e-04, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.218299e-04, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.920227e-05, nAccepted: 287, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.393433e-05, nAccepted: 295, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.149344e-05, nAccepted: 291, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.397820e-04, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.486600e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.117989e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.527580e-04, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.388904e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.757436e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.775712e-05, nAccepted: 288, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.123357e-04, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.535634e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.879045e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 6.936136e-05, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.748040e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.675380e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.695344e-05, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.332471e-04, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.212811e-04, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.922025e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.500577e-05, nAccepted: 286, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.128732e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.381841e-04, nAccepted: 249, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.519565e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.103348e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.542154e-04, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.451924e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.780930e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.495441e-05, nAccepted: 280, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.122923e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.705960e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.885406e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 6.822548e-05, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.466796e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.554997e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.758975e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.367036e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.219874e-04, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.466425e-05, nAccepted: 287, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.320694e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.327294e-05, nAccepted: 290, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.384285e-04, nAccepted: 256, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.477235e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.364073e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.533319e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.402208e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.741880e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 7.085224e-05, nAccepted: 288, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.142339e-04, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.750832e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.879743e-03, nAccepted: 7, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.192690e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.594068e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.974630e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.993302e-05, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.335810e-04, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.225477e-04, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.024186e-05, nAccepted: 288, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.440157e-05, nAccepted: 286, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.414039e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.388949e-04, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.500378e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.240040e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.527501e-04, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.392167e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.809387e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.692658e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.122586e-04, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.646337e-05, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.813359e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 6.955568e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.700833e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.866937e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.794504e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.351138e-04, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.238997e-04, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.126445e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.689559e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.467439e-05, nAccepted: 290, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.391519e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 4.854888e-03, nAccepted: 10, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.166701e-05, nAccepted: 280, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.582941e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.421676e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.709171e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.921825e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.116761e-04, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.750688e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.890806e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.089877e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.455173e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.740286e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.841321e-05, nAccepted: 287, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.335391e-04, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.236216e-04, nAccepted: 262, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.308482e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.376716e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.042525e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.377785e-04, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.468065e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.158655e-05, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.528809e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.397901e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.526871e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.727183e-05, nAccepted: 287, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.130665e-04, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.768544e-05, nAccepted: 280, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.929391e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.167788e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.573163e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.741231e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.818223e-05, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.331923e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.233806e-04, nAccepted: 257, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.924694e-05, nAccepted: 286, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.444822e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.527782e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.374983e-04, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.527913e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.420129e-05, nAccepted: 266, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.515207e-04, nAccepted: 255, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.389769e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.748733e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.611255e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.120516e-04, nAccepted: 269, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.832012e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.919332e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 6.949688e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.736558e-05, nAccepted: 288, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.613986e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.835921e-05, nAccepted: 290, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.355933e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.207299e-04, nAccepted: 259, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.312711e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.478409e-05, nAccepted: 289, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.352691e-05, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.403554e-04, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.493600e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.174256e-05, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.514723e-04, nAccepted: 252, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.400425e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.753573e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.783459e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.116642e-04, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.501755e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.847584e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.107055e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.606128e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.959728e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 7.085247e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.332344e-04, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.237221e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 7.100614e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.501667e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.147719e-05, nAccepted: 287, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.396182e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.487062e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.202610e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.549932e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.393634e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.876752e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.749637e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.113632e-04, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.683717e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.884803e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.149251e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.509827e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.753112e-05, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.793291e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.375214e-04, nAccepted: 267, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.213834e-04, nAccepted: 270, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.983835e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.311544e-05, nAccepted: 288, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.434210e-05, nAccepted: 288, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.398636e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.501318e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.308262e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.552441e-04, nAccepted: 260, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.416366e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.704471e-05, nAccepted: 283, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.637446e-05, nAccepted: 278, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.123323e-04, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.609678e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.832364e-03, nAccepted: 7, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 6.885853e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.450380e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.533872e-05, nAccepted: 275, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.687200e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.321967e-04, nAccepted: 265, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.225732e-04, nAccepted: 264, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.926721e-05, nAccepted: 291, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.255349e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.387335e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.390157e-04, nAccepted: 248, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 4.183349e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.280532e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.549211e-04, nAccepted: 261, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.424697e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.896282e-05, nAccepted: 285, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.462113e-05, nAccepted: 279, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.118975e-04, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.847541e-05, nAccepted: 284, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.812227e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 6.996121e-05, nAccepted: 282, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.621878e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.771604e-05, nAccepted: 272, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.977793e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50000, nRep: 300, mean: 4.338668e-04, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20000, nRep: 300, mean: 2.228754e-04, nAccepted: 263, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 20, nRep: 300, mean: 6.888959e-05, nAccepted: 280, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000, nRep: 300, mean: 8.439125e-05, nAccepted: 277, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 50, nRep: 300, mean: 7.452563e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100000, nRep: 300, mean: 7.393692e-04, nAccepted: 250, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500000, nRep: 10, mean: 3.490494e-03, nAccepted: 8, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 100, nRep: 300, mean: 7.215852e-05, nAccepted: 268, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10000, nRep: 300, mean: 1.539638e-04, nAccepted: 253, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200000, nRep: 10, mean: 1.398112e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2000, nRep: 300, mean: 8.734515e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 2, nRep: 300, mean: 6.803114e-05, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5000, nRep: 300, mean: 1.120850e-04, nAccepted: 276, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 5, nRep: 300, mean: 6.680695e-05, nAccepted: 273, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1000000, nRep: 10, mean: 7.860025e-03, nAccepted: 9, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 200, nRep: 300, mean: 7.050097e-05, nAccepted: 274, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 500, nRep: 300, mean: 7.344211e-05, nAccepted: 271, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 1, nRep: 300, mean: 6.732064e-05, nAccepted: 281, critSizeStrat: 0
+name: AllgatherLibs, functype: 0, vsFunc: 0, setsize: 1, filling: 10, nRep: 300, mean: 6.867039e-05, nAccepted: 282, critSizeStrat: 0

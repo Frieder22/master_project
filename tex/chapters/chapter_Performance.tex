@@ -7,7 +7,7 @@ In this section the performance of the algorithms is tested. It is evaluated whi
 
 \section{Setup}
 All implementations are tested on the same machine. They are run on the \emph{Hydra} cluster of the Parallel Computing Department of TU Wien. The cluster consists of 36 compute nodes and each node is equipped with two Intel\textsuperscript{\textregistered} Xeon\textsuperscript{\textregistered} Gold 6130F 16-Core CPUs. Each compute node has therefore 32 cores available. The nodes are connected via dual Intel\textsuperscript{\textregistered} Omni-Path interconnect with an upper boundary of 100 Gbytes/s bandwidth \cite{traeff2025}. The code for all experiments is written in C using \gls{mpi} as message passing framework. The code is always compiled using the \texttt{-O3} flag. Three different MPI-libraries are considered for benchmarking the algorithms (OpenMPI, MPICH and IntelMPI). The available version of the OpenMPI library as well as the MPICH library use GCC 12.1.0 as compiler. The available IntelMPI framework uses GCC 10.2.1.\\
-Different setups of the number of used processes and their distribution on the nodes are tested. As the new algorithms are designed to be optimal for a large amount of processors, the configurations will cover the most available number of processors $p$. One needs to keep in mind that some algorithms will only work for $p$ being a power of 2. So for the power of two case there are $32\times 32 = 1024$ and for the general case also $36\times32=1152$ number of processors used. We also test the algorithms with only one process on each node to allow only communication via the interconnect. In this setup the linear communication cost model may apply best.
+Different setups of the number of used processes and their distribution on the nodes are tested. As the new algorithms are designed to be optimal for a large amount of processors, the configurations will cover the most available number of processors $p$. One needs to keep in mind that some algorithms will only work for $p$ being a power of 2. So for the power of two case there are $32\times 32 = 1024$. As one node was not available the general case is chosen to be $34\times32=1088$. To use 34 nodes instead of all 35 remaining nodes is done, because this arises a more regular and therefore more realistic scenario. We also test the algorithms with only one process on each node to allow only communication via the interconnect. In this setup the linear communication cost model may apply best.
 \section{Measurement of the different algorithms}
 Benchmarking algorithms on distributed systems is not a trivial task and is there are many caveats that need to be considered. To get a fair, reliable and reproducible results the methodology is closely oriented at the work of Hunold and Carpen-Amerie \cite{HunoldBench}. A major problem in timing executions is that clocks of the different processes are not necessarily synchronized. Moreover the clocks can drift out of sync over a period of time. A simple but sufficient strategy is to synchronize all processors using \Call{MPI\_Barrier}{ } . This function guarantees that no process proceeds its execution until every process called it. This of corse does not directly imply that all processes continue execution at the same time, but it is shown to be sufficient, if larger execution times are measured \cite{HunoldBarrier}. This condition is in our setup fulfilled as the newly proposed algorithms are build to optimize the union set operation for large sets which result in large execution times.\\
 \begin{algorithm}
@@ -46,7 +46,7 @@ So after that there is an array $t$ with $nrep$ data points of the slowest proce
 The remaining data points (which can be expected to be the majority for an fairly bell shaped distribution) are used to calculated the arithmetic mean $\bar{t}_r = \frac{1}{n} \sum_{i=0}^n t_i $ of one single run. Another good estimator for comparing the execution times of two experiment runs would be the median. The restriction to only calculating the mean is mostly to keep evaluation as simple as possible. As this calculation is done consistently for all experiment runs we can guarantee fairness in comparisons. 
 
 One experiment usually consists out of multiple experiment runs. If the execution time  is examined in dependency of some parameter, then multiple data points are needed (i.e. a data point for each variation of the parameter). To avoid any bias that could arise due to the order of execution the experiment runs are shuffled randomly.\\
-The typical entry points to a MPI-program running on a distributed memory machine are usually \texttt{mpirun}/\texttt{srun}. Hunold and Carpen-Amerie \cite{HunoldBench} showed that the benchmark of an function is not necessarily  independent of its execution by \texttt{mpirun}/\texttt{srun}. In their data it is apparent that the standard deviations of  multiple executed experiments can be significantly smaller than the standard deviation of the means of these experiments. So when executing the same experiment twice (with different calls to \texttt{mpirun}/\texttt{srun}) the results of the second run can lie reliably and significantly outside of the standard deviation range of the first run. This is the reason why we do not rely on calculating the standard deviations in each experiment run. Instead each experiment run is executed multiple times using different calls of  \texttt{mpirun}/\texttt{srun}. Hunold and Carpen-Amarie state a number of 30 iterations as sufficient which we therefore also use in this benchmark. A sketch on how the experimentation runs are executed is shown in Algorithm \ref{algo:benchmark}.
+The typical entry points to a MPI-program running on a distributed memory machine are usually \texttt{mpirun}/\texttt{srun}. Hunold and Carpen-Amerie \cite{HunoldBench} showed that the benchmark of an function is not necessarily  independent of its execution by \texttt{mpirun}/\texttt{srun} \todo{change text to only use srun}. In their data it is apparent that the standard deviations of  multiple executed experiments can be significantly smaller than the standard deviation of the means of these experiments. So when executing the same experiment twice (with different calls to \texttt{mpirun}/\texttt{srun}) the results of the second run can lie reliably and significantly outside of the standard deviation range of the first run. This is the reason why we do not rely on calculating the standard deviations in each experiment run. Instead each experiment run is executed multiple times using different calls of  \texttt{mpirun}/\texttt{srun}. Hunold and Carpen-Amarie state a number of 30 iterations as sufficient which we therefore also use in this benchmark. A sketch on how the experimentation runs are executed is shown in Algorithm \ref{algo:benchmark}.
 \begin{algorithm}
 	\caption{– Benchmark of a experiment\\
 		\textit{l\_setup}: List of setup parameter}
@@ -82,7 +82,7 @@ Confidence intervals are not quite common in representing error bars, but arise 
 
 
 \section{Methodology and general information of the benchmarking process}
-How a measurement of run times of some setup is executed and processed is explained in the section before. We now give an insight in the reasoning why specific experiments and setups are chosen. One needs to keep in mind that there are quite a lot of free parameter that can be explored. There are three different MPI libraries, at least 4 different processor layouts ($32\times 32,~ 36\times 32,~ 32\times 1 \text{ and } 36\times 1$), different set sizes and different set fillings that need to be explored. Moreover there are different variants of the same functions and the parameter '\textit{critSize}' that need to be considered. We search especially for parameter ranges where the implementations work best or show their weaknesses.\\
+How a measurement of run times of some setup is executed and processed is explained in the section before. We now give an insight in the reasoning why specific experiments and setups are chosen. One needs to keep in mind that there are quite a lot of free parameter that can be explored. There are three different MPI libraries, at least 4 different processor layouts ($32\times 32,~ 34\times 32,~ 32\times 1 \text{ and } 34\times 1$), different set sizes and different set fillings that need to be explored. Moreover there are different variants of the same functions and the parameter '\textit{critSize}' that need to be considered. We search especially for parameter ranges where the implementations work best or show their weaknesses.\\
 So the strategy is as follows: Firstly we get an insight into which MPI library performs the best. This is only done for the MPI native Allreduce and Allgather and the foundation algorithms that build the basis of our newly proposed algorithms. In doing so we also evaluate which of the foundation algorithms will perform best. Here we only show results of one processor layout if they can be representative for all. The remaining plots are only shown in the appendix. As the sparse set representation only depends on the set filling and a set union is achieved by an Allgather only the set filling is varied for benchmarking Allgather implementation. The same is true for Allreduce implementations but with only varying the set size. Performance of these algorithms is normally plotted against message size. \\
 The second step is then to compare the newly proposed algorithms against the native sparse and dense implementations. As reference the foundation algorithms are used. Again there will be plots put into the appendix if necessary.\\
 As last step the performance of the proposed algorithms are tested in a use case  example. Here we use the new set union operation functions to calculate a \gls{bfs} on different graph instances. The reference algorithm will have the same structure but using a only dense representation of the subsets and an Allreduce to calculate the set union.
@@ -93,53 +93,56 @@ Most plots are showing direct execution times are mostly using a log-log scale. 
 
 \section{Testing foundation Allreduce against MPI libraries} \label{sec:baseAllreduce}
 \subsection{Allreduce of different MPI libraries}
-The first objective is to find the best MPI library to perform a Allreduce. For this the Allreduce implementations of openMPI, intelMPI and MPICH are tested. The selection of the actual algorithm is completely handled by the libraries itself. The execution time is of corse expected to grow with the message size of the Allreduce which is itself proportional to the set size $|\Tilde{S}|$ of the underlying set $\Tilde{S}$. As a reasonable parameter range it is chosen to test set sizes from 1000 up until 1.000.000.000 which corresponds directly to the message size in bits. The results are presented on a log-log-scale so a 1-2-5 spacing is chosen for each power of 10. As execution times are quite long for large set sizes the number of measurements for these experiment runs is reduces. In each run with a set size over $10^7$ there are only 10 measurements taken (there are still 30 runs per data point executed). The results for different processor layouts are shown in Figure \ref{fig:AllreduceMPIlibs}. It is apparent that in most configurations all libraries perform equally well. Exceptions are smaller set sizes below $10^5$. Here is the performance of intelMPI in all configurations better. For larger set sizes MPICH is slightly faster in all configurations when compared to the other libraries. We expect the newly proposed algorithms to be working best for large set sizes so MPICH is the best reference MPI library in regard of a native Allreduce.
+The first objective is to find the best MPI library to perform a Allreduce. For this the Allreduce implementations of openMPI, intelMPI and MPICH are tested. The selection of the actual algorithm is completely handled by the libraries itself. The execution time is of corse expected to grow with the message size of the Allreduce which is itself proportional to the set size $|\Tilde{S}|$ of the underlying set $\Tilde{S}$. 
+As a reasonable parameter range it is chosen to test set sizes from 1000 up until 1.000.000.000 which corresponds directly to the message size in bits. The results are presented on a log-log-scale so a 1-2-5 spacing is chosen for each power of 10. As execution times are quite long for large set sizes the number of measurements for these experiment runs is reduces. In each run with a set size over $10^7$ there are only 10 measurements taken (there are still 30 runs per data point executed). 
+The results for different processor layouts are shown in Figure \ref{fig:AllreduceMPIlibs}. It is apparent that MPICH performs for set sizes over 50.000.000 way worse than the other libraries. IntelMPI and openMPI perform quite equally well, but is apparent that in nearly all situations IntelMPI is faster. Only for the processor layout $p=(32\times1)$ the results show (Figure \ref{fig:AllreduceMPIlibs32x1}) that openMPI can be faster for some set sizes |$\Tilde{S}$|.  IntelMPI is therefore chosen to be the best performing library to perform a Allreduce.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/AllreduceLibs/32x32AllreduceLibs.png}
 		\caption{$p=(32\times32)$}
-		\label{fig:32x32}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/AllreduceLibs/32x1AllreduceLibs.png}
 		\caption{$p=(32\times1)$}
-		\label{fig:32x1}
+		\label{fig:AllreduceMPIlibs32x1}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../plots/AllreduceLibs/36x32AllreduceLibs.png}
-		\caption{$p=(36\times32)$}
-		\label{fig:36x32}
+		\includegraphics[width=\textwidth]{../plots/AllreduceLibs/34x32AllreduceLibs.png}
+		\caption{$p=(34\times32)$}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../plots/AllreduceLibs/32x1AllreduceLibs.png}
-		\caption{$p=(36\times1)$}
-		\label{fig:36x1}
+		\includegraphics[width=\textwidth]{../plots/AllreduceLibs/34x1AllreduceLibs.png}
+		\caption{$p=(34\times1)$}
 	\end{subfigure}
 	\caption{Benchmark of the Allreduce implementations provided by the different MPI libraries. Execution time $t$ is plotted against set size $|\Tilde{S}|$. Four different processor layouts are shown (indicated by $p$).}
 	\label{fig:AllreduceMPIlibs}
 \end{figure}
 
 \subsection{Foundation Allreduce algorithms}
-Here the foundation Allreduce algorithms are tested. There are three different implementations to test. The first two are based on the butterfly communication scheme and can therefore only work a number of processors that is a power of 2. These two implementations only differ in the rank ID mapping. The first one implements Algorithm \ref{algo:redScatterAndAllreduce} and is from now on referred as \texttt{Allreduce\_Butterfly}. The second one is the same algorithm but with a rank ID mapping where the ID is mapped to its bit reversal. This algorithm is from now on referred as \texttt{Allreduce\_Butterfly\_Reversed}. The third algorithm uses a shift based communication pattern, is the implementation of Algorithm \ref{algo:redScatterAndAllgatherShift} and is from now on called \texttt{Allreduce\_Shift}. This algorithm works correctly for an arbitrary number of processors. 
+Here the foundation Allreduce algorithms are tested. There are three different implementations to test. The first two are based on the butterfly communication scheme and can therefore only work a number of processors that is a power of 2. These two implementations only differ in the rank ID mapping. The first one implements Algorithm \ref{algo:redScatterAndAllreduce} and is from now on referred as \texttt{Allreduce\_Butterfly}. 
+The second one is the same algorithm but with a rank ID mapping where the ID is mapped to its bit reversal. This algorithm is from now on referred as \texttt{Allreduce\_Butterfly\_Reversed}. The third algorithm uses a shift based communication pattern, is the implementation of Algorithm \ref{algo:redScatterAndAllgatherShift} and is from now on called \texttt{Allreduce\_Shift}. This algorithm works correctly for an arbitrary number of processors. 
 
-The Allreduce implementations that are tested here are build of point-to-point MPI calls. These MPI-functions are expected to be implemented quite similarly and therefore one should only see minor influences of the chosen MPI library on the execution time. Nonetheless all three foundation Allreduce procedures are tested using all three available libraries. The Butterfly variants are of course only tested for the $p=(32\times32)$ and $p=(32\times1)$ setups. \texttt{Allreduce\_Shift} is tested only using $p=(36\times32)$ and $p=(36\times1)$. The result of \texttt{Allreduce\_Butterfly} using the $p=(32\times1)$ processor distribution represents all result quite well and is shown in Figure \ref{fig:AllreduceFoundationLibs}.
+The Allreduce implementations that are tested here are build of point-to-point MPI calls. These MPI-functions are expected to be implemented quite similarly and therefore one should only see minor influences of the chosen MPI library on the execution time. Nonetheless all three foundation Allreduce procedures are tested using all three available libraries. 
+The Butterfly variants are of course only tested for the $p=(32\times32)$ and $p=(32\times1)$ setups. \texttt{Allreduce\_Shift} is tested only using $p=(34\times32)$ and $p=(34\times1)$. The result of \texttt{Allreduce\_Butterfly} using the $p=(32\times1)$ processor distribution represents all results quite well and is shown in Figure \ref{fig:AllreduceFoundationLibs}.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{../plots/AllreduceLibsButterfly/32x1AllreduceLibsButterfly.png}
 	\caption{Benchmark of the foundation Allreduce implementation \texttt{Allreduce\_Butterfly} on a  $p=(32\times1)$ processor layout. The influence of using different MPI libraries is tested. Execution time $t$ is plotted against set size $|\Tilde{S}|$.}
 	\label{fig:AllreduceFoundationLibs}
 \end{figure} 
-The other configurations are presented in the appendix in Figure \ref{fig:AllreduceFoundationLibsAppendix}. There are in general only small performance differences over the different MPI libraries apparent. In some cases the graphs of the benchmarks look identical. If there are any differences visible MPICH performs mostly the best. This is especially the case for larger set sizes.
+The other configurations are presented in the appendix in Figure \ref{fig:AllreduceFoundationLibsAppendix}. There are in general only small performance differences over the different MPI libraries apparent. In some cases the graphs of the benchmarks look identical. If there are any differences visible MPICH performs mostly the best. 
+This is especially the case for larger set sizes. As our foundation Allgather implementations are build from the same building blocks as the Allreduce ones we also expect MPICH to perform best or at least rather sufficient. MPICH is therefore used to benchmark all algorithms that are implemented by point-to-point communication (all algorithms but the native MPI-library ones).
 
-\subsection{Comparison between MPICH Allreduce and foundation algorithms}
-Now the performance of our foundation Allreduce implementations is tested. As reference the native Allreduce by the MPICH library is used as it was established as the best performing for our use case scenarios. Moreover it also brings the best results for the foundation algorithms and is therefore solely used for the following Allreduce benchmark. Again the algorithms are executed on the default processor layouts ($p=(32\times32),~(32\times1),~(36\times32)$ and ($36\times1$)). The variants that work only for a power of 2 are obviously only tested on the corresponding setups. To compare the tested algorithms more easily against the MPICH Allreduce, the relative execution times $t/t_r$ are calculated and plotted. $t$ corresponds here to the measured execution time of the foundation algorithms and $t_r$ to the execution time of the MPICH Allreduce. The results are presented in Figure \ref{fig:AllreduceCompare}.\\
+\subsection{Comparison between IntelMPI Allreduce and foundation algorithms}
+Now the performance of our foundation Allreduce implementations is tested. As reference the native Allreduce by the IntelMPI library is used as it was established as the best performing for our use case scenarios. The best results for the foundation algorithms are seen by MPICH and this therefore used for these implementations. Again the algorithms are executed on the default processor layouts ($p=(32\times32),~(32\times1),~(34\times32)$ and ($34\times1$)). 
+The variants that work only for a power of 2 are obviously only tested on the corresponding setups. To compare the tested algorithms more easily against the native IntelMPI Allreduce, the relative execution times $t/t_r$ are calculated and plotted. $t$ corresponds here to the measured execution time of the foundation algorithms and $t_r$ to the execution time of the IntelMPI Allreduce. The results are presented in Figure \ref{fig:AllreduceCompare}.\\
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[b]{0.4\textwidth}
@@ -158,30 +161,36 @@ Now the performance of our foundation Allreduce implementations is tested. As re
 	\vspace{5mm}
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../plots/AllreduceCompare/36x32AllreduceCompare.png}
-		\caption{$p=(36\times32)$}
-		\label{fig:AllreduceCompare36x32}
+		\includegraphics[width=\textwidth]{../plots/AllreduceCompare/34x32AllreduceCompare.png}
+		\caption{$p=(34\times32)$}
+		\label{fig:AllreduceCompare34x32}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../plots/AllreduceCompare/36x1AllreduceCompare.png}
-		\caption{$p=(36\times1)$}
-		\label{fig:AllreduceCompare36x1}
+		\includegraphics[width=\textwidth]{../plots/AllreduceCompare/34x1AllreduceCompare.png}
+		\caption{$p=(34\times1)$}
+		\label{fig:AllreduceCompare34x1}
 	\end{subfigure}
 	\caption{Relative execution time of the foundation Allreduce algorithms (\texttt{Allreduce\_Butterfly}, \texttt{Allreduce\_Butterfly\_Reversed} and \texttt{Allreduce\_Shift}) in relation to the performance of MPICHs native Allreduce. The relative execution time $t/t_r$ is plotted against set size $|\Tilde{S}|$. The vertical red line indicates the threshold where the tested algorithms are faster.}
 	\label{fig:AllreduceCompare}
 \end{figure}
-In all plots the relative execution time $t/t_r=1$ is marked in red. Data points over this threshold indicate that the tested algorithm is slower as the native variant and a data point below $t/t_r=1$ correspond to faster measured times. When analyzing the results using processor layout $p=(32\times32)$ in Figure \ref{fig:AllreduceCompare32x32} one can see that the standard Butterfly and the Shift variant show quite similar results and is for larger set sizes outperformed by the bit-reversed Butterfly variant. Moreover is the execution time of \texttt{Allreduce\_Butterfly\_Reversed} for these larger set sizes nearly the same as from MPICHs native Allreduce. This proves effectiveness of the concept of the bit-reversed Butterfly variant to send the largest messages only within nodes. For a set size over $5\cdot10^4$ this variant is at most 20\% than the reference algorithm and at best 60\% faster. The \texttt{Allreduce\_Butterfly\_Reversed} is therefore chosen as the best performing Allreduce algorithm for this setup.\\
-When looking at Figure \ref{fig:AllreduceCompare32x1} for which only 32 on all nodes distributed processors are used, one can see that the graphs of the Butterfly algorithms show nearly an identical behavior. They are also quite close to the native MPICH variant. Surprisingly  \texttt{Allreduce\_Shift} is the best variant for this setup in all tested set sizes.  This foundation algorithm is therefore chosen as the best performing Allreduce for the $p=(32\times1)$ processor layout. Even in the worst case it performs a few percent better than the reference. In the best case, but only for a very small set size of $10^3$, it is up to 50\% faster. The typical speedup for larger set sizes is around 5\% to 10\%.\\
-Next the result of the process layout $p=(36\times32)$ are considered. As $p=1152$ is not a power of two, only \texttt{Allreduce\_Shift} is benchmarked. In Figure \ref{fig:AllreduceCompare36x32} the results are depicted. It is apparent that our foundation algorithm performs way worse than the reference Allreduce. Especially in the mid range  \texttt{Allreduce\_Shift} performs poorly with an execution time that is up to 125\% slower than the reference. This could be due to the fact that this algorithm does not use any strategies to take advantage of the fast intra nodal communication bandwidth. In the end it is important to keep this poor performance of the foundation algorithm in mind, when evaluating the results of the newly proposed algorithms.\\
-As last setup $p=(36\times1)$ is analyzed. Again only \texttt{Allreduce\_Shift} can be tested for this processor layout. Interestingly it is again, like in the $p=(32\times1)$ setup, faster than the reference Allreduce on all set sizes. On larger set sizes there is speedup of at least 30\% visible.
+In all plots the relative execution time $t/t_r=1$ is marked in red. Data points over this threshold indicate that the tested algorithm is slower as the native variant and a data point below $t/t_r=1$ correspond to faster measured times. When analyzing the results using processor layout $p=(32\times32)$ in Figure \ref{fig:AllreduceCompare32x32} one can see that the standard Butterfly and the Shift variant show quite similar results and is for larger set sizes outperformed by the bit-reversed Butterfly variant. 
+One can say this proves effectiveness of the concept of the bit-reversed Butterfly variant to send the largest messages only within nodes.  The \texttt{Allreduce\_Butterfly\_Reversed} is therefore chosen as the best performing Allreduce algorithm for this setup. For large set sizes (over $10^6$) \texttt{Allreduce\_Butterfly\_Reversed} still can not compete with the performance of the native IntelMPI Allreduce. For most of the cases this foundation algorithm is approximately 50\% slower. Only for a few set sizes \texttt{Allreduce\_Butterfly\_Reversed} is faster.\\
+When looking at Figure \ref{fig:AllreduceCompare32x1} for which only 32 on all nodes distributed processors are used, one can see that the graphs of all foundation algorithms show nearly an identical behavior. Up to a set size of around $2\cdot 10^7$ the Shift variant is faster; for higher set size the bit-reversed Butterfly variant is fastest. Interestingly the foundation algorithms are all faster than the native IntelMPI Allreduce for set sizes over $2\cdot10^5$.\\
+Next the result of the process layout $p=(34\times32)$ is considered. As $p=1088$ is not a power of two, only \texttt{Allreduce\_Shift} is benchmarked. In Figure \ref{fig:AllreduceCompare34x32} the results are depicted. It is apparent that our foundation algorithm performs way worse than the reference Allreduce. Especially for small set sizes \texttt{Allreduce\_Shift} performs poorly with an execution time that is up to 4 times slower than the reference.
+This could be due to the fact that  \texttt{Allreduce\_Shift} (like the other algorithms) is designed to perform well for large set sizes.
+Moreover this algorithm does not use any strategies to take advantage of the fast intra nodal communication bandwidth. 
+In the end it is important to keep this poor performance of the foundation algorithm in mind, when evaluating the results of the newly proposed algorithms.\\
+As last setup $p=(34\times1)$ is analyzed. Again only \texttt{Allreduce\_Shift} can be tested for this processor layout. Interestingly it is again, like in the $p=(32\times1)$ setup, faster than the reference Allreduce on all larger set sizes. 
+On set sizes over $5\times10^5$ there is mostly a speedup of at least 30\% visible. In some cases the Shift algorithm is even 5 times faster than the reference Allreduce provided by IntelMPI.
 
-As a conclusion from this testing it is apparent that the reversed bit variant is the best foundation Allreduce for the $p=(32\times32)$  processor layout and \texttt{Allreduce\_Shift} the best in the other cases. 
+The first important conclusion from this testing is that the reversed bit variant is the best foundation Allreduce for the $p=(32\times32)$  processor layout. For the $p=(32\times1)$ layout it is not quite clear which variant is fastest. For very large set sizes it is the bit-reversed Butterfly variant and for medium set sizes the Shift variant. 
+Next it is identified that for the setups where all processors on the nodes are used the foundation algorithms perform substantially worse than the IntelMPI Allreduce. As a general trend it is clearly apparent that for larger set sizes all foundation algorithms perform better relative to the native Allreduce.
+
 \section{Testing foundation Allgather against MPI-libraries} \label{sec:baseAllgather}
 \subsection{Allgather of different MPI libraries}
-In the same fashion as it was done for the Allreduce implementations firstly the native Allreduce implementations from the different available MPI libraries are compared against each other. One needs to keep in mind that MPI does not provide an Allgather where the size of input arrays of other ranks is unknown. So the Allgathers we test here are technically two calls of native MPI-function. The first one is \texttt{MPI\_Allgather} where the size information of the provided input arrays is distributed over all processes and the second one is \texttt{MPI\_Allgatherv} where the actual Allgather is performed. The run time of the Allgather is expected to be only dependent on the set filling $\Phi$ of the resulting set. The set size of the underlying set $|\Tilde{S}|$ does not have any influence here. What can have an influence on the run time is how the set elements are distributed over the processors before the union operation (aka the Allgather in this case). We are mostly interested in a equal distribution of these elements. In this case the set fillings $\varphi_r$ of the different ranks are more or less equal. The reason for this is that we expect this setup to be common for the motivational use case of the \gls{bfs}. So to find the best performing native Allgather of the different MPI libraries the set elements will be uniformly distributed over all processors. Other cases will be considered when the native variant is compared against the foundation algorithms.\\
-The tested processor layouts are again the same combinations as in the testing of the Allreduce algorithms ($p=(32\times32),~(32\times1),~(36\times32)$ and ($36\times1$)). The range of set fillings is chosen to be 1 up to 1.000.000. Again a logarithmic scale and a 1-2-5 spacing for each data point is used. The result of the benchmarks is shown in Figure \ref{fig:AllgatherMPIlibs}.
+In the same fashion as it was done for the Allreduce implementations firstly the native Allreduce implementations from the different available MPI libraries are compared against each other. One needs to keep in mind that MPI does not provide an Allgather where the size of input arrays of other ranks is unknown. So the Allgathers we test here are technically two calls of native MPI-function. The first one is \texttt{MPI\_Allgather} where the size information of the provided input arrays is distributed over all processes and the second one is \texttt{MPI\_Allgatherv} where the actual Allgather is performed. 
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[b]{0.45\textwidth}
@@ -199,78 +208,73 @@ The tested processor layouts are again the same combinations as in the testing o
 	\end{subfigure}
 	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../plots/AllgatherLibs/36x32AllgatherLibs.png}
-		\caption{$p=(36\times32)$}
-		\label{fig:AllgatherLibs36x32}
+		\includegraphics[width=\textwidth]{../plots/AllgatherLibs/34x32AllgatherLibs.png}
+		\caption{$p=(34\times32)$}
+		\label{fig:AllgatherLibs34x32}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../plots/AllgatherLibs/32x1AllgatherLibs.png}
-		\caption{$p=(36\times1)$}
-		\label{fig:AllgatherLibs36x1}
+		\includegraphics[width=\textwidth]{../plots/AllgatherLibs/34x1AllgatherLibs.png}
+		\caption{$p=(34\times1)$}
+		\label{fig:AllgatherLibs34x1}
 	\end{subfigure}
 	\caption{Benchmark of the Allgather implementations provided by the different MPI libraries. Execution time $t$ is plotted against set filling $\Phi$. Four different processor layouts are shown (indicated by $p$).}
 	\label{fig:AllgatherMPIlibs}
 \end{figure}
-It is apparent that the best MPI library for a native Allreduce is not so clearly given for all setups. Even in the individual processor layouts the best performing library varies for different set fillings. Only the $p=(32\times32)$ layout gives a definite result as fastest MPI library which is intelMPI. For $p=(36\times32)$ intelMPI is only faster for set fillings above 500. Set fillings below this threshold are computed faster by MPICH and openMPI. The results of setups where only one process is used at each node are nearly identical(compare Figure \ref{fig:AllgatherLibs32x1} and \ref{fig:AllgatherLibs36x1}). In both graphs one can see clearly that intelMPI performs very differently compared to MPICH and openMPI. For set fillings up to 10 intelMPI delivers benchmark results that are more than twice as slow than the other libraries. In the range of fillings between 10 and 5000 it then clearly outperforms the contenders. For larger fillings above 5000 intelMPI is then again consistently but only slightly slower than the other MPI libraries.
+The run time of the Allgather is expected to be only dependent on the set filling $\Phi$ of the resulting set. The set size of the underlying set $|\Tilde{S}|$ does not have any influence here. What can have an influence on the run time is how the set elements are distributed over the processors before the union operation (aka the Allgather in this case). 
+We are mostly interested in a equal distribution of these elements. In this case the set fillings $\varphi_r$ of the different ranks are more or less equal. The reason for this is that we expect this setup to be common for the motivational use case of the \gls{bfs}. So to find the best performing native Allgather of the different MPI libraries the set elements will be uniformly distributed over all processors. Other cases will be considered when the native variant is compared against the foundation algorithms.\\
+The tested processor layouts are again the same combinations as in the testing of the Allreduce algorithms ($p=(32\times32),~(32\times1),~(34\times32)$ and ($34\times1$)). The range of set fillings is chosen to be 1 up to 1.000.000. Again a logarithmic scale and a 1-2-5 spacing for each magnitude is used. The result of the benchmarks is shown in Figure \ref{fig:AllgatherMPIlibs}.
+It is apparent that the best MPI library for a native Allgather is not so clearly given for all setups. Even in the individual processor layouts the best performing library varies for different set fillings. Only the $p=(32\times32)$ layout gives a definite result as fastest MPI library which is IntelMPI. For $p=(34\times32)$ intelMPI is faster for set fillings above 500. Set fillings below this threshold are computed faster by MPICH and openMPI. The results of setups where only one process is used at each node are nearly identical(compare Figure \ref{fig:AllgatherLibs32x1} and \ref{fig:AllgatherLibs34x1}). In both graphs one can see clearly that intelMPI performs very differently compared to MPICH and openMPI. For set fillings up to 10 intelMPI delivers benchmark results that are more than twice as slow than the other libraries. In the range of fillings between 10 and 5000 it then clearly outperforms the contenders. For larger fillings above 5000 intelMPI is then again consistently but only slightly slower than the other MPI libraries.
 
-As summary there can not be a general best performing MPI library identified. Therefore MPICH is chosen to provide the reference implementation for the native Allgather variant. This is mostly done to be consistent with the library used for the native Allreduce. It is important to keep in mind for the further analysis that there are cases where intelMPI performs better.
+As summary there can not be a general best performing MPI library identified. As we consider the processor layouts with full nodal occupation as more important and relevant IntelMPI is chosen to deliver the reference benchmark for Allgather. This is also keeps consistency with the library used for the native Allreduce. It is important to keep in mind for the further analysis that there are cases where the other libraries performs better.
 
 \subsection{Foundation Allgather algorithms}
 Here the foundation Allgather algorithms are tested. There are again three different implementations to test. The first two are based on the butterfly communication scheme and can therefore only work a number of processors that is a power of 2. These two implementations only differ in the rank ID mapping. The first one implements Algorithm roughly \ref{algo:recursiveDoublingAllgather} but is slightly adapted to work without knowing the sizes of the provided input arrays from other ranks. It is from now on referred as \texttt{Allgather\_Butterfly}. The second one is the same algorithm but with a rank ID mapping where the ID is mapped to its bit reversal. This algorithm is from now on referred as \texttt{Allgather\_Butterfly\_Reversed}. The third algorithm uses a shift based communication pattern, is the implementation of Algorithm \ref{algo:mostlyHalfingAllgather} and is from now on called \texttt{Allgather\_Shift}. This algorithm works correctly for an arbitrary number of processors. It uses a mostly halfing scheme as communication and needs to buffer some data in a separate array. Due to this extra moving of data this algorithm is expected to perform worse than a native Allgather.
 
-The benchmarking procedure is the same as for the Allrduce. The Butterfly variants are only tested for the $p=(32\times32)$ and $p=(32\times1)$ setups. \texttt{Allgather\_Shift} is tested only using $p=(36\times32)$ and $p=(36\times1)$. As an example plot the benchmark of \texttt{Allgather\_Shift} for the $p=(36\times32)$ setup is shown in Figure \ref{fig:AllgatherFoundationLibs}.
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\textwidth]{../plots/AllgatherLibsShift/36x32AllgatherLibsShift.png}
-	\caption{Benchmark of the foundation Allreduce implementation \texttt{Allgather\_Shift} on a  $p=(36\times32)$ processor layout. The influence of using different MPI libraries is tested. Execution time $t$ is plotted against set filling $\Phi$.}
-	\label{fig:AllgatherFoundationLibs}
-\end{figure} 
-The results of the remaining configurations are presented in the appendix in Figure \ref{fig:AllgatherFoundationLibsAppendix}. The example plot is chosen, because it is the only outlier where MPICH is not the overall best performing library. In all the other benchmarks of the different setups MPICH is the fastest performing library for nearly all set fillings. Moreover one can say that MPICH does not perform much worse than the other libraries in the presented benchmark of \texttt{Allgather\_Shift} on the $p=(36\times32)$ processor layout. Only for set fillings above $20.000$ openMPI performs noticeably better than MPICH. Therefore MPICH is selected to benchmark the foundation Allgather algorithms.
-
-\subsection{Comparison between MPICH Allgather and foundation algorithms}
-Now the performance of the foundation Allgather implementations is tested. To keep consistency and due to the overall good performance MPICH is used for the native Allreduce as well as for the foundation algorithms. Again the algorithms are executed on the default processor layouts ($p=(32\times32),~(32\times1),~(36\times32)$ and ($36\times1$)). The variants that work only for a power of 2 are obviously only tested on the corresponding setups. To compare the tested algorithms more easily against the MPICH Allgather, the relative execution times $t/t_r$ are calculated and plotted. $t$ corresponds here to the measured execution time of the foundation algorithms and $t_r$ to the execution time of the MPICH Allreduce. As mentioned before the performance of the Allgather is expected to be not only dependent on the total resulting set filling $\Phi$ but also on the distribution of the set elements over the processors. This is the reason why now two different set filling distribution setups are considered. In the first case the set are all roughly filled with an equal amount of elements. The results are presented in Figure \ref{fig:AllgatherCompare}.
-\begin{figure}[h]
+\subsection{Comparison between IntelMPI Allgather and foundation algorithms}
+Now the performance of the foundation Allgather implementations is tested and compared against a reference Allgather provided by a MPI library. How different MPI-libraries have influence the performance on the foundation Allgather implementations is not tested. As for the Allreduce MPICH was quite convincingly the best choice for point-to-point Allreduce implementations this library is also chosen here. IntelMPI provided the best results for the native Allgather and is therefore chosen to provide the reference benchmark. \\
+There are again three different implementations to test. The first two are based on the butterfly communication scheme and can therefore only work a number of processors that is a power of 2. These two implementations only differ in the rank ID mapping. The first one implements Algorithm roughly \ref{algo:recursiveDoublingAllgather} but is slightly adapted to work without knowing the sizes of the provided input arrays from other ranks. It is from now on referred as \texttt{Allgather\_Butterfly}. The second one is the same algorithm but with a rank ID mapping where the ID is mapped to its bit reversal. This algorithm is from now on referred as \texttt{Allgather\_Butterfly\_Reversed}. The third algorithm uses a shift based communication pattern, is the implementation of Algorithm \ref{algo:mostlyHalfingAllgather} and is from now on called \texttt{Allgather\_Shift}. This algorithm works correctly for an arbitrary number of processors. It uses a mostly halfing scheme as communication and needs to buffer some data in a separate array. Due to this extra moving of data this algorithm is expected to perform worse than a native Allgather.\\
+Like for the Allreduce variants the algorithms are executed on the default processor layouts ($p=(32\times32),~(32\times1),~(34\times32)$ and ($34\times1$)). The variants that work only for a power of 2 are obviously only tested on the corresponding setups. To compare the tested algorithms more easily against the IntelMPI Allgather, the relative execution times $t/t_r$ are calculated and plotted. $t$ corresponds here to the measured execution time of the foundation algorithms and $t_r$ to the execution time of the IntelMPI Allgather. As mentioned before the performance of the Allgather is expected to be not only dependent on the total resulting set filling $\Phi$ but also on the distribution of the set elements over the processors. This is the reason why now two different set filling distribution setups are considered. In the first case the set are all roughly filled with an equal amount of elements. The results are presented in Figure \ref{fig:AllgatherCompare}.
+\begin{figure}[ht]
 	\centering
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../plots/AllgatherCompareUniformBackup/32x32AllgatherCompareUniform.png}
+		\includegraphics[width=\textwidth]{../plots/AllgatherCompareUniform/32x32AllgatherCompareUniform.png}
 		\caption{$p=(32\times32)$}
 		\label{fig:AllgatherCompare32x32}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../plots/AllgatherCompareUniformBackup/32x1AllgatherCompareUniform.png}
+		\includegraphics[width=\textwidth]{../plots/AllgatherCompareUniform/32x1AllgatherCompareUniform.png}
 		\caption{$p=(32\times1)$}
 		\label{fig:AllgatherCompare32x1}
 	\end{subfigure}
 	\vspace{5mm}
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../plots/AllgatherCompareUniformBackup/36x32AllgatherCompareUniform.png}
-		\caption{$p=(36\times32)$}
-		\label{fig:AllgatherCompare36x32}
+		\includegraphics[width=\textwidth]{../plots/AllgatherCompareUniform/34x32AllgatherCompareUniform.png}
+		\caption{$p=(34\times32)$}
+		\label{fig:AllgatherCompare34x32}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../plots/AllgatherCompareUniformBackup/36x1AllgatherCompareUniform.png}
-		\caption{$p=(36\times1)$}
-		\label{fig:AllgatherCompare36x1}
+		\includegraphics[width=\textwidth]{../plots/AllgatherCompareUniform/34x1AllgatherCompareUniform.png}
+		\caption{$p=(34\times1)$}
+		\label{fig:AllgatherCompare34x1}
 	\end{subfigure}
-	\caption{Relative execution time of the foundation Allgather algorithms (\texttt{Allgather\_Butterfly}, \texttt{Allgather\_Butterfly\_Reversed} and \texttt{Allgather\_Shift}) in relation to the performance of MPICHs native Allgather. The relative execution time $t/t_r$ is plotted against set filling $\Phi$. The distribution of the elements before the Allgather is approximately uniform over all processes. The vertical red line indicates the threshold where the tested algorithms are faster.}
+	\caption{Relative execution time of the foundation Allgather algorithms (\texttt{Allgather\_Butterfly}, \texttt{Allgather\_Butterfly\_Reversed} and \texttt{Allgather\_Shift}) in relation to the performance of IntelMPIs native Allgather. The relative execution time $t/t_r$ is plotted against set filling $\Phi$. The distribution of the elements before the Allgather is approximately uniform over all processes. The vertical red line indicates the threshold where the tested algorithms are faster.}
 	\label{fig:AllgatherCompare}
 \end{figure}
-Here it is apparent that all foundation algorithms on average perform better than the Allgather provided by MPICH. This is especially for lower set fillings visible. One needs to keep in mind that intelMPI performed better in this range of fillings than MPICH and therefore the algorithms are not compared with the very best competitor here. One still can say that the foundation algorithms are performing in the same order of magnitude as the best native library variant.\\
-When looking at the benchmarks of the setup $p=(32\times32)$ (Figure\ref{fig:AllgatherCompare32x32}) the behavior of the different foundation Allgathers is quite different. The best performing algorithm is here \texttt{Allgather\_Butterfly}. The bit-reversed Butterfly variant is in all cases slower than the variant without any rank ID mapping. This is expected as for the Butterfly Allgather the largest messages are sent in the later iterations of the procedure. The later iterations of the bit-reversed variant is done only via the network and fast intra-nodal communication is 'wasted' for small messages in the first iterations. In the Allreduce algorithms analyzed in the section before, this behavior is switched as there the biggest messages happen here in the first iterations (of the Reducescatter phase). So the rank ID mapping arises a trade-off for this processor setup. Either one can optimize for a fast Allreduce where the bit-reversed Butterfly scheme is chosen or a fast Allgather is preferred which is executed using the standard rank ID mapping. The Shift variant is for small set fillings slower and for larger fillings approximately a middle ground of the two Butterfly variants.\\
+Here it is apparent that all foundation algorithms on average perform better or than or as good as the Allgather provided by IntelMPI. This is especially for larger set fillings visible.\\
+When looking at the benchmarks of the setup $p=(32\times32)$ (Figure\ref{fig:AllgatherCompare32x32}) the behavior of the different foundation Allgathers is quite different. The best performing algorithms are here \texttt{Allgather\_Butterfly} and \texttt{Allgather\_Shift}. The bit-reversed Butterfly variant is mostly slower than the variant without any rank ID mapping. Especially for higher fillings this is visible. The slow down is expected as for the Butterfly Allgather the largest messages are sent in the later iterations of the procedure. The later iterations of the bit-reversed variant is done only via the network and fast intra-nodal communication is 'wasted' for small messages in the first iterations. In the Allreduce algorithms analyzed in the section before, this behavior is switched as there the biggest messages happen here in the first iterations (of the Reducescatter phase). So the rank ID mapping arises a trade-off for this processor setup. Either one can optimize for a fast Allreduce where the bit-reversed Butterfly scheme is chosen or a fast Allgather is preferred, which is executed using the standard rank ID mapping. \\
 The other power-of-two processor layout is shown in Figure \ref{fig:AllgatherCompare32x1}. With only 
-one processor used on each node every communication is done via the network and the fast intra-nodal bandwidth can not be exploited. This fact can be seen in the nearly identical behavior if the Butterfly variants. In this setup they are de facto equivalent algorithms as the rank mapping does not matter. \texttt{Allgather\_Shift} performs also quite similar to the Butterfly variants. Just for larger set fillings it is slower.\\
-\texttt{Allgather\_Shift} performs similarly well for the non-power  setups ($p=(36\times32)$ and $p=(36\times1)$) more or less exactly the same as it did for the corresponding power of two variants. It is generally faster for all set fillings than the reference Allgather. Only in the $p=(36\times1)$ setup it measured with a longer execution time for the set fillings 100.000 and 200.000.
+one processor used on each node every communication is done via the network and the fast intra-nodal bandwidth can not be exploited. This fact can be seen in the nearly identical behavior of the Butterfly variants. In this setup they are de facto equivalent algorithms as the rank mapping does not matter.\\
+\texttt{Allgather\_Shift} performs similarly well for the non-power  setups ($p=(34\times32)$ and $p=(34\times1)$) more or less exactly the same as it did for the corresponding power of two variants. It is generally faster for all set fillings than the reference Allgather. Only in the $p=(34\times1)$ setup it measured with slightly longer execution times for the set fillings between 10 and 2.000.
 
-Next the performance of the different Allgather implementations is analyzed for a non uniform filling of the sets. To exaggerate the effect of non-uniformity one set of only one rank will filled with $\Phi$ elements and the other processes will hold no elements at all before the set union. The setup and filling ranges are the same as in the experiments before. The results can be seen in Figure \ref{fig:AllgatherCompareConcentrated}.
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
@@ -288,21 +292,35 @@ Next the performance of the different Allgather implementations is analyzed for 
 	\vspace{5mm}
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../plots/AllgatherCompareConcentrated/36x32AllgatherCompareConcentrated.png}
-		\caption{$p=(36\times32)$}
-		\label{fig:AllgatherCompareConcentrated36x32}
+		\includegraphics[width=\textwidth]{../plots/AllgatherCompareConcentrated/34x32AllgatherCompareConcentrated.png}
+		\caption{$p=(34\times32)$}
+		\label{fig:AllgatherCompareConcentrated34x32}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../plots/AllgatherCompareConcentrated/36x1AllgatherCompareConcentrated.png}
-		\caption{$p=(36\times1)$}
-		\label{fig:AllgatherCompareConcentrated36x1}
+		\includegraphics[width=\textwidth]{../plots/AllgatherCompareConcentrated/34x1AllgatherCompareConcentrated.png}
+		\caption{$p=(34\times1)$}
+		\label{fig:AllgatherCompareConcentrated34x1}
 	\end{subfigure}
-	\caption{Relative execution time of the foundation Allgather algorithms (\texttt{Allgather\_Butterfly}, \texttt{Allgather\_Butterfly\_Reversed} and \texttt{Allgather\_Shift}) in relation to the performance of MPICHs native Allgather. The relative execution time $t/t_r$ is plotted against set filling $\Phi$. All elements are held by one only process before the Allgather. The vertical red line indicates the threshold where the tested algorithms are faster.}
+	\caption{Relative execution time of the foundation Allgather algorithms (\texttt{Allgather\_Butterfly}, \texttt{Allgather\_Butterfly\_Reversed} and \texttt{Allgather\_Shift}) in relation to the performance of IntelMPIs native Allgather. The relative execution time $t/t_r$ is plotted against set filling $\Phi$. All elements are held by one only process before the Allgather. The vertical red line indicates the threshold where the tested algorithms are faster.}
 	\label{fig:AllgatherCompareConcentrated}
 \end{figure}
-The results for the non uniform filling benchmark look qualitatively very similar to the benchmark results where the elements are uniformly distributed on the processors. We expect the foundation algorithms to perform worse for the non-uniform case. Apparently this is also true for the native Allgather by MPICH. So the foundation algorithms can be also seen as quite good performing for the worst case distribution of elements.
+\subsubsection{Non uniform filling}
+Next the performance of the different Allgather implementations is analyzed for a non uniform filling of the sets. To exaggerate the effect of non-uniformity one set of only one rank will filled with $\Phi$ elements and the other processes will hold no elements at all before the set union. The setup and filling ranges are the same as in the experiments before. The results can be seen in Figure \ref{fig:AllgatherCompareConcentrated}.
+The results for the non uniform filling benchmark look qualitatively very similar to the benchmark results where the elements are uniformly distributed on the processors. We expect the foundation algorithms to perform worse for the non-uniform case. Apparently this is also true for the native Allgather by IntelMPI. So the foundation algorithms can be also seen as quite good performing for the worst case distribution of elements (relatively speaking).
+
+\subsubsection{Worst case of processor number $p$ for \texttt{Allgather\_Shift}}
+As mentioned in Section \ref{sec:AllgatherShift performance} the performance of the foundation Allgather \texttt{Allgather\_\allowbreak Shift} is dependent on the number of processors $p$. This is of corse for all collective communication the case. For larger $p$ the execution is generally expected to be slower.  
+\begin{figure}[]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../plots/AllgatherCompareWorstCase/31x22AllgatherCompareWorstCase.png}
+	\caption{Relative execution time of \texttt{Allgather\_Shift} in relation to the performance of IntelMPIs native Allgather on $p=(31\times22)$ to show worst case behavior for the processor layout. The relative execution time $t/t_r$ is plotted against set filling $\Phi$. Before the Allgather the set elements were distributed uniformly over the processors. The vertical red line indicates the threshold where the tested algorithms are faster.}
+	\label{fig:AllgatherWorstCase}
+\end{figure} 
+\texttt{Allgather\_Shift} is special here as it needs different amount of buffer copies depending on the bit representation of $p$. When looking at $p$ in binary \texttt{Allgather\_Shift} needs to copy a part of its buffer for every time a 1 follows 0 and vice versa. So $p=5=(101)_2$ needs two buffer copies as there are two times a switch from 1 to 0 or from 0 to 1. The largest feasible number of processes that present a worst case and is feasible on the provided cluster is $p=682=(1010101010)_2$. The benefit is here that its prime factorization is $p=2\cdot11\cdot31=682$ and therefore can be distributed as $p=(31\times22)$ over the cluster. The foundation Shift Allgather is therefore benchmarked for this configuration and compared to the native IntelMPI Allgather. This is done only for an uniform distribution of the set elements. The result is shown in Figure \ref{fig:AllgatherWorstCase}.\\
+Interestingly in this worst case the Shift based Allgather performs better than the native Allgather from intelMPI for larger fillings $\Phi$. For smaller fillings it is slower, but in every case less than 7\%. So the copying of memory is apparently not the bottleneck of the overall performance.
+
 
 \section{Comparison of Proposed Algorithms Against Their Base Variant}
 In this section the newly proposed algorithms are tested. As reference to compare our new implementation the foundation algorithms, which give the basis of our new algorithms, are used. Moreover the goal is to find which of the newly proposed set union algorithms perform best depending on the setup. In this section there are now new free parameter available that need to be considered. Here the set size $|\Tilde{S}|$ and the set filling $\Phi$, which each just have an influence on either the Allreduce or the Allgather implementations, will have both an influence on the run time of the union set algorithms. Moreover there is now the parameter '$critSize$', which sets the threshold of the sparse filling to switch the representation to the dense format. Combined with the different processor layouts and different set filling distributions the parameter space is quite large. So in this section we only able to evaluate the performance for some setups.\\
@@ -310,9 +328,44 @@ The first restriction that is done is to only test the bit-reversed implementati
 Next some settings for the parameter '$critSize$' are analyzed and it is decided which setting is going to be used in the further evaluation.
 
 \subsection{Different settings for the parameter '$critSize$'}
-The parameter '$critSize$', which we now also refer to as the critical size, indicates when a set is filled too much to justify a sparse representation of it. When just considering the bare memory footprint this threshold would be at $\frac{1}{32}\approx3.1\%$ of the set size |$\Tilde{S}$|. This may be not such a good choice for this parameter as the goal is to minimize communication cost and not overall memory footprint. The Allreduce implementations send in each iteration $i$ approximately $2^i$ blocks of the dense array. Each dense block is approximately of size $\frac{|\Tilde{S}|}{p}$ with $p$ being the number of processors. One can therefore choose the critical size to be set such that the sparse variant is only used for set fillings that never exceed the memory footprint of one such block. It is therefore guaranteed that the sparse variant uses less time for communication in each iteration. This would equate to a critical size of $\frac{1}{32p}\approx\frac{3.1\%}{p}$ of the set size. The problem is here that for large processor numbers $p$ the sets need to be very sparsely filled to even take advantage of the sparse format. When using all $p=(36\times32)=1152$ processors of the available cluster the critical size would equate to around 0.0027\% of the  set size $|\Tilde{S}|$. The idea is therefore to also test a middle ground for the parameter '$critSize$'. For this is the average amount of data estimated that is sent during the Reducescatter phase of the Allreduce implementations. As mentioned before in each iteration $i$ there are $2^i$ dense blocks sent. In $\log_2(p)$ iterations there are therefore $\frac{p-1}{\log_2(p)}$ blocks on average sent. 
-
-
+The parameter '$critSize$', which we now also refer to as the critical size, indicates when a set is filled too much to justify a sparse representation of it. When just considering the bare memory footprint this threshold would be at $\frac{1}{32}\approx3.1\%$ of the set size |$\Tilde{S}$|. This may be not such a good choice for this parameter as the goal is to minimize communication cost and not overall memory footprint. The Allreduce implementations send in each iteration $i$ approximately $2^i$ blocks of the dense array. Each dense block is approximately of size $\frac{|\Tilde{S}|}{p}$ with $p$ being the number of processors. One can therefore choose the critical size to be set such that the sparse variant is only used for set fillings that never exceed the memory footprint of one such block. It is therefore guaranteed that the sparse variant uses less time for communication in each iteration. This would equate to a critical size of $\frac{1}{32p}\approx\frac{3.1\%}{p}$ of the set size. The problem is here that for large processor numbers $p$ the sets need to be very sparsely filled to even take advantage of the sparse format. When using all $p=(36\times32)=1152$ processors of the available cluster the critical size would equate to around 0.0027\% of the  set size $|\Tilde{S}|$. The idea is therefore to also test a middle ground for the parameter '$critSize$'. For this is the average amount of data estimated that is sent during the Reducescatter phase of the Allreduce implementations. As mentioned before in each iteration $i$ there are $2^i$ dense blocks sent. In $\log_2(p)$ iterations there are therefore $\frac{p-1}{\log_2(p)}$ blocks on average sent. If the sparse array size should be limited by the mean data that is send in the Reducescatter phase, then the critical size needs to  $\frac{p-1}{32p\log_2(p)} |\Tilde{S}|$. In the following benchmark are therefor the strategies \texttt{max}, \texttt{min} and \texttt{mean} with the critical sizes 
+\begin{align*}
+	c_\texttt{max} = \frac{|\Tilde{S}|}{32}, && c_\texttt{min}= \frac{|\Tilde{S}|}{32p},
+	&& c_\texttt{mean} = \frac{p-1}{32 p \log_2(p)} |\Tilde{S}|
+\end{align*}
+tested. The algorithms are designed to work for large set sizes so for the experiments a set size |$\Tilde{S}$| of $10.000.000=10^7$ is chosen. The set filling is varied in 1-2-5 steps for each power of 10. The sets are filled uniformly over the processors. The Butterfly variant is tested for the power of two setups and the Shift variant is tested for the setups on 36 nodes. The result of the experiments is shown in Figure \ref{fig:UnionCritSize}.
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionCritSize/32x32UnionCritSize.png}
+		\caption{$p=(32\times32)$}
+		\label{fig:UnionCritSize32x32}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionCritSize/32x1UnionCritSize.png}
+		\caption{$p=(32\times1)$}
+		\label{fig:UnionCritSize32x1}
+	\end{subfigure}
+	\vspace{5mm}
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionCritSize/36x32UnionCritSize.png}
+		\caption{$p=(36\times32)$}
+		\label{fig:UnionCritSize36x32}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionCritSize/36x1UnionCritSize.png}
+		\caption{$p=(36\times1)$}
+		\label{fig:UnionCritSize36x1}
+	\end{subfigure}
+	\caption{Execution time of the union algorithms on different processor layouts $p$. For each setup the three strategies (\texttt{max}, \texttt{min} and \texttt{mean}) are tested. The sets are filled uniformly and the set size is $|\Tilde{S}|=10^7$. To get a reference the foundation Allreduce and Allgather execution times of the corresponding algorithms are also shown.}
+	\label{fig:UnionCritSize}
+\end{figure}
 
 \subsection{$2^k$ Variant}
 \subsection{Arbitrary Number of Processes Variant}

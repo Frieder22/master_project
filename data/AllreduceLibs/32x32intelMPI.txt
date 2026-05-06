@@ -1,570 +1,570 @@
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.191585e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.919256e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.096664e-05, nAccepted: 274
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.026693e-04, nAccepted: 278
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.645684e-05, nAccepted: 273
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.935036e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.989124e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.561586e-05, nAccepted: 297
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.947891e-03, nAccepted: 261
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.848443e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.503383e-04, nAccepted: 259
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.708569e-05, nAccepted: 257
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.149767e-04, nAccepted: 257
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.974924e-05, nAccepted: 287
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.178942e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.660207e-05, nAccepted: 281
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.185627e-04, nAccepted: 287
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.455284e-05, nAccepted: 260
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.248875e-05, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.186704e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.830329e-03, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 3.991491e-05, nAccepted: 273
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.003728e-04, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.695673e-05, nAccepted: 269
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.961527e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.995171e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.251496e-05, nAccepted: 288
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.908318e-03, nAccepted: 263
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.913589e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.429069e-04, nAccepted: 259
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.379366e-05, nAccepted: 246
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.384291e-04, nAccepted: 264
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.580451e-05, nAccepted: 236
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.212913e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.692326e-05, nAccepted: 272
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.213206e-04, nAccepted: 283
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.369527e-05, nAccepted: 230
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.209036e-05, nAccepted: 283
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.199850e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.914959e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.032799e-05, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.018216e-04, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.689969e-05, nAccepted: 282
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.929366e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.993564e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.720203e-05, nAccepted: 271
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.927738e-03, nAccepted: 266
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.813405e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.444587e-04, nAccepted: 268
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.852629e-05, nAccepted: 285
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.203048e-04, nAccepted: 263
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.965823e-05, nAccepted: 286
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.200776e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.530699e-05, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.156090e-04, nAccepted: 269
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.939407e-05, nAccepted: 297
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.395593e-05, nAccepted: 291
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.217163e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.933552e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.019141e-05, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.019378e-04, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.671354e-05, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.948517e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.995383e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.438041e-05, nAccepted: 270
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.931661e-03, nAccepted: 266
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.985250e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.429319e-04, nAccepted: 268
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.386393e-05, nAccepted: 241
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.192200e-04, nAccepted: 260
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.624257e-05, nAccepted: 251
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.179323e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.260080e-05, nAccepted: 273
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.202029e-04, nAccepted: 282
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.956226e-05, nAccepted: 295
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.420619e-05, nAccepted: 290
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.176964e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.831384e-03, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.050308e-05, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.011922e-04, nAccepted: 281
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.690645e-05, nAccepted: 280
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.961420e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 2.001240e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.909781e-05, nAccepted: 292
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.944197e-03, nAccepted: 265
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.938577e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.465875e-04, nAccepted: 242
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.391260e-05, nAccepted: 233
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.145198e-04, nAccepted: 252
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.718839e-05, nAccepted: 268
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.183381e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.875849e-05, nAccepted: 275
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.185424e-04, nAccepted: 280
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.379056e-05, nAccepted: 233
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.159009e-05, nAccepted: 283
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.200015e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.857889e-03, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 3.935632e-05, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.004172e-04, nAccepted: 279
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.657844e-05, nAccepted: 268
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.919964e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.999040e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.507366e-05, nAccepted: 289
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.914324e-03, nAccepted: 270
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.970563e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.425856e-04, nAccepted: 272
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.382386e-05, nAccepted: 249
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.304678e-04, nAccepted: 248
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.615536e-05, nAccepted: 247
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.167836e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.242691e-05, nAccepted: 270
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.172777e-04, nAccepted: 262
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.645555e-05, nAccepted: 281
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.555409e-05, nAccepted: 294
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.195259e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.925433e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.032790e-05, nAccepted: 279
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.017557e-04, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.669345e-05, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.897356e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.992011e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.785725e-05, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.919294e-03, nAccepted: 273
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.703326e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.421228e-04, nAccepted: 270
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.668252e-05, nAccepted: 284
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.168750e-04, nAccepted: 261
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.557095e-05, nAccepted: 246
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.234397e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.857694e-05, nAccepted: 284
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.193253e-04, nAccepted: 278
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.366953e-05, nAccepted: 228
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.087194e-05, nAccepted: 285
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.194756e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 7.041850e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.108152e-05, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.020131e-04, nAccepted: 279
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.665162e-05, nAccepted: 268
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.942319e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.994760e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.812310e-05, nAccepted: 286
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.948223e-03, nAccepted: 263
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.751742e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.415674e-04, nAccepted: 272
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.381895e-05, nAccepted: 245
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.180863e-04, nAccepted: 252
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.593139e-05, nAccepted: 241
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.187177e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.539415e-05, nAccepted: 269
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.176654e-04, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.597595e-05, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.589415e-05, nAccepted: 289
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.199153e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.871200e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 3.942351e-05, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.010265e-04, nAccepted: 273
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.683184e-05, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.967838e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.999950e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.905722e-05, nAccepted: 284
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.928591e-03, nAccepted: 265
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.841844e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.459442e-04, nAccepted: 243
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.385892e-05, nAccepted: 244
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.176829e-04, nAccepted: 256
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.564061e-05, nAccepted: 246
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.181877e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.121018e-05, nAccepted: 275
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.143720e-04, nAccepted: 262
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.700752e-05, nAccepted: 282
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.435278e-05, nAccepted: 282
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.200216e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.909877e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.043893e-05, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.000993e-04, nAccepted: 274
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.659515e-05, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.916230e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 2.000948e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.831515e-05, nAccepted: 289
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.908889e-03, nAccepted: 267
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.822129e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.435117e-04, nAccepted: 266
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.687952e-05, nAccepted: 273
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.426123e-04, nAccepted: 267
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.938034e-05, nAccepted: 287
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.188879e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.247716e-05, nAccepted: 275
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.163570e-04, nAccepted: 264
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.668382e-05, nAccepted: 283
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.459228e-05, nAccepted: 289
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.201068e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.764397e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.264150e-05, nAccepted: 283
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.979875e-04, nAccepted: 280
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.715102e-05, nAccepted: 260
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.926250e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.986640e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.700283e-05, nAccepted: 247
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.931097e-03, nAccepted: 268
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.753800e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.491977e-04, nAccepted: 262
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.388623e-05, nAccepted: 231
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.084063e-04, nAccepted: 247
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.543364e-05, nAccepted: 242
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.167537e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.603188e-05, nAccepted: 281
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.185492e-04, nAccepted: 278
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.361767e-05, nAccepted: 242
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.250739e-05, nAccepted: 288
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.192595e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.972930e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.592016e-05, nAccepted: 269
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.029414e-04, nAccepted: 264
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.678813e-05, nAccepted: 267
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.911816e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.984443e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.444597e-05, nAccepted: 269
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.915131e-03, nAccepted: 269
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.982009e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.443614e-04, nAccepted: 258
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.388738e-05, nAccepted: 240
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.164485e-04, nAccepted: 258
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.759447e-05, nAccepted: 264
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.192393e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.532384e-05, nAccepted: 273
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.308179e-04, nAccepted: 259
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.683603e-05, nAccepted: 282
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.213600e-05, nAccepted: 282
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.191441e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.812003e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.011292e-05, nAccepted: 278
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.027160e-04, nAccepted: 273
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.652836e-05, nAccepted: 271
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.916060e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.996914e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.452742e-05, nAccepted: 273
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.921075e-03, nAccepted: 261
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.727159e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.405543e-04, nAccepted: 270
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.772947e-05, nAccepted: 274
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.332225e-04, nAccepted: 262
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.577819e-05, nAccepted: 243
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.198140e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.118497e-05, nAccepted: 278
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.170153e-04, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.665648e-05, nAccepted: 282
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.120480e-05, nAccepted: 274
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.192567e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.866689e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.221014e-05, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.988568e-04, nAccepted: 275
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.643063e-05, nAccepted: 275
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.931102e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.996728e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.343539e-05, nAccepted: 268
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.916682e-03, nAccepted: 270
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.869788e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.409027e-04, nAccepted: 272
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.569279e-05, nAccepted: 266
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.137220e-04, nAccepted: 259
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.967831e-05, nAccepted: 287
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.197207e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.444629e-05, nAccepted: 273
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.171078e-04, nAccepted: 270
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.968650e-05, nAccepted: 293
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.313540e-05, nAccepted: 282
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.255972e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.849515e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.072429e-05, nAccepted: 279
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.023895e-04, nAccepted: 280
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.631796e-05, nAccepted: 271
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.955911e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.999998e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.623721e-05, nAccepted: 296
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.923303e-03, nAccepted: 263
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.890219e-02, nAccepted: 7
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.424302e-04, nAccepted: 264
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.875547e-05, nAccepted: 259
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.135296e-04, nAccepted: 254
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.830574e-05, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.178451e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.466819e-05, nAccepted: 270
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.190939e-04, nAccepted: 282
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.477101e-05, nAccepted: 271
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.081520e-05, nAccepted: 288
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.201307e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.743521e-03, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 3.855842e-05, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.010511e-04, nAccepted: 279
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.896173e-05, nAccepted: 256
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.892873e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.993422e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.294297e-05, nAccepted: 263
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.940568e-03, nAccepted: 268
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.766971e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.438324e-04, nAccepted: 271
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.500546e-05, nAccepted: 271
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.123165e-04, nAccepted: 256
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 2.222670e-05, nAccepted: 292
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.216159e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.006183e-05, nAccepted: 278
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.182156e-04, nAccepted: 282
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.732878e-05, nAccepted: 281
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.092807e-05, nAccepted: 283
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.203389e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.765108e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 3.925784e-05, nAccepted: 272
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.990087e-04, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.648800e-05, nAccepted: 278
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.960008e-02, nAccepted: 7
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.992614e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.419407e-05, nAccepted: 269
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.913934e-03, nAccepted: 270
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.700412e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.415321e-04, nAccepted: 259
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 2.187199e-05, nAccepted: 297
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.224363e-04, nAccepted: 248
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 2.233711e-05, nAccepted: 292
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.182440e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.294363e-05, nAccepted: 272
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.160904e-04, nAccepted: 267
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.849066e-05, nAccepted: 286
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.456441e-05, nAccepted: 292
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.186997e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.980869e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 3.860607e-05, nAccepted: 273
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.015216e-04, nAccepted: 278
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.643581e-05, nAccepted: 279
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.951273e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.993013e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.436754e-05, nAccepted: 269
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.912933e-03, nAccepted: 269
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.726677e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.405432e-04, nAccepted: 257
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 2.165854e-05, nAccepted: 298
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.121815e-04, nAccepted: 253
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.576791e-05, nAccepted: 244
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.198470e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.396598e-05, nAccepted: 275
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.156272e-04, nAccepted: 267
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.553275e-05, nAccepted: 271
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.717006e-05, nAccepted: 293
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.192793e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 7.243692e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.229596e-05, nAccepted: 280
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.026760e-04, nAccepted: 275
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.676440e-05, nAccepted: 278
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.997086e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.992794e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.953923e-05, nAccepted: 283
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.935174e-03, nAccepted: 264
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.941756e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.425846e-04, nAccepted: 272
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.385120e-05, nAccepted: 243
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.216335e-04, nAccepted: 256
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.564786e-05, nAccepted: 241
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.098973e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.486553e-05, nAccepted: 251
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.242646e-04, nAccepted: 263
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.913592e-05, nAccepted: 289
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.135534e-05, nAccepted: 284
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.190562e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.970364e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 3.937149e-05, nAccepted: 272
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.004096e-04, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.648536e-05, nAccepted: 275
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.905260e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.999769e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.377428e-05, nAccepted: 265
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.923924e-03, nAccepted: 257
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.772275e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.416561e-04, nAccepted: 278
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.510236e-05, nAccepted: 272
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.287296e-04, nAccepted: 256
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.744368e-05, nAccepted: 267
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.215341e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.464585e-05, nAccepted: 271
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.202029e-04, nAccepted: 283
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.375439e-05, nAccepted: 234
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.233393e-05, nAccepted: 290
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.199537e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.930096e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 3.992277e-05, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.012667e-04, nAccepted: 279
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.683170e-05, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.926688e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.991176e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.277112e-05, nAccepted: 268
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.911185e-03, nAccepted: 259
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.948637e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.413303e-04, nAccepted: 263
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.387950e-05, nAccepted: 252
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.172430e-04, nAccepted: 261
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.576765e-05, nAccepted: 241
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.169722e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.797268e-05, nAccepted: 271
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.193644e-04, nAccepted: 269
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.366633e-05, nAccepted: 235
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.699652e-05, nAccepted: 291
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.213836e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.862756e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 3.992896e-05, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.005073e-04, nAccepted: 274
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.697157e-05, nAccepted: 282
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.915694e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.998654e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.245880e-05, nAccepted: 265
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.933870e-03, nAccepted: 272
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.815559e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.412817e-04, nAccepted: 266
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.609130e-05, nAccepted: 264
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.164420e-04, nAccepted: 248
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.947468e-05, nAccepted: 284
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.181079e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.237044e-05, nAccepted: 288
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.167036e-04, nAccepted: 263
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.790130e-05, nAccepted: 289
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.491281e-05, nAccepted: 292
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.192807e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.928210e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.036794e-05, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.977542e-04, nAccepted: 281
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.651250e-05, nAccepted: 271
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.919327e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.996596e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.824791e-05, nAccepted: 291
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.927369e-03, nAccepted: 269
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.824693e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.479896e-04, nAccepted: 254
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.384157e-05, nAccepted: 242
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.191291e-04, nAccepted: 256
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.663184e-05, nAccepted: 259
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.201719e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.857214e-05, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.177514e-04, nAccepted: 287
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.602642e-05, nAccepted: 268
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.106358e-05, nAccepted: 281
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.184307e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.866121e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 3.954393e-05, nAccepted: 275
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.998127e-04, nAccepted: 275
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.706111e-05, nAccepted: 274
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.914989e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.988116e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.430062e-05, nAccepted: 269
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.922949e-03, nAccepted: 270
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.856821e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.431280e-04, nAccepted: 263
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 2.163028e-05, nAccepted: 297
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.294486e-04, nAccepted: 248
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.596191e-05, nAccepted: 247
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.126002e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.301317e-05, nAccepted: 280
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.185993e-04, nAccepted: 265
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.522652e-05, nAccepted: 267
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.118090e-05, nAccepted: 281
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.195676e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.953944e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 3.991371e-05, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.006623e-04, nAccepted: 272
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.666029e-05, nAccepted: 268
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.956947e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.990858e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.714688e-05, nAccepted: 253
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.915787e-03, nAccepted: 268
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 8.415915e-02, nAccepted: 10
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.578257e-04, nAccepted: 280
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.381162e-05, nAccepted: 239
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.070639e-04, nAccepted: 243
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.548657e-05, nAccepted: 242
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.184352e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.404855e-05, nAccepted: 291
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.152647e-04, nAccepted: 279
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 2.240501e-05, nAccepted: 289
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.190103e-05, nAccepted: 285
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.206146e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 7.466835e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.258862e-05, nAccepted: 274
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.028808e-04, nAccepted: 270
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.768294e-05, nAccepted: 270
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.943615e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.986560e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.452301e-05, nAccepted: 275
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.910000e-03, nAccepted: 265
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.914353e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.421331e-04, nAccepted: 267
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.825137e-05, nAccepted: 286
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.149517e-04, nAccepted: 258
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.567899e-05, nAccepted: 238
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.231331e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.522831e-05, nAccepted: 291
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.198546e-04, nAccepted: 282
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.804686e-05, nAccepted: 289
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.100045e-05, nAccepted: 285
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.199440e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 7.039279e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.015901e-05, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.011646e-04, nAccepted: 285
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.719512e-05, nAccepted: 271
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.957575e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.993101e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.917101e-05, nAccepted: 289
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.926771e-03, nAccepted: 262
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.882300e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.415944e-04, nAccepted: 240
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.393420e-05, nAccepted: 241
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.135795e-04, nAccepted: 251
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.571812e-05, nAccepted: 246
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.185598e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.346764e-05, nAccepted: 274
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.142008e-04, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.805269e-05, nAccepted: 285
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.388524e-05, nAccepted: 293
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.197425e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.798436e-03, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.037436e-05, nAccepted: 277
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.022264e-04, nAccepted: 275
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.709975e-05, nAccepted: 268
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.949157e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.992601e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.556809e-05, nAccepted: 275
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.932940e-03, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.699455e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.417164e-04, nAccepted: 261
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.587580e-05, nAccepted: 270
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.236555e-04, nAccepted: 247
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 2.025608e-05, nAccepted: 289
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.221246e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.801401e-05, nAccepted: 275
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.204166e-04, nAccepted: 285
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.556392e-05, nAccepted: 271
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.103976e-05, nAccepted: 284
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.193819e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.948448e-03, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.080040e-05, nAccepted: 282
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.020731e-04, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.703831e-05, nAccepted: 276
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.960674e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.994720e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.331144e-05, nAccepted: 268
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.916702e-03, nAccepted: 257
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.905953e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.432146e-04, nAccepted: 261
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.387400e-05, nAccepted: 247
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.180931e-04, nAccepted: 261
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.609807e-05, nAccepted: 249
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.196819e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.422564e-05, nAccepted: 289
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.162385e-04, nAccepted: 272
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.732895e-05, nAccepted: 287
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.316600e-05, nAccepted: 293
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.189228e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.960717e-03, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.316715e-05, nAccepted: 256
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.005462e-04, nAccepted: 274
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.635676e-05, nAccepted: 273
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 3.922545e-02, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.988870e-01, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.462645e-05, nAccepted: 271
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.903693e-03, nAccepted: 262
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 7.746457e-02, nAccepted: 8
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.417336e-04, nAccepted: 255
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.383729e-05, nAccepted: 244
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.161334e-04, nAccepted: 259
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 2.171089e-05, nAccepted: 290
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 4.193574e-01, nAccepted: 9
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.124482e-05, nAccepted: 269
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.251102e-04, nAccepted: 251
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.979889e-05, nAccepted: 283
-name: AllreduceLibs32x32, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.230502e-05, nAccepted: 286
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.174732e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.869360e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.872007e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.989251e-04, nAccepted: 266, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.633709e-05, nAccepted: 268, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.342303e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.679072e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.326903e-05, nAccepted: 264, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.881645e-03, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 4.919016e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.413230e-04, nAccepted: 260, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.383111e-05, nAccepted: 250, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.174031e-04, nAccepted: 254, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.950589e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.448661e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.136369e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.139195e-04, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.594115e-05, nAccepted: 266, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.273089e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.174045e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.914792e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.577393e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.010103e-04, nAccepted: 266, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.663152e-05, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.354964e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.600318e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.729041e-05, nAccepted: 290, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.878487e-03, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.613080e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.428046e-04, nAccepted: 262, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.914982e-05, nAccepted: 294, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.168326e-04, nAccepted: 258, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.895177e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.398240e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.864291e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.199828e-04, nAccepted: 287, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.357990e-05, nAccepted: 245, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.242282e-05, nAccepted: 286, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.176253e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 7.097189e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.703773e-05, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.994916e-04, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.641325e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.341922e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.671354e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.164025e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.907449e-03, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.586315e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.394498e-04, nAccepted: 264, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.387552e-05, nAccepted: 249, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.729731e-04, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.554584e-05, nAccepted: 240, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.433463e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.571527e-05, nAccepted: 268, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.216648e-04, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.786284e-05, nAccepted: 286, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.197825e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.174000e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.773117e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.399813e-05, nAccepted: 277, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.009489e-04, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.679468e-05, nAccepted: 273, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.324314e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.670371e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.585023e-05, nAccepted: 294, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.916914e-03, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 4.923688e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.430865e-04, nAccepted: 257, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.386593e-05, nAccepted: 240, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.422459e-04, nAccepted: 273, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.545026e-05, nAccepted: 238, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.392481e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.545272e-05, nAccepted: 290, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.159426e-04, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.522597e-05, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.703267e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.172889e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 9.769102e-03, nAccepted: 10, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.598482e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.996932e-04, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.660773e-05, nAccepted: 271, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.335837e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.668002e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.458251e-05, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.900004e-03, nAccepted: 270, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 6.040894e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.407637e-04, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.378822e-05, nAccepted: 250, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.184669e-04, nAccepted: 256, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.538379e-05, nAccepted: 257, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.314202e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.685000e-05, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.131095e-04, nAccepted: 271, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.362704e-05, nAccepted: 248, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.162300e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.184631e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 7.010415e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.823230e-05, nAccepted: 285, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.011139e-04, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.653402e-05, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.341497e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.664995e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.114518e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.890070e-03, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 4.964584e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.391017e-04, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.968617e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.153349e-04, nAccepted: 252, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 2.368298e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.477630e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.325916e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.161324e-04, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.553257e-05, nAccepted: 262, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.491293e-05, nAccepted: 293, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.174932e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.972198e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.469014e-05, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.009422e-04, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.681912e-05, nAccepted: 286, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.339007e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.663377e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.623497e-05, nAccepted: 293, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.899454e-03, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.644473e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.422272e-04, nAccepted: 265, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.389970e-05, nAccepted: 254, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.533313e-04, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.546763e-05, nAccepted: 238, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.436426e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.088576e-05, nAccepted: 287, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.151054e-04, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.993041e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.762194e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.165311e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.830291e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.445682e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.007056e-04, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.640286e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.346276e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.605197e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.629109e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.924077e-03, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.701323e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.543251e-04, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.761854e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.430101e-04, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.960334e-05, nAccepted: 293, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.398832e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.719744e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.191139e-04, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.360066e-05, nAccepted: 246, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.501908e-05, nAccepted: 286, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.169241e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.793058e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.461106e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.019278e-04, nAccepted: 271, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.644836e-05, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.350905e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.603640e-01, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.558034e-05, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.887968e-03, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 4.935838e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.427401e-04, nAccepted: 257, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.815749e-05, nAccepted: 294, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.287771e-04, nAccepted: 268, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 2.421879e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.403844e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.799806e-05, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.166458e-04, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.384679e-05, nAccepted: 238, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.651325e-05, nAccepted: 294, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.179444e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.911750e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.923706e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.990647e-04, nAccepted: 259, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.675497e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.340454e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.667937e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.237261e-05, nAccepted: 261, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.881825e-03, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.424377e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.382242e-04, nAccepted: 265, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.374054e-05, nAccepted: 247, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.165910e-04, nAccepted: 259, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.785275e-05, nAccepted: 271, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.415213e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.425003e-05, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.169085e-04, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.583808e-05, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.126129e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.167922e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.921292e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.493508e-05, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.004792e-04, nAccepted: 271, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.673752e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.336684e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.669546e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.330101e-05, nAccepted: 290, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.898387e-03, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.603421e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.433557e-04, nAccepted: 271, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.383087e-05, nAccepted: 237, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.407633e-04, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.543157e-05, nAccepted: 245, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.375153e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.501064e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.166903e-04, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.364648e-05, nAccepted: 231, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.483510e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.172510e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.830360e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.517153e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.017157e-04, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.664439e-05, nAccepted: 277, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.369615e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.672063e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.087578e-05, nAccepted: 294, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.909322e-03, nAccepted: 271, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 4.965398e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.399494e-04, nAccepted: 266, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.381230e-05, nAccepted: 248, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.597698e-04, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.544080e-05, nAccepted: 237, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.381306e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.240867e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.184898e-04, nAccepted: 270, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.359952e-05, nAccepted: 241, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.253273e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.176067e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.836630e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.575503e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.996740e-04, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.659902e-05, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.356167e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.675862e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.295230e-05, nAccepted: 268, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.914780e-03, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.442796e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.417249e-04, nAccepted: 250, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.392697e-05, nAccepted: 229, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 9.534304e-04, nAccepted: 247, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.716513e-05, nAccepted: 265, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.414668e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.122540e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.167116e-04, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.589509e-05, nAccepted: 256, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.708111e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.180719e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.761328e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.649888e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.010433e-04, nAccepted: 273, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.676061e-05, nAccepted: 273, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.372259e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.677834e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.254091e-05, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.901520e-03, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.633139e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.402218e-04, nAccepted: 264, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.378027e-05, nAccepted: 256, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.157950e-04, nAccepted: 256, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.547994e-05, nAccepted: 233, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.419055e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.783757e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.149023e-04, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.361949e-05, nAccepted: 233, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.247248e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.184928e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 7.069059e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.660890e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.998681e-04, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.669905e-05, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.343255e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.675093e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.286236e-05, nAccepted: 263, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.879508e-03, nAccepted: 270, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.557859e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.411504e-04, nAccepted: 255, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.386077e-05, nAccepted: 246, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.173304e-04, nAccepted: 259, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.543779e-05, nAccepted: 245, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.419647e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.074198e-05, nAccepted: 285, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.136136e-04, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.447608e-05, nAccepted: 261, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.374952e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.177524e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.884423e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.724608e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.003028e-04, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.642744e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.342281e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.668336e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.049864e-05, nAccepted: 287, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.905957e-03, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 4.896953e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.422602e-04, nAccepted: 273, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.560573e-05, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.354355e-04, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 2.247245e-05, nAccepted: 285, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.439919e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.081027e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.167742e-04, nAccepted: 277, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.355561e-05, nAccepted: 243, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.502794e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.166951e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.673694e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.599125e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.004879e-04, nAccepted: 270, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.623861e-05, nAccepted: 277, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.336924e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.661293e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.652691e-05, nAccepted: 293, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.935225e-03, nAccepted: 290, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 4.772902e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.398823e-04, nAccepted: 266, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.393213e-05, nAccepted: 239, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.593229e-04, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.612181e-05, nAccepted: 254, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.402576e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.415622e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.215758e-04, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.373817e-05, nAccepted: 233, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.183755e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.173697e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 8.077205e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.427216e-05, nAccepted: 256, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.985992e-04, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.693468e-05, nAccepted: 277, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.351714e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.664945e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.395759e-05, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.907978e-03, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 4.806131e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.413392e-04, nAccepted: 252, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.382503e-05, nAccepted: 258, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.151787e-04, nAccepted: 244, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.547754e-05, nAccepted: 254, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.408664e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.883351e-05, nAccepted: 287, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.207058e-04, nAccepted: 262, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.365252e-05, nAccepted: 244, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.216649e-05, nAccepted: 287, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.174117e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.998655e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.625336e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.017023e-04, nAccepted: 260, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.689495e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.365396e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.670173e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.573578e-05, nAccepted: 271, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.905637e-03, nAccepted: 261, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.044609e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.412317e-04, nAccepted: 255, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.829409e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.085151e-04, nAccepted: 244, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.765927e-05, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.376098e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.103635e-05, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.219676e-04, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.359740e-05, nAccepted: 245, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.283318e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.180405e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 7.116175e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.590350e-05, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.008626e-04, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.640717e-05, nAccepted: 273, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.354724e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.672727e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.423416e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.885402e-03, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.537881e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.393237e-04, nAccepted: 261, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.388142e-05, nAccepted: 239, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.094669e-04, nAccepted: 245, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 2.126619e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.352028e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.426389e-05, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.201619e-04, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.355981e-05, nAccepted: 245, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.167665e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.207148e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.913813e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.630594e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.015905e-04, nAccepted: 272, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.655437e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.328797e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.667866e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.516826e-05, nAccepted: 272, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.913631e-03, nAccepted: 272, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 4.707522e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.429907e-04, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.388313e-05, nAccepted: 248, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.274174e-04, nAccepted: 257, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.546746e-05, nAccepted: 248, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.365951e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.603404e-05, nAccepted: 294, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.175741e-04, nAccepted: 272, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.366153e-05, nAccepted: 245, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.342787e-05, nAccepted: 287, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.179380e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.853976e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.558043e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.998881e-04, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.663452e-05, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.345881e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.670255e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.067908e-05, nAccepted: 286, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.912325e-03, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 4.859494e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.389859e-04, nAccepted: 258, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.390970e-05, nAccepted: 250, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.647986e-04, nAccepted: 289, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.544916e-05, nAccepted: 239, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.405122e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.494516e-05, nAccepted: 292, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.157128e-04, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.527246e-05, nAccepted: 258, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.283755e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.176828e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.760556e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.525081e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.997243e-04, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.657369e-05, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.341904e-02, nAccepted: 7, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.658683e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.617264e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.933699e-03, nAccepted: 293, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.587947e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.423496e-04, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.447099e-05, nAccepted: 253, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.365933e-04, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.543612e-05, nAccepted: 247, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.365313e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.523937e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.221973e-04, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.372647e-05, nAccepted: 234, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.228718e-05, nAccepted: 287, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.170751e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.792131e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.323207e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.993775e-04, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.660228e-05, nAccepted: 266, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.367054e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.657351e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.656858e-05, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.930054e-03, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.653036e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.425531e-04, nAccepted: 263, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.378813e-05, nAccepted: 234, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.143160e-04, nAccepted: 252, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.548599e-05, nAccepted: 242, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.408680e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.047171e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.148837e-04, nAccepted: 270, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.725313e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.263470e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.186684e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.844541e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.796821e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.998930e-04, nAccepted: 257, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.680624e-05, nAccepted: 280, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.362753e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.674284e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.531328e-05, nAccepted: 267, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.880527e-03, nAccepted: 268, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 4.916942e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.392232e-04, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.385957e-05, nAccepted: 235, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.076041e-04, nAccepted: 242, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.880490e-05, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.418261e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.072756e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.211473e-04, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.857016e-05, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.188041e-05, nAccepted: 287, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.180934e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.961919e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.659098e-05, nAccepted: 277, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.995581e-04, nAccepted: 270, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.708805e-05, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.374851e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.673356e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.241391e-05, nAccepted: 260, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.886484e-03, nAccepted: 272, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.452102e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.395670e-04, nAccepted: 266, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.395578e-05, nAccepted: 231, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.395503e-04, nAccepted: 275, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.540962e-05, nAccepted: 235, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.390053e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.600826e-05, nAccepted: 279, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.157111e-04, nAccepted: 285, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.358444e-05, nAccepted: 241, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.151105e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.173354e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.848754e-03, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.482071e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.995997e-04, nAccepted: 272, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.641343e-05, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.314465e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.667780e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 6.427238e-05, nAccepted: 296, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.921358e-03, nAccepted: 281, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 4.993491e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.429557e-04, nAccepted: 268, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.375991e-05, nAccepted: 248, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.570259e-04, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.542407e-05, nAccepted: 244, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.409847e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.564817e-05, nAccepted: 274, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.213324e-04, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.365029e-05, nAccepted: 230, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.270799e-05, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.171800e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.874411e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.553719e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.011948e-04, nAccepted: 278, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.682190e-05, nAccepted: 270, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.355731e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.675551e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.395408e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.939807e-03, nAccepted: 284, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.719885e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.403347e-04, nAccepted: 243, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.415125e-05, nAccepted: 243, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.309245e-04, nAccepted: 272, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.730695e-05, nAccepted: 265, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.389201e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.117039e-05, nAccepted: 283, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.137549e-04, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 2.062456e-05, nAccepted: 293, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.354867e-05, nAccepted: 291, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.168655e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 6.854409e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.701926e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 2.024169e-04, nAccepted: 265, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.676967e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.357673e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.668319e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.166027e-05, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.892108e-03, nAccepted: 271, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 4.914739e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.399759e-04, nAccepted: 261, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.380240e-05, nAccepted: 246, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.056237e-04, nAccepted: 243, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 2.358928e-05, nAccepted: 293, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.399290e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 7.235974e-05, nAccepted: 288, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.154696e-04, nAccepted: 265, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.356345e-05, nAccepted: 234, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.537965e-05, nAccepted: 295, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000000, filling: 1, nRep: 10, mean: 1.164221e-02, nAccepted: 8, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000000, filling: 1, nRep: 10, mean: 7.006983e-03, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 20000, filling: 1, nRep: 300, mean: 4.522334e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000, filling: 1, nRep: 300, mean: 1.990501e-04, nAccepted: 262, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 50000, filling: 1, nRep: 300, mean: 3.716799e-05, nAccepted: 276, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000000, filling: 1, nRep: 10, mean: 2.371711e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000000, filling: 1, nRep: 10, mean: 1.672385e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 100000, filling: 1, nRep: 300, mean: 5.180737e-05, nAccepted: 263, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000000, filling: 1, nRep: 300, mean: 1.887106e-03, nAccepted: 277, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000000, filling: 1, nRep: 10, mean: 5.674931e-02, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000000, filling: 1, nRep: 300, mean: 3.400838e-04, nAccepted: 264, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 2000, filling: 1, nRep: 300, mean: 1.380310e-05, nAccepted: 251, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000000, filling: 1, nRep: 300, mean: 8.111877e-04, nAccepted: 243, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 5000, filling: 1, nRep: 300, mean: 1.544687e-05, nAccepted: 240, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000000000, filling: 1, nRep: 10, mean: 3.342684e-01, nAccepted: 9, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 200000, filling: 1, nRep: 300, mean: 6.481165e-05, nAccepted: 282, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 500000, filling: 1, nRep: 300, mean: 1.177976e-04, nAccepted: 269, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 1000, filling: 1, nRep: 300, mean: 1.359144e-05, nAccepted: 254, critSizeStrat: 0
+name: AllreduceLibs, functype: 1, vsFunc: 0, setsize: 10000, filling: 1, nRep: 300, mean: 2.127638e-05, nAccepted: 278, critSizeStrat: 0
