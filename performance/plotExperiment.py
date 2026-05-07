@@ -27,11 +27,11 @@ CRITSIZE_STRAT_REV = {0: "max",
 }
 
 FOUNDATION_ALLREDUCE = {"UNION_BUTTERFLY": "ALLREDUCE_BUTTERFLY_REVERSE",
-                        "UNION_MOSTLY_HALFING": "ALLREDUCE_SHIFT" 
+                        "UNION_SHIFT": "ALLREDUCE_SHIFT" 
 }
 
 FOUNDATION_ALLREDUCE = {"UNION_BUTTERFLY": "ALLGATHER_BUTTERFLY_REVERSE",
-                        "UNION_MOSTLY_HALFING": "ALLGATHER_SHIFT" 
+                        "UNION_SHIFT": "ALLGATHER_SHIFT" 
 }
 
 
@@ -72,7 +72,7 @@ def plotRefAllgather(setup, ax):
     f = open(PATH + "../data/{0}/{1}x{2}{3}.txt".format(setup["refAllgathData"],
                                                         setup["nNodes"],
                                                         setup["perNode"],
-                                                        setup["mpilib"]))
+                                                        setup["refAllgathMpilib"]))
     line = f.readline()
 
     dataAllgather = {}
@@ -107,7 +107,7 @@ def plotRefAllreduce(setup, ax, xAxis):
     f = open(PATH + "../data/{0}/{1}x{2}{3}.txt".format(setup["refAllredData"],
                                                         setup["nNodes"],
                                                         setup["perNode"],
-                                                        setup["mpilib"]))
+                                                        setup["refAllredMpilib"]))
     line = f.readline()
     while line != "":
         chunks = line.split(",")

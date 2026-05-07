@@ -39,11 +39,11 @@ typedef struct Vertexset{
     int indexShift;
 } Vertexset;
 
-enum critSizeStrategies {
+typedef enum critSizeStrategies {
     CRITSIZE_MAX,
     CRITSIZE_MIN,
     CRITSIZE_MEAN
-};
+} critSizeStrategies;
 
 /**
  * Initializes Vertex Set object.
@@ -55,7 +55,9 @@ enum critSizeStrategies {
  */
 void Vertexset_Init(Vertexset* const vs, const uint32_t maxsize, const MPI_Comm MPI_COMM, bool shiftPattern);
 
-void Vertexset_SetCritsize(Vertexset* const vs, int citsizeStrategy);
+void Vertexset_SetCritsizeStrategy(Vertexset* const vs, critSizeStrategies citsizeStrategy);
+
+void Vertexset_SetCritsize(Vertexset* const vs, int critSize);
 
 /**
  * Adds a vertex to vertexset.

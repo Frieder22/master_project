@@ -3,13 +3,14 @@
 
 #include "vertexSet.h"
 #include <stdlib.h>
+#include <assert.h>
 
 typedef void (*vsFunc) (Vertexset*, int);
 
 enum Testcase{
     ITERATOR,
     UNION_BUTTERFLY,
-    UNION_MOSTLY_HALFING,
+    UNION_SHIFT,
     NAIVE,
     ALLREDUCE_BUTTERFLY,
     ALLREDUCE_BUTTERFLY_REVERSE,
@@ -24,7 +25,7 @@ vsFunc getVertexsetFunc(int funcname){
     switch (funcname) {
     case UNION_BUTTERFLY:
         return Vertexset_Union_Butterfly;
-    case UNION_MOSTLY_HALFING:
+    case UNION_SHIFT:
         return Vertexset_Union_Shift;
     case NAIVE:
         return Vertexset_Allreduce_Naive;
@@ -41,7 +42,7 @@ vsFunc getVertexsetFunc(int funcname){
     case ALLGATHER_SHIFT:
         return Vertexset_Allgather_Shift;
     default:
-        exit(1);
+        assert(false && "Chosen value is not in list");
     }
 }
 
@@ -52,7 +53,7 @@ bool getCommPattern(int funcname){
     switch (funcname) {
     case UNION_BUTTERFLY:
         return false;
-    case UNION_MOSTLY_HALFING:
+    case UNION_SHIFT:
         return true;
     case ALLREDUCE_BUTTERFLY:
         return false;
@@ -67,7 +68,7 @@ bool getCommPattern(int funcname){
     case ALLGATHER_SHIFT:
         return true;
     default:
-        exit(1);
+        assert(false && "Chosen value is not in list");
     }
 }
 

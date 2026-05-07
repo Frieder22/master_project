@@ -1,191 +1,151 @@
 {
     "runs": [
         {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 50000,
-            "nRepetitions": 300,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 20000,
-            "nRepetitions": 300,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 20,
-            "nRepetitions": 300,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 1000,
-            "nRepetitions": 300,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 50,
-            "nRepetitions": 300,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 100000,
-            "nRepetitions": 300,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 500000,
-            "nRepetitions": 10,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 100,
-            "nRepetitions": 300,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 10000,
-            "nRepetitions": 300,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 200000,
-            "nRepetitions": 10,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 2000,
-            "nRepetitions": 300,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 2,
-            "nRepetitions": 300,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 5000,
-            "nRepetitions": 300,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 5,
-            "nRepetitions": 300,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 1000000,
-            "nRepetitions": 10,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 200,
-            "nRepetitions": 300,
-            "distribution": "uniform",
-            "critSizeStrat": 0
-        },
-        {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
             "filling": 500,
             "nRepetitions": 300,
             "distribution": "uniform",
             "critSizeStrat": 0
         },
         {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
+            "filling": 20000,
+            "nRepetitions": 300,
+            "distribution": "uniform",
+            "critSizeStrat": 0
+        },
+        {
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
+            "filling": 200,
+            "nRepetitions": 300,
+            "distribution": "uniform",
+            "critSizeStrat": 0
+        },
+        {
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
+            "filling": 100,
+            "nRepetitions": 300,
+            "distribution": "uniform",
+            "critSizeStrat": 0
+        },
+        {
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
+            "filling": 50000,
+            "nRepetitions": 300,
+            "distribution": "uniform",
+            "critSizeStrat": 0
+        },
+        {
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
+            "filling": 10000,
+            "nRepetitions": 300,
+            "distribution": "uniform",
+            "critSizeStrat": 0
+        },
+        {
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
+            "filling": 50,
+            "nRepetitions": 300,
+            "distribution": "uniform",
+            "critSizeStrat": 0
+        },
+        {
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
+            "filling": 5,
+            "nRepetitions": 300,
+            "distribution": "uniform",
+            "critSizeStrat": 0
+        },
+        {
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
+            "filling": 1000,
+            "nRepetitions": 300,
+            "distribution": "uniform",
+            "critSizeStrat": 0
+        },
+        {
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
+            "filling": 10,
+            "nRepetitions": 300,
+            "distribution": "uniform",
+            "critSizeStrat": 0
+        },
+        {
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
+            "filling": 20,
+            "nRepetitions": 300,
+            "distribution": "uniform",
+            "critSizeStrat": 0
+        },
+        {
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
+            "filling": 5000,
+            "nRepetitions": 300,
+            "distribution": "uniform",
+            "critSizeStrat": 0
+        },
+        {
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
             "filling": 1,
             "nRepetitions": 300,
             "distribution": "uniform",
             "critSizeStrat": 0
         },
         {
-            "experiment": "AllgatherLibs",
-            "funcType": "Allgather",
-            "vsFunc": 0,
-            "setSize": 1,
-            "filling": 10,
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
+            "filling": 2,
+            "nRepetitions": 300,
+            "distribution": "uniform",
+            "critSizeStrat": 0
+        },
+        {
+            "experiment": "UnionCritsize",
+            "funcType": "Vertexset",
+            "vsFunc": 2,
+            "setSize": 50000000,
+            "filling": 2000,
             "nRepetitions": 300,
             "distribution": "uniform",
             "critSizeStrat": 0

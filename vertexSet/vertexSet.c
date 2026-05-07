@@ -79,7 +79,7 @@ void Vertexset_Init(Vertexset* const vs, const uint32_t maxsize, const MPI_Comm 
     }
 };
 
-void Vertexset_SetCritsize(Vertexset* const vs, int citSizeStrategy){
+void Vertexset_SetCritsizeStrategy(Vertexset* const vs, critSizeStrategies citSizeStrategy){
     //calculate critical Size depending on the stategies
     size_t bitsInDenseArray = vs->size_bitarray * sizeof(unsigned long long);
     switch (citSizeStrategy){
@@ -94,6 +94,14 @@ void Vertexset_SetCritsize(Vertexset* const vs, int citSizeStrategy){
     default:
         break;
     }
+
+    // adapt allocated memory for sparse buffer
+    vs->sparseArray = (uint32_t*) realloc(vs->sparseArray, (vs->sizeCrit * 2 + 2) * sizeof(uint32_t));
+    vs->sparseBuffer = (uint32_t*) realloc(vs->sparseBuffer, vs->sizeCrit * 2 * sizeof(uint32_t));
+}
+
+void Vertexset_SetCritsize(Vertexset* const vs, int sizeCrit){
+    vs->sizeCrit = sizeCrit;
 
     // adapt allocated memory for sparse buffer
     vs->sparseArray = (uint32_t*) realloc(vs->sparseArray, (vs->sizeCrit * 2 + 2) * sizeof(uint32_t));
@@ -400,7 +408,7 @@ void Vertexset_Union_Shift(Vertexset* const vs, const int VERTEXSET_OPERATION) {
 
     // shifts for first iteration
     shift_old = vs->mpi_size;
-    shift = Vertexset_nearestLog2(vs->mpi_size);
+    shift = 1 << Vertexset_Log2_floor(vs->mpi_size-1);
 
     // sparse array setup
     sizeSparse = vs->sizeSparse;
@@ -412,8 +420,8 @@ void Vertexset_Union_Shift(Vertexset* const vs, const int VERTEXSET_OPERATION) {
     for (int i = 0; i < iterations; i++) {
         skipSequence[iterations - i - 1] = shift;
         // find communication neighbors
-        to = (vs->mpi_rank + shift) % vs->mpi_size;
-        from = (vs->mpi_rank - shift + vs->mpi_size) % vs->mpi_size;
+        to = (vs->mpi_rank - shift + vs->mpi_size) % vs->mpi_size;
+        from = (vs->mpi_rank + shift) % vs->mpi_size;
         
 
         // decide, which variant should be send

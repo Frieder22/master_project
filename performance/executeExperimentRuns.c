@@ -135,19 +135,27 @@ void vertexsetRun(double* execTimes, vsFunc func){
     bool shiftPattern = getCommPattern(experimentRun.vsFunc);
     //init stuff
     Vertexset vs;
-    Vertexset_Init(&vs, experimentRun.setSize, MPI_COMM_WORLD, shiftPattern);
-    
     size_t nElementsTotal = experimentRun.filling;
-
-    // set critsize strategy
-    Vertexset_SetCritsize(&vs, experimentRun.critSizeStrategy);
-
-    // if VS allgather is tested, critical size can not be exceeded
+    
+    
+    
+    // if VS allgather is tested, only make set size large enough to fit
     if (experimentRun.vsFunc == ALLGATHER_SHIFT 
         || experimentRun.vsFunc == ALLGATHER_BUTTERFLY 
         || experimentRun.vsFunc == ALLGATHER_BUTTERFLY_REVERSE)
-    assert(nElementsTotal < vs.sizeCrit);
-    
+    {
+        uint32_t setSize = (nElementsTotal+1) * sizeof(uint32_t);
+        Vertexset_Init(&vs, setSize, MPI_COMM_WORLD, shiftPattern);
+        if(experimentRun.filling > vs.sizeCrit)
+        Vertexset_SetCritsize(&vs, experimentRun.filling + 1);
+    } else {
+            
+        Vertexset_Init(&vs, experimentRun.setSize, MPI_COMM_WORLD, shiftPattern);
+        // set critsize strategy
+        Vertexset_SetCritsizeStrategy(&vs, (critSizeStrategies) experimentRun.critSizeStrategy);
+    }
+
+        
     //benchmark
     double start, end;
     for (size_t it = 0; it < experimentRun.nRepetitions; it++) {

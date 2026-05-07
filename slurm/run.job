@@ -1,6 +1,6 @@
 #! /bin/bash
 #SBATCH -p q_thesis
-#SBATCH -N 36
+#SBATCH -N 32
 #SBATCH --ntasks-per-node=32
 #SBATCH --cpu-freq=High
 #SBATCH --time=3:00

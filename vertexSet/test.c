@@ -37,7 +37,7 @@ void printTestInfo(int testnumber){
         case UNION_BUTTERFLY:
             printf("Testing functionality of Exact Halfing Reduce.\n");
             break;
-        case UNION_MOSTLY_HALFING:
+        case UNION_SHIFT:
             printf("Testing functionality of Aproximate Halfing Reduce.\n");
             break;
         case NAIVE:
@@ -69,6 +69,14 @@ void printTestInfo(int testnumber){
             printf("Using %d processes on one machine.\n", size);
         }
         printf("\n");
+    }
+}
+
+int getFuncID(void (*func) (Vertexset*, int)){
+    for (int i = 1; i < 5; i++) {
+        if (getVertexsetFunc(i) == func) {
+            return i;
+        }
     }
 }
 
@@ -170,8 +178,10 @@ bool test_Allreduce_single(void (*reduceFunc) (Vertexset*, int), int setSize, fl
 
     int insertions = (int) setSize * filling;
 
+    int funcId = getFuncID(reduceFunc);  
+
     Vertexset vs, control;
-    bool shiftPattern =  (size & (size - 1)) != 0;
+    bool shiftPattern = getCommPattern(funcId);
 
     Vertexset_Init(&vs, setSize, MPI_COMM_WORLD, shiftPattern);
     Vertexset_Init(&control, setSize, MPI_COMM_WORLD, shiftPattern);
@@ -479,9 +489,8 @@ bool test_Allgather_single(void (*allgatherFunc) (Vertexset*, int), int setSize,
     if (debug && rank==0) printf(ANSI_RED"DEBUG mode!!\n"ANSI_RESET);
 
     int insertionsTotal = filling;
-
     Vertexset vs;
-    bool shiftPattern =  (size & (size - 1)) != 0;
+    bool shiftPattern = getCommPattern(getFuncID(allgatherFunc));
     Vertexset_Init(&vs, setSize, MPI_COMM_WORLD, shiftPattern);
     uint32_t* control;
     control = (uint32_t*) malloc(insertionsTotal*sizeof(uint32_t));
@@ -607,7 +616,7 @@ int main(int argc, char *argv[]){
             test_Allreduce_batch(Vertexset_Union_Butterfly);
             break;
 
-        case UNION_MOSTLY_HALFING: // Test Approximate halfing
+        case UNION_SHIFT: // Test Approximate halfing
             test_Allreduce_batch(Vertexset_Union_Shift);
             break;
 

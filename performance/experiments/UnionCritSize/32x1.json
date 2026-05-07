@@ -17,5 +17,7 @@
     "plotSize" : "small",
     "critsizeStrategies" : ["max", "min", "mean"],
     "refAllredData": "AllreduceLibsButterflyReverse",
-    "refAllgathData": "AllgatherLibsButterflyReverse"
+    "refAllgathData": "AllgatherLibsButterflyReverse",
+    "refAllredMpilib": "MPICH",
+    "refAllgathMpilib": "MPICH"
 }

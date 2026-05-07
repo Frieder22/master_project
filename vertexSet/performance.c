@@ -405,7 +405,7 @@ int main(int argc, char *argv[]){
         break;
 
     // perf_red_approxHalfing: measure performance of allreduce 
-    case UNION_MOSTLY_HALFING:
+    case UNION_SHIFT:
         if (rank==0) {
             printf("-------------------------------------------------------------\n");
             printf("Testing performance of Vertexset_Union_Shift...\n");
