@@ -1,7 +1,7 @@
 {
     "experiment": "AllgatherCompareConcentrated",
     "experimentType": "compare",
-    "setSize": 50000000,
+    "setSize": 1,
     "filling": [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000],
     "refFunc": {
         "folder": "AllgatherIntelMPIConcentrated",

@@ -24,5 +24,6 @@
     "yAxis" : "runtime",
     "plotGraphs" : "compareAgainstNative",
     "plotFolder" : "AllgatherCompareWorstCase",
-    "plotSize" : "medium"
+    "plotSize" : "medium",
+    "ylim": [0.399, 1.1]
 }

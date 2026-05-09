@@ -271,9 +271,10 @@ Like for the Allreduce variants the algorithms are executed on the default proce
 Here it is apparent that all foundation algorithms on average perform better or than or as good as the Allgather provided by IntelMPI. This is especially for larger set fillings visible.\\
 When looking at the benchmarks of the setup $p=(32\times32)$ (Figure\ref{fig:AllgatherCompare32x32}) the behavior of the different foundation Allgathers is quite different. The best performing algorithms are here \texttt{Allgather\_Butterfly} and \texttt{Allgather\_Shift}. The bit-reversed Butterfly variant is mostly slower than the variant without any rank ID mapping. Especially for higher fillings this is visible. The slow down is expected as for the Butterfly Allgather the largest messages are sent in the later iterations of the procedure. The later iterations of the bit-reversed variant is done only via the network and fast intra-nodal communication is 'wasted' for small messages in the first iterations. In the Allreduce algorithms analyzed in the section before, this behavior is switched as there the biggest messages happen here in the first iterations (of the Reducescatter phase). So the rank ID mapping arises a trade-off for this processor setup. Either one can optimize for a fast Allreduce where the bit-reversed Butterfly scheme is chosen or a fast Allgather is preferred, which is executed using the standard rank ID mapping. \\
 The other power-of-two processor layout is shown in Figure \ref{fig:AllgatherCompare32x1}. With only 
-one processor used on each node every communication is done via the network and the fast intra-nodal bandwidth can not be exploited. This fact can be seen in the nearly identical behavior of the Butterfly variants. In this setup they are de facto equivalent algorithms as the rank mapping does not matter.\\
-\texttt{Allgather\_Shift} performs similarly well for the non-power  setups ($p=(34\times32)$ and $p=(34\times1)$) more or less exactly the same as it did for the corresponding power of two variants. It is generally faster for all set fillings than the reference Allgather. Only in the $p=(34\times1)$ setup it measured with slightly longer execution times for the set fillings between 10 and 2.000.
-
+one processor used on each node every communication is done via the network and the fast intra-nodal bandwidth can not be exploited. This fact can be seen in the nearly identical behavior of the Butterfly variants. In this setup they are de facto equivalent algorithms as the rank mapping does not matter. The Shift variant also performs nearly identical as the Butterfly variants.\\
+\texttt{Allgather\_Shift} performs similarly well for the non-power  setups ($p=(34\times32)$ and $p=(34\times1)$) more or less exactly the same as it did for the corresponding power of two variants. It is generally faster for all set fillings than the reference Allgather. Only in the $p=(34\times1)$ setup it measured with slightly longer execution times for the set fillings between 10 and 2.000.\\
+So it is apparent that for a uniform distribution of elements the foundation algorithms perform mostly better than the native IntelMPI Allreduce variant.
+\subsubsection{Non uniform filling}
 \begin{figure}[ht]
 	\centering
 	\begin{subfigure}[b]{0.4\textwidth}
@@ -306,9 +307,9 @@ one processor used on each node every communication is done via the network and 
 	\caption{Relative execution time of the foundation Allgather algorithms (\texttt{Allgather\_Butterfly}, \texttt{Allgather\_Butterfly\_Reversed} and \texttt{Allgather\_Shift}) in relation to the performance of IntelMPIs native Allgather. The relative execution time $t/t_r$ is plotted against set filling $\Phi$. All elements are held by one only process before the Allgather. The vertical red line indicates the threshold where the tested algorithms are faster.}
 	\label{fig:AllgatherCompareConcentrated}
 \end{figure}
-\subsubsection{Non uniform filling}
 Next the performance of the different Allgather implementations is analyzed for a non uniform filling of the sets. To exaggerate the effect of non-uniformity one set of only one rank will filled with $\Phi$ elements and the other processes will hold no elements at all before the set union. The setup and filling ranges are the same as in the experiments before. The results can be seen in Figure \ref{fig:AllgatherCompareConcentrated}.
-The results for the non uniform filling benchmark look qualitatively very similar to the benchmark results where the elements are uniformly distributed on the processors. We expect the foundation algorithms to perform worse for the non-uniform case. Apparently this is also true for the native Allgather by IntelMPI. So the foundation algorithms can be also seen as quite good performing for the worst case distribution of elements (relatively speaking).
+The results for the non uniform filling benchmark look qualitatively very similar to the benchmark results where the elements are uniformly distributed on the processors. We expect the foundation algorithms to perform worse for the non-uniform case. Apparently this is also true for the native Allgather by IntelMPI. Especially for the largest set filling ($10^6$) it is apparent that the foundation algorithm are up to 100 times faster than the reference. This manly due to the horrible performance of IntelMPI for this configuration. The benchmark of the reference Allgather is shown in the appendix in Figure \ref{fig:AllgatherIntelMPIConcentrated}.\\
+Conclusively the foundation algorithms can be seen as good performing for the worst case distribution of elements (relatively speaking).
 
 \subsubsection{Worst case of processor number $p$ for \texttt{Allgather\_Shift}}
 As mentioned in Section \ref{sec:AllgatherShift performance} the performance of the foundation Allgather \texttt{Allgather\_\allowbreak Shift} is dependent on the number of processors $p$. This is of corse for all collective communication the case. For larger $p$ the execution is generally expected to be slower.  
@@ -319,7 +320,7 @@ As mentioned in Section \ref{sec:AllgatherShift performance} the performance of 
 	\label{fig:AllgatherWorstCase}
 \end{figure} 
 \texttt{Allgather\_Shift} is special here as it needs different amount of buffer copies depending on the bit representation of $p$. When looking at $p$ in binary \texttt{Allgather\_Shift} needs to copy a part of its buffer for every time a 1 follows 0 and vice versa. So $p=5=(101)_2$ needs two buffer copies as there are two times a switch from 1 to 0 or from 0 to 1. The largest feasible number of processes that present a worst case and is feasible on the provided cluster is $p=682=(1010101010)_2$. The benefit is here that its prime factorization is $p=2\cdot11\cdot31=682$ and therefore can be distributed as $p=(31\times22)$ over the cluster. The foundation Shift Allgather is therefore benchmarked for this configuration and compared to the native IntelMPI Allgather. This is done only for an uniform distribution of the set elements. The result is shown in Figure \ref{fig:AllgatherWorstCase}.\\
-Interestingly in this worst case the Shift based Allgather performs better than the native Allgather from intelMPI for larger fillings $\Phi$. For smaller fillings it is slower, but in every case less than 7\%. So the copying of memory is apparently not the bottleneck of the overall performance. As the Allgather performs quite well for this worst case processor layout this setup does not need to be explored in the further analysis.
+Interestingly in this worst case the Shift based Allgather performs better than the native Allgather from intelMPI for all set fillings $\Phi$. So the copying of memory is apparently not the bottleneck of the overall performance. As the Allgather performs quite well for this worst case processor layout the influence of the bit representation of $p$ does not need to be explored in the further analysis.
 
 
 \section{Comparison of Proposed Algorithms Against Their Base Variant}
@@ -333,8 +334,8 @@ The parameter '$critSize$', which we now also refer to as the critical size, ind
 	c_\texttt{max} = \frac{|\Tilde{S}|}{32}, && c_\texttt{min}= \frac{|\Tilde{S}|}{32p},
 	&& c_\texttt{mean} = \frac{p-1}{32 p \log_2(p)} |\Tilde{S}|
 \end{align*}
-tested. The algorithms are designed to work for large set sizes so for the experiments a set size |$\Tilde{S}$| of $10.000.000=10^7$ is chosen. The set filling is varied in 1-2-5 steps for each power of 10. The sets are filled uniformly over the processors. The Butterfly variant is tested for the power of two setups and the Shift variant is tested for the setups on 36 nodes. The result of the experiments is shown in Figure \ref{fig:UnionCritSize}.
-\begin{figure}[h]
+tested. The algorithms are designed to work more efficiently for large set sizes so for the experiments a set size |$\Tilde{S}$| of $10.000.000=10^7$ is chosen. The set filling is varied in 1-2-5 steps for each power of 10. The sets are filled uniformly over the processors. The Butterfly variant is tested for the power of two setups and the Shift variant is tested for the setups on 34 nodes. The result of the experiments is shown in Figure \ref{fig:UnionCritSize}.\\
+\begin{figure}[ht]
 	\centering
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
@@ -366,6 +367,87 @@ tested. The algorithms are designed to work for large set sizes so for the exper
 	\caption{Execution time of the union algorithms on different processor layouts $p$. For each setup the three strategies (\texttt{max}, \texttt{min} and \texttt{mean}) are tested. The sets are filled uniformly and the set size is $|\Tilde{S}|=10^7$. To get a reference the foundation Allreduce and Allgather execution times of the corresponding algorithms are also shown.}
 	\label{fig:UnionCritSize}
 \end{figure}
+Here is firstly the overall performance the newly proposed union algorithms of interest. As reference are also the performances of the corresponding foundation Allreduce and Allgather of the same setups plotted. 
+One can see that for sparse fillings the execution time is more or less proportional to the Allgather performance and at a certain filling the run time is proportional to the corresponding reference Allreduce. This proves the success of the goal to take advantage of switching between a dense and sparse representation of set elements.\\
+\begin{figure}[]
+	\centering
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionCritSizeConcentrated/32x32UnionCritSizeConcentrated.png}
+		\caption{$p=(32\times32)$}
+		\label{fig:UnionCritSizeConcentrated32x32}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionCritSizeConcentrated/32x1UnionCritSizeConcentrated.png}
+		\caption{$p=(32\times1)$}
+		\label{fig:UnionCritSizeConcentrated32x1}
+	\end{subfigure}
+	\vspace{5mm}
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionCritSizeConcentrated/34x32UnionCritSizeConcentrated.png}
+		\caption{$p=(34\times32)$}
+		\label{fig:UnionCritSizeConcentrated34x32}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionCritSizeConcentrated/34x1UnionCritSizeConcentrated.png}
+		\caption{$p=(34\times1)$}
+		\label{fig:UnionCritSizeConcentrated34x1}
+	\end{subfigure}
+	\caption{Execution time of the union algorithms on different processor layouts $p$. For each setup the three strategies (\texttt{max}, \texttt{min} and \texttt{mean}) are tested. Before the union operation all set elements are only held by one process. The set size is $|\Tilde{S}|=10^7$. To get a reference the foundation Allreduce and Allgather execution times of the corresponding algorithms are also shown.}
+	\label{fig:UnionCritSizeConcentrated}
+\end{figure}
+When considering the influence of the different strategies for '$critSize$' it is apparent that they influence the set filling from which the run time switches from behaving Allgather-like to Allreduce-like. This is o corse expected as this parameter defines exactly the set filling the algorithms switch from the sparse to the dense representation. 
+The \texttt{min} strategy defining the smallest critical size lead in all cases to the earliest switch from sparse to dense. It therefore misses a lot of potential of being faster than the reference Allreduce for longer (for higher set fillings). 
+The \texttt{mean} strategy switches two orders of magnitude later for the high processor number setups ($p=(32\times32)$ and $p=(34\times32)$) and one order of magnitude later for the low number of processor setups ($p=(32\times1)$ and $p=(34\times1)$) to the Allreduce-like behavior than the \texttt{min} strategy does. The \texttt{max} strategy switches for the same fillings or even later. The drawback of the late switching by \texttt{max} is apparent in Figure \ref{fig:UnionCritSize32x1}. 
+Here it can happen for set fillings approximately the same as the critical size that the execution time exceeds the performance of the reference Allreduce by far. We want to mention here again that the data is plotted on logarithmic scales and the bump over the reference Allreduce therefore represents a run time that is three times slower than the reference. This is a huge shortcoming and can easily negate the benefits of the performance increase for smaller set fillings.
+
+To get more insights into the influence of '$critSize$' the same experiments are executed again but now without an uniform filling. Again a maximal non uniform distribution where only one process holds all the data is chosen. The results are shown in Figure \ref{fig:UnionCritSizeConcentrated}.
+Generally the exact same effects as discussed for the uniform distribution are also visible for the non-uniform filling. The only conspicuous  difference here is that the outlier for the \texttt{max} strategy happens here for the $p=32\times32$ processor layout.\\
+This spontaneous behavior ef exceeding heavily the reference Allreduce execution time of \texttt{max} strategy leads to choosing the next best performing strategy as general solution. Therefore the \texttt{mean} strategy is from now on used in all the further analysis.
+\FloatBarrier
+\subsection{Performance for very densely filled sets}
+As already apparent in the previous plots (Figure \ref{fig:UnionCritSize} and Figure \ref{fig:UnionCritSizeConcentrated}) the different setups lead to different good performance results for large set filling. Precisely the upper limit for the union algorithms exceed their reference Allreduce implementations by different amount of time. This behavior is in this section analyzed. This experiment is setup in such a way that only the dense representation in all iteration is used. I.e. the sets of the different processes are filled before the union operation more than the critical size.\\
+The default processor layouts are used to evaluate the performance. The results are shown in Figure \ref{fig:UnionLargeFilling}.
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionLargeFilling/32x32UnionLargeFilling.png}
+		\caption{$p=(32\times32)$}
+		\label{fig:UnionLargeFilling32x32}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionLargeFilling/32x1UnionLargeFilling.png}
+		\caption{$p=(32\times1)$}
+		\label{fig:UnionLargeFilling32x1}
+	\end{subfigure}
+	\vspace{5mm}
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionLargeFilling/34x32UnionLargeFilling.png}
+		\caption{$p=(34\times32)$}
+		\label{fig:UnionLargeFilling34x32}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionLargeFilling/34x1UnionLargeFilling.png}
+		\caption{$p=(34\times1)$}
+		\label{fig:UnionLargeFilling34x1}
+	\end{subfigure}
+	\caption{Relative execution time of the union algorithms on different processor layouts $p$ against the set size $|\Tilde{S}|$. The execution times of the tested algorithms are set into relation to their corresponding foundation Allreduce. Before the union operation the sets on the processors are filled so much that only the dense variant is used.}
+	\label{fig:UnionLargeFilling}
+\end{figure}
+Here the relative execution times of the union algorithms are plotted. As a reference the performance of the corresponding foundation algorithm on the same processor layout is taken. It is therefore  important to keep in mind that it is not apparent which union algorithm is faster as their run times are set into proportion to their own foundation Allreduce performance. This is done to evaluate how much of a slowdown the additional complexity of the union algorithms introduces. \\
+Considering the layout $p=(32\times32)$ both algorithms show consistently quite the same performance as their foundation algorithms for set sizes over $1.000.000$. 
+
 
 \subsection{$2^k$ Variant}
 \subsection{Arbitrary Number of Processes Variant}

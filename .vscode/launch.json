@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/performance",
-            "args": "-f experiments/UnionCritSize"
+            "args": "-f experiments/AllgatherCompareConcentrated"
         }
     ]
 }

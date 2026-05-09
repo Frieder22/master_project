@@ -48,9 +48,43 @@ Here are additional plots from the benchmark evaluation shown. To get an easier 
 	\label{fig:AllreduceFoundationLibsAppendix}
 \end{figure}
 
+\newpage
+\setcounter{section}{4}
+\section{Testing foundation Allgather against MPI libraries}
+\setcounter{subsection}{2}
+\subsection{Comparison between IntelMPI Allgather and foundation algorithms}
+\subsubsection{Non uniform filling}
 
 
 
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/AllgatherIntelMPIConcentrated/32x32AllgatherIntelMPIConcentrated.png}
+		\caption{$p=(32\times32)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/AllgatherIntelMPIConcentrated/32x1AllgatherIntelMPIConcentrated.png}
+		\caption{$p=(32\times1)$}
+	\end{subfigure}
+	\vspace{5mm}
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/AllgatherIntelMPIConcentrated/34x32AllgatherIntelMPIConcentrated.png}
+		\caption{$p=(34\times32)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/AllgatherIntelMPIConcentrated/34x1AllgatherIntelMPIConcentrated.png}
+		\caption{$p=(34\times1)$}
+	\end{subfigure}
+	\caption{Performance of the native IntelMPI Allgather. Execution time $t$ is plotted against set filling $\Phi$. All elements are held by one only process before the Allgather.}
+	\label{fig:AllgatherIntelMPIConcentrated}
+\end{figure}
 
 
 

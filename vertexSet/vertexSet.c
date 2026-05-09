@@ -29,8 +29,9 @@ void Vertexset_Init(Vertexset* const vs, const uint32_t maxsize, const MPI_Comm 
 
     // check if systems definition of ULL is compatible with this implementation
     assert(sizeof(unsigned long long) == 8); // 8 byte (=64 bit)
-    // calculate size, where dense variant is more efficient
-    vs->sizeCrit = size_bitarray * sizeof(unsigned long long) / sizeof(uint32_t);
+
+    // calculate size, where dense variant is seen as more efficient (mean strategy)
+    vs->sizeCrit = ((maxsize + ulong_bits - 1)  * (size_t) (vs->mpi_size - 1)) / (32* vs->mpi_size * Vertexset_Log2_floor(vs->mpi_size));
     
     // init sparse array 
     // allocate to much memory to fill up whole array with all possible
@@ -61,8 +62,9 @@ void Vertexset_Init(Vertexset* const vs, const uint32_t maxsize, const MPI_Comm 
         // calculate indices for input (same for every process)
         blockIndices_input[0] = 0;
         for (size_t i = 1; i < vs->mpi_size + 1; i++) {
-            blockIndices_input[i] = vs->size_bitarray * i / vs->mpi_size;
+            blockIndices_input[i] = (vs->size_bitarray * i)  / vs->mpi_size;
             block_nElements_input[i-1] = blockIndices_input[i] - blockIndices_input[i-1];
+            assert(blockIndices_input[i]>=0);
         }
         int indexShift = blockIndices_input[vs->mpi_rank];
     
@@ -71,6 +73,8 @@ void Vertexset_Init(Vertexset* const vs, const uint32_t maxsize, const MPI_Comm 
         for (size_t i = 1; i < vs->mpi_size + 1; i++) {
             blockIndices_buffer[i] = blockIndices_buffer[i - 1] + block_nElements_input[(i - 1 + vs->mpi_rank) % vs->mpi_size ];
             block_nElements_buffer[i-1] = blockIndices_buffer[i] - blockIndices_buffer[i-1];
+            assert(blockIndices_buffer[i]>=0);
+
         }
 
         vs->block_Indices = blockIndices_buffer;
@@ -81,23 +85,37 @@ void Vertexset_Init(Vertexset* const vs, const uint32_t maxsize, const MPI_Comm 
 
 void Vertexset_SetCritsizeStrategy(Vertexset* const vs, critSizeStrategies citSizeStrategy){
     //calculate critical Size depending on the stategies
-    size_t bitsInDenseArray = vs->size_bitarray * sizeof(unsigned long long);
+    size_t bitsInDenseArray = vs->size_bitarray * ulong_bits;
     switch (citSizeStrategy){
     case CRITSIZE_MAX:
-        vs->sizeCrit = bitsInDenseArray / sizeof(uint32_t);
+        vs->sizeCrit = bitsInDenseArray / 32;
         break;
     case CRITSIZE_MIN:
-        vs->sizeCrit = bitsInDenseArray / (sizeof(uint32_t) * vs->mpi_size);
+        vs->sizeCrit = bitsInDenseArray / (32 * vs->mpi_size);
         break;
     case CRITSIZE_MEAN:
-        vs->sizeCrit = (bitsInDenseArray * (vs->mpi_size - 1)) / (sizeof(uint32_t) * vs->mpi_size * Vertexset_Log2_floor(vs->mpi_size));
-    default:
+        vs->sizeCrit = (bitsInDenseArray * (size_t) (vs->mpi_size - 1)) / (32* vs->mpi_size * Vertexset_Log2_floor(vs->mpi_size));
         break;
+    default:
+        return;
     }
+    
 
     // adapt allocated memory for sparse buffer
-    vs->sparseArray = (uint32_t*) realloc(vs->sparseArray, (vs->sizeCrit * 2 + 2) * sizeof(uint32_t));
-    vs->sparseBuffer = (uint32_t*) realloc(vs->sparseBuffer, vs->sizeCrit * 2 * sizeof(uint32_t));
+    uint32_t* temp;
+    temp = (uint32_t*) realloc(vs->sparseArray, (vs->sizeCrit * 2 + 2) * sizeof(uint32_t));
+    if (!temp){
+        free(temp);
+        assert(false && "couldn't realloc for Crit size strategy");
+    }
+    vs->sparseArray = temp;
+
+    temp = (uint32_t*) realloc(vs->sparseBuffer, vs->sizeCrit * 2 * sizeof(uint32_t));
+    if (!temp){
+        free(temp);
+        assert(false && "couldn't realloc for Crit size strategy");
+    }
+    vs->sparseBuffer = temp;
 }
 
 void Vertexset_SetCritsize(Vertexset* const vs, int sizeCrit){
@@ -117,7 +135,6 @@ void Vertexset_Add(Vertexset* const vs, const uint32_t vertex) {
             Bitmap_Set_Shifted(vs->bitArray, vertex, vs->indexShift, vs->size_bitarray);
         }
     } else {
-        assert(vs->sizeSparse <= vs->maxsize);
         vs->sparseArray[vs->sizeSparse++] = vertex;
         if (vs->sizeSparse >= vs->sizeCrit) {
             Vertexset_TransformToDense(vs);
@@ -225,7 +242,7 @@ void Vertexset_Union_Butterfly(Vertexset* const vs, const int VERTEXSET_OPERATIO
     // find block indices
     int blockIdx[vs->mpi_size + 1];
     blockIdx[0] = 0;
-    for (int i = 1; i < vs->mpi_size + 1; i++) {
+    for (size_t i = 1; i < vs->mpi_size + 1; i++) {
         blockIdx[i] = vs->size_bitarray * i / vs->mpi_size;
     }
     
@@ -255,6 +272,7 @@ void Vertexset_Union_Butterfly(Vertexset* const vs, const int VERTEXSET_OPERATIO
             startIndex = blockIdx[startBlock];
             nElements = blockIdx[startBlock + shift] - startIndex;
 
+            assert(nElements>=0);
             // send dense array
             MPI_Isend(vs->bitArray + startIndex, nElements, MPI_UNSIGNED_LONG_LONG, commNeighborRev, 200, vs->MPI_COMM, &req);
         }
@@ -273,6 +291,7 @@ void Vertexset_Union_Butterfly(Vertexset* const vs, const int VERTEXSET_OPERATIO
                 // recieve sparse format
                 MPI_Recv(vs->sparseArray + vs->sizeSparse, recvCount, MPI_INT32_T, commNeighborRev, 100, vs->MPI_COMM, MPI_STATUS_IGNORE);
                 vs->sizeSparse += recvCount;
+                MPI_Wait(&req, MPI_STATUS_IGNORE);
 
                 // transform to dense, if too big
                 if (vs->sizeSparse > vs->sizeCrit) {
@@ -420,8 +439,8 @@ void Vertexset_Union_Shift(Vertexset* const vs, const int VERTEXSET_OPERATION) {
     for (int i = 0; i < iterations; i++) {
         skipSequence[iterations - i - 1] = shift;
         // find communication neighbors
-        to = (vs->mpi_rank - shift + vs->mpi_size) % vs->mpi_size;
-        from = (vs->mpi_rank + shift) % vs->mpi_size;
+        to = (vs->mpi_rank + shift) % vs->mpi_size;
+        from = (vs->mpi_rank - shift + vs->mpi_size) % vs->mpi_size;
         
 
         // decide, which variant should be send
@@ -722,8 +741,6 @@ void Vertexset_Allreduce_Butterfly_ReverseBits(Vertexset* const vs, const int VE
     int startIndex;
     int startIndexRecv;
     int nElements;
-    int tag;
-    MPI_Status status;
     MPI_Request req;
     int recvCount;
     int nIterations = Vertexset_Log2_floor(vs->mpi_size);

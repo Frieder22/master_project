@@ -1,0 +1,42 @@
+{
+    "experiment": "AllgatherCompare",
+    "experimentType": "compare",
+    "setSize": 50000000,
+    "filling": [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000],
+    "refFunc": {
+        "folder": "AllgatherLibs",
+        "funcType": "Allgather",
+        "mpilib": "intelMPI",
+        "name": "Reference"
+    },
+    "funcs":[
+        {
+        "folder": "AllgatherCompareUniform",
+        "funcType": "Vertexset",
+        "vsFunc": "ALLGATHER_BUTTERFLY",
+        "mpilib": "MPICH",
+        "name": "ALLGATHER_BUTTERFLY"
+        },
+        {
+        "folder": "AllgatherCompareUniform",
+        "funcType": "Vertexset",
+        "vsFunc": "ALLGATHER_BUTTERFLY_REVERSE",
+        "mpilib": "MPICH",
+        "name": "ALLGATHER_BUTTERFLY_REVERSE"
+        },
+        {
+        "folder": "AllgatherCompareUniform",
+        "funcType": "Vertexset",
+        "vsFunc": "ALLGATHER_SHIFT",
+        "mpilib": "MPICH",
+        "name": "ALLGATHER_SHIFT"
+        }
+    ],
+    "nNodes": 32,
+    "perNode": 32,
+    "xAxis": "filling",
+    "yAxis" : "runtime",
+    "plotGraphs" : "compareAgainstNative",
+    "plotFolder" : "AllgatherCompare",
+    "plotSize" : "small"
+}

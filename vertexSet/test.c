@@ -284,6 +284,7 @@ bool test_Allreduce_batch(void (*reduceFunc) (Vertexset*, int)){
     isCorrect &= test_Allreduce_single(reduceFunc, 63, 0.3);
     isCorrect &= test_Allreduce_single(reduceFunc, 64, 0.3);
     isCorrect &= test_Allreduce_single(reduceFunc, 65, 0.3);
+    isCorrect &= test_Allreduce_single(reduceFunc, 1000000000, 0.99);
     isCorrect &= test_Allreduce_single(reduceFunc, 1<<25, 0.3);  
     if (rank==0) {
         if (isCorrect) {

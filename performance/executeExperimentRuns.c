@@ -104,6 +104,14 @@ void processData(double* execTimes){
 }
 
 void fillVertexset(Vertexset* vs, int nElementsTotal){
+    // negative filling indicate dense array
+    if (experimentRun.filling < 0) {
+        Vertexset_Add(vs, mpi_rank % experimentRun.setSize);
+        Vertexset_TransformToDense(vs);
+        return;
+    }
+    
+
     // fill uniformly
     if (experimentRun.distribution == UNIFORM){
         //add elements
@@ -326,6 +334,7 @@ void setExperimentRunSetup(size_t i){
     if (experimentRun.funcType==VERTEXSET_TYPE) {
         experimentRun.vsFunc = cJSON_GetObjectItem(run, "vsFunc")->valueint; // enum from testStructure.h needs to be used
     }
+
     // set critical size strategy, if defined
     cJSON* critSize_item = cJSON_GetObjectItem(run, "critSizeStrat");
     if (critSize_item != NULL) {

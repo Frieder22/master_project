@@ -8,6 +8,8 @@ PATH = ""
 NEXPERIMENTRUNS = 30
 BIGSETSIZE = 10_000_000
 BIGFILLING = 100_000
+SHOWOUTPUT = False
+
 
 MPI_LOAD = {"openMPI": "spack load openmpi@4.1.6",
            "intelMPI": "module load mpi/intelmpi",
@@ -36,7 +38,7 @@ def createRunsJSON(data, tn):
                 return setSize <= BIGSETSIZE
             if vsFunc in ["ALLGATHER_BUTTERFLY", "ALLGATHER_BUTTERFLY_REVERSE", "ALLGATHER_SHIFT"]:
                 return filling <= BIGFILLING
-            return setSize <= BIGSETSIZE or filling <= BIGFILLING
+            return not((filling >= BIGFILLING or filling<0) and setSize >= BIGSETSIZE)
         if funcType == "Allreduce":
             return setSize <= BIGSETSIZE
         if funcType == "Allgather":
@@ -125,7 +127,11 @@ def createSlurmJob(data, experimentName):
         f.write(MPI_LOAD[mpilib] +  "\n")
         f.write("make perf\n")
         f.write("for i in {{1..{0}}}; do\n".format(NEXPERIMENTRUNS))
-        f.write("    {0} ../build/executeExperimentRuns.o runs.json >> ../data/{1}/{2}x{3}{4}.txt\n".format(MPI_LAUNCHER[mpilib],
+
+        if SHOWOUTPUT:
+            f.write("    {0} ../build/executeExperimentRuns.o runs.json \n".format(MPI_LAUNCHER[mpilib]))
+        else:
+            f.write("    {0} ../build/executeExperimentRuns.o runs.json >> ../data/{1}/{2}x{3}{4}.txt\n".format(MPI_LAUNCHER[mpilib],
                                                                                                      experimentName,
                                                                                                      nNodes,
                                                                                                      perNode,

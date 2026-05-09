@@ -1,0 +1,23 @@
+{
+    "experiment": "UnionCritsizeConcentrated",
+    "funcType": "Vertexset",
+    "vsFunc": "UNION_BUTTERFLY",
+    "setSize": 10000000,
+    "filling": [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000],
+    "elementDistribution": "concentrated",
+    "nRepetitions": 300,
+    "nRepetitionsSmall" : 10,
+    "mpilib": "MPICH",
+    "nNodes": 32,
+    "perNode": 32,
+    "xAxis": "filling",
+    "yAxis" : "runtime",
+    "plotGraphs" : "critsizeStrategies",
+    "plotFolder" : "UnionCritsizeConcentrated",
+    "plotSize" : "small",
+    "critsizeStrategies" : ["max", "min", "mean"],
+    "refAllredData": "AllreduceLibsButterflyReverse",
+    "refAllgathData": "AllgatherCompareConcentrated",
+    "refAllredMpilib": "MPICH",
+    "refAllgathMpilib": "MPICH"
+}

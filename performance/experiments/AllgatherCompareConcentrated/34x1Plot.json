@@ -13,20 +13,6 @@
         {
         "folder": "AllgatherCompareConcentrated",
         "funcType": "Vertexset",
-        "vsFunc": "ALLGATHER_BUTTERFLY",
-        "mpilib": "MPICH",
-        "name": "ALLGATHER_BUTTERFLY"
-        },
-        {
-        "folder": "AllgatherCompareConcentrated",
-        "funcType": "Vertexset",
-        "vsFunc": "ALLGATHER_BUTTERFLY_REVERSE",
-        "mpilib": "MPICH",
-        "name": "ALLGATHER_BUTTERFLY_REVERSE"
-        },
-        {
-        "folder": "AllgatherCompareConcentrated",
-        "funcType": "Vertexset",
         "vsFunc": "ALLGATHER_SHIFT",
         "mpilib": "MPICH",
         "name": "ALLGATHER_SHIFT"

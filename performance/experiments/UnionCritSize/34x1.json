@@ -17,7 +17,7 @@
     "plotSize" : "small",
     "critsizeStrategies" : ["max", "min", "mean"],
     "refAllredData": "AllreduceLibsShift",
-    "refAllgathData": "AllgatherLibsShift",
+    "refAllgathData": "AllgatherCompareUniform",
     "refAllredMpilib": "MPICH",
     "refAllgathMpilib": "MPICH"
 }

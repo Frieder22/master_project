@@ -2,8 +2,8 @@
     "experiment": "UnionCritsize",
     "funcType": "Vertexset",
     "vsFunc": "UNION_SHIFT",
-    "setSize": 50000000,
-    "filling": [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000],
+    "setSize": 10000000,
+    "filling": [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000],
     "elementDistribution": "uniform",
     "nRepetitions": 300,
     "nRepetitionsSmall" : 10,
@@ -15,9 +15,9 @@
     "plotGraphs" : "critsizeStrategies",
     "plotFolder" : "UnionCritsize",
     "plotSize" : "small",
-    "critsizeStrategies" : ["max"],
+    "critsizeStrategies" : ["max", "min", "mean"],
     "refAllredData": "AllreduceLibsShift",
-    "refAllgathData": "AllgatherLibsShift",
+    "refAllgathData": "AllgatherCompareUniform",
     "refAllredMpilib": "MPICH",
     "refAllgathMpilib": "MPICH"
 }
