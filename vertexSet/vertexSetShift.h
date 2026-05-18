@@ -141,7 +141,7 @@ void Vertexset_Union_Butterfly(Vertexset* vs, int VERTEXSET_OPERATION);
  */
 void Vertexset_Union_Shift(Vertexset* vs, int VERTEXSET_OPERATION);
 
-void Vertexset_Allreduce_Naive(Vertexset* vs, int VERTEXSET_OPERATION);
+void Union_Allreduce_Naive(Vertexset* vs, int VERTEXSET_OPERATION);
 
 void Vertexset_Allreduce_Butterfly(Vertexset* vs, int VERTEXSET_OPERATION);
 

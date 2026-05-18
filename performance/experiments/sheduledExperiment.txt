@@ -1,1 +1,1 @@
-AllreduceLibsButterflyReverse/32x1.json
+UnionSmall/34x1.json

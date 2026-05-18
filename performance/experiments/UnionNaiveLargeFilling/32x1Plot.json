@@ -1,0 +1,36 @@
+{
+    "experiment": "UnionLargeFilling",
+    "funcType": "Vertexset",
+    "setSize": [1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000, 2000000, 5000000, 10000000, 20000000, 50000000, 100000000, 200000000, 500000000, 1000000000],
+    "filling": -1,
+    "setups":[
+        {
+        "refFunc": {
+            "folder": "AllreduceLibs",
+            "funcType": "Allreduce",
+            "vsFunc": "ALLREDUCE_SHIFT",
+            "mpilib": "intelMPI",
+            "name": "Reference"
+        },
+        "funcs":[
+            {
+            "folder": "UnionNaiveLargeFilling",
+            "funcType": "Vertexset",
+            "vsFunc": "UNION_NAIVE",
+            "mpilib": "intelMPI",
+            "name": "UNION_NAIVE"
+            }]
+        }
+    ],
+    "nNodes": 32,
+    "perNode": 1,
+    "xAxis": "setSize",
+    "yAxis" : "runtime",
+    "experimentType": "compare",
+    "critsizeStrategies" : "mean",
+    "plotGraphs" : "compareAgainstNative",
+    "plotFolder" : "UnionLargeFilling",
+    "plotSize" : "small",
+    "ylim": [0.5, 1.42],
+    "noLog": "True"
+}

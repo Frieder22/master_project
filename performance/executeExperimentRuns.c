@@ -106,7 +106,7 @@ void processData(double* execTimes){
 void fillVertexset(Vertexset* vs, int nElementsTotal){
     // negative filling indicate dense array
     if (experimentRun.filling < 0) {
-        Vertexset_Add(vs, mpi_rank % experimentRun.setSize);
+        //Vertexset_Add(vs, mpi_rank % experimentRun.setSize);
         Vertexset_TransformToDense(vs);
         return;
     }
@@ -161,9 +161,9 @@ void vertexsetRun(double* execTimes, vsFunc func){
         Vertexset_Init(&vs, experimentRun.setSize, MPI_COMM_WORLD, shiftPattern);
         // set critsize strategy
         Vertexset_SetCritsizeStrategy(&vs, (critSizeStrategies) experimentRun.critSizeStrategy);
+        assert(vs.maxsize==experimentRun.setSize);
     }
-
-        
+    
     //benchmark
     double start, end;
     for (size_t it = 0; it < experimentRun.nRepetitions; it++) {

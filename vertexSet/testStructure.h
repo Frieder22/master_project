@@ -11,24 +11,25 @@ enum Testcase{
     ITERATOR,
     UNION_BUTTERFLY,
     UNION_SHIFT,
-    NAIVE,
+    UNION_NAIVE,
     ALLREDUCE_BUTTERFLY,
     ALLREDUCE_BUTTERFLY_REVERSE,
     ALLREDUCE_SHIFT,
     VERTEXSET_TEST,
     ALLGATHER_BUTTERFLY,
     ALLGATHER_BUTTERFLY_REVERSE,
-    ALLGATHER_SHIFT
+    ALLGATHER_SHIFT,
+    MPI_ALLREDUCE
 };
 
-vsFunc getVertexsetFunc(int funcname){
+static inline vsFunc getVertexsetFunc(int funcname){
     switch (funcname) {
     case UNION_BUTTERFLY:
         return Vertexset_Union_Butterfly;
     case UNION_SHIFT:
         return Vertexset_Union_Shift;
-    case NAIVE:
-        return Vertexset_Allreduce_Naive;
+    case UNION_NAIVE:
+        return Union_Allreduce_Naive;
     case ALLREDUCE_BUTTERFLY:
         return Vertexset_Allreduce_Butterfly;
     case ALLREDUCE_BUTTERFLY_REVERSE:
@@ -49,7 +50,7 @@ vsFunc getVertexsetFunc(int funcname){
 /**
  * returns true, if works for any number of processors 
  */
-bool getCommPattern(int funcname){
+static inline bool getCommPattern(int funcname){
     switch (funcname) {
     case UNION_BUTTERFLY:
         return false;
@@ -66,6 +67,8 @@ bool getCommPattern(int funcname){
     case ALLGATHER_BUTTERFLY_REVERSE:
         return false;
     case ALLGATHER_SHIFT:
+        return true;
+    case UNION_NAIVE:
         return true;
     default:
         assert(false && "Chosen value is not in list");

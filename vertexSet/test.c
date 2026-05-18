@@ -40,7 +40,7 @@ void printTestInfo(int testnumber){
         case UNION_SHIFT:
             printf("Testing functionality of Aproximate Halfing Reduce.\n");
             break;
-        case NAIVE:
+        case UNION_NAIVE:
             printf("Testing functionality of Naive Reduce.\n");
             break;
         case ALLREDUCE_BUTTERFLY:
@@ -191,12 +191,23 @@ bool test_Allreduce_single(void (*reduceFunc) (Vertexset*, int), int setSize, fl
     // all ranks have same seed
     srand(2);
     int num;
-    for (size_t i = 0; i < insertions; i++) {
-        num = rand()%setSize;
-        Vertexset_Add(&control, num);
-        if (i%size==rank) {
-            Vertexset_Add(&vs, num);
+    if (filling >= 0){
+        for (size_t i = 0; i < insertions; i++) {
+            num = rand()%setSize;
+            Vertexset_Add(&control, num);
+            if (i%size==rank) {
+                Vertexset_Add(&vs, num);
+            }
         }
+    } else {
+        for (size_t i = 0; i < 50000; i++) {
+            num = rand()%setSize;
+            Vertexset_Add(&control, num);
+            if (i%size==rank) {
+                Vertexset_Add(&vs, num);
+            }
+        }
+        Vertexset_TransformToDense(&vs);
     }
     
     //Allreduce_Dense only works with dense arrays
@@ -284,7 +295,7 @@ bool test_Allreduce_batch(void (*reduceFunc) (Vertexset*, int)){
     isCorrect &= test_Allreduce_single(reduceFunc, 63, 0.3);
     isCorrect &= test_Allreduce_single(reduceFunc, 64, 0.3);
     isCorrect &= test_Allreduce_single(reduceFunc, 65, 0.3);
-    isCorrect &= test_Allreduce_single(reduceFunc, 1000000000, 0.99);
+    isCorrect &= test_Allreduce_single(reduceFunc, 1000000000, -1);
     isCorrect &= test_Allreduce_single(reduceFunc, 1<<25, 0.3);  
     if (rank==0) {
         if (isCorrect) {
@@ -621,8 +632,8 @@ int main(int argc, char *argv[]){
             test_Allreduce_batch(Vertexset_Union_Shift);
             break;
 
-        case NAIVE: // Test allreduce using ring topology
-            test_Allreduce_batch(Vertexset_Allreduce_Naive);
+        case UNION_NAIVE: // Test allreduce using ring topology
+            test_Allreduce_batch(Union_Allreduce_Naive);
             break;
 
         case ALLREDUCE_BUTTERFLY: // Test dense allreduce

@@ -44,8 +44,15 @@ plotColors = {
     "ALLGATHER_SHIFT":              '#228833',  # Green
     "reference":                    "#D51414",  # reference Red
     "Reference":                    "#D51414",  # same red again
-    "UNION_BUTTERFLY":              '#CCBB44',  # Yellow
-    "UNION_SHIFT":                  "#4950AFFF"
+    "UNION_BUTTERFLY":              "#998700",  # Yellow
+    "UNION_SHIFT":                  "#4950AFFF",# another Blue
+    "UNION_NAIVE":                  "#AE5555",
+    "openMPI":                        "tab:blue",
+    "intelMPI":                       "tab:orange",
+    "MPICH":                          "tab:green",
+    "max":                            "tab:blue",
+    "min":                            "tab:orange",
+    "mean":                           "tab:green"
 }
 
 
@@ -119,7 +126,9 @@ def plotRefAllreduce(setup, ax, xAxis):
                                                         setup["perNode"],
                                                         setup["refAllredMpilib"]))
     line = f.readline()
-    foundationAllredNeeded = testnumber[FOUNDATION_ALLREDUCE[setup["vsFunc"]]]
+
+
+    foundationAllredNeeded = testnumber[FOUNDATION_ALLREDUCE[setup["vsFunc"][0] if type(setup["vsFunc"])==list else setup["vsFunc"]]]
 
     while line != "":
         chunks = line.split(",")
@@ -129,10 +138,10 @@ def plotRefAllreduce(setup, ax, xAxis):
         if vsFunc == foundationAllredNeeded:         
             if setSize == setup["setSize"]:
                 refAllredVals.append(mean)
-            line = f.readline()
+        line = f.readline()
     f.close()
     if refAllredVals == []:
-        print("Couldn't find " + FOUNDATION_ALLREDUCE[setup["vsFunc"]] + " in /data/{0}/{1}x{2}{3}.txt".format(setup["refAllredData"],
+        print("Couldn't find " + testnumberInv[foundationAllredNeeded] + " in /data/{0}/{1}x{2}{3}.txt".format(setup["refAllredData"],
                                                         setup["nNodes"],
                                                         setup["perNode"],
                                                         setup["refAllredMpilib"]))
@@ -169,7 +178,8 @@ def getData(setup, funcSetup):
         if xAxistype == "filling":
             xval = int (chunks[4].split(":")[1])
         if funcType == funcTypeNeeded and vsFunc == vsFuncNeeded:
-            data[xval].append(mean)
+            if xval in data.keys():
+                data[xval].append(mean)
         line = f.readline()
     f.close()
 
@@ -286,6 +296,13 @@ def plotJSONcompare(setup, plotFolder):
     # end plotting
     finishPlot(ax, fig, xVals, xAxistype, plotFolder, setup)
 
+def calcCritsize(setup: dict, strat):
+    nNodes = setup["nNodes"]
+    perNode = setup["perNode"]
+    p = nNodes * perNode
+    setSize = setup["setSize"]
+    if strat == "mean":
+        return (p-1)/(32*p*np.floor(np.log2(p)))*setSize
 
 
 
@@ -412,12 +429,13 @@ def plotJSON(filepath):
         fig, ax = plt.subplots()
 
         # plot reference Allreduce
-        if setup["plotGraphs"] == "critsizeStrategies" and "refAllredData" in setup and setup["refAllredData"] != "":
+        if "refAllredData" in setup and setup["refAllredData"] != "":
             plotRefAllreduce(setup, ax, xAxis)
         # plot reference Allgather data 
-        if setup["plotGraphs"] == "critsizeStrategies" and "refAllgathData" in setup and setup["refAllgathData"] != "":
+        if "refAllgathData" in setup and setup["refAllgathData"] != "":
             plotRefAllgather(setup, ax)
 
+        yVals = []
         for g in graphs:
             # calculate error and mean for every x entry
             y = []
@@ -428,7 +446,13 @@ def plotJSON(filepath):
                 nVals = np.shape(vals)[0]
                 y.append(np.mean(vals))
                 yerr.append(2*std/np.sqrt(nVals))
-            ax.errorbar(xAxis, y, yerr=yerr, ls="--", label=g, capsize=5)
+            yVals += y
+            ax.errorbar(xAxis, y, yerr=yerr, ls="--", label=g, color=plotColors[g] ,capsize=5)
+
+        if "plotCritSize" in setup and setup["plotCritSize"] in ["true", "True"]:
+            yVals = np.array(yVals)
+            critsize = calcCritsize(setup, "mean")
+            ax.vlines(critsize, np.min(yVals), np.max(yVals), label="citSize", ls="--", colors=plotColors["reference"])
 
 
         if not setup["plotSize"]=="":

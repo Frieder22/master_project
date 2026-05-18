@@ -1,39 +1,19 @@
 #! /bin/bash
 #SBATCH -p q_thesis
-#SBATCH -N 32
+#SBATCH -N 34
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpu-freq=High
-#SBATCH --job-name=AllreduceLibsButterflyReverse
+#SBATCH --job-name=UnionSmall
 #SBATCH --time=1:00:00
 
-mkdir ../data/AllreduceLibsButterflyReverse
+mkdir ../data/UnionSmall
 
-rm ../data/AllreduceLibsButterflyReverse/32x1openMPI.txt
-echo MPIlib: openMPI
-spack load openmpi@4.1.6
-make perf
-for i in {1..30}; do
-    srun ../build/executeExperimentRuns.o runs.json >> ../data/AllreduceLibsButterflyReverse/32x1openMPI.txt
-echo iteration $i
-done
-spack unload openmpi@4.1.6 
-
-rm ../data/AllreduceLibsButterflyReverse/32x1intelMPI.txt
-echo MPIlib: intelMPI
-module load mpi/intelmpi
-make perf
-for i in {1..30}; do
-    srun ../build/executeExperimentRuns.o runs.json >> ../data/AllreduceLibsButterflyReverse/32x1intelMPI.txt
-echo iteration $i
-done
-module unload mpi/intelmpi
-
-rm ../data/AllreduceLibsButterflyReverse/32x1MPICH.txt
+rm ../data/UnionSmall/34x1MPICH.txt
 echo MPIlib: MPICH
 spack load mpich@4.1.2
 make perf
 for i in {1..30}; do
-    srun ../build/executeExperimentRuns.o runs.json >> ../data/AllreduceLibsButterflyReverse/32x1MPICH.txt
+    srun ../build/executeExperimentRuns.o runs.json >> ../data/UnionSmall/34x1MPICH.txt
 echo iteration $i
 done
 spack unload mpich@4.1.2 

@@ -163,6 +163,7 @@ bool Vertexset_Contains(const Vertexset* const vs, const uint32_t vertex) {
 void Vertexset_Clean(Vertexset* const vs) {
     Bitmap_Clean(vs->bitArray, vs->size_bitarray);
     vs->sizeSparse = 0;
+    vs->isdense = false;
 };
 
 bool Vertexset_TransformToDense(Vertexset* const vs) {
@@ -614,7 +615,7 @@ void Vertexset_Union_Shift(Vertexset* const vs, const int VERTEXSET_OPERATION) {
     }
 };
 
-void Vertexset_Allreduce_Naive(Vertexset* const vs, const int VERTEXSET_OPERATION){
+void Union_Allreduce_Naive(Vertexset* const vs, const int VERTEXSET_OPERATION){
     assert(VERTEXSET_OPERATION == VERTEXSET_OR); // no other operator implemented
     int displ [vs->mpi_size];
 
@@ -648,12 +649,7 @@ void Vertexset_Allreduce_Naive(Vertexset* const vs, const int VERTEXSET_OPERATIO
         vs->sizeSparse = displ[vs->mpi_size];
     } else {
         Vertexset_TransformToDense(vs);
-        MPI_Allreduce(vs->bitArray, vs->bitBuffer, vs->size_bitarray, MPI_UINT64_T, MPI_BOR, MPI_COMM_WORLD);
-        unsigned long long *temp;
-        temp = vs->bitBuffer;
-        vs->bitBuffer = vs->bitArray;
-        vs->bitArray = temp;
-        temp = NULL;
+        MPI_Allreduce(MPI_IN_PLACE, vs->bitArray, vs->size_bitarray, MPI_UINT64_T, MPI_BOR, MPI_COMM_WORLD);
     }
 };
 
