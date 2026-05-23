@@ -60,6 +60,63 @@ plotColors = {
 testnumber = {}
 testnumberInv = {}
 
+def processBFSData(setup):
+    # transform iterable settings to lists
+    graphs = setup["graph"]
+    funcs = setup["func"]
+    rootNodes = setup["rootNode"]
+
+    if type(graphs) != list:
+        graphs = [graphs]
+    if type(funcs) != list:
+        funcs = [funcs]
+    if type(rootNodes) != list:
+        rootNodes = [rootNodes]
+
+    experimentName = filepath.split("/")[1]
+    nNodes = setup["nNodes"]
+    perNode = setup["perNode"]
+    mpilib = setup["mpilib"]
+
+    data ={i: {j:{k: [] for k in funcs} for j in graphs} for i in rootNodes}
+    f = open(PATH + "../data/{0}/{1}x{2}{3}.txt".format(experimentName,
+                                                        nNodes,
+                                                        perNode,
+                                                        mpilib))
+    
+    # read in data
+    line = f.readline()
+    while line != "":
+        chunks = line.split(",")
+        graph = str(chunks[0].split(":")[1].strip())
+        func = testnumberInv[int(chunks[1].split(":")[1])]
+        rootNode = int (chunks[2].split(":")[1])
+        mean = float (chunks[3].split(":")[1])                
+        data[rootNode][graph][func].append(mean)
+        line = f.readline()
+    f.close()
+
+    # calculate mean and error
+    for rootNode in rootNodes:
+        print("Root node: "+ str(rootNode))
+        print("\nFunction:\t", end="")
+        for func in funcs:
+            print(str(func)[:15], end="\t\t")
+        print("")
+        for graph in graphs:
+            print(graph[-20:-6], end="\t")
+            for func in funcs:
+                vals = data[rootNode][graph][func]
+                nVals = len(vals)
+                vals = np.array(vals)
+
+                mean = np.mean(vals)
+                std = np.std(vals)
+                err = 2*std/np.sqrt(nVals)
+                print("{0:.3e} ± {1:.0e}".format(mean, err), end="\t")
+            print("")
+        print("\n\n")
+
 def loadTestNumber():
     # do some shananigans to find the correct enum values from "testStructure.h"
     with open(PATH + "../vertexSet/testStructure.h", "r") as f:
@@ -573,6 +630,11 @@ def plotJSON(filepath):
 
 
     fetchDataFromCluster()
+
+    if "bfs" in setup and setup["bfs"] in ["true", "True", True]:
+        processBFSData(setup)
+        return
+
     if "noPlot" in setup and setup["noPlot"] in ["True", "true"]:
         return
 
@@ -587,7 +649,7 @@ if __name__ == "__main__":
                 "medium": (6,4)}
 
     parser = argparse.ArgumentParser(prog="plotExperiment.py",
-                                    description="Creates a slurm file that can be submitted on the hydra cluster",
+                                    description="Plots data from experiments. If data is not present it can be fetched from hydra cluster.",
                                     epilog="")
 
     parser.add_argument("-f", "--file", type=str, default="test",

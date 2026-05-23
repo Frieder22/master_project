@@ -84,7 +84,7 @@ void test_Iterator_sparse(){
     printf("Testing Iterator sparse...\n");
     bool shiftPattern =  (size & (size - 1)) != 0;
     Vertexset vs;
-    Vertexset_Init(&vs, 500, MPI_COMM_WORLD, shiftPattern);
+    Vertexset_Init(&vs, 100000, MPI_COMM_WORLD, shiftPattern);
 
     uint32_t addedVerts[] = {10, 65, 6,0, 9, 7, 499};
     int n = sizeof(addedVerts) / sizeof(addedVerts[0]);
@@ -93,7 +93,7 @@ void test_Iterator_sparse(){
     for (int i = 0; i < n; i++) {
         Vertexset_Add(&vs, addedVerts[i]);
     }
-
+    assert(!vs.isdense);
     vertexSetIterator it;
     vertexSetIterator_Init(&it, &vs);
 
@@ -290,6 +290,9 @@ bool test_Allreduce_single(void (*reduceFunc) (Vertexset*, int), int setSize, fl
 bool test_Allreduce_batch(void (*reduceFunc) (Vertexset*, int)){
     bool isCorrect = true;
     isCorrect &= test_Allreduce_single(reduceFunc, 1000000, 0.01);
+    isCorrect &= test_Allreduce_single(reduceFunc, 1000000, 0.02);
+    isCorrect &= test_Allreduce_single(reduceFunc, 1000000, 0.03);
+    isCorrect &= test_Allreduce_single(reduceFunc, 1000000, 0.04);
     isCorrect &= test_Allreduce_single(reduceFunc, 100, 0.02);
     isCorrect &= test_Allreduce_single(reduceFunc, 1, 0.5);
     isCorrect &= test_Allreduce_single(reduceFunc, 63, 0.3);

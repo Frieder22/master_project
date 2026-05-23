@@ -33,4 +33,7 @@ tex/*.xmpdata
 tex/*.cls
 tex/*.hd
 tex/*.ind
+graphData/*
+graphDataRaw/*
+
 

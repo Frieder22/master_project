@@ -8,7 +8,7 @@ In this section the performance of the algorithms is tested. It is evaluated whi
 \section{Setup}
 All implementations are tested on the same machine. They are run on the \emph{Hydra} cluster of the Parallel Computing Department of TU Wien. The cluster consists of 36 compute nodes and each node is equipped with two Intel\textsuperscript{\textregistered} Xeon\textsuperscript{\textregistered} Gold 6130F 16-Core CPUs. Each compute node has therefore 32 cores available. The nodes are connected via dual Intel\textsuperscript{\textregistered} Omni-Path interconnect with an upper boundary of 100 Gbytes/s bandwidth \cite{traeff2025}. The code for all experiments is written in C using \gls{mpi} as message passing framework. The code is always compiled using the \texttt{-O3} flag. Three different MPI-libraries are considered for benchmarking the algorithms (OpenMPI, MPICH and IntelMPI). The available version of the OpenMPI library as well as the MPICH library use GCC 12.1.0 as compiler. The available IntelMPI framework uses GCC 10.2.1.\\
 Different setups of the number of used processes and their distribution on the nodes are tested. As the new algorithms are designed to be optimal for a large amount of processors, the configurations will cover the most available number of processors $p$. One needs to keep in mind that some algorithms will only work for $p$ being a power of 2. So for the power of two case there are $32\times 32 = 1024$. As one node was not available the general case is chosen to be $34\times32=1088$. To use 34 nodes instead of all 35 remaining nodes is done, because this arises a more regular and therefore more realistic scenario. We also test the algorithms with only one process on each node to allow only communication via the interconnect. In this setup the linear communication cost model may apply best.
-\section{Measurement of the different algorithms}
+\section{Measurement of the different algorithms} \label{sec:benchmarkingProcess}
 Benchmarking algorithms on distributed systems is not a trivial task and is there are many caveats that need to be considered. To get a fair, reliable and reproducible results the methodology is closely oriented at the work of Hunold and Carpen-Amerie \cite{HunoldBench}. A major problem in timing executions is that clocks of the different processes are not necessarily synchronized. Moreover the clocks can drift out of sync over a period of time. A simple but sufficient strategy is to synchronize all processors using \Call{MPI\_Barrier}{ } . This function guarantees that no process proceeds its execution until every process called it. This of corse does not directly imply that all processes continue execution at the same time, but it is shown to be sufficient, if larger execution times are measured \cite{HunoldBarrier}. This condition is in our setup fulfilled as the newly proposed algorithms are build to optimize the union set operation for large sets which result in large execution times.\\
 \begin{algorithm}
 	\caption{– Measurement run of a function\\
@@ -412,7 +412,7 @@ This spontaneous behavior ef exceeding heavily the reference Allreduce execution
 
 \subsection{Performance for very densely filled sets}
 As already apparent in the previous plots (Figure \ref{fig:UnionCritSize} and Figure \ref{fig:UnionCritSizeConcentrated}) the different setups lead to different good performance results for large set filling. Precisely the upper limit for the union algorithms exceed their reference Allreduce implementations by different amount of time. This behavior is in this subsection analyzed. This experiments are setup in such a way that only the dense representation in all iteration is used. I.e. the sets of the different processes are filled before the union operation more than the critical size.\\
-\subsubsection{Comparison against native MPI Allreduce}
+\subsubsection{Comparison against native MPI Allreduce} \label{sec:UnionCompareMPI}
 First the union algorithms are compared against the native Allreduce implementation provided by IntelMPI. The default processor layouts are tested. Before the execution of the union operation the sets are always filled over the critical size such that only the dense variant is used.
 \begin{figure}[h]
 	\centering
@@ -545,6 +545,70 @@ In general \texttt{Union\_Shift} works quite efficiently when compared against i
 
 
 \section{Performance Testing Using \gls{bfs} as Benchmark}
+The performance of the union operation algorithms is also tested in a use case application for a BFS. For this the parallel BFS procedure shown in Algorithm \ref{algo:BFSparallel} is used. Here the union algorithms define the implementation for the placeholder function \Call{unionAll}{$S_r$} that calculated the union of all subsets $S_r$ over all participating ranks $r$. The benchmarking process is done in a similar way as it was done for the individual testing of the functions like it is described in Section \ref{sec:benchmarkingProcess}. Again there are 30 different calls to \texttt{mpirun} to execute an experiment. On the other hand the number of iterations for one experiment run is reduced to only 60 iterations by default and reduced to only 6 for long execution times. Another difference is here that the allocation process of needed memory is taken out of the measurement loop to create a faster benchmarking process. The memory for the sets '$visited$', '$frontier\_old$' and '$frontier\_new$' are therefore allocated in advance. We do not expect to skew the benchmark results with this decision as the allocation process needs to be done for all BFS implementations.
+
+\subsection{Description of used graphs}
+Although the graph500 \cite{graph500} benchmark framework is used for validating the BFS and set union implementations it lacks on flexibility. The generated graphs are constrained to only consist out of nodes that count to a power of two and the number of edges can only be set to a integer multiple of the number of nodes. Most importantly there is no influence on the actual topology of the graphs possible. This is the reason why two graphs from the \newacronym{snap}{SNAP}{Stanford Network Analysis Project} \gls{snap} are chosen to build example graphs to test the different implementations. The first one is \texttt{ego-twitter} describing a social network graph of the social media platform \textit{Twitter}. It consist out of around 81 thousand nodes and around 1.8 million edges. The longest shortest path is 7 and the effective diameter is 4.5. The other graph is called \texttt{com-LiveJournal} and describes the relationship of users that declared to be 'friends' on a online blog website called \textit{LiveJournal}. This graph holds nearly 4 million nodes which are connected by around 35 million edges. It has an diameter of 17 and an effective diameter of 6.5.
+
+Using these both graphs three different example graphs are build. The first one is solely built from from \texttt{ego-twitter}. The goal for this first example graph is to build a graph with a long topology such that the frontier during the \gls{bfs} is quite small and the performance increase of the sparse representation can be exploited. The graph \texttt{ego-twitter} is available as a list of edges which is distributed over 973 files. Each of these files is now interpreted as a disjoint graph. These disjoint graphs are then connected in order of the filename ordering resulting in a long extended graph. Each connection is done by just two newly added edges. This results in a graph that has approximately the same number of edges as \texttt{ego-twitter} but now with a diameter over 1200. This graph is from now on called \texttt{example\_long}. To get a BFS traversal that propagates from one side to the other a root node will chosen that stems from the first file.\\
+The second graph should show the behavior for an unmodified larger graph. Therefore just the graph  \texttt{com-LiveJournal} with around 4 million nodes is used. This graph is from now on called \texttt{example\_big}.\\
+The last graph should show the behavior of disjoint graphs. Therefor the disjoint graphs from  \texttt{com-LiveJournal} and \texttt{ego-twitter} are all put together but without adding connection edges. This graph is called \texttt{example\_disjoint}. This graph is tested for two different root nodes. One is part of a \texttt{ego-twitter} subgraph and the other is originally held by \texttt{com-LiveJournal}.\\
+All graphs are interpreted as undirected graphs.
+
+\subsection{BFS on $p=(32\times 32)$ setup}
+The \gls{bfs} implementations are here on 32 nodes using 32 processors each tested. In total there 5 different implementations to test. Firstly the newly proposed algorithms  \texttt{Union\_Butterfly} and \texttt{Union\_Shift} are used to calculate the set union of the newly explored frontier. This frontier can here either be represented in the sparse or the dense representation. Then the corresponding foundation algorithms  \texttt{Allreduce\_Butterfly\_Reverse} and \texttt{Allreduce\_Shift} are tested. For this only the dense representation is used. This is also true for the standard MPI Allreduce implementation provided by IntelMPI which is here called \texttt{MPI\_Allreduce}. The general structure of the BFS is in all implementations identical. Only the calculation of the union operation over all ranks for '$frontier\_new$' is adapted.\\
+The benchmark results are shown in Table \ref{table:32x32BFS}.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|| c| c |c| c | c|} \hline
+	setup & U\_BUT   & U\_SHIFT & A\_BUT & A\_SHIFT & MPI\\
+	\hline \hline
+	\texttt{long} & $1.6(3)\cdot10^{-1}$ & $1.9(7)\cdot10^{-1}$ & $2.4(4)\cdot10^{-1}$ & $3.7(1)\cdot10^{-1}$ & $1.37(3)\cdot10^{-1}$ \\
+	\texttt{big} & $1.4(5)\cdot10^{-1}$  & $2.1(4)\cdot10^{-1}$ & $1.5(5)\cdot10^{-1}$  & $2.20(5)\cdot10^{-1}$ & $1.46(6)\cdot10^{-1}$\\
+	\texttt{disj\_1} & $4.7(7)\cdot10^{-2}$   &   $4.6(5)\cdot10^{-2}$ &   $1.6(7)\cdot10^{-1}$   &    $3.11(7)\cdot10^{-1}$ &  $1.4(1)\cdot10^{-1}$ \\
+	\texttt{disj\_2} & $1.5(8)\cdot10^{-1} $ &  $ 2.(3)\cdot10^{-1} $ &  $ 2.4(2)\cdot10^{-1} $ &  $ 3.6(2)\cdot10^{-1} $ & $ 2.0(5)\cdot10^{-1} $ \\ \hline
+	\end{tabular}
+	\caption{Benchmark results of the BFS using different union operation functions in seconds on $p=(32\times32)$ processors. The significant digit that is in the order of the standard deviation of the mean is marked in brackets. The setups and function names are abbreviated. \texttt{disj\_1} has the root node in a small \texttt{ego-twitter} sub-graph. \texttt{disj\_2} has the root node in the \texttt{com-LiveJournal} subgraph.}
+	\label{table:32x32BFS}
+\end{table}
+Here it is firstly apparent that in all cases the newly proposed algorithms are faster than their foundation algorithms. There are speed gains from of around 10\% (for the graph \texttt{example\_big}) up to a threefold speed increase (for the graph \texttt{example\_disjoint} using a root node in a small subgraph) visible. When comparing the Butterfly scheme algorithms against the ones that use the Shift  communication pattern one can see that in every case the Butterfly implementations are faster. This expected as this was also the case for this processor layout in the analysis before.\\
+When considering the performance of the BFS implementation that uses IntelMPIs native Allreduce one can see that it is still the fastest variant for the \texttt{example\_long} graph. 
+Although the long topology should benefit the newly proposed union operation algorithms they could not keep up with IntelMPIs Allreduce. This is mainly due to the relative performance when the dense variant is used for this set size. When looking Figure \ref{fig:UnionCompare32x32} from Section \ref{sec:UnionCompareMPI} one can see that when the dense variant is used the new union algorithms are nearly twice as slow for a set size of around $10^5$. So even though the sparse variant is used in a lot of iterations the few iterations that need to be done using the dense representation are decisive for the overall performance.\\
+For the disjoint graph cases \texttt{Union\_Butterfly} is significantly faster than IntelMPIs Allreduce. Also for the graph \texttt{example\_big} the BFS implementation is fastest when using \texttt{Union\_Butterfly}, but here is the performance increase to IntelMPIs Allreduce only around 1\%.\\
+The main conclusions from this testing are that \texttt{Union\_Butterfly} is preferred over \texttt{Union\_Shift} in this setup and this union operation algorithm can indeed bring performance benefits compared to a BFS that uses a native MPI Allreduce. This is especially the case, if the number of nodes is big (over $10^6$) and the underlying graph is disjoint.
+
+
+\subsection{BFS on $p=(34\times 32)$ setup}
+Now the implementations are tested using $p=(34\times32)$ processors. The general setup is the same as described in the sub-section before. The only difference is here that \texttt{Union\_Butterfly} and \texttt{Allreduce\_Butterfly\_Reverse} are not tested as they do not work for this setup. The graphs that are used for benchmarking keep the same. The results of the benchmark are shown in Table \ref{table:34x32BFS}.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|| c| c | c|} \hline
+		setup & U\_SHIFT & A\_SHIFT & MPI\\
+		\hline \hline
+		\texttt{long} & $1.7(6)\cdot10^{-1}$  & $3.9(5)\cdot10^{-1}$   & $ 1.87(5)\cdot10^{-1}$ \\
+		\texttt{big}  & $2.1(4)\cdot10^{-1}$  &  $2.3(0)\cdot10^{-1}$ & $1.59(0)\cdot10^{-1}$\\
+		\texttt{disj\_1} & $5.4(3)\cdot10^{-2}$ &  $3.34(3)\cdot10^{-1}$ &   $1.98(0)\cdot10^{-1}$ \\
+		\texttt{disj\_2} & $2.1(8)\cdot10^{-1}$  & $3.6(8)\cdot10^{-1}$  & $2.4(2)\cdot10^{-1} $ \\ \hline
+	\end{tabular}
+	\caption{Benchmark results of the BFS using different union operation functions in seconds on $p=(34\times32)$ processors. The significant digit that is in the order of the standard deviation of the mean is marked in brackets. The setups and function names are abbreviated. \texttt{disj\_1} has the root node in a small \texttt{ego-twitter} sub-graph. \texttt{disj\_2} has the root node in the \texttt{com-LiveJournal} subgraph.}
+	\label{table:34x32BFS}
+\end{table}
+Again it is apparent that the union algorithm \texttt{Union\_Shift} is in every case faster than its foundation Allreduce. Also again IntelMPIs Allreduce can outperform the union algorithm in one case. On the graph \texttt{example\_big} IntelMPIs Allreduce BFS needs approximately 25\% less time than the BFS implementation using \texttt{Union\_Shift}. On the other hand \texttt{Union\_Shift} is faster on calculating the BFS for the \texttt{example\_long} graph. The biggest performance gains are apparent for the disjoint graph where the start node is on the small sub-graph. Here is the adaptive union operation algorithm nearly four times faster.\\
+As conclusion of this testing the improvement of \texttt{Union\_Shift} against is foundation is most important. Moreover the trend that especially for disjoint graphs big performance gains can be seen is again here verified.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

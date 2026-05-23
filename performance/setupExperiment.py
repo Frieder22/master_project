@@ -31,7 +31,44 @@ CRITSIZE_STRAT = {"max": 0,
                   "mean": 2
 }
 
+def createRunsJSON_BFS(data, tn):
+    if type(data["graph"]) != list:
+        data["graph"] = [data["graph"]]
+    if type(data["func"]) != list:
+        data["func"] = [data["func"]]
+    if type(data["rootNode"]) != list:
+        data["rootNode"] = [data["rootNode"]]
+
+    runList = []
+    for func in data["func"]:
+        for graph in data["graph"]:
+            for rootNode in data["rootNode"]:
+                runList.append((func, graph, rootNode)) 
+
+    # shuffle runs
+    random.seed(42)
+    random.shuffle(runList)
+
+    # create run.json file
+    outJSON = {
+        "bfs": True,
+        "runs": [
+            {"graphPath": graph,
+            "func": func,
+            "nRepetitions": data["nRepetitions"],
+            "rootNode": rootNode
+            }
+            for func, graph, rootNode in runList
+        ]
+    }
+    f = open(PATH + "runs.json", "w")
+    json.dump(outJSON, f, indent=4)
+    f.close()
+
 def createRunsJSON(data, tn):
+    if "bfs" in data:
+        createRunsJSON_BFS(data, tn)
+        return
     def useNormalRepetitions(setSize, filling, vsFunc, funcType):
         if funcType == "Vertexset":
             if vsFunc in ["ALLREDUCE_BUTTERFLY", "ALLREDUCE_BUTTERFLY_REVERSE", "ALLREDUCE_SHIFT"]:

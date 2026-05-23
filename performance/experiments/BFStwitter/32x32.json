@@ -1,0 +1,11 @@
+{   
+    "bfs": true,
+    "experiment": "BFStwitter",
+    "func": ["UNION_BUTTERFLY", "UNION_SHIFT",  "ALLREDUCE_BUTTERFLY_REVERSE", "ALLREDUCE_SHIFT"],
+    "graph": ["../graphData/twitter_long.txt"],
+    "rootNode": 4,
+    "nRepetitions": 3,
+    "mpilib": "MPICH",
+    "nNodes": 32,
+    "perNode": 32
+}

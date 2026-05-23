@@ -1,0 +1,11 @@
+{   
+    "bfs": true,
+    "experiment": "BFStwitter",
+    "func": ["MPI_ALLREDUCE"],
+    "graph": ["../graphData/12831_clean.edges", "../graphData/twitter_long.txt"],
+    "rootNode": 4,
+    "nRepetitions": 60,
+    "mpilib": "intelMPI",
+    "nNodes": 32,
+    "perNode": 32
+}

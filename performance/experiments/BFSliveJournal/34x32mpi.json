@@ -1,0 +1,11 @@
+{   
+    "bfs": true,
+    "experiment": "BFSTest",
+    "func": ["MPI_ALLREDUCE"],
+    "graph": ["../graphData/liveJournal.txt"],
+    "rootNode": 4,
+    "nRepetitions": 3,
+    "mpilib": "intelMPI",
+    "nNodes": 34,
+    "perNode": 32
+}

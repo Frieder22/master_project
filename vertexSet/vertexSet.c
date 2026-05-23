@@ -161,7 +161,10 @@ bool Vertexset_Contains(const Vertexset* const vs, const uint32_t vertex) {
 };
 
 void Vertexset_Clean(Vertexset* const vs) {
-    Bitmap_Clean(vs->bitArray, vs->size_bitarray);
+    if (vs->isdense){
+        Bitmap_Clean(vs->bitArray, vs->size_bitarray);
+    }
+    
     vs->sizeSparse = 0;
     vs->isdense = false;
 };
@@ -581,9 +584,10 @@ void Vertexset_Union_Shift(Vertexset* const vs, const int VERTEXSET_OPERATION) {
         }
         // update shift
         shift_old = shift;
+        if (i==iterations-1) assert(shift==1);
         shift >>=1; // only exactly halfing
     }
-    
+
     // decide, if allgather is needed.
     // In case only sparse communication was performed, we don't need allgather
     if (!vs->isdense) {
@@ -812,7 +816,7 @@ void Vertexset_Allreduce_Shift(Vertexset* const vs, const int VERTEXSETOPERATION
     int recvCount;
     int nElements;
     int startIndex;
-    int shift = Vertexset_nearestLog2(vs->mpi_size);
+    int shift = Vertexset_nearestLog2(vs->mpi_size-1);
     int shift_old = vs->mpi_size;
     int shift_next;
     for (int i = 0; i < iterations; i++) {

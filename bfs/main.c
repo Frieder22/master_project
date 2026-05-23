@@ -38,9 +38,10 @@ int main(int argc, char *argv[]) {
         } 
     }
     DistributedGraph_Init(&graph, filepath);
-    setup.func = UNION_BUTTERFLY;
-    setup.graph = &graph;
-    make_graph_data_structure(&setup);
+    bfs_custom setup_bfs;
+    setup_bfs.func = UNION_BUTTERFLY;
+    setup_bfs.graph = &graph;
+    make_graph_data_structure(&setup_bfs);
     uint32_t *preds = malloc(graph.nGlobalVerts*sizeof(uint32_t));
     clean_pred(preds);
     run_bfs(3, preds);

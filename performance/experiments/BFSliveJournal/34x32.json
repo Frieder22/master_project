@@ -1,0 +1,11 @@
+{   
+    "bfs": true,
+    "experiment": "BFSTest",
+    "func": ["UNION_SHIFT",  "ALLREDUCE_SHIFT"],
+    "graph": ["../graphData/liveJournal.txt"],
+    "rootNode": 4,
+    "nRepetitions": 3,
+    "mpilib": "MPICH",
+    "nNodes": 34,
+    "perNode": 32
+}

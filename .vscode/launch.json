@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/performance",
-            "args": "-f experiments/AllgatherCompareConcentrated"
+            "args": "-f experiments/BFStest/32x32.json"
         }
     ]
 }

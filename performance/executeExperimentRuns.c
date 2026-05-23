@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <unistd.h>
 #include "mpi.h"
 #include "vertexSet.h"
 #include "cJSON.h"
 #include "testStructure.h"
+#include "bfs_custom.h"
+#include "csr_custom.h"
 
 #define ALLGATHER_TYPE 0
 #define ALLREDUCE_TYPE 1
@@ -16,11 +19,13 @@ enum fillingDistributions{
 };
 
 int mpi_rank, mpi_size;
+extern int bfs_iterations;
 cJSON *root, *runs;
 
 struct inputParams{
     char inputFile[1024];
     int nExperimentRuns;
+    bool testBFS;
 } inputParams;
 
 struct experimentRun{
@@ -33,6 +38,13 @@ struct experimentRun{
     int distribution;
     int critSizeStrategy;
 } experimentRun;
+
+struct bfsRun {
+    char graphPath[1024];
+    int function;
+    uint32_t rootNode;
+    int nRepetitions;
+} bfsRun;
 
 struct measuredData{
     double mean;
@@ -55,6 +67,18 @@ void saveData(){
     }
 }
 
+void saveDataBFS(){
+    if (mpi_rank==0) {
+        printf("graph: %s, func: %d, rootNode: %u, mean: %e, nAccepted: %d, iterations: %d\n",
+               bfsRun.graphPath,
+               bfsRun.function,
+               bfsRun.rootNode,
+               measuredData.mean,
+               measuredData.nAccepted,
+               bfs_iterations);
+    }
+}
+
 int comp_double_asc(const void *a, const void *b) {
     double da = *(const double *)a;
     double db = *(const double *)b;
@@ -66,10 +90,11 @@ int comp_double_asc(const void *a, const void *b) {
 
 void processData(double* execTimes){
     double* execTimesRoot;
-    execTimesRoot = (double*) malloc(experimentRun.nRepetitions * sizeof(double));
+    int nRepetitions = inputParams.testBFS ? bfsRun.nRepetitions : experimentRun.nRepetitions;
+    execTimesRoot = (double*) malloc(nRepetitions * sizeof(double));
     
     // Find longest execution times for each process
-    MPI_Reduce(execTimes, execTimesRoot, experimentRun.nRepetitions, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+    MPI_Reduce(execTimes, execTimesRoot, nRepetitions, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
     if (mpi_rank==0) {
         double Q1, Q3, IRQ;
         double lowerBound, upperBound;
@@ -77,11 +102,11 @@ void processData(double* execTimes){
         size_t count;
 
         // sort array
-        qsort(execTimesRoot, experimentRun.nRepetitions, sizeof(double), comp_double_asc);
+        qsort(execTimesRoot, nRepetitions, sizeof(double), comp_double_asc);
 
         // find quartiles Q_1 and Q_3
-        Q1 = execTimesRoot[experimentRun.nRepetitions/4];
-        Q3 = execTimesRoot[experimentRun.nRepetitions*3/4];
+        Q1 = execTimesRoot[nRepetitions/4];
+        Q3 = execTimesRoot[nRepetitions*3/4];
         IRQ = Q3-Q1;
 
         // find lower and upper bounds
@@ -90,7 +115,7 @@ void processData(double* execTimes){
 
         // find mean of prunded data
         count = 0;
-        for (size_t i = 0; i < experimentRun.nRepetitions; i++) {
+        for (size_t i = 0; i < nRepetitions; i++) {
             if (execTimesRoot[i] >= lowerBound && execTimesRoot[i] <= upperBound){
                 mean += execTimesRoot[i];
                 count++;
@@ -296,10 +321,79 @@ void executeExperimentRun(){
     free(execTimes);
 }
 
+void executeBFSRun(){
+    double* execTimes;
+    distributedGraph_CSR graph;
+    bfs_custom setup_bfs;
+
+    execTimes = (double*) malloc(bfsRun.nRepetitions*sizeof(double));
+
+    // init graph and stuff
+    DistributedGraph_Init(&graph, bfsRun.graphPath);
+    setup_bfs.func = bfsRun.function;
+    setup_bfs.graph = &graph;
+    make_graph_data_structure(&setup_bfs);
+    uint32_t *preds = malloc(graph.nGlobalVerts*sizeof(uint32_t));
+
+    // Benchmark
+    double start, end;
+    for (size_t it = 0; it < bfsRun.nRepetitions; it++) {
+        clean_pred(preds);
+        MPI_Barrier(MPI_COMM_WORLD);
+        start = MPI_Wtime();
+        run_bfs(bfsRun.rootNode, preds);
+        end = MPI_Wtime();
+        execTimes[it] = end - start;
+    }
+
+    // Deinit graph stuff
+    free(preds);
+    free_graph_data_structure();
+    DistributedGraph_Deinit(&graph);
+    
+    // process data
+    processData(execTimes);
+    free(execTimes);
+}
+
+void setBfsRunSetup(size_t i){
+    char funcTypeStr[1024];
+    char distrStr[1024];
+    cJSON* run = cJSON_GetArrayItem(runs, i);
+    strcpy(bfsRun.graphPath, cJSON_GetObjectItem(run, "graphPath")->valuestring);
+
+    if (access(bfsRun.graphPath, F_OK) != 0) {
+        if (mpi_rank==0) printf("Graph on path '%s' can not be opened!!\n", bfsRun.graphPath);
+        assert(false);
+    }
+    
+
+    // parse functype
+    strcpy(funcTypeStr, cJSON_GetObjectItem(run, "func")->valuestring);
+    if (strcmp(funcTypeStr, "ALLREDUCE_SHIFT") == 0) {
+        bfsRun.function = ALLREDUCE_SHIFT;
+    } else if (strcmp(funcTypeStr, "ALLREDUCE_BUTTERFLY_REVERSE") == 0) {
+        bfsRun.function = ALLREDUCE_BUTTERFLY_REVERSE;
+    } else if (strcmp(funcTypeStr, "MPI_ALLREDUCE") == 0) {
+        bfsRun.function = MPI_ALLREDUCE;
+    } else if (strcmp(funcTypeStr, "UNION_SHIFT") == 0) {
+        bfsRun.function = UNION_SHIFT;
+    } else if (strcmp(funcTypeStr, "UNION_BUTTERFLY") == 0) {
+        bfsRun.function = UNION_BUTTERFLY;
+    } else {
+        if (mpi_rank==0)
+        printf("Wrong type:     %s\n", funcTypeStr);
+        assert(false && "funcType not defined.");
+    }
+    bfsRun.nRepetitions = cJSON_GetObjectItem(run, "nRepetitions")->valueint;
+    bfsRun.rootNode = cJSON_GetObjectItem(run, "rootNode")->valueint;
+}   
+
 void setExperimentRunSetup(size_t i){
     char funcTypeStr[1024];
     char distrStr[1024];
     cJSON* run = cJSON_GetArrayItem(runs, i);
+
     strcpy(experimentRun.name, cJSON_GetObjectItem(run, "experiment")->valuestring);
 
     // parse functype
@@ -367,15 +461,22 @@ void parseInput(int argc, char* argv[]){
     char* json_file = read_file(inputParams.inputFile);
     assert(json_file && "Can not open JSON file.");
     root = cJSON_Parse(json_file);
+    
     runs = cJSON_GetObjectItem(root, "runs");
-
+    
     // add number of runs
     inputParams.nExperimentRuns = cJSON_GetArraySize(runs);
-
+    
+    cJSON* bfs = cJSON_GetObjectItem(root, "bfs");
+    if (bfs!=NULL) {
+        // BFS is tested
+        inputParams.testBFS = true;
+    } else {
+         inputParams.testBFS = false;
+    }
     // not needed anymore
     free(json_file);
 }
-
 
 int main(int argc, char *argv[]){
     MPI_Init(&argc, &argv);
@@ -385,13 +486,21 @@ int main(int argc, char *argv[]){
 
     parseInput(argc, argv);
     
-    //execute experiment runs
-    for (size_t i = 0; i < inputParams.nExperimentRuns; i++) {
-        setExperimentRunSetup(i);
-        executeExperimentRun();
-        saveData();
+    if (inputParams.testBFS) {
+        for (size_t i = 0; i < inputParams.nExperimentRuns; i++) {
+            setBfsRunSetup(i);
+            executeBFSRun();
+            saveDataBFS();
+        }
+    } else {
+        //execute experiment runs
+        for (size_t i = 0; i < inputParams.nExperimentRuns; i++) {
+            setExperimentRunSetup(i);
+            executeExperimentRun();
+            saveData();
+        }
+
     }
-    
 
     // Deinit stuff
     cJSON_Delete(root); 

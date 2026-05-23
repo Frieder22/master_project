@@ -5,9 +5,11 @@
 #include <limits.h>
 #include <mpi.h>
 #include <stdio.h>
+#include <stddef.h>
 
 extern int mpi_rank, mpi_size;
 
+int bfs_iterations;
 bool useOriginalTG = false;
 MPI_Datatype packed_edge_mpi_type;
 

@@ -1,0 +1,11 @@
+{   
+    "bfs": true,
+    "experiment": "BFSCombined",
+    "func": ["MPI_ALLREDUCE"],
+    "graph": ["../graphData/twitter_and_lj_disjoint.txt"],
+    "rootNode": [4, 2000000],
+    "nRepetitions": 3,
+    "mpilib": "intelMPI",
+    "nNodes": 34,
+    "perNode": 32
+}
