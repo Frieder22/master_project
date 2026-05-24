@@ -374,14 +374,14 @@ One can see that for sparse fillings the execution time is more or less proporti
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/UnionCritSizeConcentrated/32x32UnionCritSizeConcentrated.png}
-		\caption{\texttt{Union\_Butterfly} on $p=(32\times32)$}
+		\caption{\texttt{Union\_Butterfly} \\on $p=(32\times32)$}
 		\label{fig:UnionCritSizeConcentrated32x32}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/UnionCritSizeConcentrated/32x1UnionCritSizeConcentrated.png}
-		\caption{\texttt{Union\_Butterfly} on $p=(32\times1)$}
+		\caption{\texttt{Union\_Butterfly}\\ on $p=(32\times1)$}
 		\label{fig:UnionCritSizeConcentrated32x1}
 	\end{subfigure}
 	\vspace{5mm}
@@ -508,7 +508,7 @@ Firstly the best algorithm for the power of two setup is identified where every 
 		\label{fig:Union32x32Small}
 	\end{subfigure}
 
-	\caption{Execution time of the union algorithms on different processor layout $p=(32\times32)$ against the set filling. Two different set sizes $|\Tilde{S}|$ are tested. Before the union operation the subsets are filled uniformly. The horizontal black line shows the run time of  \texttt{Allreduce\_Butterfly\_Reverse}. The vertical red line indicated the setting of '$critSize$'.}
+	\caption{Execution time of the union algorithms on processor layout $p=(32\times32)$ against the set filling. Two different set sizes $|\Tilde{S}|$ are tested. Before the union operation the subsets are filled uniformly. The horizontal black line shows the run time of  \texttt{Allreduce\_Butterfly\_Reverse}. The vertical red line indicated the setting of '$critSize$'.}
 	\label{fig:Union32x32}
 \end{figure}
 Here the plots are not on a logarithmic scale to get a realistic impression how much faster or slower the algorithms are when compared against each other. The x-axis is still logarithmic. This is done to make the sparse regime visible. \\
@@ -534,14 +534,52 @@ Here the setup is tested that uses a non power of two number of processors $p$ a
 		\label{fig:Union34x32Small}
 	\end{subfigure}
 	
-	\caption{Execution time of \texttt{Union\_Shift} on different processor layout $p=(34\times32)$ against the set filling. Two different set sizes $|\Tilde{S}|$ are tested. Before the union operation the subsets are filled uniformly. The horizontal black line shows the run time of  \texttt{Allreduce\_Shift}. The vertical red line indicated the setting of '$critSize$'.}
+	\caption{Execution time of \texttt{Union\_Shift} on processor layout $p=(34\times32)$ against the set filling. Two different set sizes $|\Tilde{S}|$ are tested. Before the union operation the subsets are filled uniformly. The horizontal black line shows the run time of  \texttt{Allreduce\_Shift}. The vertical red line indicated the setting of '$critSize$'.}
 	\label{fig:Union34x32}
 \end{figure}
 In these plots the reference performance is from the foundation \texttt{Allreduce\_Shift} as this is the only foundation Allreduce for this processor layout available. In general the same behavior is apparent as it can be seen for the $p=(32\times32)$ layout. A noticeable difference is here that for a set size of $|\Tilde{S}|=2\cdot10^6$ there is a small bump after the filling exceeds the critical size. The reason for this behavior is already discussed in Section \ref{sec:PerformanceCriticalSize}. Summarized it is assumed that the sparse format is used for too many iterations of the Reducescatter phase and therfore longer messages than necessary are sent. As the \texttt{mean} strategy is used this bump is 'only' 20\% higher than the reference Benchmark.\\
 Another interesting feature is the run time for large set fillings for the set size $|\Tilde{S}|= 5\cdot10^8$. Even in the dense regime the run time stays for every measurement point below the reference. This origin is assumed to be due to some internal optimizations of MPIs point-to point communication or some memory layout differences and not due to a algorithmic factor of our implementations.\\
 In general \texttt{Union\_Shift} works quite efficiently when compared against its foundation Allreduce. It takes at most 10\% of the reference Allreduce in the sparse regime. For larger fillings the run time is for the normal cases at most 5\% slower. Only for one measurement there is a slowdown of around 20\%.
 
-\subsubsection{Evaluation for $p=(34\times1)$ and $p=(34\times1)$}
+\subsubsection{Evaluation for $p=(34\times1)$ and $p=(32\times1)$}
+In this sub-section the performance of the adaptive union operation algorithms is tested for the processor layouts with only one process per node is used. The rest of the setup is the same as in the testing before. \texttt{Union\_Butterfly} is of course only tested for the $p=(32\times1)$ layout, while \texttt{Union\_Shift} is also tested on $p=(34\times1)$. The results are shown in Figure
+\ref{fig:Union1processor}.
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionSmall/32x1UnionSmall.png}
+		\caption{$|\Tilde{S}|=2\cdot10^6$ on $p=32\times1$}
+		\label{fig:Union32x1Big}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionBig/32x1UnionBig.png}
+		\caption{$|\Tilde{S}|=5\cdot10^8$ on $p=32\times1$}
+		\label{fig:Union32x1Small}
+	\end{subfigure}
+	\centering
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionSmall/34x1UnionSmall.png}
+		\caption{$|\Tilde{S}|=2\cdot10^6$ on $p=34\times1$}
+		\label{fig:Union34x1Big}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/UnionBig/34x1UnionBig.png}
+		\caption{$|\Tilde{S}|=5\cdot10^8$ on $p=34\times1$}
+		\label{fig:Union34x1Small}
+	\end{subfigure}
+	
+	\caption{Execution times of \texttt{Union\_Shift} and \texttt{Union\_Butterfly} on processor layout $p=(32\times1)$ an $p=(34\times1)$ against the set filling. Two different set sizes $|\Tilde{S}|$ are tested. Before the union operation the subsets are filled uniformly. The horizontal black line shows the run time of  \texttt{Allreduce\_Butterfly\_Reverse} for the $p=(32\times1)$ layout and the run time of  \texttt{Allreduce\_Shift} for the $p=(34\times1)$ . The vertical red line indicated the setting of '$critSize$'.}
+	\label{fig:Union1processor}
+\end{figure}
+Here it is apparent that for the worst case (highly filled sets) the union operation algorithms perform in nearly all setups way worse than their foundation Allreduce. 
+The adaptive union algorithms can here take up to twice as much time. Only for the $p=(32\times1)$ layout on the big set size ($|\Tilde{S}|=5\cdot10^5$) shown in Figure \ref{fig:Union32x1Big} the union operations are up to twice as fast. We expect this to be due to a massive performance decrease of the reference Allreduce \texttt{Allreduce\_Butterfly\_Reverse} and not due to a performance boost of the union algorithms. When considering Figure \ref{fig:AllreduceFoundationLibsAppendix32x1} from the appendix one can see in this set size region (around $5\cdot10^8$) a tenfold increase of run time for doubling the set size. Somehow this effect does not happen for the union operation at exactly the same set size.\\
+The performance of the newly proposed union operation algorithms on the processor layout with only one used process per node show that the algorithms are not so useful in this setup. The run time can be expected to be around twice as long in the worst case.
 
 
 \section{Performance Testing Using \gls{bfs} as Benchmark}

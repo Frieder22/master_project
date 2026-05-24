@@ -211,7 +211,9 @@ bool test_Allreduce_single(void (*reduceFunc) (Vertexset*, int), int setSize, fl
     }
     
     //Allreduce_Dense only works with dense arrays
-    if(reduceFunc == Vertexset_Allreduce_Butterfly){
+    if(reduceFunc == Vertexset_Allreduce_Butterfly 
+        || reduceFunc == Vertexset_Allreduce_Butterfly_ReverseBits
+        || reduceFunc == Vertexset_Allreduce_Shift){
         Vertexset_TransformToDense(&vs);
     }
 

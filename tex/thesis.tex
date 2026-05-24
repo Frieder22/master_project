@@ -72,9 +72,9 @@
 \setadvisor{Univ.Prof. Dr.}{Jesper Larsson Träff}{}{male}
 
 % For bachelor and master theses:
-\setfirstassistant{Pretitle}{Forename Surname}{Posttitle}{male}
-\setsecondassistant{Pretitle}{Forename Surname}{Posttitle}{male}
-\setthirdassistant{Pretitle}{Forename Surname}{Posttitle}{male}
+%\setfirstassistant{Pretitle}{Forename Surname}{Posttitle}{male}
+%\setsecondassistant{Pretitle}{Forename Surname}{Posttitle}{male}
+%\setthirdassistant{Pretitle}{Forename Surname}{Posttitle}{male}
 
 % For dissertations:
 \setfirstreviewer{Pretitle}{Forename Surname}{Posttitle}{male}
@@ -86,8 +86,8 @@
 % Required data.
 \setregnumber{12135828}
 \setdate{01}{01}{2001} % Set date with 3 arguments: {day}{month}{year}.
-\settitle{\thesistitle}{Titel der Arbeit} % Sets English and German version of the title (both can be English or German). If your title contains commas, enclose it with additional curvy brackets (i.e., {{your title}}) or define it as a macro as done with \thesistitle.
-\setsubtitle{Optional Subtitle of the Thesis}{Optionaler Untertitel der Arbeit} % Sets English and German version of the subtitle (both can be English or German).
+\settitle{\thesistitle}{A more efficient set union operation on distributed memory machines} % Sets English and German version of the title (both can be English or German). If your title contains commas, enclose it with additional curvy brackets (i.e., {{your title}}) or define it as a macro as done with \thesistitle.
+%\setsubtitle{Optional Subtitle of the Thesis}{Optionaler Untertitel der Arbeit} % Sets English and German version of the subtitle (both can be English or German).
 
 % Select the thesis type: bachelor / master / doctor.
 % Bachelor:
@@ -149,14 +149,11 @@
 	
 	\include{chapters/chapter_Performance}
 	
-	\chapter{Test of Correctness}
-	\section{Individual Test}
-	\section{Using \gls{bfs} as Empirical Validation} \label{sec:validationBFS}
+	\include{chapters/chapter_Correctness}
 	
 	
-	\chapter{Summary of Results}
-	
-	\chapter{Future Work}
+	\include{chapters/chapter_Conclusion}
+
 	
 	
 	\backmatter

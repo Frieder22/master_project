@@ -1,19 +1,19 @@
 #! /bin/bash
 #SBATCH -p q_thesis
 #SBATCH -N 34
-#SBATCH --ntasks-per-node=32
+#SBATCH --ntasks-per-node=1
 #SBATCH --cpu-freq=High
-#SBATCH --job-name=BFStwitter
+#SBATCH --job-name=UnionSmall
 #SBATCH --time=1:00:00
 
-mkdir ../data/BFStwitter
+mkdir ../data/UnionSmall
 
-rm ../data/BFStwitter/34x32MPICH.txt
+rm ../data/UnionSmall/34x1MPICH.txt
 echo MPIlib: MPICH
 spack load mpich@4.1.2
 make perf
 for i in {1..30}; do
-    srun ../build/executeExperimentRuns.o runs.json >> ../data/BFStwitter/34x32MPICH.txt
+    srun ../build/executeExperimentRuns.o runs.json >> ../data/UnionSmall/34x1MPICH.txt
 echo iteration $i
 done
 spack unload mpich@4.1.2 

@@ -2,7 +2,7 @@
 %!TeX spellcheck = en_US
 %!TeX root = ../thesis.tex
 
-\chapter{Methodology}
+\chapter{Methodology} \label{sec:methodology}
 Here we want to present the general strategies and methods that we used to develop and evaluate our implementations. We want to make clear how decisions are made for both of these processes. Moreover we want so specify what exactly this thesis wants to achieve and therefore formulate a distinct set of research questions. Details on how these strategies and goals are fulfilled are not part of this chapter so one should only get an overview here.\\
 Firstly we want to find an algorithm that can calculate the set union of sets that are distributed over different processors. This algorithm should take advantage  of different representations of a subset and therefore be build like a mix of an Allreduce and an Allgather. As communication patterns differ for Allreduce/Allgather implementations where the number of processors $p$ needs to be a power of two compared to general $p$ implementations, we want to find two different variants of the algorithm. One should be only for the case if $p$ is a power of two and the other one should work for $p$ being any number. These algorithms should scale well for large sets $\tilde{S}$. This means we want an algorithm which execution time scales at most linearly with the size $|\tilde{S}|$. These algorithms should use the different representations effectively. We want to select algorithms as foundation where one expects the most (performance) benefits by switching between both representations.\\
 Before we build the new algorithms we want to get some insights on the foundation algorithms. We want to implement native Allreduce and Allgather to test their performance against implementations of popular libraries (i.e. OpenMPI, MPICH and IntelMPI). The native Allreduce and Allgather implementation should also be tested using the different MPI libraries. We do not expect much difference of performance in the used point to point communication functions, but none the less we are aiming for the best results. We also want to get an insight how much computation time is needed for combining two subresults into a new one to perform a union set operation. This should be done for different representations of the sets. This should all be done on the Hydra cluster. We therefore may optimizing for a specific setup, but this is unavoidable. On the other hand our native implementations could perform worse than the library functions. To evaluate the adapted variants we therefore only want to compare the adapted variants against the native implementations.\\
@@ -12,9 +12,9 @@ Lastly we want to define the research questions that this thesis should cover. T
 \begin{itemize}
 	\item Can we find regimes where our proposed algorithms out perform an only Allgather/ only Allreduce implementation?
 	\item How close are our proposed algorithms to the optimal variants? What is the difference to the best performing native variant?
-	\item How good does our performance modeling match the measured execution times? (for the newly proposed algorithms)
 	\item How do different setups influence the execution time? We want to vary number and distribution of processors on the cluster and the sizes of the original subsets.
 	\item What is the influence of the tunable parameter 'critSize'? Can we find an optimum?
+	\item Are the union operation applicable to a BFS implementations? Are there performance gains visible?
 \end{itemize}
 
 

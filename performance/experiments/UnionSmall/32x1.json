@@ -16,7 +16,7 @@
     "plotFolder" : "UnionSmall",
     "plotSize" : "small",
     "critsizeStrategies" : "mean",
-    "refAllredData": "AllreduceLibsShift",
+    "refAllredData": "AllreduceLibsButterflyReverse",
     "refAllredMpilib": "MPICH",
     "noLog": "True",
     "plotCritSize": "True"

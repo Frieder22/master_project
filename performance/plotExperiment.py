@@ -184,8 +184,16 @@ def plotRefAllreduce(setup, ax, xAxis):
                                                         setup["refAllredMpilib"]))
     line = f.readline()
 
-
-    foundationAllredNeeded = testnumber[FOUNDATION_ALLREDUCE[setup["vsFunc"][0] if type(setup["vsFunc"])==list else setup["vsFunc"]]]
+    refAllredData = setup["refAllredData"]
+    
+    foundationAllredNeeded = "ALLREDUCE_BUTTERFLY"
+    if refAllredData.find("ButterflyReverse") != -1:
+        foundationAllredNeeded = "ALLREDUCE_BUTTERFLY_REVERSE"
+    if refAllredData.find("Shift") != -1:
+        foundationAllredNeeded = "ALLREDUCE_SHIFT"
+    
+    foundationAllredNeeded = testnumber[foundationAllredNeeded]
+    
 
     while line != "":
         chunks = line.split(",")
@@ -230,13 +238,18 @@ def getData(setup, funcSetup):
         funcType = int(chunks[1].split(":")[1])
         vsFunc = int(chunks[2].split(":")[1])
         mean = float (chunks[6].split(":")[1])
+        strat = CRITSIZE_STRAT_REV[int (chunks[8].split(":")[1])]
         if xAxistype == "setSize":
             xval = int (chunks[3].split(":")[1])            
         if xAxistype == "filling":
             xval = int (chunks[4].split(":")[1])
-        if funcType == funcTypeNeeded and vsFunc == vsFuncNeeded:
-            if xval in data.keys():
+        if funcType == funcTypeNeeded and vsFunc == vsFuncNeeded and xval in data.keys():
+            if "critsizeStrategies" in funcSetup:
+                if funcSetup["critsizeStrategies"] == strat:
+                    data[xval].append(mean)
+            else:
                 data[xval].append(mean)
+
         line = f.readline()
     f.close()
 
@@ -254,6 +267,49 @@ def getData(setup, funcSetup):
         yerr.append(2*std/np.sqrt(nVals))
 
     return xAxistype, np.array(xVals), np.array(y), np.array(yerr)
+
+def getDataRefAllred(setup, funcSetup):
+
+    filepath = PATH + "../data/{0}/{1}x{2}{3}.txt".format(funcSetup["folder"],
+                                                        setup["nNodes"],
+                                                        setup["perNode"],
+                                                        funcSetup["mpilib"])
+    f = open(filepath)
+    line = f.readline()
+    setSizeNeeded = setup["setSize"]
+
+    funcTypeNeeded = funcTypesToNumbers[funcSetup["funcType"]]
+    vsFuncNeeded = 0
+    if funcTypeNeeded == VERTEXSET_TYPE:
+        vsFuncNeeded = testnumber[funcSetup["vsFunc"]]
+
+    # parse data
+    data = []
+    while line != "":
+        chunks = line.split(",")
+        funcType = int(chunks[1].split(":")[1])
+        vsFunc = int(chunks[2].split(":")[1])
+        mean = float (chunks[6].split(":")[1])
+        strat = CRITSIZE_STRAT_REV[int (chunks[8].split(":")[1])]
+
+        setSize = int (chunks[3].split(":")[1])       
+        if funcType == funcTypeNeeded and vsFunc == vsFuncNeeded and setSize==setSizeNeeded:
+            data.append(mean)
+
+        line = f.readline()
+    f.close()
+
+    # calculate mean and stderr
+    vals = np.array(data)
+    if vals.size == 0:
+        print("No value for setSize " + str(setSizeNeeded) + " and function type " + testnumberInv[vsFuncNeeded])
+        print("in file " + filepath)
+    std = np.std(vals)
+    nVals = np.shape(vals)[0]
+    y = np.mean(vals)
+    yerr = 2*std/np.sqrt(nVals)
+
+    return y, yerr
 
 def finishPlot(ax, fig, xVals, xAxistype, plotFolder, setup):
     procSetup = str(setup["nNodes"]) + "x" + str(setup["perNode"])
@@ -281,13 +337,21 @@ def finishPlot(ax, fig, xVals, xAxistype, plotFolder, setup):
     plt.savefig(PATH + "../plots/" + plotFolder + "/" + procSetup + plotFolder + ".png", dpi=DPI)
 
 
-def plotJSONcompareUnscaled(setup, fig, ax):
-    referenceSetup = setup["refFunc"]
-    name = referenceSetup["name"]
+def plotJSONcompareUnscaled(setup, fig, ax: plt.Axes):
+    if "refFunc" in setup:
+        referenceSetup = setup["refFunc"]
+        name = referenceSetup["name"]
 
-    xAxistype, xVals, means_ref, errs_ref = getData(setup, referenceSetup)
-    ax.errorbar(xVals, means_ref, yerr=errs_ref, ls="--", label=name, capsize=5, color=plotColors[name])
+        xAxistype, xVals, means_ref, errs_ref = getData(setup, referenceSetup)
+        ax.errorbar(xVals, means_ref, yerr=errs_ref, ls="--", label=name, capsize=5, color=plotColors[name])
 
+    if "refAllred" in setup:
+        allredSetup = setup["refAllred"]
+        name = allredSetup["name"]
+        mean, mean_errr = getDataRefAllred(setup, allredSetup)
+        xmin = setup["filling"][0]
+        xmax = setup["filling"][-1]
+        ax.hlines(mean, xmin, xmax, colors="black", label=name)
 
     funcSetups = setup["funcs"]
     for funcSetup in funcSetups:
@@ -458,7 +522,8 @@ def plotJSON(filepath):
                 if xAxistype == "filling":
                     xval = int (chunks[4].split(":")[1])
                 strat = int (chunks[8].split(":")[1])
-                data[CRITSIZE_STRAT_REV[strat]][xval].append(mean)
+                if CRITSIZE_STRAT_REV[strat] in data:
+                    data[CRITSIZE_STRAT_REV[strat]][xval].append(mean)
                 line = f.readline()
             f.close()
 
