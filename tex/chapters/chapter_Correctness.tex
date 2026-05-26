@@ -37,12 +37,12 @@ The unit tests for the union algorithms are done using the same function. This f
 				\State isCorrect $\gets$ \textbf{False}
 			\EndIf
 		\EndFor
-		\Return isCorrect
+		\State \Return isCorrect
 		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
 The procedure of this function is described as pseudo code in Algorithm \ref{algo:testCorrectness}. The idea of validation is quite simple. Firstly a test set and a control set get filled  on each process. Here it is important that the test set needs to be a subset of the control set and the control set is on every process the same. This is done by using a fixed seed to generate the control set and only add some elements to the test set. Which elements are added are only dependent on the rank ID of a process (saved in the variable '$mpiRank$'). After that the tested function $'func'$ is executed on the test set. After this execution the test set needs to be the same as the control set. To validate this firstly it is checked, if every element from the test set '$set$' is also in the control set (i.e. $set\subseteq control$). This also done the other way round to validate that also $control \subseteq set$ holds. If both checks are executed successfully the tested union operation function did work properly and \Call{testSingle}{ } returns \textbf{True} to indicate a successful test.\\
-This function is called using different parameter to cover different edge cases. In Table \ref{table:paramTesting} are the parameter configurations listed. These configurations are tested for different processor layouts ($p=(32\times32)$, $p=(36\times32)$, $p=(34\times32)$ and $p=(31\times31)$).  Here of course are functions that are expected to only work correctly for a power of two number of processes are only tested for the layout $p=(32\times32)$.
+This function is called using different parameter to cover different edge cases. In Table \ref{table:paramTesting} are the parameter configurations listed. These configurations are tested for different processor layouts ($p=(32\times32)$, $p=(36\times32)$, $p=(34\times32)$ and $p=(31\times31)$).  Here of course functions that are expected to only work correctly for a power of two number of processes are only tested for the layout $p=(32\times32)$.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{|c ||c|c|c|c|c|c|c|c|} \hline

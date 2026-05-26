@@ -509,6 +509,7 @@ bool test_Allgather_single(void (*allgatherFunc) (Vertexset*, int), int setSize,
     Vertexset vs;
     bool shiftPattern = getCommPattern(getFuncID(allgatherFunc));
     Vertexset_Init(&vs, setSize, MPI_COMM_WORLD, shiftPattern);
+    Vertexset_SetCritsize(&vs, insertionsTotal);
     uint32_t* control;
     control = (uint32_t*) malloc(insertionsTotal*sizeof(uint32_t));
 
@@ -586,11 +587,11 @@ bool test_Allgather_single(void (*allgatherFunc) (Vertexset*, int), int setSize,
 
 bool test_Allgather_batch(void (*allgatherFunc) (Vertexset*, int)){
     bool isCorrect = true;
-    isCorrect &= test_Allgather_single(allgatherFunc, 500000, size*2+4);
-    isCorrect &= test_Allgather_single(allgatherFunc, 500000, size + 7);
-    isCorrect &= test_Allgather_single(allgatherFunc, 500000, size + 1);
-    isCorrect &= test_Allgather_single(allgatherFunc, 1000000, 10*size + 3);
-    isCorrect &= test_Allgather_single(allgatherFunc, 50000000, 1000000);
+    isCorrect &= test_Allgather_single(allgatherFunc, 1, size*2+4);
+    isCorrect &= test_Allgather_single(allgatherFunc, 1, size + 7);
+    isCorrect &= test_Allgather_single(allgatherFunc, 1, size + 1);
+    isCorrect &= test_Allgather_single(allgatherFunc, 1, 10*size + 3);
+    isCorrect &= test_Allgather_single(allgatherFunc, 1, 1000000);
 
     if (rank==0) {
         if (isCorrect) {

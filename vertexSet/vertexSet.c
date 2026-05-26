@@ -590,7 +590,7 @@ void Vertexset_Union_Shift(Vertexset* const vs, const int VERTEXSET_OPERATION) {
 
     // decide, if allgather is needed.
     // In case only sparse communication was performed, we don't need allgather
-    if (!vs->isdense) {
+    if (!vs->isdense) { 
         if (inBuff) {
             // buffered block must be copied into pile
             memcpy(vs->sparseArray +  sizeSparse, vs->sparseBuffer, sizeBuff*sizeof(uint32_t));
