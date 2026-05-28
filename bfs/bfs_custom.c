@@ -293,7 +293,6 @@ void run_bfs_Union(int32_t root, int32_t* pred) {
 		} else {
 			Vertexset_Union_Butterfly(frontierNew, VERTEXSET_OR);
 		}
-		if (!frontierNew->isdense)
 		iteration++;
 
 		//swap Vertexsets
