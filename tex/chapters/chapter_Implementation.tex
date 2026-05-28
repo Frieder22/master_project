@@ -786,7 +786,7 @@ To be more precise a strategy is found where in each iteration there is at most 
 		\State $O[0] \gets I$
 		\While{shift $\geq 1$}
 		\State to, from $\gets$ ($r - $shift$+p)\mod{p}$, $(r+$shift$)\mod{p}$ 
-		\If{tail > shift \textbf{or} tail=0} 
+		\If{tail > shift} 
 			\If{inBuff} \Comment{Put tail on top of pile} \label{mostlyHalfingAllgather:OnPile}
 				\State $O$[size] $\gets$ B
 				\State inBuff, size $\gets$ \textbf{false}, size + 1
@@ -931,10 +931,67 @@ To estimate the execution time costs a uniformly filling of the input arrays is 
 	+ \ceil{\log_2(p)} \frac{\Phi}{p}\cdot32 \text{bit} \cdot \gamma_c
 \end{align*}
 for the optimal uniformly distributed case.\\
-Moreover one can see that it is possible to calculate the amount of blocks that need to be copied. The amount of copies depend actually on the number of processors $p$. When looking at Procedure \ref{algo:mostlyHalfingAllgather} one can see that the logic of handling the memory is only depending on the size of the tail. If the tail is bigger than 'shift' the last block needs to live on top of the pile and otherwise it needs to be in the spare buffer. Moreover the tail gets sliced by 'shift', if it is large enough. 'shift' takes all powers of 2 up $2^{\floor{\log_2(p-1)}}$ in reverse order. The tail is initialized to $p$. \\
-Firstly we calculate the number of block copies for the case $p$ is a power of two. Then in the first iteration 'shift' is $2^{\floor{\log_2(p-1)}} = \frac{p}{2}$. We state now that in each iteration 'tail' is twice as big than 'shift' and therefore always the branch from line \ref{mostlyHalfingAllgather:OnPile} (in Algorithm \ref{algo:mostlyHalfingAllgather}) is executed. This can easily done by induction. The invariant holds obviously for the first iteration as $\text{tail}=p=2\frac{p}{2}= 2\cdot \text{shift}$. Under the assumption that the invariant holds for the iteration $i-1$ one can see that the \textbf{if}-branch starting in line \ref{mostlyHalfingAllgather:InBuffer} was executed in this iteration $i-1$. Therefore $\text{tail}_i = \text{tail}_{i-1}-\text{shift}_{i-1} = 2\cdot\text{shift}_{i-1} - \text{shift}_{i-1} = \text{shift}_{i-1} = 2 \cdot \text{shift}_{1}$ and the invariant holds. As only the first \textbf{if}-branch is executed, 'inBuff' is always set to \textbf{false} and therefore no copying of the last block happens. So if $p$ is  power of two there is no extra overhead in copying memory added.\\
-When $p$ can be an arbitrary number the calculation is more complex. For this it is useful to look at the binary representation of $p-1$. We state that the $i$-th bit of $(p-1)$ (counting from the leading bit) indicates the branch of the before mentioned \textbf{if} statement in iteration $i$. A $1$ indicates that the first branch from line \ref{mostlyHalfingAllgather:OnPile} is executed and the last block is on the pile. A $0$ indicates the second branch (line \ref{mostlyHalfingAllgather:InBuffer}) is executed an the last block will be held in the buffer.\\
-This can also be shown by induction. In the first iteration this obviously holds. Here is tail$=p$ and shift the next lowest power of two in regard of $p$. So the leading 1 of the binary representation of $p$
+Moreover one can see that it is possible to calculate the amount of blocks that need to be copied. The amount of copies depend actually on the number of processors $p$. When looking at Procedure \ref{algo:mostlyHalfingAllgather} one can see that the logic of handling buffer copies is only depending on the size of the tail with respect to 'size'. If the tail is bigger than 'shift' the last block needs to live on top of the pile and otherwise it needs to be in the spare buffer. \\
+To be able to count the copies it is therefore relevant to see in which iteration the last block is on the pile or the spare buffer. For this the control flow of the Mostly Halfing Allgather is shown and adapted in two steps. The code snippet and the transformations are shown in Figure \ref{fig:mostlyHalfingControlFlow}. Here the first code snippet shows the control flow identical to the Mostly Halfing Algorithm. To get an easier understanding in which iterations the first or second \texttt{if} clause is executed the actual copying of buffered blocks is omitted. One needs to keep in mind that in iterations where the \texttt{if} statement is true the last block needs in the buffer $O$ and in $B$ otherwise. The second code block is equivalent, but with an global transformation of the variable 'tail' to 'tail+1'. This transformation does only affect the value of 'tail' and the other variables behave the same. The control flow is also unchanged by this remapping.   
+\begin{figure}[htb]
+	\centering
+	\begin{minipage}{0.29\textwidth}
+	\begin{algorithmic}[1]
+  		\algrenewcommand{\algorithmicindent}{1em} 
+		\State shift $\gets 2^{\floor{\log_2(p-1)}}$
+		\State  $\text{tail}\gets p$
+		\While{shift $\geq 1$}
+		\If{tail > shift} 
+		\State $\text{tail}\gets \text{tail} - \text{shift}$
+		\Else
+		\State \textbf{pass}
+		\EndIf
+		\State shift $\gets$ shift/2
+		\EndWhile	
+	\end{algorithmic}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.39\textwidth}
+	\begin{algorithmic}[1]
+		\algrenewcommand{\algorithmicindent}{1em} 
+		\State shift $\gets 2^{\floor{\log_2(p-1)}}$
+		\State  $\text{tail} + 1\gets p$
+		\While{shift $\geq 1$}
+		\If{tail + 1 > shift} 
+		\State $\text{tail}+1\gets \text{tail}+1 - \text{shift}$
+		\Else
+		\State \textbf{pass}
+		\EndIf
+		\State shift $\gets$ shift/2
+		\EndWhile	
+	\end{algorithmic}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.3\textwidth}
+	\begin{algorithmic}[1]
+		\algrenewcommand{\algorithmicindent}{1em} 
+		\State shift $\gets 2^{\floor{\log_2(p-1)}}$
+		\State  $\text{tail} \gets p-1$
+		\While{shift $\geq 1$}
+		\If{tail $\geq$ shift} 
+		\State $\text{tail}\gets \text{tail} - \text{shift}$
+		\Else
+		\State \textbf{pass}
+		\EndIf
+		\State shift $\gets$ shift/2
+		\EndWhile	
+	\end{algorithmic}
+	\end{minipage}
+	\caption{Logic that defines control flow of Algorithm \ref{algo:mostlyHalfingAllgather} (mostly halfing Allgather). The first code snippet shows the original code, but boiled down so just only relevant operations (in regard of the control flow) are shown. The second snipped shows equivalent code using the global transformation $\text{tail} \mapsto \text{tail} + 1$. The third snippet shows again equivalent code where additionally some algebraic simplifications are done.}
+	\label{fig:mostlyHalfingControlFlow}
+\end{figure}
+In the last code snippet are also some algebraic changes done that make the control more flow obvious. We state that one can iterate the binary representation of $p-1$ starting from the leading 1 and the bits correspond to the executed brackets in iteration $i$. If the $i$-th bit is set to 1 then the \texttt{if}-bracket is executed and if the $i$-th bit is set to 0 then in this iteration $i$ the \texttt{else}-bracket is executed. This can be shown inductively. 
+
+
+% Old 
+%Firstly we calculate the number of block copies for the case $p$ is a power of two. Then in the first iteration 'shift' is $2^{\floor{\log_2(p-1)}} = \frac{p}{2}$. We state now that in each iteration 'tail' is twice as big than 'shift' and therefore always the branch from line \ref{mostlyHalfingAllgather:OnPile} (in Algorithm \ref{algo:mostlyHalfingAllgather}) is executed. This can easily done by induction. The invariant holds obviously for the first iteration as $\text{tail}=p=2\frac{p}{2}= 2\cdot \text{shift}$. Under the assumption that the invariant holds for the iteration $i-1$ one can see that the \textbf{if}-branch starting in line \ref{mostlyHalfingAllgather:InBuffer} was executed in this iteration $i-1$. Therefore $\text{tail}_i = \text{tail}_{i-1}-\text{shift}_{i-1} = 2\cdot\text{shift}_{i-1} - \text{shift}_{i-1} = \text{shift}_{i-1} = 2 \cdot \text{shift}_{1}$ and the invariant holds. As only the first \textbf{if}-branch is executed, 'inBuff' is always set to \textbf{false} and therefore no copying of the last block happens. So if $p$ is  power of two there is no extra overhead in copying memory added.\\
+%When $p$ can be an arbitrary number the calculation is more complex. For this it is useful to look at the binary representation of $p-1$. We state that the $i$-th bit of $(p-1)$ (counting from the leading bit) indicates the branch of the before mentioned \textbf{if} statement in iteration $i$. A $1$ indicates that the first branch from line \ref{mostlyHalfingAllgather:OnPile} is executed and the last block is on the pile. A $0$ indicates the second branch (line \ref{mostlyHalfingAllgather:InBuffer}) is executed an the last block will be held in the buffer.\\
+%This can also be shown by induction. In the first iteration this obviously holds. Here is tail$=p$ and shift the next lowest power of two in regard of $p$. So the leading 1 of the binary representation of $p$
 
 
 \subsection{Concept and Explicit Implementation}
