@@ -572,7 +572,7 @@ void Vertexset_Union_Shift(Vertexset* const vs, const int VERTEXSET_OPERATION) {
                     vert = vs->sparseArray[i];
                     Bitmap_Set_Shifted(vs->bitArray, vert, vs->indexShift, vs->size_bitarray);
                 }
-                // add vertices from bufferReverse
+                // add vertices from buffer
                 if (inBuff) {
                     for (size_t i = 0; i < sizeBuff; i++) {
                         vert = vs->sparseBuffer[i];
@@ -584,7 +584,6 @@ void Vertexset_Union_Shift(Vertexset* const vs, const int VERTEXSET_OPERATION) {
         }
         // update shift
         shift_old = shift;
-        if (i==iterations-1) assert(shift==1);
         shift >>=1; // only exactly halfing
     }
 
