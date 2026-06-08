@@ -806,7 +806,6 @@
 %		\EndWhile
 %		\If{inBuff} \Comment{Put tail on top, if it is still in buffer} \label{mostlyHalfingAllgather:lastBlockCopy}
 %			\State $O$[size] $\gets$ B
-%			\State inBuff, size $\gets$ \textbf{false}, size + 1
 %		\EndIf
 %		\State \Call{Reorder}{$O$} \Comment{Reorder blocks s.t. block $i$ corresponds to rank $i$}
 %		\EndProcedure
@@ -1204,7 +1203,7 @@ The code skeleton for the control flow shown in Figure \ref{algo:UnionShift} is 
 		\Procedure{UnionShift}{$r, p, I_s, sparseSize, I_d, bitarraySize, isDense$}
 		\State critSize $\gets$ \Call{getCritSize}{~}
 		\Comment{Calculate Critical size}
-		\State tail, inBuff $\gets p,$ \textbf{false}
+		\State tail, inBuff, sizeBuff $\gets p,$ \textbf{false}, $0$
 		\State shiftOld $\gets p$
 		\For{(shift $\gets 2^{\floor{\log_2 (p-1)}}$, shift $\geq1$, shift $\gets$ shift/2)}
 			\Statex\Comment{Use mostly halfing scheme}
@@ -1253,6 +1252,7 @@ If the flag 'isDense' is not valid the process uses in the current iteration the
 				\State $I_s$[$sizeSparse, \dots, sizeSparse + $sizeBuff$ - 1$] $\gets$ $\Tilde{I}_s$
 				\State inBuff, $sizeSparse \gets$ \textbf{false}, $sizeSparse$ + sizeBuff
 				\State $I_s[sizeSparse] \gets $ sizeBuff 
+				\State sizeBuff $\gets 0$ 
 			\EndIf
 			\State tail $\gets$ tail$ - $shift
 		\Else
@@ -1337,16 +1337,16 @@ As a remark one needs to keep in mind that the last element of a sparse message 
 \subsubsection{Combination of a local sparse array with a received sparse message}
 If both the received message and the local representation are in the sparse format the "preferred" format for the result is also a sparse array. If it exceeds the critical size 'sizeCrit' it then needs to be transformed into the dense variant. So firstly the received sparse message is appended to the local one. For this the reordering mentioned in Paragraph \ref{sec:reorderingMostlyHalfingAllgather} is performed after receipt. Next it is checked if the resulted message is to large. If this is the case all sparse elements (including the buffered ones) are put into the dense buffer $I_d$. The procedure is shown in Algorithm \ref{algo:UnionShiftCombineSparseSparse}.
 \begin{algorithm}[htb]
-	\caption{Combine local dense array with a received sparse array.} \label{algo:UnionShiftCombineSparseSparse}
+	\caption{Combine local sparse array with a received sparse array.} \label{algo:UnionShiftCombineSparseSparse}
 	\begin{algorithmic}[1]
-	\Procedure{combineSparseDense}{~}
+	\Procedure{combineSparseSparse}{~}
 	\State  \Call{Recv}{$I_s$[$sizeSparse + 1, \dots, sizeSparse+$status.count], from}
 	\State \Call{Wait}{$I_s$}
 	\State lastBlockSize $\gets I_s[sizeSparse+status.count$] 
 	\Statex\Comment{size of last block of received message}
 	\State\Call{Reorder}{$I_s, sizeSparse$, status.count, lastBlocksize}
 	\State $sizeSparse \gets sizeSparse + $ status.count $-1$
-	\If{$sizeSparse + $(inBuff $\cdot$ sizeBuff) > $sizeCrit$}\label{UnionShiftCombineSparseSparse:addSizeBuff}
+	\If{$sizeSparse + $ sizeBuff > $sizeCrit$}\label{UnionShiftCombineSparseSparse:addSizeBuff}
 		\ForAll{$e \in I_s[0, \dots, sizeSparse]$}
 			\State \Call{setBitmapShifted}{$I_d, e$}
 		\EndFor
@@ -1354,12 +1354,13 @@ If both the received message and the local representation are in the sparse form
 			\ForAll{$e \in \Tilde{I}_s[0, \dots, $sizeBuff]}
 				\State \Call{setBitmapShifted}{$I_d, e$}
 			\EndFor
-		\EndIf		
+		\EndIf	
+		\State $isDense \gets$ \textbf{true}	
 	\EndIf
 	\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
-Here the reordering to obtain contiguous memory of set elements is not explicitly stated, but can be performed on $I_s$ by only knowing '$sizeSparse$', the amount of received elements and the size of the last block of the received message. To add the size of the sparse buffer to $sizeSparse$, if the buffer is filled, the notation 'inBuff$\cdot$sizeBuff' (line \ref{UnionShiftCombineSparseSparse:addSizeBuff}) is used. The boolean 'inBuff' is in this case interpreted as 0, if it set to \textbf{false} and as 1, if it is set to \textbf{true}. 
+Here the reordering to obtain contiguous memory of set elements is not explicitly stated, but can be performed on $I_s$ by only knowing '$sizeSparse$', the amount of received elements and the size of the last block of the received message. Next the size of the sparse array is updated by increasing it by the number of elements that it received (equals to 'status.count-1' as one element is used for the size information of the last block). After the correct receipt of the new sparse data it is then checked, if the process holds more sparse elements than 'sizeCrit'. The total amount of sparse elements equals to '$sizeSparse$' plus the amount of elements in the buffer ('sizeBuff' is set to 0, if the buffer is not used). If 'critSize' is reached or exceeded the sparse representation is transformed into the dense one. For this all sparse elements (including the buffered ones) are set into the dense array $I_d$.
 
 \subsubsection{Further implementation improvements}
 In the actual implementation is some small improvement done for the concatenation logic of two sparse arrays. The size information of the last block is only relevant, if the last block is eventually buffered. So if the sparse buffer $\Tilde{I}_s$ is already filled and 'inBuff' is true it is not necessary to send this information. Therefore it is only sent, if it is needed. A small benefit is here that the message size is one element (one 32-bit unsigned integer) shorter. The maybe more important improvement is that the receiver can append the message directly behind its sparse array $I_s$ as the size information of the last block of its old sparse array is not needed anymore (of course only relevant, if the receiver holds currently data in the sparse representation). So no rearrangement of sparse elements is needed and more importantly the receiver does not have to wait for its own send to complete as this rank itself does not send the size information of its last block. 
@@ -1369,18 +1370,47 @@ The functionality of the adapted Reducescatter phase is now mostly explained. If
 If the representation is not sparse after the last iteration a Reducescatter of the dense array $I_d$ was performed. To get a complete Allreduce an Allgather needs to be performed. This Allgather is the same as for the foundation Allreduce shown in Algorithm \ref{algo:redScatterAndAllgatherShift}. After this no re-rotating of the dense array is performed. The implicit rotation of $I_d$ is kept and it is checked for elements by using the interface function $\Call{checkBitmapShifted}{~}$.
 
 \subsection{Proof of Correctness}
-This algorithm uses quite similar ideas as \texttt{Union\_Butterfly}. Therefore the ideas to prove that \texttt{Union\_Shift} also calculates a correct set union are also quite similar.
-
+This algorithm uses quite similar ideas as \texttt{Union\_Butterfly}. Therefore the ideas to prove that \texttt{Union\_Shift} also calculates a correct set union are also quite similar. For this firstly is only the case considered that only the sparse variant is used.
+\begin{lemma}
+	Considering \texttt{Union\_Shift} (Algorithm \ref{algo:UnionShift}): If all ranks $r$ propose a sparse array and the sum over all set fillings $\sum_r\varphi_r=\Phi$ is less than the critical size 'sizeCrit', then each iteration $i$ of the Reducescatter phase is equivalent to the $i$-th iteration of the Mostly Halfing Allgather (Algorithm \ref{algo:mostlyHalfingAllgather}).
+\end{lemma}
+\begin{proof}
+	Lets call the value 'sizeCrit' $c$, the value 'sizeBuff' $b$ and the value 'sizeSparse' $s$. One can quite easily see that, if only the sparse send is used and only $\Call{combineSparseSparse}{~}$ the union algorithm is exactly the same as the mostly Halfing Allgather. We therefore argue inductively that each iteration of these two Algorithms is equivalent.\\
+	This is quite obvious for the first iteration as every rank proposed a sparse array and therefore every rank has set the flag 'isDense' to \textbf{false}. So the sparse send as well as the function to combine of two sparse arrays is executed. In $\Call{combineSparseSparse}{~}$ $s$ gets increased by the amount of received elements which corresponds to the amount of elements $\varphi_{\hat{r}}$ of the 'from'-rank $\hat{r}$. With the condition $\sum_j\varphi_j<c$ and  $\varphi_j \geq 0$ one can see that the sparse size $s_r$  of rank $r$ is after the first iteration bounded by $c$ (using the estimation $s_r = \varphi_r + \varphi_{\hat{r}} \leq\sum_j\varphi_j<c$). Therefore the sparse representation is kept and 'isdense' is still set to \textbf{false}.\\
+	The argument for the following iterations is quite the same. If 'isdense' is set to \textbf{false}on all ranks before the iteration the sparse send is executed for all of them. This leads to the combination of a received sparse array with the local sparse array. The total amount of saved sparse elements is the sum of $s$ with the number of buffered elements $b$. As the iterations before performed a subresult of an Allgather the total amount of buffered elements is bounded by the total sum of sizes of the proposed sparse arrays ($s+b\leq \sum_i \varphi_i$). So again the \textbf{if}-condition in line \ref{UnionShiftCombineSparseSparse:addSizeBuff} of $\Call{combineSparseSparse}{~}$ (Algorithm \ref{algo:UnionShiftCombineSparseSparse}) is fulfilled, because one can estimate $s+b\leq \sum_i \varphi_i < c$. The sparse format is therefore kept and 'isdense' is still set to \textbf{false}.
+\end{proof}
+\begin{corollary}
+	If all ranks $r$ propose a sparse array and the sum over all set fillings $\sum_r\varphi_r=\Phi$ is less than the critical size 'sizeCrit' \texttt{Union\_Shift} performs an unordered Mostly Halfing Allgather.
+\end{corollary}
+\begin{proof}
+	Under the condition $\Phi<c$ all iterations of the Mostly Halfing Algorithms are executed and the flag 'isDense' is still set to \textbf{false}. Therefore the \textbf{if}-statement in line \ref{UnionShift:sparseCompleted} is fulfilled and eventually buffered elements are put into the sparse array. At this point all steps of the Mostly Halfing Algorithms are performed, but the reordering. \texttt{Union\_Shift} returns after the copy of eventually buffered elements.
+\end{proof}
+\begin{corollary}
+	Consider that the sum over all set fillings $\sum_r\varphi_r=\Phi$ is as big or greater than the critical size 'sizeCrit'. The flag 'isDense' will be \textbf{true} for all ranks after all iterations are executed (line \ref{UnionShift:sparseCompleted}).
+\end{corollary}
+\begin{proof}
+	Suppose not. Then there is one rank $r$ that is still using the sparse representation. Therefore it has never received an array in dense representation as this would lead to setting 'isDense' to true. Then in each iteration it holds a subresult of the Mostly Halfing Allgather. The total size of sparse elements $(s + b)$ has to be at some point at least $\Phi$. Therefore there is some iteration where $(s + b)\geq c$. This leads to a transformation into the dense format. This is a contradiction.
+\end{proof}
+\begin{lemma}
+	Considering \texttt{Union\_Shift}: Suppose $I_d$ is empty, if the sparse representation is provided and $I_d$ is implicitly rotated, if the sparse representation is used. We define the reference Reducescatter as Algorithm \ref{algo:redScatterShift} performing an bitwise OR on the dense representation and using the same Mostly Halfing sequence as skips. Then for each rank the blocks $I_d[0,\dots, shift-1]$ of \texttt{Union\_Shift} are in iteration $i$ at least the same as the blocks $O[0,\dots, shift-1]$ of the reference Reducescatter, if rank $r$ uses the dense representation. "At least the same" means here that bits that are set to 1 for $O$ need also be set for $I_d$. If a rank uses the sparse representation this statement holds for a imaginary dense array $I_d$  after all elements of the sparse array $I_d$ are added using the implicit rotation.
+\end{lemma}
+\begin{proof}
+	The statement is proved by induction. It holds before the first iteration. For the Reducescatter every rank holds only its provided input array. This is also true for \texttt{Union\_Shift} as every rank holds the whole information of the set in either the dense or the sparse representation.\\
+	Assume the statement holds for the iteration before. We consider w.l.o.g rank $r$. There are 3 different cases. 
+	\begin{itemize}
+		\item Receive dense array while holding the dense representation: \\
+		Here the code is equivalent to the reference Reducescatter. If both (received and local) arrays hold "at least the same" subresults then the combination via the bitwise OR operator also results in an "at least the same" new dense bitarray $I_d$. The bitwise OR operation guarantees that if a bit in either of the arrays is set to 1 the corresponding bit in the resulting array will also be set to 1.
+		
+		\item Receive sparse array while holding the sparse representation: \\
+		As shown before rank $r$ has up until this iteration performed the Mostly Halfing Allgather. The Mostly Halfing Allgather is constructed in a way that its subresults span the same ranks as block $O[0]$ of the reference Reducescatter. As the blocks  $O[j]$ with $j>0$ span the same or less ranks one can see that the Mostly Halfing Allgather subresult holds again "at least the same" elements as the reference Reducescatter does. 
+		
+		\item Combination of a sparse array with a dense representation:\\
+		The sparse array holds "at least the same" subresult as the reference Reducescatter. The same is true for the sparse array. It does not matter which of the both arrays is received and which one is the local one. $I_d$ takes the dense array and the elements of the sparse are added using the implicit rotation. This is the same as transforming the sparse array to the dense representation first and then performing a bitwise OR with the dense array. 
+	\end{itemize}
+\end{proof}
 
 \subsection{Runtime Estimation}
 
 \section{A Naive Approach}
 
 
-
-
-
-
-
-
-\
