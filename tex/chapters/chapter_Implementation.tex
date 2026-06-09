@@ -1379,7 +1379,7 @@ This algorithm uses quite similar ideas as \texttt{Union\_Butterfly}. Therefore 
 	This is quite obvious for the first iteration as every rank proposed a sparse array and therefore every rank has set the flag 'isDense' to \textbf{false}. So the sparse send as well as the function to combine of two sparse arrays is executed. In $\Call{combineSparseSparse}{~}$ $s$ gets increased by the amount of received elements which corresponds to the amount of elements $\varphi_{\hat{r}}$ of the 'from'-rank $\hat{r}$. With the condition $\sum_j\varphi_j<c$ and  $\varphi_j \geq 0$ one can see that the sparse size $s_r$  of rank $r$ is after the first iteration bounded by $c$ (using the estimation $s_r = \varphi_r + \varphi_{\hat{r}} \leq\sum_j\varphi_j<c$). Therefore the sparse representation is kept and 'isdense' is still set to \textbf{false}.\\
 	The argument for the following iterations is quite the same. If 'isdense' is set to \textbf{false}on all ranks before the iteration the sparse send is executed for all of them. This leads to the combination of a received sparse array with the local sparse array. The total amount of saved sparse elements is the sum of $s$ with the number of buffered elements $b$. As the iterations before performed a subresult of an Allgather the total amount of buffered elements is bounded by the total sum of sizes of the proposed sparse arrays ($s+b\leq \sum_i \varphi_i$). So again the \textbf{if}-condition in line \ref{UnionShiftCombineSparseSparse:addSizeBuff} of $\Call{combineSparseSparse}{~}$ (Algorithm \ref{algo:UnionShiftCombineSparseSparse}) is fulfilled, because one can estimate $s+b\leq \sum_i \varphi_i < c$. The sparse format is therefore kept and 'isdense' is still set to \textbf{false}.
 \end{proof}
-\begin{corollary}
+\begin{corollary}\label{coro:UnionSparse}
 	If all ranks $r$ propose a sparse array and the sum over all set fillings $\sum_r\varphi_r=\Phi$ is less than the critical size 'sizeCrit' \texttt{Union\_Shift} performs an unordered Mostly Halfing Allgather.
 \end{corollary}
 \begin{proof}
@@ -1396,8 +1396,8 @@ This algorithm uses quite similar ideas as \texttt{Union\_Butterfly}. Therefore 
 \end{lemma}
 \begin{proof}
 	The statement is proved by induction. It holds before the first iteration. For the Reducescatter every rank holds only its provided input array. This is also true for \texttt{Union\_Shift} as every rank holds the whole information of the set in either the dense or the sparse representation.\\
-	Assume the statement holds for the iteration before. We consider w.l.o.g rank $r$. There are 3 different cases. 
-	\begin{itemize}
+	Assume the statement holds for the iteration before. We consider w.l.o.g some rank $r$. There are 3 different cases. 
+	\begin{enumerate}
 		\item Receive dense array while holding the dense representation: \\
 		Here the code is equivalent to the reference Reducescatter. If both (received and local) arrays hold "at least the same" subresults then the combination via the bitwise OR operator also results in an "at least the same" new dense bitarray $I_d$. The bitwise OR operation guarantees that if a bit in either of the arrays is set to 1 the corresponding bit in the resulting array will also be set to 1.
 		
@@ -1405,9 +1405,30 @@ This algorithm uses quite similar ideas as \texttt{Union\_Butterfly}. Therefore 
 		As shown before rank $r$ has up until this iteration performed the Mostly Halfing Allgather. The Mostly Halfing Allgather is constructed in a way that its subresults span the same ranks as block $O[0]$ of the reference Reducescatter. As the blocks  $O[j]$ with $j>0$ span the same or less ranks one can see that the Mostly Halfing Allgather subresult holds again "at least the same" elements as the reference Reducescatter does. 
 		
 		\item Combination of a sparse array with a dense representation:\\
-		The sparse array holds "at least the same" subresult as the reference Reducescatter. The same is true for the sparse array. It does not matter which of the both arrays is received and which one is the local one. $I_d$ takes the dense array and the elements of the sparse are added using the implicit rotation. This is the same as transforming the sparse array to the dense representation first and then performing a bitwise OR with the dense array. 
-	\end{itemize}
+		The sparse array holds "at least the same" subresult as the reference Reducescatter. The same is true for the sparse array. It does not matter which of the both arrays is received and which one is the local one. $I_d$ takes the dense array and the elements of the sparse are added using the implicit rotation. This is the same as transforming the sparse array to the dense representation first and then performing a bitwise OR with the dense array. The result is the same as the combination of two dense arrays which both fulfill the invariant in the iteration before. So the procedure is equivalent to a step of the reference Reducescatter and it is shown in the case analysis of the first case that this leads to a valid statement for the current iteration.
+	\end{enumerate}
+	The case analysis shows that the statement holds also for the current iteration which proves the statement for all iterations.
 \end{proof}
+\begin{corollary}\label{coro:UnionSubset}
+	If the total filling $\Phi$ is at least as big as 'sizeCrit' \texttt{Union\_Shift} calculates a set $R\supseteq \cup_r S_r = U$ with $U$ being the union on all provided sets $S_r$ from the different ranks.
+\end{corollary}
+\begin{proof}
+	After all iterations have completed each rank holds at block $I_d[0]$ an array that holds has at least all bits set to 1  that are also set to 1 for the reference Reducescatter. These blocks are then concatenated and distributed in the Allgather phase. The resulting array at $I_d$ is has therefore at least all 1s set that an Allreduce would perform on just dense representations using the bitwise OR operator. The Allreduce would have calculated a union on all sets and setting extra bits to 1 only extends the resulting set.
+\end{proof}
+\begin{lemma} \label{lemma:UnionSupset}
+	If the total filling $\Phi$ is at least as big as 'sizeCrit' \texttt{Union\_Shift} calculates a set $R \subseteq \cup_r S_r = U$ with $U$ being the union on all provided sets $S_r$ from the different ranks.	
+\end{lemma}
+\begin{proof}
+	For each iteration one can state the following: If two dense arrays are combined the same blocks (of different ranks) get combined. If two sparse arrays are combined the resulting imaginary dense array holds also some subresult at each block from some ranks. If a sparse array is combined with a dense one the shifted setting of bits guarantees here also that only the same blocks get combined. This results in each rank $r$ holding after the Reducescatter phase at $I_d[0]$ that represents the set $R[r] = \cup_{i\in L} S_i[r]$. The  notation $S_a[b]$ represents all elements of the provided set by rank $a$ that are in block $b$ of the not implicitly rotated dense representation. The index list $L$ holds some ranks and is allowed to hold some ranks multiple times. As the union operation is idempotent this index list equivalent to a set that only holds each rank at most once.\\
+	If the result blocks $R[r]$ of the Reducescatter are then concatenated and distributed over all ranks via the Allgather phase one can see that the total result of \texttt{Union\_Shift} in $I_d$ represents a set that is at most the union of all sets provided by the ranks.
+\end{proof}
+\begin{theorem}
+	\texttt{Union\_Shift} calculates the union over all sets by the different ranks. I.e. each ranks holds a set representation of $U=\cup_{r=0}^{p-1} S_r$ with $S_r$ being the sets provided by the ranks and $p$ the number of ranks.
+\end{theorem}
+\begin{proof}
+	Corollary \ref{coro:UnionSparse} states that an Allgather of all provided sparse arrays is performed, if the total set filling $\Phi$ is less than the critical size. This corresponds to an union over all provided sets. For $\Phi$ equal or greater than the critical size Corollary \ref{coro:UnionSubset} shows that \texttt{Union\_Shift} calculates a resulting set $R$ with $R\subseteq \cup_r S_r = U$ and Lemma \ref{lemma:UnionSupset} shows that $R\supseteq \cup_r S_r = U$. So in this case also the union over all provided sets is calculated.
+\end{proof}
+
 
 \subsection{Runtime Estimation}
 
