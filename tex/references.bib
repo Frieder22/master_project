@@ -1,7 +1,55 @@
 %!TeX root = thesis.tex
+
+
+% distributed memory computing
+@inbook{modelDistributedMemory, 
+	place={Cambridge}, 
+	title={A model of distributed computations}, 
+	booktitle={Distributed Computing: Principles, Algorithms, and Systems}, 
+	publisher={Cambridge University Press}, 
+	author={Kshemkalyani, Ajay D. and Singhal, Mukesh}, 
+	year={2008}, 
+	pages={39–49}} 
+
+
+@Inbook{lecturesTräff,
+	author={Tr{\"a}ff, Jesper Larsson},
+	title="Distributed Memory Parallel Systems and MPI",
+	bookTitle="Lectures on Parallel Computing",
+	year="2026",
+	publisher="Springer Nature Switzerland",
+	address="Cham",
+	pages="171--287",
+	abstract="The last third of the lectures on Parallel Computing deals with characteristics of distributed memory systems where processors or shared memory processor-nodes are interconnected via a communication network which has to be used to exchange information between processes or threads in any non-trivial parallel algorithm. The concept of message-passing as a means to structure and implement algorithms is introduced, concretely via MPI which is dealt with extensively, regarding both fundamental message-passing ideas but also the way these have been realized in a concrete specification.",
+	isbn="978-3-031-86578-7",
+	doi="10.1007/978-3-031-86578-7_3",
+	url="https://doi.org/10.1007/978-3-031-86578-7_3"
+}
+
+
 %------------------------------------------------------------------------------------------------------
 %                                             BFS
 %------------------------------------------------------------------------------------------------------
+% Algorithms calssic
+@book{introToAlgos,
+	author    = {Cormen, T.H. and Leiserson, C.E. and Rivest, R.L. and Stein, C.},
+	title     = {Introduction To Algorithms},
+	year      = {2001},
+	publisher = {MIT Press},
+	isbn      = {9780262032933},
+	url       = {https://books.google.at/books?id=NLngYyWFl_YC}
+}
+
+% sparseRepresentations of adjacency matrix
+@inbook{csr,	
+	title = {4. Related Issues},
+	booktitle = {Templates for the Solution of Linear Systems: Building Blocks for Iterative Methods},
+	chapter = {},
+	pages = {57-81},
+	doi = {10.1137/1.9781611971538.ch4},
+	URL = {https://epubs.siam.org/doi/abs/10.1137/1.9781611971538.ch4},
+	eprint = {https://epubs.siam.org/doi/pdf/10.1137/1.9781611971538.ch4}
+}
 
 % Standard BFS book
 @Inbook{standardBFS,
@@ -42,6 +90,24 @@ url={https://doi.org/10.1007/978-1-4612-4400-4_4}
 	series = {SC '11}
 }
 
+@Article{hybridBFS,
+	author={Ueno, Koji
+	and Suzumura, Toyotaro
+	and Maruyama, Naoya
+	and Fujisawa, Katsuki
+	and Matsuoka, Satoshi},
+	title={Efficient Breadth-First Search on Massively Parallel and Distributed-Memory Machines},
+	journal={Data Science and Engineering},
+	year={2017},
+	month={Mar},
+	day={01},
+	volume={2},
+	number={1},
+	pages={22-35},
+	issn={2364-1541},
+	doi={10.1007/s41019-016-0024-y},
+	url={https://doi.org/10.1007/s41019-016-0024-y}
+}
 
 % Description of top-down vs bottom-up BFS
 @INPROCEEDINGS{bottomUp,
@@ -354,10 +420,10 @@ doi = {10.1145/2442516.2442530}
 % reference of mpi standard
 @manual{mpi,
 	author = "{Message Passing Interface Forum}",
-	title  = "{MPI}: A Message-Passing Interface Standard Version 4.1",
-	url    = "https://www.mpi-forum.org/docs/mpi-4.1/mpi41-report.pdf",
-	year   = 2023,
-	month  = nov
+	title  = "{MPI}: A Message-Passing Interface Standard Version 5.0",
+	url    = "https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report.pdf",
+	year   = 2025,
+	month  = JUN
 }
 
 %Allreduce from Jesper 

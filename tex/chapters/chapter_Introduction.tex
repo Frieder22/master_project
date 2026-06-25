@@ -12,48 +12,66 @@ of subsets $S_r \subseteq \tilde{S}$ with $\tilde{S}$ being of finite size. Thes
 Before explaining how this problem is tackled and what new ideas we propose in this thesis  a small introduction to the foundations of distributed memory computing is given.
 
 \section{Introduction to distributed memory computing}
-Distributed memory refers mostly to a logical model to perform parallel computations. For this multiple processes are executed at the same time on different cores of a system. The difference to shared memory computing is here that there is no memory space shared between the computing instances to exchange information. Shared memory computing uses typical multiple threads that all belong to the same process. The big advantage of distributed memory computing is scalability. A system can be build out of multiple compute nodes where each processor core has physically only access to the memory of its node it is build on. The number of computing cores is therefore not limited by the number of cores a CPU has or the number of CPUs that can be fitted on a main board. \\
+Distributed memory computing (in regard of high performance computing) refers mostly to the architectural model to perform parallel computations. For this multiple processes are executed at the same time on different cores of a system. The difference to shared memory computing is here that there is no memory space shared between the computing instances to exchange information. Shared memory computing uses typical multiple threads that all belong to the same process. The big advantage of distributed memory computing is scalability. A system can be build out of multiple compute nodes where each processor core has physically only access to the memory of its node it is build on. The number of computing cores is therefore not limited by the number of cores a CPU has or the number of CPUs that can be fitted on a main board \cite{lecturesTräff, modelDistributedMemory}. \\
 The communication between cores that are physically on the same compute node can still happen via accessing a shared memory region of the nodes RAM. To allow communication to other processes that are executed on another node the compute nodes are connected via some interconnect. The processes therefore can send and receive messages to/from other processes. The communication interface is defined by \gls{mpi} which is a standard that is implemented by different libraries \cite{mpi}. This interface defines functions that include communication between two processes (point-to-point communication) and procedures where multiple processes (collective communication) participate to solve a given problem. How the message is transmitted is mostly hidden from the user and handled by the respective MPI-implementation.\\
 
-\subsubsection{Important functions in MPI}
+\subsection{Important functions in MPI}
 MPI assigns each participating process an ID called the rank. Ranks can be organized in communicators. They are sets of ranks and are mostly important for collective communication. If a process is part of multiple communicators it can have different rank IDs for each of the communicators. In this thesis multiple communicators are not relevant and each process can be identified by its ID of the communicator that includes all participating processes (with tag \texttt{MPI\_Comm\_World}). We will use the term rank and process interchangeably even though the rank is technically only the ID. 
 
-There are a lot of different functions defined in the recent MPI-standard (version 5.0) so we focus here only on the used and most important functions. We start with point-to-point communication and the function \texttt{MPI\_Send()}. It takes a pointer to a buffer, the datatype of the buffer, the amount of elements that should be sent, the destination rank, a tag and the communicator as input. The tag can be used so messages from the same rank are not confused or to send extra meta information. This call is blocking which means the function can only return, if the message in the buffer is completely sent. This has the advantage that manipulation on the buffer from later calls will not corrupt the message as it gets read for the sending. There is also a non-blocking variant \texttt{MPI\_Isend()} that takes another request object which can indicate, if the send has completed. In this case a later call on \texttt{MPI\_Wait()} is handy that uses the request handle to wait until the sending is completed and the buffer is safe to modify.\\
+There are a lot of different functions defined in the recent MPI-standard \cite{mpi} (version 5.0) so we focus here only on the used and most important functions. We start with point-to-point communication and the function \texttt{MPI\_Send()}. It takes a pointer to a buffer, the datatype of the buffer, the amount of elements that should be sent, the destination rank, a tag and the communicator as input. The tag can be used so messages from the same rank are not confused or to send extra meta information. This call is blocking which means the function can only return, if the message in the buffer is completely sent. This has the advantage that manipulation on the buffer from later calls will not corrupt the message as it gets read for the sending. There is also a non-blocking variant \texttt{MPI\_Isend()} that takes another request object which can indicate, if the send has completed. In this case a later call on \texttt{MPI\_Wait()} is handy that uses the request handle to wait until the sending is completed and the buffer is safe to modify.\\
 The reception of messages is done by \texttt{MPI\_Recv()}. This function takes also information of the reception buffer, the size, data type and tag of the message as input. It also needs to know the rank of the process it will receive data from. There is additionally a status object passed that can be used to handle errors. There is also a non-blocking variant for the reception function also using a request handle for organization.\\
-Another importatn
+Another important function that will be used in this thesis is \texttt{MPI\_Sendrecv()}. It combines sending and receiving into one blocking function. The input parameter are therefore also the combination of \texttt{MPI\_Send()} and \texttt{MPI\_Recv}. The data types and message size do not need to be the same for the send buffer as they are for the receive buffer. The benefit of \texttt{MPI\_Sendrecv()} is that it is a blocking function that avoids naive deadlock situations. Assume the goal is to that two processes want to send each other a message at the same time. If this is done by a blocking send followed by a(n also blocking) receive there will always be a deadlock situation. Both processes can not complete their send as the corresponding receive will not be executing as the reception is guaranteed to happen strictly after the send. \texttt{MPI\_Sendrecv()} is therefore equivalent to a non-blocking send, following by an receive call and then a wait operation to guarantee that the send has completed. This solves the naive deadlock situation.
 
-% 
-% sendREcv
-% collective communication
-% Breadcast, Reduce, Allreduce, Allgather
+There are also a lot of different collective communication schemes defined in MPI. In a collective function call all processes of a communicator take part. These functions define procedures that are expected to be useful in different applications. We only present here a few that are most relevant for this thesis. A \textit{Broadcast} (\texttt{MPI\_Bcast()}) defines a procedure where one specific process (called root) shares a buffer with all other processes. In a \textit{Gather} (\texttt{MPI\_Gather()}) all ranks propose a buffer of same size and these buffers are all collected and made available for one specific process (root process).  After the execution of the \texttt{Gather} the collected data at the root process needs to be ordered by the rank IDs of the corresponding processes in ascending order. The resulting buffer is contiguous. There is also a variant (\texttt{MPI\_Gatherv}) that allows for different sizes of the proposed arrays. In both cases the size(s) need to be known for each process. The notation by appending a \texttt{v} to the function name to allow for individual array sizes is also done for other collective operations.\\
+There is also an function that solves an inverted problem. In a \textit{Scatter} one rank holds an array which is then split over all participating processes. In MPI this defined by the functions \texttt{MPI\_Scatter} (each process gets a chunk of equal size) and \texttt{MPI\_Scatterv} (for individual block sizes).\\
+The next function we propose here is an \textit{Allgather} (by \texttt{MPI\_Allgather}/\texttt{MPI\_All\-gatherv}). It is similar to a Gather but the resulting array containing all proposed arrays is not only accessible for a selected root processes but for all ranks. \\
+The next relevant operation is \textit{Reduce} (\texttt{MPI\_Reduce}). Here all ranks propose an array of same size on which there is a (commonly a commutative) operator applied. The result of this operation  is then available to a selected root process. The operator can be for example the maximum/minimum value (\texttt{MPI\_MAX}/\texttt{MPI\_MIN}), some bit operation (\texttt{MPI\_BOR}, \texttt{MPI\_BAND}), a sum/product (\texttt{MPI\_SUM}/\texttt{MPI\_PROD}) or a user defined operation. The operation is performed for each element over all participating ranks. \\
+A \textit{Allreduce} (\texttt{MPI\_Allreduce}) the extension of a Reduce. Here the result needs not only be available to one specific root process but to all participating ranks.\\
+Then there is \textit{Reducescatter}. In MPI this is defined by the functions \texttt{MPI\_Reduce\_\-scat\-ter()} and \texttt{MPI\_Reduce\_scatter\_block()}. A Reducescatter does the same as performing a Reduce and then a Scatter operation. So after its execution each rank holds a block of the total reduced array.\\
+The last collective operation we propose here is a \textit{Barrier} (defined by \texttt{MPI\_Barrier}). This function is used to synchronize all participating processes. The idea is here that all ranks have to call this Barrier function before they can proceed with the execution of their programs. The standard (MPI) technically does not enforce synchronization in the sense that all processes return from \texttt{MPI\_Barrier()} at the same time. It is only the property guaranteed that the function is blocking until all processes reached \texttt{MPI\_Barrier()}.
 
+\section{How to perform a union operation on a distributed memory machine}
+Here we present two variants how to calculate a union set on distributed memory machines using collective communication of MPI. Similarities of these two variants lead to the idea to a combination of them into a new algorithm and exploiting performance benefits in different parameter regimes.\\
+As a reminder of the problem and notation: The goal is to calculate a union $U$ over all subsets $S_r$. Before the union operation each rank $r$ holds the information of its dedicated set $S_r$. Each set $S_r$ is a subset of an underlying set $\Tilde{S}$ of finite size. After the union operation is executed each rank should hold some representation of the union $U$.\\
+To solve this problem we propose the first variant where each subset as represented by a bitmap. For this an array of size $|\tilde{S}|$ is needed where a bit $e$ is to 1, if element $e$ is in $S_r$ and set to 0 otherwise. The union set operation can be calculated using an Allreduce using the bitwise OR operation. Why this works is explained in Section \ref{sec:Allreduce}. One can see that the sets representation use $|\tilde{S}|$ bits of memory and therefore this is also the input size for the Allreduce. \\
+The second variant we propose here does not depend on the size of $\tilde{S}$.  The subsets $S_r$ are now represented as a list of integers. For this the label $e$ is simply put into this list, if element $e$ is in $S_r$. The union set can be calculated by concatenation of all these list that are distributed over all ranks. An Allgather solves exactly this problem and is therefore used for it. \\
+The big difference between these variants is that the size of one representation depends on the size of $\tilde{S}$ and the other on the amount of elements each $S_r$ holds. As Allreduce and Allgather generally perform faster for smaller inputs this can be exploited. One can expect that variant 2 is faster, if the sets $S_r$ are nearly empty and variant 1 is faster, if $S_r$ are densely packed. Moreover it is apparent and will be presented in later sections that the communication schemes of Allgather and Allreduce can be quite similar. A goal is therefore to find a dynamic algorithm that uses both representations and can therefore possibly solve the distributed union set problem as fast as (up to an constant) the faster choice between an Allreduce or an Allgather. \\
+The motivation to calculate the union set as fast as possible stems originally from performing a \gls{bfs} where this problem arises naturally. The background for this application is given in the next section. In the sections there is more information given that is generally useful in understanding notation and ideas of this thesis. Especially the background on Allreduce and Allgather implementation is crucial for the later developed algorithms.
 
+\section{Breadth First Search (BFS)}
+Breath First Search is a well-known algorithm that explores a graph from a starting node (called root node) by iteratively finding the neighborhood of the current explored region  \cite{standardBFS, introToAlgos}. For this we firstly give some details on graphs. After that we present a sequential implementation of BFS and then some versions that solve this problem concurrently.
 
+\subsection{Introduction to graphs}
+A graph typically is a representation of some network. Formally a graph $G$ is defined as the tuple 
+$(V, E)$ where $V$ is the set of vertices and $E$ is the set of edges. There are also \textit{weighted graphs} that additionally contain a map $w$ that typically maps each edge $e\in E$ to some a real number. We only focus here on non-weighted graphs that only consists out of vertices and edges. \\
+Each edge $e\in E$ connects two vertices $v_i, v_j \in V$. One can therefore write each edge $e$ as a tuple $e=(v_i, v_j)$. A graph is called \emph{undirected}, if $(v_i, v_j)\in E$ implies that not only vertex $v_i$ is connected to $v_j$ but there is also an connection in the other direction. For an undirected graph an edge $(v_i, v_j)$ is the same edge as $(v_j, v_i)$. For a  \emph{directed} graph this is not the case and each connection needs to be explicitly stated \cite{standardBFS, introToAlgos}.\\
+We give here some common terminology that is useful when talking about graphs. A \textit{path} of \textit{length} $k$ is a sequence of vertices $v_0, v_1, \dots, v_k$ with the property that each tuple $(v_{i-1}, v_i)$ (with $1\leq i\leq k$) is indeed a edge $e\in E$ \cite{introToAlgos}. In an undirected graph a path is a \textit{simple cycle}, if its length is greater than 0, $v_0=v_k$, all vertices $v_i$ are distinct and all edges on the path are distinct. A graph with no cycles is called \textit{acyclic} \cite{introToAlgos}. A graph is called \textit{connected}, if there exists a path from each vertex to all other vertices. Otherwise we call his graph \textit{disconnected}\cite{introToAlgos}. We define the \textit{distance} between two vertices of an undirected graph as the length of the shortest path between them. If there is no path the distance is set to infinity. This leads to \textit{diameter} of a undirected graph. The diameter is the longest distance that can be measured in a graph.\\
+Another important concept for a BFS is the neighborhood of a vertex $v\in V$. For a undirected graph we define the \textit{neighborhood} as $N(v)=\{u\in V: (v,u)\in E \lor (u,v)\in E\}$. So $N(v)$ is the set of all vertices that are connected to $v$. For a directed graph we make the distinction between the \textit{outgoing neighborhood} $N^+(v) = \{u\in V: (v,u)\in E\}$ an the ingoing neighborhood as  $N^-(v) = \{u\in V: (u,v)\in E\}$. Note that here in the definitions the order of $u$ and $v$ is swapped in the edge tuple \cite{Ligra}.
 
-%Variant 1 is to represent each subset as a bitmap. We need $|\tilde{S}|$ amount of bits and set bit $e$ to 1, if element $e$ is in $S_r$ or to 0 otherwise. The union set operation can be calculated using an \emph{Allreduce} using the bitwise OR operation. Why this works is explained in Section \ref{sec:Allreduce}. We see here that the sets representation use $|\tilde{S}|$ bits of memory and therefore this is also the input size for the Allreduce. \\
-%The second variant we want to propose here does not depend on the size of $\tilde{S}$. Here we want to represent the elements $e$ of a subset as an list of integers. We simply put the label $e$ into this list, if element $e$ is in $S_r$. The union set can be calculated by concatenation of all these list. This is done by a procedure we call \emph{Allgather} (explained in Section \ref{sec:Allgather_v}). \\
-%The big difference between these variants is that the size of one representation depends on the size of $\tilde{S}$ and the other on the amount of elements each $S_r$ holds. As Allreduce and Allgather generally perform faster for smaller inputs this can be exploited. We can expect that variant 2 is faster if the sets $S_r$ are nearly empty and variant 1 is faster if $S_r$ are densely packed. Moreover we going to see that communication schemes of Allgather and Allreduce can be quite similar. So we want to find a dynamic solution that uses both representations and can therefore possibly solve the union set problem optimally. \\
-%The motivation to calculate the union set as fast as possible stems originally from calculating a \gls{bfs} where this problem arises naturally. The background for this application is given in the next section. In the later sections there is more information given that is generally useful in understanding notation and ideas of this thesis. Especially the background on Allreduce and Allgather implementation is crucial for the later developed algorithms.
+There are different ways to represent and therefore store a graph. Firstly we assume the vertices are labeled by integers from $0$ up to $|V|-1$. We refer to these vertices just by their labels. This labeling can always be done. The first way to represent a graph is by a list of edges. This representation can be stored as an array of integer tuples. In this format the graph has a memory footprint that is proportional to $|E|$.\\
+The other idea to represent the graph is by an \textit{adjacency matrix}. This is a matrix $A$ of size $|V|\times|V|$ with the property $a_{ij}=1$, if vertex $v_i$ is connected to vertex $v_j$, and 0 otherwise. When considering an undirected graph one needs to keep in mind that an edge $(v_i, v_j)$ sets not only element $a_{ij}=1$ but also the element $a_{ji}$. So an undirected graph leads to matrix that is equal to its own transpose. It is expected that most entries are set to 0 so the matrix can be saved in a sparse format \cite{introToAlgos}. A possible format is the \textit{compressed row storage} (CRS) format \cite{csr}. Here the non zero entries of $A$ are put into an array 'val'. The order of the entries is here as they occur when the matrix $A$ is traversed in a row major fashion (scan a row from left to right and then go to the next row). Then there is a index array 'ind' which is of same size as 'val' and holds the column index of the corresponding values. Lastly there is a pointer array 'row' needed which stores for each row of $A$ the entry in 'int' that marks the start of a row. The value array 'val' can be omitted as $A$ has only 1s as non zero entries an explicit storage of an array consisting out of 1s is not necessary. This kind of storage is also extremely useful to find a neighborhood of a vertex $v$. Considering an undirected graph then the neighborhood $N(v)$ correspond to the column indices of all entries of row $v$ that hold a 1. These column indices can be found in array 'ind'. To be precise the indices that only correspond to row $v$ can be found at 'ind[row[$v$], $\dots$, row[$v+1$]]'. So the neighborhood of a vertex $v$ is saved contiguously in memory and is found in constant time. \\
+This is also true for the outgoing neighborhood $N^+$ when a directed graph is used. When the ingoing neighborhoods $N^-$ of vertices is of interest a \textit{compressed column storage} (CCS) format makes sense. It is basically the same idea as CRS but the values are organized in a column major ordering (traverse a column from top to bottom and then go to the next column). The array 'ind' then obviously refers to the row indices and the 'row' array is replaced by an 'column' array.
 
-\section{BFS on distributed memory machines}
-Breath First Search is a well-known algorithm \cite{standardBFS} that explores a graph from a starting node (root node) by iteratively finding the neighborhood of the current explored region.
-Let $G(V, E)$ be a graph. $V$ is a set of vertices and $E$ a set of edges. Each edge $e\in E$ connects two vertices $v_i, v_j \in V$. We can therefor write each edge $e$ as a tuple $e=(v_i, v_j)$. The graph is called \emph{undirected}, if an edge $(v_i, v_j)$ also implies that $v_j$ is also connected to $v_i$, and \emph{directed}, if this is not the case.\\
-A straight forward sequential implementation of \gls{bfs} is presented in Procedure \ref{algo:BFSsequential}. Non-trivial syntax elements are described in section \ref{pseudocode}. In this implementation we see that array \textbf{pred[]} represents the predecessor of each vertex of the calculated \gls{bfs} tree. It is initialized to $-1$ at every entry. This is done to mark vertices that are not in the tree yet. This is done for two reasons. Firstly it is important for the procedure of the algorithm itself. In each iteration we want to add new unexplored vertices. So a simple check, if \textbf{pred[]} at the position of this vertex is set to $-1$, can assure that only new vertices are added. Secondly when the algorithm finishes not all vertices need to be part of the \gls{bfs} tree and have therefore no predecessor. This happens for disjoint graphs. Disjoint meaning here that there is at least one pair of vertices for which there is no path connecting these two vertices. 
-The roles of \textbf{frontier\_old} and \textbf{frontier\_new} are straight forward. The first one contains the vertices that are added in the last iteration and the later one is getting filled in the current iteration with the newly explored vertices. After each iteration the old frontier is then updated to the currently new frontier.
+Also important for a BFS are \textit{trees}. A tree $T =(V,E)$ is a connected, acyclic and undirected graph. A \textit{rooted tree} is a tree where additionally a vertex is distinguishable from all the other ones. This vertex is called the \textit{root} $r^*$ \cite{introToAlgos}. As a tree is always a connected and acyclic graph there exist an unique path from $r^*$ to every vertex $x\in V/{r^*}$. Considering the last edge $(y,x)$ of such a path the \textit{parent} of vertex $x$ is vertex. The only vertex without a parent is the root $y$\cite{introToAlgos}.\\
+A rooted tree can be described uniquely by knowing the parent of each vertex $v$ of the tree. This is, because the parent relation describes an unique edge of the tree and a tree has exactly one edge less than it has edges ($|E| = |V|-1$). These statements are quite easy to show inductively, but are not proven here. The benefit is that a rooted tree can be stored as an array of size $|V|$ where each entry $v$ the parent of vertex $v$ is stored. For the entry of the root vertex either a placeholder symbol can be used or it holds its own label.
+
+\subsection{A sequential BFS}
+A Breadth-First-Search is a procedure that is executed on a graph $G=(V,E)$ where one vertex $v\in V$ is selected to be the \textit{root of the BFS}. The graph is then explored iteratively starting at the root node. Metaphorically this exploration is done like a wave propagates through the graph and in each iteration there is a frontier that connects to the frontier of the iteration before. We can define a frontier $F\subset V$ as a subset of vertices. We then define the neighborhood of such a frontier as $N(F)=\{v\in V: (f, v), f\in F\}$ which is the set of all vertices that are connected to some vertex of the frontier. For directed graphs there must explicitly be an edge pointing from a vertex of $F$ to all vertices in $N$. For undirected graphs we define that the notation $(v,f)$ as an edge also includes the connection $(f,v)$ implicitly. In the BFS the frontier is updated in each iteration such that it becomes the neighborhood of itself with out the already explored vertices $E$. The set of explored vertices $E$ holds vertices that were already part of the frontier in some iteration before. As the exploration should start at the root node the frontier is firstly initialized such that it only holds the root vertex. The output of BFS will be here considered only a BFS-tree. This tree spans all vertices of $G$ that are reachable from the root. In each iteration there are for all vertices $f\in F$ of the current frontier an edge is selected that points to a vertex of the frontier of the iteration before. Such an edge obviously always exists as $f$ must have a neighbor in the old frontier or it would not be selected in the new frontier. These edges are saved and they build indeed graph that is a tree. This is as there can not be any loops introduced as in each iteration are only edges added that point to an vertex that was not part of the tree before. That the resulting graph is also connected is also obviously true. \\
+A straight forward sequential implementation of a BFS is presented in Procedure \ref{algo:BFSsequential}. Non-trivial syntax elements are described in Section \ref{pseudocode}. In this implementation we see that array 'pred' represents the predecessor of each vertex of the calculated \gls{bfs} tree. It is initialized to $-1$ at every entry. This is done to mark vertices that are not in the tree yet. This is done for two reasons. Firstly it is important for the procedure of the algorithm itself. In each iteration only unexplored vertices need to be added. So a simple check, if 'pred' at the position of this vertex is set to $-1$, can assure that only new vertices are added. Secondly when the algorithm finishes not all vertices need to be part of the \gls{bfs} tree and have therefore no predecessor. This happens for disconnected graphs. The roles of 'frontier\_old' and 'frontier\_new' are as their name suggests. The first one contains the vertices that are added in the last iteration and the later one is getting filled in the current iteration with the newly explored vertices. After each iteration the old frontier is then updated to the currently new frontier.
 \begin{algorithm}
 	\caption{Sequential implementation of BFS\\
 	$n$: number of vertices\\
-	$E$: set of edges\\
+	$G$: graph representation\\
 	$r$: root node}
 	\label{algo:BFSsequential}
 	\begin{algorithmic}[1]
-		\Procedure{sequentialBFS}{$n, E, r$}
+		\Procedure{sequentialBFS}{$n, G, r$}
 		\State pred[$n$] $\gets [-1, \dots, -1]$ \Comment{initialize pred array with $-1$ everywhere}
 		\State frontier\_old $\gets$ \{$r$\}
 		\While{frontier\_old $\not = \emptyset$}
 			\State frontier\_new $\gets \emptyset$
 			\ForAll{v $\in$ frontier\_old}
-				\ForAll{neigh $\in$ \Call{getNeighbors}{$E$, $v$}}
+				\ForAll{neigh $\in$ \Call{getNeighbors}{$G$, $v$}}
 				\If{pred[neigh] $\not=-1$}
 					\State pred[neigh] $\gets$ v
 					\State \Call{addVert}{frontier\_new, neigh}
@@ -66,106 +84,149 @@ The roles of \textbf{frontier\_old} and \textbf{frontier\_new} are straight forw
 		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
+The function $\Call{getNeighbors}{G, v}$ returns all vertices that are a neighbor of vertex $v$ in graph $G$. If the graph is directed the resulting set needs to be the outgoing neighborhood $N^+(v)$. 
+For an undirected graph this function calculates simply $N(v)$. Here it comes handy to use the CRS format (mentioned in the sub-section before) as graph representation as this neighborhood can be calculate very fast.\\
+The resulting BFS-tree is saved by putting for each vertex $v$ the parent (also called predecessor) at entry $v$ in 'pred'. It is important to mention that generally such a BFS-tree is not unique. One just need to keep in mind that in each iteration each vertex $f$ of the new frontier gets a vertex  from the old frontier as predecessor assigned. It could be that in the neighborhood  $f$ there are multiple vertices in the old frontier so there is a choice to be made every time this situation occurs. In the presented algorithm it depends on the order which the elements of the old frontier are processed. The first vertex that can mark an other vertex as its predecessor will succeed and this assignment will not change anymore. 
 
-We also have to give a little description of $\Call{getNeighbors}{E, v}$. It's job is obviously to return the set of neighbors of the vertex $v$ with respect to the set of edges $E$. But this can differ, on what $G$ represent. If we have a directed graph $G$ and a list of edges $E$, where each edge $e$ is described as tuple $(v_i, v_j)$ where $v_i$ is the origin vertex and $v_j$ is the vertex the edge points to, it is easy to find neighbors of this vertex $v$. We simply check for all edges.
-If the first element of the tuple is the vertex of interest $v$, we add the second entry of this tuple to the output list. As this done lots of time, we can improve this sub-procedure by sorting the edgelist by its first entry in advance and keep track, which indices of this sorted list correspond to which vertices.
-There also have to be some preparations done, if we want to represent an undirected graph. An easy and fast approach is to add the inverted edges (i.e. ,if $e=(v_i, v_j)\in E$ , then also add $\hat{e}=(v_j, v_i)$) to the edgelist.
-To maximize efficiency later in the \gls{bfs} execution one needs to be careful to avoid adding duplicates.\\
-We only look here at the base version of \gls{bfs} and therefore the returned value of this algorithm is only the array \textbf{preds[]}. It contains the predecessor (or also called parent) of each vertex in \gls{bfs} tree. Here it is also important to mention that such an \gls{bfs} tree is in general not unique. In each iteration there are usually at least two vertices in the old frontier that have the same vertex as neighbor. So which ever of these two vertices gets processed first is chosen as the predecessor of the new vertex. Of corse when using identical data structures filled in the same fashion the sequential procedure still brings consistent results as the same vertices always get chosen first, but this does not have to be the case.\\
-This basic variant of \gls{bfs} is chosen as a challenge in one of the biggest data intensive benchmarks \cite{graph500}. One still have to keep in mind that in real world applications there can be also some computations done after each exploration iteration. 
+\subsection{Parallel implementations of BFS}
+To process huge graphs it is obvious that the idea to parallelize the task of a BFS arises. This of corse can have real world application but it is also used as a challenge in one of the biggest data intensive benchmarks \cite{graph500}. \\
+We mostly focus here on parallel implementations that are build for distributed memory machines. But later we also give a short overview of a framework that is used to calculate set operations for shared memory algorithms as it is uses a key idea that is relevant for the basis of this thesis.
 
-When adapting this sequential implementation to be parallelized on a distributed memory machine, there are many different approaches. One strategy is called (1D/2D) graph partitioning \cite{graphPartitioning}. For this is firstly the representation of graphs as adjacency matrices important. An adjacency matrix $A$ is a square matrix of dimension $(n\times n)$, where $n$ is the number of vertices of the graph it is representing. The rule to set the entries is rather simple. Entry $a_{ij}$ of $A$ is set to $1$, if vertex $v_i$ is connected to $v_j$ and set to $0$ otherwise. A trivial, but interesting side note is that undirected graphs produce a symmetric adjacency matrix. An example is given in Figure \ref{fig:adjacencyExample}.\\
+\subsubsection{A parallel BFS}
+The idea how to distribute the compute load of the algorithm is to partition the graph and distribute it over the processes to reduce the work each individual process has to do. For this the edges of the graph are distributed randomly such that each process handles approximately the same amount of edges. A good argument for this partitioning is that because of the random distribution of the edges the neighborhood of a vertex $v$ is expected to be calculated by a lot of different processes. So we expect a good load balancing over all ranks. We call this strategy \textit{edge-centric partitioning}.\\
+The parallel algorithm does not differ much from the sequential one and is described in Procedure \ref{algo:BFSparallel}.
+\begin{algorithm} [h]
+	\caption{Our parallel implementation of BFS\\
+		$n$: number of vertices\\
+		$G$: representation of a graph\\
+		$r$: root node}	
+	\label{algo:BFSparallel}
+	\begin{algorithmic}[1]
+		\Procedure{parallelBFS}{$n, G, r$}
+		\State pred[$n$] $\gets [-1, \dots, -1]$
+		\State G\_local $\gets$ \Call{divideEdges}{$G$} 
+		\Comment{Each process gets an subset of the edges}
+		\State visited $\gets \emptyset$ 
+		\Comment{Added to keep track of already visited vertices}
+		\State frontier\_old $\gets$ \{$r$\}
+		\While{frontier\_old $\not = \emptyset$}
+		\State frontier\_new $\gets \emptyset$
+		\State visited $\gets$ visited $\cup$ frontier\_old
+		\Comment{update \texttt{visited} set with new values}
+		\ForAll{v $\in$ frontier\_old}
+		\ForAll{neigh $\in$ \Call{getNeighbours}{G\_local, $v$}}
+		\If{neigh $\not \in$ visited}
+		\Comment{Check is now done using \texttt{visited} set}
+		\State pred[neigh] $\gets$ v
+		\State \Call{addVert}{frontier\_new, neigh}
+		\EndIf
+		\EndFor
+		\EndFor
+		\State frontier\_old $\gets$ \Call{unionAll}{frontier\_new}
+		\Comment{Here the union of all subsets is calculated.}
+		\EndWhile
+		\State pred $\gets$ \Call{allReduce}{pred, MAX}
+		\Comment{Choose a predecessor, if there is at least one proposed.}
+		\State \Return pred
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+One of the main changes is obviously that now the edges needs to be distributed over all processes. Another difference is that there is now an extra set 'visited'. As the name suggest it keeps track ov all vertices that were already visited (i.e. that were already in a frontier in some iteration). In the sequential implementation this task was handled by the predecessor array. This change is done because during the execution of the algorithm it is only of interest which vertices are already visited. It is not of interest which predecessors are explicitly chosen by the other ranks and communicating this information would cost extra time. So during the \textbf{while} loop 'pred' will just hold the predecessors that are found by the own process and the information in visited vertices is handled by 'visited'. The last crucial difference is execution of $\Call{unionAll}{~}$ on the array 'frontier\_new'. As each rank only calculated a subset of the next frontier one needs to find the total frontier to execute the next iteration correctly.  This is done by $\Call{unionAll}{~}$ which is the mayor concern of this thesis. \\
+After the \textbf{while} loop is done each rank only holds a predecessor proposal for some of the vertices. So for each vertex a predecessor needs to be chosen, if it has one. This is done by a call of \Call{allReduce}{pred, MAX} which returns the maximum value for each entry of 'pred'. This guarantees that the same predecessor for each entry is chosen over all processes and the entry is left at $-1$, if no process has found a predecessor.\\
+This implementation is used later to evaluate the performance of our newly proposed algorithms that implement $\Call{unionAll}{~}$. A already good approach to calculate such an union operation is by representing the sets as bitmaps and then using an Allreduce with a bitwise OR as operator.
+
+\subsubsection{Further strategies for a parallel BFS}
+The mentioned algorithm of the paragraph before is quite a naive approach. So we also present some other ideas how a parallel BFS for a distributed memory machine could look like. One strategy regards the distribution of the graph and is called \textit{1D graph partitioning} \cite{graphPartitioning, hybridBFS}. The partitioning refers to the splitting of the adjacency matrix into blocks which are then assigned to the different process. So each process will handle some rows of the adjacency matrix. As each row hold all the outgoing edges of a specific vertex this is also called \textit{vertex-centric} distribution of the graph.\\
+The procedure for the BFS is quite similar to the earlier presented parallel variant shown in Algoithm \ref{algo:BFSparallel}. One major difference is of course that the distribution of the graph is not done edge-centric but vertex-centric. Also the The benefit is here that of the total calculated frontier each process then only needs a (obviously other) subset. As a process only handles the finding of neighbors of some vertices (i.e. the vertices that correspond to the rows of the adjacency a processor holds) it only needs information which of these vertices are in the current frontier. As we mentioned before that for sets that are represented as bitmaps a Allreduce can calculate the union over all ranks. From the resulting array each rank only needs a block of the resulting bitmap array. This can actually be done by a Reducescatter which is expected to be faster than an Allreduce \cite{graphPartitioning}. This BFS implementation also needs the same local handling of a predecessor array and a extra set to keep book of the visited vertices.\\
+
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.4\textwidth}
-	\centering
-	\tikzset{roundnode/.style={circle,draw=black!, thick, minimum size=7mm}}
-	\begin{tikzpicture}[ minimum size=5mm,
-		node distance=1cm and 1cm,
-		bend angle=45,
-		auto]
-		\node[roundnode]  (1) {1};
-		\node[roundnode]  (2) [right=of 1] {2};
-		\node[roundnode]  (3) [below=of 1] {3};
-		\node[roundnode]  (4) [right=of 3] {4};
-		\node[roundnode]  (5) at (3 , -0.75) {5};
-		
-		\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (1)--(2);		\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (2)--(3);		\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (2)--(4);		\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (3)--(4);		\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (5)--(4);
-	\end{tikzpicture}
-	\caption{Example graph.}
+		\centering
+		\tikzset{roundnode/.style={circle,draw=black!, thick, minimum size=7mm}}
+		\begin{tikzpicture}[ minimum size=5mm,
+			node distance=1cm and 1cm,
+			bend angle=45,
+			auto]
+			\node[roundnode]  (1) {1};
+			\node[roundnode]  (2) [right=of 1] {2};
+			\node[roundnode]  (3) [below=of 1] {3};
+			\node[roundnode]  (4) [right=of 3] {4};
+			\node[roundnode]  (5) at (3 , -0.75) {5};
+			
+			\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (1)--(2);		\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (2)--(3);		\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (2)--(4);		\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (3)--(4);		\draw[{Stealth[scale=1.5]}-{Stealth[scale=1.5]}] (5)--(4);
+		\end{tikzpicture}
+		\caption{Example graph.}
 	\end{subfigure}
 	\begin{subfigure}{0.4\textwidth}
-	\begin{align*}
-	A=
-	\begin{bNiceMatrix}[r, margin=3mm]
-		\Block[draw]{3-3}{}
-		0 & 1 & 0 &
-		\Block[draw]{3-2}{}
-		0 & 0 \\
-		1 & 0 & 1 & 1 & 0 \\
-		0 & 1 & 0 & 1 & 0 \\
-		\Block[draw]{2-3}{}
-		0 & 1 & 1 &
-		\Block[draw]{2-2}{}
-		0 & 1 \\
-		0 & 0 & 0 & 1 & 0 
-	\end{bNiceMatrix}
-	\end{align*}
-	\caption{Example adjacency matrix.}
-	\label{adjacencyMatrix}
+		\begin{align*}
+			A=
+			\begin{bNiceMatrix}[r, margin=3mm]
+				\Block[draw]{3-3}{}
+				0 & 1 & 0 &
+				\Block[draw]{3-2}{}
+				0 & 0 \\
+				1 & 0 & 1 & 1 & 0 \\
+				0 & 1 & 0 & 1 & 0 \\
+				\Block[draw]{2-3}{}
+				0 & 1 & 1 &
+				\Block[draw]{2-2}{}
+				0 & 1 \\
+				0 & 0 & 0 & 1 & 0 
+			\end{bNiceMatrix}
+		\end{align*}
+		\caption{Example adjacency matrix.}
+		\label{adjacencyMatrix}
 	\end{subfigure}
 	
 	\caption{Example of undirected graph and its corresponding adjacency matrix $A$. For the adjacency matrix is a possible 2D-partitioning for $p=4$ processes drawn in.}
 	\label{fig:adjacencyExample}
 \end{figure}
-For a 1D partitioning the rows of such a adjacency matrix $A$ are distributed to the processors. This means that each process only holds a few rows of $A$ and has during the \gls{bfs} only the responsibility to find neighbors of vertices that correspond to the columns it holds. This submatrix is usually saved in a sparse format, which is equivalent to the setup of an edgelist which is sorted by its first entries. The procedure for the \gls{bfs} is done again iteratively. The challenge is here that the processes have to communicate the newly added vertices i.e. its subset of the new frontier. When the frontier is represented as a bitmap this can be done by an \emph{Reduce\_Scatter} (nomenclature according to MPI\cite{mpi}) using a bitwise OR. This procedure guarantees a union set operation over all frontier subsets from the different processes and distributes this set again back to the processes. The distribution is done in a way such that the total frontier is split up to the processes that actually handle the corresponding vertices. An explanation how such a Reduce\_Scatter works is given in Section \ref{sec:DisseminationAlgo}. We see that here the the message size of the Reduce\_Scatter is the number of vertices $m$.\\
-Another major difference is the handling of \textbf{preds[]}. During the actual calculation of the \gls{bfs} tree the predecessors are saved locally. Actually each process holds only an array of \emph{potential} predecessors. This is, because two processes can find for the same vertex in the same iteration different predecessors. As mentioned before a \gls{bfs} tree is not unique and this is a direct consequence of it. So after the whole graph is explored and each reachable vertex has at least one predecessor, one needs to decide for each vertex which predecessor is chosen. This can be done at random or simply by choosing the maximum value. Taking the maximum value introduces obviously a heavy bias to having high (in the sense of vertex labeling) predecessors, but this is not a problem, if the goal is just a correct \gls{bfs} tree. As an important side note we want to mention here that taking the minimum for each vertex as the chosen predecessor is not possible. We marked unconnected/unexplored vertices with $-1$ in the predecessor which results in errors for all vertices that are not explored by all processes at the same time.\\
-The local handling of \textbf{pred[]} brings another challenge. One can not use it anymore to check, if  a vertex  was already explored in a previous iteration. Either another helping set is introduced or visited vertices are set to $-2$. In both ways there must be an update performed using the total frontier of the last iteration to keep track of the already visited vertices. The rest of the algorithm structure is the same as in the sequential version.\\ 
 In the 2D partition a little bit more complexity is introduced. Here the adjacency matrix is not only divided into sets of rows, but also in the vertical direction. This results in each process takes hold of a block of the adjacency matrix similar to the example shown in Figure \ref{adjacencyMatrix}. Again this means each process maintains only a subset $\tilde{V}\subset V$ of vertices. But now each process has also only access to subsets of neighbors of $\hat{V}$. So in each iteration each process finds neighbors of vertices it has access to. The complexity lies now in the distribution of the new frontier to the correct processors for the next iteration. Lets just consider the first row of blocks of the adjacency matrix. This row needs the outputs of blocks of the first column of the adjacency matrix. This can be done by performing a Reduction of the first column to the first block. After that the result is broadcasted from this first block to all processes of the first row. A benefit is here that in the reduction as well as in the broadcast the message size is only expected to around $m/p$ when considering a regular division of the adjacency matrix. There are also hybrid adaptations of both the 1D- and 2D-partitioning strategies, see \cite{graphPartitioning}.\\
 There are also ideas in adapting the iteration step itself.
 One attempt is instead of finding the neighbors of the current frontier elements, one can also iterate over the vertices that are not already explored yet and look, if they have a neighbor in the frontier. If they have a neighbor in the frontier we simply set this neighbor as a predecessor of this vertex.
 This can be advantageous, if the frontier is quite big and the set of left over vertices relatively small \cite{bottomUp}. \\
-We on the other hand want to focus here only on one (relatively simple) setting. We partition the graph by dividing the edgelist in equally sized chunks and distribute them on the different processes. A good argument for this partitioning compared to the before mentioned 1D- or 2D-partitioning is that we want to avoid iterations where some processes do not have any (or way less) work to do.
-In our edge-centric partitioning we have in and outgoing edges for every vertex and can therefore expect a better load balance in each iteration. The given algorithm does not change much and is described in Procedure \ref{algo:BFSparallel}.
-\begin{algorithm} [h]
-	\caption{Our parallel implementation of BFS\\
-	$n$: number of vertices\\
-	$E$: set of edges\\
-	$r$: root node}	
-	\label{algo:BFSparallel}
-	\begin{algorithmic}[1]
-		\Procedure{parallelBFS}{$n, E, r$}
-		\State pred[$n$] $\gets [-1, \dots, -1]$
-		\State E\_local $\gets$ \Call{divideEdges}{$E$} 
-			\Comment{Each process gets an subset of the edges}
-		\State visited $\gets \emptyset$ 
-			\Comment{Added to keep track of already visited vertices}
-		\State frontier\_old $\gets$ \{$r$\}
-		\While{frontier\_old $\not = \emptyset$}
-			\State frontier\_new $\gets \emptyset$
-			\State visited $\gets$ visited $\cup$ frontier\_old
-			\Comment{update \texttt{visited} set with new values}
-			\ForAll{v $\in$ frontier\_old}
-				\ForAll{neigh $\in$ \Call{getNeighbours}{E\_local, $v$}}
-					\If{neigh $\not \in$ visited}
-						\Comment{Check is now done using \texttt{visited} set}
-						\State pred[neigh] $\gets$ v
-						\State \Call{addVert}{frontier\_new, neigh}
-					\EndIf
-				\EndFor
-			\EndFor
-			\State frontier\_old $\gets$ \Call{unionAll}{frontier\_new}
-				\Comment{Here the union of all subsets is calculated.}
-		\EndWhile
-		\State pred $\gets$ \Call{allReduce}{pred, MAX}
-			\Comment{Choose a predecessor, if there is at least one proposed.}
-		\State \Return pred
-		\EndProcedure
-	\end{algorithmic}
-\end{algorithm}
-The main changes here are that we now divide the edges to the different processes, switch to another set structure \textbf{visited} and use the function \Call{unionAll}{ } to get a set union over all distributed subsets lying on the different processes. There is also another communication round added at the end of the procedure to unify the \textbf{pred} array.
-Before this each process calculated a predecessor for each vertex of the graph (or left the corresponding entry set to $-1$). The call of \Call{allReduce}{pred, MAX} returns the maximum value for each entry of \textbf{pred}. This guarantees that the same predecessor for each entry is chosen in each process and the entry is left at $-1$, if no process has found a predecessor. \\
-The switch to using an extra set \textbf{visited} is done to save the total amount of communication. We need some way to tell the other processes, which vertices are already visited, but the information, which the explicit predecessor for each vertex is chosen is obsolete in the \textbf{while}-loop.
+%We on the other hand want to focus here only on one (relatively simple) setting. We partition the graph by dividing the edgelist in equally sized chunks and distribute them on the different processes. A good argument for this partitioning compared to the before mentioned 1D- or 2D-partitioning is that we want to avoid iterations where some processes do not have any (or way less) work to do.
+%In our edge-centric partitioning we have in and outgoing edges for every vertex and can therefore expect a better load balance in each iteration. The given algorithm does not change much and is described in Procedure \ref{algo:BFSparallel}.
+%\begin{algorithm} [h]
+%	\caption{Our parallel implementation of BFS\\
+%	$n$: number of vertices\\
+%	$E$: set of edges\\
+%	$r$: root node}	
+%	\label{algo:BFSparallel}
+%	\begin{algorithmic}[1]
+%		\Procedure{parallelBFS}{$n, E, r$}
+%		\State pred[$n$] $\gets [-1, \dots, -1]$
+%		\State E\_local $\gets$ \Call{divideEdges}{$E$} 
+%			\Comment{Each process gets an subset of the edges}
+%		\State visited $\gets \emptyset$ 
+%			\Comment{Added to keep track of already visited vertices}
+%		\State frontier\_old $\gets$ \{$r$\}
+%		\While{frontier\_old $\not = \emptyset$}
+%			\State frontier\_new $\gets \emptyset$
+%			\State visited $\gets$ visited $\cup$ frontier\_old
+%			\Comment{update \texttt{visited} set with new values}
+%			\ForAll{v $\in$ frontier\_old}
+%				\ForAll{neigh $\in$ \Call{getNeighbours}{E\_local, $v$}}
+%					\If{neigh $\not \in$ visited}
+%						\Comment{Check is now done using \texttt{visited} set}
+%						\State pred[neigh] $\gets$ v
+%						\State \Call{addVert}{frontier\_new, neigh}
+%					\EndIf
+%				\EndFor
+%			\EndFor
+%			\State frontier\_old $\gets$ \Call{unionAll}{frontier\_new}
+%				\Comment{Here the union of all subsets is calculated.}
+%		\EndWhile
+%		\State pred $\gets$ \Call{allReduce}{pred, MAX}
+%			\Comment{Choose a predecessor, if there is at least one proposed.}
+%		\State \Return pred
+%		\EndProcedure
+%	\end{algorithmic}
+%\end{algorithm}
+%The main changes here are that we now divide the edges to the different processes, switch to another set structure \textbf{visited} and use the function \Call{unionAll}{ } to get a set union over all distributed subsets lying on the different processes. There is also another communication round added at the end of the procedure to unify the \textbf{pred} array.
+%Before this each process calculated a predecessor for each vertex of the graph (or left the corresponding entry set to $-1$). The call of \Call{allReduce}{pred, MAX} returns the maximum value for each entry of \textbf{pred}. This guarantees that the same predecessor for each entry is chosen in each process and the entry is left at $-1$, if no process has found a predecessor. \\
+%The switch to using an extra set \textbf{visited} is done to save the total amount of communication. We need some way to tell the other processes, which vertices are already visited, but the information, which the explicit predecessor for each vertex is chosen is obsolete in the \textbf{while}-loop.
 A general idea here is to represent the frontier sets as bitmaps where each entry is either set to 1, if a vertex is selected to be in the set, or set to 0 otherwise.
 This safes a lot of space when comparing it to an integer representation where every positive number represents a selected vertex and a $-1$ stands for a non-selected one.
 One needs to keep in mind that for a bitmap we need only one bit of memory for each vertex and an (large scale usable) integer would need 32 bits.
