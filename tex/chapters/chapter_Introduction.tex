@@ -25,6 +25,7 @@ Another important function that will be used in this thesis is \texttt{MPI\_Send
 There are also a lot of different collective communication schemes defined in MPI. In a collective function call all processes of a communicator take part. These functions define procedures that are expected to be useful in different applications. We only present here a few that are most relevant for this thesis. A \textit{Broadcast} (\texttt{MPI\_Bcast()}) defines a procedure where one specific process (called root) shares a buffer with all other processes. In a \textit{Gather} (\texttt{MPI\_Gather()}) all ranks propose a buffer of same size and these buffers are all collected and made available for one specific process (root process).  After the execution of the \texttt{Gather} the collected data at the root process needs to be ordered by the rank IDs of the corresponding processes in ascending order. The resulting buffer is contiguous. There is also a variant (\texttt{MPI\_Gatherv}) that allows for different sizes of the proposed arrays. In both cases the size(s) need to be known for each process. The notation by appending a \texttt{v} to the function name to allow for individual array sizes is also done for other collective operations.\\
 There is also an function that solves an inverted problem. In a \textit{Scatter} one rank holds an array which is then split over all participating processes. In MPI this defined by the functions \texttt{MPI\_Scatter} (each process gets a chunk of equal size) and \texttt{MPI\_Scatterv} (for individual block sizes).\\
 The next function we propose here is an \textit{Allgather} (by \texttt{MPI\_Allgather}/\texttt{MPI\_All\-gatherv}). It is similar to a Gather but the resulting array containing all proposed arrays is not only accessible for a selected root processes but for all ranks. \\
+Also very important is the collective operation \textit{All-To-All}. In MPI this is defined by \texttt{MPI\_Alltoall()} and \texttt{MPI\_Alltoallv()}. Here has every rank a vector of data which is logically divided into $p$ blocks. After an All-To-All operation  each rank $r$ gathered all $r$-th blocks over all processors. Lets label the $i$-th block rank $r$ holds before the operation as $b_{ir}$. After the All-To-All rank $r$ will hold blocks $b_{ri}$ with $0\leq i<p$. Again the appended \texttt{v} in the function name indicates that the blocks does not have to be of same size.\\
 The next relevant operation is \textit{Reduce} (\texttt{MPI\_Reduce}). Here all ranks propose an array of same size on which there is a (commonly a commutative) operator applied. The result of this operation  is then available to a selected root process. The operator can be for example the maximum/minimum value (\texttt{MPI\_MAX}/\texttt{MPI\_MIN}), some bit operation (\texttt{MPI\_BOR}, \texttt{MPI\_BAND}), a sum/product (\texttt{MPI\_SUM}/\texttt{MPI\_PROD}) or a user defined operation. The operation is performed for each element over all participating ranks. \\
 A \textit{Allreduce} (\texttt{MPI\_Allreduce}) the extension of a Reduce. Here the result needs not only be available to one specific root process but to all participating ranks.\\
 Then there is \textit{Reducescatter}. In MPI this is defined by the functions \texttt{MPI\_Reduce\_\-scat\-ter()} and \texttt{MPI\_Reduce\_scatter\_block()}. A Reducescatter does the same as performing a Reduce and then a Scatter operation. So after its execution each rank holds a block of the total reduced array.\\
@@ -62,12 +63,12 @@ A straight forward sequential implementation of a BFS is presented in Procedure 
 	\caption{Sequential implementation of BFS\\
 	$n$: number of vertices\\
 	$G$: graph representation\\
-	$r$: root node}
+	$r^*$: root node}
 	\label{algo:BFSsequential}
 	\begin{algorithmic}[1]
-		\Procedure{sequentialBFS}{$n, G, r$}
+		\Procedure{sequentialBFS}{$n, G, r^*$}
 		\State pred[$n$] $\gets [-1, \dots, -1]$ \Comment{initialize pred array with $-1$ everywhere}
-		\State frontier\_old $\gets$ \{$r$\}
+		\State frontier\_old $\gets$ \{$r^*$\}
 		\While{frontier\_old $\not = \emptyset$}
 			\State frontier\_new $\gets \emptyset$
 			\ForAll{v $\in$ frontier\_old}
@@ -99,16 +100,16 @@ The parallel algorithm does not differ much from the sequential one and is descr
 	\caption{Our parallel implementation of BFS\\
 		$n$: number of vertices\\
 		$G$: representation of a graph\\
-		$r$: root node}	
+		$r^*$: root node}	
 	\label{algo:BFSparallel}
 	\begin{algorithmic}[1]
-		\Procedure{parallelBFS}{$n, G, r$}
+		\Procedure{parallelBFS}{$n, G, r^*$}
 		\State pred[$n$] $\gets [-1, \dots, -1]$
 		\State G\_local $\gets$ \Call{divideEdges}{$G$} 
 		\Comment{Each process gets an subset of the edges}
 		\State visited $\gets \emptyset$ 
 		\Comment{Added to keep track of already visited vertices}
-		\State frontier\_old $\gets$ \{$r$\}
+		\State frontier\_old $\gets$ \{$r^*$\}
 		\While{frontier\_old $\not = \emptyset$}
 		\State frontier\_new $\gets \emptyset$
 		\State visited $\gets$ visited $\cup$ frontier\_old
@@ -133,12 +134,45 @@ The parallel algorithm does not differ much from the sequential one and is descr
 \end{algorithm}
 One of the main changes is obviously that now the edges needs to be distributed over all processes. Another difference is that there is now an extra set 'visited'. As the name suggest it keeps track ov all vertices that were already visited (i.e. that were already in a frontier in some iteration). In the sequential implementation this task was handled by the predecessor array. This change is done because during the execution of the algorithm it is only of interest which vertices are already visited. It is not of interest which predecessors are explicitly chosen by the other ranks and communicating this information would cost extra time. So during the \textbf{while} loop 'pred' will just hold the predecessors that are found by the own process and the information in visited vertices is handled by 'visited'. The last crucial difference is execution of $\Call{unionAll}{~}$ on the array 'frontier\_new'. As each rank only calculated a subset of the next frontier one needs to find the total frontier to execute the next iteration correctly.  This is done by $\Call{unionAll}{~}$ which is the mayor concern of this thesis. \\
 After the \textbf{while} loop is done each rank only holds a predecessor proposal for some of the vertices. So for each vertex a predecessor needs to be chosen, if it has one. This is done by a call of \Call{allReduce}{pred, MAX} which returns the maximum value for each entry of 'pred'. This guarantees that the same predecessor for each entry is chosen over all processes and the entry is left at $-1$, if no process has found a predecessor.\\
-This implementation is used later to evaluate the performance of our newly proposed algorithms that implement $\Call{unionAll}{~}$. A already good approach to calculate such an union operation is by representing the sets as bitmaps and then using an Allreduce with a bitwise OR as operator.
+This BFS-implementation is used later to evaluate the performance of different algorithms that implement some version of $\Call{unionAll}{~}$.
 
-\subsubsection{Further strategies for a parallel BFS}
+\subsubsection{1D-partitioned BFS}
 The mentioned algorithm of the paragraph before is quite a naive approach. So we also present some other ideas how a parallel BFS for a distributed memory machine could look like. One strategy regards the distribution of the graph and is called \textit{1D graph partitioning} \cite{graphPartitioning, hybridBFS}. The partitioning refers to the splitting of the adjacency matrix into blocks which are then assigned to the different process. So each process will handle some rows of the adjacency matrix. As each row hold all the outgoing edges of a specific vertex this is also called \textit{vertex-centric} distribution of the graph.\\
-The procedure for the BFS is quite similar to the earlier presented parallel variant shown in Algoithm \ref{algo:BFSparallel}. One major difference is of course that the distribution of the graph is not done edge-centric but vertex-centric. Also the The benefit is here that of the total calculated frontier each process then only needs a (obviously other) subset. As a process only handles the finding of neighbors of some vertices (i.e. the vertices that correspond to the rows of the adjacency a processor holds) it only needs information which of these vertices are in the current frontier. As we mentioned before that for sets that are represented as bitmaps a Allreduce can calculate the union over all ranks. From the resulting array each rank only needs a block of the resulting bitmap array. This can actually be done by a Reducescatter which is expected to be faster than an Allreduce \cite{graphPartitioning}. This BFS implementation also needs the same local handling of a predecessor array and a extra set to keep book of the visited vertices.\\
+The procedure for the BFS is quite similar to the earlier presented parallel variant shown in Algorithm \ref{algo:BFSparallel}. One major difference is of course that the distribution of the graph is not done edge-centric but vertex-centric.  This brings the benefit that each processor needs in each iteration only a subset of the current frontier of the BFS. Assume process $r$ holds rows $v_a,\dots,v_b$ and therefore handles vertices $v_a$ up to $v_b$. Then it can not calculate any neighbors of vertices that are not between $v_a$ and $v_b$.  As we mentioned before that for sets that are represented as bitmaps an Allreduce can calculate the union over all ranks. In the 1D partitioning BFS each rank only needs a block of the resulting bitmap array. This operation can actually be done by a Reducescatter as it does logically the same as calculating an Allreduce and then only give each rank access to a block of the result array. A Reducescatter is in some situations guaranteed to be faster than an Allreduce as we will see later some Allreduce implementations are internally build from an Reducescatter as one building block.\\
+Of course the sets can also be represented sparsely. In this case each rank needs to gather the elements of the current frontier that are distributed over all processes.  If the sparse lists of elements are ordered this can be done with an All-To-All operation. In this case the sparse array can be divided into blocks and each block needs to get send to another rank. 
 
+\subsubsection{Matrix-vector product using 2D-partitioning}
+In the next paragraph a BFS is described that uses 2D partitioning of the adjacency matrix $A$ to solve this problem in parallel. This BFS-implementation is an extension of an algorithm that calculates a sparse matrix-vector (SpMV) product using 2D partitioning \cite{graphPartitioning}.\\
+The setup for the algorithm we present in this paragraph is to calculate 
+\begin{align}
+	x^{k+1} = A \otimes x^k 
+\end{align}
+iteratively. $A\in \mathbb{R}^{(n\times n)}$ is here a square matrix represented sparsely, $x^k \in \mathbb{R}^n$ is a vector represented densely and $\otimes$ denotes the standard matrix-vector product. This kind of setup arises quite naturally in iterative solvers that are used to solve linear systems or to calculate eigenvalues \cite{spmv}. Here it is solved in parallel by $p$ processors with each processor holding a block $A_{ij}$ of the original matrix $A$. In this paragraph we only discuss a version where the number of processors is assumed to be a square ($p=q^2$) and the matrix $A$ can be evenly partitioned such that each block $A_{ij}$ is of size $(n/q\times n/q)$. We call the process that holds block $A_{ij}$ of the matrix $P_{ij}$.\\
+We refer from now on to the result of the current iteration $x^{k+1}$ as $y$ and the current vector $x^k$ as simply $x$. These vectors can also be partitioned using the same splitting that was used in each dimension to partition $A$. The $i$-th part of $y$ and $x$ are called $y_i$ and $x_i$. In the first iteration it is assumed that each process $P_{ij}$ has access to the part $x_j$ of the initial vector $x^0$. Each process can then calculate $A_{ij}\otimes x_j$ locally. The subresult that is computed by processor $P_{ij}$ is now called $y_{ij}$. One can easily see that a sum over the $i$-th row can be identified as the first part of the result vector ($y_i = \sum_{j=0}^{n/q-1} y_{ij}$). This sum can be calculated by performing an Allreduce in each row using simple addition as an operator. After that each row $i$ holds a part of the result vector $y_i$. For the next iteration it is required that column $j$ holds block $y_j$ (as we assumed each process $P_{ij}$ has access to block $x_j$ at the start of an iteration). This is handled by an procedure that we call here simply $\Call{Transpose}{~}$ where each processor $P_{ij}$ exchanges its data with process $P_{ji}$. This procedure is only so simple because in this example the partitioning is in both dimensions the same. For an irregular partitioning an All-To-All collective operation can be used \cite{graphPartitioning}.\\
+Hendrickson et al. propose a more efficient variant that is structurally very similar to the already explained algorithm \cite{matVecOriginal}. Firstly there is the realization that an Allreduce can be efficiently build by an Reducescatter and an Allgather (see Section \ref{sec:Allreduce}). Moreover each process holds (in an equally distributed setting) after an Reducescatter a message of size size  $m/p$ with $m$ being the original message size and $p$ the number of participating processes. The proposed algorithm (Algorithm \ref{algo:matvec}) exploits this by rearranging the operations.
+\begin{algorithm}
+	\caption{Iterative matrix-vector product using 2D partitioning.\\
+		$A_{ij}$: block of matrix $A$\\
+		$x_j$: part of initial vector $x$\\
+		$N$: number of iterations\\
+		rowComm: communicator connecting all processors with same row index $i$\\
+		colComm: communicator connecting all processors with same column index $j$}
+	\label{algo:matvec}
+	\begin{algorithmic}[1]
+		\Procedure{matVecProd}{$A_{ij}, x_j, N,$ rowComm, colComm}
+		\For{$k = 0, \dots, N-1$}
+			\State $y \gets A_{ij} \otimes x_j$
+			\State $y \gets \Call{Reducescatter}{y, +, \text{rowComm}}$
+			\State $y \gets \Call{Transpose}{y}$
+			\State $x_j \gets \Call{Allgather}{y, \text{colComm}}$
+		\EndFor
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+Here is the Allreduce explicitly executed as an Reducescatter and an Allgather. As between these calls the data transposition (with regard to the logical processor arrangement) is executed the Reducescatter is performed row-wise and the Allgather column-wise. The collective operations along the different dimension are in Procedure \ref{algo:matvec} indicated by the different communicator objects. The operator '$+$' of the Reducescatter obviously indicated that addition is used as an reduction operator. The optimization compared to the original idea is that the function $\Call{Transpose}{ }$ is now executed on a message of size $m/p$ instead of $m$ while all the rest of the loop is expected to take the same amount of time. This algorithm is the basis for the 2D partitioned BFS presented in the next paragraph.
+
+\subsubsection{2D-partitioned BFS}
+The BFS using a 2D-partition has to handle more complexity. We here present the partitioning as it was done by Bulu\c{c} et al \cite{graphPartitioning} and Ueno et al \cite{hybridBFS}. The idea is to divide the adjacency matrix not only divided into sets of rows, but also in the vertical direction. This results in each process taking care of a block of the adjacency matrix similar to the example shown in Figure \ref{adjacencyMatrix}.\\
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.4\textwidth}
@@ -182,58 +216,90 @@ The procedure for the BFS is quite similar to the earlier presented parallel var
 	\caption{Example of undirected graph and its corresponding adjacency matrix $A$. For the adjacency matrix is a possible 2D-partitioning for $p=4$ processes drawn in.}
 	\label{fig:adjacencyExample}
 \end{figure}
-In the 2D partition a little bit more complexity is introduced. Here the adjacency matrix is not only divided into sets of rows, but also in the vertical direction. This results in each process takes hold of a block of the adjacency matrix similar to the example shown in Figure \ref{adjacencyMatrix}. Again this means each process maintains only a subset $\tilde{V}\subset V$ of vertices. But now each process has also only access to subsets of neighbors of $\hat{V}$. So in each iteration each process finds neighbors of vertices it has access to. The complexity lies now in the distribution of the new frontier to the correct processors for the next iteration. Lets just consider the first row of blocks of the adjacency matrix. This row needs the outputs of blocks of the first column of the adjacency matrix. This can be done by performing a Reduction of the first column to the first block. After that the result is broadcasted from this first block to all processes of the first row. A benefit is here that in the reduction as well as in the broadcast the message size is only expected to around $m/p$ when considering a regular division of the adjacency matrix. There are also hybrid adaptations of both the 1D- and 2D-partitioning strategies, see \cite{graphPartitioning}.\\
-There are also ideas in adapting the iteration step itself.
-One attempt is instead of finding the neighbors of the current frontier elements, one can also iterate over the vertices that are not already explored yet and look, if they have a neighbor in the frontier. If they have a neighbor in the frontier we simply set this neighbor as a predecessor of this vertex.
-This can be advantageous, if the frontier is quite big and the set of left over vertices relatively small \cite{bottomUp}. \\
-%We on the other hand want to focus here only on one (relatively simple) setting. We partition the graph by dividing the edgelist in equally sized chunks and distribute them on the different processes. A good argument for this partitioning compared to the before mentioned 1D- or 2D-partitioning is that we want to avoid iterations where some processes do not have any (or way less) work to do.
-%In our edge-centric partitioning we have in and outgoing edges for every vertex and can therefore expect a better load balance in each iteration. The given algorithm does not change much and is described in Procedure \ref{algo:BFSparallel}.
-%\begin{algorithm} [h]
-%	\caption{Our parallel implementation of BFS\\
-%	$n$: number of vertices\\
-%	$E$: set of edges\\
-%	$r$: root node}	
-%	\label{algo:BFSparallel}
-%	\begin{algorithmic}[1]
-%		\Procedure{parallelBFS}{$n, E, r$}
-%		\State pred[$n$] $\gets [-1, \dots, -1]$
-%		\State E\_local $\gets$ \Call{divideEdges}{$E$} 
-%			\Comment{Each process gets an subset of the edges}
-%		\State visited $\gets \emptyset$ 
-%			\Comment{Added to keep track of already visited vertices}
-%		\State frontier\_old $\gets$ \{$r$\}
-%		\While{frontier\_old $\not = \emptyset$}
-%			\State frontier\_new $\gets \emptyset$
-%			\State visited $\gets$ visited $\cup$ frontier\_old
-%			\Comment{update \texttt{visited} set with new values}
-%			\ForAll{v $\in$ frontier\_old}
-%				\ForAll{neigh $\in$ \Call{getNeighbours}{E\_local, $v$}}
-%					\If{neigh $\not \in$ visited}
-%						\Comment{Check is now done using \texttt{visited} set}
-%						\State pred[neigh] $\gets$ v
-%						\State \Call{addVert}{frontier\_new, neigh}
-%					\EndIf
-%				\EndFor
-%			\EndFor
-%			\State frontier\_old $\gets$ \Call{unionAll}{frontier\_new}
-%				\Comment{Here the union of all subsets is calculated.}
-%		\EndWhile
-%		\State pred $\gets$ \Call{allReduce}{pred, MAX}
-%			\Comment{Choose a predecessor, if there is at least one proposed.}
-%		\State \Return pred
-%		\EndProcedure
-%	\end{algorithmic}
-%\end{algorithm}
-%The main changes here are that we now divide the edges to the different processes, switch to another set structure \textbf{visited} and use the function \Call{unionAll}{ } to get a set union over all distributed subsets lying on the different processes. There is also another communication round added at the end of the procedure to unify the \textbf{pred} array.
-%Before this each process calculated a predecessor for each vertex of the graph (or left the corresponding entry set to $-1$). The call of \Call{allReduce}{pred, MAX} returns the maximum value for each entry of \textbf{pred}. This guarantees that the same predecessor for each entry is chosen in each process and the entry is left at $-1$, if no process has found a predecessor. \\
-%The switch to using an extra set \textbf{visited} is done to save the total amount of communication. We need some way to tell the other processes, which vertices are already visited, but the information, which the explicit predecessor for each vertex is chosen is obsolete in the \textbf{while}-loop.
-A general idea here is to represent the frontier sets as bitmaps where each entry is either set to 1, if a vertex is selected to be in the set, or set to 0 otherwise.
-This safes a lot of space when comparing it to an integer representation where every positive number represents a selected vertex and a $-1$ stands for a non-selected one.
-One needs to keep in mind that for a bitmap we need only one bit of memory for each vertex and an (large scale usable) integer would need 32 bits.
-But there is still room for optimization possible. In each iteration of the \textbf{while}-loop we communicate the whole bitmap to the other process. But in the first iterations not a lot of the vertices are expected to be in the frontier. So most of the bitmap is set to zero.
-We can use here a sparse format to represent the same set of vertices on a smaller memory footprint. Therefore amount of sent data can also be reduced.
-Of course the function \Call{unionAll}{ } needs to be adapted to take care of dense and sparse representations. How this problem can be most efficiently solved is the key goal of this thesis.\\
-The union set operation using only bitmaps is quite straight forward. A global reduction operation performing a bitwise OR on such bitmaps is exactly equivalent to the union set operation. The \gls{mpi} standard defines this global reduction in the function \Call{MPI\_Allreduce}{ } using the tag \textbf{MPI\_BOR} \cite{mpi}. We borrow this nomenclature for this thesis and describe collective reductions as \textit{Allreduce}. In the later sections of this chapter are the basics of how these Allreduce algorithms implemented described. They are the foundation of the proposed optimized \Call{unionAll}{} procedure.
+To build an algorithm that exploits such a partitioning it is useful to describe the problem of solving an BFS a bit differently. One can express that a BFS computes in each iteration $k$ the frontier 
+\begin{align}
+	f^{k+1} = A^T \otimes f^k \odot \overline{\bigcup\nolimits_{i=0}^{k} f^i} \label{eq:recursiveBFS}
+\end{align}
+recursively. $A$ is here again the adjacency matrix. The product $\otimes$ describes here a special matrix-vector multiplication using a select-max-semiring ($(M\oplus v)_i:=\max_j(M_{ij}\cdot v_j)$). With $\odot$ we indicate a element-wise vector-vector multiplication ($(a\odot b)_i:= a_ i \cdot b_i$). The structure $\bigcup\nolimits_{i=1}^{k} f^i$ describes the set of vertices that are already visited. The bar over this set indicates the complement of this set \cite{graphPartitioning}. In this analogy the sets of vertices are described as vectors with the $v$-th entry being set to 1, if the vertex $v$ is in the set and set 0 zero otherwise. This is  equivalent to the dense representations of sets as bitmaps. The difference is here that these vectors can still be stored sparsely. \\
+One can see directly how Equation \ref{eq:recursiveBFS} calculates one iteration of a BFS. The matrix product $A^T \otimes f^k$ finds the direct neighborhood of the current frontier $f^k$. The inner product with the complement of visited vertices finds the set of vertices that were not already explored. This is exactly the frontier of the next iteration.\\
+With this idea in mind Bulu\c{c} et al \cite{graphPartitioning} present a BFS algorithm that is described by Procedure \ref{algo:bfs2D}. There are some steps done to adapt the matrix-vector multiplication (Algorithm \ref{algo:matvec}) to perform an BFS. The first adaptation is that the vector is here represented sparsely. The Reducescatter is therefore replaced by an All-To-All operation which one can easily verify performs the same action on the sparse representation as  the Reducescatter did for a dense array. Also the operation in the loop are rotated and the first procedure that is executed each iteration is the transposition operation $\Call{Transpose}{~}$. Also after each iteration the set of already visited vertices $\pi$ is updated and the frontier $f$ for the next iteration is  extended by only non-visited vertices. For the explanation of this algorithm we assume that the number of processors $p=q^2$ is a square and the adjacency matrix $A$ can be partitioned evenly into $p$ blocks of same size.\\
+\begin{algorithm}
+	% -------------------------------------------------------------------------------
+	%			There is a detatiled algo in Ueno (\cite: hybridBFS)
+	% -------------------------------------------------------------------------------
+	\caption{BFS using 2D partitioning by  Bulu\c{c} et al \cite{graphPartitioning}.\\
+		$A_{ij}$: block of adjacency matrix $A$\\
+		$r^*$: root node\\
+		rowComm: communicator connecting all processors with same row index $i$\\
+		colComm: communicator connecting all processors with same column index $j$}
+	\label{algo:bfs2D}
+	\begin{algorithmic}[1]
+		\Procedure{BFS2D}{$A_{ij}, r^*,$ rowComm, colComm}
+		\State $f\gets \{r^*\}$ \Comment{only done for process that owns $r^*$}
+		\State $\pi_{ij} \gets \emptyset$
+		\While{$f\not = \emptyset$}
+			\State $f_{ij} \gets \Call{Transpose}{f_{ij}}$
+			\State $f_{i} \gets \Call{Allgather}{f_{ij}, \text{colComm}}$
+			\State $n_i \gets A_{ij} \otimes x_j$
+			\State $n_{ij} \gets \Call{AllToAll}{n_i, \text{rowComm}}$
+			\State $n_{ij} \gets n_{ij} \odot \overline{\pi_{ij}}$
+			\State $\pi_{ij} \gets \pi_{ij} \cup~n$
+			\State $f_{ij} \gets n_{ij}$
+		\EndWhile
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+The partitioning of one-dimensional objects like the frontier $f$, the neighborhood $n$ and the visited vertices $\pi$ is not directly visible. Firstly these arrays $x$ are partitioned logically the same as the partitioning is done for each of the dimensions of $A$. This results into $q$ chunks which are labeled $x_i$. The information of such a chunk is usually spread out over one processor row or column. So each processor $P_{ij}$ only holds (most of the time) a part $x_{ij}$ which is only a $p$-th of the original size of $x$. To get an overview how data is distributed this index-labeling is also used for the  pseudocode of Algorithm \ref{algo:bfs2D}. As each of the entries of these arrays correspond to a vertex of the graph one can also say that the vertex ownership is distributed in this way. So process $P_{ij}$ manages the vertices that can be represented in chunk $\pi_{ij}$ of any of the arrays. As a side note, this is why the initialization of the frontier $f$ to hold the root node $r^*$ is only done by the processor $P_{ij}$ that owns $r^*$. What is not so clear in the notation that $\pi$ does not only hold the information of the currently visited vertices, but also the parents that are proposed in the current iteration.  After the execution of the BFS there is no explicit concatenation of the distributed parents array $\pi$. The result is therefore spread over all processes.\\
+When comparing 1D partitioning to the 2D partitioning in regard of performance one can see that each variant has its justification. The main difference is apparent in regard of the relation between the number of edges $|E|$ and the number of vertices $|V|$. For relatively sparse graphs ($|E| \leq 8 \cdot |V|$) 1D partitioning seems the better option and for relatively dense graphs ($|E| \geq 16 |V|$) 2D partitioning seems to be generally faster \cite{graphPartitioning}.
+
+\subsubsection{Taking advantage of the architectural hierarchy by using shared memory}
+As discussed in the paragraph before the adjacency matrix is partitioned in some way (1D/2D-partitioning or assigning the edges randomly to the processors). In each case each process will hold only some part $\hat{A}$ of the adjacency matrix $A$. What is also common that each process will holds some part $\hat{f}$ of the current frontier $f$. In each iteration therefore some part of the neighborhood $\hat{N} = \hat{A} \otimes \hat{f}$ is calculated. An idea is to use shared memory to calculate this and other operations (like filling the predecessor arrays) in parallel on the same node and only use inter nodal communication afterwards \cite{graphPartitioning}. This leads to improvements in execution time for setups on large graphs ($\sim 2^30$ vertices) using many processors ($>4000$) \cite{graphPartitioning}. 
+
+\subsubsection{LIGRA - A framework for graph computation on shared memory}
+The LIGRA framework defines a few elementary functions to build graph traversal algorithms like BFS, graph radii estimation, graph connectivity or single-source shortest path \cite{Ligra}. It is build for shared memory systems. One idea that is used in this framework and is relevant for this thesis is the dynamic representation of vertex sets. They use a bitmap representation for densely filled subsets and a list representation for sparsely filled sets to reduce communication costs and memory footprint.\\
+The framework defines 3 important functions that act on a graph $G = (E,V)$. The first one ($\Call{Size}{U}$) is quite simple and returns the size of a vertex subset $U\subseteq V$.\\
+The second one is $\Call{edgeMap}{G, U, F, C}$ with $G$ being a graph, $U\subseteq V$ a subset of vertices, $F: E\mapsto bool$ a map that returns a boolean value to a given edge and $C: V \mapsto bool$ that assigns boolean values to vertices. The procedure for this edge map is like this: Firstly all outgoing edges with respect to $U$ are identified where the target vertices also fulfill the validation by $C$. We can write this set of edges as
+\begin{align*}
+	E_a = \{(u,v)\in E~|~u \in U \land C(v)\}.
+\end{align*} 
+This set of edges defines a 'active' neighborhood of $U$ which is then also filtered by $F$ and the set of vertices
+\begin{align*}
+	\text{Out} = \{v\in V~|~(u,v)\in E_a \land F((u,v))\}
+\end{align*}
+is returned. The calculations of the 'Out' set happens in parallel and the user must ensure that $F$ works correctly for a parallel execution of it. \\
+The third function that LIGRA provides is $\Call{vertexMap}{U, F}$ with $U\subseteq V$ being a subset of vertices and $F: V \mapsto bool$ a map that validates vertices. This function simply filters all vertices of $U$ that fulfill $F$. The resulting set can be written as 
+\begin{align*}
+	\text{Out} = \{v\in U~|~F(v)\}.
+\end{align*}
+Again $F$ is allowed to be executed in parallel and a correct behavior must be guaranteed by the user \cite{Ligra}.\\
+A BFS implementation using LIGRA is presented in Algorithm \ref{algo:bfsLigra}.
+\begin{algorithm}
+	\caption{BFS using the LIGRA framework \cite{LigraBFS}.\\
+		$G$: representation of a graph $G=(E,V)$\\
+		$r^*$: root node}
+	\label{algo:bfsLigra}
+	\begin{algorithmic}[1]
+		\State pred = $[-1, \dots, -1]$ \Comment{Global and shared predecessor array}
+		\Procedure{update}{$s,d$}
+			\State \Return \Call{CAS}{pred[$s$], $-1$, $s$}
+		\EndProcedure
+		\Procedure{cond}{$v$}
+			\State \Return (pred[$v$]=-1)
+		\EndProcedure
+		\Procedure{BFSLigra}{$G, r^*,$}
+			\State pred[$r^*$] $ \gets r^*$
+			\State frontier $\gets \{r^*\}$
+			\While{frontier $\not = \emptyset$}
+				\State frontier $\gets \Call{edgeMap}{G, \text{frontier}, \textsc{update}, \textsc{cond}}$ 
+			\EndWhile
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+Here only the function $\Call{edgeMap}{~}$ is needed to implement a BFS algorithm as it directly provides the functionality to find the neighborhood of a vertex set $U\subseteq V$. The only check that needed to be done is, if a vertex is already visited. The function $\Call{edgeMap}{G, U, F, C}$ can do this filtering by either checking the neighboring vertices (in this case implemented by $\Call{cond}{~}$) or by checking properties of the outgoing edges (in the BFS implementation this check is provided by $\Call{update}{~}$). In Algorithm \ref{algo:bfsLigra} both function check, if a vertex of the neighborhood $N^+(U)$ is already explored. They only differ in the property, that $\Call{update}{~}$ not only checks but also label newly explored vertices. This happens atomically using a compare and set (CAS) operation which guarantees a correct parallel execution as it is required for the function $F$ \cite{LigraBFS}.\\
+
+To get a more detailed understanding how this algorithm works we also give a overview how $\Call{edgeMap}{G, U, F, C}$ works. There are actually two different strategies used. There is $\Call{edgeMapSparse}{~}$ which returns a sparse set of vertices. The strategy is here to iterate in parallel over all vertices of $U$ and for each vertex $v\in U$ is the neighborhood $N^+(v)$ explored. This exploration is also allowed to happen in parallel and for each neighbor $n\in N^+(v)$ it is checked, if $C(n)$ and $F((v,n))$ holds. If this is the case, the neighbor $n$ gets added to the output set 'Out' which is represented sparsely. After this exploration phase it is necessary to remove duplicate elements. \\
+Then there is $\Call{edgeMapDense}{~}$ which strategy can be seen as inverted. Here are firstly all vertices $v\in V$  of the graph $G$ are considered that fulfill the condition $C(v)$. For these vertices $v$ the neighbors $n\in N^-(v)$ are considered. If a neighbor $n$ is in the original set $U$ and the condition $F((n,v))$ is fulfilled the vertex $v$ is added to the output set. In this case 'Out' is represented as a dense bitmap \cite{Ligra}.\\
+As a summary, in the sparse variant the outgoing neighborhood of $U$ is searched for vertices that fulfill $C$ and $F$ and in the dense variant all vertices of the graph that fulfill $C$ are considered to find vertices that are connected to $U$ and also fulfill $F$. In the context of a BFS and $U$ being the current frontier the first strategy is also called a \emph{top-bottom} step and the later one as a \emph{bottom-up} step. Here it is not necessarily the case that a different representation of the sets is used \cite{bottomUp}.  
 
 \section{Pseudocode and Special Notations} \label{pseudocode}
 Here we want to give an overview and explanations of some special notation used in this thesis. So we want to explain signs used in the pseudocode example as well as mathematical expressions. We expect notations like assignment ($\gets$), function declaration (\textbf{procedure}), function calls (\Call{MyFunc}{}) and while loops (\textbf{while}) are trivial and therefore no explanation is needed for them. For other pseudo code elements we give the following listing:
