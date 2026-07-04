@@ -15,7 +15,7 @@ Before explaining how this problem is tackled and what new ideas we propose in t
 Distributed memory computing (in regard of high performance computing) refers mostly to the architectural model to perform parallel computations. For this multiple processes are executed at the same time on different cores of a system. The difference to shared memory computing is here that there is no memory space shared between the computing instances to exchange information. Shared memory computing uses typical multiple threads that all belong to the same process. The big advantage of distributed memory computing is scalability. A system can be build out of multiple compute nodes where each processor core has physically only access to the memory of its node it is build on. The number of computing cores is therefore not limited by the number of cores a CPU has or the number of CPUs that can be fitted on a main board \cite{lecturesTräff, modelDistributedMemory}. \\
 The communication between cores that are physically on the same compute node can still happen via accessing a shared memory region of the nodes RAM. To allow communication to other processes that are executed on another node the compute nodes are connected via some interconnect. The processes therefore can send and receive messages to/from other processes. The communication interface is defined by \gls{mpi} which is a standard that is implemented by different libraries \cite{mpi}. This interface defines functions that include communication between two processes (point-to-point communication) and procedures where multiple processes (collective communication) participate to solve a given problem. How the message is transmitted is mostly hidden from the user and handled by the respective MPI-implementation.\\
 
-\subsection{Important functions in MPI}
+\subsection{Important functions in MPI} \label{sec:mpiFunctions}
 MPI assigns each participating process an ID called the rank. Ranks can be organized in communicators. They are sets of ranks and are mostly important for collective communication. If a process is part of multiple communicators it can have different rank IDs for each of the communicators. In this thesis multiple communicators are not relevant and each process can be identified by its ID of the communicator that includes all participating processes (with tag \texttt{MPI\_Comm\_World}). We will use the term rank and process interchangeably even though the rank is technically only the ID. 
 
 There are a lot of different functions defined in the recent MPI-standard \cite{mpi} (version 5.0) so we focus here only on the used and most important functions. We start with point-to-point communication and the function \texttt{MPI\_Send()}. It takes a pointer to a buffer, the datatype of the buffer, the amount of elements that should be sent, the destination rank, a tag and the communicator as input. The tag can be used so messages from the same rank are not confused or to send extra meta information. This call is blocking which means the function can only return, if the message in the buffer is completely sent. This has the advantage that manipulation on the buffer from later calls will not corrupt the message as it gets read for the sending. There is also a non-blocking variant \texttt{MPI\_Isend()} that takes another request object which can indicate, if the send has completed. In this case a later call on \texttt{MPI\_Wait()} is handy that uses the request handle to wait until the sending is completed and the buffer is safe to modify.\\
@@ -302,43 +302,88 @@ Then there is $\Call{edgeMapDense}{~}$ which strategy can be seen as inverted. H
 As a summary, in the sparse variant the outgoing neighborhood of $U$ is searched for vertices that fulfill $C$ and $F$ and in the dense variant all vertices of the graph that fulfill $C$ are considered to find vertices that are connected to $U$ and also fulfill $F$. In the context of a BFS and $U$ being the current frontier the first strategy is also called a \emph{top-bottom} step and the later one as a \emph{bottom-up} step. Here it is not necessarily the case that a different representation of the sets is used \cite{bottomUp}.  
 
 \section{Pseudocode and Special Notations} \label{pseudocode}
-Here we want to give an overview and explanations of some special notation used in this thesis. So we want to explain signs used in the pseudocode example as well as mathematical expressions. We expect notations like assignment ($\gets$), function declaration (\textbf{procedure}), function calls (\Call{MyFunc}{}) and while loops (\textbf{while}) are trivial and therefore no explanation is needed for them. For other pseudo code elements we give the following listing:
- 
-\begin{tabularx}{\textwidth}{p{3.1cm} | X}
-	$\textbf{for} (\cdot, \cdot, \cdot)$ & 
-	For loop using standard C notation. First parameter is called before first iteration, second parameter states condition when loop should be broken and third parameter is called after each iteration. \\ \hline
-	$\textbf{for} ~ i = a, \dots, b $ & 
-	For loop where each iteration variable $i$ is set to $a$ in first iteration and is increased by one in each iteration until it reaches $b$ \\ \hline
-	$\textbf{for all}~ i\in\{\}$ & 
-	For loop where iteration variable $i$ needs to take each element of the set. Here there order which elements are used is irrelevant.\\ \hline
-	$arr[i]$ & 
-	Variable $arr$ is an array. This can mean two different things dependent on context. Either we select the $i$-th element or, if the array is explicitly divided into blocks, the $i$-th block. \\ \hline
-	$\cdot$  XOR $\cdot$ & 
-	Bitwise exclusive OR operator. \\ \hline
-	$\cdot \oplus \cdot$ & 
-	Some associative commutative binary operator. Is a placeholder for operator like $+$, $\cdot$ (multiplication), max($\cdot, \cdot$), min($\cdot, \cdot$) or bitwise operators. In our implementations it is always commutative, too. \\ \hline
-	$\Call{Send}{data, recv}$ &
-	Point-to-point communication. Send data $data$ to process with rank ID. \gls{mpi} implements this in function \texttt{MPI\_Send()} and variants of it. $recv$ \\ \hline
-	$\Call{Recv}{data, send}$ &
-	Point-to-point communication. Receive data $data$ from process with rank ID $rsend$. To receive a message obviously rank $send$ needs to send data to the receiving process. \gls{mpi} implements this in function \texttt{MPI\_Recv()} and variants of it.\\ \hline
-	$\Call{Send}{data_1, recv}$||\newline $\Call{Recv}{data_2, send}$ &
-	Point-to-point communication. Sending and receiving at the 'same time'. The symbol $||$ stands here for performing both functions in one call and does not represent a logic OR. This call is important as it avoids deadlocks. \gls{mpi} implements this in function \texttt{MPI\_Sendrecv()}.\\ \hline
-	$\ceil{a}$ &
-	Ceil function. $a$ is a number and $\ceil{a}$ is the value of the next highest integer of $a$. \\ \hline
-	$(val)\mod{div}$ & 
-	Division of $val$ by $div$ with remainder. The function returns the remainder $r$. To avoid negative input we often use $(val + div)\mod{div}$, if $val$ can be $-p < val < 0$. \\ \hline
-	$a // b$&
-	Integer division. $a$ is divided by $b$ and then rounded to the next lowest number. $a$ and $b$ are here always positive numbers.
-\end{tabularx}
-We also want to mention some variables that are exclusively used for one purpose.
-
-\begin{tabularx}{\textwidth}{p{3.1cm} | X }
-	$p$ & Number of processors. \\ \hline
-	$r$ & Rank ID of the process. \\ \hline
-	$\alpha$ & Latency constant of linear cost model. See next section. \\ \hline
-	$\beta$ & Bandwidth constant of linear cost model. See next section. \\ \hline
-	$\gamma$ & Computation constant of extended linear cost model. See next section.
-\end{tabularx}
+In this section, an overview of notation and the corresponding explanations that are used in this thesis is presented. We explain here pseudocode building blocks and non-trivial mathematical expressions. We expect notations like assignment ($\gets$), function declaration (\textbf{procedure}), function calls (\Call{MyFunc}{~}) and while loops (\textbf{while}) are trivial and therefore no explanation is needed for them. \\
+Firstly we define different notations that express a \textbf{for}-loop. The different setups are shown in Table \ref{tab:forLoops}. 
+In Table \ref{tab:commonOperations} general notation of operators, functions and other mathematical expressions are presented.
+In Table \ref{tab:mpiOperations} are functions explained that provide the building blocks for point-to-point communications. Collective operations are already explained in Section \ref{sec:mpiFunctions}. The notation for these collective MPI operations is defined quite loosely. If the functions return a value (indicated via $\gets$) the output is return explicitly. If there is no return value the result is placed into the input array. The communicator is only explicitly mentioned in procedures where it is necessary. The general communicator \texttt{MPI\_COMM\_WORLD} (holding all processes) is implicitly used, if no communicator is explicitly stated. \\
+Besides the definition of notation we also provide a overview over a small set of variables that are used consistently for the same properties throughout the thesis. This set of symbols is shown and explained in Table \ref{tab:fixedVariables}.
+ \begin{table}[H]
+ 	\centering
+	\begin{tabularx}{\textwidth}{|p{3.1cm} | X|}
+		\hline 
+		$\textbf{for} (\cdot, \cdot, \cdot)$ & 
+		\textbf{for}-loop using standard C notation. First parameter is called before first iteration, second parameter states condition when loop should be broken and third parameter is called after each iteration. \\ \hline
+		$\textbf{for} ~ i = a, \dots, b $ & 
+		\textbf{for}-loop where in each iteration variable $i$ is set to $a$ in first iteration and is increased by one in each iteration until it reaches $b$ \\ \hline
+		$\textbf{for all}~ i\in\{\}$ & 
+		\textbf{for}-loop where iteration variable $i$ needs to take each element of the set. Here the order of the elements is not relevant.\\ \hline
+	\end{tabularx}
+	\caption{Different notations for \textbf{for}-loops}
+	\label{tab:forLoops}
+\end{table}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|p{3.1cm} | X|}
+	\hline
+		$arr \gets [a,\dots, a]$ & The array $arr$ is initialized with all entries being $a$. The size of $arr$ is given in the context of the current section. \\ \hline 
+		$arr[i]$ & 
+		Variable $arr$ is an array. The notation means indexing of this array. Either the $i$-th element is selected or, if the array is explicitly divided into blocks, the $i$-th block is referenced. \\ \hline
+		$\cdot$  XOR $\cdot$ & 
+		Bitwise exclusive OR operator. \\ \hline
+		$\cdot$ AND $\cdot$ & 
+		Bitwise AND operator. \\ \hline
+		$\cdot \oplus \cdot$ & 
+		Some associative commutative binary operator. Is a placeholder for operator like $+$, $\cdot$ (multiplication), max($\cdot, \cdot$), min($\cdot, \cdot$) or bitwise operators. In our implementations it is always commutative, too. \\ \hline
+		$\ceil{a}$ &
+		Ceil function. $a$ is a number and $\ceil{a}$ is the value of the next highest integer of $a$. \\ \hline
+		$(val)\mod{div}$ & 
+		Division of $val$ by $div$ with remainder. The function returns the remainder $r$. To avoid negative input we often use $(val + div)\mod{div}$, if $val$ can be $-p < val < 0$. \\ \hline
+		$\{\}$ & Some set. If it is important how this set is represented the format is explained in the corresponding section. \\ \hline
+		$\emptyset$ & An empty set. \\ \hline
+		$(n)_2$ & $n$ is an integer and we are indicating that the binary representation of $n$ is considered. \\ \hline
+		$\log_2(x)$ & Logarithm of $x$ in base 2. \\ \hline
+		$f: A \rightarrow B$ & The definition of a map $f$ that maps from set $A$ to set $B$. \\ \hline
+	\end{tabularx}
+	\caption{Notations for operators and functions that are used in pseudocode and for mathematical expressions.}
+	\label{tab:commonOperations}
+\end{table}
+ \begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|p{3.1cm} | X|}
+		\hline
+		$\Call{Send}{data, recv}$ &
+		Point-to-point communication. Send data $data$ to process with rank ID $recv$. \gls{mpi} defines this in function \texttt{MPI\_Send()} and variants of it. By default the blocking variant is used. A non-blocking variant is indicated in the context of the corresponding section and can also be identified, if $\Call{Wait}{data}$ is used in the same pseudocode \\ \hline
+		$\Call{Recv}{data, send}$ &
+		Point-to-point communication. Receive data $data$ from process with rank ID $send$. To receive a message obviously rank $send$ needs to send data to the receiving process. \gls{mpi} defines this in function \texttt{MPI\_Recv()} and variants of it. In this thesis \textsc{Rescv} is always blocking.\\ \hline
+		$\Call{Wait}{data}$ & Wait until buffer $data$ is safe to use. \gls{mpi} defines this in function \texttt{MPI\_Wait()}. \\ \hline 
+		$\Call{Send}{data_1, recv}$||\newline $\Call{Recv}{data_2, send}$ &
+		Point-to-point communication. Sending and receiving at the 'same time'. The symbol $||$ stands here for performing both functions in one call and does not represent a logic OR. As explained in Section \ref{sec:mpiFunctions} this call is important as it avoids deadlocks. \gls{mpi} implements this in function \texttt{MPI\_Sendrecv()}.\\ \hline
+	\end{tabularx}
+	\caption{Definition of the pseudocode functions for point-to-point communication.}
+	\label{tab:mpiOperations}
+\end{table}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|p{3.1cm} | X |}
+		\hline
+		$p$ & Number of processors. \\ \hline
+		$r$ & Rank ID of the process. \\ \hline
+		$\alpha$ & Latency constant of linear cost model. See next section. \\ \hline
+		$\beta$ & Bandwidth constant of linear cost model. See next section. \\ \hline
+		$\gamma$ & Computation constant of extended linear cost model. See next section. \\hline
+		$\tilde{S}$ & A set of finite size where each processor can hold a subset of. \\ \hline
+		$S_r$ & The subset rank $r$ holds from set $\Tilde{S}$. \\ \hline
+		$\varphi_r$ and $\varphi$ & Set filling of $S_r$. If $S_r$ is sparsely represented it corresponds to the length of the sparse element list (multiples are counted multiple times). If each rank has (approximately) the same set filling $\varphi$ is used. \\ \hline
+		$\Phi$ & Total set filling defined by $\Phi=\sum_r \varphi_r$. \\ \hline 
+		$G$ / $G=(E,V)$ & A graph $G$ with edges $E$ and vertices $V$. \\ \hline
+		$I$ and $O$ & Input ($I$) array and output ($O$) array of a function. \\ \hline
+		$B$ & Buffer array. \\ \hline
+		$T$ & Measured or estimated execution time of an algorithm. \\ \hline
+		$q$ & Number of iterations. \\ \hline
+	\end{tabularx}
+	\caption{Variables that define the same property throughout the whole thesis.}
+	\label{tab:fixedVariables}
+\end{table}
 
 \section{Cost Model} \label{costModel}
 \todo{rewrite and use review paper from Rico-Gallego}
@@ -592,7 +637,7 @@ The idea is here to generate a sequence that resembles approximately  the doubli
 		\State to, from $\gets$ $(r + s_0)\mod{p}$, $(r-s_0)\mod{p}$
 		\State \Call{Send}{$I$, to} $||$ \Call{Recv}{$O$, from} \label{ApproxHalfingWholeArray:firstIt}
 		\For{$k=1,\dots, q-1$}
-		\State $\epsilon \gets s_{k+1} \land (1)_2$
+		\State $\epsilon \gets s_{k+1}$ AND$ (1)_2$
 		\Comment{$\epsilon=1$, if $s_{k+1}$ is odd, $\epsilon=0$, if $s_{k+1}$ is even}
 		\State to, from $\gets$ $(r + s_k - \epsilon)\mod{p}$, $(r-s_k + \epsilon + p)\mod{p}$
 		\If{$\epsilon$=1}
