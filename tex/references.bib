@@ -20,7 +20,6 @@
 	publisher="Springer Nature Switzerland",
 	address="Cham",
 	pages="171--287",
-	abstract="The last third of the lectures on Parallel Computing deals with characteristics of distributed memory systems where processors or shared memory processor-nodes are interconnected via a communication network which has to be used to exchange information between processes or threads in any non-trivial parallel algorithm. The concept of message-passing as a means to structure and implement algorithms is introduced, concretely via MPI which is dealt with extensively, regarding both fundamental message-passing ideas but also the way these have been realized in a concrete specification.",
 	isbn="978-3-031-86578-7",
 	doi="10.1007/978-3-031-86578-7_3",
 	url="https://doi.org/10.1007/978-3-031-86578-7_3"
@@ -589,6 +588,111 @@ doi = {10.1145/2442516.2442530}
 	keywords = {alltoallv, bruck algorithm, collective communication, mpi},
 	location = {Minneapolis, MN, USA},
 	series = {HPDC '22}
+}
+
+
+%------------------------------------------------------------------------------------------------------
+%                                          Data Compression
+%------------------------------------------------------------------------------------------------------
+@incollection{compIntroBook,
+	title = {Introduction},
+	booktitle = {Introduction to Data Compression (Fourth Edition)},
+	publisher = {Morgan Kaufmann},
+	edition = {Fourth Edition},
+	address = {Boston},
+	pages = {1-11},
+	year = {2012},
+	series = {The Morgan Kaufmann Series in Multimedia Information and Systems},
+	isbn = {978-0-12-415796-5},
+	doi = {https://doi.org/10.1016/B978-0-12-415796-5.00001-6},
+	url = {https://www.sciencedirect.com/science/article/pii/B9780124157965000016},
+	author = {Khalid Sayood}
+}
+
+
+@book{compCompactDatastructuresBook,
+	author = {Navarro, Gonzalo},
+	title = {Compact Data Structures: A Practical Approach},
+	year = {2016},
+	isbn = {1107152380},
+	publisher = {Cambridge University Press},
+	address = {USA},
+	edition = {1st}
+}
+
+@INPROCEEDINGS{compOnlinePipelining,
+	author={Zhou, Qinghua and Ramesh, Bharath and Shafi, Aamir and Abduljabbar, Mustafa and Subramoni, Hari and Panda, Dhabaleswar K.},
+	booktitle={ISC High Performance 2024 Research Paper Proceedings (39th International Conference)}, 
+	title={Accelerating MPI AllReduce Communication with Efficient GPU-Based Compression Schemes on Modern GPU Clusters}, 
+	year={2024},
+	volume={},
+	number={},
+	pages={1-12},
+	keywords={Training;Quantization (signal);High performance computing;Graphics processing units;Stochastic processes;Distributed databases;Parallel processing;AllReduce;Compression;GPU-Aware MPI;Deep Learning;Data Parallelism},
+	doi={10.23919/ISC.2024.10528931}}
+
+@INPROCEEDINGS{compQuantizationAndSparseAllred,
+	author={Nguyen, Truong Thao and Wahib, Mohamed and Takano, Ryousei},
+	booktitle={2019 IEEE 38th International Performance Computing and Communications Conference (IPCCC)}, 
+	title={Topology-aware Sparse Allreduce for Large-scale Deep Learning}, 
+	year={2019},
+	volume={},
+	number={},
+	pages={1-8},
+	keywords={Deep learning;Training;Costs;Accuracy;High performance computing;Computational modeling;Data compression;Parallel processing;Network architecture;Complexity theory;Distributed Deep Learning;High Performance Computing (HPC);Sparse communication;Allreduce},
+	doi={10.1109/IPCCC47392.2019.8958738}}
+	
+@misc{compCountSketchAllreduce,
+	title={Accelerating Distributed Deep Learning using Lossless Homomorphic Compression}, 
+	author={Haoyu Li and Yuchen Xu and Jiayi Chen and Rohit Dwivedula and Wenfei Wu and Keqiang He and Aditya Akella and Daehyeok Kim},
+	year={2024},
+	eprint={2402.07529},
+	archivePrefix={arXiv},
+	primaryClass={cs.DC},
+	url={https://arxiv.org/abs/2402.07529}, 
+}
+
+@article{compCountSketchOriginalUseCase,
+	title = {Finding frequent items in data streams},
+	journal = {Theoretical Computer Science},
+	volume = {312},
+	number = {1},
+	pages = {3-15},
+	year = {2004},
+	note = {Automata, Languages and Programming},
+	issn = {0304-3975},
+	doi = {https://doi.org/10.1016/S0304-3975(03)00400-6},
+	url = {https://www.sciencedirect.com/science/article/pii/S0304397503004006},
+	author = {Moses Charikar and Kevin Chen and Martin Farach-Colton},
+	keywords = {Frequent items, Streaming algorithm, Approximation}
+}
+
+@ARTICLE{compZFPalgo,
+	author={Lindstrom, Peter},
+	journal={IEEE Transactions on Visualization and Computer Graphics}, 
+	title={Fixed-Rate Compressed Floating-Point Arrays}, 
+	year={2014},
+	volume={20},
+	number={12},
+	pages={2674-2683},
+	keywords={Floating-point arithmetic;Image coding;Encoding;Bandwidth allocation;Data visualization;Computational modeling;Data compression;floating-point arrays;orthogonal block transform;embedded coding},
+	doi={10.1109/TVCG.2014.2346458}}
+
+@inproceedings{compSparseDense,
+	author = {Renggli, Cedric and Ashkboos, Saleh and Aghagolzadeh, Mehdi and Alistarh, Dan and Hoefler, Torsten},
+	title = {SparCML: high-performance sparse communication for machine learning},
+	year = {2019},
+	isbn = {9781450362290},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	url = {https://doi.org/10.1145/3295500.3356222},
+	doi = {10.1145/3295500.3356222},
+	booktitle = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},
+	articleno = {11},
+	numpages = {15},
+	keywords = {sparse input vectors, sparse allreduce, sparse allgather},
+	location = {Denver, Colorado},
+	series = {SC '19}
 }
 
 %------------------------------------------------------------------------------------------------------
