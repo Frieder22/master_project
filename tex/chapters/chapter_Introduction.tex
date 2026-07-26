@@ -3,7 +3,7 @@
 %!TeX root = ../thesis.tex
 
 \newacronym{bfs}{BFS}{Breath First Search}
-\chapter{Introduction and Related Work}
+\chapter{Introduction and Related Work} \label{chap:introduction}
 The aim of this thesis is to find a dynamic and potential faster way to calculate a set union
 \begin{align*}
 	U = \bigcup_{r=0}^{p-1} S_r
@@ -328,10 +328,12 @@ Besides the definition of notation we also provide a overview over a small set o
 		$arr \gets [a,\dots, a]$ & The array $arr$ is initialized with all entries being $a$. The size of $arr$ is given in the context of the current section. \\ \hline 
 		$arr[i]$ & 
 		Variable $arr$ is an array. The notation means indexing of this array. Either the $i$-th element is selected or, if the array is explicitly divided into blocks, the $i$-th block is referenced. \\ \hline
-		$\cdot$  XOR $\cdot$ & 
+		$\cdot$  BXOR $\cdot$ & 
 		Bitwise exclusive OR operator. \\ \hline
-		$\cdot$ AND $\cdot$ & 
+		$\cdot$ BAND $\cdot$ & 
 		Bitwise AND operator. \\ \hline
+		$\cdot$ BOR $\cdot$ & 
+		Bitwise OR operator. \\ \hline
 		$\cdot \oplus \cdot$ & 
 		Some associative commutative binary operator. Is a placeholder for operator like $+$, $\cdot$ (multiplication), max($\cdot, \cdot$), min($\cdot, \cdot$) or bitwise operators. In our implementations it is always commutative, too. \\ \hline
 		$\ceil{a}$ &
@@ -414,7 +416,7 @@ As mentioned before, the Allreduce is a collective operation that calculates the
 \begin{align}
 	O = \bigoplus_{r=0}^{p-1} I_r \label{eq:AllreduceCond}
 \end{align}
-with regard to the binary operator $\oplus$. After the execution this output $O$ is available to all processes  $0 \leq r \leq p-1$. The binary operator $\oplus$ needs to be associative and common examples are the standard addition ($+$), the standard multiplication ($\cdot$), the minimum/maximum ($\min(\cdot, \cdot)$, $\max(\cdot, \cdot)$) or bitwise operations like bitwise OR/AND/XOR. We keep the naming convention of this procedure to the MPI standard, but also mention here that there is other terminology like \emph{global combine} \cite{AllreduceSummaryAll} or \emph{census function} \cite{shiftComm} that describe the same collective operation. We also want to define the terminology for the expression \emph{to reduce} something. This should be interpreted as the application of operator $\oplus$ on two elements or two equally sized blocks of data. Usually the result is saved in one of the inputs. Sometimes we refer to this operation also as adding two data elements together and speak of the result as the sum. This should not only represent the case where $\oplus ~\widehat{=}~ +$, but every possible associative operator $\oplus$. \\
+with regard to the binary operator $\oplus$. After the execution this output $O$ is available to all processes  $0 \leq r \leq p-1$. The binary operator $\oplus$ needs to be associative and common examples are the standard addition ($+$), the standard multiplication ($\cdot$), the minimum/maximum ($\min(\cdot, \cdot)$, $\max(\cdot, \cdot)$) or bitwise operations like bitwise OR/AND/BXOR. We keep the naming convention of this procedure to the MPI standard, but also mention here that there is other terminology like \emph{global combine} \cite{AllreduceSummaryAll} or \emph{census function} \cite{shiftComm} that describe the same collective operation. We also want to define the terminology for the expression \emph{to reduce} something. This should be interpreted as the application of operator $\oplus$ on two elements or two equally sized blocks of data. Usually the result is saved in one of the inputs. Sometimes we refer to this operation also as adding two data elements together and speak of the result as the sum. This should not only represent the case where $\oplus ~\widehat{=}~ +$, but every possible associative operator $\oplus$. \\
 The Allreduce operation is intuitively a direct choice for our problem of calculation a set union. Abstractly speaking, we can split up our problem of calculating the union of all processes by finding the union between two sets (of two processors) and then use this subresult without ever looking at the two original sets anymore. So we can find the total union by performing the set union recursively over all sets.\\
 Moreover an nice property of the set union are apparent: It does not matter in which order the subresults are calculated and combined as the union operation is commutative. This allows us to ignore special (possibly slower) Allreduce implementations that respect commutativity. \\
 In this section a selection of Allreduce algorithms is presented that either are important to know or are the basis of the algorithms presented in this thesis. In general we look here only at non pipelined implementations. Pipelining is method where data is split into chunks to and sent one after another. The benefit is here that the receiving end can already process a part of the data so an performance increase can be expected in some situations. The constraint to non pipelined implementations is done, because we expect that chunking up the message can destroy the benefit of using a sparse format as a sparse message would need to 'compete' against smaller blocks. On the other hand a selection is needed to be done as not every variant could be considered as a base algorithm for our idea.
@@ -446,7 +448,7 @@ With this idea one can recursively build a scheme such that in each iteration $i
 	\Ensure $p=2^k$ for some $k$
 	\Procedure{AllReduce}{$r, p, I, O$}
 		\For{(shift $\gets 1$, shift $< p$, shift $\gets 2\cdot$shift)}
-		\State commNeigh $\gets r $ XOR shift \label{Butterfly:CommPartner} \Comment{Find communication partner} 
+		\State commNeigh $\gets r $ BXOR shift \label{Butterfly:CommPartner} \Comment{Find communication partner} 
 		\State \Call{Send}{$I$, commNeigh} $||$ \Call{Recv}{$O$, commNeigh} \label{Butterfly:Communcation} 
 		\Statex \Comment{Send $I$, receive in $O$}
 		\State $I \gets I\oplus O$ \Comment{Perform local reduction}
@@ -465,7 +467,7 @@ We also prove the correctness of Algorithm \ref{algo:Butterfly}. So after the ex
 \end{lemma}
 \begin{proof}
 	The statement is proved by induction. The invariant holds before the first iteration (with $i=-1$) as each group $k$ holds only one (the $k$-th) rank. The reduction over all groups is then obviously the same as the total desired reduction result.\\
-	Assume the statement holds for iteration $i-1$. From Definition \ref{def:groupsOfProcesses} we can see that two groups of iteration $i-1$ build a new group in iteration $i$. We call the set of processes originating from ranks with lower rank IDs as the left half of the current group and the other one the right half of the current group. We can see that the communication partner in iteration $i$ is found by flipping the $i$-th bit of the binary representation of rank $r$ (done by the XOR operation). This guarantees that communication happens between the first rank of the left half with the first rank of the right half and so on. Therefore all processes of the right half receive a message from the left half and vice versa. The reduction is then performed locally and both group halves and therefore the whole group will hold the same subresult in array $I$. One can also directly see that the total reduction over all groups still fulfills Equation \ref{eq:AllreduceCond}. So the statement holds also for iteration $i$.\\
+	Assume the statement holds for iteration $i-1$. From Definition \ref{def:groupsOfProcesses} we can see that two groups of iteration $i-1$ build a new group in iteration $i$. We call the set of processes originating from ranks with lower rank IDs as the left half of the current group and the other one the right half of the current group. We can see that the communication partner in iteration $i$ is found by flipping the $i$-th bit of the binary representation of rank $r$ (done by the BXOR operation). This guarantees that communication happens between the first rank of the left half with the first rank of the right half and so on. Therefore all processes of the right half receive a message from the left half and vice versa. The reduction is then performed locally and both group halves and therefore the whole group will hold the same subresult in array $I$. One can also directly see that the total reduction over all groups still fulfills Equation \ref{eq:AllreduceCond}. So the statement holds also for iteration $i$.\\
 \end{proof}
 \begin{corollary}
 	Algorithm \ref{algo:Butterfly} performs an Allreduce.
@@ -689,7 +691,7 @@ The idea is here to generate a communication pattern that resembles approximatel
 		\State to, from $\gets$ $(r + s_0)\mod{p}$, $(r-s_0)\mod{p}$
 		\State \Call{Send}{$I$, to} $||$ \Call{Recv}{$O$, from} \label{ApproxHalfingWholeArray:firstIt}
 		\For{$k=1,\dots, q-1$}
-		\State $\epsilon \gets s_{k+1}$ AND$~(1)_2$
+		\State $\epsilon \gets s_{k+1}$ BAND$~(1)_2$
 		\Comment{$\epsilon=1$, if $s_{k+1}$ is odd, $\epsilon=0$, if $s_{k+1}$ is even}
 		\State to, from $\gets$ $(r + s_k - \epsilon)\mod{p}$, $(r-s_k + \epsilon + p)\mod{p}$
 		\If{$\epsilon$=1}
@@ -934,7 +936,7 @@ So we firstly introduce here an algorithm implementing the Reducescatter. It is 
 		\Ensure $p=2^k$ for some $k$
 		\Procedure{AllReduceScatter}{$r, p, I, O$}
 		\For{(shift $\gets p/2$, shift $\geq 1$, shift $\gets$ shift/$2$)}
-		\State commNeigh $\gets r $ XOR shift \Comment{Find communication partner}
+		\State commNeigh $\gets r $ BXOR shift \Comment{Find communication partner}
 		\State start $\gets $ ($\floor{\text{commNeigh/shift}}$)$\cdot$shift
 		\label{reduceScatter:startBlock}
 		\Statex\Comment{rounding down to next multiple of 'shift'}
@@ -1070,7 +1072,7 @@ At the moment only the Reducescatter phase is explained in detail. The details o
 		\Procedure{AllReduce}{$r, p, I, O$}
 		\For{(shift $\gets p/2$, shift $\geq 1$, shift $\gets$ shift/$2$)}
 		\Comment{ReduceScatter phase}
-		\State commNeigh $\gets r $ XOR shift
+		\State commNeigh $\gets r $ BXOR shift
 		\State start $\gets $ ($\floor{\text{commNeigh/shift}}$)$\cdot$ shift
 		\State startR $\gets $ ($\floor{$r$/\text{shift}}$)$\cdot$shift
 		\State \Call{Send}{$I$[start, $\dots$, start + shift$-$1], commNeigh} $||$ \Call{Recv}{$O$, commNeigh}
@@ -1078,7 +1080,7 @@ At the moment only the Reducescatter phase is explained in detail. The details o
 		\EndFor
 		\For{(shift $\gets 1$, shift $< p$, shift $\gets 2\cdot$shift)}
 		\Comment{Allgather phase}
-		\State commNeigh $\gets r $ XOR shift 
+		\State commNeigh $\gets r $ BXOR shift 
 		\State start $\gets $ ($\floor{$r$/\text{shift}}$)$\cdot$shift
 		\State startR $\gets $ ($\floor{\text{commNeigh/shift}}$)$\cdot$shift
 		\State \Call{Send}{$I$[start, $\dots$, start + shift$-$1], commNeigh} $||$
@@ -1099,12 +1101,12 @@ We also propose here a small possible optimization. In each iteration 'shift' am
 \end{align*}
 where $\tilde{R}$ is the set of rank IDs and $b_0 \dots b_{a-1}$ are the bits of $r$ when written in binary. To guarantee we map from $\tilde{R}$ to $\tilde{R}$ $a$ needs be the lowest number such that the highest rank ID can be represented. The highest thread ID is $p-1$ so $a=\log_2(p)$. The map $T_a$ can be interpreted as a reflection of the binary representation of $r$ and identifying this reflection as its output. As a reflection is always a bijection $T_a$ is as well. \\
 To apply this map to rename an algorithm the ranks $r$ need to be switched with its bit reversed variant. It is also important to map the input of $\Call{Send}$ and $\Call{Recv}$ back to the original rank IDs. For this the inverse $T_a^{-1}$ of our map is needed. We can directly see that in this case $T_a$ is also its own inverse. \\
-With this mapping an algorithm is created that works correctly, but the goal is to reduce the difference between sending and receiving IDs for the first iterations where the sent messages are large. When looking again at Procedure \ref{algo:redScatterAndAllreduce} we see that the communication partner is found by 'commNeigh'. Using the remapping, 'commNeigh' itself is calculated by $T_a(r)\textrm{ XOR } '\text{shift}'$. Before this value can be used for $\Call{Send}$ or $\Call{Recv}$ it needs to be mapped using the invert of $T_a$. The true communication partner of $r$ is therefore $T_a(T_a(r)\textrm{ XOR } \text{'shift'})$. The absolute difference between a rank and its communication partner is then
+With this mapping an algorithm is created that works correctly, but the goal is to reduce the difference between sending and receiving IDs for the first iterations where the sent messages are large. When looking again at Procedure \ref{algo:redScatterAndAllreduce} we see that the communication partner is found by 'commNeigh'. Using the remapping, 'commNeigh' itself is calculated by $T_a(r)\textrm{ BXOR } '\text{shift}'$. Before this value can be used for $\Call{Send}$ or $\Call{Recv}$ it needs to be mapped using the invert of $T_a$. The true communication partner of $r$ is therefore $T_a(T_a(r)\textrm{ BXOR } \text{'shift'})$. The absolute difference between a rank and its communication partner is then
 \begin{align*}
 	|r - \text{commNeigh}| 
-	&= |r - T_a(T_a(r)\textrm{ XOR } \text{shift})|\\
-	&= |r- T_a(T_a(r)) \textrm{ XOR } T_a(\text{shift})|\\
-	&= |r - (r \textrm{ XOR } T_a(\text{shift}))|\\
+	&= |r - T_a(T_a(r)\textrm{ BXOR } \text{shift})|\\
+	&= |r- T_a(T_a(r)) \textrm{ BXOR } T_a(\text{shift})|\\
+	&= |r - (r \textrm{ BXOR } T_a(\text{shift}))|\\
 	&= T_a(\text{shift})\\
 	&= 2^i,
 \end{align*}
@@ -1519,7 +1521,7 @@ Some Allgather algorithms are already mentioned in Section \ref{sec:Allreduce} a
 \subsection{Butterfly Allgather} \label{sec:AllgatherButterfly}
 This algorithm is one algorithm that uses a similar scheme as an Allreduce counterpart. I.e. it uses the Butterfly scheme shown in Figure \ref{fig:butterfly}. We only look here at the base version where the number of processors $p$ is some power of two. There are extensions to this version, but these can introduce more than one extra communication rounds \cite{allgather}. A pseudocode implementation is presented in Algorithm \ref{algo:recursiveDoublingAllgather}.
 \begin{algorithm}
-	\caption{– Allgather Recursive Doubling Scheme (Butterfly pattern)\\
+	\caption{– Allgather using recursive doubling scheme (Butterfly pattern)\\
 		\textit{r}: rank Id\\
 		\textit{p}: number of processes\\
 		\textit{I}: Input array\\
@@ -1529,7 +1531,7 @@ This algorithm is one algorithm that uses a similar scheme as an Allreduce count
 		\Procedure{AllGather}{$r, p, I, O$}
 		\State $O[r] \gets I$
 		\For{(shift $\gets 1$, shift $< p$, shift $\gets 2\cdot$shift)}
-		\State commNeigh $\gets r $ XOR shift \Comment{Find communication partner}
+		\State commNeigh $\gets r $ BXOR shift \Comment{Find communication partner}
 		\State start $\gets \floor{r/\text{shift}}\cdot \text{shift}$
 		\State startR $\gets \floor{\text{commNeigh}/\text{shift}}\cdot \text{shift}$
 		\State \Call{Send}{$O[\text{start},\dots, \text{start}+\text{shift}-1]$, commNeigh} $||$
@@ -1539,7 +1541,7 @@ This algorithm is one algorithm that uses a similar scheme as an Allreduce count
 		\EndProcedure´
 	\end{algorithmic}
 \end{algorithm}
-Here one sees that it is nearly equivalent to the recursive doubling algorithm from Section \ref{sec:recursiveDoublingAllreduce}. The only difference is here that neither buffering of the received blocks is needed nor that any reduction is performed. Instead the correct blocks put behind each other. Also some calculation need to be added to find the block indices which should be sent and received. This exact procedure is also used as an Allgather phase for Algorithm \ref{algo:redScatterAndAllreduce}.
+Here one sees that it is nearly equivalent to the recursive doubling algorithm from Section \ref{sec:recursiveDoublingAllreduce}. The only difference is here that neither buffering of the received blocks is needed nor that any reduction is performed. Instead the correct blocks put behind each other. Also some calculation need to be added to find the block indices which should be sent and received. This exact procedure is also used as an Allgather phase for Algorithm \ref{algo:redScatterAndAllreduce}. This Allgather is also used as a reference to benchmark performance and will be called \texttt{Allgather\_Butterfly} in this thesis.
 
 \subsubsection{Proof of correctness}
 We also validate that Algorithm \ref{algo:recursiveDoublingAllgather} performs an Allgather. This also helps to understand how this algorithm works. For this, again an invariant is apparent for each iteration.
@@ -1548,7 +1550,7 @@ We also validate that Algorithm \ref{algo:recursiveDoublingAllgather} performs a
 \end{lemma}
 \begin{proof}
 	The statement is proved by induction. The invariant holds before the first iteration ($i=-1$) as there are $p-1$ groups each containing a single rank $r$ and array $O$ is initialized using $O[r]=I_r$.\\
-	Assume the invariant holds in iteration $i$. Denote the value of 'shift' in iteration $i$ as $s_i$, identify $s_i=2^{i}$ and therefore see that $2\dot s_i$ is the size of groups in iteration $i$. Consider now iteration $i+1$. One can see that a group of processes in this iteration is build from two (sub-)groups of the previous iteration. The sub-group with lower rank Ids is now referred to as \texttt{left half} and the other one as \emph{right half}. One can identify that there is pairwise communication between both group halves as communication partners are found using the exclusive OR operation (XOR) on $s_{i+1}$. We see that ranks on the left half send blocks $O[r_g,\dots, r_g + s_{i+1}-1]$ which are received at the ranks from the right half at the same positions. In the other direction the blocks $O[r_g + s_{i+1},\dots,r_g + 2\cdot s_{i+1}-1]$ are sent. This is due to the fact that 'start' is rounded to the next lowest multiple of $s_{i+1}$. As the invariant is assumed to be correct in iteration $i$ the ranks of the left sub-group had $O[r]=I_r$ for $r_g \leq r < r_g +s_{i+1}$ and $s_i$ amount of blocks are sent. For the right half the same property is true for blocks $r$ with $r_g + s_{i+1}\leq r < r_g + 2\cdot s_{i+1}$. The starting rank $r_g$ refers here to a considered group of iteration $i+1$. So after the communication both sub-groups have $O[r]=I_r$ for $r_g \leq r < r_g + 2\cdot s_{i+1} = r_g + 2^{i+1}$ and the invariant holds also for iteration $i+1$.
+	Assume the invariant holds in iteration $i$. Denote the value of 'shift' in iteration $i$ as $s_i$, identify $s_i=2^{i}$ and therefore see that $2\dot s_i$ is the size of groups in iteration $i$. Consider now iteration $i+1$. One can see that a group of processes in this iteration is build from two (sub-)groups of the previous iteration. The sub-group with lower rank Ids is now referred to as \texttt{left half} and the other one as \emph{right half}. One can identify that there is pairwise communication between both group halves as communication partners are found using the exclusive OR operation (BXOR) on $s_{i+1}$. We see that ranks on the left half send blocks $O[r_g,\dots, r_g + s_{i+1}-1]$ which are received at the ranks from the right half at the same positions. In the other direction the blocks $O[r_g + s_{i+1},\dots,r_g + 2\cdot s_{i+1}-1]$ are sent. This is due to the fact that 'start' is rounded to the next lowest multiple of $s_{i+1}$. As the invariant is assumed to be correct in iteration $i$ the ranks of the left sub-group had $O[r]=I_r$ for $r_g \leq r < r_g +s_{i+1}$ and $s_i$ amount of blocks are sent. For the right half the same property is true for blocks $r$ with $r_g + s_{i+1}\leq r < r_g + 2\cdot s_{i+1}$. The starting rank $r_g$ refers here to a considered group of iteration $i+1$. So after the communication both sub-groups have $O[r]=I_r$ for $r_g \leq r < r_g + 2\cdot s_{i+1} = r_g + 2^{i+1}$ and the invariant holds also for iteration $i+1$.
 \end{proof}
 \begin{corollary}
 	Algorithm \ref{algo:recursiveDoublingAllgather} performs an Allgather.
@@ -1647,8 +1649,8 @@ The run time estimation is again straight forward. There are in total $\ceil{\lo
 \end{align*}
 As an optimization in using this algorithm as a set union operation we can keep in mind that the reordering in line \ref{bruckAllgather:reorder1} and \ref{bruckAllgather:reorder2} is not necessary. It is not important in which order the elements are in the output array as long as all elements are present.
 
-\subsection{Approximate Halfing Allgather} \label{sec:approxHalfAllgather}
-Here the Allgather is described that was already used for the Allgather phase of the Approximate Halfing Allreduce (Algorithm \ref{algo:redScatterAndAllgatherShift}). An isolated version can be found in \cite{allgatherTraeffOld}. For this again a sequence $(s_k)_{k\in\{0, \dots, q\}}$ of skips is needed that fulfills 
+\subsection{Approximate Halving Allgather} \label{sec:approxHalfAllgather}
+Here the Allgather is described that was already used for the Allgather phase of the Approximate Halving Allreduce (Algorithm \ref{algo:redScatterAndAllgatherShift}). An isolated version can be found in \cite{allgatherTraeffOld}. For this again a sequence $(s_k)_{k\in\{0, \dots, q\}}$ of skips is needed that fulfills 
 \begin{align*}
 	s_{k+1} - s_k \leq s_k &&\text{and}&& s_0=1, s_q=p.
 \end{align*}
