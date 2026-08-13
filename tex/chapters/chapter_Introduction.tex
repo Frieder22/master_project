@@ -433,7 +433,7 @@ This can be improved, especially for large message sizes. For the Broadcast ther
 
 \subsection{Recursive Doubling Scheme} \label{sec:recursiveDoublingAllreduce}
 The name recursive doubling scheme refers here to the communication pattern. The idea is that there are multiple iterations and in each iteration the communication partner has double the distance as it had in the iteration before. With "distance to the communication partner" we mean that the absolute difference $|r - \hat{r}|$ between the sending rank $r$ and its receiving partner $r\hat{r}$. As the distance is straight doubled in each iteration it is quite obvious why this approach results in algorithms that only work for a number of processes $p$ where $p$ is a power of 2.\\
-There are also two different resulting communication pattern emerging. In the first one there is always pairwise communication between $r$ and $\hat{r}$ meaning these ranks sent message to each other. The arising pattern is called \emph{Butterfly} \cite{ButterflyVSDoublingHalfing}. The other approach will be called \emph{shift based} and is also known as simply Recursive Doubling scheme. Here rank $r$ has in each iteration two different communication partner. One from which it receives data and one that it sends data to. A visual example of both communication pattern is presented in Figure \ref{fig:communicationSchemes}.
+There are also two different resulting communication pattern emerging. In the first one there is always pairwise communication between $r$ and $\hat{r}$ meaning these ranks sent message to each other. The arising pattern is called \emph{Butterfly} \cite{ButterflyVSDoublingHalving}. The other approach will be called \emph{shift based} and is also known as simply Recursive Doubling scheme. Here rank $r$ has in each iteration two different communication partner. One from which it receives data and one that it sends data to. A visual example of both communication pattern is presented in Figure \ref{fig:communicationSchemes}.
 
 \subsubsection{A Butterfly algorithm}
 The key observation of this algorithm is that when two processes send a copy of their data array to each other and both perform a local reduce combining their own data with the received array they both posses identical data \cite{AllreduceSummaryAll}. This is beneficial as in the next iteration both processes can send the same subresult to new participating processes that are not the same.
@@ -482,7 +482,7 @@ We also calculate a run time estimation using the linear cost model. It is appar
 Comparing this to the estimate of the Broadcast\&Gather variant (Equation \ref{eq:BroadcastNaive}) one can see that we lost a factor of 2 for the $\alpha$ term as well as for the $\beta$ term (which is of course a performance gain). One needs to keep in mind that we assumed a hypercube interconnect setup such that in each iteration each process has a direct connection to a different communication partner. This was not necessarily needed in the algorithms explained in the section before.\\
 
 \subsubsection{A generalization of the presented Butterfly scheme}
-The communication scheme we presented here is called Butterfly scheme \cite{ButterflyVSDoublingHalfing}. This scheme can be identified by the fact that each rank receives data from the same process as it sends data to to (i.e. in each iteration we only have one communication partner). This results in the recursive property that a set of $2^{i+1}$ processors have after iteration $i$ the same data. In Figure \ref{fig:butterfly} we see a visual representation of the communication pattern. This scheme is also sometimes called \emph{Hypercube} scheme as one can map the nodes on a $\log_2(p)$-dimensional hypercube where in iteration $i$ communication is done along dimension $i$ \cite{AllreduceSummaryAll}. The representation as a hypercube allows us to explore a whole family of communication schemes. As a hypercube is symmetrical along each dimension one can not distinguish dimensions from each other. This means for operations that are only applied in one dimension it does not matter in which dimension they are performed. For our communication scheme this has the implication that we can switch the iterations in any arbitrary order and still have a correct Allreduce algorithm. The communication pattern can even be performed backwards. This is an important property we use later to show correctness of a proposed Reducescatter implementation in Section \ref{sec:DisseminationAlgo}.
+The communication scheme we presented here is called Butterfly scheme \cite{ButterflyVSDoublingHalving}. This scheme can be identified by the fact that each rank receives data from the same process as it sends data to to (i.e. in each iteration we only have one communication partner). This results in the recursive property that a set of $2^{i+1}$ processors have after iteration $i$ the same data. In Figure \ref{fig:butterfly} we see a visual representation of the communication pattern. This scheme is also sometimes called \emph{Hypercube} scheme as one can map the nodes on a $\log_2(p)$-dimensional hypercube where in iteration $i$ communication is done along dimension $i$ \cite{AllreduceSummaryAll}. The representation as a hypercube allows us to explore a whole family of communication schemes. As a hypercube is symmetrical along each dimension one can not distinguish dimensions from each other. This means for operations that are only applied in one dimension it does not matter in which dimension they are performed. For our communication scheme this has the implication that we can switch the iterations in any arbitrary order and still have a correct Allreduce algorithm. The communication pattern can even be performed backwards. This is an important property we use later to show correctness of a proposed Reducescatter implementation in Section \ref{sec:DisseminationAlgo}.
 
 \subsection{A shift based algorithm}
 A different known approach for a communication pattern is that each process $r$ sends in iteration $i$ its data to process $((r+2^i)\mod{p})$ \cite{shiftComm}. Obviously each process expects therefore to receive data from $((r-2^i)\mod{p})$. To implement this strategy the finging of communication partners are needs to be adapted in line \ref{Butterfly:CommPartner} and the corresponding IDs for receiving and sending in line \ref{Butterfly:Communcation} needs to be changed (in Procedure \ref{algo:Butterfly}). The rest of the algorithm keeps unchanged.
@@ -666,7 +666,7 @@ This proof of correctness needs as a starting point a inductive property. As mot
 \end{proof}
 The estimation of the execution time of this shift based algorithm is straight forward. We can directly identify that it has the same amount of iteration as the Butterfly algorithm and in each iteration is the same amount of communication and computation performed. The linear cost model therefore predicts the same execution time.
 
-\subsection{Approximate Halving scheme} \label{approximateHalfingScheme}
+\subsection{Approximate Halving scheme} \label{approximateHalvingScheme}
 For now, only algorithms build for a number of processors that is a power of 2 were considered. There are extensions for the Butterfly scheme to work for an arbitrary number of processors \cite{RabenseifTraeff, BruckJehoshua}. These extensions do not arise naturally and expected to perform worse than adaptations of the shift based approach \cite{traeff2025, circularGraph, shiftComm}.  This is why we look here at general shift based solutions that build an Allreduce.
 
 \subsubsection{Approximate Halving sequence}
@@ -678,28 +678,28 @@ The Approximate Halving sequence is defined by the following properties: The las
 One can then identify that $q$ needs to be $\ceil{\log_2(p)}$ and $q+1$ is the length of the sequence.
 
 \subsubsection{A shift based approach using the Approximate Halving sequence}
-The idea is here to generate a communication pattern that resembles approximately  shift based approach of the doubling scheme while also enforce the condition $s_q = p$ for the last element of the sequence. One can see that for $p$ being a power of two the Approximate Halving sequence $(s_k)_{k\in\{0,\dots, q\}}$ defines directly the communication distance of iteration $k$ of the shift based doubling approach discussed in the section before. An idea is to simply use the sequence $(s_k)_{k\in\{0,\dots, q\}}$ also where $p$ is not a power of 2. The problem is here that the input of some processes will be added to the solution twice. When calculating the set union using a bitmap this would not be a problem as the bitwise OR operator is idempotent. Nonetheless we present here an Allreduce that respect non-idempotent operators. To make the idea of using the Approximate Halving sequence to build an Allreduce operational  two workarounds needed to be done. Firstly the communication distance is adapted in some iterations and secondly a buffer array is used to save  subsolutions without the ranks own input value $I_r$ \cite{circularGraph, traeff2025}. The respective pseudocode for this algorithm is shown in Procedure \ref{algo:ApproxHalfingWholeArray}. 
+The idea is here to generate a communication pattern that resembles approximately  shift based approach of the doubling scheme while also enforce the condition $s_q = p$ for the last element of the sequence. One can see that for $p$ being a power of two the Approximate Halving sequence $(s_k)_{k\in\{0,\dots, q\}}$ defines directly the communication distance of iteration $k$ of the shift based doubling approach discussed in the section before. An idea is to simply use the sequence $(s_k)_{k\in\{0,\dots, q\}}$ also where $p$ is not a power of 2. The problem is here that the input of some processes will be added to the solution twice. When calculating the set union using a bitmap this would not be a problem as the bitwise OR operator is idempotent. Nonetheless we present here an Allreduce that respect non-idempotent operators. To make the idea of using the Approximate Halving sequence to build an Allreduce operational  two workarounds needed to be done. Firstly the communication distance is adapted in some iterations and secondly a buffer array is used to save  subsolutions without the ranks own input value $I_r$ \cite{circularGraph, traeff2025}. The respective pseudocode for this algorithm is shown in Procedure \ref{algo:ApproxHalvingWholeArray}. 
 \begin{algorithm}
-	\caption{– Shift Based Approach Using Approximate Halfing Sequence\\
+	\caption{– Shift Based Approach Using Approximate Halving Sequence\\
 		\textit{r}: rank Id\\
 		\textit{p}: number of processes\\
 		\textit{s}: array of skips\\
 		\text{I}: Input array\\
-		\textit{O}: Output array} \label{algo:ApproxHalfingWholeArray}
+		\textit{O}: Output array} \label{algo:ApproxHalvingWholeArray}
 	\begin{algorithmic}[1]
 		\Procedure{AllReduce}{$r, p, s, I, O$}
 		\State to, from $\gets$ $(r + s_0)\mod{p}$, $(r-s_0)\mod{p}$
-		\State \Call{Send}{$I$, to} $||$ \Call{Recv}{$O$, from} \label{ApproxHalfingWholeArray:firstIt}
+		\State \Call{Send}{$I$, to} $||$ \Call{Recv}{$O$, from} \label{ApproxHalvingWholeArray:firstIt}
 		\For{$k=1,\dots, q-1$}
 		\State $\epsilon \gets s_{k+1}$ BAND$~(1)_2$
 		\Comment{$\epsilon=1$, if $s_{k+1}$ is odd, $\epsilon=0$, if $s_{k+1}$ is even}
 		\State to, from $\gets$ $(r + s_k - \epsilon)\mod{p}$, $(r-s_k + \epsilon + p)\mod{p}$
 		\If{$\epsilon$=1}
-		\State \Call{Send}{$O$, to} $||$ \Call{Recv}{$B$, from} \label{ApproxHalfingWholeArray:eps1}
+		\State \Call{Send}{$O$, to} $||$ \Call{Recv}{$B$, from} \label{ApproxHalvingWholeArray:eps1}
 		\Comment{Send subsolution without own input}
 		\Else			
-		\State $O' \gets O \oplus I $ \label{ApproxHalfingWholeArray:eps0a}
-		\State \Call{Send}{$O'$, to} $||$ \Call{Recv}{$B$, from} \label{ApproxHalfingWholeArray:eps0b}
+		\State $O' \gets O \oplus I $ \label{ApproxHalvingWholeArray:eps0a}
+		\State \Call{Send}{$O'$, to} $||$ \Call{Recv}{$B$, from} \label{ApproxHalvingWholeArray:eps0b}
 		\Comment{Send subsolution including own input}
 		\EndIf
 		\State $O\gets O \oplus B$
@@ -857,7 +857,7 @@ positions away. This guarantees that in this case "overtaking" can not happen, b
 Using the visual example, the problem that violates correctness for non-idempotent operators is apparent. If $s_{k+1}$ is odd and each process would store/send the complete subresult some values would be added twice. Such a case is highlighted in Figure \ref{fig:shiftBasedIrregular}. This is circumvented by storing only the subresult not containing a ranks own input $I_r$ and only sending the subresult without $I_r$ in the case, if $s_{k+1}$ is odd (i.e. $\epsilon=1$). This strategy of course would be problematic, if $s_{k+1}$ is even as one input would be missing in the next subresult. So in this case a ranks own input is added to the sending buffer before the message is transmitted. The original buffer that holds the subresult without $I_r$ keeps untouched.\\
 
 \subsubsection{Proof of correctness}
-With this ideas in mind we can formalize a proof that Algorithm \ref{algo:ApproxHalfingWholeArray} performs an Allreduce. Again this needs as a basis a lemma that states an important inductive property. 
+With this ideas in mind we can formalize a proof that Algorithm \ref{algo:ApproxHalvingWholeArray} performs an Allreduce. Again this needs as a basis a lemma that states an important inductive property. 
 \begin{lemma}
  	Rank $r$ holds after iteration $k$ the subsolution 
 	\begin{align}
@@ -866,11 +866,11 @@ With this ideas in mind we can formalize a proof that Algorithm \ref{algo:Approx
 	where $I_i$ is the input of rank $i$.
 \end{lemma}
 \begin{proof}
-	The statement is proven by induction. The invariant holds for the first iteration. The first iteration ($i=0$) is handled separately (line \ref{ApproxHalfingWholeArray:firstIt}) where each rank $r$ receives the input of $(r-1+p) \mod{p}$ therefore each rank holds $O_r^0 = I_{r-1\mod{p}}$ which respects Equation \ref{inductionShift} as $s_1=2$ holds for every Approximately Halving sequence.\\
+	The statement is proven by induction. The invariant holds for the first iteration. The first iteration ($i=0$) is handled separately (line \ref{ApproxHalvingWholeArray:firstIt}) where each rank $r$ receives the input of $(r-1+p) \mod{p}$ therefore each rank holds $O_r^0 = I_{r-1\mod{p}}$ which respects Equation \ref{inductionShift} as $s_1=2$ holds for every Approximately Halving sequence.\\
 	To perform the induction step we consider two cases.
 	\begin{itemize}
 		\item  $s_{k+1}$ is even:\\
-		This means that $s_k + s_k = s_{k+1}$. When looking at the Algorithm \ref{algo:ApproxHalfingWholeArray} we see that $\epsilon=0$ and line \ref{ApproxHalfingWholeArray:eps0a} and \ref{ApproxHalfingWholeArray:eps0b} are executed.
+		This means that $s_k + s_k = s_{k+1}$. When looking at the Algorithm \ref{algo:ApproxHalvingWholeArray} we see that $\epsilon=0$ and line \ref{ApproxHalvingWholeArray:eps0a} and \ref{ApproxHalvingWholeArray:eps0b} are executed.
 		We can calculate $O_r^k$ under the assumption Equation \ref{inductionShift} holds for $k-1$. For this we simplify notation and define $\mathbf{\overline{x}}:=((x+p) \mod{p})$.
 		\begin{align*}
 			O_r^k 
@@ -885,7 +885,7 @@ With this ideas in mind we can formalize a proof that Algorithm \ref{algo:Approx
 		\end{align*}
 		
 		\item $s_{k+1}$ is odd:\\
-		This means that $s_k + s_k = s_{k+1} + 1$. When looking at the Algorithm \ref{algo:ApproxHalfingWholeArray} we see that $\epsilon=1$ and line \ref{ApproxHalfingWholeArray:eps1} is executed.We can calculate $O_r^k$ under the assumption Equation \ref{inductionShift} holds for $k-1$.
+		This means that $s_k + s_k = s_{k+1} + 1$. When looking at the Algorithm \ref{algo:ApproxHalvingWholeArray} we see that $\epsilon=1$ and line \ref{ApproxHalvingWholeArray:eps1} is executed.We can calculate $O_r^k$ under the assumption Equation \ref{inductionShift} holds for $k-1$.
 			\begin{align*}
 			O_r^k 
 			&= O_r^{k-1} \oplus  B 
@@ -900,7 +900,7 @@ With this ideas in mind we can formalize a proof that Algorithm \ref{algo:Approx
 	We see that in both cases Equation \ref{inductionShift} holds for $k$, if it is valid for $k-1$. So this Equation holds for any $k$.
 \end{proof}
 \begin{corollary}
-	Algorithm \ref{algo:ApproxHalfingWholeArray} performs an Allreduce.
+	Algorithm \ref{algo:ApproxHalvingWholeArray} performs an Allreduce.
 \end{corollary}
 \begin{proof}
 	So after $q=\ceil{\log_2(p)}$ iterations we identify $k=q-1$ and see that $s_{q} = p$. Moreover after the last iteration the ranks own input $I_r$ gets added to the output which than holds
@@ -913,10 +913,10 @@ With this ideas in mind we can formalize a proof that Algorithm \ref{algo:Approx
 	\end{align*}
 	This is indeed the total reduction sum.\\
 \end{proof}
-So this algorithm implements an Allreduce correctly under the assumption that $p>1$. To also guarantee correct behavior, if Procedure \ref{algo:ApproxHalfingWholeArray} is executed using only one processes one can add a check that captures the case $p=1$. In this case the Algorithm simply sets $O\gets I$ and returns. This avoids getting into trouble of calling $\Call{Send}$ or $\Call{Recv}$ without any communication partner apparent \cite{traeff2025}.\\
+So this algorithm implements an Allreduce correctly under the assumption that $p>1$. To also guarantee correct behavior, if Procedure \ref{algo:ApproxHalvingWholeArray} is executed using only one processes one can add a check that captures the case $p=1$. In this case the Algorithm simply sets $O\gets I$ and returns. This avoids getting into trouble of calling $\Call{Send}$ or $\Call{Recv}$ without any communication partner apparent \cite{traeff2025}.\\
 
 \subsubsection{Run time estimation}
-Considering the runtime estimation using the linear cost model Algorithm \ref{algo:ApproxHalfingWholeArray} achieves quite a similar result as the straight doubling scheme. We only need to keep in mind that an extra reduction is performed in iterations where $s_{k+1}$ is even. This can happen in each iteration but the first one. The algorithm performs $q=\ceil{\log_2{p}}$ number of communication rounds where in each iteration an array of size $m$ is sent. In the first iteration no reduction is performed. In the following $q-1$ iterations there are at least 1 and at most 2 local reductions of size $m$ performed. After the last iteration another extra reduction is executed. So in total there are $q$ reductions done in the best case and $2q-1$ reductions done in the worst case. With that we can define an upper bound for the estimated runtime as
+Considering the runtime estimation using the linear cost model Algorithm \ref{algo:ApproxHalvingWholeArray} achieves quite a similar result as the straight doubling scheme. We only need to keep in mind that an extra reduction is performed in iterations where $s_{k+1}$ is even. This can happen in each iteration but the first one. The algorithm performs $q=\ceil{\log_2{p}}$ number of communication rounds where in each iteration an array of size $m$ is sent. In the first iteration no reduction is performed. In the following $q-1$ iterations there are at least 1 and at most 2 local reductions of size $m$ performed. After the last iteration another extra reduction is executed. So in total there are $q$ reductions done in the best case and $2q-1$ reductions done in the worst case. With that we can define an upper bound for the estimated runtime as
 \begin{align*}
 	T_\textrm{ApproxHalv} \leq \ceil{\log_2{p}}(\alpha + \beta m) + (2\ceil{\log_2{p}}-1)\gamma m.
 \end{align*}
@@ -1224,7 +1224,7 @@ The whole structure of these algorithms is built on the fact that we have a numb
 
 
 \subsection{Approximate Halving Algorithm using Reducescatter and Allgather} \label{sec:approxHalfRedScat}
-In the section before  the idea of combining a Reducescatter and Allgather to perform an Allreduce is already explained. There a Butterfly/Hypercube communication pattern was used. Again this arises the problem that such a pattern is not easily extendable to a non-power-of-two number of processors $p$. So here we propose an algorithm that is again based on the approximate halfing sequence $(s_k)_{k\in\{0,\dots, q-1\}}$ from Section \ref{approximateHalfingScheme} to build a communication pattern. Here again $q$ is set to $\ceil{\log_2{p}}$. For this we firstly present an implementation for a Reducescatter that uses the terms of the Approximate Halving sequence to find communication partners.
+In the section before  the idea of combining a Reducescatter and Allgather to perform an Allreduce is already explained. There a Butterfly/Hypercube communication pattern was used. Again this arises the problem that such a pattern is not easily extendable to a non-power-of-two number of processors $p$. So here we propose an algorithm that is again based on the approximate halving sequence $(s_k)_{k\in\{0,\dots, q-1\}}$ from Section \ref{approximateHalvingScheme} to build a communication pattern. Here again $q$ is set to $\ceil{\log_2{p}}$. For this we firstly present an implementation for a Reducescatter that uses the terms of the Approximate Halving sequence to find communication partners.
 
 \subsubsection{The Reducescatter}
 We start with an implementation in pseudocode of the proposed Reducescatter in Procedure \ref{algo:redScatterShift} \cite{traeff2025}. 
@@ -1256,7 +1256,7 @@ We start with an implementation in pseudocode of the proposed Reducescatter in P
 		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
-One can see the Approximate Halving sequence is here calculated on the fly. An important difference that is apparent when this algorithm compared to the before mentioned Allreduce that also uses the Approximate Halving pattern (Procedure \ref{algo:ApproxHalfingWholeArray}) is that here is no adjustment term $\epsilon$ needed. The reason for this becomes clear in the proof of correctness. Moreover the Approximate Halving sequence is here iterated from the back i.e. we start here with $s_{q-1}=\ceil{p/2}$ and the last iteration uses $s_0=1$. With this we can identify $s'=s_{k+1}$ and $s=s_k$.\\
+One can see the Approximate Halving sequence is here calculated on the fly. An important difference that is apparent when this algorithm compared to the before mentioned Allreduce that also uses the Approximate Halving pattern (Procedure \ref{algo:ApproxHalvingWholeArray}) is that here is no adjustment term $\epsilon$ needed. The reason for this becomes clear in the proof of correctness. Moreover the Approximate Halving sequence is here iterated from the back i.e. we start here with $s_{q-1}=\ceil{p/2}$ and the last iteration uses $s_0=1$. With this we can identify $s'=s_{k+1}$ and $s=s_k$.\\
 The input array obviously needs to be divided into $p$ blocks as after this procedure each rank should only hold one of these blocks. In the shown implementation two extra buffers $R$ and $B$ are needed. The buffer $B$ is only used as a intermediate storage for receiving messages. Array $R$ holds the subresults of the different reduced blocks. If large enough memory is allocated for $O$ one could simply append $R$ to it. In this case the lines \ref{redScatterShift:OInit} and \ref{redScatterShift:ORed} would not be necessary as they could be included in the loops following each line by letting there parameter $i$ start at $0$ instead of $1$. To make explanation and proof easier we keep this interpretation in mind and refer to $O$ simply as $R[0]$. An important detail from this algorithm is that the original blocks from the input $I$ are saved in a rotated manner in $R$. This done in such a way that each rank $r$ holds the $r$-th block at its first entry $R[0]$. We see that in each iteration blocks $R[s,\dots, s'-1]$ are sent to a process $\hat{r}=(r+s)\mod{p}$. These blocks are there added using the operator $\oplus$ to blocks $R[0,\dots,s'-s-1]$ (while using $T$ as an intermediate buffer). So the blocks send by $r$ are added at $\hat{r}$ to blocks which are  shifted by $s$ to the start of array $R$ compared to their original position at $r$. This works fine because in the beginning the input are saved in $R$ in a rotated manner such that $R[0] = I[r]$.
 This becomes most apparent when one just considers block $s$ at rank $\hat{r}$. This block corresponds to the input block $I_{\hat{r}}[(\hat{r}+s)\mod{p}]$. This block is received by rank $r=(r-s+p)\mod p$. When it is received block $s$ is then added to block $0$ from rank $r$ . Block $0$ at rank $r$ corresponds to input block $I_r[r]=I_r[(\hat{r} -s+p)\mod{p}]$ which has the same index in the input array $I$ as the one that rank $\hat{r}$ has sent.
 
@@ -1267,7 +1267,7 @@ We introduce here another definition of a sequence $(s_k)_{\{0,\dots,q-1\}}$ tha
 \end{align}
 These conditions are  obviously fulfilled by the original Approximate Halving sequence. In most of the implementations we will use the Approximate Halving sequence as an explicit example of a skip sequence. One needs to keep in mind that the algorithms proposed in this section will also work with other sequences that fulfill the mentioned conditions. One reason to still use a Approximate Halving is the simplicity to calculate it. The other reason is that it only consists out of $q=\ceil{\log_2(p)}+1$ terms and $q-1$ defines the number of iterations. We from now on will also refer to the terms of $(s_k)_{\{0,\dots,q-1\}}$ as \emph{skips}.
 
-\subsubsection{Performing a local sum on a data array}
+\subsubsection{Performing a local sum on a data array} \label{sec:redScatLocalSum}
 For the mentioned Reducescatter we will also give an understanding and later propose a proof of correctness. For this we firstly  consider a simpler setup. Suppose line \ref{redScatterShift:SendRecv} of Procedure \ref{algo:redScatterShift} does not send the blocks from array $R$ to a buffer $B$ lying on some other process, but instead the blocks are saved in its own local buffer $B$. The indexing for this (local) transfer remain the same pattern. The block sizes on the other hand are now required to be the same. \\
 In the adapted pseudocode one can then see that blocks from the end of array $R$ are summed up to blocks of the start of the same array $R$. As we want to find the sum for each iteration at each block we somehow need to maintain an overview of the subresults. A good approach for this is by representing a subresult by a tree $T$. When a subresult $j$ is added to another subresult $i$ then the root node of tree $T_j$ is connected to the root node of $T_i$, denoted as $T_i \gets T_j$. This resulting tree keeps therefore the root node of $T_i$. The vertices of the trees correspond to the original summands which will be the input blocks $I[]$ in our case. \\
 Suppose we have a skip sequence for which it holds $s_{k+1} - s_k \leq s_k$. We now  prove that in this adaptation of Algorithm \ref{algo:redScatterShift} performs a summation over all blocks which is then stored in block $R[0]$. For this again a inductive property is needed.
@@ -1375,7 +1375,7 @@ Suppose we have a skip sequence for which it holds $s_{k+1} - s_k \leq s_k$. We 
 		\draw [-{Square[scale=1.5]}] (left1.west) to [out=180, in=0] (left0.east);
 		
 	\end{tikzpicture}
-	\caption{A visual example for a simplification of Algorithm \ref{algo:redScatterShift} with $p=7$ processors. The skips $s_3=7, s_2 = 4, s_1=2$ and $s_0=1$ are from an approximate halfing sequence and fulfill $s_{k+1} -s_k \leq s_k$. Each iteration shows the state of the original array. Arrows with a pointy tip indicate which blocks are reduced to which other blocks of the vector. Arrows with square tips indicate the arising tree structure. Elements that are in dark black correspond to trees that have a root $i\leq s_k$. Grey do elements do not need to be considered anymore. The last diagram shows the result after the last iteration and we see a single tree at block $0$ which spans all elements.}
+	\caption{A visual example for a simplification of Algorithm \ref{algo:redScatterShift} with $p=7$ processors. The skips $s_3=7, s_2 = 4, s_1=2$ and $s_0=1$ are from an approximate halving sequence and fulfill $s_{k+1} -s_k \leq s_k$. Each iteration shows the state of the original array. Arrows with a pointy tip indicate which blocks are reduced to which other blocks of the vector. Arrows with square tips indicate the arising tree structure. Elements that are in dark black correspond to trees that have a root $i\leq s_k$. Grey do elements do not need to be considered anymore. The last diagram shows the result after the last iteration and we see a single tree at block $0$ which spans all elements.}
 	\label{fig:arrayCopy}
 \end{figure}
 To get a better understanding of this proof we provide a visual example shown in Figure \ref{fig:arrayCopy}. There one can see better how these trees are formed and why the condition $s_{k+1}-s_k \leq s_k$ is sufficient to guarantee disjointedness and complete spanning of the trees.
