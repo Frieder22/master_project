@@ -1,0 +1,11 @@
+Allreduce
+Allgather
+OpenMPI
+MPICH
+IntelMPI
+Reducescatter
+subresult
+intra-nodal
+Bruck
+BOR
+bitarray

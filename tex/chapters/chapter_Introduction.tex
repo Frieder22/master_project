@@ -1093,7 +1093,7 @@ At the moment only the Reducescatter phase is explained in detail. The details o
 As one can see the two phases are simply executed consecutively. After the Reducescatter phase the correct block lies at $I[r]$ for each rank $r$. The transfer of this block to a designated output array is omitted as the Allgather (Algorithm \ref{algo:recursiveDoublingAllgather}) needs this block at exactly this position.\\
 The algorithm will be benchmarked and play the role as an reference algorithm in this thesis. It will be referenced as \texttt{Allreduce\_Butterfly}.
 
-\subsubsection{An adaptation to exploit locality of processors}
+\subsubsection{An adaptation to exploit locality of processors} \label{sec:remappingOfRanks}
 We also propose here a small possible optimization. In each iteration 'shift' amount of blocks is send. We see that the communication partner is found by bit-flipping the rank ID using 'shift'. This means the absolute difference between the rank ID and the partners ID is exactly 'shift'. So in iterations where the largest amount of data is send the distance between the sending and receiving IDs is the biggest. We do not have a guarantee how ranks are actually mapped onto physical processors, but it still can be expected that rank IDs on the same node of a cluster are consecutive. So it would be beneficial, if the largest messages are sent between ranks that have a close rank ID. The algorithm gives an easy degree of freedom to play with. The ranks labeling is just something MPI and the algorithm uses to distinguish the processes. We can relabel them as we like using some kind of mapping. The only condition on such a map is that it has to be a one-to-one correspondence (a bijective map). So every rank ID is mapped to an unique placeholder ID. We propose a map $T_a$ that is the bit-reversal where $a$ is the count of bits a binary number consists of. We can write 
 \begin{align*}
 	T_a: \tilde{R} &\rightarrow \tilde{R}\\
@@ -1184,7 +1184,7 @@ The Allreduce using the bit reversed remapping will be used as a reference in th
 	\label{fig:butterflySmallToBig}
 \end{figure}
 
-\subsubsection{Run time estimation}
+\subsubsection{Run time estimation} 
 For estimating the runtime of these algorithm we again inspect the two phases separately. In the Reducescatter phase there are 'shift' blocks of data sent in each iteration. Assuming the original vectors can be split equally, each block consists out of $m/p$ amount of data. The message size $m$ refers to the size of the output array as well as the input array. On the same amount of data is also the reduction operator applied. There are $\log_2(p)$ iteration rounds and we can calculate 'shift' as being $p\cdot 2^{-i}$, where $i$ the current  iteration. Assuming there is a homogeneous network and a linear cost we can estimate the execution time of the Reducescatter phase as 
 \begin{align}
 	T_\mathrm{ReduceScatter}
@@ -1438,9 +1438,9 @@ The estimation of the run time using the linear cost model is quite straight for
 	T_\mathrm{RedScatt} = \ceil{\log_2{p}} \alpha + \frac{p-1}{p}m(\beta + \gamma).
 \end{align*}
 The Allgather phase has a very similar structure. It consists out of the same amount of rounds as the Reducescatter phase. As discussed in Section \ref{sec:approxHalfAllgather} this leads to same communication costs. So the $\alpha$ and $\beta$ terms are the same as for the Reducescatter and the $\gamma$ term is simply omitted. The linear cost model therefore estimates the runtime of the complete Allreduce as being
-\begin{align*}
-	T_\mathrm{Allreduce} = 2\ceil{\log_2{p}} \alpha + \frac{p-1}{p}m(2\beta + \gamma).
-\end{align*}
+\begin{align}
+	T_\mathrm{Allreduce} = 2\ceil{\log_2{p}} \alpha + \frac{p-1}{p}m(2\beta + \gamma). 
+\end{align}\label{eq:allreduceShiftCost}
 
 \subsection{Ring Algorithm}\label{sec:ringAllreduce}
 The last algorithm that implements an Allreduce we propose here is based on communication that is done according to a ring structure \cite{ringAllred, combinationRedScatAndAllgatherRabenseifner}. This means each process $r$ only sends messages to its direct neighbor $(r+1)\mod{p}$. The ring algorithm can be again identified as consisting out of an Reducescatter phase and an Allgather phase. For this is again assumed that the data of the input array is divided into $p$ blocks. In Procedure \ref{algo:redRing} an implementation of the ring algorithm is presented.

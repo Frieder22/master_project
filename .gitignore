@@ -35,5 +35,5 @@ tex/*.hd
 tex/*.ind
 graphData/*
 graphDataRaw/*
-
+tex/*.html
 
