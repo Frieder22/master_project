@@ -1,24 +1,21 @@
-%!TeX root = thesis.tex
 
 
 % distributed memory computing
-@inbook{modelDistributedMemory, 
-	place={Cambridge}, 
-	title={A model of distributed computations}, 
-	booktitle={Distributed Computing: Principles, Algorithms, and Systems}, 
-	publisher={Cambridge University Press}, 
+@book{modelDistributedMemory, 
 	author={Kshemkalyani, Ajay D. and Singhal, Mukesh}, 
-	year={2008}, 
-	pages={39–49}} 
+	place={Cambridge}, 
+	title={Distributed Computing: Principles, Algorithms, and Systems}, 
+	publisher={Cambridge University Press}, 
+	year={2008}
+	} 
 
 
-@Inbook{lecturesTräff,
+@book{lecturesTräff,
 	author={Tr{\"a}ff, Jesper Larsson},
-	title="Distributed Memory Parallel Systems and MPI",
-	bookTitle="Lectures on Parallel Computing",
+	title="Lectures on Parallel Computing",
+	edition = "First",
 	year="2026",
 	publisher="Springer Nature Switzerland",
-	address="Cham",
 	pages="171--287",
 	isbn="978-3-031-86578-7",
 	doi="10.1007/978-3-031-86578-7_3",
@@ -35,29 +32,29 @@
 	title     = {Introduction To Algorithms},
 	year      = {2001},
 	publisher = {MIT Press},
+	edition   = {Second},
 	isbn      = {9780262032933},
 	url       = {https://books.google.at/books?id=NLngYyWFl_YC}
 }
 
 % sparseRepresentations of adjacency matrix
-@inbook{csr,	
-	title = {4. Related Issues},
-	booktitle = {Templates for the Solution of Linear Systems: Building Blocks for Iterative Methods},
-	chapter = {},
-	pages = {57-81},
-	doi = {10.1137/1.9781611971538.ch4},
-	URL = {https://epubs.siam.org/doi/abs/10.1137/1.9781611971538.ch4},
-	eprint = {https://epubs.siam.org/doi/pdf/10.1137/1.9781611971538.ch4}
+@book{csr,
+	author = {Barrett, Richard and Berry, Michael and Chan, Tony F. and Demmel, James and Donato, June and Dongarra, Jack and Eijkhout, Victor and Pozo, Roldan and Romine, Charles and van der Vorst, Henk},
+	title = {Templates for the Solution of Linear Systems: Building Blocks for Iterative Methods},
+	publisher = {Society for Industrial and Applied Mathematics},
+	year = {1994},
+	doi = {10.1137/1.9781611971538},
+	edition   = {First},
+	URL = {https://epubs.siam.org/doi/abs/10.1137/1.9781611971538},
+	eprint = {https://epubs.siam.org/doi/pdf/10.1137/1.9781611971538}
 }
 
 % Standard BFS book
-@Inbook{standardBFS,
+@book{standardBFS,
 author={Kozen, Dexter C.},
-title={Depth-First and Breadth-First Search},
-bookTitle={The Design and Analysis of Algorithms},
+title={The Design and Analysis of Algorithms},
 year={1992},
 publisher={Springer New York},
-address={New York, NY},
 pages={19--24},
 isbn={978-1-4612-4400-4},
 doi={10.1007/978-1-4612-4400-4_4},
@@ -65,12 +62,14 @@ url={https://doi.org/10.1007/978-1-4612-4400-4_4}
 }
 
 % Graph 500 recource
-@online{graph500,
-	author = {Graph 500 Steering Commitee},
-	title = {graph500.org},
-	url = {https://graph500.org/},
-	urldate = {10.11.2025}
+@misc{graph500,
+	author       = {Graph 500 Steering Commitee},
+	title        = {Benchmark Specification},
+	howpublished = {\url{https://graph500.org/?page_id=12}},
+	note         = {accessed Aug 2026},
+	year         = {2017}
 }
+
 
 % Here the 1D and 2D partitioning of adjacency matrix is mentioned
 @inproceedings{graphPartitioning,
@@ -79,14 +78,11 @@ url={https://doi.org/10.1007/978-1-4612-4400-4_4}
 	year = {2011},
 	isbn = {9781450307710},
 	publisher = {Association for Computing Machinery},
-	address = {New York, NY, USA},
 	url = {https://doi.org/10.1145/2063384.2063471},
 	doi = {10.1145/2063384.2063471},
 	booktitle = {Proceedings of 2011 International Conference for High Performance Computing, Networking, Storage and Analysis},
 	articleno = {65},
-	numpages = {12},
-	location = {Seattle, Washington},
-	series = {SC '11}
+	numpages = {12}
 }
 
 % linear sparse solver using sparse matrix vector SpMV and 2D-partitioning
@@ -104,9 +100,8 @@ url={https://doi.org/10.1007/978-1-4612-4400-4_4}
 
 % 2D partitioning for matrix-vec multiplication (dense vector)
 @article{matVecOriginal,
-	author = {Hendrickson, Bruce and Leland, Robert and PLIMPTON, STEVE},
+	author = {Hendrickson, Bruce and Leland, Robert and Plimpton, Steve},
 	year = {1995},
-	month = {03},
 	pages = {73-88},
 	title = {An Efficient Parallel Algorithm for Matrix-Vector Multiplication.},
 	volume = {7},
@@ -124,7 +119,6 @@ url={https://doi.org/10.1007/978-1-4612-4400-4_4}
 	title={Efficient Breadth-First Search on Massively Parallel and Distributed-Memory Machines},
 	journal={Data Science and Engineering},
 	year={2017},
-	month={Mar},
 	day={01},
 	volume={2},
 	number={1},
@@ -137,7 +131,7 @@ url={https://doi.org/10.1007/978-1-4612-4400-4_4}
 % Description of top-down vs bottom-up BFS
 @INPROCEEDINGS{bottomUp,
 	author={Beamer, Scott and Asanovic, Krste and Patterson, David},
-	booktitle={SC '12: Proceedings of the International Conference on High Performance Computing, Networking, Storage and Analysis},
+	booktitle={SC: Proceedings of the International Conference on High Performance Computing, Networking, Storage and Analysis},
 	title={Direction-optimizing Breadth-First Search},
 	year={2012},
 	volume={},
@@ -149,10 +143,9 @@ url={https://doi.org/10.1007/978-1-4612-4400-4_4}
 
 
 % Description of the LIGRA framework
-@inproceedings{Ligra,
+@article{Ligra,
 author = {Shun, Julian and Blelloch, Guy},
 year = {2013},
-month = {02},
 pages = {135-146},
 title = {Ligra: A Lightweight Graph Processing Framework for Shared Memory},
 volume = {48},
@@ -161,38 +154,34 @@ doi = {10.1145/2442516.2442530}
 }
 
 % Application of the LIGRA framework as an BFS
-@inproceedings{LigraBFS,
+@inproceedings{LigraBFS, 
 	author = {Shun, Julian},
 	title = {An Evaluation of Parallel Eccentricity Estimation Algorithms on Undirected Real-World Graphs},
 	year = {2015},
 	isbn = {9781450336642},
 	publisher = {Association for Computing Machinery},
-	address = {New York, NY, USA},
 	url = {https://doi.org/10.1145/2783258.2783333},
 	doi = {10.1145/2783258.2783333},
 	booktitle = {Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
 	pages = {1095–1104},
 	numpages = {10},
-	keywords = {approximation, estimation, graph diameter, graph eccentricity, graph radius, parallel algorithms, real-world graphs},
-	location = {Sydney, NSW, Australia},
-	series = {KDD '15}
+	keywords = {approximation, estimation, graph diameter, graph eccentricity, graph radius, parallel algorithms, real-world graphs}
 }
 
-@inproceedings{10.1145/155332.155333,
-	author = {Culler, David and Karp, Richard and Patterson, David and Sahay, Abhijit and Schauser, Klaus Erik and Santos, Eunice and Subramonian, Ramesh and von Eicken, Thorsten},
-	title = {LogP: towards a realistic model of parallel computation},
-	year = {1993},
-	isbn = {0897915895},
-	publisher = {Association for Computing Machinery},
-	address = {New York, NY, USA},
-	url = {https://doi.org/10.1145/155332.155333},
-	doi = {10.1145/155332.155333},
-	pages = {1–12},
-	numpages = {12},
-	keywords = {PRAM, complexity analysis, massively parallel processors, parallel algorithms, parallel models},
-	location = {San Diego, California, USA},
-	series = {PPOPP '93}
-}
+%@inproceedings{10.1145/155332.155333,
+%	author = {Culler, David and Karp, Richard and Patterson, David and Sahay, Abhijit and Schauser, Klaus Erik and Santos, Eunice and Subramonian, Ramesh and von Eicken, Thorsten},
+%	title = {{LogP}: towards a realistic model of parallel computation},
+%	booktitle = {PPOPP: Proceedings of the fourth ACM SIGPLAN symposium on Principles and practice of parallel programming},
+%	year = {1993},
+%	isbn = {0897915895},
+%	publisher = {Association for Computing Machinery},
+%	url = {https://doi.org/10.1145/155332.155333},
+%	doi = {10.1145/155332.155333},
+%	pages = {1–12},
+%	numpages = {12},
+%	keywords = {PRAM, complexity analysis, massively parallel processors, parallel algorithms, parallel models},
+%	series = {PPOPP}
+%}
 
 %------------------------------------------------------------------------------------------------------
 %                                      Cost Model
@@ -201,18 +190,16 @@ doi = {10.1145/2442516.2442530}
 % description of LogP model
 @article{LogP,
 	author = {Culler, David and Karp, Richard and Patterson, David and Sahay, Abhijit and Schauser, Klaus Erik and Santos, Eunice and Subramonian, Ramesh and von Eicken, Thorsten},
-	title = {LogP: towards a realistic model of parallel computation},
+	title = {{LogP}: towards a realistic model of parallel computation},
 	year = {1993},
 	issue_date = {July 1993},
 	publisher = {Association for Computing Machinery},
-	address = {New York, NY, USA},
 	volume = {28},
 	number = {7},
 	issn = {0362-1340},
 	url = {https://doi.org/10.1145/173284.155333},
 	doi = {10.1145/173284.155333},
 	journal = {SIGPLAN Not.},
-	month = jul,
 	pages = {1–12},
 	numpages = {12},
 	keywords = {PRAM, complexity analysis, massively parallel processors, parallel algorithms, parallel models}
@@ -220,7 +207,7 @@ doi = {10.1145/2442516.2442530}
 
 % description of LogGP model
 @article{LogGP,
-	title = {LogGP: Incorporating Long Messages into the LogP Model for Parallel Computation},
+	title = {{LogGP}: Incorporating Long Messages into the {LogP} Model for Parallel Computation},
 	journal = {Journal of Parallel and Distributed Computing},
 	volume = {44},
 	number = {1},
@@ -237,35 +224,27 @@ doi = {10.1145/2442516.2442530}
 	author = {Rico-Gallego, Juan A. and D\'{\i}az-Mart\'{\i}n, Juan C. and Manumachu, Ravi Reddy and Lastovetsky, Alexey L.},
 	title = {A Survey of Communication Performance Models for High-Performance Computing},
 	year = {2019},
-	issue_date = {November 2019},
 	publisher = {Association for Computing Machinery},
-	address = {New York, NY, USA},
 	volume = {51},
 	number = {6},
 	issn = {0360-0300},
 	url = {https://doi.org/10.1145/3284358},
-	doi = {10.1145/3284358},,
+	doi = {10.1145/3284358},
 	journal = {ACM Comput. Surv.},
-	month = jan,
-	articleno = {126},
-	numpages = {36},
 	keywords = {high-performance computing, communication performance, analytic modeling, Communication performance models}
 }
 
 @article{hockneyLinearCostModel,
 	author = {Hockney, Roger W.},
-	title = {The communication challenge for MPP: Intel Paragon and Meiko CS-2},
+	title = {The communication challenge for {MPP}: {Intel Paragon and Meiko CS-2}},
 	year = {1994},
-	issue_date = {March 1994},
 	publisher = {Elsevier Science Publishers B. V.},
-	address = {NLD},
 	volume = {20},
 	number = {3},
 	issn = {0167-8191},
 	url = {https://doi.org/10.1016/S0167-8191(06)80021-9},
 	doi = {10.1016/S0167-8191(06)80021-9},
-	journal = {Parallel Comput.},
-	month = mar,
+	journal = {Parallel Computing},
 	pages = {389–398},
 	numpages = {10},
 	keywords = {COMMS1 benchmark, Communication performance, Cray-C90, Intel Paragon, Intel iPSC/860, Latency, Massively-parallel processors, Meiko CS-2}
@@ -273,7 +252,7 @@ doi = {10.1145/2442516.2442530}
 
 @inproceedings{hetroCostModel,
 	author={Hatta, J. and Shibusawa, S.},
-	booktitle={Proceedings 2000. International Workshop on Parallel Processing}, 
+	booktitle={Proceedings. International Workshop on Parallel Processing}, 
 	title={Scheduling algorithms for efficient gather operations in distributed heterogeneous systems}, 
 	year={2000},
 	volume={},
@@ -294,29 +273,24 @@ doi = {10.1145/2442516.2442530}
 	year = {1994},
 	issue_date = {Aug. 1994},
 	publisher = {Academic Press, Inc.},
-	address = {USA},
 	volume = {22},
 	number = {2},
 	issn = {0743-7315},
 	url = {https://doi.org/10.1006/jpdc.1994.1091},
 	doi = {10.1006/jpdc.1994.1091},
-	journal = {J. Parallel Distrib. Comput.},
-	month = aug,
+	journal = {Journal of Parallel and Distribed Computing},
 	pages = {324–328},
 	numpages = {5}
 }
 
+
 % Better Broadcast algos
 @InProceedings{BroadcastAlgos,
 	author="Tr{\"a}ff, Jesper Larsson",
-	editor="Kranzlm{\"u}ller, Dieter
-	and Kacsuk, P{\'e}ter
-	and Dongarra, Jack",
 	title="A Simple Work-Optimal Broadcast Algorithm for Message-Passing Parallel Systems",
 	booktitle="Recent Advances in Parallel Virtual Machine and Message Passing Interface",
 	year="2004",
 	publisher="Springer Berlin Heidelberg",
-	address="Berlin, Heidelberg",
 	pages="173--180",
 	isbn="978-3-540-30218-6"
 }
@@ -326,27 +300,25 @@ doi = {10.1145/2442516.2442530}
 @InProceedings{BroadcastWorkOpt,
 	author="Thakur, Rajeev
 	and Gropp, William D.",
-	editor="Dongarra, Jack
-	and Laforenza, Domenico
-	and Orlando, Salvatore",
-	title="Improving the Performance of Collective Operations in MPICH",
+	title="Improving the Performance of Collective Operations in {MPICH}",
 	booktitle="Recent Advances in Parallel Virtual Machine and Message Passing Interface",
 	year="2003",
 	publisher="Springer Berlin Heidelberg",
-	address="Berlin, Heidelberg",
 	pages="257--267",
 	isbn="978-3-540-39924-7"
 }
 
 % Broadcast on k-ary trees
-@inproceedings{karyTrees,
-	author = {Petrini, Fabrizio and Vanneschi, Marco},
-	year = {1997},
-	month = {01},
-	pages = {},
-	title = {k -ary n -trees: High Performance Networks for Massively Parallel Architectures.},
-	doi = {10.1109/IPPS.1997.580853}
-}
+@INPROCEEDINGS{karyTrees,
+	author={Petrini, F. and Vanneschi, M.},
+	booktitle={Proceedings 11th International Parallel Processing Symposium}, 
+	title={k-ary n-trees: High performance networks for massively parallel architectures}, 
+	year={1997},
+	volume={},
+	number={},
+	pages={87-93},
+	keywords={Communication system traffic control;Parallel architectures;Multiprocessor interconnection networks;Switches;Communication switching;Network topology;Analytical models;Algorithm design and analysis;Adaptive algorithm;Routing},
+	doi={10.1109/IPPS.1997.580853}}
 
 % Pipelined Broadcast
 @ARTICLE{pipelinedBroadcast,
@@ -364,8 +336,8 @@ doi = {10.1145/2442516.2442530}
 % example for non-commutative Allreduce
 @INPROCEEDINGS{NonComAllred,
 	author={White, Sam and Kale, Laxmikant V.},
-	booktitle={2022 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW)}, 
-	title={Optimizing Non-commutative Allreduce Over Virtualized, Migratable MPI Ranks}, 
+	booktitle={IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW)}, 
+	title={Optimizing Non-commutative Allreduce Over Virtualized, Migratable {MPI} Ranks}, 
 	year={2022},
 	volume={},
 	number={},
@@ -374,12 +346,11 @@ doi = {10.1145/2442516.2442530}
 	doi={10.1109/IPDPSW55747.2022.00085}}
 
 % Mention Butterfly, recursive Doubling/Halfing and Ring Allreduce
-@article{ButterflyVSDoublingHalfing,
+@article{ButterflyVSDoublingHalving,
 	author = {Wei, Jia and Zhang, Xingjun and Ji, Zeyu and Li, Jingbo and Wei, Zheng},
 	year = {2021},
-	month = {10},
 	pages = {20244},
-	title = {Deploying and scaling distributed parallel deep neural networks on the Tianhe-3 prototype system},
+	title = {Deploying and scaling distributed parallel deep neural networks on the {Tianhe}-3 prototype system},
 	volume = {11},
 	journal = {Scientific Reports},
 	doi = {10.1038/s41598-021-98794-z}
@@ -387,7 +358,7 @@ doi = {10.1145/2442516.2442530}
 
 % shift communication scheme
 @article{shiftComm,
-	author = {BAR-NOY, AMOTZ and KIPNIS, SHLOMO and SCHIEBER, BARUCH},
+	author = {Bar-Noy, Amotz and Kipnis, Shlomo and Schieber, Baruch},
 	title = {AN OPTIMAL ALGORITHM FOR COMPUTING CENSUS FUNCTIONS IN MESSAGE-PASSING SYSTEMS},
 	journal = {Parallel Processing Letters},
 	volume = {03},
@@ -404,14 +375,10 @@ doi = {10.1145/2442516.2442530}
 @InProceedings{RabenseifTraeff,
 	author="Rabenseifner, Rolf
 	and Tr{\"a}ff, Jesper Larsson",
-	editor="Kranzlm{\"u}ller, Dieter
-	and Kacsuk, P{\'e}ter
-	and Dongarra, Jack",
 	title="More Efficient Reduction Algorithms for Non-Power-of-Two Number of Processors in Message-Passing Parallel Systems",
 	booktitle="Recent Advances in Parallel Virtual Machine and Message Passing Interface",
 	year="2004",
 	publisher="Springer Berlin Heidelberg",
-	address="Berlin, Heidelberg",
 	pages="36--46",
 	isbn="978-3-540-30218-6"
 }
@@ -419,8 +386,8 @@ doi = {10.1145/2442516.2442530}
 
 % Approach to not powert of 2 
 @article{BruckJehoshua,
-	author = {BRUCK, JEHOSHUA and HO, CHING-TIEN},
-	title = {EFFICIENT GLOBAL COMBINE OPERATIONS IN MULTI-PORT MESSAGE-PASSING SYSTEMS},
+	author = {Bruck, Jehoshua and Ho, Ching-Tien},
+	title = {Efficient global combine operations in multi-port message-passing systems},
 	journal = {Parallel Processing Letters},
 	volume = {03},
 	number = {04},
@@ -434,8 +401,8 @@ doi = {10.1145/2442516.2442530}
 % non 2^k extension using circular Graphs
 @INPROCEEDINGS{circularGraph,
 	author={Träff, Jesper Larsson and Hunold, Sascha and Vardas, Ioannis and Funk, Nikolaus Manes},
-	booktitle={2023 IEEE International Conference on Cluster Computing (CLUSTER)}, 
-	title={Uniform Algorithms for Reduce-scatter and (most) other Collectives for MPI}, 
+	booktitle={IEEE International Conference on Cluster Computing (CLUSTER)}, 
+	title={Uniform Algorithms for Reduce-scatter and (most) other Collectives for {MPI}}, 
 	year={2023},
 	volume={},
 	number={},
@@ -461,15 +428,10 @@ doi = {10.1145/2442516.2442530}
 % Mention combination of reduce-Scatter and allgather
 @InProceedings{combinationRedScatAndAllgatherRabenseifner,
 	author="Rabenseifner, Rolf",
-	editor="Bubak, Marian
-	and van Albada, Geert Dick
-	and Sloot, Peter M. A.
-	and Dongarra, Jack",
 	title="Optimization of Collective Reduction Operations",
-	booktitle="Computational Science - ICCS 2004",
+	booktitle="Computational Science - ICCS",
 	year="2004",
 	publisher="Springer Berlin Heidelberg",
-	address="Berlin, Heidelberg",
 	pages="1--9",
 	isbn="978-3-540-24685-5"
 }
@@ -494,28 +456,38 @@ doi = {10.1145/2442516.2442530}
 	author = "{Message Passing Interface Forum}",
 	title  = "{MPI}: A Message-Passing Interface Standard Version 5.0",
 	url    = "https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report.pdf",
-	year   = 2025,
-	month  = JUN
+	year   = 2025
 }
 
 %Allreduce from Jesper 
-@misc{traeff2025,
-	title={Optimal, Non-pipelined Reduce-scatter and Allreduce Algorithms}, 
-	author={Jesper Larsson Tr{\"a}ff},
-	year={2025},
-	eprint={2410.14234},
-	archivePrefix={arXiv},
-	primaryClass={cs.DC},
-	url={https://arxiv.org/abs/2410.14234}, 
+@article{traeff2025,
+	author = {Tr{\"a}ff, Jesper Larsson},
+	title = {Optimal, Non-pipelined Reduce-scatter and Allreduce Algorithms with an Application to All-to-all Communication},
+	year = {2025},
+	issue_date = {December 2025},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	volume = {12},
+	number = {4},
+	issn = {2329-4949},
+	url = {https://doi.org/10.1145/3760789},
+	doi = {10.1145/3760789},
+	journal = {ACM Trans. Parallel Comput.},
+	articleno = {10},
+	numpages = {23},
+	keywords = {Collective communication, reduction problems, reduce-scatter, allreduce, all-to-all, Message-Passing Interface (MPI)}
 }
+
+
+
+
 
 %Allreduce Ring Algorithm
 @article{ring2D,
 	author = {Wang, Guozheng and Lei, Yongmei and Zhang, Zeyu and Peng, Cunlu},
 	year = {2023},
-	month = {01},
 	pages = {},
-	title = {A Communication Efficient ADMM-based Distributed Algorithm Using Two-Dimensional Torus Grouping AllReduce},
+	title = {A Communication Efficient {ADMM}-based Distributed Algorithm Using Two-Dimensional Torus Grouping AllReduce},
 	volume = {8},
 	journal = {Data Science and Engineering},
 	doi = {10.1007/s41019-022-00202-7}
@@ -524,12 +496,11 @@ doi = {10.1145/2442516.2442530}
 %Allreduce Ring
 @INPROCEEDINGS{ringAllred,
 	author={Vadhiyar, S.S. and Fagg, G.E. and Dongarra, J.},
-	booktitle={SC '00: Proceedings of the 2000 ACM/IEEE Conference on Supercomputing}, 
+	booktitle={SC: Proceedings of ACM/IEEE Conference on Supercomputing}, 
 	title={Automatically Tuned Collective Communications}, 
 	year={2000},
 	volume={},
 	number={},
-	pages={3-3},
 	keywords={Network topology;Shape;Mathematical model;Lifting equipment;Computer science;Application software;Fault tolerance;Clustering algorithms;US Department of Energy;Contracts},
 	doi={10.1109/SC.2000.10024}}
 
@@ -540,7 +511,7 @@ doi = {10.1145/2442516.2442530}
 % Allgather overview
 @INPROCEEDINGS{allgather,
 	author={Jing Chen and Linbo Zhang and Yunquan Zhang and Wei Yuan},
-	booktitle={Eighth International Conference on High-Performance Computing in Asia-Pacific Region (HPCASIA'05)}, 
+	booktitle={Eighth International Conference on High-Performance Computing in Asia-Pacific Region (HPCASIA)}, 
 	title={Performance evaluation of Allgather algorithms on terascale Linux cluster with fast Ethernet}, 
 	year={2005},
 	volume={},
@@ -550,14 +521,22 @@ doi = {10.1145/2442516.2442530}
 	doi={10.1109/HPCASIA.2005.75}}
 
 %Allgather old version Träff
-@misc{allgatherTraeffOld,
-	title={(Poly)Logarithmic Time Construction of Round-optimal $n$-Block Broadcast Schedules for Broadcast and irregular Allgather in MPI}, 
-	author={Jesper Larsson Tr{\"a}ff},
-	year={2023},
-	eprint={2205.10072},
-	archivePrefix={arXiv},
-	primaryClass={cs.DC},
-	url={https://arxiv.org/abs/2205.10072}, 
+@article{allgatherTraeffOld,
+	author = {Tr{\"a}ff, Jesper Larsson},
+	title = {Optimal Broadcast Schedules in Logarithmic Time with Applications to Broadcast, Reduction, All-Broadcast and All-Reduction},
+	year = {2025},
+	issue_date = {September 2025},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	volume = {12},
+	number = {3},
+	issn = {2329-4949},
+	journal = {ACM Transactions on Parallel Computing},
+	url = {https://doi.org/10.1145/3735139},
+	doi = {10.1145/3735139},
+	articleno = {9},
+	numpages = {21},
+	keywords = {Broadcast problem, schedules, circulant graphs, one-ported communication, lower bound, pipelining, reduction, all-broadcast, all-reduction, MPI}
 }
 
 % Bruck algorithm
@@ -575,31 +554,26 @@ doi = {10.1145/2442516.2442530}
 % Paper that calls  Algo 'Bruck Algo'
 @inproceedings{bruckReference,
 	author = {Fan, Ke and Gilray, Thomas and Pascucci, Valerio and Huang, Xuan and Micinski, Kristopher and Kumar, Sidharth},
-	title = {Optimizing the Bruck Algorithm for Non-uniform All-to-all Communication},
+	title = {Optimizing the {B}ruck Algorithm for Non-uniform All-to-all Communication},
 	year = {2022},
 	isbn = {9781450391993},
 	publisher = {Association for Computing Machinery},
-	address = {New York, NY, USA},
 	url = {https://doi.org/10.1145/3502181.3531468},
 	doi = {10.1145/3502181.3531468},
 	booktitle = {Proceedings of the 31st International Symposium on High-Performance Parallel and Distributed Computing},
 	pages = {172–184},
 	numpages = {13},
-	keywords = {alltoallv, bruck algorithm, collective communication, mpi},
-	location = {Minneapolis, MN, USA},
-	series = {HPDC '22}
+	keywords = {alltoallv, bruck algorithm, collective communication, mpi}
 }
 
 
 %------------------------------------------------------------------------------------------------------
 %                                          Data Compression
 %------------------------------------------------------------------------------------------------------
-@incollection{compIntroBook,
-	title = {Introduction},
-	booktitle = {Introduction to Data Compression (Fourth Edition)},
+@book{compIntroBook,
+	title = {Introduction to Data Compression},
 	publisher = {Morgan Kaufmann},
-	edition = {Fourth Edition},
-	address = {Boston},
+	edition = {Fourth},
 	pages = {1-11},
 	year = {2012},
 	series = {The Morgan Kaufmann Series in Multimedia Information and Systems},
@@ -616,16 +590,15 @@ doi = {10.1145/2442516.2442530}
 	year = {2016},
 	isbn = {1107152380},
 	publisher = {Cambridge University Press},
-	address = {USA},
-	edition = {1st}
+	edition = {First}
 }
 
 @INPROCEEDINGS{compOnlinePipelining,
 	author={Zhou, Qinghua and Ramesh, Bharath and Shafi, Aamir and Abduljabbar, Mustafa and Subramoni, Hari and Panda, Dhabaleswar K.},
-	booktitle={ISC High Performance 2024 Research Paper Proceedings (39th International Conference)}, 
-	title={Accelerating MPI AllReduce Communication with Efficient GPU-Based Compression Schemes on Modern GPU Clusters}, 
+	booktitle={ISC High Performance Research Paper Proceedings}, 
+	title={Accelerating {MPI} AllReduce Communication with Efficient {GPU}-Based Compression Schemes on Modern {GPU} Clusters}, 
 	year={2024},
-	volume={},
+	volume={39},
 	number={},
 	pages={1-12},
 	keywords={Training;Quantization (signal);High performance computing;Graphics processing units;Stochastic processes;Distributed databases;Parallel processing;AllReduce;Compression;GPU-Aware MPI;Deep Learning;Data Parallelism},
@@ -633,7 +606,7 @@ doi = {10.1145/2442516.2442530}
 
 @INPROCEEDINGS{compQuantizationAndSparseAllred,
 	author={Nguyen, Truong Thao and Wahib, Mohamed and Takano, Ryousei},
-	booktitle={2019 IEEE 38th International Performance Computing and Communications Conference (IPCCC)}, 
+	booktitle={IEEE 38th International Performance Computing and Communications Conference (IPCCC)}, 
 	title={Topology-aware Sparse Allreduce for Large-scale Deep Learning}, 
 	year={2019},
 	volume={},
@@ -647,23 +620,22 @@ doi = {10.1145/2442516.2442530}
 	author={Haoyu Li and Yuchen Xu and Jiayi Chen and Rohit Dwivedula and Wenfei Wu and Keqiang He and Aditya Akella and Daehyeok Kim},
 	year={2024},
 	eprint={2402.07529},
-	archivePrefix={arXiv},
+	journal={arXiv},
 	primaryClass={cs.DC},
 	url={https://arxiv.org/abs/2402.07529}, 
 }
 
 @article{compCountSketchOriginalUseCase,
+	author = {Moses Charikar and Kevin Chen and Martin Farach-Colton},
 	title = {Finding frequent items in data streams},
 	journal = {Theoretical Computer Science},
 	volume = {312},
 	number = {1},
 	pages = {3-15},
 	year = {2004},
-	note = {Automata, Languages and Programming},
 	issn = {0304-3975},
 	doi = {https://doi.org/10.1016/S0304-3975(03)00400-6},
 	url = {https://www.sciencedirect.com/science/article/pii/S0304397503004006},
-	author = {Moses Charikar and Kevin Chen and Martin Farach-Colton},
 	keywords = {Frequent items, Streaming algorithm, Approximation}
 }
 
@@ -680,19 +652,17 @@ doi = {10.1145/2442516.2442530}
 
 @inproceedings{compSparseDense,
 	author = {Renggli, Cedric and Ashkboos, Saleh and Aghagolzadeh, Mehdi and Alistarh, Dan and Hoefler, Torsten},
-	title = {SparCML: high-performance sparse communication for machine learning},
+	title = {SparCML: High-performance sparse communication for machine learning},
 	year = {2019},
 	isbn = {9781450362290},
 	publisher = {Association for Computing Machinery},
-	address = {New York, NY, USA},
 	url = {https://doi.org/10.1145/3295500.3356222},
 	doi = {10.1145/3295500.3356222},
 	booktitle = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},
 	articleno = {11},
 	numpages = {15},
 	keywords = {sparse input vectors, sparse allreduce, sparse allgather},
-	location = {Denver, Colorado},
-	series = {SC '19}
+	series = {SC}
 }
 
 %------------------------------------------------------------------------------------------------------
@@ -706,12 +676,10 @@ doi = {10.1145/2442516.2442530}
 	title={Error bars},
 	journal={Nature Methods},
 	year={2013},
-	month={Oct},
 	day={01},
 	volume={10},
 	number={10},
 	pages={921-922},
-	abstract={The meaning of error bars is often misinterpreted, as is the statistical significance of their overlap.},
 	issn={1548-7105},
 	doi={10.1038/nmeth.2659},
 	url={https://doi.org/10.1038/nmeth.2659}
@@ -720,8 +688,7 @@ doi = {10.1145/2442516.2442530}
 % touching errorbars
 @article{touchingErrorbars,
 	author = {Cumming, Geoff and Finch, Sue},
-	year = {2005},
-	month = {02},
+	year = {2005}, 
 	pages = {170-180},
 	title = {Inference by Eye},
 	volume = {60},
@@ -733,7 +700,7 @@ doi = {10.1145/2442516.2442530}
 @ARTICLE{HunoldBench,
 	author={Hunold, Sascha and Carpen-Amarie, Alexandra},
 	journal={IEEE Transactions on Parallel and Distributed Systems}, 
-	title={Reproducible MPI Benchmarking is Still Not as Easy as You Think}, 
+	title={Reproducible {MPI} Benchmarking is Still Not as Easy as You Think}, 
 	year={2016},
 	volume={27},
 	number={12},
@@ -745,27 +712,24 @@ doi = {10.1145/2442516.2442530}
 % sufficient to use BArrier
 @inproceedings{HunoldBarrier,
 	author = {Hunold, Sascha and Carpen-Amarie, Alexandra},
-	title = {On the Impact of Synchronizing Clocks and Processes on Benchmarking MPI Collectives},
+	title = {On the Impact of Synchronizing Clocks and Processes on Benchmarking {MPI} Collectives},
 	year = {2015},
 	isbn = {9781450337953},
 	publisher = {Association for Computing Machinery},
-	address = {New York, NY, USA},
 	url = {https://doi.org/10.1145/2802658.2802662},
 	doi = {10.1145/2802658.2802662},
 	booktitle = {Proceedings of the 22nd European MPI Users' Group Meeting},
 	articleno = {8},
 	numpages = {10},
-	keywords = {MPI, benchmarking, distributed clock synchronization},
-	location = {Bordeaux, France},
-	series = {EuroMPI '15}
+	keywords = {MPI, benchmarking, distributed clock synchronization}
 }
 
 % removing statistical outliers
 @book{TurkyRule,
 	author={Hogg, Robert and Tanis, Elliot},
-	title={ Probability and statistical inference},
+	title={Probability and statistical inference},
 	year={1997},
-	publisher={Upper Saddle River, NJ : Prentice Hall},
+	publisher={Prentice Hall},
 	isbn={0132546086}
 }
 
@@ -774,8 +738,8 @@ doi = {10.1145/2442516.2442530}
 	author       = {Jure Leskovec and Andrej Krevl},
 	title        = {{SNAP Datasets}: {Stanford} Large Network Dataset Collection},
 	howpublished = {\url{http://snap.stanford.edu/data}},
-	month        = jun,
-	year         = 2014
+	note         = {accessed Aug 2026},
+	year         = {2014}
 }
 
 
