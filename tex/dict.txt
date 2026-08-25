@@ -9,3 +9,11 @@ intra-nodal
 Bruck
 BOR
 bitarray
+critSize
+Wien
+textregistered
+Xeon
+Omni
+Hunold
+Carpen-Amarie
+nrep

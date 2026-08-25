@@ -36,4 +36,5 @@ tex/*.ind
 graphData/*
 graphDataRaw/*
 tex/*.html
+tex/*.synctex(busy)
 

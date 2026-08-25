@@ -9,6 +9,7 @@
 % 'onside': Create document for onsided printing (without empty pages added by LaTeX).
 % 'twoside': Create document for twosided printing, which adds empty pages to start chapters on odd pages.
 \documentclass[final,oneside]{vutinfth}
+\setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 % Define convenience functions to use the author name and the thesis title in the PDF document properties.
 \newcommand{\authorname}{Frieder Wolpert-Veit} % The author name without titles.
@@ -69,7 +70,7 @@
 %  {title before name}{name}{title after name}{gender}
 %  where both titles are optional (i.e. can be given as empty brackets {}).
 \setauthor{}{\authorname}{B.Sc.}{male}
-\setadvisor{Univ.Prof. Dr.}{Jesper Larsson Träff}{}{male}
+\setadvisor{Univ. Prof. Dr.}{Jesper Larsson Träff}{}{male}
 
 % For bachelor and master theses:
 %\setfirstassistant{Pretitle}{Forename Surname}{Posttitle}{male}
