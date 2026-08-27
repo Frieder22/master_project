@@ -1,3 +1,4 @@
+textidote --output html --check en --firstlang de --dict dict.txt --ignore sh:nobreak,sh:relpath thesis.tex > report.html
 Allreduce
 Allgather
 OpenMPI
@@ -17,3 +18,19 @@ Omni
 Hunold
 Carpen-Amarie
 nrep
+Omni-Path
+Turkys
+srun
+MPIs
+Allgatherv
+de-facto
+Allgathers
+allowbreak
+Allreduce-like
+Allgather-like
+IntelMPIs
+MPICHs
+com-LiveJournal
+LiveJournal
+mpiRank
+func

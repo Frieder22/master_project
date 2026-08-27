@@ -39,7 +39,7 @@
 \usepackage{multirow}   % Allows table elements to span several rows.
 \usepackage{booktabs}   % Improves the typesetting of tables.
 \usepackage{subcaption} % Allows the use of subfigures and enables their referencing.
-%\usepackage[ruled,linesnumbered,algochapter]{algorithm2e} % Enables the writing of pseudo code.
+%\usepackage[ruled,linesnumbered,algochapter]{algorithm2e} % Enables the writing of pseudocode.
 \usepackage[dvipsnames,table]{xcolor} % Allows the definition and use of colors. This package has to be included before tikz.
 \usepackage{nag}        % Issues warnings when best practices in writing LaTeX documents are violated.
 \usepackage{todonotes}  % Provides tooltip-like todo notes.
@@ -111,7 +111,6 @@
 
 
 \begin{document}
-	\newacronym{mpi}{MPI}{Message Passing Interface}
 	
 	\frontmatter % Switches to roman numbering.
 	% The structure of the thesis has to conform to the guidelines at
@@ -184,7 +183,7 @@
 	\printindex % Rerun build-thesis or build-all when removing the index through commenting.
 	
 	% Add a glossary.
-	\printglossaries % Rerun build-thesis or build-all when removing it through commenting.
+	%\printglossaries % Rerun build-thesis or build-all when removing it through commenting.
 	
 	% Add a bibliography.
 	\bibliographystyle{alpha}

@@ -3,10 +3,10 @@
 %!TeX root = ../thesis.tex
 
 
-\chapter{Empirical correctness testing of the new algorithms}
-In this chapter the process of the correctness testing of the algorithms is described. There are two different strategies used to test, if the algorithms execute as expected and produce correct results. As first approach there are self written unit tests used. Secondly the algorithms are used as part of a BFS implementation and the results of the BFS are tested using a typical framework.
-\section{Individual Test}
-The unit tests for the union algorithms are done using the same function. This function takes as input the function to test, the set size and how much the sets should be filled before the union operation is applied. 
+\chapter{Empirical correctness testing of the new algorithms} \label{chap:correctness}
+In this chapter, the process of the correctness testing for the algorithms is described. There are two different strategies used to test, if the algorithms execute as expected and produce correct results. As first approach there are self written unit tests used. Secondly the algorithms are used as part of a BFS implementation and the results of the BFS are tested using a typical framework.
+\section{Individual Testing}
+The unit tests for the union algorithms are done using the same function. This function takes the function to test, the universe set size $|\Tilde{S}|$ and the total set filling $\Phi$ as input. 
 \begin{algorithm}[h]
 	\caption{– Single unit test for union operation algorithms.\\
 		\textit{func}: union operation function.\\
@@ -26,40 +26,41 @@ The unit tests for the union algorithms are done using the same function. This f
 			\EndIf
 		\EndFor
 		\State \Call{func}{set} \Comment{Here is the union executed}
-		\State isCorrect $\gets$ \textbf{True}
+		\State isCorrect $\gets$ \textbf{true}
 		\ForAll{element $\in$ set} \Comment{test for set $\subseteq$ control}
 			\If{ element $\not \in$ control}
-				\State isCorrect $\gets$ \textbf{False}
+				\State isCorrect $\gets$ \textbf{false}
 			\EndIf
 		\EndFor
 		\ForAll{element $\in$ control} \Comment{test for control $\subseteq$ set}
 			\If{element $\not \in$ set}
-				\State isCorrect $\gets$ \textbf{False}
+				\State isCorrect $\gets$ \textbf{false}
 			\EndIf
 		\EndFor
 		\State \Return isCorrect
 		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
-The procedure of this function is described as pseudo code in Algorithm \ref{algo:testCorrectness}. The idea of validation is quite simple. Firstly a test set and a control set get filled  on each process. Here it is important that the test set needs to be a subset of the control set and the control set is on every process the same. This is done by using a fixed seed to generate the control set and only add some elements to the test set. Which elements are added are only dependent on the rank ID of a process (saved in the variable '$mpiRank$'). After that the tested function $'func'$ is executed on the test set. After this execution the test set needs to be the same as the control set. To validate this firstly it is checked, if every element from the test set '$set$' is also in the control set (i.e. $set\subseteq control$). This also done the other way round to validate that also $control \subseteq set$ holds. If both checks are executed successfully the tested union operation function did work properly and \Call{testSingle}{ } returns \textbf{True} to indicate a successful test.\\
-This function is called using different parameter to cover different edge cases. In Table \ref{table:paramTesting} are the parameter configurations listed. These configurations are tested for different processor layouts ($p=(32\times32)$, $p=(36\times32)$, $p=(34\times32)$ and $p=(31\times31)$).  Here of course functions that are expected to only work correctly for a power of two number of processes are only tested for the layout $p=(32\times32)$.
+
 \begin{table}[h]
 	\centering
-	\begin{tabular}{|c ||c|c|c|c|c|c|c|c|} \hline
-	set Size $|\Tilde{S}|$ & 1000000 & 1000000 & 1000000 & 1000000 & 100 & 0 & 1 &  \\
-	set filling $\Phi$ & 0.01 & 0.02 & 0.03 & 0.04 & 0.02 & 0.5 & 0.5 & 0.3  \\\hline
+	\begin{tabular}{|c ||c|c|c|c|c|c|} \hline
+	set Size $|\Tilde{S}|$ & 1,000,000 & 1,000,000 & 1,000,000 & 1,000,000 & 100 & 1 \\ \hline
+	set filling $\Phi$ & 0.01 & 0.02 & 0.03 & 0.04 & 0.02 & 0.5  \\\hline
 	\end{tabular}\\
 	\vspace{5mm}
 	\begin{tabular}{|c ||c|c|c|c|c|} \hline
-	set Size $|\Tilde{S}|$ & 63 & 64 & 65 & 1000000000 & $2^{25}$ \\
+	set Size $|\Tilde{S}|$ & 63 & 64 & 65 & 1,000,000,000 & $2^{25}$ \\ \hline
 	set filling $\Phi$ & 0.01 & 0.02 & 0.03 & 0.04 & 0.02 \\ \hline
 \end{tabular}
 	\caption{Parameter for testing union operation functions.}
 	\label{table:paramTesting}
 \end{table}
+The procedure of this function is described as pseudocode in Algorithm \ref{algo:testCorrectness}. The idea how the union operation functions are validated is quite simple. Firstly a test set and a control set get filled  on each process. Here it is important that the test set needs to be a subset of the control set and the control set is for every process the same. This is done by using a fixed seed to generate the control set and only add some elements to the test set. Which elements are added are only dependent on the rank ID of a process (represented by '$mpiRank$'). After that the tested function '$func$' is executed on the test set. After this execution the test set needs to be the same as the control set. To validate this firstly it is checked, if every element from the test set '$set$' is also in the control set (i.e., $set\subseteq control$). This is also done the other way round to validate that also $control \subseteq set$ holds. If both checks are executed successfully the tested union operation function did work properly and $\Call{testSingle}{ }$ returns \textbf{true} to indicate a successful test.\\
+This function is called using different parameter to cover different edge cases. In Table \ref{table:paramTesting} are these parameter configurations listed. These configurations are tested for different processor layouts ($p=(32\times32)$, $p=(36\times32)$, $p=(34\times32)$ and $p=(31\times31)$). Here of course are only functions tested that are compatible to the corresponding layouts, i.e., Butterfly variants are only tested on setups where $p$ is a power of two.
 
 \section{Using BFS as Empirical Validation} \label{sec:validationBFS}
-The correctness of the implementations is also validated in using them as a fundamental building block of a BFS algorithm. This BFS algorithm is described as pseudocode in Algorithm \ref{algo:BFSparallel}. The correctness of the result of this algorithm depend on the correctness of the union operation. If the union operation algorithms work incorrectly the calculated tree will be not a correct BFS tree. Tho validate the resulting BFS tree the commonly known benchmark framework graph500 \cite{graph500} is used. This framework can handle the generation of random graphs, provides an interface to build in used defined BFS implementations and can validate the proposed BFS trees. The graph500 framework only provides a native compatibility to a number of nodes that is a power of two and to a number of processes that is a power of two. The number of edges can be set to a whole number multiple of the number of nodes. The BFS implementations using the union operations where tested on graphs consisting of $2^{16}, 2^{19}$ and $2^{23}$ nodes and 16 times more edges on the processor layout $p=(32\times 32)$.
+The correctness of the implementations is also validated by using them as a fundamental building block of a BFS algorithm. This BFS algorithm is described as pseudocode in Algorithm \ref{algo:BFSparallel}. The correctness of the result of this algorithm depend on the correctness of the union operation. If the union operation algorithms work incorrectly the calculated tree will be not a correct BFS tree. To validate the resulting BFS tree the commonly known benchmark framework graph500 \cite{graph500} is used. This framework can handle the generation of random graphs, provides an interface to build user defined BFS implementations and can validate the proposed BFS trees. The graph500 framework only provides a native compatibility to a number of vertices that is a power of two and to a number of processes that is a power of two. The number of edges is set by an integer factor of the number of vertices. The BFS implementations using the union operations where tested on graphs consisting out of $2^{16}, 2^{19}$ and $2^{23}$ nodes and 16 times more edges on the processor layout $p=(32\times 32)$.
 
 
 

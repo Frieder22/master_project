@@ -2,7 +2,7 @@
 %!TeX spellcheck = en_US
 %!TeX root = ../thesis.tex
 
-\chapter{Implementation} \label{Implementation}
+\chapter{Implementations} \label{chap:Implementations}
 Here the newly developed algorithms are described. As already mentioned in the introduction the goal is to efficiently calculate the union $U$
 where every processor $r$  provides a subset $S_r\subseteq \tilde{S}$ from a known set $\tilde{S}$ of fixed size. After the execution of such a union operation
 \begin{align*}
@@ -1114,7 +1114,7 @@ To be able to count the copies it is therefore relevant to see in which iteratio
 		\EndWhile	
 	\end{algorithmic}
 	\end{minipage}
-	\caption{Logic that defines control flow of Algorithm \ref{algo:mostlyHalvingAllgather} (mostly halving Allgather). The first code snippet shows the original control flow where only relevant operations (in regard of the control flow) are shown. The second snipped shows equivalent code using the global transformation $\text{tail} \mapsto \text{tail*} + 1$. The third snippet shows also equivalent code where additionally some algebraic simplifications are done.}
+	\caption{Logic that defines control flow of Algorithm \ref{algo:mostlyHalvingAllgather} (mostly halving Allgather). The first code snippet shows the original control flow where only relevant operations (in regard to the control flow) are shown. The second snipped shows equivalent code using the global transformation $\text{tail} \mapsto \text{tail*} + 1$. The third snippet shows also equivalent code where additionally some algebraic simplifications are done.}
 	\label{fig:mostlyHalvingControlFlow}
 \end{figure}
 In the last code snippet are additionally some algebraic changes applied that simplify the modified code. With this last code block in mind, we state that one can iterate the binary representation of $p-1$ starting from the leading 1 and the bits correspond to the executed brackets in iteration $i$. If the $i$-th bit is set to 1 then the \textbf{if}-bracket is executed and if the $i$-th bit is set to 0 then in this iteration $i$ the \textbf{else}-bracket is executed. To show why this statement is valid a small lemma is useful. For this we label the value of 'shift' after iteration $i$ as $s_i$ and the value of 'tail*' as $t_i$.
@@ -1660,7 +1660,7 @@ As second option we propose an Allgather that only uses the sparse representatio
 	\end{algorithmic}
 \end{algorithm}
 Here one can see that the strategy is selected beforehand and either an Allgather is executed on the sparse representation or the dense representation is used which is then combined using an Allreduce. The selection is done by finding the set fillings $\varphi_r$ of all ranks $r$ by performing an Allgather on '$sizeSparse$' and then calculating the sum of all sizes. This is the same as the total set filling $\Phi$ which is then compared against the critical size. If the total set filling does not exceed the critical size the sparse variant is used and in the other case the dense Allreduce is executed. If one rank proposes a set in the dense format it sets its sparse size to 'critSize$+1$' so the total set filling $\Phi=\sum_{i=0}^{p-1}\varphi_i$ is guaranteed to exceed the critical size and all ranks will use the dense format. Ranks holding the sparse format need to transform to the dense one, if the Allreduce is used. This is indicated by the function $\Call{TransformToDense}{~}$.\\
-%The interface of the native MPI functions is heavily simplified for this pseudo code. The Allgather in line \ref{naiveMixed:algatherSize} returns a new array which holds the sparse sizes of all ranks. The original MPI-interface for the C language requires here actually an pointer to allocated memory that can be filled alongside with size information on the allocated output array, input array, datatype information and which ranks are going to participate (via a communicator struct). This additional information is technically also required for the later call on $\Call{MPI\_Allgatherv}{~}$ or $\Call{MPI\_Allreduce}$. On these calls the result of the Allgather/Allreduce is directly saved on the input array. \\
+%The interface of the native MPI functions is heavily simplified for this pseudocode. The Allgather in line \ref{naiveMixed:algatherSize} returns a new array which holds the sparse sizes of all ranks. The original MPI-interface for the C language requires here actually an pointer to allocated memory that can be filled alongside with size information on the allocated output array, input array, datatype information and which ranks are going to participate (via a communicator struct). This additional information is technically also required for the later call on $\Call{MPI\_Allgatherv}{~}$ or $\Call{MPI\_Allreduce}$. On these calls the result of the Allgather/Allreduce is directly saved on the input array. \\
 The methods where only the sparse or only the dense variant are used are later used as a reference for the performance evaluation. The mixed variant is not used as the pure variants provide already a lower limit on the performance that can be achieved using only native collective communication provided by MPI.
 
 
