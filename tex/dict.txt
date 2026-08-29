@@ -1,4 +1,4 @@
-textidote --output html --check en --firstlang de --dict dict.txt --ignore sh:nobreak,sh:relpath,sh:nsubdiv thesis.tex > report.html
+textidote --output html --check en --firstlang de --dict dict.txt --ignore sh:nobreak,sh:relpath,sh:nsubdiv,lt:en:EN_REPEATEDWORDS,sh:figref,sh:010,sh:c:mul thesis.tex > report.html
 Allreduce
 Allgather
 OpenMPI
@@ -23,6 +23,9 @@ Turkys
 srun
 MPIs
 Allgatherv
+non-pipelined
+summands
+tori
 de-facto
 Allgathers
 allowbreak
@@ -41,6 +44,9 @@ Isend
 Irecv
 Sendrecv
 Bulu\c{c}
+Bulu\c{c
+Bulucc
+Buluc
 Ueno
 select-max-semiring
 LIGRA
@@ -55,3 +61,8 @@ summand
 Träff
 Navarros
 sparsification
+Reducescatter-Allgather
+subresults
+sparseSize
+observables
+Reduce
