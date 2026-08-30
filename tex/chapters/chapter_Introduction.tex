@@ -44,7 +44,7 @@ The big difference between these variants is that the size of one representation
 The motivation to calculate the union set as fast as possible stems originally from performing a BFS where this problem arises naturally. The background for this application is given in the next section. In the sections there is more information given that is generally useful in understanding notation and ideas of this thesis. Especially the background on Allreduce and Allgather implementation is crucial for the newly developed algorithms.
 
 \section{Breadth First Search (BFS)} \label{sec:bfs}
-Breath First Search is a well-known procedure that explores a graph from a starting vertex (called root node) by iteratively finding the neighborhood of the current, explored region  \cite[Chapter 4]{standardBFS}\cite{introToAlgos}. For this we firstly give some details on graphs. After that we present a sequential implementation of BFS and then some versions that solve this problem in parallel.
+Breadth First Search is a well-known procedure that explores a graph from a starting vertex (called root node) by iteratively finding the neighborhood of the current, explored region  \cite[Chapter 4]{standardBFS}\cite{introToAlgos}. For this we firstly give some details on graphs. After that we present a sequential implementation of BFS and then some versions that solve this problem in parallel.
 
 \subsection{Introduction to Graphs} \label{sec:introGraphs}
 A graph typically is a representation of some network. Formally, a graph $G$ is defined as the tuple 

@@ -13,7 +13,7 @@
 \setcounter{tocdepth}{3}
 % Define convenience functions to use the author name and the thesis title in the PDF document properties.
 \newcommand{\authorname}{Frieder Wolpert-Veit} % The author name without titles.
-\newcommand{\thesistitle}{A more efficient set union operation on distributed memory machines} % The title of the thesis. The English version should be used, if it exists.
+\newcommand{\thesistitle}{A More Efficient Set Union Operation on Distributed Memory Machines} % The title of the thesis. The English version should be used, if it exists.
 
 % Create the XMP metadata file for the creation of PDF/A compatible documents.
 \begin{filecontents*}[overwrite]{\jobname.xmpdata}
@@ -70,7 +70,7 @@
 %  {title before name}{name}{title after name}{gender}
 %  where both titles are optional (i.e. can be given as empty brackets {}).
 \setauthor{}{\authorname}{B.Sc.}{male}
-\setadvisor{Univ. Prof. Dr.}{Jesper Larsson Träff}{}{male}
+\setadvisor{Univ.Prof. Dr.}{Jesper Larsson Träff}{Msc PhD}{male}
 
 % For bachelor and master theses:
 %\setfirstassistant{Pretitle}{Forename Surname}{Posttitle}{male}
@@ -87,7 +87,7 @@
 % Required data.
 \setregnumber{12135828}
 \setdate{31}{08}{2026} % Set date with 3 arguments: {day}{month}{year}.
-\settitle{\thesistitle}{A More Efficient Set Union Operation on Distributed Memory Machines} % Sets English and German version of the title (both can be English or German). If your title contains commas, enclose it with additional curvy brackets (i.e., {{your title}}) or define it as a macro as done with \thesistitle.
+\settitle{\thesistitle}{\thesistitle} % Sets English and German version of the title (both can be English or German). If your title contains commas, enclose it with additional curvy brackets (i.e., {{your title}}) or define it as a macro as done with \thesistitle.
 %\setsubtitle{Optional Subtitle of the Thesis}{Optionaler Untertitel der Arbeit} % Sets English and German version of the subtitle (both can be English or German).
 
 % Select the thesis type: bachelor / master / doctor.
@@ -106,8 +106,8 @@
 \setcurriculum{Computational Science and Engineering}{Computational Science and Engineering} % Sets the English and German name of the curriculum.
 
 % Optional reviewer data:
-\setfirstreviewerdata{Affiliation, Country}
-\setsecondreviewerdata{Affiliation, Country}
+%\setfirstreviewerdata{Affiliation, Country}
+%\setsecondreviewerdata{Affiliation, Country}
 
 
 \begin{document}
@@ -116,20 +116,32 @@
 	% The structure of the thesis has to conform to the guidelines at
 	%  https://informatics.tuwien.ac.at/study-services
 	
-	% \addtitlepage{naustrian} % German title page.
+    \addtitlepage{naustrian} % German title page.
 	\addtitlepage{english} % English title page.
 	\addstatementpage{naustrian}  % Select 'english' for the English statement text.
 	
 	\begin{danksagung*}
+		\centering
+		Zu Beginn möchte ich mich bei Prof. Jesper Larsson Träff für die engagierte Betreuung bedanken. Vielen Dank für die Zeit, Flexibilität, Anmerkungen, Korrekturen und den Raum meine Ideen einzubringen.
+		
+		Als nächstes gilt mein Dank meinen Eltern, die vor allem durch ihre finanzielle Unterstützung mir dieses Studium ermöglicht haben.
+		
+		Danke an meine Partnerin Vera, die mir in dieser Zeit viel Unterstützung gab. Vielen Dank für deine Rücksicht, deine Hilfe und deine Korrekturen.
+		
+		Danke auch an Prof. Sascha Hunold für schnellen Tech-Support bei Zugang and Problemen des Hydra Clusters.
+		
+		Ich möchte mich auch bei all meinen Freunden bedanken, die mir in dieser Zeit Zuspruch und Motivation gegeben haben. Im Speziellen bedanke ich mich bei Niklas Zurell, \\Philip Theuer, Deniz ÜnlÜbayir, Christian Teske und Elena Riedmann.
 	\end{danksagung*}
 	
-	\begin{acknowledgements*}
-	\end{acknowledgements*}
 	
 	\begin{kurzfassung}
 	\end{kurzfassung}
 	
 	\begin{abstract}
+		Distributed memory computing is an important branch in the research field of high performance computing and is the foundation for building large, scalable clusters and supercomputers. To compare performance of these compute-systems different established benchmarks are available. Next to renowned benchmarks like (e.g., HPL, HPCG  and NPB) there is the Graph500 benchmark which uses the execution time of a BFS (Breadth First Search) as the main performance measure. BFS and other graph traversal algorithms are needed in real-world applications such as social network analysis, simulation or infrastructure planing. A base building block of such graph traversal algorithms is computing the union of sets that are distributed over the different processes. For finite graphs the proposed sets and therefore the resulting union are subsets of a universe set of finite size.  It is of interest, and also the aim of this thesis, to optimize such a union operation.\\
+		It is already known that such a union can be calculated by representing the sets as bitmaps and performing an \emph{Allreduce} using a bitwise OR. Another strategy is to represent the sets as sparse lists of elements and concatenate these distributed lists by an \emph{Allgather}. The execution time of the first method scales with the size of the universe, and the execution time of the latter method depends on the size of the sets submitted by the different processes. If the size of the submitted sets is large, the first strategy is expected to be faster  and for small sets the second variant is expected to be more efficient.\\
+		We propose in this thesis two new algorithms that take advantage of both (sparse and dense) representations and switch dynamically between them to calculate a union of distributed sets. One is optimized (but also constrained to) compute-systems that have a number of processors and a hierarchical structure that is a power of 2. The other one works for an arbitrary amount of processes. Using a linear cost model the execution time of these algorithms is estimated by $T \leq \kappa \min(T_\mathrm{Allred}, T_\mathrm{Allgath})$ with $\kappa$ being some constant which is close to 1. \\
+		The performance of the newly proposed algorithms is tested and compared against the naive versions. This is done on the \emph{Hydra} cluster of the Parallel Computing department at TU Wien. The evaluation confirms the expected run time,  with the new algorithms matching (up to constant) the performance of the respective faster naive implementation. Moreover, the new algorithms are used as a building block for an BFS where they lead to a performance increase for large graphs (at least $10^6$ vertices) of up to 10\%. For disjoint graphs there are performance increases of nearly 70\% possible.
 	\end{abstract}
 	
 	% Select the language of the thesis, e.g., english or naustrian.
