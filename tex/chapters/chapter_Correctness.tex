@@ -3,7 +3,7 @@
 %!TeX root = ../thesis.tex
 
 
-\chapter{Empirical correctness testing of the new algorithms} \label{chap:correctness}
+\chapter{Empirical Correctness Testing of the New Algorithms} \label{chap:correctness}
 In this chapter, the process of the correctness testing for the algorithms is described. There are two different strategies used to test, if the algorithms execute as expected and produce correct results. As first approach there are self written unit tests used. Secondly the algorithms are used as part of a BFS implementation and the results of the BFS are tested using a typical framework.
 \section{Individual Testing}
 The unit tests for the union algorithms are done using the same function. This function takes the function to test, the universe set size $|\Tilde{S}|$ and the total set filling $\Phi$ as input. 
@@ -15,14 +15,14 @@ The unit tests for the union algorithms are done using the same function. This f
 	\label{algo:testCorrectness}
 	\begin{algorithmic}[1]
 		\Procedure{testSingle}{$func, setSize, filling$}
-		\State set, control $\gets \emptyset$
+		\State set, control $\gets \emptyset, \emptyset$
 		\State $insertions \gets ~ setzize\cdot filling$
 		\State \Call{SetSeed}{42} \Comment{All ranks have same seed}
 		\For{$i \in \{0,\dots, insertions-1\}$}
 		\State num $\gets \Call{Rand}{ } \mod{setSize}$ 
-		\State control $\gets$ control $\cup$ num
+		\State control $\gets$ control $\cup$ \{num\}
 		\If{$i \mod mpiSize = mpiRank$} 
-		\State set $\gets$ set $\cup$ num
+		\State set $\gets$ set $\cup$ \{num\}
 		\EndIf
 		\EndFor
 		\State \Call{func}{set} \Comment{Here is the union executed}

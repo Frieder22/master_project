@@ -4,11 +4,6 @@
 \mainmatter
 \appendix
 \chapter{Additional plots from Benchmark}
-Here are additional plots from the benchmark evaluation shown. To get an easier overview, the figures are ordered to the corresponding sections and subsections.
-\setcounter{section}{3}
-\section{Testing foundation Allreduce against MPI libraries}
-\setcounter{subsection}{1}
-\subsection{Foundation Allreduce algorithms}
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[htpb]{0.3\textwidth}
@@ -49,14 +44,6 @@ Here are additional plots from the benchmark evaluation shown. To get an easier 
 	\caption{Benchmark of the three foundation Allreduce implementations (\texttt{Allreduce\_Butterfly}, \texttt{Allreduce\_Butterfly\_Reversed} and \texttt{Allreduce\_Shift}). The influence of using different MPI libraries is tested. Execution time $t$ is plotted against set size $|\Tilde{S}|$. The different processor layouts are indicated by $p$.}
 	\label{fig:AllreduceFoundationLibsAppendix}
 \end{figure}
-
-\newpage
-\setcounter{section}{4}
-\section{Testing foundation Allgather against MPI libraries}
-\setcounter{subsection}{2}
-\subsection{Comparison between IntelMPI Allgather and foundation algorithms}
-\subsubsection{Non-uniform filling}
-
 
 
 \begin{figure}[ht]
