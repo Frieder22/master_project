@@ -49,7 +49,7 @@ The remaining data points (which can be expected to be the majority for a fairly
 One experiment usually consists of multiple experiment runs. If the execution time  is examined in dependency of some parameter, then multiple data points are needed, i.e., one data point for each variation of the parameter. To avoid any bias that could arise due to the order of execution the experiment runs are shuffled randomly.\\
 The typical entry point to an MPI-program running on a distributed memory machine is a call of \texttt{srun}. Hunold and Carpen-Amerie \cite{HunoldBench} showed that the benchmark of a function is not necessarily independent of its execution by \texttt{srun}. In their data it is apparent that the standard deviations of  multiple executed experiments can be significantly smaller than the standard deviation of the means of these experiments. So when executing the same experiment twice (with different calls to \texttt{srun}) the results of the second run can lie reliably and significantly outside the standard deviation range of the first run. This is the reason why we do not rely on calculating the standard deviations in each experiment run. Instead, each experiment run is executed multiple times using different calls of \texttt{srun}. Hunold and Carpen-Amarie state a number of 30 iterations as sufficient which we therefore also use in this benchmark. A sketch on how the experimentation runs are executed is shown in Algorithm \ref{algo:benchmark}.
 \begin{algorithm}
-	\caption{– Benchmark of a experiment\\
+	\caption{– Benchmark of an experiment\\
 		\textit{l\_setup}: List of setup parameter}
 	\label{algo:benchmark}
 	\begin{algorithmic}[1]
