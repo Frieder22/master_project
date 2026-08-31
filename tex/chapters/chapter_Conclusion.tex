@@ -8,7 +8,7 @@ In this, we summarize the results of the performance benchmarking and conclusion
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{../plots/ExampleConclusion/32x32ExampleConclusion.png}
-	\caption{Execution time of the algorithms \texttt{Allreduce\_Butterfly\_Reverse}, \texttt{Allgather\_Butterfly\_Reverse} and \texttt{Union\_Butterfly} against the set filling. The set size is $10^7$ elements.}
+	\caption{Execution time of the algorithms \texttt{All\-re\-duce\_But\-ter\-fly\_Reverse}, \texttt{All\-gath\-er\_But\-ter\-fly\_Reverse} and \texttt{Union\_Butterfly} against the set filling. The set size is $10^7$ elements.}
 	\label{fig:exampleConculsion}
 \end{figure}
 Here it is apparent that there are indeed configurations where the new union algorithm is faster than either the Allgather or the Allreduce. In fact one can see that for set fillings below $5\cdot10^4$ the run time of \texttt{Union\_Butterfly} orients itself on the run time of the Allgather and is therefore faster than the Allreduce. For set fillings higher than this threshold the execution time is more or less proportional to the one of the Allreduce and is therefore faster than the Allgather. In this setup one can therefore model the run time as 
