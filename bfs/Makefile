@@ -12,7 +12,7 @@ main: main.c $(SOURCES) $(HEADERS)
 	$(GCC) $(CFLAGS) -o $(build)/main.o main.c $(SOURCES) $(HEADERS)
 
 run_local: main
-	mpirun -np 4 $(build)/main.o -f graphData/12831_clean.edges
+	mpirun -np 4 $(build)/main.o -f ../graphDataRaw/twitter_clean/12831.edges
 
 init_cluster:
 	ssh -t hydra 'bash --login -i -c "mkdir -p build && mkdir -p data && mkdir -p performance"'

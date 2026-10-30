@@ -4,7 +4,6 @@ tex/chapters/*.aux
 tex/*.log
 tex/*.gz
 tex/*.toc
-tex/*.pdf
 tex/*.bbl
 tex/*.blg
 tex/*.fdb_latexmk
